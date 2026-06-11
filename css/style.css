@@ -614,6 +614,30 @@ img {
   color: var(--text);
 }
 
+/* Diagram figures */
+.diagram {
+  margin: 32px 0;
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.diagram img,
+.diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.diagram-caption {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 16px;
+}
+
 /* Before / after comparison */
 .compare {
   display: grid;

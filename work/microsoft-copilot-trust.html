@@ -96,6 +96,11 @@
         </div>
       </div>
 
+      <figure class="diagram reveal">
+        <img src="../assets/img/copilot/trust-ladder.svg" alt="A three-step ladder diagram. Step one, On-demand: user asks, AI responds. Step two, Proactive: AI surfaces, user decides, requires Transparency. Step three, Automatic: AI acts within set limits, requires Transparency, Controllability, and Learnability. A caption reads: each rung is earned, not skipped.">
+        <p class="diagram-caption">The adoption ladder: each stage requires the trust foundations of the one before it</p>
+      </figure>
+
       <div class="callout reveal">
         <p><strong>The framing in one line:</strong> automation isn't something to design directly into a feature. It's something a feature earns, by first being transparent and useful on demand, then proactively useful enough to be trusted, before it's ever handed the keys.</p>
       </div>
@@ -127,8 +132,19 @@
         </div>
       </div>
 
+      <figure class="diagram reveal">
+        <img src="../assets/img/copilot/tcl-pillars.svg" alt="A diagram showing three pillars, Transparency, Controllability, and Learnability, supporting a roof labeled 'A trusted AI assistant'. Transparency: what is it looking at, and why this suggestion. Controllability: can I correct it and set its boundaries, in the moment. Learnability: does it get better at being mine over time.">
+        <p class="diagram-caption">The three prerequisites that hold up trust in an AI assistant</p>
+      </figure>
+
       <h2 class="reveal">How it was used</h2>
       <p class="reveal">The framework gave teams working on different features, prioritization, drafting, scheduling, out-of-office handoffs, a shared way to evaluate their own roadmaps: which rung of the ladder is this feature actually operating at, and does it meet the transparency, controllability, and learnability bar for that rung? It also gave a vocabulary for flagging when a feature was attempting to behave automatically before it had earned proactive trust, which several research studies had identified as a recurring failure pattern.</p>
+      <p class="reveal">One recurring example the paper used to make this concrete: when each Microsoft 365 app runs its own version of Copilot with its own memory, a user has to re-establish context, their role, their projects, their tone, in every app separately. That repeated re-explaining is itself a transparency and learnability failure, and it's a useful test case for the framework because fixing it requires all three prerequisites to move together, not feature by feature.</p>
+
+      <figure class="diagram reveal">
+        <img src="../assets/img/copilot/fragmentation.svg" alt="A before-and-after diagram. Before: separate Copilots in Outlook, Word, Teams, and other apps, each with its own memory, with the user re-explaining context in every app. After: one Copilot with shared context across Outlook, Word, and Teams, with context following the user.">
+        <p class="diagram-caption">Fragmented memory across apps undermines transparency and learnability at the same time</p>
+      </figure>
 
       <h2 class="reveal">Reflection</h2>
       <p class="reveal">Writing this paper was the first time I worked primarily as a synthesizer rather than a primary researcher, pulling together other people's studies into a single argument. It taught me that the hardest part of strategic research often isn't generating new findings, it's recognizing when several studies are independently describing the same underlying problem from different angles, and naming that problem in a way that travels across teams.</p>

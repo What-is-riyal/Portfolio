@@ -6,6 +6,7 @@
 :root {
   --bg: #FFFFFF;
   --accent: #FF5A3C;
+  --accent-ink: #C93011; /* darker accent: 5.1:1+ on white and surface, required for small text */
   --text: #1A1A1A;
   --muted: #6B6B6B;
   --border: #ECECEC;
@@ -262,8 +263,24 @@ img {
 }
 
 .section-label .count {
-  color: var(--accent);
+  color: var(--accent-ink);
   margin-left: 6px;
+}
+
+.section-hint {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 24px;
+  max-width: 56ch;
+}
+
+.hint-touch {
+  display: none;
+}
+
+@media (hover: none) {
+  .hint-hover { display: none; }
+  .hint-touch { display: inline; }
 }
 
 /* --------------------------------------------------------------------------
@@ -345,8 +362,47 @@ img {
 }
 
 .tag.nda {
-  color: var(--accent);
+  color: var(--accent-ink);
   border-color: rgba(255, 90, 60, 0.3);
+}
+
+/* The turn: revealed on hover/focus, always visible on touch devices.
+   Kept in normal flow (max-height, not display:none) so screen readers
+   always announce it. */
+.work-turn {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #3A3A3A;
+  max-width: 62ch;
+  transition: max-height 0.5s var(--ease), opacity 0.45s var(--ease), margin-top 0.5s var(--ease);
+}
+
+.work-row:hover .work-turn,
+.work-row:focus-visible .work-turn {
+  max-height: 160px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.turn-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin-right: 8px;
+}
+
+@media (hover: none) {
+  .work-turn {
+    max-height: none;
+    opacity: 1;
+    margin-top: 12px;
+  }
 }
 
 .work-year {
@@ -383,6 +439,42 @@ img {
 
 .work-row:hover .work-arrow svg {
   transform: translate(2px, -2px);
+}
+
+/* --------------------------------------------------------------------------
+   Book strip
+   -------------------------------------------------------------------------- */
+
+.book-strip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  font-size: 16px;
+  color: #3A3A3A;
+  max-width: 76ch;
+}
+
+.book-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin-right: 8px;
+}
+
+.book-link {
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+  transition: color 0.25s var(--ease);
+  white-space: nowrap;
+}
+
+.book-link:hover {
+  color: var(--accent-ink);
 }
 
 /* --------------------------------------------------------------------------
@@ -466,6 +558,10 @@ img {
   flex-wrap: wrap;
   font-size: 14px;
   color: var(--muted);
+}
+
+.footer-bottom .heart {
+  color: var(--accent-ink);
 }
 
 .footer-links {

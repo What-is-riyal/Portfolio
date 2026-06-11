@@ -144,6 +144,33 @@ img {
 
 .hero {
   padding: 112px 0 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+}
+
+.hero-photo img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.5s var(--ease);
+}
+
+.hero-photo img:hover {
+  transform: scale(1.03) rotate(-1deg);
 }
 
 .hero-eyebrow {
@@ -198,15 +225,17 @@ img {
 }
 
 /* Staggered entrance on load */
-.hero > * {
+.hero-text > *,
+.hero-photo {
   opacity: 0;
   transform: translateY(20px);
   animation: rise 0.8s var(--ease) forwards;
 }
 
-.hero > *:nth-child(1) { animation-delay: 0.05s; }
-.hero > *:nth-child(2) { animation-delay: 0.15s; }
-.hero > *:nth-child(3) { animation-delay: 0.28s; }
+.hero-text > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-text > *:nth-child(2) { animation-delay: 0.15s; }
+.hero-text > *:nth-child(3) { animation-delay: 0.28s; }
+.hero-photo { animation-delay: 0.2s; }
 
 @keyframes rise {
   to {
@@ -585,6 +614,42 @@ img {
   color: var(--text);
 }
 
+/* Before / after comparison */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.compare figure {
+  margin: 0;
+}
+
+.compare img {
+  border: 1px solid var(--border);
+  width: 100%;
+}
+
+.compare figcaption {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.compare figcaption.new {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .compare {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Stat cards */
 .stats {
   display: grid;
@@ -703,6 +768,14 @@ img {
 @media (max-width: 768px) {
   .hero {
     padding: 72px 0 64px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .hero-photo img {
+    width: 96px;
+    height: 96px;
   }
 
   .work-row {

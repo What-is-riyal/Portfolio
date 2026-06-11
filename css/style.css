@@ -7,12 +7,16 @@
   --bg: #FFFFFF;
   --accent: #FF5A3C;
   --accent-ink: #C93011; /* darker accent: 5.1:1+ on white and surface, required for small text */
+  --accent-deep: #B22A0E; /* 5.2:1+ even on accent-tinted backgrounds (code highlights) */
+  --highlight: rgba(255, 90, 60, 0.12);
+  --highlight-strong: rgba(255, 90, 60, 0.2);
   --text: #1A1A1A;
   --muted: #6B6B6B;
   --border: #ECECEC;
   --surface: #FAFAFA;
   --radius: 8px;
   --font: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --max-width: 1080px;
 }
@@ -144,9 +148,12 @@ img {
    -------------------------------------------------------------------------- */
 
 .hero {
-  padding: 112px 0 96px;
+  padding: 96px 0 72px;
+}
+
+.hero-top {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 48px;
 }
@@ -201,16 +208,101 @@ img {
 }
 
 .hero h1 {
-  font-size: clamp(38px, 6vw, 64px);
+  font-size: clamp(34px, 5.2vw, 58px);
   font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-  max-width: 18ch;
-  margin-bottom: 28px;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  max-width: 24ch;
+  margin-bottom: 20px;
 }
 
 .hero h1 .accent {
   color: var(--accent);
+}
+
+.hero h1 .serif {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Coded phrases: highlighter marks with a researcher's code label */
+.coded {
+  background: linear-gradient(120deg, var(--highlight-strong), var(--highlight));
+  border-radius: 6px;
+  padding: 0.02em 0.14em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-color 0.3s var(--ease);
+  cursor: default;
+}
+
+.coded sup {
+  font-family: var(--font);
+  font-size: 0.24em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin-left: 0.3em;
+  vertical-align: super;
+  white-space: nowrap;
+}
+
+.coded.lit {
+  background: var(--highlight-strong);
+}
+
+.hero-note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.hero-note::before {
+  content: "— ";
+  color: var(--accent-ink);
+}
+
+/* Code cards: the legend for the coded intro */
+.code-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.code-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), background 0.35s var(--ease);
+}
+
+.code-card .code-name {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin-bottom: 8px;
+}
+
+.code-card p:not(.code-name) {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #3A3A3A;
+}
+
+.code-card.lit {
+  transform: translateY(-4px);
+  border-color: rgba(255, 90, 60, 0.5);
+  border-left-color: var(--accent);
+  background: #FFF6F3;
 }
 
 .hero-sub {
@@ -227,7 +319,8 @@ img {
 
 /* Staggered entrance on load */
 .hero-text > *,
-.hero-photo {
+.hero-photo,
+.code-card {
   opacity: 0;
   transform: translateY(20px);
   animation: rise 0.8s var(--ease) forwards;
@@ -237,6 +330,9 @@ img {
 .hero-text > *:nth-child(2) { animation-delay: 0.15s; }
 .hero-text > *:nth-child(3) { animation-delay: 0.28s; }
 .hero-photo { animation-delay: 0.2s; }
+.code-card:nth-child(1) { animation-delay: 0.4s; }
+.code-card:nth-child(2) { animation-delay: 0.5s; }
+.code-card:nth-child(3) { animation-delay: 0.6s; }
 
 @keyframes rise {
   to {
@@ -306,6 +402,25 @@ img {
 
 .work-row:hover {
   background: var(--surface);
+}
+
+.work-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.work-index {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 26px;
+  color: var(--muted);
+  line-height: 1.2;
+  transition: color 0.3s var(--ease);
+}
+
+.work-row:hover .work-index {
+  color: var(--accent-ink);
 }
 
 .work-company {
@@ -887,7 +1002,10 @@ img {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 72px 0 64px;
+    padding: 64px 0 48px;
+  }
+
+  .hero-top {
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 24px;
@@ -896,6 +1014,21 @@ img {
   .hero-photo img {
     width: 96px;
     height: 96px;
+  }
+
+  .code-cards {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+
+  .work-left {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .work-index {
+    font-size: 20px;
   }
 
   .work-row {

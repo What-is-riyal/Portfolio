@@ -13,6 +13,18 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
+// Cross-highlight coded phrases and their legend cards in the hero
+const litToggle = (code, on) => {
+  document.querySelectorAll(`[data-code="${code}"]`).forEach((el) => {
+    el.classList.toggle("lit", on);
+  });
+};
+
+document.querySelectorAll("[data-code]").forEach((el) => {
+  el.addEventListener("mouseenter", () => litToggle(el.dataset.code, true));
+  el.addEventListener("mouseleave", () => litToggle(el.dataset.code, false));
+});
+
 // Nav border on scroll
 const nav = document.querySelector(".nav");
 if (nav) {

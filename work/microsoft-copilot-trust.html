@@ -4,179 +4,833 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Earning trust before automating | Priyal Shrivastava</title>
-  <meta name="description" content="A strategic synthesis on a trust-first adoption framework for AI assistance in Outlook, arguing that transparency, controllability, and learnability are prerequisites for users to accept on-demand, then proactive, then automatic AI.">
+  <meta name="description" content="A strategic synthesis on a trust-first adoption framework for AI assistance in Outlook: transparency, controllability, and learnability as prerequisites for on-demand, proactive, then automatic AI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ============ Showpiece page styles ============ */
+    :root {
+      --ink: #0B0B0C;
+      --paper: #FFFFFF;
+      --glow: #FF5A3C;
+      --serif: "Instrument Serif", Georgia, serif;
+    }
+
+    body { background: var(--paper); overflow-x: hidden; }
+
+    /* Scroll progress */
+    .progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0;
+      background: var(--glow); z-index: 1000;
+    }
+
+    /* Grain overlay */
+    .grain {
+      position: fixed; inset: 0; pointer-events: none; z-index: 999; opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+    }
+
+    /* Custom cursor */
+    .cursor-dot, .cursor-ring {
+      position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1001;
+      border-radius: 50%; transform: translate(-50%, -50%);
+    }
+    .cursor-dot { width: 8px; height: 8px; background: var(--glow); }
+    .cursor-ring {
+      width: 36px; height: 36px; border: 1.5px solid rgba(255, 90, 60, 0.5);
+      transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+    }
+    .cursor-ring.is-hover { width: 64px; height: 64px; border-color: var(--glow); }
+    @media (pointer: coarse) { .cursor-dot, .cursor-ring { display: none; } }
+
+    /* Nav overlay for dark hero */
+    .nav { position: absolute; width: 100%; background: transparent; backdrop-filter: none; border: none; }
+    .nav .logo, .nav .nav-links a { color: #fff; }
+    .nav .nav-links a { color: rgba(255,255,255,0.65); }
+    .nav .nav-links a:hover, .nav .nav-links a.active { color: #fff; }
+
+    /* ============ Hero ============ */
+    .hero-dark {
+      min-height: 100vh; background: var(--ink); color: #fff;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; overflow: hidden; padding: 120px 0 80px;
+    }
+    .hero-orb {
+      position: absolute; width: 60vw; height: 60vw; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,90,60,0.28), transparent 65%);
+      top: 10%; right: -18vw; filter: blur(20px);
+      animation: orb-drift 14s ease-in-out infinite alternate;
+    }
+    @keyframes orb-drift {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(-6vw, 6vh) scale(1.15); }
+    }
+    .hero-dark .eyebrow {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); margin-bottom: 32px; display: flex; align-items: center; gap: 10px;
+    }
+    .hero-dark .eyebrow::before {
+      content: ""; width: 32px; height: 1px; background: var(--glow);
+    }
+    .hero-dark h1 {
+      font-size: clamp(44px, 8.5vw, 110px); line-height: 1.0; font-weight: 800;
+      letter-spacing: -0.04em; max-width: 12ch; margin-bottom: 36px;
+    }
+    .hero-dark h1 .line { display: block; overflow: hidden; }
+    .hero-dark h1 .line span {
+      display: block; transform: translateY(110%);
+      animation: line-up 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .hero-dark h1 .line:nth-child(2) span { animation-delay: 0.12s; }
+    .hero-dark h1 .line:nth-child(3) span { animation-delay: 0.24s; }
+    @keyframes line-up { to { transform: translateY(0); } }
+    .hero-dark h1 em {
+      font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--glow);
+      letter-spacing: -0.01em;
+    }
+    .hero-dark .hero-standfirst {
+      font-size: clamp(17px, 2vw, 21px); color: rgba(255,255,255,0.72);
+      max-width: 52ch; line-height: 1.7; margin-bottom: 48px;
+      opacity: 0; animation: fade-in 1s ease 0.5s forwards;
+    }
+    @keyframes fade-in { to { opacity: 1; } }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; opacity: 0; animation: fade-in 1s ease 0.7s forwards; }
+    .chip {
+      font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.8);
+    }
+    .chip.accent { border-color: rgba(255,90,60,0.5); color: var(--glow); }
+    .scroll-hint {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); display: flex; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .scroll-hint::after {
+      content: ""; width: 1px; height: 36px;
+      background: linear-gradient(to bottom, var(--glow), transparent);
+      animation: hint-drop 1.8s ease-in-out infinite;
+    }
+    @keyframes hint-drop { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+    /* ============ Shared section bones ============ */
+    .strip { padding: 120px 0; position: relative; }
+    .strip-dark { background: var(--ink); color: #fff; }
+    .kicker {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--glow); margin-bottom: 20px;
+    }
+    .strip h2 {
+      font-size: clamp(30px, 4.5vw, 52px); font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.1; max-width: 22ch; margin-bottom: 28px;
+    }
+    .strip h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--glow); }
+    .prose { max-width: 680px; }
+    .prose p { font-size: 17px; line-height: 1.75; color: #3A3A3A; margin-bottom: 20px; }
+    .strip-dark .prose p { color: rgba(255,255,255,0.75); }
+    .prose strong { color: inherit; font-weight: 700; }
+
+    .fx { opacity: 0; transform: translateY(36px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
+    .fx.in { opacity: 1; transform: none; }
+
+    .nda-pill {
+      display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600;
+      color: var(--muted); border: 1px dashed #D9D9D9; border-radius: 999px; padding: 10px 20px;
+      margin-bottom: 48px;
+    }
+    .nda-pill .dot-pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--glow); animation: pulse 2s infinite; }
+
+    /* ============ Tension: want vs got ============ */
+    .tension { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
+    .tension-card {
+      border-radius: 16px; padding: 40px 36px; position: relative; overflow: hidden;
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+    .tension-card:hover { transform: translateY(-6px); }
+    .tension-card.want { background: #111114; color: #fff; }
+    .tension-card.got { background: #FFF1ED; color: var(--text); border: 1px solid rgba(255,90,60,0.25); }
+    .tension-card .t-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px;
+    }
+    .tension-card.want .t-label { color: var(--glow); }
+    .tension-card.got .t-label { color: var(--glow); }
+    .tension-card .t-quote {
+      font-family: var(--serif); font-style: italic; font-size: clamp(20px, 2.4vw, 28px); line-height: 1.35; margin-bottom: 20px;
+    }
+    .tension-card p { font-size: 15px; line-height: 1.7; }
+    .tension-card.want p { color: rgba(255,255,255,0.65); }
+    .tension-card.got p { color: #5A4A45; }
+    @media (max-width: 768px) { .tension { grid-template-columns: 1fr; } }
+
+    /* ============ Scrollytelling ladder ============ */
+    .ladder-track { height: 340vh; position: relative; background: var(--ink); }
+    .ladder-sticky {
+      position: sticky; top: 0; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; color: #fff;
+    }
+    .ladder-grid {
+      display: grid; grid-template-columns: 280px 1fr; gap: 64px; align-items: center; width: 100%;
+    }
+    .rail { position: relative; height: 380px; width: 2px; background: rgba(255,255,255,0.12); margin-left: 20px; }
+    .rail-fill { position: absolute; top: 0; left: 0; width: 100%; height: 0%; background: var(--glow); transition: height 0.2s linear; }
+    .rail-node {
+      position: absolute; left: 50%; transform: translate(-50%, -50%);
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--ink); border: 2px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 14px; transition: all 0.4s ease;
+    }
+    .rail-node.active { border-color: var(--glow); background: var(--glow); color: #fff; box-shadow: 0 0 28px rgba(255,90,60,0.55); }
+    .rail-label {
+      position: absolute; left: 36px; top: 50%; transform: translateY(-50%);
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); white-space: nowrap; transition: color 0.4s ease;
+    }
+    .rail-node.active + .rail-label, .rail-label.active { color: #fff; }
+    .ladder-stage { position: relative; min-height: 420px; }
+    .ladder-step {
+      position: absolute; inset: 0; opacity: 0; transform: translateY(40px);
+      transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
+      pointer-events: none;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .ladder-step.active { opacity: 1; transform: none; pointer-events: auto; }
+    .ladder-step .step-num {
+      font-family: var(--serif); font-style: italic; font-size: 100px; line-height: 1;
+      color: rgba(255,90,60,0.25); margin-bottom: 8px;
+    }
+    .ladder-step h3 { font-size: clamp(32px, 4vw, 56px); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 18px; }
+    .ladder-step .step-sub { font-size: 15px; font-weight: 700; color: var(--glow); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 18px; }
+    .ladder-step p { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.72); max-width: 56ch; }
+    .ladder-intro-label {
+      position: absolute; top: 40px; left: 0; right: 0; text-align: center;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.4);
+    }
+    @media (max-width: 768px) {
+      .ladder-track { height: auto; background: var(--ink); padding: 80px 0; }
+      .ladder-sticky { position: static; height: auto; }
+      .ladder-grid { grid-template-columns: 1fr; gap: 32px; }
+      .rail { display: none; }
+      .ladder-stage { min-height: 0; }
+      .ladder-step { position: static; opacity: 1; transform: none; pointer-events: auto; margin-bottom: 64px; }
+      .ladder-intro-label { display: none; }
+    }
+
+    /* ============ Kinetic statement ============ */
+    .statement { padding: 160px 0; background: var(--paper); }
+    .statement .big {
+      font-size: clamp(34px, 5.5vw, 72px); font-weight: 800; letter-spacing: -0.035em;
+      line-height: 1.12; max-width: 20ch;
+    }
+    .statement .big .w { opacity: 0.12; transition: opacity 0.3s linear; }
+    .statement .big em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--glow); }
+
+    /* ============ TCL tilt cards ============ */
+    .tcl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; perspective: 1200px; }
+    .tcl-card {
+      border-radius: 16px; padding: 48px 32px; background: var(--surface);
+      border: 1px solid var(--border); position: relative; overflow: hidden;
+      transform-style: preserve-3d; transition: border-color 0.4s ease, box-shadow 0.4s ease;
+      will-change: transform;
+    }
+    .tcl-card:hover { border-color: rgba(255,90,60,0.45); box-shadow: 0 32px 64px -32px rgba(255,90,60,0.35); }
+    .tcl-card .tcl-letter {
+      font-family: var(--serif); font-style: italic; font-size: 96px; line-height: 1;
+      color: var(--glow); margin-bottom: 24px; display: block;
+    }
+    .tcl-card h3 { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .tcl-card .tcl-q { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--text); margin-bottom: 16px; line-height: 1.45; }
+    .tcl-card p { font-size: 15px; line-height: 1.7; color: var(--muted); }
+    .tcl-card .shine {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255,90,60,0.09), transparent 60%);
+      opacity: 0; transition: opacity 0.4s ease;
+    }
+    .tcl-card:hover .shine { opacity: 1; }
+    @media (max-width: 900px) { .tcl-grid { grid-template-columns: 1fr; } }
+
+    /* ============ Interactive demo ============ */
+    .demo-shell {
+      margin-top: 64px; border-radius: 20px; background: var(--ink); padding: 48px;
+      color: #fff; position: relative; overflow: hidden;
+    }
+    .demo-shell::before {
+      content: ""; position: absolute; width: 40vw; height: 40vw; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,90,60,0.16), transparent 60%);
+      bottom: -20vw; right: -10vw; pointer-events: none;
+    }
+    .demo-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 36px; }
+    .demo-head h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+    .demo-toggle { display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 700; }
+    .switch {
+      width: 56px; height: 30px; border-radius: 999px; background: rgba(255,255,255,0.15);
+      position: relative; cursor: pointer; border: none; transition: background 0.3s ease;
+    }
+    .switch::after {
+      content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%;
+      background: #fff; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .switch.on { background: var(--glow); }
+    .switch.on::after { transform: translateX(26px); }
+    .mail-row {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 12px; padding: 20px 24px; margin-bottom: 14px;
+      display: flex; flex-direction: column; gap: 8px; transition: border-color 0.3s ease;
+      position: relative; z-index: 1;
+    }
+    .mail-row:hover { border-color: rgba(255,90,60,0.4); }
+    .mail-top { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .mail-from { font-weight: 800; font-size: 15px; }
+    .mail-subj { font-size: 15px; color: rgba(255,255,255,0.65); flex: 1; min-width: 180px; }
+    .badge {
+      font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 999px;
+    }
+    .badge.hi { background: var(--glow); color: #fff; }
+    .badge.lo { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.6); }
+    .mail-why {
+      font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.6;
+      max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease;
+    }
+    .mail-why .why-tag { color: var(--glow); font-weight: 700; }
+    .demo-shell.explained .mail-why { max-height: 80px; opacity: 1; }
+    .trust-meter { margin-top: 36px; position: relative; z-index: 1; }
+    .trust-meter .tm-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+    .trust-meter .tm-value { color: var(--glow); font-variant-numeric: tabular-nums; }
+    .tm-bar { height: 8px; border-radius: 999px; background: rgba(255,255,255,0.1); overflow: hidden; }
+    .tm-fill { height: 100%; width: 18%; border-radius: 999px; background: var(--glow); transition: width 1.1s cubic-bezier(0.22,1,0.36,1); }
+    .demo-shell.explained .tm-fill { width: 84%; }
+    .tm-caption { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 14px; font-style: italic; font-family: var(--serif); }
+    @media (max-width: 768px) { .demo-shell { padding: 32px 20px; } }
+
+    /* ============ Fragmentation orbit ============ */
+    .orbit-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 64px; }
+    .orbit-panel { border-radius: 16px; border: 1px solid var(--border); background: var(--surface); padding: 40px 24px; text-align: center; min-height: 380px; display: flex; flex-direction: column; }
+    .orbit-panel .op-label { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
+    .orbit-panel .op-sub { font-size: 13.5px; color: var(--muted); margin-bottom: 24px; }
+    .scatter { position: relative; flex: 1; }
+    .app-chip {
+      position: absolute; font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 999px;
+      background: #fff; border: 1px solid var(--border); box-shadow: 0 8px 16px -10px rgba(0,0,0,0.15);
+      animation: chip-bob 4s ease-in-out infinite;
+    }
+    .app-chip small { display: block; font-size: 10px; font-weight: 600; color: var(--muted); }
+    @keyframes chip-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .orbit { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; }
+    .orbit-core {
+      width: 110px; height: 110px; border-radius: 50%; background: var(--glow); color: #fff;
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px;
+      box-shadow: 0 0 60px rgba(255,90,60,0.45); z-index: 2;
+    }
+    .orbit-ring { position: absolute; width: 280px; height: 280px; border: 1.5px dashed rgba(255,90,60,0.4); border-radius: 50%; animation: spin 24s linear infinite; }
+    .orbit-ring .sat { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); animation: counter-spin 24s linear infinite; }
+    .orbit-ring .sat:nth-child(2) { top: auto; bottom: -16px; }
+    .orbit-ring .sat:nth-child(3) { top: 50%; left: -34px; transform: translateY(-50%); }
+    .orbit-ring .sat:nth-child(4) { top: 50%; left: auto; right: -34px; transform: translateY(-50%); }
+    .sat {
+      font-size: 12px; font-weight: 700; padding: 7px 14px; border-radius: 999px;
+      background: #fff; border: 1px solid rgba(255,90,60,0.4); white-space: nowrap;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes counter-spin { to { transform: translateX(-50%) rotate(-360deg); } }
+    .orbit-ring .sat:nth-child(3) { animation-name: counter-spin-l; }
+    .orbit-ring .sat:nth-child(4) { animation-name: counter-spin-r; }
+    @keyframes counter-spin-l { to { transform: translateY(-50%) rotate(-360deg); } }
+    @keyframes counter-spin-r { to { transform: translateY(-50%) rotate(-360deg); } }
+    @media (max-width: 900px) { .orbit-wrap { grid-template-columns: 1fr; } }
+
+    /* ============ Easter egg: transparency mode ============ */
+    .annot {
+      position: absolute; max-width: 240px; background: #FFF8E1; color: #5D4E1A;
+      font-size: 13px; line-height: 1.55; padding: 14px 16px; border-radius: 4px 16px 16px 16px;
+      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.3); transform: rotate(-2deg) scale(0);
+      transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); z-index: 50;
+      font-weight: 600; pointer-events: none;
+    }
+    .annot b { display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; color: #B07D1A; }
+    body.transparency-mode .annot { transform: rotate(-2deg) scale(1); }
+    .egg-hint {
+      position: fixed; bottom: 24px; left: 24px; z-index: 900;
+      font-size: 12.5px; font-weight: 700; color: var(--muted);
+      background: rgba(255,255,255,0.92); border: 1px solid var(--border); border-radius: 999px;
+      padding: 10px 18px; opacity: 0; transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none;
+      backdrop-filter: blur(8px);
+    }
+    .egg-hint.show { opacity: 1; transform: none; }
+    .egg-hint kbd {
+      font-family: inherit; background: var(--text); color: #fff; border-radius: 5px;
+      padding: 2px 8px; margin: 0 2px;
+    }
+
+    /* Footer over dark end */
+    .closing { background: var(--ink); color: #fff; padding: 120px 0 0; }
+    .closing .footer { border-top-color: rgba(255,255,255,0.12); margin-top: 80px; }
+    .closing .footer-bottom, .closing .footer-cta .label { color: rgba(255,255,255,0.5); }
+    .closing .big-link { color: #fff; }
+    .closing .next-project { border-top: none; margin-top: 0; }
+    .closing .next-project .label { color: rgba(255,255,255,0.5); }
+    .closing .next-project a { color: #fff; }
+    .closing .next-project a:hover { color: var(--glow); }
+    .closing .footer-links a:hover { color: var(--glow); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-orb, .scroll-hint::after, .orbit-ring, .orbit-ring .sat, .app-chip { animation: none !important; }
+      .hero-dark h1 .line span { transform: none; animation: none; }
+      .hero-standfirst, .hero-chips { opacity: 1 !important; animation: none; }
+      .fx { opacity: 1; transform: none; transition: none; }
+      .statement .big .w { opacity: 1 !important; }
+      .cursor-dot, .cursor-ring { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="../index.html" class="logo">ps<span class="dot">.</span></a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="../index.html#work" class="active">Work</a></li>
-          <li><a href="../play.html">Play</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../resume.pdf" target="_blank" rel="noopener">Resume</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="progress" id="progress"></div>
+  <div class="grain"></div>
+  <div class="cursor-dot" id="cdot"></div>
+  <div class="cursor-ring" id="cring"></div>
 
-  <main class="container">
-
-    <a href="../index.html#work" class="back-link">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3L5 8l5 5"/></svg>
-      All work
-    </a>
-
-    <section class="project-hero">
-      <p class="project-company">Microsoft</p>
-      <h1>Earning trust before automating</h1>
-      <p class="project-summary">A strategic synthesis on what it would take for an AI assistant in Outlook to earn progressively deeper roles in someone's inbox, from on-demand helper, to proactive partner, to an agent that acts on its own.</p>
-    </section>
-
-    <div class="project-meta reveal">
-      <div class="meta-item">
-        <p class="meta-label">Role</p>
-        <p class="meta-value">Lead author, UXR synthesis</p>
+  <!-- ============ HERO ============ -->
+  <section class="hero-dark">
+    <header class="nav">
+      <div class="container nav-inner">
+        <a href="../index.html" class="logo">ps<span class="dot">.</span></a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="../index.html#work" class="active">Work</a></li>
+            <li><a href="../play.html">Play</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="meta-item">
-        <p class="meta-label">Year</p>
-        <p class="meta-value">2025</p>
-      </div>
-      <div class="meta-item">
-        <p class="meta-label">Format</p>
-        <p class="meta-value">Strategic point-of-view paper</p>
-      </div>
-      <div class="meta-item">
-        <p class="meta-label">Status</p>
-        <p class="meta-value">Under NDA, framework shown</p>
-      </div>
-    </div>
+    </header>
 
-    <article class="project-body">
-
-      <div class="callout reveal">
-        <p>This paper was written under NDA with Microsoft. What follows describes the framework, its structure, and the reasoning behind it. Internal research findings, product roadmaps, and specific feature names have been omitted.</p>
-      </div>
-
-      <h2 class="reveal">Background</h2>
-      <p class="reveal">Outlook's AI assistant was expanding quickly: into task management, scheduling, email drafting, out-of-office handoffs, and inbox prioritization, each shipped somewhat independently. I was asked to step back from any single feature and synthesize a year's worth of research across these areas into one point of view: what does it actually take for people to trust an AI assistant enough to let it do more on their behalf?</p>
-      <p class="reveal">I substantially authored this paper, pulling together findings from multiple studies into a single strategic argument rather than a feature-by-feature report.</p>
-
-      <h2 class="reveal">The core argument</h2>
-      <p class="reveal">Across every study we synthesized, the same tension showed up: people wanted an assistant that anticipated their needs and took work off their plate, but they did not trust it enough to let it act without supervision. People described an ideal assistant as something like a chief of staff, someone who knows their role, their priorities, and their working style well enough to act on their behalf. But the assistants they were actually using fell short on basic things: getting names and dates right, understanding context, and explaining why they'd done something.</p>
-      <p class="reveal">The paper's central claim is that AI assistance in a tool like Outlook earns its way into deeper roles along a ladder, and skipping rungs on that ladder is what causes trust to collapse.</p>
-
-      <div class="phase reveal">
-        <span class="phase-number">1</span>
-        <div>
-          <h3>On-demand</h3>
-          <p>The user explicitly asks for help: summarize this thread, draft a reply, find this email. The assistant only acts when invoked, and its output is checked before anything happens. This is where most people's trust currently sits, and for many features, it's the only mode they're comfortable with today.</p>
-        </div>
-      </div>
-
-      <div class="phase reveal">
-        <span class="phase-number">2</span>
-        <div>
-          <h3>Proactive</h3>
-          <p>The assistant surfaces suggestions, summaries, or prioritization without being asked, but still leaves the action to the user. This is a meaningful jump: it requires the assistant to correctly judge what's relevant and worth surfacing, and to explain why, or risk being ignored, distrusted, or perceived as noise.</p>
-        </div>
-      </div>
-
-      <div class="phase reveal">
-        <span class="phase-number">3</span>
-        <div>
-          <h3>Automatic</h3>
-          <p>The assistant takes action on the user's behalf, sending a reply, archiving an email, rescheduling a meeting, within boundaries the user has set. This is the highest-trust mode, and the paper argues it should only be extended to scenarios where the assistant has already demonstrated reliability at the on-demand and proactive stages, with clear, user-defined limits on what it's allowed to do unsupervised.</p>
-        </div>
-      </div>
-
-      <figure class="diagram reveal">
-        <img src="../assets/img/copilot/trust-ladder.svg" alt="A three-step ladder diagram. Step one, On-demand: user asks, AI responds. Step two, Proactive: AI surfaces, user decides, requires Transparency. Step three, Automatic: AI acts within set limits, requires Transparency, Controllability, and Learnability. A caption reads: each rung is earned, not skipped.">
-        <p class="diagram-caption">The adoption ladder: each stage requires the trust foundations of the one before it</p>
-      </figure>
-
-      <div class="callout reveal">
-        <p><strong>The framing in one line:</strong> automation isn't something to design directly into a feature. It's something a feature earns, by first being transparent and useful on demand, then proactively useful enough to be trusted, before it's ever handed the keys.</p>
-      </div>
-
-      <h2 class="reveal">Three prerequisites</h2>
-      <p class="reveal">The paper grounds this ladder in three prerequisites, drawn directly from where trust consistently broke down across the research we synthesized.</p>
-
-      <div class="phase reveal">
-        <span class="phase-number">T</span>
-        <div>
-          <h3>Transparency</h3>
-          <p>People need to understand what the assistant is looking at, why it made a particular suggestion, and what it will or won't do without asking. When an assistant operates as a black box, even small mistakes (a wrong name, a misread date) generalize into "I can't trust this for anything important." Transparency was consistently the difference between a mistake that eroded trust and a mistake that didn't.</p>
-        </div>
-      </div>
-
-      <div class="phase reveal">
-        <span class="phase-number">C</span>
-        <div>
-          <h3>Controllability</h3>
-          <p>People need a real, accessible way to correct the assistant, adjust its boundaries, and define what it's allowed to do automatically versus what always needs their sign-off. Several studies found that control settings existed but were too hard to find, which functionally meant they didn't exist for most users. Controllability isn't a settings page; it has to be reachable in the moment a person needs it.</p>
-        </div>
-      </div>
-
-      <div class="phase reveal">
-        <span class="phase-number">L</span>
-        <div>
-          <h3>Learnability</h3>
-          <p>An assistant that makes the same correctable mistake repeatedly teaches people not to bother correcting it. People consistently said they didn't expect perfection, but they did expect the assistant to get better at being them, in their tone, their priorities, their habits, over time. Without visible learning, every interaction resets to zero, and the relationship never deepens enough to support more autonomous behavior.</p>
-        </div>
-      </div>
-
-      <figure class="diagram reveal">
-        <img src="../assets/img/copilot/tcl-pillars.svg" alt="A diagram showing three pillars, Transparency, Controllability, and Learnability, supporting a roof labeled 'A trusted AI assistant'. Transparency: what is it looking at, and why this suggestion. Controllability: can I correct it and set its boundaries, in the moment. Learnability: does it get better at being mine over time.">
-        <p class="diagram-caption">The three prerequisites that hold up trust in an AI assistant</p>
-      </figure>
-
-      <h2 class="reveal">How it was used</h2>
-      <p class="reveal">The framework gave teams working on different features, prioritization, drafting, scheduling, out-of-office handoffs, a shared way to evaluate their own roadmaps: which rung of the ladder is this feature actually operating at, and does it meet the transparency, controllability, and learnability bar for that rung? It also gave a vocabulary for flagging when a feature was attempting to behave automatically before it had earned proactive trust, which several research studies had identified as a recurring failure pattern.</p>
-      <p class="reveal">One recurring example the paper used to make this concrete: when each Microsoft 365 app runs its own version of Copilot with its own memory, a user has to re-establish context, their role, their projects, their tone, in every app separately. That repeated re-explaining is itself a transparency and learnability failure, and it's a useful test case for the framework because fixing it requires all three prerequisites to move together, not feature by feature.</p>
-
-      <figure class="diagram reveal">
-        <img src="../assets/img/copilot/fragmentation.svg" alt="A before-and-after diagram. Before: separate Copilots in Outlook, Word, Teams, and other apps, each with its own memory, with the user re-explaining context in every app. After: one Copilot with shared context across Outlook, Word, and Teams, with context following the user.">
-        <p class="diagram-caption">Fragmented memory across apps undermines transparency and learnability at the same time</p>
-      </figure>
-
-      <h2 class="reveal">Reflection</h2>
-      <p class="reveal">Writing this paper was the first time I worked primarily as a synthesizer rather than a primary researcher, pulling together other people's studies into a single argument. It taught me that the hardest part of strategic research often isn't generating new findings, it's recognizing when several studies are independently describing the same underlying problem from different angles, and naming that problem in a way that travels across teams.</p>
-      <p class="reveal">It also crystallized something I now carry directly into how I think about AI governance: trust in an automated system isn't a single property you either have or don't. It's something that has to be built in stages, with transparency and control as the foundation, before broader autonomy is either safe or accepted. That staged view of trust is one of the throughlines connecting my UX research background to the work I want to do next.</p>
-
-    </article>
-
-    <div class="next-project reveal">
-      <p class="label">Next project</p>
-      <a href="razorpay-d2c.html">What makes merchants pay and consumers play?
-        <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </a>
-    </div>
-
-  </main>
-
-  <footer class="footer">
+    <div class="hero-orb"></div>
     <div class="container">
-      <div class="footer-cta reveal">
-        <p class="label">Get in touch</p>
-        <a class="big-link" href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
+      <p class="eyebrow">Microsoft &middot; Strategic UXR synthesis &middot; 2025</p>
+      <h1>
+        <span class="line"><span>Earning <em>trust</em></span></span>
+        <span class="line"><span>before</span></span>
+        <span class="line"><span>automating.</span></span>
+      </h1>
+      <p class="hero-standfirst">What does it take for people to let an AI assistant act on their behalf, inside the most personal professional space they have: their inbox? A point-of-view paper synthesizing a year of research into one framework.</p>
+      <div class="hero-chips">
+        <span class="chip">Lead author</span>
+        <span class="chip">Synthesis of 1 year of UXR</span>
+        <span class="chip">Outlook &times; Copilot</span>
+        <span class="chip accent">Under NDA, framework shown</span>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Priyal Shrivastava</span>
-        <div class="footer-links">
-          <a href="mailto:priyalshri1@gmail.com">Email</a>
-          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+  <!-- ============ SETUP ============ -->
+  <section class="strip" style="position: relative;">
+    <div class="container">
+      <div class="nda-pill fx"><span class="dot-pulse"></span> Written under NDA. Framework and reasoning shown; internal findings, metrics, and roadmaps omitted.</div>
+      <p class="kicker fx">The setup</p>
+      <h2 class="fx">One assistant, shipping in <em>pieces</em></h2>
+      <div class="prose">
+        <p class="fx">Outlook's AI assistant was expanding fast: into task management, scheduling, email drafting, out-of-office handoffs, and inbox prioritization. Each capability was being researched and shipped somewhat independently.</p>
+        <p class="fx">I was asked to step back from any single feature and synthesize a year's worth of research across all of them into one strategic point of view: <strong>what does it actually take for people to trust an AI assistant enough to let it do more on their behalf?</strong></p>
+        <p class="fx">I substantially authored the resulting paper, pulling separate studies into a single argument rather than a feature-by-feature report.</p>
+      </div>
+
+      <div class="annot" style="top: 110px; right: 4%;"><b>Why this page is dark &amp; light</b> The dark sections carry the framework, the light ones carry the story. The contrast is doing the chapter breaks.</div>
+    </div>
+  </section>
+
+  <!-- ============ TENSION ============ -->
+  <section class="strip" style="padding-top: 0; position: relative;">
+    <div class="container">
+      <p class="kicker fx">The tension</p>
+      <h2 class="fx">People wanted a chief of staff. They were getting an <em>intern</em> who forgets their name.</h2>
+      <div class="tension">
+        <div class="tension-card want fx">
+          <p class="t-label">What people wanted</p>
+          <p class="t-quote">An assistant that knows my role, my priorities, and my working style, and quietly takes work off my plate.</p>
+          <p>Across every study, people described the same ideal: proactive help, in the flow of work, from something that deeply understands their context. Not another feature. A partner.</p>
+        </div>
+        <div class="tension-card got fx">
+          <p class="t-label">What kept happening</p>
+          <p class="t-quote">Wrong names. Wrong dates. Confused context. And no explanation of why.</p>
+          <p>Small, basic errors did outsized damage. When an assistant gets simple facts wrong and can't explain itself, people don't just distrust that output. They stop trusting it with anything that matters.</p>
+        </div>
+      </div>
+
+      <div class="annot" style="bottom: -40px; left: 8%;"><b>Why two cards</b> The entire paper hangs on this gap between expectation and experience. It earns its own moment before any framework appears.</div>
+    </div>
+  </section>
+
+  <!-- ============ LADDER SCROLLYTELLING ============ -->
+  <section class="ladder-track" id="ladderTrack">
+    <div class="ladder-sticky">
+      <p class="ladder-intro-label">The framework &middot; an adoption ladder</p>
+      <div class="container ladder-grid">
+        <div class="rail">
+          <div class="rail-fill" id="railFill"></div>
+          <div class="rail-node" id="node1" style="top: 8%;">1</div>
+          <p class="rail-label" id="label1" style="top: 8%;">On-demand</p>
+          <div class="rail-node" id="node2" style="top: 50%;">2</div>
+          <p class="rail-label" id="label2" style="top: 50%;">Proactive</p>
+          <div class="rail-node" id="node3" style="top: 92%;">3</div>
+          <p class="rail-label" id="label3" style="top: 92%;">Automatic</p>
+        </div>
+        <div class="ladder-stage">
+          <div class="ladder-step" id="step1">
+            <p class="step-num">01</p>
+            <h3>On-demand</h3>
+            <p class="step-sub">You ask. It answers. You check.</p>
+            <p>The user explicitly invokes help: summarize this thread, draft a reply, find that email. Nothing happens without being asked, and every output is reviewed before it's used. This is where most people's trust actually sits today, and for many features it's the only mode they're comfortable with.</p>
+          </div>
+          <div class="ladder-step" id="step2">
+            <p class="step-num">02</p>
+            <h3>Proactive</h3>
+            <p class="step-sub">It suggests. You decide.</p>
+            <p>The assistant surfaces summaries, suggestions, and priorities without being asked, but leaves every action to the user. This jump is bigger than it looks: the assistant now has to judge what's worth interrupting someone for, and explain why, or it gets dismissed as noise and switched off.</p>
+          </div>
+          <div class="ladder-step" id="step3">
+            <p class="step-num">03</p>
+            <h3>Automatic</h3>
+            <p class="step-sub">It acts. Within limits you set.</p>
+            <p>The assistant sends the reply, archives the email, reschedules the meeting, on its own, inside boundaries the user has drawn. The paper's argument: this rung should only ever be extended to a task after the assistant has already proven itself on the two rungs below. Skipping rungs is how trust collapses.</p>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="../js/main.js"></script>
+  <!-- ============ KINETIC STATEMENT ============ -->
+  <section class="statement" id="statement">
+    <div class="container">
+      <p class="big" id="bigWords">Automation isn't something you design into a feature. It's something a feature <em>earns.</em></p>
+    </div>
+  </section>
+
+  <!-- ============ TCL PILLARS ============ -->
+  <section class="strip" style="padding-top: 0; position: relative;">
+    <div class="container">
+      <p class="kicker fx">The prerequisites</p>
+      <h2 class="fx">Three things hold the ladder <em>up</em></h2>
+      <div class="prose">
+        <p class="fx">The paper grounds the ladder in three prerequisites, drawn directly from where trust consistently broke down across the studies we synthesized.</p>
+      </div>
+      <div class="tcl-grid">
+        <div class="tcl-card fx" data-tilt>
+          <div class="shine"></div>
+          <span class="tcl-letter">T</span>
+          <h3>Transparency</h3>
+          <p class="tcl-q">"What is it looking at, and why did it suggest that?"</p>
+          <p>People need to see what the assistant considered and why it acted. In a black box, even small mistakes generalize into "I can't trust this with anything important." With an explanation, the same mistake becomes correctable, and survivable.</p>
+        </div>
+        <div class="tcl-card fx" data-tilt>
+          <div class="shine"></div>
+          <span class="tcl-letter">C</span>
+          <h3>Controllability</h3>
+          <p class="tcl-q">"Can I correct it, and set its boundaries, right here?"</p>
+          <p>Control that lives in a buried settings page functionally doesn't exist. People need to adjust boundaries and fix mistakes in the moment they happen, including deciding what the assistant may ever do without sign-off.</p>
+        </div>
+        <div class="tcl-card fx" data-tilt>
+          <div class="shine"></div>
+          <span class="tcl-letter">L</span>
+          <h3>Learnability</h3>
+          <p class="tcl-q">"Is it getting better at being mine?"</p>
+          <p>Nobody expected perfection. They expected improvement: their tone, their priorities, their habits. An assistant that repeats a corrected mistake teaches people to stop correcting it, and the relationship never deepens enough to support autonomy.</p>
+        </div>
+      </div>
+
+      <div class="annot" style="top: 60px; right: 3%;"><b>Why cards tilt</b> Micro-interactions reward attention without gating content. The framework reads fine if you never hover.</div>
+    </div>
+  </section>
+
+  <!-- ============ INTERACTIVE DEMO ============ -->
+  <section class="strip" style="padding-top: 40px; position: relative;">
+    <div class="container">
+      <p class="kicker fx">Feel it yourself</p>
+      <h2 class="fx">The same inbox, with and without <em>transparency</em></h2>
+      <div class="prose">
+        <p class="fx">An illustration of the framework's first prerequisite. The emails below are invented, but the mechanic is real: watch what an explanation does to your own willingness to let the AI act.</p>
+      </div>
+
+      <div class="demo-shell fx" id="demoShell">
+        <div class="demo-head">
+          <h3>Inbox, prioritized by AI</h3>
+          <div class="demo-toggle">
+            <span>Explain decisions</span>
+            <button class="switch" id="demoSwitch" aria-pressed="false" aria-label="Toggle decision explanations"></button>
+          </div>
+        </div>
+
+        <div class="mail-row">
+          <div class="mail-top">
+            <span class="mail-from">Maya Chen</span>
+            <span class="mail-subj">Re: Q3 budget review, need your sign-off by EOD</span>
+            <span class="badge hi">High priority</span>
+          </div>
+          <p class="mail-why"><span class="why-tag">Why:</span> from your direct manager, contains a deadline today, and you replied to this thread twice this week.</p>
+        </div>
+
+        <div class="mail-row">
+          <div class="mail-top">
+            <span class="mail-from">Atlas Conference</span>
+            <span class="mail-subj">Early-bird tickets end soon!</span>
+            <span class="badge lo">Low priority</span>
+          </div>
+          <p class="mail-why"><span class="why-tag">Why:</span> bulk promotional sender. You've never opened the previous 14 emails from this address.</p>
+        </div>
+
+        <div class="mail-row">
+          <div class="mail-top">
+            <span class="mail-from">Sam Okafor</span>
+            <span class="mail-subj">Quick question about the handoff doc</span>
+            <span class="badge hi">High priority</span>
+          </div>
+          <p class="mail-why"><span class="why-tag">Why:</span> direct question addressed to you, from a close collaborator, on a document you edited yesterday.</p>
+        </div>
+
+        <div class="trust-meter">
+          <div class="tm-label"><span>Willingness to let it act alone</span><span class="tm-value" id="tmValue">18%</span></div>
+          <div class="tm-bar"><div class="tm-fill"></div></div>
+          <p class="tm-caption" id="tmCaption">"It marked something high priority. But I have no idea why, so I'll check everything myself anyway."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FRAGMENTATION ============ -->
+  <section class="strip" style="padding-top: 40px; position: relative;">
+    <div class="container">
+      <p class="kicker fx">The framework in practice</p>
+      <h2 class="fx">One assistant, or five strangers wearing the same <em>badge?</em></h2>
+      <div class="prose">
+        <p class="fx">A recurring test case in the paper: when each Microsoft 365 app runs its own Copilot with its own memory, the user re-explains their role, projects, and tone in every app. That repeated re-introduction is a transparency failure and a learnability failure at once, and no single feature team can fix it alone. The framework's value was giving every team the same vocabulary to name it.</p>
+      </div>
+
+      <div class="orbit-wrap">
+        <div class="orbit-panel fx">
+          <p class="op-label" style="color: var(--muted);">Today</p>
+          <p class="op-sub">Separate Copilots, separate memories</p>
+          <div class="scatter">
+            <span class="app-chip" style="top: 6%; left: 8%; animation-delay: 0s;">Outlook<small>own memory</small></span>
+            <span class="app-chip" style="top: 16%; right: 6%; animation-delay: 0.7s;">Word<small>own memory</small></span>
+            <span class="app-chip" style="bottom: 30%; left: 16%; animation-delay: 1.3s;">Teams<small>own memory</small></span>
+            <span class="app-chip" style="bottom: 6%; right: 14%; animation-delay: 0.4s;">Excel<small>own memory</small></span>
+            <span class="app-chip" style="top: 44%; left: 42%; animation-delay: 1s; border-color: rgba(255,90,60,0.5); color: #B33;">You<small>re-explaining yourself</small></span>
+          </div>
+        </div>
+        <div class="orbit-panel fx">
+          <p class="op-label" style="color: var(--glow);">The goal</p>
+          <p class="op-sub">One assistant, shared context that follows you</p>
+          <div class="orbit">
+            <div class="orbit-core">Copilot</div>
+            <div class="orbit-ring">
+              <span class="sat">Outlook</span>
+              <span class="sat">Word</span>
+              <span class="sat">Teams</span>
+              <span class="sat">Excel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFLECTION + CLOSE ============ -->
+  <section class="closing">
+    <div class="container" style="position: relative;">
+      <p class="kicker fx">Reflection</p>
+      <h2 class="fx" style="color: #fff;">Trust isn't a feature. It's a <em>sequence.</em></h2>
+      <div class="prose">
+        <p class="fx">Writing this paper was the first time I worked primarily as a synthesizer rather than a primary researcher. The hardest part of strategic research isn't generating new findings. It's recognizing when several studies are independently describing the same underlying problem from different angles, and naming it in a way that travels across teams.</p>
+        <p class="fx">It also crystallized something I carry directly into how I think about AI governance: trust in an automated system isn't a property you have or don't. It's built in stages, with transparency and control as the foundation, before broader autonomy is either safe or accepted. That staged view of trust is the throughline connecting my UX research background to the work I want to do next.</p>
+      </div>
+
+      <div class="annot" style="top: 0; right: 4%;"><b>Why end on this</b> A case study's last paragraph is a positioning statement. This one points at AI governance on purpose.</div>
+
+      <div class="next-project fx" style="margin-top: 96px;">
+        <p class="label">Next project</p>
+        <a href="razorpay-d2c.html">What makes merchants pay and consumers play?
+          <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-cta">
+          <p class="label">Get in touch</p>
+          <a class="big-link" href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 Priyal Shrivastava</span>
+          <div class="footer-links">
+            <a href="mailto:priyalshri1@gmail.com">Email</a>
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <div class="egg-hint" id="eggHint">This page practices what it preaches. Press <kbd>T</kbd> for transparency.</div>
+
+  <script>
+  (function () {
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* Scroll progress bar */
+    var progress = document.getElementById("progress");
+
+    /* Reveal on scroll */
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(".fx").forEach(function (el) { io.observe(el); });
+
+    /* Kinetic statement: split into words */
+    var big = document.getElementById("bigWords");
+    if (big && !reduceMotion) {
+      var parts = [];
+      big.childNodes.forEach(function (node) {
+        if (node.nodeType === 3) {
+          node.textContent.split(/\s+/).forEach(function (w) {
+            if (w) parts.push('<span class="w">' + w + "</span>");
+          });
+        } else if (node.nodeType === 1) {
+          parts.push('<span class="w">' + node.outerHTML + "</span>");
+        }
+      });
+      big.innerHTML = parts.join(" ");
+    }
+    var words = big ? big.querySelectorAll(".w") : [];
+
+    /* Ladder scrollytelling */
+    var track = document.getElementById("ladderTrack");
+    var railFill = document.getElementById("railFill");
+    var steps = [document.getElementById("step1"), document.getElementById("step2"), document.getElementById("step3")];
+    var nodes = [document.getElementById("node1"), document.getElementById("node2"), document.getElementById("node3")];
+    var labels = [document.getElementById("label1"), document.getElementById("label2"), document.getElementById("label3")];
+    var isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    function onScroll() {
+      var vh = window.innerHeight;
+      var doc = document.documentElement;
+      progress.style.width = (doc.scrollTop / (doc.scrollHeight - vh) * 100) + "%";
+
+      if (track && !isMobile) {
+        var rect = track.getBoundingClientRect();
+        var total = track.offsetHeight - vh;
+        var p = Math.min(1, Math.max(0, -rect.top / total));
+        railFill.style.height = (8 + p * 84) + "%";
+        var idx = p < 0.34 ? 0 : p < 0.67 ? 1 : 2;
+        steps.forEach(function (s, i) { s.classList.toggle("active", i === idx); });
+        nodes.forEach(function (n, i) { n.classList.toggle("active", i <= idx); });
+        labels.forEach(function (l, i) { l.classList.toggle("active", i <= idx); });
+      }
+
+      if (words.length && !reduceMotion) {
+        var st = document.getElementById("statement").getBoundingClientRect();
+        var sp = Math.min(1, Math.max(0, (vh * 0.85 - st.top) / (vh * 0.7)));
+        var n = sp * words.length;
+        words.forEach(function (w, i) {
+          w.style.opacity = Math.min(1, Math.max(0.12, n - i));
+        });
+      }
+
+      /* Easter egg hint appears mid-page, once */
+      if (!hintShown && doc.scrollTop > doc.scrollHeight * 0.35) {
+        hintShown = true;
+        var hint = document.getElementById("eggHint");
+        hint.classList.add("show");
+        setTimeout(function () { hint.classList.remove("show"); }, 7000);
+      }
+    }
+    var hintShown = false;
+    var ticking = false;
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(function () { onScroll(); ticking = false; });
+      }
+    }, { passive: true });
+    onScroll();
+    if (isMobile && steps[0]) {
+      steps.forEach(function (s) { s.classList.add("active"); });
+    }
+
+    /* Custom cursor */
+    if (window.matchMedia("(pointer: fine)").matches && !reduceMotion) {
+      var dot = document.getElementById("cdot"), ring = document.getElementById("cring");
+      var mx = -100, my = -100, rx = -100, ry = -100;
+      document.addEventListener("mousemove", function (e) { mx = e.clientX; my = e.clientY; });
+      (function loop() {
+        rx += (mx - rx) * 0.16; ry += (my - ry) * 0.16;
+        dot.style.transform = "translate(" + (mx - 4) + "px," + (my - 4) + "px)";
+        ring.style.transform = "translate(" + (rx - 18) + "px," + (ry - 18) + "px)";
+        requestAnimationFrame(loop);
+      })();
+      document.querySelectorAll("a, button, .tcl-card, .mail-row").forEach(function (el) {
+        el.addEventListener("mouseenter", function () { ring.classList.add("is-hover"); });
+        el.addEventListener("mouseleave", function () { ring.classList.remove("is-hover"); });
+      });
+    } else {
+      document.getElementById("cdot").style.display = "none";
+      document.getElementById("cring").style.display = "none";
+    }
+
+    /* Tilt cards */
+    if (!reduceMotion) {
+      document.querySelectorAll("[data-tilt]").forEach(function (card) {
+        card.addEventListener("mousemove", function (e) {
+          var r = card.getBoundingClientRect();
+          var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+          card.style.transform = "rotateY(" + ((px - 0.5) * 10) + "deg) rotateX(" + ((0.5 - py) * 8) + "deg) translateY(-4px)";
+          card.style.setProperty("--mx", (px * 100) + "%");
+          card.style.setProperty("--my", (py * 100) + "%");
+        });
+        card.addEventListener("mouseleave", function () { card.style.transform = ""; });
+      });
+    }
+
+    /* Demo toggle */
+    var demoSwitch = document.getElementById("demoSwitch");
+    var demoShell = document.getElementById("demoShell");
+    var tmValue = document.getElementById("tmValue");
+    var tmCaption = document.getElementById("tmCaption");
+    var tmTimer = null;
+    demoSwitch.addEventListener("click", function () {
+      var on = !demoShell.classList.contains("explained");
+      demoShell.classList.toggle("explained", on);
+      demoSwitch.classList.toggle("on", on);
+      demoSwitch.setAttribute("aria-pressed", String(on));
+      var from = on ? 18 : 84, to = on ? 84 : 18, start = null;
+      if (tmTimer) cancelAnimationFrame(tmTimer);
+      (function count(ts) {
+        if (!start) start = ts;
+        var k = Math.min(1, (ts - start) / 1100);
+        var eased = 1 - Math.pow(1 - k, 3);
+        tmValue.textContent = Math.round(from + (to - from) * eased) + "%";
+        if (k < 1) tmTimer = requestAnimationFrame(count);
+      })(performance.now());
+      tmCaption.textContent = on
+        ? '"Oh. It saw the deadline and knows Maya is my manager. Fine, it can sort these for me."'
+        : '"It marked something high priority. But I have no idea why, so I\'ll check everything myself anyway."';
+    });
+
+    /* Easter egg: transparency mode */
+    document.addEventListener("keydown", function (e) {
+      if ((e.key === "t" || e.key === "T") && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        document.body.classList.toggle("transparency-mode");
+      }
+    });
+    console.log("%cps. transparency mode", "color:#FF5A3C;font-weight:bold;font-size:14px",
+      "\nYou found the console. Press T on the page to see why it's designed the way it is.\nIt felt wrong to write a paper about AI transparency and then ship an opaque page.");
+  })();
+  </script>
 </body>
 </html>

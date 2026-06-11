@@ -54,10 +54,41 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Nav border on scroll
+// Nav border + scroll progress
 const nav = document.querySelector(".nav");
-if (nav) {
-  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+const progress = document.getElementById("progress");
+const onScroll = () => {
+  if (nav) nav.classList.toggle("scrolled", window.scrollY > 8);
+  if (progress) {
+    const doc = document.documentElement;
+    progress.style.width = (doc.scrollTop / (doc.scrollHeight - window.innerHeight)) * 100 + "%";
+  }
+};
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+// Count up the numbers band when it scrolls into view
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const counters = document.querySelectorAll("[data-count]");
+if (counters.length && !reduceMotion) {
+  const countObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        countObserver.unobserve(entry.target);
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        const start = performance.now();
+        const tick = (now) => {
+          const k = Math.min(1, (now - start) / 1200);
+          const eased = 1 - Math.pow(1 - k, 3);
+          el.textContent = Math.round(target * eased);
+          if (k < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    },
+    { threshold: 0.5 }
+  );
+  counters.forEach((el) => countObserver.observe(el));
 }

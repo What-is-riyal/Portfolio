@@ -7,10 +7,12 @@
   <meta name="description" content="Priyal Shrivastava is a user researcher focused on trust and safety, responsible AI, and the people most affected by technology decisions. MHCI at Carnegie Mellon, previously Razorpay, Microsoft, and Meesho.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <div class="progress" id="progress"></div>
 
   <header class="nav">
     <div class="container nav-inner">
@@ -56,6 +58,35 @@
           <p class="code-name">now</p>
           <p>Human-AI communication and digital trust at Carnegie Mellon, with coursework in Responsible AI and Ethics &amp; Policy in Computing.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="band band-ink" id="numbers">
+      <div class="container">
+        <p class="band-label reveal">For the skimmers</p>
+        <div class="numbers-grid">
+          <div class="num reveal">
+            <p class="num-value"><span data-count="4">4</span>+</p>
+            <p class="num-cap">years leading research at Razorpay, Microsoft, and Meesho</p>
+          </div>
+          <div class="num reveal">
+            <p class="num-value"><span data-count="63">63</span>%</p>
+            <p class="num-cap">conversion lift after redesigning merchant onboarding</p>
+          </div>
+          <div class="num reveal">
+            <p class="num-value"><span data-count="1">1</span>M+</p>
+            <p class="num-cap">daily visits to the website we evaluated before launch</p>
+          </div>
+          <div class="num reveal">
+            <p class="num-value"><span data-count="90">90</span>%</p>
+            <p class="num-cap">of recommendations incorporated before that site shipped</p>
+          </div>
+          <div class="num reveal">
+            <p class="num-value"><span data-count="1000">1000</span>+</p>
+            <p class="num-cap">survey respondents in one strategic go/no-go study</p>
+          </div>
+        </div>
+        <p class="num-note reveal">(every number here traces to a project below)</p>
       </div>
     </section>
 
@@ -269,30 +300,35 @@
       </div>
     </section>
 
-    <section class="section container" id="about">
-      <p class="section-label reveal">About me</p>
-      <div class="about-grid">
-        <div class="reveal">
-          <p>I've spent <strong>4+ years leading research</strong> at Razorpay, Microsoft, and Meesho: strategic studies that shaped roadmaps, evaluative work that shipped, and end-to-end redesigns. Much of it has been helping everyday users and people with low tech literacy make sense of complex systems, and helping teams act on what they said.</p>
-          <p>At <strong>Carnegie Mellon (MHCI, Class of 2026)</strong> I'm extending that foundation toward AI: coursework in Augmenting Intelligence, Responsible AI, and Ethics &amp; Policy in Computing, exploring how responsible design and research can guide the next generation of intelligent systems.</p>
-        </div>
-        <div class="reveal">
-          <div class="chips">
-            <span class="chip c1">Low tech literacy users</span>
-            <span class="chip c2">Responsible AI</span>
-            <span class="chip c3">Service design</span>
-            <span class="chip c4">Insights &rarr; Action</span>
+    <section class="band band-ink" id="about">
+      <div class="container">
+        <p class="band-label reveal">About me</p>
+        <div class="about-grid">
+          <div class="reveal">
+            <p>I've spent <strong>4+ years leading research</strong> at Razorpay, Microsoft, and Meesho: strategic studies that shaped roadmaps, evaluative work that shipped, and end-to-end redesigns. Much of it has been helping everyday users and people with low tech literacy make sense of complex systems, and helping teams act on what they said.</p>
+            <p>At <strong>Carnegie Mellon (MHCI, Class of 2026)</strong> I'm extending that foundation toward AI: coursework in Augmenting Intelligence, Responsible AI, and Ethics &amp; Policy in Computing, exploring how responsible design and research can guide the next generation of intelligent systems.</p>
+            <div class="chips">
+              <span class="chip hot">Responsible AI</span>
+              <span class="chip">Low tech literacy users</span>
+              <span class="chip">Service design</span>
+              <span class="chip">Insights &rarr; Action</span>
+            </div>
           </div>
-          <br>
-          <aside class="book-strip">
-            <p><span class="book-label">Also</span> I contributed interviews and data collection to <em>UXR in India: A Historical Perspective</em> by Achyutha Sharma, a book on how UX research practice evolved in India. <a href="https://drive.google.com/file/d/1OE4_fKTRbh5BZhSPK1xqvbna47DufFee/view" target="_blank" rel="noopener" class="book-link">Read it here</a></p>
-          </aside>
+          <div class="reveal">
+            <p class="elsewhere-label">Beyond the day job</p>
+            <ul class="elsewhere">
+              <li><span class="el-tag">CHI 2026</span> Full paper: <em>Lost in Transcription: Subtitle Errors in Automatic Speech Recognition Reduce Speaker and Content Evaluations</em>.</li>
+              <li><span class="el-tag">1st place</span> US AI Policy Hackathon, deepfakes and elections track.</li>
+              <li><span class="el-tag">Community</span> Executive member of CASI; co-facilitator of an AI Governance reading group.</li>
+              <li><span class="el-tag">Book</span> Contributed interviews and data collection to <em>UXR in India: A Historical Perspective</em> by Achyutha Sharma, on how UX research practice evolved in India. <a href="https://drive.google.com/file/d/1OE4_fKTRbh5BZhSPK1xqvbna47DufFee/view" target="_blank" rel="noopener">Read it here</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer footer-flush">
     <div class="container">
       <div class="footer-cta reveal">
         <p class="label">Get in touch</p>

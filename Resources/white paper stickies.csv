@@ -1,0 +1,253 @@
+Content,Created by
+"stay on top of your inbox with Catchup
+Digests (and keeps you organized with Reminders):
+mail priority
+thematic sets
+summarise action items
+suggested response",Priyal Shrivastava
+"active thought partner and sidekick, sitting beside you and
+super-powering you as you work
+pulls relevant information from everywhere (XRay)
+multiple response options (alter ego)",Priyal Shrivastava
+"Delegate jobs to Copilot as if you were an entire team (value = cloning?).
+You are no longer working alone.
+delegate tasks when OOO (like comparing POs)
+personalized auto response 
+@copilot to pull docs, add people to meetings, set up reminders",Priyal Shrivastava
+"memory?
+“Instead of presenting a list of raw data, we believe that presenting ‘what Copilot
+understands about you’ will be more consumable and manageable and will help create a
+sense of control.”
+where is this coming from?",Priyal Shrivastava
+"“Compass organizations have an early adopter mindset and
+are comfortable with early-stage code.” 
+what are compass orgs?",Priyal Shrivastava
+"Need for inbox organisation to work in synergy with existing ways like rules and folders
+
+Other forms of inbox prioritization: rules, folders, auto delete",Priyal Shrivastava
+"It isn't enough to just inform which emails are priority, users need to see them grouped for it to be useful",Priyal Shrivastava
+"marking spam and useless mails vs marking high priority provide 2 different values. 
+marking spam and useless helps reduce clutter and ignore unimportant mails. High priority help prioritize what to read first. hence, there needs to be an optimum % of mails assigned as high priority to not dilute the feature value.",Priyal Shrivastava
+"some ways to highlight priority: time sensitive, requires action",Priyal Shrivastava
+"TRANSPARENCY is important. 
+what is the logic behind marking priority, spam etc",Priyal Shrivastava
+"““I've just typed ‘Prioritise my inbox’ and got advice on how to do it myself, not an assist from Copilot -> it told me
+that ‘This action is not currently supported.’ I guess I can't enable it even on the web version! -> I was using
+Microsoft Copilot, not Outlook copilot, but now I've found the correct copilot””
+
+multiple copilots create confusion",Priyal Shrivastava
+"Read first / prioritise inbox: Mark as priority > important to me
+
+Clean up> Mark as spam > clean my inbox (remove from my eyes)",Khyati Seth
+Iterative Prompting helps users easily refine their outputs to better suit their expectations.,Priyal Shrivastava
+"WISHLIST 
+Draft with Copilot’s outputs should take into account cultural etiquettes. (eg, right salutation when sending to someone in Japan)
+a way to give Copilot more context by adding media, text to refer from 
+a default tone option",Priyal Shrivastava
+"Draft with Copilot is useful and time saving when writing formal and/or longer emails. It saves users more time and
+effort in these scenarios",Priyal Shrivastava
+One of the biggest issues is still the fact that outputs do not match the user’s writing style.,Priyal Shrivastava
+"Outlook Drafts is missing a noticeable amount of contextual information compared to other Copilot drafting
+experiences. ",Priyal Shrivastava
+Need more details about M365 chat,Priyal Shrivastava
+Need to know current implementation to have opinions and takeaways from the redesign,Priyal Shrivastava
+"Draft with Copilot often needs extended hands-on-time prompting, and/or multiple iterations that require an increased
+amount of time and effort. This increased time-investment defeats the time-saving purpose of the feature",Priyal Shrivastava
+"There are many papers published on AI in email writing, we should refer to those as well for common issues like tone and time investment",Priyal Shrivastava
+“refining is much easier and feels more natural than asking Copilot to start a draft.”,Priyal Shrivastava
+"Useful for fixing grammar 
+writing more formal mails 
+convey the point in a pleasant way 
+adding unexpected delight in light conversations through features like poem
+articulating ideas in proper english",Priyal Shrivastava
+"users compare draft with outlook with M365 chat and find it less effective
+
+“If there’s an opportunity for us to manually feed some information, similar to what chat does.'
+Please take a look at this, and prepare an email with key points for these presentations'. It seems
+like the Microsoft Chat can do it, but then again I’d have to switch between different Copilots.”",Priyal Shrivastava
+Drafts need to continuously train and improve based on previous tweaks and user’s tonality,Priyal Shrivastava
+"Inaccuracy in drafts reduces trust: creating imaginary team members, getting the sender’s title wrong, confusing sender & receivers company etc",Priyal Shrivastava
+Draft outputs need formatting like bullets and bold,Priyal Shrivastava
+"Draft outputs can sometimes have too much filler words, users consider some of this content to
+be fluff and unnecessary.",Priyal Shrivastava
+"PRIORITISING EMAILS
+The biggest concern is in around accuracy, users feel as if the feature might incorrectly prioritize an email. This could prove
+counterproductive as users can feel inclined to over-triage to make sure
+Copilot did not miss something.
+AGENCY IS IMP",Priyal Shrivastava
+"TRAINING
+Crucial to build trust in the system since there is high anxiety around the idea of Copilot mis-categorizing emails,
+concern: needs additional time and effort from the user to train the model
+ideas: role based templates of priority",Priyal Shrivastava
+"LYRA
++ Useful for long threads.
++ saves time
++ provides a path of least resistance to reach linked MS docs
+-fear of redundancy in long threads
+-concerns over technical language handling
+-fear of inaccuracy
+! It’s important for the summary to reflect what has already been
+taken care of in a thread, to let the user know their action is no longer needed.",Priyal Shrivastava
+"MICROSUMMARY 
+Needs high trust to work
+Content + action item + timeline of response 
+for few emails vs all is a conflict: some want it only for important mails to differentiate them, others want it for all for consistency.
+-could be ambiguous for longer mails
+-shorter summary creates more lack of trust",Priyal Shrivastava
+"PRIORITY LABEL
+It isn’t so much that users want to actively spot unimportant emails, they speak more towards wanting the system to group and push them away so they don’t have to pay attention.",Priyal Shrivastava
+what’s the difference between Lyra & copilot?,Priyal Shrivastava
+"proactively and
+intelligently automating tasks and workflows.
+NEW DESIGN CONCEPTS Note to Self | Digest Catch-up | Auto-RSVP | Inbox Prioritize",Priyal Shrivastava
+"A more intelligent assistant that learns over time: Users are looking for Copilot to intelligently
+analyze their behaviors and routine to help them make decisions, reduce their inboxes, and
+respond to emails. They want Copilot to take in more context and data and propose
+recommendations based on that.",Priyal Shrivastava
+"helping users
+reduce and manage their emails.
+NEW DESIGN CONCEPTS Note to Self | Digest Catch-up | Inbox Prioritize",Priyal Shrivastava
+"As a user, I want:
+Fewer emails: Reducing the volume of emails or automating their sorting to decrease
+clutter.
+• Clear prioritization: To know which emails to focus on first based on urgency or
+importance.
+• Email Progress tracking: To visually see that I’m making progress in managing my inbox,
+helping reduce the feeling of being overwhelmed.",Priyal Shrivastava
+"helping users be
+productive and stay on tasks by optimizing their calendar, time, and tasks.
+NEW DESIGN CONCEPTS Focus Time | Note to Self | Digest Catch-up | Time Insights",Priyal Shrivastava
+"As a user, I want:
+• Support in preparing and optimizing my tasks, calendar, and weekly schedule
+• Recognition and validation for my progress and improvements
+• Tools to help me stay on task and organized throughout the day/week
+• To use Copilot to utilize and learn new features more effectively",Priyal Shrivastava
+"As a user, I want:
+• To protect my time and attention: Help with taking breaks when needed, help preserving
+focus time to work on specific projects/tasks
+• Less interruptions in my workday",Priyal Shrivastava
+"As a user, I want:
+• Email Response Assistance: To get unstuck when writing an email, automate responses
+for me
+• Reduce emails: Intelligently and quickly reduce my inbox and unread messages
+• Copilot to learn from me and my old prompts: Copilot to reminder my old prompts – not
+regenerate and start net new each time they use Copilot",Priyal Shrivastava
+"helping users
+protect their attention and wellbeing by improving breaks and boundaries.
+NEW DESIGN CONCEPTS Focus Time | Breaks & Routines | Boundaries with Working Hours",Priyal Shrivastava
+"Communication, Collaboration
+Daily Stand ups for project updates, Regular agenda
+based meetings & working sessions, progress share-
+out's with clients, leadership, team members, etc",Priyal Shrivastava
+"Ticketing & Timeline tracking for a
+project
+Tracking everyday tasks and updates of the project,
+maintaining project timlines, etc.",Priyal Shrivastava
+"Personalised to
+Assist Me
+Knows who I am, my role & my organisation and the work I am doing. It is able to comprehend data from aggregated sources to provide a custom view for me & my work with autonomy & control.",Priyal Shrivastava
+"Contextually
+Aware of my
+Workflows 
+Knows which apps & data am I working with and helps me get my job done with a hired app of my choice. While enhancing each hired apps super powers & not replacing them.",Priyal Shrivastava
+"Provides Smart
+Suggestions
+Helps me by proactively sharing blockers, prioritises my tasks by understanding my timelines, helps me take decisions, provides contextually relevant suggestions.",Priyal Shrivastava
+"Automates
+Mundane tasks
+Helps me save time, by
+taking care of mundane
+tasks like duplication. Which are important to maintain context but prone to human errors & waste of time.",Priyal Shrivastava
+"Provides Visually
+Comprehensive Data
+Outputs
+Data should be presented in a way that is relevant to the work getting done & easy to comprehend. Additionally Copilot assistance & tips can add value. Ex. Kanban boards, tables, dashboards, etc.",Priyal Shrivastava
+JTBDs in Outlook,Priyal Shrivastava
+copilot as chief of staff,Priyal Shrivastava
+Map JTBDs to personas,Priyal Shrivastava
+"what are competitors doing?
+reminders
+language suggestions",Priyal Shrivastava
+"Current state of copilot
+people are unaware, need to be exposed and educated",Priyal Shrivastava
+What can copilot do?,Priyal Shrivastava
+What is copilot currently doing? all the different manifestations like M365 chat,Priyal Shrivastava
+How do those tasks scale to Outlook?,Priyal Shrivastava
+Fear of inaccuracy and giving agency to the user are strong recurring themes,Priyal Shrivastava
+"Proactive
+On Demand
+Prompt
+Automated",Khyati Seth
+"Draft vs Write vs Summary?
+
+
+Copilot needs to replicate my tone of language, it doesnt sound like me anymore",Khyati Seth
+"Automation = Transparency 
+
+Without transparency on how you care automating and collecting data. I will not trust you.",Khyati Seth
+"Inbox Management
+Prioritization
+Trust = transparency + habit building
+Transparency & automation
+Summary gaps
+Writing gaps
+JTBD’s
+One Copilot
+Actions & next steps (1P, 2P, 3P)
+Proactive, reactive, automated, suggested",Khyati Seth
+"Clean up my inbox, declutter my inbox, prioritise only what I want to see, dont show the rest in my inbox at all.",Khyati Seth
+"What does success? And effectiveness look like for the users?  - ACURE model
+-Trust, Learnability, agency, etc.
+-Various modules: Tools we have built | Voice, writing, @mention (search), do something for me (add a task, write an email, analyising)
+Work JTBD’s 
+Outlook JTBD’s",Khyati Seth
+"Accurate – The contents of the response are factually correct
+Complete – The response does not leave anything important out
+Relevant – The response addresses your need and not something else
+Useful – The response helps you achieve your goal
+Exceptional – The response is better than what can be achieved another way",Priyal Shrivastava
+Journey & JTBD’s across the journey,Khyati Seth
+"broad modules of copilot 
+writing 
+information gathering
+doing tasks 
+automating flows 
+suggesting tasks?
+Successful copilot interventions 
+where all has copilot been successful so far
+Copilot in Outlook
+GOAL: act as CoS (what does that mean? reduce interruptions, Automate Mundane tasks etc)
+suggested features 
+Automate tasks: prioritise inbox, declutter inbox, summaries
+Delegate tasks: OOF scenarios 
+Suggested tasks: optimise calendar & weekly schedules
+Help with tasks: help write mails, XRay responses
+Feedback collation for these features
+Guidelines
+overall positioning of copilot as CoS (one copilot)
+guidelines across different types of tasks: Proactive, On Demand, Prompt, Automated (trust, transparency, learnability, control)
+TTDs:
+features to focus on 
+how are competitors doing those features",Priyal Shrivastava
+" broad capabilities of copilot   1.1 writing   1.2 information gathering  1.3 automating flows   1.4 suggesting tasks for optimisation etc
+Successful copilot interventions   2.1 where all has copilot been successful so far across MS
+Copilot in Outlook  3.1 GOAL: act as CoS (what does that mean? reduce interruptions, Automate Mundane tasks etc). A day in the life  3.2 suggested features & things to keep in mind (from feedback)         3.2.1 Automate tasks: prioritise inbox, declutter inbox, summaries         3.2.2 Delegate tasks: OOF scenarios          3.2.3 Suggested tasks: optimise calendar & weekly schedules         3.2.4 Help with tasks: help write mails, XRay responses
+Guidelines  4.1 overall positioning of copilot as CoS (one copilot)  4.2 guidelines across different types of tasks: Proactive, On Demand, Prompt, Automated (trust, transparency, learnability, control)
+TTDs:  5.1 features to focus         5.1.1 MVP       5.1.2 how are competitors doing those features",Priyal Shrivastava
+What is Copilot from a M365 lens?,Priyal Shrivastava
+where all is copilot currently succeeding,Priyal Shrivastava
+JTBD's of outlook,Priyal Shrivastava
+OOF scenario (P1),Priyal Shrivastava
+lack of trust renders X types of tasks useless,Priyal Shrivastava
+"what does it mean to build (trust, transparency, learnability control, etc). Guidelines",Priyal Shrivastava
+What do users expect from Copilot?,Priyal Shrivastava
+what is the vision of copilot - as CoS,Priyal Shrivastava
+broad buckets of problems we want to solve/ opportunity areas,Priyal Shrivastava
+copilot agents,Priyal Shrivastava
+lack of transparency renders automated tasks useless,Priyal Shrivastava
+,Priyal Shrivastava
+Summarise,Priyal Shrivastava
+learnability is imp to improve accuracy,Priyal Shrivastava
+"copilot voice
+copilot categorise",Priyal Shrivastava
+,Priyal Shrivastava

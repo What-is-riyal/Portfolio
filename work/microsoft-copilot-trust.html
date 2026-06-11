@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earning trust before automating | Priyal Shrivastava</title>
+  <meta name="description" content="A strategic synthesis on a trust-first adoption framework for AI assistance in Outlook, arguing that transparency, controllability, and learnability are prerequisites for users to accept on-demand, then proactive, then automatic AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="logo">ps<span class="dot">.</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html#work" class="active">Work</a></li>
+          <li><a href="../play.html">Play</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <a href="../index.html#work" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3L5 8l5 5"/></svg>
+      All work
+    </a>
+
+    <section class="project-hero">
+      <p class="project-company">Microsoft</p>
+      <h1>Earning trust before automating</h1>
+      <p class="project-summary">A strategic synthesis on what it would take for an AI assistant in Outlook to earn progressively deeper roles in someone's inbox, from on-demand helper, to proactive partner, to an agent that acts on its own.</p>
+    </section>
+
+    <div class="project-meta reveal">
+      <div class="meta-item">
+        <p class="meta-label">Role</p>
+        <p class="meta-value">Lead author, UXR synthesis</p>
+      </div>
+      <div class="meta-item">
+        <p class="meta-label">Year</p>
+        <p class="meta-value">2025</p>
+      </div>
+      <div class="meta-item">
+        <p class="meta-label">Format</p>
+        <p class="meta-value">Strategic point-of-view paper</p>
+      </div>
+      <div class="meta-item">
+        <p class="meta-label">Status</p>
+        <p class="meta-value">Under NDA, framework shown</p>
+      </div>
+    </div>
+
+    <article class="project-body">
+
+      <div class="callout reveal">
+        <p>This paper was written under NDA with Microsoft. What follows describes the framework, its structure, and the reasoning behind it. Internal research findings, product roadmaps, and specific feature names have been omitted.</p>
+      </div>
+
+      <h2 class="reveal">Background</h2>
+      <p class="reveal">Outlook's AI assistant was expanding quickly: into task management, scheduling, email drafting, out-of-office handoffs, and inbox prioritization, each shipped somewhat independently. I was asked to step back from any single feature and synthesize a year's worth of research across these areas into one point of view: what does it actually take for people to trust an AI assistant enough to let it do more on their behalf?</p>
+      <p class="reveal">I substantially authored this paper, pulling together findings from multiple studies into a single strategic argument rather than a feature-by-feature report.</p>
+
+      <h2 class="reveal">The core argument</h2>
+      <p class="reveal">Across every study we synthesized, the same tension showed up: people wanted an assistant that anticipated their needs and took work off their plate, but they did not trust it enough to let it act without supervision. People described an ideal assistant as something like a chief of staff, someone who knows their role, their priorities, and their working style well enough to act on their behalf. But the assistants they were actually using fell short on basic things: getting names and dates right, understanding context, and explaining why they'd done something.</p>
+      <p class="reveal">The paper's central claim is that AI assistance in a tool like Outlook earns its way into deeper roles along a ladder, and skipping rungs on that ladder is what causes trust to collapse.</p>
+
+      <div class="phase reveal">
+        <span class="phase-number">1</span>
+        <div>
+          <h3>On-demand</h3>
+          <p>The user explicitly asks for help: summarize this thread, draft a reply, find this email. The assistant only acts when invoked, and its output is checked before anything happens. This is where most people's trust currently sits, and for many features, it's the only mode they're comfortable with today.</p>
+        </div>
+      </div>
+
+      <div class="phase reveal">
+        <span class="phase-number">2</span>
+        <div>
+          <h3>Proactive</h3>
+          <p>The assistant surfaces suggestions, summaries, or prioritization without being asked, but still leaves the action to the user. This is a meaningful jump: it requires the assistant to correctly judge what's relevant and worth surfacing, and to explain why, or risk being ignored, distrusted, or perceived as noise.</p>
+        </div>
+      </div>
+
+      <div class="phase reveal">
+        <span class="phase-number">3</span>
+        <div>
+          <h3>Automatic</h3>
+          <p>The assistant takes action on the user's behalf, sending a reply, archiving an email, rescheduling a meeting, within boundaries the user has set. This is the highest-trust mode, and the paper argues it should only be extended to scenarios where the assistant has already demonstrated reliability at the on-demand and proactive stages, with clear, user-defined limits on what it's allowed to do unsupervised.</p>
+        </div>
+      </div>
+
+      <div class="callout reveal">
+        <p><strong>The framing in one line:</strong> automation isn't something to design directly into a feature. It's something a feature earns, by first being transparent and useful on demand, then proactively useful enough to be trusted, before it's ever handed the keys.</p>
+      </div>
+
+      <h2 class="reveal">Three prerequisites</h2>
+      <p class="reveal">The paper grounds this ladder in three prerequisites, drawn directly from where trust consistently broke down across the research we synthesized.</p>
+
+      <div class="phase reveal">
+        <span class="phase-number">T</span>
+        <div>
+          <h3>Transparency</h3>
+          <p>People need to understand what the assistant is looking at, why it made a particular suggestion, and what it will or won't do without asking. When an assistant operates as a black box, even small mistakes (a wrong name, a misread date) generalize into "I can't trust this for anything important." Transparency was consistently the difference between a mistake that eroded trust and a mistake that didn't.</p>
+        </div>
+      </div>
+
+      <div class="phase reveal">
+        <span class="phase-number">C</span>
+        <div>
+          <h3>Controllability</h3>
+          <p>People need a real, accessible way to correct the assistant, adjust its boundaries, and define what it's allowed to do automatically versus what always needs their sign-off. Several studies found that control settings existed but were too hard to find, which functionally meant they didn't exist for most users. Controllability isn't a settings page; it has to be reachable in the moment a person needs it.</p>
+        </div>
+      </div>
+
+      <div class="phase reveal">
+        <span class="phase-number">L</span>
+        <div>
+          <h3>Learnability</h3>
+          <p>An assistant that makes the same correctable mistake repeatedly teaches people not to bother correcting it. People consistently said they didn't expect perfection, but they did expect the assistant to get better at being them, in their tone, their priorities, their habits, over time. Without visible learning, every interaction resets to zero, and the relationship never deepens enough to support more autonomous behavior.</p>
+        </div>
+      </div>
+
+      <h2 class="reveal">How it was used</h2>
+      <p class="reveal">The framework gave teams working on different features, prioritization, drafting, scheduling, out-of-office handoffs, a shared way to evaluate their own roadmaps: which rung of the ladder is this feature actually operating at, and does it meet the transparency, controllability, and learnability bar for that rung? It also gave a vocabulary for flagging when a feature was attempting to behave automatically before it had earned proactive trust, which several research studies had identified as a recurring failure pattern.</p>
+
+      <h2 class="reveal">Reflection</h2>
+      <p class="reveal">Writing this paper was the first time I worked primarily as a synthesizer rather than a primary researcher, pulling together other people's studies into a single argument. It taught me that the hardest part of strategic research often isn't generating new findings, it's recognizing when several studies are independently describing the same underlying problem from different angles, and naming that problem in a way that travels across teams.</p>
+      <p class="reveal">It also crystallized something I now carry directly into how I think about AI governance: trust in an automated system isn't a single property you either have or don't. It's something that has to be built in stages, with transparency and control as the foundation, before broader autonomy is either safe or accepted. That staged view of trust is one of the throughlines connecting my UX research background to the work I want to do next.</p>
+
+    </article>
+
+    <div class="next-project reveal">
+      <p class="label">Next project</p>
+      <a href="razorpay-d2c.html">What makes merchants pay and consumers play?
+        <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cta reveal">
+        <p class="label">Get in touch</p>
+        <a class="big-link" href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Priyal Shrivastava</span>
+        <div class="footer-links">
+          <a href="mailto:priyalshri1@gmail.com">Email</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

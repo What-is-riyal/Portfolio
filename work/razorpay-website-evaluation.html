@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What does a homepage say in ten seconds? | Priyal Shrivastava</title>
+  <meta name="description" content="An evaluative study Priyal proposed before Razorpay shipped a homepage redesign to 1M+ daily visitors: a layered battery of premortem, UX audit, impression, perception, usability and preference testing that lifted conversion 10%.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ============ Showpiece page styles: website evaluation ============ */
+    :root {
+      --ink: #0A1020;
+      --royal: #1D4ED8;     /* 6.3:1 on white */
+      --serif: "Fraunces", Georgia, serif;
+    }
+    .fold-dark { --royal: #93C5FD; } /* 10+:1 on ink */
+
+    body { background: #FFFFFF; overflow-x: hidden; }
+    .progress { background: var(--royal); }
+
+    .kicker {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--royal); margin-bottom: 20px;
+    }
+    .strip { padding: 110px 0; position: relative; }
+    .strip h2 {
+      font-size: clamp(30px, 4.5vw, 50px); font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.12; max-width: 24ch; margin-bottom: 28px;
+    }
+    .strip h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--royal); }
+    .prose { max-width: 680px; }
+    .prose p { font-size: 17px; line-height: 1.75; color: #3C3C44; margin-bottom: 20px; }
+    .prose strong { font-weight: 700; color: var(--text); }
+    .fold-dark { background: var(--ink); color: #fff; }
+    .fold-dark .prose p { color: rgba(255,255,255,0.75); }
+    .fold-dark .prose strong { color: #fff; }
+    .fold-dark h2 { color: #fff; }
+
+    .fx { opacity: 0; transform: translateY(36px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
+    .fx.in { opacity: 1; transform: none; }
+
+    /* ============ Hero ============ */
+    .hero-light {
+      min-height: 88vh; display: flex; flex-direction: column; justify-content: center;
+      position: relative; overflow: hidden; padding: 80px 0;
+      background:
+        radial-gradient(620px circle at 12% 85%, rgba(29, 78, 216, 0.07), transparent 60%),
+        #FFFFFF;
+    }
+    .hero-light .eyebrow {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 30px; display: flex; align-items: center; gap: 10px;
+    }
+    .hero-light .eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--royal); }
+    .hero-light .q-label {
+      font-family: var(--serif); font-style: italic; font-size: clamp(17px, 2vw, 22px);
+      color: var(--royal); margin-bottom: 16px;
+    }
+    .hero-light h1 {
+      font-size: clamp(40px, 7vw, 86px); line-height: 1.05; font-weight: 800;
+      letter-spacing: -0.04em; max-width: 15ch; margin-bottom: 32px;
+    }
+    .hero-light h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--royal); }
+    .hero-standfirst {
+      font-size: clamp(17px, 2vw, 21px); color: var(--muted); max-width: 56ch;
+      line-height: 1.7; margin-bottom: 44px;
+    }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pchip {
+      font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
+      border: 1px solid var(--border); color: var(--muted); background: #fff;
+    }
+    .pchip.accent { border-color: rgba(29, 78, 216, 0.4); color: var(--royal); }
+
+    /* Ten-second countdown ring in hero */
+    .hero-ring {
+      position: absolute; right: 8%; top: 50%; transform: translateY(-50%);
+      width: 220px; height: 220px;
+    }
+    .hero-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .hero-ring .ring-bg { fill: none; stroke: var(--border); stroke-width: 4; }
+    .hero-ring .ring-fg {
+      fill: none; stroke: var(--royal); stroke-width: 4; stroke-linecap: round;
+      stroke-dasharray: 565; stroke-dashoffset: 565;
+      animation: ring-sweep 10s linear infinite;
+    }
+    @keyframes ring-sweep { to { stroke-dashoffset: 0; } }
+    .hero-ring .ring-label {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+    }
+    .hero-ring .ring-label b { font-family: var(--serif); font-style: italic; font-size: 40px; color: var(--royal); }
+    .hero-ring .ring-label span { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); max-width: 14ch; }
+    @media (max-width: 1100px) { .hero-ring { display: none; } }
+
+    /* ============ Snapshot ============ */
+    .snapshot-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 28px;
+      border-top: 1px solid var(--border); padding-top: 36px; margin-top: 64px;
+    }
+    .snap-item .s-label {
+      font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 8px;
+    }
+    .snap-item .s-value { font-size: 15px; font-weight: 600; line-height: 1.5; color: var(--text); }
+    .snap-item .s-value small { display: block; font-weight: 500; font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* ============ Images ============ */
+    .shot { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); margin: 56px 0; }
+    .shot img { display: block; width: 100%; height: auto; }
+    .shot figcaption {
+      font-size: 13.5px; color: var(--muted); padding: 14px 18px; border-top: 1px solid var(--border);
+      background: var(--surface); line-height: 1.6;
+    }
+    .fold-dark .shot { border-color: rgba(255,255,255,0.12); }
+    .fold-dark .shot figcaption { background: rgba(255,255,255,0.04); border-top-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.6); }
+
+    /* Before / after pair */
+    .compare-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 56px 0; }
+    .compare-pair figure { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); margin: 0; }
+    .compare-pair img { display: block; width: 100%; height: auto; }
+    .compare-pair figcaption {
+      font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 12px 16px; background: var(--surface); border-top: 1px solid var(--border); color: var(--muted);
+    }
+    .compare-pair figcaption.new { color: var(--royal); }
+    @media (max-width: 860px) { .compare-pair { grid-template-columns: 1fr; } }
+
+    /* ============ Layer stack diagram ============ */
+    .layer-stack { margin-top: 56px; max-width: 680px; }
+    .layer {
+      border: 1px solid var(--border); border-radius: 12px; background: #fff;
+      padding: 20px 24px; margin-bottom: 12px; display: grid; grid-template-columns: 44px 1fr; gap: 18px;
+      align-items: baseline; transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .layer:hover { border-color: rgba(29, 78, 216, 0.45); transform: translateX(6px); box-shadow: 0 12px 24px -18px rgba(29, 78, 216, 0.4); }
+    .layer .l-n { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--royal); }
+    .layer b { display: block; font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+    .layer p { font-size: 14.5px; line-height: 1.65; color: var(--muted); margin: 0; }
+
+    /* ============ Test battery ============ */
+    .moves { counter-reset: move; margin-top: 64px; max-width: 760px; }
+    .move {
+      display: grid; grid-template-columns: 72px 1fr; gap: 26px; padding: 36px 0;
+      border-bottom: 1px solid var(--border); position: relative;
+    }
+    .move:last-child { border-bottom: none; }
+    .move .m-num {
+      font-family: var(--serif); font-style: italic; font-size: 44px; line-height: 1;
+      color: var(--royal);
+    }
+    .move h3 { font-size: 21px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .move p { font-size: 16px; line-height: 1.72; color: #3C3C44; margin-bottom: 10px; }
+    .move p:last-child { margin-bottom: 0; }
+    .whw { display: grid; gap: 8px; margin-top: 14px; }
+    .whw .row { display: grid; grid-template-columns: 52px 1fr; gap: 12px; font-size: 14.5px; line-height: 1.6; color: var(--muted); }
+    .whw .row b { color: var(--royal); font-weight: 800; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; padding-top: 3px; }
+    .move .m-why {
+      font-size: 14.5px; line-height: 1.65; color: var(--muted);
+      border-left: 3px solid var(--royal); padding-left: 14px; margin-top: 14px;
+    }
+    .move .m-why b { color: var(--royal); font-weight: 700; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+    /* ============ Impression test interactive ============ */
+    .imp-shell {
+      margin-top: 56px; border-radius: 16px; background: var(--ink); padding: 44px;
+      color: #fff; position: relative; overflow: hidden;
+    }
+    .imp-shell h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .imp-shell .imp-sub { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.65; max-width: 56ch; margin-bottom: 28px; }
+    .imp-stage {
+      border-radius: 12px; background: #fff; color: var(--text); min-height: 340px;
+      position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
+    }
+    .imp-start, .imp-recall { text-align: center; padding: 40px 24px; }
+    .imp-btn {
+      font-size: 15px; font-weight: 800; color: #fff; background: var(--royal);
+      border: none; border-radius: 999px; padding: 14px 28px; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .imp-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -12px rgba(29, 78, 216, 0.6); }
+    .imp-count {
+      position: absolute; top: 14px; right: 16px; z-index: 3;
+      font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--royal);
+      background: #fff; border: 1px solid var(--border); border-radius: 999px;
+      width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+    }
+    /* The mock fold shown for ten seconds */
+    .mock-fold { position: absolute; inset: 0; background: #fff; padding: 36px 40px; display: none; flex-direction: column; }
+    .mock-fold.show { display: flex; }
+    .mock-nav { display: flex; align-items: center; gap: 18px; margin-bottom: 40px; }
+    .mock-logo { width: 30px; height: 30px; border-radius: 8px; background: var(--royal); }
+    .mock-nav span { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+    .mock-nav .mock-cta {
+      margin-left: auto; font-size: 12.5px; font-weight: 800; color: #fff; background: var(--ink);
+      border-radius: 8px; padding: 8px 16px;
+    }
+    .mock-hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; flex: 1; }
+    .mock-hero h4 { font-size: clamp(20px, 2.6vw, 32px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 14px; }
+    .mock-hero h4 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--royal); }
+    .mock-hero p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 18px; max-width: 38ch; }
+    .mock-pill { display: inline-block; font-size: 12.5px; font-weight: 800; color: #fff; background: var(--royal); border-radius: 8px; padding: 10px 18px; }
+    .mock-visual {
+      border-radius: 12px; background: linear-gradient(135deg, #DBEAFE, #EFF6FF);
+      height: 100%; min-height: 160px; display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+    }
+    @media (max-width: 700px) { .mock-hero { grid-template-columns: 1fr; } .mock-visual { min-height: 100px; font-size: 36px; } }
+    .imp-recall { display: none; }
+    .imp-recall.show { display: block; }
+    .imp-recall h4 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+    .imp-recall p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 52ch; margin: 0 auto 20px; }
+    .imp-answers { display: none; text-align: left; max-width: 480px; margin: 24px auto 0; }
+    .imp-answers.show { display: block; }
+    .imp-answers li { font-size: 14.5px; line-height: 1.6; color: #3C3C44; padding: 8px 0 8px 24px; position: relative; list-style: none; }
+    .imp-answers li::before { content: "\2713"; position: absolute; left: 0; color: var(--royal); font-weight: 800; }
+    .imp-note { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 18px; line-height: 1.6; max-width: 64ch; }
+    @media (max-width: 768px) { .imp-shell { padding: 28px 18px; } }
+
+    /* ============ Outcome ============ */
+    .stats-band { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; max-width: 740px; }
+    .stat-card { border-radius: 14px; border: 1px solid rgba(255,255,255,0.12); padding: 28px 24px; }
+    .stat-card .sc-num { font-family: var(--serif); font-style: italic; font-size: clamp(38px, 4.5vw, 54px); color: #93C5FD; line-height: 1; margin-bottom: 8px; }
+    .stat-card .sc-label { font-size: 13.5px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+    @media (max-width: 640px) { .stats-band { grid-template-columns: 1fr; } }
+
+    .nda-pill {
+      display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600;
+      color: var(--muted); border: 1px dashed var(--border); border-radius: 999px; padding: 10px 20px;
+      margin-bottom: 32px;
+    }
+    .nda-pill .dot-pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--royal); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+    /* Footer over dark end */
+    .closing { background: var(--ink); color: #fff; padding: 120px 0 0; }
+    .closing .footer { border-top-color: rgba(255,255,255,0.12); margin-top: 80px; }
+    .closing .footer-bottom, .closing .footer-cta .label { color: rgba(255,255,255,0.5); }
+    .closing .big-link { color: #fff; }
+    .closing .next-project { border-top: none; margin-top: 0; }
+    .closing .next-project .label { color: rgba(255,255,255,0.5); }
+    .closing .next-project a { color: #fff; }
+    .closing .next-project a:hover { color: var(--royal); }
+    .closing .footer-links a:hover { color: var(--royal); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-ring .ring-fg { animation: none; stroke-dashoffset: 140; }
+      .fx { opacity: 1; transform: none; transition: none; }
+      .layer:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress" id="progress"></div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero-light">
+    <header class="nav">
+      <div class="container nav-inner">
+        <a href="../index.html" class="logo">ps<span class="dot">.</span></a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="../index.html#work" class="active">Work</a></li>
+            <li><a href="../play.html">Play</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../resume.html">Resume</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="hero-ring" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><circle class="ring-bg" cx="100" cy="100" r="90"/><circle class="ring-fg" cx="100" cy="100" r="90"/></svg>
+      <div class="ring-label"><b>10s</b><span>is all a first fold gets</span></div>
+    </div>
+
+    <div class="container">
+      <p class="eyebrow">Razorpay &middot; Evaluative research &middot; 2023</p>
+      <p class="q-label fx in">The question</p>
+      <h1 class="fx in">What does a homepage say in <em>ten seconds?</em></h1>
+      <p class="hero-standfirst fx in">Razorpay was about to replace its homepage, a page seen by over a million visitors a day, with a redesign that traded tech-first language for a human-first voice. No one had planned to test it before launch. I proposed the study that did, and built it as a battery of small tests that could each isolate one way the new page might fail.</p>
+      <div class="hero-chips fx in">
+        <span class="pchip">UX Researcher</span>
+        <span class="pchip">6 weeks, Nov 2023</span>
+        <span class="pchip">Self-proposed study</span>
+        <span class="pchip accent">Findings under NDA &middot; method shown</span>
+      </div>
+
+      <div class="snapshot-grid fx in">
+        <div class="snap-item">
+          <p class="s-label">My role</p>
+          <p class="s-value">UX Researcher<small>proposed, designed, and ran the study</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Timeline</p>
+          <p class="s-value">6 weeks<small>November 2023, before launch</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Stakeholders</p>
+          <p class="s-value">Design, content, PM<small>plus comms and marketing</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Participants</p>
+          <p class="s-value">10 business owners<small>not current Razorpay users, blinded remote sessions</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Outcome</p>
+          <p class="s-value">10% lift in conversion<small>90% of recommendations adopted</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BACKGROUND ============ -->
+  <section class="strip">
+    <div class="container">
+      <p class="kicker fx">Background</p>
+      <h2 class="fx">A new face for a page with a <em>million</em> daily visitors</h2>
+      <div class="prose">
+        <p class="fx">Razorpay built its name on a payments gateway, and its homepage looked the part: dark, technical, dense with product language. As the company expanded into neobanking, payroll, and lending, it wanted the brand to feel approachable to smaller, less tech-savvy businesses. The redesigned homepage led with a photograph of a small business owner and the line "payments made easy for the ones who solve the hard problems."</p>
+        <p class="fx"><strong>There was no research planned for this launch.</strong> The redesign was a brand and design initiative, moving fast toward a date. I proposed the evaluation: a page this trafficked, changing this much, deserved evidence that the new warmth didn't cost it comprehension. Getting the study agreed to, scoped around the launch deadline, and useful to five different stakeholder teams was as much the work as running it.</p>
+      </div>
+
+      <div class="compare-pair fx">
+        <figure>
+          <img src="../assets/img/website-eval/old-homepage.png" alt="The previous Razorpay homepage: dark navy background, isometric 3D illustration, headline 'Power your finance, grow your business'.">
+          <figcaption>Before: tech-first</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/img/website-eval/new-homepage.png" alt="The redesigned Razorpay homepage: light background, photo of a small business owner, headline 'Payments made easy for the ones who solve the hard problems'.">
+          <figcaption class="new">After: human-first</figcaption>
+        </figure>
+      </div>
+
+      <div class="prose">
+        <p class="fx">The risk wasn't that the new page was ugly. It clearly wasn't. The risk was subtler: that in chasing look and feel, the page would stop answering the only questions a first-time visitor brings to it. What does this company do? Is it for someone like me? Can I trust it with money?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE LAYERED DESIGN ============ -->
+  <section class="strip" style="padding-top: 0;">
+    <div class="container">
+      <p class="kicker fx">The design of the study</p>
+      <h2 class="fx">One variable per <em>layer</em></h2>
+      <div class="prose">
+        <p class="fx">A single usability test would have returned a single verdict: people like it, or they don't. That's not actionable for a content team, a visual design team, and a product team who each own a different slice of the page. So the study was built as layers, each isolating one variable, so that when something failed we would know exactly which layer it failed at, and which team could fix it.</p>
+      </div>
+
+      <div class="layer-stack fx">
+        <div class="layer"><span class="l-n">1</span><div><b>Visuals alone</b><p>Strip the copy out entirely. What do the images, layout, and color say about who this company is for?</p></div></div>
+        <div class="layer"><span class="l-n">2</span><div><b>Visuals plus copy</b><p>Add the real words back. Does comprehension improve, or does the copy fight the visuals?</p></div></div>
+        <div class="layer"><span class="l-n">3</span><div><b>Full interaction</b><p>Let people use the page. Where does navigation break, and what does the whole experience do to brand perception?</p></div></div>
+        <div class="layer"><span class="l-n">4</span><div><b>Against the old page</b><p>Put the previous homepage next to it. Is the new one actually better, and can participants say why?</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METHOD: the battery ============ -->
+  <section class="strip" style="padding-top: 0;">
+    <div class="container">
+      <p class="kicker fx">Method</p>
+      <h2 class="fx">Six instruments, in <em>order</em></h2>
+      <div class="prose">
+        <p class="fx">Two internal rounds came first, so participant time was spent on questions only participants could answer. Then 10 business owners, none of them current Razorpay users, went through the layered tests in blinded, 50-minute remote sessions run on Lookback and Google Meet, against Figma prototypes, with Typeform capturing structured responses.</p>
+      </div>
+
+      <div class="moves">
+        <div class="move fx">
+          <span class="m-num">1</span>
+          <div>
+            <h3>Design premortem</h3>
+            <div class="whw">
+              <div class="row"><b>What</b><span>A workshop with design, content, and product stakeholders, imagining the launch had already failed and working backward to why.</span></div>
+              <div class="row"><b>Why</b><span>To surface the team's own hypotheses and knowledge gaps, which became the specific things the later tests were built to check.</span></div>
+              <div class="row"><b>How</b><span>Structured failure-imagining, clustered into testable hypotheses and ranked by how costly each failure would be.</span></div>
+            </div>
+            <p class="m-why"><b>Why start here</b> A premortem turns stakeholders from an audience into co-authors. Every team saw their own fear on the test plan, which is a large part of why 90% of the findings later landed.</p>
+          </div>
+        </div>
+        <div class="move fx">
+          <span class="m-num">2</span>
+          <div>
+            <h3>UX audit</h3>
+            <div class="whw">
+              <div class="row"><b>What</b><span>An internal review of the design and prototype with product designers from across the organization.</span></div>
+              <div class="row"><b>Why</b><span>To catch hygiene issues internally, so external sessions weren't spent rediscovering problems a designer could spot in an afternoon.</span></div>
+              <div class="row"><b>How</b><span>Heuristic walkthroughs of the prototype, logged and fixed before any participant saw it.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="move fx">
+          <span class="m-num">3</span>
+          <div>
+            <h3>Impression test</h3>
+            <div class="whw">
+              <div class="row"><b>What</b><span>Participants saw a stripped-down first fold for exactly ten seconds.</span></div>
+              <div class="row"><b>Why</b><span>To learn which elements of the first fold actually register in the time a real visitor gives it.</span></div>
+              <div class="row"><b>How</b><span>The screen share stopped after ten seconds, and participants listed everything they remembered seeing.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="move fx">
+          <span class="m-num">4</span>
+          <div>
+            <h3>Visual perception test</h3>
+            <div class="whw">
+              <div class="row"><b>What</b><span>Free exploration of the full page with every word replaced by Lorem Ipsum.</span></div>
+              <div class="row"><b>Why</b><span>To isolate what the visuals alone communicate about the company and its audience, before copy can compensate.</span></div>
+              <div class="row"><b>How</b><span>Participants explored a static prototype, described what they thought the company did and who it served, then picked 5 of 12 descriptive words, a deliberate mix of on-brand and off-brand terms, to characterize the visual language.</span></div>
+            </div>
+            <p class="m-why"><b>The detail that mattered</b> Mixing irrelevant words into the word-choice task keeps it honest. If participants only see flattering options, they'll pick flattering options.</p>
+          </div>
+        </div>
+        <div class="move fx">
+          <span class="m-num">5</span>
+          <div>
+            <h3>Usability test, with SUS</h3>
+            <div class="whw">
+              <div class="row"><b>What</b><span>Free exploration, then guided tasks, on the full prototype with real copy and interactions.</span></div>
+              <div class="row"><b>Why</b><span>To test final brand perception and the premortem's specific hypotheses, and to find usability issues in context.</span></div>
+              <div class="row"><b>How</b><span>Participants described what the company did, completed a product discovery task, rated the brand on three levers, repeated the word-choice task, and gave a System Usability Scale score.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="move fx">
+          <span class="m-num">6</span>
+          <div>
+            <h3>Preference test</h3>
+            <div class="whw">
+              <div class="row"><b>What</b><span>A side-by-side comparison with the homepage being replaced.</span></div>
+              <div class="row"><b>Why</b><span>To measure improvement directly rather than assume it, and to hear in participants' own words what the redesign changed.</span></div>
+              <div class="row"><b>How</b><span>Participants explored the old site, articulated the differences, repeated the brand-perception and word-choice tasks, and stated a preference with a reason.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <figure class="shot fx">
+        <img src="../assets/img/website-eval/premortem.png" alt="Artifacts from the design premortem workshop: clustered sticky notes capturing imagined failure modes and the hypotheses derived from them.">
+        <figcaption>The premortem board: imagined failures, clustered into the hypotheses the battery would test.</figcaption>
+      </figure>
+      <figure class="shot fx">
+        <img src="../assets/img/website-eval/ux-audit.png" alt="Screenshot of the internal UX audit in progress, with annotated issues logged against the prototype.">
+        <figcaption>The internal UX audit, run before any external participant saw the prototype.</figcaption>
+      </figure>
+      <figure class="shot fx">
+        <img src="../assets/img/website-eval/perception-test.png" alt="The visual perception test setup: the homepage with all copy replaced by Lorem Ipsum, alongside the descriptive word-choice task.">
+        <figcaption>The perception test: the page with its words removed, so the visuals had to speak for themselves.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ IMPRESSION TEST INTERACTIVE ============ -->
+  <section class="strip" style="padding-top: 0;">
+    <div class="container">
+      <p class="kicker fx">Feel it yourself</p>
+      <h2 class="fx">Take the <em>ten-second</em> test</h2>
+      <div class="prose">
+        <p class="fx">This is the impression test from step three, rebuilt with an invented homepage so it spoils nothing under NDA. You'll see a first fold for ten seconds. Then it disappears, and you answer the same question participants did.</p>
+      </div>
+
+      <div class="imp-shell fx">
+        <h3>Impression test</h3>
+        <p class="imp-sub">When the fold appears, just look at it the way you'd look at any site you landed on. No need to memorize. That's the point.</p>
+        <div class="imp-stage" id="impStage">
+          <div class="imp-start" id="impStart">
+            <button class="imp-btn" id="impBegin">Show me the page for 10 seconds</button>
+          </div>
+          <div class="imp-count" id="impCount" style="display:none;">10</div>
+          <div class="mock-fold" id="mockFold" aria-hidden="true">
+            <div class="mock-nav">
+              <div class="mock-logo"></div>
+              <span>Products</span><span>Pricing</span><span>Docs</span>
+              <span class="mock-cta">Sign up</span>
+            </div>
+            <div class="mock-hero">
+              <div>
+                <h4>Bookkeeping that closes <em>itself.</em></h4>
+                <p>Ledgerly reconciles your invoices, expenses, and taxes automatically, so month-end takes minutes.</p>
+                <span class="mock-pill">Start free trial</span>
+              </div>
+              <div class="mock-visual">📒</div>
+            </div>
+          </div>
+          <div class="imp-recall" id="impRecall">
+            <h4>What do you remember seeing?</h4>
+            <p>Say it out loud or just think it: what was the company called, what does it do, who is it for, and what did the page want you to do next?</p>
+            <button class="imp-btn" id="impReveal">Reveal what was on the page</button>
+            <ul class="imp-answers" id="impAnswers">
+              <li>The company was called Ledgerly, an accounting tool.</li>
+              <li>The headline promised bookkeeping that "closes itself."</li>
+              <li>The call to action was a free trial; the nav also pushed "Sign up."</li>
+              <li>The visual was a ledger motif, leaning playful rather than corporate.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="imp-note">Whatever you remembered is what the fold communicates; whatever you missed, it doesn't, no matter how much the team debated it. Ten participants' worth of this, on the real page, told us precisely which first-fold elements were carrying their weight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT ============ -->
+  <section class="strip fold-dark">
+    <div class="container">
+      <p class="kicker fx" style="color: #93C5FD;">Impact</p>
+      <h2 class="fx">Caught before a million people <em>saw it</em></h2>
+      <div class="prose">
+        <p class="fx">Through the redesign, the team had drifted toward look and feel and away from product comprehension. The layered tests made that visible and specific: which elements registered in ten seconds, what the visuals said without words, where comprehension broke. The findings pushed a redesign of a few core elements of the page before launch, not after.</p>
+      </div>
+
+      <div class="stats-band fx">
+        <div class="stat-card">
+          <p class="sc-num">10%</p>
+          <p class="sc-label">Increase in overall website conversion after the tested redesign shipped</p>
+        </div>
+        <div class="stat-card">
+          <p class="sc-num">90%</p>
+          <p class="sc-label">Of recommendations adopted across content, design, and branding</p>
+        </div>
+      </div>
+
+      <div class="prose" style="margin-top: 48px;">
+        <p class="fx">The adoption number is the one I watch. Findings that ship are the product of how a study is socialized, not just how it's run: the premortem gave every team a stake in the answers, and the layered structure meant each finding arrived pre-addressed to the team that could act on it.</p>
+      </div>
+
+      <div class="nda-pill fx" style="border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.65);"><span class="dot-pulse"></span> Detailed findings are under NDA. The method, structure, and outcomes are shown.</div>
+    </div>
+  </section>
+
+  <!-- ============ REFLECTION + CLOSE ============ -->
+  <section class="closing">
+    <div class="container" style="position: relative;">
+      <p class="kicker fx" style="color: #93C5FD;">What I learned</p>
+      <h2 class="fx" style="color: #fff;">Research you <em>propose</em> is a different job than research you're handed</h2>
+      <div class="prose">
+        <p class="fx">Nobody asked for this study. That changed everything about how it had to be run. The deadline was fixed, the teams were already moving, and the research had to earn its place by being cheap in calendar time and generous in what it gave each stakeholder. Scoping six instruments into six weeks, with internal rounds doing the work participants shouldn't have to, was the stakeholder management as much as the methodology.</p>
+        <p class="fx">The other lesson was about closing the loop. With a launch bearing down, a report nobody reads is indistinguishable from no research at all. I delivered findings team by team, in their language, against the fears they'd named in the premortem, while there was still time to act. That's what 90% adoption looks like from the inside: not a great deck, but a study that was built from day one to be acted on under a deadline.</p>
+      </div>
+
+      <div class="next-project fx" style="margin-top: 96px;">
+        <p class="label">Next project</p>
+        <a href="razorpay-onboarding.html">Why did merchants stall at onboarding?
+          <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-cta">
+          <p class="label">Get in touch</p>
+          <a class="big-link" href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 Priyal Shrivastava</span>
+          <div class="footer-links">
+            <a href="mailto:priyalshri1@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script>
+  (function () {
+    var progress = document.getElementById("progress");
+    function onScroll() {
+      var doc = document.documentElement;
+      progress.style.width = (doc.scrollTop / (doc.scrollHeight - window.innerHeight) * 100) + "%";
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(".fx").forEach(function (el) { io.observe(el); });
+
+    /* Impression test */
+    var begin = document.getElementById("impBegin");
+    var start = document.getElementById("impStart");
+    var fold = document.getElementById("mockFold");
+    var count = document.getElementById("impCount");
+    var recall = document.getElementById("impRecall");
+    var reveal = document.getElementById("impReveal");
+    var answers = document.getElementById("impAnswers");
+
+    begin.addEventListener("click", function () {
+      start.style.display = "none";
+      fold.classList.add("show");
+      count.style.display = "flex";
+      var t = 10;
+      count.textContent = t;
+      var timer = setInterval(function () {
+        t -= 1;
+        count.textContent = t;
+        if (t <= 0) {
+          clearInterval(timer);
+          fold.classList.remove("show");
+          count.style.display = "none";
+          recall.classList.add("show");
+        }
+      }, 1000);
+    });
+
+    reveal.addEventListener("click", function () {
+      answers.classList.add("show");
+      reveal.style.display = "none";
+    });
+  })();
+  </script>
+</body>
+</html>

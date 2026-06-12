@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why mobile users stay or leave | Priyal Shrivastava</title>
-  <meta name="description" content="A mixed-methods retention study for the mobile web version of Outlook: 36 interviews and a validation survey that reframed retention as an ecosystem question about how people run entire systems of email accounts.">
+  <title>Why people were leaving a mobile inbox | Priyal Shrivastava</title>
+  <meta name="description" content="A mixed-methods retention study for the mobile web version of Outlook: 36 interviews and a 300+ response validation survey that traced churn to how people run whole systems of email accounts.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
@@ -58,6 +58,20 @@
       color: var(--muted); margin-bottom: 30px; display: flex; align-items: center; gap: 10px;
     }
     .hero-light .eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--sky); }
+    .hero-light .q-label {
+      font-family: var(--serif); font-style: italic; font-size: clamp(17px, 2vw, 22px);
+      color: var(--sky); margin-bottom: 16px;
+    }
+    .snapshot-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 28px;
+      border-top: 1px solid var(--border); padding-top: 36px; margin-top: 64px;
+    }
+    .snap-item .s-label {
+      font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 8px;
+    }
+    .snap-item .s-value { font-size: 15px; font-weight: 600; line-height: 1.5; color: var(--text); }
+    .snap-item .s-value small { display: block; font-weight: 500; font-size: 13px; color: var(--muted); margin-top: 2px; }
     .hero-light h1 {
       font-size: clamp(40px, 7vw, 92px); line-height: 1.02; font-weight: 800;
       letter-spacing: -0.04em; max-width: 14ch; margin-bottom: 32px;
@@ -281,8 +295,8 @@
         <ul class="nav-links">
           <li><a href="../index.html#work" class="active">Work</a></li>
           <li><a href="../play.html">Play</a></li>
-          <li><a href="../index.html#about">About</a></li>
-          <li><a href="https://drive.google.com/file/d/15EaTwwdMc_qgoEcgiP0dWOoFYMNVWurw/view?usp=sharing" target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../resume.html">Resume</a></li>
         </ul>
       </nav>
     </div>
@@ -297,14 +311,39 @@
 
     <div class="container">
       <p class="eyebrow fx in">Microsoft &middot; Mixed-methods retention study &middot; 2024</p>
-      <h1 class="fx in">Retention looked like a product question. It was an <em>ecosystem</em> question.</h1>
-      <p class="hero-standfirst fx in">Usage of Outlook's lightweight mobile web experience was declining faster than expected among consumer users. The team asked why people were leaving. Thirty-six interviews later, the more useful question turned out to be: what system of email accounts is each person quietly running, and what role does this one endpoint play in it?</p>
+      <p class="q-label fx in">The question</p>
+      <h1 class="fx in">Why were people <em>leaving</em> Outlook on the mobile browser?</h1>
+      <p class="hero-standfirst fx in">Usage of Outlook's lightweight mobile web experience was declining faster than expected among consumer users, and everyone on the team had a different explanation. Thirty-six interviews and a validation survey later, the answer lived somewhere nobody had been looking: in the whole system of email accounts each person quietly runs, and the specific job this one endpoint does inside it.</p>
       <div class="hero-chips fx in">
         <span class="pchip">36 interviews</span>
         <span class="pchip">6 user segments</span>
-        <span class="pchip">Validation survey</span>
-        <span class="pchip">Contract researcher</span>
+        <span class="pchip">300+ survey responses</span>
         <span class="pchip accent">Team study, my lens</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="snapshot-grid fx in">
+        <div class="snap-item">
+          <p class="s-label">My role</p>
+          <p class="s-value">UX Researcher<small>contract, via Kadence</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Timeline</p>
+          <p class="s-value">2024<small>within a Sept 2024 &ndash; Feb 2025 contract</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Study lead</p>
+          <p class="s-value">Khyati Seth<small>lead researcher, with researcher and PM partners</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Method</p>
+          <p class="s-value">Interviews, then survey<small>qual to find the story, quant to check it</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Findings</p>
+          <p class="s-value">Under NDA<small>method and analysis lens shown</small></p>
+        </div>
       </div>
     </div>
   </section>
@@ -365,8 +404,8 @@
         </div>
         <div class="ph fx">
           <p class="ph-num">03</p>
-          <h3>Validation survey</h3>
-          <p>A survey, designed from a survey map of the interview findings, validated the qualitative story with each cohort before the team treated it as direction.</p>
+          <h3>Validation survey, 300+ responses</h3>
+          <p>A survey, designed from a survey map of the interview findings, checked the qualitative story against 300+ respondents in each cohort before the team treated it as direction.</p>
         </div>
       </div>
     </div>
@@ -426,9 +465,9 @@
   <section class="strip">
     <div class="container">
       <p class="kicker fx">The finding that reframed the product</p>
-      <h2 class="fx">People don't pick a favorite email client. They <em>route.</em></h2>
+      <h2 class="fx">People <em>route</em> each account to the endpoint that fits its job</h2>
       <div class="prose">
-        <p class="fx">Endpoint choice turned out to be need-based, not loyalty-based: people match the endpoint to the account's purpose, a dedicated app for the account they live in, a quick browser tab for the junk drawer they only visit for a one-time code.</p>
+        <p class="fx">Loyalty to a favorite email client barely showed up in the data. What showed up instead was routing: people match the endpoint to the account's purpose, a dedicated app for the account they live in, a quick browser tab for the junk drawer they only visit for a one-time code.</p>
         <p class="fx">That gave the lightweight web client a role nobody had been designing for: <strong>the buffer.</strong> It catches people when their main app is slow, unsynced, or down. It serves people on storage-constrained phones who can't afford a heavy app. Its retention is partly tied to the reliability of products it doesn't control, which is exactly why "why are people leaving?" couldn't be answered by looking at this product alone.</p>
       </div>
 
@@ -465,7 +504,7 @@
 
       <div class="credit fx">
         <span class="c-label">Whose work this was</span>
-        <p>This was a team study led by <strong>Khyati Seth</strong> (lead researcher), with PM partners and fellow researchers. I joined as a contract researcher: I contributed to the discussion guide and led the qualitative analysis, mapping account life cycles and the moments that pushed an account from primary toward abandoned. This page is my lens on shared work; the segmentation and study design credit belongs to the whole team.</p>
+        <p>This was a team study led by <strong>Khyati Seth</strong> (lead researcher), with researcher and PM partners. I joined as a contract researcher: I contributed to the discussion guide, ran interview sessions alongside Khyati, led the qualitative analysis under her guidance, and wrote the first drafts of the report that she refined. The account life cycle lens on this page comes from that analysis. The segmentation and study design credit belongs to the whole team.</p>
       </div>
     </div>
   </section>
@@ -473,11 +512,11 @@
   <!-- ============ REFLECTION + CLOSE ============ -->
   <section class="strip fold-dark" style="padding-bottom: 0;">
     <div class="container" style="position: relative;">
-      <p class="kicker fx">Reflection</p>
-      <h2 class="fx" style="color: #fff;">Retention is a property of someone's <em>whole system,</em> not your product.</h2>
+      <p class="kicker fx">What I learned</p>
+      <h2 class="fx" style="color: #fff;">Some retention questions belong to the user's <em>whole system</em></h2>
       <div class="prose">
-        <p class="fx">It's tempting to treat retention as something to fix with better onboarding or a redesigned inbox. But for a product that sits inside someone's decades-old personal email ecosystem, the honest unit of analysis is the ecosystem, where this one piece fits, and what would have to be true for it to matter more.</p>
-        <p class="fx">The most useful output wasn't a metric. It was a shared vocabulary, the account life cycle and the segments, that let a cross-functional team talk about a person who checks a near-abandoned account once a year and a person who lives in the client daily without flattening them into one persona. That vocabulary is what kept the findings alive after the report was filed.</p>
+        <p class="fx">It's tempting to treat retention as something to fix with better onboarding or a redesigned inbox. For a product that sits inside someone's decades-old personal email ecosystem, the honest unit of analysis is that ecosystem: where this one piece fits, and what would have to be true for it to matter more. Choosing that unit of analysis early shaped the discussion guide, the segments, and ultimately what the team did with the findings.</p>
+        <p class="fx">The output I keep thinking about is the shared vocabulary. The account life cycle and the segments let a cross-functional team talk about a person who checks a near-abandoned account once a year and a person who lives in the client daily, without flattening them into one persona. That vocabulary kept the findings alive long after the readouts ended.</p>
       </div>
 
       <div class="next-project fx" style="margin-top: 96px; border-top-color: rgba(255,255,255,0.12);">

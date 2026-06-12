@@ -3,297 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why people were leaving a mobile inbox | Priyal Shrivastava</title>
-  <meta name="description" content="A mixed-methods retention study for the mobile web version of Outlook: 36 interviews and a 300+ response validation survey that traced churn to how people run whole systems of email accounts.">
+  <title>Why people were leaving Outlook on the mobile web | Priyal Shrivastava</title>
+  <meta name="description" content="A mixed-methods retention study for Outlook's mobile web experience: 36 interviews across six segments and a 300+ response validation survey.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-  <style>
-    /* ============ Showpiece page styles: retention ============ */
-    :root {
-      --ink: #0B0E12;
-      --sky: #0369A1;        /* 6.0:1 on white */
-      --sky-deep: #075985;
-      --serif: "Fraunces", Georgia, serif;
-    }
-
-    /* Accent lightens on dark surfaces (10+:1 on ink) */
-    .fold-dark { --sky: #7CC3EE; }
-
-    body { background: #FFFFFF; overflow-x: hidden; }
-
-    .progress { background: var(--sky); }
-
-    .kicker {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--sky); margin-bottom: 20px;
-    }
-    .strip { padding: 110px 0; position: relative; }
-    .strip h2 {
-      font-size: clamp(30px, 4.5vw, 50px); font-weight: 800; letter-spacing: -0.03em;
-      line-height: 1.12; max-width: 24ch; margin-bottom: 28px;
-    }
-    .strip h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--sky); }
-    .prose { max-width: 680px; }
-    .prose p { font-size: 17px; line-height: 1.75; color: #3C3C44; margin-bottom: 20px; }
-    .prose strong { font-weight: 700; color: var(--text); }
-    .fold-dark { background: var(--ink); color: #fff; }
-    .fold-dark .prose p { color: rgba(255, 255, 255, 0.75); }
-    .fold-dark .prose strong { color: #fff; }
-
-    .fx { opacity: 0; transform: translateY(36px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
-    .fx.in { opacity: 1; transform: none; }
-
-    /* ============ Hero ============ */
-    .hero-light {
-      min-height: 88vh; display: flex; flex-direction: column; justify-content: center;
-      position: relative; overflow: hidden; padding: 80px 0;
-      background:
-        radial-gradient(600px circle at 85% 20%, rgba(3, 105, 161, 0.07), transparent 60%),
-        #FFFFFF;
-    }
-    .hero-light .eyebrow {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 30px; display: flex; align-items: center; gap: 10px;
-    }
-    .hero-light .eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--sky); }
-    .hero-light .q-label {
-      font-family: var(--serif); font-style: italic; font-size: clamp(17px, 2vw, 22px);
-      color: var(--sky); margin-bottom: 16px;
-    }
-    .snapshot-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 28px;
-      border-top: 1px solid var(--border); padding-top: 36px; margin-top: 64px;
-    }
-    .snap-item .s-label {
-      font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 8px;
-    }
-    .snap-item .s-value { font-size: 15px; font-weight: 600; line-height: 1.5; color: var(--text); }
-    .snap-item .s-value small { display: block; font-weight: 500; font-size: 13px; color: var(--muted); margin-top: 2px; }
-    .hero-light h1 {
-      font-size: clamp(40px, 7vw, 92px); line-height: 1.02; font-weight: 800;
-      letter-spacing: -0.04em; max-width: 14ch; margin-bottom: 32px;
-    }
-    .hero-light h1 em {
-      font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--sky);
-    }
-    .hero-standfirst {
-      font-size: clamp(17px, 2vw, 21px); color: var(--muted); max-width: 54ch;
-      line-height: 1.7; margin-bottom: 44px;
-    }
-    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; }
-    .pchip {
-      font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
-      border: 1px solid var(--border); color: var(--muted); background: #fff;
-    }
-    .pchip.accent { border-color: rgba(3, 105, 161, 0.4); color: var(--sky); }
-
-    /* Drifting account cards in hero */
-    .float-card {
-      position: absolute; padding: 12px 16px; border-radius: 12px; background: #fff;
-      border: 1px solid var(--border); box-shadow: 0 16px 32px -20px rgba(11, 14, 18, 0.25);
-      font-size: 12.5px; font-weight: 600; color: var(--muted);
-      animation: bob 6s ease-in-out infinite;
-    }
-    .float-card b { display: block; font-size: 13.5px; color: var(--text); font-weight: 800; margin-bottom: 1px; }
-    .float-card .fc-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; }
-    @keyframes bob { 0%, 100% { transform: translateY(0) rotate(var(--tilt, 0deg)); } 50% { transform: translateY(-10px) rotate(var(--tilt, 0deg)); } }
-    @media (max-width: 900px) { .float-card { display: none; } }
-
-    /* ============ Hypothesis workshop: three stacks ============ */
-    .stacks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 56px; }
-    .stack {
-      border-radius: 14px; border: 1px solid var(--border); background: var(--surface);
-      padding: 28px 24px;
-    }
-    .stack .s-label {
-      font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
-      margin-bottom: 16px; color: var(--muted);
-    }
-    .stack.ask { background: #E8F3FA; border-color: rgba(3, 105, 161, 0.3); }
-    .stack.ask .s-label { color: var(--sky); }
-    .stack p { font-size: 14.5px; line-height: 1.65; color: #3C3C44; }
-    .stack ul { list-style: none; }
-    .stack li {
-      font-size: 14px; line-height: 1.55; color: #3C3C44; padding: 10px 12px; margin-bottom: 8px;
-      background: #fff; border: 1px solid var(--border); border-radius: 8px;
-    }
-    .stack.ask li { border-color: rgba(3, 105, 161, 0.25); }
-    @media (max-width: 900px) { .stacks { grid-template-columns: 1fr; } }
-
-    /* ============ Method phases ============ */
-    .ph-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 56px; }
-    .ph {
-      border: 1px solid var(--border); border-radius: 14px; padding: 30px 26px; background: #fff;
-      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.4s ease, box-shadow 0.4s ease;
-    }
-    .ph:hover { transform: translateY(-5px); border-color: rgba(3, 105, 161, 0.4); box-shadow: 0 24px 40px -28px rgba(3, 105, 161, 0.4); }
-    .ph .ph-num {
-      font-family: var(--serif); font-style: italic; font-size: 44px; line-height: 1;
-      color: var(--sky); margin-bottom: 14px;
-    }
-    .ph h3 { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 10px; }
-    .ph p { font-size: 14.5px; line-height: 1.65; color: var(--muted); }
-    @media (max-width: 900px) { .ph-grid { grid-template-columns: 1fr; } }
-
-    /* ============ Lifecycle scrollytelling ============ */
-    .life-track { height: 380vh; position: relative; }
-    .life-sticky {
-      position: sticky; top: 0; height: 100vh; overflow: hidden;
-      display: flex; align-items: center;
-    }
-    .life-grid { display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center; width: 100%; }
-    .life-intro-label {
-      position: absolute; top: 40px; left: 0; right: 0; text-align: center;
-      font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.4);
-    }
-    .life-copy { position: relative; min-height: 320px; }
-    .life-step {
-      position: absolute; inset: 0; opacity: 0; transform: translateY(36px);
-      transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
-      pointer-events: none; display: flex; flex-direction: column; justify-content: center;
-    }
-    .life-step.active { opacity: 1; transform: none; pointer-events: auto; }
-    .life-step .stage-tag {
-      font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--sky); margin-bottom: 14px;
-    }
-    .life-step h3 { font-size: clamp(30px, 3.6vw, 50px); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
-    .life-step h3 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--sky); }
-    .life-step p { font-size: 16.5px; line-height: 1.7; color: rgba(255,255,255,0.72); max-width: 46ch; }
-
-    /* The inbox card that ages */
-    .inbox-card {
-      border-radius: 18px; background: #11161D; border: 1px solid rgba(255,255,255,0.12);
-      overflow: hidden; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.8);
-      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1), filter 0.6s ease;
-    }
-    .inbox-head {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);
-      font-size: 13px; font-weight: 700;
-    }
-    .inbox-head .acct { color: #fff; }
-    .inbox-head .unread {
-      font-variant-numeric: tabular-nums; color: var(--sky);
-      background: rgba(124, 195, 238, 0.12); border-radius: 999px; padding: 3px 10px; font-size: 12px;
-    }
-    .mailline {
-      display: flex; align-items: center; gap: 10px; padding: 13px 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 13px;
-      transition: opacity 0.5s ease;
-    }
-    .mailline .from { font-weight: 700; color: rgba(255,255,255,0.9); white-space: nowrap; }
-    .mailline .subj { color: rgba(255,255,255,0.5); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
-    .mailline .mark {
-      font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 3px 8px; border-radius: 4px; flex-shrink: 0;
-    }
-    .mark.ok { background: rgba(124, 195, 238, 0.15); color: #7CC3EE; }
-    .mark.spam { background: rgba(255, 159, 67, 0.15); color: #FFB36B; }
-    .mark.risk { background: rgba(255, 107, 107, 0.16); color: #FF8E8E; }
-    .inbox-foot {
-      padding: 12px 20px; font-size: 11.5px; color: rgba(255,255,255,0.35);
-      display: flex; justify-content: space-between; align-items: center; gap: 12px;
-    }
-    .inbox-note {
-      text-align: center; font-size: 12px; color: rgba(255,255,255,0.35);
-      margin-top: 18px; font-style: italic; font-family: var(--serif);
-    }
-    /* stage looks */
-    .inbox-card[data-stage="2"] { filter: saturate(0.9); }
-    .inbox-card[data-stage="3"] { filter: saturate(0.7); transform: rotate(-0.6deg); }
-    .inbox-card[data-stage="4"] { filter: saturate(0.35) brightness(0.85); transform: rotate(-1.2deg); }
-
-    .life-rail { display: flex; gap: 8px; justify-content: center; margin-top: 22px; }
-    .life-rail span {
-      width: 36px; height: 4px; border-radius: 4px; background: rgba(255,255,255,0.15);
-      transition: background 0.4s ease;
-    }
-    .life-rail span.on { background: var(--sky); }
-
-    @media (max-width: 900px) {
-      .life-track { height: auto; padding: 80px 0; }
-      .life-sticky { position: static; height: auto; }
-      .life-grid { grid-template-columns: 1fr; gap: 40px; }
-      .life-copy { min-height: 0; }
-      .life-step { position: static; opacity: 1; transform: none; pointer-events: auto; margin-bottom: 48px; }
-      .life-intro-label, .life-rail { display: none; }
-      .inbox-card { max-width: 420px; }
-    }
-
-    /* ============ Buffer: endpoint routing ============ */
-    .router { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; align-items: stretch; }
-    .router-col .r-label {
-      font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 16px;
-    }
-    .acct-chip {
-      display: block; width: 100%; text-align: left; cursor: pointer;
-      font-family: var(--font); font-size: 15px; font-weight: 700; color: var(--text);
-      background: #fff; border: 1px solid var(--border); border-radius: 12px;
-      padding: 16px 18px; margin-bottom: 12px;
-      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .acct-chip small { display: block; font-weight: 500; font-size: 13px; color: var(--muted); margin-top: 2px; }
-    .acct-chip:hover, .acct-chip.on {
-      border-color: var(--sky); transform: translateX(4px);
-      box-shadow: 0 12px 24px -16px rgba(3, 105, 161, 0.5);
-    }
-    .endpoint {
-      border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin-bottom: 12px;
-      font-size: 15px; font-weight: 700; background: var(--surface);
-      transition: border-color 0.35s ease, background 0.35s ease, opacity 0.35s ease;
-      opacity: 0.55;
-    }
-    .endpoint small { display: block; font-weight: 500; font-size: 13px; color: var(--muted); margin-top: 2px; }
-    .endpoint.lit { opacity: 1; border-color: var(--sky); background: #E8F3FA; }
-    .router-note { font-size: 14px; color: var(--muted); margin-top: 18px; font-style: italic; font-family: var(--serif); }
-    @media (max-width: 768px) { .router { grid-template-columns: 1fr; } }
-
-    /* ============ Impact ============ */
-    .impact-list { list-style: none; margin-top: 48px; max-width: 720px; }
-    .impact-list li {
-      display: grid; grid-template-columns: 30px 1fr; gap: 16px; align-items: baseline;
-      padding: 20px 0; border-bottom: 1px solid var(--border);
-      font-size: 16px; line-height: 1.65; color: #3C3C44;
-    }
-    .impact-list li:last-child { border-bottom: none; }
-    .impact-list .imp-n { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--sky); }
-    .impact-list strong { font-weight: 700; color: var(--text); }
-
-    /* Credit card */
-    .credit {
-      margin-top: 64px; border-left: 4px solid var(--sky); background: var(--surface);
-      border-radius: 12px; padding: 26px 30px; max-width: 720px;
-    }
-    .credit p { font-size: 15.5px; line-height: 1.7; color: #3C3C44; margin: 0; }
-    .credit .c-label {
-      font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--sky); margin-bottom: 10px; display: block;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .float-card { animation: none; }
-      .fx { opacity: 1; transform: none; transition: none; }
-      .life-step { position: static; opacity: 1; transform: none; margin-bottom: 48px; }
-      .life-track { height: auto; padding: 80px 0; }
-      .life-sticky { position: static; height: auto; }
-    }
-  </style>
 </head>
 <body>
 
-  <div class="progress" id="progress"></div>
-
   <header class="nav">
-    <div class="container nav-inner">
-      <a href="../index.html" class="logo">ps<span class="dot">.</span></a>
+    <div class="nav-inner">
+      <a href="../index.html" class="name">Priyal Shrivastava</a>
       <nav>
         <ul class="nav-links">
-          <li><a href="../index.html#work" class="active">Work</a></li>
+          <li><a href="../index.html" class="active">Work</a></li>
           <li><a href="../play.html">Play</a></li>
           <li><a href="../about.html">About</a></li>
           <li><a href="../resume.html">Resume</a></li>
@@ -302,371 +26,74 @@
     </div>
   </header>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero-light">
-    <span class="float-card" style="top: 16%; right: 12%; --tilt: 2deg;"><b>Primary</b><span class="fc-dot" style="background:#0369A1;"></span>checked daily</span>
-    <span class="float-card" style="top: 38%; right: 4%; --tilt: -2deg; animation-delay: 1.2s;"><b>Secondary</b><span class="fc-dot" style="background:#38BDF8;"></span>signups &amp; backups</span>
-    <span class="float-card" style="top: 60%; right: 16%; --tilt: 1.5deg; animation-delay: 0.6s;"><b>Tertiary</b><span class="fc-dot" style="background:#FFB36B;"></span>mostly junk</span>
-    <span class="float-card" style="top: 80%; right: 7%; --tilt: -1deg; animation-delay: 1.8s;"><b>Abandoned</b><span class="fc-dot" style="background:#9CA3AF;"></span>password resets only</span>
+  <main class="container">
 
-    <div class="container">
-      <p class="eyebrow fx in">Microsoft &middot; Mixed-methods retention study &middot; 2024</p>
-      <p class="q-label fx in">The question</p>
-      <h1 class="fx in">Why were people <em>leaving</em> Outlook on the mobile browser?</h1>
-      <p class="hero-standfirst fx in">Usage of Outlook's lightweight mobile web experience was declining faster than expected among consumer users, and everyone on the team had a different explanation. Thirty-six interviews and a validation survey later, the answer lived somewhere nobody had been looking: in the whole system of email accounts each person quietly runs, and the specific job this one endpoint does inside it.</p>
-      <div class="hero-chips fx in">
-        <span class="pchip">36 interviews</span>
-        <span class="pchip">6 user segments</span>
-        <span class="pchip">300+ survey responses</span>
-        <span class="pchip accent">Team study, my lens</span>
-      </div>
+    <div class="page-head">
+      <p class="eyebrow">Microsoft &middot; 2024</p>
+      <h1>Why people were leaving Outlook on the mobile web</h1>
+      <p class="lede">Usage of Outlook's lightweight mobile browser experience was declining among consumer users, and everyone on the team had a different explanation for it. This was a mixed-methods study, 36 interviews followed by a 300+ response validation survey, that replaced those competing theories with an account of where this product actually sits in people's lives.</p>
+
+      <dl class="facts">
+        <div><dt>Role</dt><dd>UX Researcher, contract via Kadence</dd></div>
+        <div><dt>Timeline</dt><dd>2024, within a Sept 2024 &ndash; Feb 2025 contract</dd></div>
+        <div><dt>Study lead</dt><dd>Khyati Seth, lead researcher, with researcher and PM partners</dd></div>
+        <div><dt>Method</dt><dd>Hypothesis workshop, 36 moderated interviews across 6 segments, 300+ response survey</dd></div>
+        <div><dt>Findings</dt><dd>Under NDA; method and analysis approach shown</dd></div>
+      </dl>
+      <p class="note">This was a team study led by Khyati Seth. I joined as a contract researcher: I contributed to the discussion guide, ran interview sessions alongside her, led the qualitative analysis under her guidance, and wrote the first drafts of the report that she refined. The segmentation and study design credit belongs to the team. Because the product and its findings are under NDA, this page has no internal artifacts on it.</p>
     </div>
 
-    <div class="container">
-      <div class="snapshot-grid fx in">
-        <div class="snap-item">
-          <p class="s-label">My role</p>
-          <p class="s-value">UX Researcher<small>contract, via Kadence</small></p>
-        </div>
-        <div class="snap-item">
-          <p class="s-label">Timeline</p>
-          <p class="s-value">2024<small>within a Sept 2024 &ndash; Feb 2025 contract</small></p>
-        </div>
-        <div class="snap-item">
-          <p class="s-label">Study lead</p>
-          <p class="s-value">Khyati Seth<small>lead researcher, with researcher and PM partners</small></p>
-        </div>
-        <div class="snap-item">
-          <p class="s-label">Method</p>
-          <p class="s-value">Interviews, then survey<small>qual to find the story, quant to check it</small></p>
-        </div>
-        <div class="snap-item">
-          <p class="s-label">Findings</p>
-          <p class="s-value">Under NDA<small>method and analysis lens shown</small></p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <div class="prose">
 
-  <!-- ============ SETUP: from hypotheses to questions ============ -->
-  <section class="strip">
-    <div class="container">
-      <p class="kicker fx">The setup</p>
-      <h2 class="fx">Everyone had a theory. Nobody had the same <em>one.</em></h2>
-      <div class="prose">
-        <p class="fx">Leadership, PMs, and engineers each carried their own hypothesis about the decline. Before fielding anything, the team pooled what was already known, secondary research across data science reports, UX audits, marketing reports, and earlier studies, and ran a <strong>hypothesis workshop</strong> to separate what we believed from what we knew.</p>
-        <p class="fx">What was left, the gaps no existing data could answer, became the research plan. That workshop also produced the six user segments, drawn from usage behavior across Outlook's endpoints, that structured everything downstream.</p>
-      </div>
+      <h2>Context</h2>
+      <p>The product in question is the version of Outlook people reach through a mobile browser rather than the installed app. Its consumer usage was declining faster than expected, and leadership, product, and engineering each had a theory about why: the app was simply better, notifications were missing, the experience was too sparse. The theories were plausible, mutually incompatible, and all held with confidence. The study's first job was to separate what the team believed from what it knew.</p>
 
-      <div class="stacks">
-        <div class="stack fx">
-          <p class="s-label">Believed</p>
-          <ul>
-            <li>Team members across leadership, product, and engineering each had their own explanation for the decline</li>
-            <li>Many theories, held with equal confidence</li>
-          </ul>
-        </div>
-        <div class="stack fx">
-          <p class="s-label">Known</p>
-          <ul>
-            <li>Data science reports and telemetry</li>
-            <li>UX audits</li>
-            <li>Marketing reports and prior research</li>
-          </ul>
-        </div>
-        <div class="stack ask fx">
-          <p class="s-label">Left to ask</p>
-          <ul>
-            <li>What drives loyalty and churn, per segment?</li>
-            <li>What value does this endpoint hold next to the others?</li>
-            <li>Early read on planned investments: multi-account, home-screen shortcut, notifications</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2>Starting from what was already known</h2>
+      <p>Before fielding anything, the team pooled the existing evidence: data science reports, telemetry, past UX audits, marketing research, and earlier studies. That synthesis was presented to the whole team, data scientists, PMs, and designers included, in a hypothesis workshop. The decision to start this way was deliberate and saved the study from two common failures: paying participants to answer questions telemetry could already answer, and designing a discussion guide around whichever stakeholder spoke loudest.</p>
+      <p>What survived the workshop, the questions no existing data could answer, became the research plan: what drives loyalty and churn for each kind of user, what value this endpoint holds next to the app and the desktop, and an early read on the investments the team was already considering, such as multi-account support, a home-screen shortcut, and notifications. The workshop also produced six user segments, drawn from real usage behavior across Outlook's endpoints, which structured recruitment and analysis for everything downstream.</p>
 
-  <!-- ============ METHOD ============ -->
-  <section class="strip" style="padding-top: 0;">
-    <div class="container">
-      <p class="kicker fx">The approach</p>
-      <h2 class="fx">Qual to find the story, quant to <em>check it</em></h2>
-      <div class="ph-grid">
-        <div class="ph fx">
-          <p class="ph-num">01</p>
-          <h3>Hypothesis workshop</h3>
-          <p>Secondary research synthesized and presented to the whole team, with data scientists, PMs, and designers in the room. Knowledge gaps, not opinions, set the research objectives.</p>
-        </div>
-        <div class="ph fx">
-          <p class="ph-num">02</p>
-          <h3>36 moderated interviews</h3>
-          <p>One-on-one sessions, 4 to 6 participants from each of the six segments, recruited against real usage patterns. Leaders and PMs were invited to listen in live, so findings landed before the report did.</p>
-        </div>
-        <div class="ph fx">
-          <p class="ph-num">03</p>
-          <h3>Validation survey, 300+ responses</h3>
-          <p>A survey, designed from a survey map of the interview findings, checked the qualitative story against 300+ respondents in each cohort before the team treated it as direction.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ LIFECYCLE SCROLLY ============ -->
-  <section class="life-track fold-dark" id="lifeTrack">
-    <div class="life-sticky">
-      <p class="life-intro-label">The turn &middot; accounts have life cycles</p>
-      <div class="container life-grid">
-        <div class="life-copy">
-          <div class="life-step" id="ls1">
-            <p class="stage-tag">Stage 1 of 4</p>
-            <h3>Primary</h3>
-            <p>The main account. Checked daily, guarded carefully, attached to everything that matters. This is the account product teams imagine when they say "the user."</p>
-          </div>
-          <div class="life-step" id="ls2">
-            <p class="stage-tag">Stage 2 of 4</p>
-            <h3>Secondary</h3>
-            <p>The alternate. Signups, backups, the overflow. Checked on purpose, but less often, and usually from whichever endpoint is closest at hand rather than a favorite app.</p>
-          </div>
-          <div class="life-step" id="ls3">
-            <p class="stage-tag">Stage 3 of 4</p>
-            <h3>Tertiary</h3>
-            <p>The junk drawer. Newsletters, promotions, spam, the occasional one-time code. Often a former primary that was shared too widely for too many years. Nobody redesigns their way out of this stage.</p>
-          </div>
-          <div class="life-step" id="ls4">
-            <p class="stage-tag">Stage 4 of 4</p>
-            <h3>Abandoned</h3>
-            <p>Dormant, but never deleted. Opened once a year for a password reset, if the password still works. Where an account sits in this cycle predicts how, and how often, any endpoint will be used to reach it.</p>
-          </div>
-        </div>
-
-        <div>
-          <div class="inbox-card" id="inboxCard" data-stage="1" aria-hidden="true">
-            <div class="inbox-head">
-              <span class="acct" id="acctName">one account, over the years</span>
-              <span class="unread" id="unreadCount">2 unread</span>
-            </div>
-            <div id="mailLines">
-              <div class="mailline"><span class="from">Aunt Rekha</span><span class="subj">Pictures from the weekend!</span><span class="mark ok">read daily</span></div>
-              <div class="mailline"><span class="from">Bank</span><span class="subj">Your statement is ready</span><span class="mark ok">important</span></div>
-              <div class="mailline"><span class="from">Work</span><span class="subj">Re: Monday's plan</span><span class="mark ok">replied</span></div>
-            </div>
-            <div class="inbox-foot"><span id="lastChecked">last checked: today</span><span>illustrative, composited from interview patterns</span></div>
-          </div>
-          <div class="life-rail" aria-hidden="true">
-            <span id="r1" class="on"></span><span id="r2"></span><span id="r3"></span><span id="r4"></span>
-          </div>
-          <p class="inbox-note">scroll to age the account</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ THE BUFFER INSIGHT ============ -->
-  <section class="strip">
-    <div class="container">
-      <p class="kicker fx">The finding that reframed the product</p>
-      <h2 class="fx">People <em>route</em> each account to the endpoint that fits its job</h2>
-      <div class="prose">
-        <p class="fx">Loyalty to a favorite email client barely showed up in the data. What showed up instead was routing: people match the endpoint to the account's purpose, a dedicated app for the account they live in, a quick browser tab for the junk drawer they only visit for a one-time code.</p>
-        <p class="fx">That gave the lightweight web client a role nobody had been designing for: <strong>the buffer.</strong> It catches people when their main app is slow, unsynced, or down. It serves people on storage-constrained phones who can't afford a heavy app. Its retention is partly tied to the reliability of products it doesn't control, which is exactly why "why are people leaving?" couldn't be answered by looking at this product alone.</p>
-      </div>
-
-      <div class="router">
-        <div class="router-col fx">
-          <p class="r-label">Tap an account type&hellip;</p>
-          <button class="acct-chip" data-route="app">Primary<small>the account they live in</small></button>
-          <button class="acct-chip" data-route="web">Secondary<small>backups and signups</small></button>
-          <button class="acct-chip" data-route="web">Tertiary<small>junk, promos, one-time codes</small></button>
-          <button class="acct-chip" data-route="none">Abandoned<small>password resets, maybe</small></button>
-        </div>
-        <div class="router-col fx">
-          <p class="r-label">&hellip;and see where it usually gets checked</p>
-          <div class="endpoint" data-ep="app">Dedicated mail app<small>rich, synced, heavy: earns the primary account</small></div>
-          <div class="endpoint" data-ep="web">Lightweight web client<small>fast, familiar, no install: the buffer for everything else</small></div>
-          <div class="endpoint" data-ep="none">Nowhere, mostly<small>dormant accounts get visits, not retention</small></div>
-          <p class="router-note" id="routerNote">A simplified picture of a pattern from the interviews.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ IMPACT ============ -->
-  <section class="strip" style="padding-top: 0;">
-    <div class="container">
-      <p class="kicker fx">What it changed</p>
-      <h2 class="fx">Findings that arrived before the <em>report did</em></h2>
-      <ul class="impact-list">
-        <li class="fx"><span class="imp-n">a</span><span><strong>Leaders heard users firsthand.</strong> The whole team, leadership included, was invited to listen in on live interviews, so the evidence didn't wait for a readout to start working.</span></li>
-        <li class="fx"><span class="imp-n">b</span><span><strong>Deep-dive readouts</strong> with design, PM, and engineering walked each function through the sections that affected their decisions.</span></li>
-        <li class="fx"><span class="imp-n">c</span><span><strong>Top findings traveled up and out:</strong> presented to leadership in India and to the global Outlook teams at headquarters.</span></li>
-        <li class="fx"><span class="imp-n">d</span><span><strong>A tracker PMs could plan from.</strong> Beyond the readout deck, insights were handed over as a working sheet for semester planning, and most of them influenced the next semester's plan for the mobile web experience.</span></li>
+      <h2>The study itself</h2>
+      <p>The design was qualitative first, quantitative second: interviews to find the story, a survey to check it before anyone acted on it.</p>
+      <ul>
+        <li><strong>36 moderated interviews.</strong> One-on-one sessions with 4 to 6 participants from each of the six segments, recruited against actual usage patterns rather than self-description. Leaders and PMs were invited to listen in live, which meant the findings started doing their work weeks before any report existed.</li>
+        <li><strong>A validation survey, 300+ responses.</strong> The interview findings were mapped into a survey instrument and fielded across the cohorts. The purpose was discipline: the qualitative story was compelling, and compelling stories are exactly the ones worth checking against larger numbers before a team plans a semester around them.</li>
       </ul>
 
-      <div class="credit fx">
-        <span class="c-label">Whose work this was</span>
-        <p>This was a team study led by <strong>Khyati Seth</strong> (lead researcher), with researcher and PM partners. I joined as a contract researcher: I contributed to the discussion guide, ran interview sessions alongside Khyati, led the qualitative analysis under her guidance, and wrote the first drafts of the report that she refined. The account life cycle lens on this page comes from that analysis. The segmentation and study design credit belongs to the whole team.</p>
+      <h2>The analysis lens</h2>
+      <p>Two ideas from the analysis shaped how the team came to talk about the product. I can describe them at the level of pattern, without the findings underneath.</p>
+      <p>The first is that email accounts have life cycles. People rarely have one email account; they have a small system of them, and each account sits somewhere on a path from primary (checked daily, guarded carefully, attached to everything that matters) through secondary (signups and backups) to a junk drawer of newsletters and one-time codes, and finally to dormancy, where an account is opened once a year for a password reset. An account's position in this cycle predicts how, and how often, any product will be used to reach it. Product teams tend to design for the primary account; much of real usage involves the others.</p>
+      <p>The second is routing. Loyalty to a favorite email client barely appeared in the interviews. What appeared instead was people matching the endpoint to the account's job: a full app for the account they live in, a quick browser tab for the account they only visit for a code. Seen through that lens, the mobile web experience had a role nobody had been designing for. It functions as a buffer: it catches people when the main app is slow, unsynced, or not installed, and it serves people on storage-constrained phones who cannot afford a heavy app. Part of its retention therefore depends on products it doesn't control, which is precisely why "why are people leaving?" could not be answered by examining this product in isolation. Choosing the user's whole account system as the unit of analysis, rather than the single product, was the most consequential decision in the study.</p>
+
+      <h2>What the study changed</h2>
+      <ul>
+        <li>Leadership and PMs heard users directly, by sitting in on live interviews rather than waiting for a readout.</li>
+        <li>Each function got a deep-dive readout walking through the sections relevant to its decisions, rather than one generic presentation for everyone.</li>
+        <li>The top findings were presented to leadership in India and to the global Outlook teams at headquarters.</li>
+        <li>Beyond the deck, the insights were handed over as a working tracker that PMs used for semester planning. Most of the insights in it influenced the next semester's plan for the mobile web experience.</li>
+      </ul>
+
+      <h2>Reflection</h2>
+      <p>The lesson I keep from this study is about choosing the unit of analysis early. It is tempting to treat retention as a property of the product, something to fix with onboarding or a redesigned inbox. For a product that lives inside someone's decades-old email ecosystem, the honest unit of analysis is that ecosystem, and committing to it early shaped the discussion guide, the segments, and what the team ultimately did with the results.</p>
+      <p>The other thing I value in hindsight is the shared vocabulary the analysis produced. The life-cycle and routing language let a cross-functional team discuss a person who checks a near-dormant account once a year and a person who lives in their inbox daily without flattening them into a single persona. That vocabulary stayed in use long after the readouts ended, which is a better measure of a study's impact than the deck itself.</p>
+
+      <div class="next-link">
+        <p class="label">Next case study</p>
+        <a href="razorpay-d2c.html">Testing a consumer product bet before the company made it</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Priyal Shrivastava</p>
+      <div class="footer-links">
+        <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
+        <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- ============ REFLECTION + CLOSE ============ -->
-  <section class="strip fold-dark" style="padding-bottom: 0;">
-    <div class="container" style="position: relative;">
-      <p class="kicker fx">What I learned</p>
-      <h2 class="fx" style="color: #fff;">Some retention questions belong to the user's <em>whole system</em></h2>
-      <div class="prose">
-        <p class="fx">It's tempting to treat retention as something to fix with better onboarding or a redesigned inbox. For a product that sits inside someone's decades-old personal email ecosystem, the honest unit of analysis is that ecosystem: where this one piece fits, and what would have to be true for it to matter more. Choosing that unit of analysis early shaped the discussion guide, the segments, and ultimately what the team did with the findings.</p>
-        <p class="fx">The output I keep thinking about is the shared vocabulary. The account life cycle and the segments let a cross-functional team talk about a person who checks a near-abandoned account once a year and a person who lives in the client daily, without flattening them into one persona. That vocabulary kept the findings alive long after the readouts ended.</p>
-      </div>
-
-      <div class="next-project fx" style="margin-top: 96px; border-top-color: rgba(255,255,255,0.12);">
-        <p class="label" style="color: rgba(255,255,255,0.5);">Next project</p>
-        <a href="razorpay-d2c.html" style="color: #fff;">Should a B2B fintech bet on consumers?
-          <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <footer class="footer footer-flush" style="margin-top: 80px;">
-      <div class="container">
-        <div class="footer-cta">
-          <p class="label">Get in touch</p>
-          <a class="big-link" href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
-        </div>
-        <div class="footer-bottom">
-          <span>&copy; 2026 &middot; Made with <span class="heart">&#10084;&#xFE0E;</span> by Priyal Shrivastava</span>
-          <div class="footer-links">
-            <a href="mailto:priyalshri1@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </section>
-
-  <script>
-  (function () {
-    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var isMobile = window.matchMedia("(max-width: 900px)").matches;
-
-    /* Reveal on scroll */
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
-    document.querySelectorAll(".fx").forEach(function (el) { io.observe(el); });
-
-    /* Progress bar */
-    var progress = document.getElementById("progress");
-
-    /* Lifecycle stages */
-    var stages = [
-      {
-        acct: "one account, year one", unread: "2 unread", checked: "last checked: today",
-        lines: [
-          ['Aunt Rekha', 'Pictures from the weekend!', 'ok', 'read daily'],
-          ['Bank', 'Your statement is ready', 'ok', 'important'],
-          ['Work', "Re: Monday's plan", 'ok', 'replied']
-        ]
-      },
-      {
-        acct: "the same account, a few years in", unread: "48 unread", checked: "last checked: this week",
-        lines: [
-          ['ShopMore', 'Your order has shipped', 'ok', 'useful'],
-          ['Newsletter', 'This week in everything', 'spam', 'skimmed'],
-          ['Bank', 'Your statement is ready', 'ok', 'important']
-        ]
-      },
-      {
-        acct: "the same account, demoted", unread: "1,900+ unread", checked: "last checked: months ago",
-        lines: [
-          ['MEGA DEALS', 'FINAL HOURS!!! 80% off', 'spam', 'unread'],
-          ['Unknown sender', 'You have won a prize', 'risk', 'suspicious'],
-          ['App', 'Your one-time code is 4471', 'ok', 'the only reason to visit']
-        ]
-      },
-      {
-        acct: "the same account, abandoned", unread: "9,999+ unread", checked: "last checked: last year, for a password reset",
-        lines: [
-          ['MEGA DEALS', 'We miss you', 'spam', 'unread'],
-          ['Security', 'New sign-in to your account', 'risk', 'unread'],
-          ['Service', 'Reset your password', 'ok', 'the annual visit']
-        ]
-      }
-    ];
-
-    var card = document.getElementById("inboxCard");
-    var acctName = document.getElementById("acctName");
-    var unread = document.getElementById("unreadCount");
-    var checked = document.getElementById("lastChecked");
-    var mailLines = document.getElementById("mailLines");
-    var steps = [1,2,3,4].map(function (i) { return document.getElementById("ls" + i); });
-    var rails = [1,2,3,4].map(function (i) { return document.getElementById("r" + i); });
-    var track = document.getElementById("lifeTrack");
-    var current = 0;
-
-    function renderStage(idx) {
-      if (idx === current) return;
-      current = idx;
-      var s = stages[idx];
-      card.dataset.stage = idx + 1;
-      acctName.textContent = s.acct;
-      unread.textContent = s.unread;
-      checked.textContent = s.checked;
-      mailLines.innerHTML = s.lines.map(function (l) {
-        return '<div class="mailline"><span class="from">' + l[0] + '</span><span class="subj">' + l[1] + '</span><span class="mark ' + l[2] + '">' + l[3] + '</span></div>';
-      }).join("");
-      steps.forEach(function (el, i) { el.classList.toggle("active", i === idx); });
-      rails.forEach(function (el, i) { el.classList.toggle("on", i <= idx); });
-    }
-
-    function onScroll() {
-      var vh = window.innerHeight;
-      var doc = document.documentElement;
-      if (progress) progress.style.width = (doc.scrollTop / (doc.scrollHeight - vh) * 100) + "%";
-
-      if (track && !isMobile && !reduceMotion) {
-        var rect = track.getBoundingClientRect();
-        var total = track.offsetHeight - vh;
-        var p = Math.min(1, Math.max(0, -rect.top / total));
-        var idx = Math.min(3, Math.floor(p * 4));
-        renderStage(idx);
-      }
-    }
-    var ticking = false;
-    window.addEventListener("scroll", function () {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(function () { onScroll(); ticking = false; });
-      }
-    }, { passive: true });
-    steps[0].classList.add("active");
-    onScroll();
-    if (isMobile || reduceMotion) {
-      steps.forEach(function (s) { s.classList.add("active"); });
-      renderStage(2);
-      document.querySelector(".inbox-note").textContent = "(an account, mid-decline)";
-    }
-
-    /* Endpoint router */
-    var chips = document.querySelectorAll(".acct-chip");
-    var endpoints = document.querySelectorAll(".endpoint");
-    var note = document.getElementById("routerNote");
-    var noteCopy = {
-      app: "The primary account earns the heavy, synced app. Loyalty lives here, and so does the competition.",
-      web: "Secondary and tertiary accounts route to whatever is fast and familiar. This is where the lightweight client quietly does its job.",
-      none: "Abandoned accounts get a visit a year. No feature wins these back; some retention questions are really lifecycle questions."
-    };
-    chips.forEach(function (chip) {
-      chip.addEventListener("click", function () {
-        chips.forEach(function (c) { c.classList.toggle("on", c === chip); });
-        var route = chip.dataset.route;
-        endpoints.forEach(function (ep) { ep.classList.toggle("lit", ep.dataset.ep === route); });
-        note.textContent = noteCopy[route];
-      });
-    });
-  })();
-  </script>
 </body>
 </html>

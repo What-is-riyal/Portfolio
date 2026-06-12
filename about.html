@@ -4,87 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Priyal Shrivastava</title>
-  <meta name="description" content="Priyal Shrivastava is a user researcher focused on trust, safety, and responsible AI. MHCI at Carnegie Mellon, previously Razorpay, Microsoft, and Meesho.">
+  <meta name="description" content="Priyal Shrivastava is a user researcher. MHCI at Carnegie Mellon, previously at Microsoft, Razorpay, and Meesho.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    :root { --gold: #A16207; --serif: "Fraunces", Georgia, serif; }
-    body { background: #fff; }
-    .progress { background: var(--gold); }
-
-    .about-hero { padding: 160px 0 80px; }
-    .about-hero .eyebrow {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 28px; display: flex; align-items: center; gap: 10px;
-    }
-    .about-hero .eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--gold); }
-    .about-hero h1 {
-      font-size: clamp(36px, 5.6vw, 68px); font-weight: 800; letter-spacing: -0.035em;
-      line-height: 1.08; max-width: 20ch; margin-bottom: 0;
-    }
-    .about-hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--gold); }
-
-    .about-grid2 { display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: start; padding: 40px 0 80px; }
-    .about-photo img { width: 100%; max-width: 340px; border-radius: 16px; border: 1px solid var(--border); }
-    .about-photo .ph-note { font-size: 13px; color: var(--muted); margin-top: 12px; font-family: var(--serif); font-style: italic; }
-    .bio p { font-size: 17.5px; line-height: 1.8; color: #3C3C44; margin-bottom: 22px; max-width: 62ch; }
-    .bio strong { font-weight: 700; color: var(--text); }
-    .bio a { color: var(--gold); font-weight: 600; }
-    @media (max-width: 860px) { .about-grid2 { grid-template-columns: 1fr; } .about-photo { order: -1; } }
-
-    .strip { padding: 90px 0; }
-    .strip-dark { background: var(--ink, #0B0B0C); color: #fff; }
-    .kicker {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 20px;
-    }
-    .strip h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 36px; }
-    .strip h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--gold); }
-
-    .cred-list { list-style: none; max-width: 780px; }
-    .cred-list li {
-      display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 22px 0;
-      border-bottom: 1px solid var(--border); font-size: 16px; line-height: 1.7; color: #3C3C44;
-    }
-    .cred-list li:last-child { border-bottom: none; }
-    .cred-list .c-tag {
-      font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--gold); padding-top: 4px;
-    }
-    .cred-list em { font-family: var(--serif); }
-    .cred-list a { color: var(--gold); font-weight: 600; }
-    @media (max-width: 640px) { .cred-list li { grid-template-columns: 1fr; gap: 6px; } }
-
-    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 780px; }
-    .edu-card { border: 1px solid var(--border); border-radius: 14px; padding: 30px 28px; background: var(--surface); }
-    .edu-card .e-years { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-    .edu-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
-    .edu-card p { font-size: 14.5px; line-height: 1.65; color: var(--muted); margin: 0; }
-    @media (max-width: 640px) { .edu-grid { grid-template-columns: 1fr; } }
-
-    .human { background: #0B0B0C; color: #fff; padding: 100px 0; }
-    .human .kicker { color: #E5C45C; }
-    .human h2 { color: #fff; font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 28px; }
-    .human h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: #E5C45C; }
-    .human p { font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.75); max-width: 62ch; margin-bottom: 20px; }
-
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
-    .reveal.visible { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
-  </style>
 </head>
 <body>
 
-  <div class="progress" id="progress"></div>
-
   <header class="nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="logo">ps<span class="dot">.</span></a>
+    <div class="nav-inner">
+      <a href="index.html" class="name">Priyal Shrivastava</a>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html">Work</a></li>
           <li><a href="play.html">Play</a></li>
           <li><a href="about.html" class="active">About</a></li>
           <li><a href="resume.html">Resume</a></li>
@@ -93,83 +26,56 @@
     </div>
   </header>
 
-  <main>
-    <section class="about-hero container">
+  <main class="container">
+
+    <div class="page-head">
       <p class="eyebrow">About</p>
-      <h1>I'm the person in the meeting who asks <em>"but why?"</em> one more time than is polite.</h1>
-    </section>
+      <h1>I ask "why" one more time than is polite.</h1>
+    </div>
 
-    <section class="container about-grid2">
-      <div class="bio">
-        <p class="reveal">I'm Priyal, a user researcher. For 4+ years at <strong>Razorpay, Microsoft, and Meesho</strong>, I've asked that question on behalf of people who rarely get asked anything at all: small merchants filling out compliance forms, first-time internet users shopping in their second language, everyday people deciding whether to trust an AI with their inbox.</p>
-        <p class="reveal">I started as a product designer, and moved to research when I noticed that the quality of my designs was capped by the quality of the evidence under them. Since then the work has run from foundational studies that reframed strategy, to evaluative work that shipped, to a white paper on what people need before they let an AI assistant act for them.</p>
-        <p class="reveal">Right now I'm at <strong>Carnegie Mellon (MHCI, Class of 2026)</strong>, where I also work as a research assistant in the Viewpoints Lab with Prof. Tom Costello, on misinformation and AI persuasion. The throughline of what I want to spend the next decade on: how people decide to trust automated systems, and who gets left out when those systems are built without asking.</p>
+    <div class="about-grid">
+      <div class="prose">
+        <p>I'm Priyal, a user researcher. Across five years at Microsoft, Razorpay, and Meesho, I've asked that question on behalf of people who rarely get asked anything at all: small merchants stuck on compliance forms, first-time internet users shopping in their second language, and everyday people deciding whether to trust an AI assistant with their inbox.</p>
+        <p>I started as a product designer and moved into research when I noticed that the quality of my designs was capped by the quality of the evidence underneath them. Since then the work has ranged from foundational studies that reframed company strategy to evaluative work that shipped, and most recently a white paper on what people need before they let an AI act on their behalf.</p>
+        <p>Right now I'm at Carnegie Mellon, finishing the Master of Human-Computer Interaction (class of 2026). Alongside the degree, I work as a research assistant in the Viewpoints Lab with Prof. Tom Costello, on misinformation and AI persuasion. The thread I want to keep pulling for the next decade: how people decide to trust automated systems, and who gets left out when those systems are built without asking.</p>
       </div>
-      <div class="about-photo reveal">
-        <img src="assets/img/profile/priyal.png" alt="Portrait of Priyal Shrivastava">
-        <p class="ph-note">professionally curious since 2017</p>
-      </div>
-    </section>
+      <img src="assets/img/profile/priyal.png" alt="Portrait of Priyal Shrivastava">
+    </div>
 
-    <section class="strip" style="padding-top: 40px;">
-      <div class="container">
-        <p class="kicker reveal">Beyond the day job</p>
-        <h2 class="reveal">Things I've put my name <em>to</em></h2>
-        <ul class="cred-list">
-          <li class="reveal"><span class="c-tag">CHI 2026</span><span>Second author on a full paper: <em>Lost in Transcription: Subtitle Errors in Automatic Speech Recognition Reduce Speaker and Content Evaluations</em>.</span></li>
-          <li class="reveal"><span class="c-tag">1st place</span><span>US AI Policy Hackathon, deepfakes and elections track.</span></li>
-          <li class="reveal"><span class="c-tag">Community</span><span>Executive member of CASI and co-facilitator of an AI Governance reading group at CMU.</span></li>
-          <li class="reveal"><span class="c-tag">Founding member</span><span>User Research India, an initiative with industry leaders to grow the research ecosystem in India and make the case for research investment across sectors.</span></li>
-          <li class="reveal"><span class="c-tag">Book</span><span>Contributed interviews and data collection to <em>UXR in India: A Historical Perspective</em> by Achyutha Sharma, on how UX research practice evolved in India. <a href="https://drive.google.com/file/d/1OE4_fKTRbh5BZhSPK1xqvbna47DufFee/view" target="_blank" rel="noopener">Read it here</a>.</span></li>
-        </ul>
-      </div>
-    </section>
+    <div class="prose">
 
-    <section class="strip" style="padding-top: 0;">
-      <div class="container">
-        <p class="kicker reveal">Education</p>
-        <h2 class="reveal">Trained as a designer, practicing as a <em>researcher</em></h2>
-        <div class="edu-grid">
-          <div class="edu-card reveal">
-            <p class="e-years">2025 &ndash; 2026</p>
-            <h3>Carnegie Mellon University</h3>
-            <p>Masters in Human-Computer Interaction. Coursework includes Augmenting Intelligence, Statistics &amp; Modelling, Service Design, and Ethics &amp; Policy Issues in Computing.</p>
-          </div>
-          <div class="edu-card reveal">
-            <p class="e-years">2017 &ndash; 2021</p>
-            <h3>IIT Guwahati</h3>
-            <p>Bachelor of Design, GPA 9.13/10. Where the but-why habit got its formal training.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      <h2>Beyond the day job</h2>
+      <ul>
+        <li><strong>CHI 2026.</strong> Second author on a full paper: <em>Lost in Transcription: Subtitle Errors in Automatic Speech Recognition Reduce Speaker and Content Evaluations</em>.</li>
+        <li><strong>US AI Policy Hackathon.</strong> First place, in the deepfakes and elections track.</li>
+        <li><strong>User Research India.</strong> Founding member of an initiative with industry leaders to grow the research ecosystem in India and make the case for research investment across sectors.</li>
+        <li><strong>At CMU.</strong> Executive member of CASI and co-facilitator of an AI governance reading group.</li>
+        <li><strong>Book contribution.</strong> Interviews and data collection for <a href="https://drive.google.com/file/d/1OE4_fKTRbh5BZhSPK1xqvbna47DufFee/view" target="_blank" rel="noopener"><em>UXR in India: A Historical Perspective</em></a> by Achyutha Sharma, on how UX research practice evolved in India.</li>
+      </ul>
 
-    <section class="human">
-      <div class="container">
-        <p class="kicker reveal">Off the clock</p>
-        <h2 class="reveal">The rest of the <em>transcript</em></h2>
-        <p class="reveal">I keep two playlists in heavy rotation: indie music and old Hindi songs, and I will defend that combination in any usability session. The rest of what I make for fun, including a story-writing game that made it to the Play Store, lives on the <a href="play.html" style="color: #E5C45C; font-weight: 600;">play page</a>.</p>
-        <p class="reveal">If any of this sounds like someone you'd want asking questions on your team, my inbox is open.</p>
-      </div>
-    </section>
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Carnegie Mellon University</strong>, Master of Human-Computer Interaction, 2025&ndash;2026. Coursework includes Augmenting Intelligence, Statistics &amp; Modelling, Service Design, and Ethics &amp; Policy Issues in Computing.</li>
+        <li><strong>IIT Guwahati</strong>, Bachelor of Design, 2017&ndash;2021. GPA 9.13/10.</li>
+      </ul>
+
+      <h2>Off the clock</h2>
+      <p>I keep two playlists in heavy rotation, indie music and old Hindi songs, and the rest of what I make for fun, including a story-writing game that made it onto the Play Store, lives on the <a href="play.html">play page</a>.</p>
+      <p>If any of this sounds like someone you'd want asking questions on your team, my inbox is open: <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>.</p>
+
+    </div>
+
   </main>
 
-  <footer class="footer footer-flush">
-    <div class="container">
-      <div class="footer-cta reveal">
-        <p class="label">Get in touch</p>
-        <a class="big-link" href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 &middot; Made with <span class="heart">&#10084;&#xFE0E;</span> by Priyal Shrivastava</span>
-        <div class="footer-links">
-          <a href="mailto:priyalshri1@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Priyal Shrivastava</p>
+      <div class="footer-links">
+        <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
+        <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
 </body>
 </html>

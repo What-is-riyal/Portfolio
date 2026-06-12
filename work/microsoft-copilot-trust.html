@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Earning trust before automating | Priyal Shrivastava</title>
-  <meta name="description" content="A strategic synthesis on a trust-first adoption framework for AI assistance in Outlook: transparency, controllability, and learnability as prerequisites for on-demand, proactive, then automatic AI.">
+  <title>What it takes to trust an AI assistant | Priyal Shrivastava</title>
+  <meta name="description" content="A strategic synthesis at Microsoft: one year of fragmented Copilot research, distilled into a single point of view on what people need before they let an AI assistant act inside their inbox.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
@@ -18,14 +18,13 @@
       --serif: "Fraunces", Georgia, serif;
     }
 
-    /* On dark surfaces the accent lightens for contrast (6.8:1 on ink) */
+    /* On dark surfaces the accent lightens for contrast (8+:1 on ink) */
     .hero-dark, .strip-dark, .ladder-track, .closing, .demo-shell {
       --glow: #9D91FF;
     }
 
     body { background: var(--paper); overflow-x: hidden; }
 
-    /* Scroll progress */
     .progress {
       position: fixed; top: 0; left: 0; height: 3px; width: 0;
       background: var(--glow); z-index: 1000;
@@ -79,9 +78,13 @@
     .hero-dark .eyebrow::before {
       content: ""; width: 32px; height: 1px; background: var(--glow);
     }
+    .hero-dark .q-label {
+      font-family: var(--serif); font-style: italic; font-size: clamp(17px, 2vw, 22px);
+      color: var(--glow); margin-bottom: 18px;
+    }
     .hero-dark h1 {
-      font-size: clamp(44px, 8.5vw, 110px); line-height: 1.0; font-weight: 800;
-      letter-spacing: -0.04em; max-width: 12ch; margin-bottom: 36px;
+      font-size: clamp(36px, 6.2vw, 80px); line-height: 1.06; font-weight: 800;
+      letter-spacing: -0.035em; max-width: 18ch; margin-bottom: 36px;
     }
     .hero-dark h1 .line { display: block; overflow: hidden; }
     .hero-dark h1 .line span {
@@ -97,7 +100,7 @@
     }
     .hero-dark .hero-standfirst {
       font-size: clamp(17px, 2vw, 21px); color: rgba(255,255,255,0.72);
-      max-width: 52ch; line-height: 1.7; margin-bottom: 48px;
+      max-width: 56ch; line-height: 1.7; margin-bottom: 48px;
       opacity: 0; animation: fade-in 1s ease 0.5s forwards;
     }
     @keyframes fade-in { to { opacity: 1; } }
@@ -119,6 +122,19 @@
     }
     @keyframes hint-drop { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
+    /* ============ Snapshot meta band ============ */
+    .snapshot { background: var(--ink); color: #fff; padding: 0 0 72px; }
+    .snapshot-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 28px;
+      border-top: 1px solid rgba(255,255,255,0.12); padding-top: 36px;
+    }
+    .snap-item .s-label {
+      font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); margin-bottom: 8px;
+    }
+    .snap-item .s-value { font-size: 15px; font-weight: 600; line-height: 1.5; color: rgba(255,255,255,0.9); }
+    .snap-item .s-value small { display: block; font-weight: 500; font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+
     /* ============ Shared section bones ============ */
     .strip { padding: 120px 0; position: relative; }
     .strip-dark { background: var(--ink); color: #fff; }
@@ -128,7 +144,7 @@
     }
     .strip h2 {
       font-size: clamp(30px, 4.5vw, 52px); font-weight: 800; letter-spacing: -0.03em;
-      line-height: 1.1; max-width: 22ch; margin-bottom: 28px;
+      line-height: 1.1; max-width: 24ch; margin-bottom: 28px;
     }
     .strip h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--glow); }
     .prose { max-width: 680px; }
@@ -146,31 +162,73 @@
     }
     .nda-pill .dot-pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--glow); animation: pulse 2s infinite; }
 
-    /* ============ Tension: want vs got ============ */
-    .tension { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
-    .tension-card {
-      border-radius: 16px; padding: 40px 36px; position: relative; overflow: hidden;
-      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+    /* ============ The shelf: scattered studies vs one argument ============ */
+    .shelf-wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; margin-top: 56px; }
+    .shelf {
+      position: relative; min-height: 360px; border-radius: 16px;
+      background: var(--surface); border: 1px solid var(--border); overflow: hidden;
     }
-    .tension-card:hover { transform: translateY(-6px); }
-    .tension-card.want { background: #111114; color: #fff; }
-    .tension-card.got { background: #EEEDFB; color: var(--text); border: 1px solid rgba(79,70,229,0.22); }
-    .tension-card .t-label {
-      font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px;
+    .shelf .sh-label {
+      position: absolute; top: 20px; left: 24px; font-size: 12px; font-weight: 800;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); z-index: 2;
     }
-    .para-tag {
-      display: inline-block; margin-left: 10px; font-size: 10px; font-weight: 600;
-      letter-spacing: 0.06em; text-transform: none; opacity: 0.6; font-style: italic;
+    .study-card {
+      position: absolute; width: 190px; background: #fff; border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 16px; box-shadow: 0 10px 20px -14px rgba(0,0,0,0.25);
+      font-size: 12px; line-height: 1.5; color: var(--muted);
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
     }
-    .tension-card.want .t-label { color: var(--glow); }
-    .tension-card.got .t-label { color: var(--glow); }
-    .tension-card .t-quote {
-      font-family: var(--serif); font-style: italic; font-size: clamp(20px, 2.4vw, 28px); line-height: 1.35; margin-bottom: 20px;
+    .study-card b { display: block; font-size: 12.5px; color: var(--text); margin-bottom: 3px; }
+    .study-card:hover { transform: translateY(-6px) rotate(0deg) !important; box-shadow: 0 18px 32px -16px rgba(79,70,229,0.4); z-index: 3; }
+    .paper-card {
+      border-radius: 16px; background: #111114; color: #fff; padding: 44px 38px;
+      position: relative; overflow: hidden; min-height: 360px;
+      display: flex; flex-direction: column; justify-content: center;
     }
-    .tension-card p { font-size: 15px; line-height: 1.7; }
-    .tension-card.want p { color: rgba(255,255,255,0.65); }
-    .tension-card.got p { color: #4A4658; }
-    @media (max-width: 768px) { .tension { grid-template-columns: 1fr; } }
+    .paper-card::after {
+      content: ""; position: absolute; width: 30vw; height: 30vw; border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,113,255,0.22), transparent 60%);
+      bottom: -14vw; right: -8vw; pointer-events: none;
+    }
+    .paper-card .p-label { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #9D91FF; margin-bottom: 18px; }
+    .paper-card .p-title { font-family: var(--serif); font-style: italic; font-size: clamp(21px, 2.4vw, 27px); line-height: 1.35; margin-bottom: 18px; }
+    .paper-card p:not(.p-label):not(.p-title) { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.65); position: relative; z-index: 1; }
+    @media (max-width: 900px) {
+      .shelf-wrap { grid-template-columns: 1fr; }
+      .shelf { min-height: 420px; }
+    }
+
+    /* ============ Process rail (the synthesis, move by move) ============ */
+    .moves { counter-reset: move; margin-top: 64px; max-width: 760px; }
+    .move {
+      display: grid; grid-template-columns: 72px 1fr; gap: 26px; padding: 36px 0;
+      border-bottom: 1px solid var(--border); position: relative;
+    }
+    .move:last-child { border-bottom: none; }
+    .move .m-num {
+      font-family: var(--serif); font-style: italic; font-size: 44px; line-height: 1;
+      color: var(--glow); counter-increment: move;
+    }
+    .move h3 { font-size: 21px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .move p { font-size: 16px; line-height: 1.72; color: #3A3A3A; margin-bottom: 10px; }
+    .move p:last-child { margin-bottom: 0; }
+    .move .m-why {
+      font-size: 14.5px; line-height: 1.65; color: var(--muted);
+      border-left: 3px solid var(--glow); padding-left: 14px; margin-top: 12px;
+    }
+    .move .m-why b { color: var(--glow); font-weight: 700; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+    /* Working-question stickies inside the process */
+    .wq-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+    .wq {
+      font-size: 13.5px; font-weight: 600; line-height: 1.5; color: #4A3F10;
+      background: #FFF3BF; border-radius: 2px; padding: 12px 14px; max-width: 220px;
+      box-shadow: 0 6px 12px -8px rgba(0,0,0,0.3); transform: rotate(-1.5deg);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .wq:nth-child(2) { transform: rotate(1deg); background: #FFEda3; }
+    .wq:nth-child(3) { transform: rotate(-0.5deg); }
+    .wq:hover { transform: rotate(0deg) scale(1.04); }
 
     /* ============ Scrollytelling ladder ============ */
     .ladder-track { height: 340vh; position: relative; background: var(--ink); }
@@ -190,7 +248,7 @@
       display: flex; align-items: center; justify-content: center;
       font-weight: 800; font-size: 14px; transition: all 0.4s ease;
     }
-    .rail-node.active { border-color: var(--glow); background: var(--glow); color: #fff; box-shadow: 0 0 28px rgba(124,113,255,0.55); }
+    .rail-node.active { border-color: var(--glow); background: var(--glow); color: #16121F; box-shadow: 0 0 28px rgba(124,113,255,0.55); }
     .rail-label {
       position: absolute; left: 36px; top: 50%; transform: translateY(-50%);
       font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
@@ -207,7 +265,7 @@
     .ladder-step.active { opacity: 1; transform: none; pointer-events: auto; }
     .ladder-step .step-num {
       font-family: var(--serif); font-style: italic; font-size: 100px; line-height: 1;
-      color: rgba(79,70,229,0.22); margin-bottom: 8px;
+      color: rgba(124,113,255,0.25); margin-bottom: 8px;
     }
     .ladder-step h3 { font-size: clamp(32px, 4vw, 56px); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 18px; }
     .ladder-step .step-sub { font-size: 15px; font-weight: 700; color: var(--glow); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 18px; }
@@ -229,8 +287,8 @@
     /* ============ Kinetic statement ============ */
     .statement { padding: 160px 0; background: var(--paper); }
     .statement .big {
-      font-size: clamp(34px, 5.5vw, 72px); font-weight: 800; letter-spacing: -0.035em;
-      line-height: 1.12; max-width: 20ch;
+      font-size: clamp(32px, 5vw, 66px); font-weight: 800; letter-spacing: -0.035em;
+      line-height: 1.14; max-width: 22ch;
     }
     .statement .big .w { opacity: 0.12; transition: opacity 0.3s linear; }
     .statement .big em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--glow); }
@@ -280,7 +338,7 @@
       content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%;
       background: #fff; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
     }
-    .switch.on { background: var(--glow); }
+    .switch.on { background: #4F46E5; }
     .switch.on::after { transform: translateX(26px); }
     .mail-row {
       background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
@@ -296,7 +354,7 @@
       font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
       padding: 5px 12px; border-radius: 999px;
     }
-    .badge.hi { background: var(--glow); color: #fff; }
+    .badge.hi { background: #4F46E5; color: #fff; }
     .badge.lo { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.6); }
     .mail-why {
       font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.6;
@@ -325,18 +383,18 @@
     @keyframes chip-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     .orbit { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; }
     .orbit-core {
-      width: 110px; height: 110px; border-radius: 50%; background: var(--glow); color: #fff;
-      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px;
-      box-shadow: 0 0 60px rgba(79,70,229,0.4); z-index: 2;
+      width: 110px; height: 110px; border-radius: 50%; background: #4F46E5; color: #fff;
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px;
+      box-shadow: 0 0 60px rgba(79,70,229,0.4); z-index: 2; text-align: center; line-height: 1.3; padding: 8px;
     }
-    .orbit-ring { position: absolute; width: 280px; height: 280px; border: 1.5px dashed rgba(124,113,255,0.4); border-radius: 50%; animation: spin 24s linear infinite; }
+    .orbit-ring { position: absolute; width: 280px; height: 280px; border: 1.5px dashed rgba(79,70,229,0.45); border-radius: 50%; animation: spin 24s linear infinite; }
     .orbit-ring .sat { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); animation: counter-spin 24s linear infinite; }
     .orbit-ring .sat:nth-child(2) { top: auto; bottom: -16px; }
     .orbit-ring .sat:nth-child(3) { top: 50%; left: -34px; transform: translateY(-50%); }
     .orbit-ring .sat:nth-child(4) { top: 50%; left: auto; right: -34px; transform: translateY(-50%); }
     .sat {
       font-size: 12px; font-weight: 700; padding: 7px 14px; border-radius: 999px;
-      background: #fff; border: 1px solid rgba(124,113,255,0.4); white-space: nowrap;
+      background: #fff; border: 1px solid rgba(79,70,229,0.4); white-space: nowrap;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
     @keyframes counter-spin { to { transform: translateX(-50%) rotate(-360deg); } }
@@ -345,6 +403,22 @@
     @keyframes counter-spin-l { to { transform: translateY(-50%) rotate(-360deg); } }
     @keyframes counter-spin-r { to { transform: translateY(-50%) rotate(-360deg); } }
     @media (max-width: 900px) { .orbit-wrap { grid-template-columns: 1fr; } }
+
+    /* ============ Outcome list ============ */
+    .deliver-list { list-style: none; margin-top: 48px; max-width: 740px; }
+    .deliver-list li {
+      display: grid; grid-template-columns: 34px 1fr; gap: 18px; align-items: baseline;
+      padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.12);
+      font-size: 16.5px; line-height: 1.65; color: rgba(255,255,255,0.75);
+    }
+    .deliver-list li:last-child { border-bottom: none; }
+    .deliver-list .d-n { font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--glow); }
+    .deliver-list strong { font-weight: 700; color: #fff; }
+    .honest {
+      margin-top: 56px; border-left: 3px solid var(--glow); padding: 4px 0 4px 22px; max-width: 680px;
+    }
+    .honest p { font-size: 16px; line-height: 1.72; color: rgba(255,255,255,0.75); margin: 0; }
+    .honest .h-label { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--glow); display: block; margin-bottom: 8px; }
 
     /* ============ Easter egg: transparency mode ============ */
     .annot {
@@ -398,7 +472,7 @@
   <div class="cursor-dot" id="cdot"></div>
   <div class="cursor-ring" id="cring"></div>
 
-  <!-- ============ HERO ============ -->
+  <!-- ============ HERO: the question first ============ -->
   <section class="hero-dark">
     <header class="nav">
       <div class="container nav-inner">
@@ -408,7 +482,7 @@
             <li><a href="../index.html#work" class="active">Work</a></li>
             <li><a href="../play.html">Play</a></li>
             <li><a href="../about.html">About</a></li>
-            <li><a href="../resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+            <li><a href="../resume.html">Resume</a></li>
           </ul>
         </nav>
       </div>
@@ -416,65 +490,159 @@
 
     <div class="hero-orb"></div>
     <div class="container">
-      <p class="eyebrow">Microsoft &middot; Strategic UXR synthesis &middot; 2025</p>
+      <p class="eyebrow">Microsoft &middot; Strategic UXR synthesis &middot; 2024&ndash;25</p>
+      <p class="q-label">The question</p>
       <h1>
-        <span class="line"><span>Earning <em>trust</em></span></span>
-        <span class="line"><span>before</span></span>
-        <span class="line"><span>automating.</span></span>
+        <span class="line"><span>What do people need</span></span>
+        <span class="line"><span>before they <em>trust</em> an AI</span></span>
+        <span class="line"><span>inside their inbox?</span></span>
       </h1>
-      <p class="hero-standfirst">What does it take for people to let an AI assistant act on their behalf, inside the most personal professional space they have: their inbox? A point-of-view paper synthesizing a year of research into one framework.</p>
+      <p class="hero-standfirst">Microsoft was integrating Copilot across Outlook, and a year of research already existed: one study per capability, each answering its own questions. What the org didn't have was a unified point of view. I synthesized that body of work into a white paper arguing where Copilot in Outlook should go next, and what users need from it first.</p>
       <div class="hero-chips">
-        <span class="chip">Authored the synthesis</span>
-        <span class="chip">A year of research, one argument</span>
-        <span class="chip">Outlook &times; Copilot</span>
-        <span class="chip accent">Under NDA, framework shown</span>
+        <span class="chip">UX Researcher, contract</span>
+        <span class="chip">Sept 2024 &ndash; Feb 2025</span>
+        <span class="chip">White paper, authored</span>
+        <span class="chip accent">Under NDA &middot; method and framework shown</span>
       </div>
     </div>
     <div class="scroll-hint">Scroll</div>
   </section>
 
-  <!-- ============ SETUP ============ -->
-  <section class="strip" style="position: relative;">
+  <!-- ============ SNAPSHOT ============ -->
+  <section class="snapshot">
     <div class="container">
-      <div class="nda-pill fx"><span class="dot-pulse"></span> Written under NDA. Framework and reasoning shown; internal findings, metrics, and roadmaps omitted.</div>
-      <p class="kicker fx">The setup</p>
-      <h2 class="fx">One assistant, shipping in <em>pieces</em></h2>
-      <div class="prose">
-        <p class="fx">Outlook's AI assistant was expanding fast: into task management, scheduling, email drafting, out-of-office handoffs, and inbox prioritization. Each capability was being researched and shipped somewhat independently.</p>
-        <p class="fx">I was asked to step back from any single feature and synthesize a year's worth of research across all of them into one strategic point of view: <strong>what does it actually take for people to trust an AI assistant enough to let it do more on their behalf?</strong></p>
-        <p class="fx">I substantially authored the resulting paper, pulling separate studies into a single argument rather than a feature-by-feature report.</p>
+      <div class="snapshot-grid fx in">
+        <div class="snap-item">
+          <p class="s-label">My role</p>
+          <p class="s-value">UX Researcher<small>contract, via Kadence</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Timeline</p>
+          <p class="s-value">Sept 2024 &ndash; Feb 2025<small>paper delivered Feb 2025</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Working with</p>
+          <p class="s-value">Khyati Seth<small>lead researcher, Outlook UXR</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Inputs</p>
+          <p class="s-value">A year of internal studies<small>plus public social listening</small></p>
+        </div>
+        <div class="snap-item">
+          <p class="s-label">Deliverable</p>
+          <p class="s-value">UXR point-of-view paper<small>with design guidelines and a feature checklist</small></p>
+        </div>
       </div>
-
-      <div class="annot" style="top: 110px; right: 4%;"><b>Why this page is dark &amp; light</b> The dark sections carry the framework, the light ones carry the story. The contrast is doing the chapter breaks.</div>
     </div>
   </section>
 
-  <!-- ============ TENSION ============ -->
+  <!-- ============ BACKGROUND ============ -->
+  <section class="strip" style="position: relative;">
+    <div class="container">
+      <div class="nda-pill fx"><span class="dot-pulse"></span> Written under NDA. My method, frameworks, and reasoning are shown; internal findings, feature names, and roadmaps are not.</div>
+      <p class="kicker fx">Background</p>
+      <h2 class="fx">A year of answers, and no <em>argument</em></h2>
+      <div class="prose">
+        <p class="fx">Copilot was being built into Outlook capability by capability: drafting, summarizing, scheduling, prioritizing, handling time away. Each feature team had research behind it. Deep dives, focus groups, and concept tests had been piling up for over a year, and each one was scoped to the feature that commissioned it.</p>
+        <p class="fx">Read together, those studies disagreed with each other in places, repeated each other in others, and left the biggest question unanswered: across all of it, what were users actually telling us about living with an AI assistant? The org asked for a point of view paper, a single document that turned a year of scattered evidence into a position the whole team could build against.</p>
+        <p class="fx">I authored that synthesis, working with the lead researcher. The job was equal parts research and editorial judgment: deciding which findings were load-bearing, which were artifacts of how a single study was framed, and what the whole body of evidence argued when you let it speak together.</p>
+      </div>
+
+      <div class="annot" style="top: 110px; right: 4%;"><b>Why the question leads</b> The research question is the first thing on this page because it was the first thing on the paper. Everything else exists to answer it.</div>
+    </div>
+  </section>
+
+  <!-- ============ THE INPUT vs THE OUTPUT ============ -->
   <section class="strip" style="padding-top: 0; position: relative;">
     <div class="container">
-      <p class="kicker fx">The tension</p>
-      <h2 class="fx">People wanted a chief of staff. They were getting an <em>intern</em> who forgets their name.</h2>
-      <div class="tension">
-        <div class="tension-card want fx">
-          <p class="t-label">What people wanted <span class="para-tag">paraphrased from across studies</span></p>
-          <p class="t-quote">An assistant that knows my role, my priorities, and my working style, and quietly takes work off my plate.</p>
-          <p>Across every study, people described the same ideal: proactive help, in the flow of work, from something that deeply understands their context. Not another feature. A partner.</p>
+      <p class="kicker fx">The starting condition</p>
+      <h2 class="fx">Five studies, five vocabularies, one <em>assistant</em></h2>
+      <div class="prose">
+        <p class="fx">This is the shape of the problem I was handed. Every card below stands for a real internal study; the labels are generalized to respect the NDA. Each one was solid work. None of them was written to be read next to the others.</p>
+      </div>
+
+      <div class="shelf-wrap">
+        <div class="shelf fx" aria-label="Illustration: separate research studies, each scoped to one feature">
+          <p class="sh-label">What existed</p>
+          <div class="study-card" style="top: 18%; left: 6%; transform: rotate(-3deg);"><b>Drafting study</b>Where AI writing help works, where it gets the tone wrong</div>
+          <div class="study-card" style="top: 14%; right: 8%; transform: rotate(2deg);"><b>Prioritization deep dive</b>How people react when an AI ranks their email</div>
+          <div class="study-card" style="top: 44%; left: 18%; transform: rotate(1.5deg);"><b>Concept focus groups</b>Early reads on summary and inbox concepts</div>
+          <div class="study-card" style="top: 48%; right: 4%; transform: rotate(-2deg);"><b>Time-away study</b>What people want handled while they're out</div>
+          <div class="study-card" style="bottom: 8%; left: 32%; transform: rotate(2.5deg);"><b>Workflow research</b>How tasks move between email and other tools</div>
         </div>
-        <div class="tension-card got fx">
-          <p class="t-label">What kept happening <span class="para-tag">paraphrased from across studies</span></p>
-          <p class="t-quote">Wrong names. Wrong dates. Confused context. And no explanation of why.</p>
-          <p>Small, basic errors did outsized damage. When an assistant gets simple facts wrong and can't explain itself, people don't just distrust that output. They stop trusting it with anything that matters.</p>
+        <div class="paper-card fx">
+          <p class="p-label">What was needed</p>
+          <p class="p-title">One evidence-backed answer to "what should this assistant become, and in what order?"</p>
+          <p>Not a summary of summaries. A position: here is what users consistently need, here is where trust breaks, here is what to build first and what each feature must prove before it earns a bigger role.</p>
         </div>
       </div>
 
-      <div class="annot" style="bottom: -40px; left: 8%;"><b>Why two cards</b> The entire paper hangs on this gap between expectation and experience. It earns its own moment before any framework appears.</div>
+      <div class="annot" style="bottom: -30px; left: 8%;"><b>Why cards, not quotes</b> The real study names and findings are under NDA. The shape of the problem is the part I can show, so that's what this section draws.</div>
+    </div>
+  </section>
+
+  <!-- ============ METHOD: the synthesis, move by move ============ -->
+  <section class="strip" style="padding-top: 40px; position: relative;">
+    <div class="container">
+      <p class="kicker fx">Method</p>
+      <h2 class="fx">How you interview a <em>stack of documents</em></h2>
+      <div class="prose">
+        <p class="fx">Synthesis has a method the same way fieldwork does. I treated the reports as participants: each one got read closely, questioned, and coded before it was allowed to influence the argument. The working board ended up holding 85 notes across the source studies, and the process below is reconstructed from it.</p>
+      </div>
+
+      <div class="moves">
+        <div class="move fx">
+          <span class="m-num">1</span>
+          <div>
+            <h3>Extract, study by study</h3>
+            <p>I pulled every finding, open question, and recurring complaint out of each report and onto its own cluster of notes, keeping the source visible. No theme-building yet; mixing too early is how synthesis launders weak evidence into strong claims.</p>
+          </div>
+        </div>
+        <div class="move fx">
+          <span class="m-num">2</span>
+          <div>
+            <h3>Interrogate before trusting</h3>
+            <p>Findings only made it forward once I could answer where they came from and what they actually measured. My working notes from this stage are mostly questions, and they did more for the paper's credibility than any framework did.</p>
+            <div class="wq-row" aria-label="Paraphrased working notes from the synthesis board">
+              <span class="wq">where is this finding coming from? which study, what sample?</span>
+              <span class="wq">what does success even look like here? define it before claiming it</span>
+              <span class="wq">need to know the current implementation before I'm allowed an opinion</span>
+            </div>
+            <p class="m-why"><b>Why this matters</b> A synthesis is only as honest as its weakest citation. Interrogating provenance is the difference between a point of view and a vibe.</p>
+          </div>
+        </div>
+        <div class="move fx">
+          <span class="m-num">3</span>
+          <div>
+            <h3>Find what repeats across studies</h3>
+            <p>The signal worth a white paper is the pattern no single study could see: the same anxieties about accuracy, the same demand for agency, the same frustration with opaque decisions, surfacing in studies that had nothing else in common. Those recurring patterns, flagged and starred on the board, became the paper's spine.</p>
+          </div>
+        </div>
+        <div class="move fx">
+          <span class="m-num">4</span>
+          <div>
+            <h3>Check the pattern outside the building</h3>
+            <p>Internal studies share internal blind spots, so I ran the emerging themes against public social listening: what people were saying about AI assistants on forums, social platforms, and in the press. Where the outside conversation echoed the lab, I trusted the theme more. Where it didn't, I went back to the data.</p>
+            <p class="m-why"><b>The tradeoff</b> Social listening is noisy and self-selected. I used it to pressure-test themes, never to generate them.</p>
+          </div>
+        </div>
+        <div class="move fx">
+          <span class="m-num">5</span>
+          <div>
+            <h3>Re-sort the evidence under an argument</h3>
+            <p>I drafted the paper's outline twice, then physically re-binned every note under the section it supported. Evidence that fit nowhere either earned a new section or got cut. The final paper's structure matches that second outline almost one to one, which is how I knew the argument was carrying the evidence rather than decorating it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="annot" style="top: 80px; right: 3%;"><b>Why show the mess</b> Hiring managers read a hundred polished frameworks a week. The questions a researcher asks mid-analysis are harder to fake.</div>
     </div>
   </section>
 
   <!-- ============ LADDER SCROLLYTELLING ============ -->
   <section class="ladder-track" id="ladderTrack">
     <div class="ladder-sticky">
-      <p class="ladder-intro-label">The framework &middot; an adoption ladder</p>
+      <p class="ladder-intro-label">What the synthesis argued &middot; assistance deepens in stages</p>
       <div class="container ladder-grid">
         <div class="rail">
           <div class="rail-fill" id="railFill"></div>
@@ -490,19 +658,19 @@
             <p class="step-num">01</p>
             <h3>On-demand</h3>
             <p class="step-sub">You ask. It answers. You check.</p>
-            <p>The user explicitly invokes help: summarize this thread, draft a reply, find that email. Nothing happens without being asked, and every output is reviewed before it's used. This is where most people's trust actually sits today, and for many features it's the only mode they're comfortable with.</p>
+            <p>The user explicitly invokes help: summarize this thread, draft a reply, find that email. Nothing happens unasked, and every output gets reviewed before it's used. Across the studies, this is where most people's comfort actually sat, whatever the product vision hoped.</p>
           </div>
           <div class="ladder-step" id="step2">
             <p class="step-num">02</p>
             <h3>Proactive</h3>
             <p class="step-sub">It suggests. You decide.</p>
-            <p>The assistant surfaces summaries, suggestions, and priorities without being asked, but leaves every action to the user. This jump is bigger than it looks: the assistant now has to judge what's worth interrupting someone for, and explain why, or it gets dismissed as noise and switched off.</p>
+            <p>The assistant surfaces summaries, suggestions, and priorities without being asked, but leaves every action to the user. This jump is bigger than it looks: the assistant now has to judge what's worth interrupting someone for, and explain its reasoning, or it gets dismissed as noise and switched off.</p>
           </div>
           <div class="ladder-step" id="step3">
             <p class="step-num">03</p>
             <h3>Automatic</h3>
             <p class="step-sub">It acts. Within limits you set.</p>
-            <p>The assistant sends the reply, archives the email, reschedules the meeting, on its own, inside boundaries the user has drawn. The paper's argument: this rung should only ever be extended to a task after the assistant has already proven itself on the two rungs below. Skipping rungs is how trust collapses.</p>
+            <p>The assistant sends the reply, archives the email, reschedules the meeting, on its own, inside boundaries the user has drawn. The paper's central argument: a task should only ever reach this rung after the assistant has proven itself on the two below. Skipping rungs is how trust collapses.</p>
           </div>
         </div>
       </div>
@@ -512,17 +680,17 @@
   <!-- ============ KINETIC STATEMENT ============ -->
   <section class="statement" id="statement">
     <div class="container">
-      <p class="big" id="bigWords">Automation isn't something you design into a feature. It's something a feature <em>earns.</em></p>
+      <p class="big" id="bigWords">An assistant earns wider permissions the way a new colleague does: by being right, being <em>checkable,</em> and visibly getting better.</p>
     </div>
   </section>
 
-  <!-- ============ TCL PILLARS ============ -->
+  <!-- ============ PILLARS ============ -->
   <section class="strip" style="padding-top: 0; position: relative;">
     <div class="container">
       <p class="kicker fx">The prerequisites</p>
       <h2 class="fx">Three things hold the ladder <em>up</em></h2>
       <div class="prose">
-        <p class="fx">The paper grounds the ladder in three prerequisites, drawn directly from where trust consistently broke down across the studies we synthesized.</p>
+        <p class="fx">The paper grounds the ladder in three prerequisites, drawn from where trust consistently broke down across the studies. Wherever a feature failed users, at least one of these was missing.</p>
       </div>
       <div class="tcl-grid">
         <div class="tcl-card fx" data-tilt>
@@ -530,12 +698,12 @@
           <span class="tcl-letter">T</span>
           <h3>Transparency</h3>
           <p class="tcl-q">"What is it looking at, and why did it suggest that?"</p>
-          <p>People need to see what the assistant considered and why it acted. In a black box, even small mistakes generalize into "I can't trust this with anything important." With an explanation, the same mistake becomes correctable, and survivable.</p>
+          <p>People need to see what the assistant considered and why it acted. In a black box, even small mistakes generalize into a refusal to trust the assistant with anything that matters. With an explanation, the same mistake becomes correctable, and survivable.</p>
         </div>
         <div class="tcl-card fx" data-tilt>
           <div class="shine"></div>
           <span class="tcl-letter">C</span>
-          <h3>Controllability</h3>
+          <h3>Control</h3>
           <p class="tcl-q">"Can I correct it, and set its boundaries, right here?"</p>
           <p>Control that lives in a buried settings page functionally doesn't exist. People need to adjust boundaries and fix mistakes in the moment they happen, including deciding what the assistant may ever do without sign-off.</p>
         </div>
@@ -544,7 +712,7 @@
           <span class="tcl-letter">L</span>
           <h3>Learnability</h3>
           <p class="tcl-q">"Is it getting better at being mine?"</p>
-          <p>Nobody expected perfection. They expected improvement: their tone, their priorities, their habits. An assistant that repeats a corrected mistake teaches people to stop correcting it, and the relationship never deepens enough to support autonomy.</p>
+          <p>Nobody in the studies expected perfection. They expected improvement: their tone, their priorities, their habits. An assistant that repeats a corrected mistake teaches people to stop correcting it, and the relationship never deepens enough to support autonomy.</p>
         </div>
       </div>
 
@@ -558,7 +726,7 @@
       <p class="kicker fx">Feel it yourself</p>
       <h2 class="fx">The same inbox, with and without <em>transparency</em></h2>
       <div class="prose">
-        <p class="fx">An illustration of the framework's first prerequisite. Everything below is invented; no data was harmed. The mechanic is the point: notice what the explanations do to your own reading of the same three judgments.</p>
+        <p class="fx">An illustration of the first prerequisite, built for this page. The emails are invented; the mechanic is the paper's actual recommendation. Notice what the explanations do to your own reading of the same three judgments.</p>
       </div>
 
       <div class="demo-shell fx" id="demoShell">
@@ -598,9 +766,9 @@
         </div>
 
         <div class="trust-meter">
-          <p class="tm-label"><span>The reaction the paper kept hearing, in spirit</span></p>
-          <p class="tm-caption" id="tmCaption">"It marked something high priority. But I have no idea why, so I'll check everything myself anyway."</p>
-          <p class="tm-note">The inbox, the emails, and these reactions are invented for illustration. The mechanic is the paper's actual recommendation: put a "why" next to every judgment the AI makes.</p>
+          <p class="tm-label"><span>The reaction this produces, in spirit</span></p>
+          <p class="tm-caption" id="tmCaption">"It marked something high priority. I have no idea why, so I'll check everything myself anyway."</p>
+          <p class="tm-note">The inbox, the senders, and these reactions are invented for illustration. The recommendation they act out is real: put a "why" next to every judgment the AI makes.</p>
         </div>
       </div>
     </div>
@@ -612,31 +780,31 @@
       <p class="kicker fx">The framework in practice</p>
       <h2 class="fx">One assistant, or five strangers wearing the same <em>badge?</em></h2>
       <div class="prose">
-        <p class="fx">A recurring test case in the paper: when each Microsoft 365 app runs its own Copilot with its own memory, the user re-explains their role, projects, and tone in every app. That repeated re-introduction is a transparency failure and a learnability failure at once, and no single feature team can fix it alone. The framework's value was giving every team the same vocabulary to name it.</p>
+        <p class="fx">A recurring test case in the paper: when each app runs its own assistant with its own memory, the user re-explains their role, projects, and tone in every app. The framework names that as a transparency failure and a learnability failure at once, and no single feature team can fix it alone. Giving every team the same vocabulary for the problem was the point of writing one paper instead of six readouts.</p>
       </div>
 
       <div class="orbit-wrap">
         <div class="orbit-panel fx">
-          <p class="op-label" style="color: var(--muted);">Today</p>
-          <p class="op-sub">Separate Copilots, separate memories</p>
+          <p class="op-label" style="color: var(--muted);">The failure mode</p>
+          <p class="op-sub">Separate assistants, separate memories</p>
           <div class="scatter">
-            <span class="app-chip" style="top: 6%; left: 8%; animation-delay: 0s;">Outlook<small>own memory</small></span>
-            <span class="app-chip" style="top: 16%; right: 6%; animation-delay: 0.7s;">Word<small>own memory</small></span>
-            <span class="app-chip" style="bottom: 30%; left: 16%; animation-delay: 1.3s;">Teams<small>own memory</small></span>
-            <span class="app-chip" style="bottom: 6%; right: 14%; animation-delay: 0.4s;">Excel<small>own memory</small></span>
-            <span class="app-chip" style="top: 44%; left: 42%; animation-delay: 1s; border-color: rgba(124,113,255,0.5); color: #B33;">You<small>re-explaining yourself</small></span>
+            <span class="app-chip" style="top: 6%; left: 8%; animation-delay: 0s;">Mail<small>own memory</small></span>
+            <span class="app-chip" style="top: 16%; right: 6%; animation-delay: 0.7s;">Docs<small>own memory</small></span>
+            <span class="app-chip" style="bottom: 30%; left: 16%; animation-delay: 1.3s;">Chat<small>own memory</small></span>
+            <span class="app-chip" style="bottom: 6%; right: 14%; animation-delay: 0.4s;">Calendar<small>own memory</small></span>
+            <span class="app-chip" style="top: 44%; left: 42%; animation-delay: 1s; border-color: rgba(124,113,255,0.5); color: #A33;">You<small>re-explaining yourself</small></span>
           </div>
         </div>
         <div class="orbit-panel fx">
-          <p class="op-label" style="color: var(--glow);">The goal</p>
-          <p class="op-sub">One assistant, shared context that follows you</p>
+          <p class="op-label" style="color: #4F46E5;">What the paper argued for</p>
+          <p class="op-sub">One assistant, context that follows you</p>
           <div class="orbit">
-            <div class="orbit-core">Copilot</div>
+            <div class="orbit-core">One<br>assistant</div>
             <div class="orbit-ring">
-              <span class="sat">Outlook</span>
-              <span class="sat">Word</span>
-              <span class="sat">Teams</span>
-              <span class="sat">Excel</span>
+              <span class="sat">Mail</span>
+              <span class="sat">Docs</span>
+              <span class="sat">Chat</span>
+              <span class="sat">Calendar</span>
             </div>
           </div>
         </div>
@@ -644,21 +812,43 @@
     </div>
   </section>
 
+  <!-- ============ OUTCOME + IMPACT ============ -->
+  <section class="strip strip-dark" style="position: relative;">
+    <div class="container">
+      <p class="kicker fx">The outcome</p>
+      <h2 class="fx" style="color: #fff;">A paper teams could <em>build against</em></h2>
+      <div class="prose">
+        <p class="fx">The deliverable was a point of view paper for the Outlook org, structured to be argued with: a vision for what the assistant should become, opportunity areas mapped against the jobs people already hire email for, and the trust framework above.</p>
+      </div>
+      <ul class="deliver-list">
+        <li class="fx"><span class="d-n">a</span><span><strong>A position, not a digest.</strong> The paper takes stances: which user needs are load-bearing, which intervention level each opportunity belongs to, and what each feature must prove before going further.</span></li>
+        <li class="fx"><span class="d-n">b</span><span><strong>Design guidelines</strong> translating transparency, control, and learnability from principles into implementation guidance teams could apply to their own features.</span></li>
+        <li class="fx"><span class="d-n">c</span><span><strong>A development checklist</strong> any feature team could run before shipping, covering transparency, accuracy, learning, user control, discoverability, and risk.</span></li>
+        <li class="fx"><span class="d-n">d</span><span><strong>Named gaps.</strong> Where evidence was thin or internal-only, the paper says so and recommends the studies to run next, because a synthesis that hides its own limits teaches teams to overtrust it.</span></li>
+      </ul>
+
+      <div class="honest fx">
+        <span class="h-label">An honest note on impact</span>
+        <p>The paper shipped in the final weeks of my contract, so I didn't get to watch its recommendations move through roadmaps, and the NDA covers what happened after. What this page can show is the part I'd want to be evaluated on anyway: how the synthesis was built, and whether the reasoning holds.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ REFLECTION + CLOSE ============ -->
   <section class="closing">
     <div class="container" style="position: relative;">
-      <p class="kicker fx">Reflection</p>
-      <h2 class="fx" style="color: #fff;">Trust isn't a feature. It's a <em>sequence.</em></h2>
+      <p class="kicker fx">What I learned</p>
+      <h2 class="fx" style="color: #fff;">Synthesis is a <em>research method,</em> and I'd treated it as a writing task</h2>
       <div class="prose">
-        <p class="fx">Writing this paper was the first time I worked primarily as a synthesizer rather than a primary researcher. The hardest part of strategic research isn't generating new findings. It's recognizing when several studies are independently describing the same underlying problem from different angles, and naming it in a way that travels across teams.</p>
-        <p class="fx">It also crystallized something I carry directly into how I think about AI governance: trust in an automated system isn't a property you have or don't. It's built in stages, with transparency and control as the foundation, before broader autonomy is either safe or accepted. That staged view of trust is the throughline connecting my UX research background to the work I want to do next.</p>
+        <p class="fx">This was the first project where I worked primarily as a synthesizer rather than a primary researcher, and it changed how I rate the skill. The hardest part was recognizing when several studies were independently describing the same underlying problem from different angles, then naming it precisely enough that the name could travel across teams without me in the room.</p>
+        <p class="fx">It also gave me the frame I now carry into AI governance work: trust in an automated system builds in stages, with transparency and control as the floor, and autonomy as something granted task by task once the earlier stages hold. That staged view of trust connects my UX research background to the questions I want to spend the next decade on.</p>
       </div>
 
-      <div class="annot" style="top: 0; right: 4%;"><b>Why end on this</b> A case study's last paragraph is a positioning statement. This one points at AI governance on purpose.</div>
+      <div class="annot" style="top: 0; right: 4%;"><b>Why end here</b> A case study's last paragraph is a positioning statement. This one points at AI governance on purpose.</div>
 
       <div class="next-project fx" style="margin-top: 96px;">
         <p class="label">Next project</p>
-        <a href="razorpay-d2c.html">What makes merchants pay and consumers play?
+        <a href="microsoft-retention.html">Why people leave a mobile inbox
           <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </a>
       </div>
@@ -780,7 +970,7 @@
         ring.style.transform = "translate(" + (rx - 18) + "px," + (ry - 18) + "px)";
         requestAnimationFrame(loop);
       })();
-      document.querySelectorAll("a, button, .tcl-card, .mail-row").forEach(function (el) {
+      document.querySelectorAll("a, button, .tcl-card, .mail-row, .study-card").forEach(function (el) {
         el.addEventListener("mouseenter", function () { ring.classList.add("is-hover"); });
         el.addEventListener("mouseleave", function () { ring.classList.remove("is-hover"); });
       });
@@ -816,7 +1006,7 @@
       setTimeout(function () {
         tmCaption.textContent = on
           ? '"Oh. It saw the deadline and knows Maya is my manager. Fine, it can sort these for me."'
-          : '"It marked something high priority. But I have no idea why, so I\'ll check everything myself anyway."';
+          : '"It marked something high priority. I have no idea why, so I\'ll check everything myself anyway."';
         tmCaption.style.opacity = 1;
       }, 250);
     });

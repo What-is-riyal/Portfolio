@@ -64,29 +64,34 @@
     <section class="band band-ink" id="numbers">
       <div class="container">
         <p class="band-label reveal">For the skimmers</p>
-        <div class="numbers-grid">
-          <div class="num reveal">
-            <p class="num-value"><span data-count="4">4</span>+</p>
-            <p class="num-cap">years leading research at Razorpay, Microsoft, and Meesho</p>
-          </div>
-          <div class="num reveal">
-            <p class="num-value"><span data-count="63">63</span>%</p>
-            <p class="num-cap">conversion lift after redesigning merchant onboarding</p>
-          </div>
-          <div class="num reveal">
-            <p class="num-value"><span data-count="1">1</span>M+</p>
-            <p class="num-cap">daily visits to the website we evaluated before launch</p>
-          </div>
-          <div class="num reveal">
-            <p class="num-value"><span data-count="90">90</span>%</p>
-            <p class="num-cap">of recommendations incorporated before that site shipped</p>
-          </div>
-          <div class="num reveal">
-            <p class="num-value"><span data-count="1000">1000</span>+</p>
-            <p class="num-cap">survey respondents in one strategic go/no-go study</p>
-          </div>
-        </div>
-        <p class="num-note reveal">(every number here traces to a project below)</p>
+        <ul class="skim-list">
+          <li class="reveal"><a href="#about">
+            <span class="skim-num"><span data-count="4">4</span>+</span>
+            <span class="skim-text">years leading research at Razorpay, Microsoft, and Meesho</span>
+            <span class="skim-arrow" aria-hidden="true">&darr;</span>
+          </a></li>
+          <li class="reveal"><a href="#project-onboarding">
+            <span class="skim-num"><span data-count="63">63</span>%</span>
+            <span class="skim-text">conversion lift after redesigning merchant onboarding around trust, not just friction</span>
+            <span class="skim-arrow" aria-hidden="true">&darr;</span>
+          </a></li>
+          <li class="reveal"><a href="#project-website">
+            <span class="skim-num"><span data-count="1">1</span>M+</span>
+            <span class="skim-text">daily visits to the website we evaluated before it launched</span>
+            <span class="skim-arrow" aria-hidden="true">&darr;</span>
+          </a></li>
+          <li class="reveal"><a href="#project-website">
+            <span class="skim-num"><span data-count="90">90</span>%</span>
+            <span class="skim-text">of that study's recommendations incorporated before the site shipped</span>
+            <span class="skim-arrow" aria-hidden="true">&darr;</span>
+          </a></li>
+          <li class="reveal"><a href="#project-d2c">
+            <span class="skim-num"><span data-count="1000">1000</span>+</span>
+            <span class="skim-text">survey respondents, with 40+ interviews, behind one go/no-go decision</span>
+            <span class="skim-arrow" aria-hidden="true">&darr;</span>
+          </a></li>
+        </ul>
+        <p class="num-note reveal">(every number links to the project that produced it. the long versions are better.)</p>
       </div>
     </section>
 
@@ -99,17 +104,17 @@
 
       <div class="work-list">
 
-        <a href="work/microsoft-copilot-trust.html" class="work-row reveal">
+        <a href="work/microsoft-copilot-trust.html" class="work-row reveal" id="project-copilot">
           <span class="work-thumb" aria-hidden="true">
             <svg viewBox="0 0 170 124" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="170" height="124" fill="#EEEDFB"/>
-              <rect x="18" y="86" width="38" height="22" rx="4" fill="#FFFFFF" stroke="#4F46E5" stroke-width="2"/>
-              <rect x="66" y="62" width="38" height="46" rx="4" fill="#FFFFFF" stroke="#4F46E5" stroke-width="2"/>
-              <rect x="114" y="34" width="38" height="74" rx="4" fill="#4F46E5"/>
-              <path d="M30 97 l5 5 9 -10" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M78 80 l5 5 9 -10" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M126 56 l5 5 9 -10" stroke="#FCE88A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M22 24 q30 -14 60 0 t66 0" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/>
+              <path d="M30 104 H66 V82 H102 V58 H138 V30" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="38" y="98" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#4F46E5">ask</text>
+              <text x="72" y="76" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#4F46E5">suggest</text>
+              <text x="108" y="52" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#4F46E5">act</text>
+              <path d="M138 30 l-5 9 M138 30 l9 5" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M146 14 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5z" fill="#F2C50F" stroke="#4F46E5" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M30 104 c10 -2 20 -2 30 0" stroke="#4F46E5" stroke-width="2" stroke-dasharray="3 4" opacity="0.4"/>
             </svg>
           </span>
           <div class="work-main">
@@ -129,17 +134,19 @@
           </span>
         </a>
 
-        <a href="work/microsoft-retention.html" class="work-row reveal">
+        <a href="work/microsoft-retention.html" class="work-row reveal" id="project-retention">
           <span class="work-thumb" aria-hidden="true">
             <svg viewBox="0 0 170 124" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="170" height="124" fill="#E3F1FA"/>
-              <ellipse cx="85" cy="62" rx="58" ry="38" stroke="#0369A1" stroke-width="2" stroke-dasharray="4 5"/>
-              <circle cx="85" cy="62" r="15" fill="#0369A1"/>
-              <circle cx="32" cy="50" r="9" fill="#FFFFFF" stroke="#0369A1" stroke-width="2"/>
-              <circle cx="138" cy="50" r="9" fill="#FFFFFF" stroke="#0369A1" stroke-width="2"/>
-              <circle cx="62" cy="98" r="9" fill="#FFFFFF" stroke="#0369A1" stroke-width="2"/>
-              <circle cx="112" cy="22" r="9" fill="#FCE88A" stroke="#0369A1" stroke-width="2"/>
-              <path d="M44 53 L70 59 M128 53 L101 59 M68 91 L78 74 M108 31 L92 50" stroke="#0369A1" stroke-width="1.6"/>
+              <rect x="64" y="22" width="42" height="80" rx="8" fill="#FFFFFF" stroke="#0369A1" stroke-width="2"/>
+              <path d="M72 48 h26 v18 h-26 z" fill="#E3F1FA" stroke="#0369A1" stroke-width="1.8"/>
+              <path d="M72 48 l13 9 13 -9" stroke="#0369A1" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M80 96 h10" stroke="#0369A1" stroke-width="2" stroke-linecap="round"/>
+              <ellipse cx="85" cy="62" rx="64" ry="44" stroke="#0369A1" stroke-width="1.8" stroke-dasharray="4 5"/>
+              <circle cx="24" cy="46" r="8" fill="#FFFFFF" stroke="#0369A1" stroke-width="2"/>
+              <circle cx="146" cy="46" r="8" fill="#FFFFFF" stroke="#0369A1" stroke-width="2"/>
+              <circle cx="42" cy="98" r="8" fill="#FFFFFF" stroke="#0369A1" stroke-width="2"/>
+              <circle cx="132" cy="94" r="8" fill="#F2C50F" stroke="#0369A1" stroke-width="2"/>
             </svg>
           </span>
           <div class="work-main">
@@ -159,16 +166,17 @@
           </span>
         </a>
 
-        <a href="work/razorpay-d2c.html" class="work-row reveal">
+        <a href="work/razorpay-d2c.html" class="work-row reveal" id="project-d2c">
           <span class="work-thumb" aria-hidden="true">
             <svg viewBox="0 0 170 124" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="170" height="124" fill="#F1EAFB"/>
-              <path d="M22 62 H74" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round"/>
-              <path d="M88 50 L104 66 M104 50 L88 66" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
-              <path d="M74 62 Q88 92 122 92" stroke="#7C3AED" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M116 84 l8 8 -8 8" stroke="#7C3AED" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="142" cy="92" r="12" fill="#FCE88A" stroke="#7C3AED" stroke-width="2.5"/>
-              <circle cx="22" cy="62" r="7" fill="#7C3AED"/>
+              <rect x="18" y="46" width="52" height="32" rx="6" fill="#7C3AED"/>
+              <text x="29" y="68" font-family="Arial, sans-serif" font-weight="bold" font-size="15" fill="#FFFFFF">B2B</text>
+              <path d="M78 62 H106" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="4 5" stroke-linecap="round"/>
+              <path d="M100 54 l8 8 -8 8" stroke="#7C3AED" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="112" y="46" width="52" height="32" rx="6" fill="#FCE88A" stroke="#7C3AED" stroke-width="2"/>
+              <text x="120" y="68" font-family="Arial, sans-serif" font-weight="bold" font-size="15" fill="#5B21B6">D2C</text>
+              <text x="132" y="36" font-family="Georgia, serif" font-style="italic" font-size="26" fill="#7C3AED">?</text>
             </svg>
           </span>
           <div class="work-main">
@@ -187,7 +195,7 @@
           </span>
         </a>
 
-        <a href="work/razorpay-website-evaluation.html" class="work-row reveal">
+        <a href="work/razorpay-website-evaluation.html" class="work-row reveal" id="project-website">
           <span class="work-thumb" aria-hidden="true">
             <svg viewBox="0 0 170 124" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="170" height="124" fill="#E7EDFB"/>
@@ -219,7 +227,7 @@
           </span>
         </a>
 
-        <a href="#" class="work-row reveal">
+        <a href="#" class="work-row reveal" id="project-onboarding">
           <span class="work-thumb" aria-hidden="true">
             <svg viewBox="0 0 170 124" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="170" height="124" fill="#E6F4EA"/>
@@ -247,7 +255,7 @@
           </span>
         </a>
 
-        <a href="#" class="work-row reveal">
+        <a href="#" class="work-row reveal" id="project-meesho">
           <span class="work-thumb" aria-hidden="true">
             <svg viewBox="0 0 170 124" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="170" height="124" fill="#FBE7F0"/>
@@ -272,7 +280,7 @@
           </span>
         </a>
 
-        <a href="#" class="work-row reveal">
+        <a href="#" class="work-row reveal" id="project-madahead">
           <span class="work-thumb" aria-hidden="true">
             <svg viewBox="0 0 170 124" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="170" height="124" fill="#F8F0DC"/>
@@ -308,7 +316,7 @@
             <p>I've spent <strong>4+ years leading research</strong> at Razorpay, Microsoft, and Meesho: strategic studies that shaped roadmaps, evaluative work that shipped, and end-to-end redesigns. Much of it has been helping everyday users and people with low tech literacy make sense of complex systems, and helping teams act on what they said.</p>
             <p>At <strong>Carnegie Mellon (MHCI, Class of 2026)</strong> I'm extending that foundation toward AI: coursework in Augmenting Intelligence, Responsible AI, and Ethics &amp; Policy in Computing, exploring how responsible design and research can guide the next generation of intelligent systems.</p>
             <div class="chips">
-              <span class="chip hot">Responsible AI</span>
+              <span class="chip">Responsible AI</span>
               <span class="chip">Low tech literacy users</span>
               <span class="chip">Service design</span>
               <span class="chip">Insights &rarr; Action</span>
@@ -317,7 +325,7 @@
           <div class="reveal">
             <p class="elsewhere-label">Beyond the day job</p>
             <ul class="elsewhere">
-              <li><span class="el-tag">CHI 2026</span> Full paper: <em>Lost in Transcription: Subtitle Errors in Automatic Speech Recognition Reduce Speaker and Content Evaluations</em>.</li>
+              <li><span class="el-tag">CHI 2026</span> Second author, full paper: <em>Lost in Transcription: Subtitle Errors in Automatic Speech Recognition Reduce Speaker and Content Evaluations</em>.</li>
               <li><span class="el-tag">1st place</span> US AI Policy Hackathon, deepfakes and elections track.</li>
               <li><span class="el-tag">Community</span> Executive member of CASI; co-facilitator of an AI Governance reading group.</li>
               <li><span class="el-tag">Book</span> Contributed interviews and data collection to <em>UXR in India: A Historical Perspective</em> by Achyutha Sharma, on how UX research practice evolved in India. <a href="https://drive.google.com/file/d/1OE4_fKTRbh5BZhSPK1xqvbna47DufFee/view" target="_blank" rel="noopener">Read it here</a></li>

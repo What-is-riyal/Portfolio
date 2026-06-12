@@ -396,27 +396,66 @@ img {
   background: var(--ink-line);
 }
 
-/* Numbers strip */
-.numbers-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 36px 28px;
+/* Skim list: claims with receipts, each linking to its project */
+.skim-list {
+  list-style: none;
 }
 
-.num .num-value {
+.skim-list li {
+  border-bottom: 1px solid var(--ink-line);
+}
+
+.skim-list li:first-child {
+  border-top: 1px solid var(--ink-line);
+}
+
+.skim-list a {
+  display: grid;
+  grid-template-columns: 170px 1fr 40px;
+  gap: 28px;
+  align-items: baseline;
+  padding: 22px 8px;
+  transition: background 0.3s var(--ease);
+}
+
+.skim-list a:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.skim-num {
   font-family: var(--serif);
   font-weight: 600;
-  font-size: clamp(40px, 5vw, 60px);
+  font-size: clamp(32px, 4vw, 48px);
   line-height: 1.1;
   color: var(--gold);
   font-variant-numeric: tabular-nums;
-  margin-bottom: 10px;
+  text-align: right;
 }
 
-.num .num-cap {
-  font-size: 14px;
+.skim-text {
+  font-size: clamp(16px, 1.8vw, 19px);
   line-height: 1.55;
   color: var(--ink-soft);
+  transition: color 0.3s var(--ease);
+}
+
+.skim-list a:hover .skim-text {
+  color: #fff;
+}
+
+.skim-arrow {
+  justify-self: end;
+  color: var(--ink-mute);
+  font-size: 20px;
+  transform: translateY(-2px);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.skim-list a:hover .skim-arrow {
+  opacity: 1;
+  transform: translateY(2px);
+  color: var(--gold);
 }
 
 .num-note {
@@ -424,12 +463,17 @@ img {
   font-style: italic;
   font-size: 16px;
   color: var(--ink-mute);
-  margin-top: 44px;
+  margin-top: 32px;
 }
 
-@media (max-width: 900px) {
-  .numbers-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+  .skim-list a {
+    grid-template-columns: 96px 1fr;
+    gap: 16px;
+  }
+
+  .skim-arrow {
+    display: none;
   }
 }
 

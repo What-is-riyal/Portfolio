@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why did merchants give up before their first payment? | Priyal Shrivastava</title>
-  <meta name="description" content="Redesigning Razorpay's merchant onboarding for low-tech-literacy SMEs: 150+ support tickets, 50+ session recordings, a bank-clerk role play, and a one-question-at-a-time flow that lifted conversion 51% and cut form time from 14 to 5 minutes.">
+  <title>Redesigning merchant onboarding around an existing mental model | Priyal Shrivastava</title>
+  <meta name="description" content="Rebuilding Razorpay's merchant onboarding for low-tech-literacy SMEs: evidence from 150+ tickets and 50+ recordings, a bank-clerk role play, and a flow that lifted conversion 51%.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
@@ -232,25 +232,25 @@
     </header>
 
     <div class="container">
-      <p class="eyebrow">Razorpay &middot; Design + research &middot; 2021&ndash;22</p>
+      <p class="eyebrow">Razorpay &middot; 2021&ndash;22</p>
       <p class="q-label fx in">The question</p>
-      <h1 class="fx in">Why did merchants give up before their <em>first payment?</em></h1>
-      <p class="hero-standfirst fx in">Razorpay's onboarding form was where small merchants went to start accepting payments, and where a painful share of them stopped. For shop owners with low tech literacy, a 14-minute compliance form full of words like "proprietorship" was a wall. I redesigned it around a different mental model: not a form, but a conversation with a good bank clerk.</p>
+      <h1 class="fx in">Redesigning merchant onboarding around an existing mental model</h1>
+      <p class="hero-standfirst fx in">To accept payments through Razorpay, a merchant first had to get through a 14-minute compliance form, and a painful share of small merchants never did. I rebuilt the flow around a mental model these merchants already had: opening an account with a helpful bank clerk, one plain question at a time. After launch, form-filling conversion rose 51%, median completion time fell from 14 to 5 minutes, and onboarding support tickets dropped 43%.</p>
       <div class="hero-chips fx in">
-        <span class="pchip">Product Designer &amp; Researcher</span>
+        <span class="pchip">Product Designer</span>
         <span class="pchip">July 2021 &ndash; Oct 2022</span>
         <span class="pchip">SME merchant onboarding</span>
-        <span class="pchip accent">51% conversion lift &middot; 14 to 5 min</span>
+        <span class="pchip accent">51% conversion lift &middot; 43% fewer tickets</span>
       </div>
 
       <div class="snapshot-grid fx in">
         <div class="snap-item">
           <p class="s-label">My role</p>
-          <p class="s-value">Product Designer<small>doing my own research, by necessity</small></p>
+          <p class="s-value">Product Designer, doing my own research; my first role at Razorpay</p>
         </div>
         <div class="snap-item">
           <p class="s-label">Timeline</p>
-          <p class="s-value">2021&ndash;2022<small>my first role at Razorpay</small></p>
+          <p class="s-value">July 2021 &ndash; Oct 2022</p>
         </div>
         <div class="snap-item">
           <p class="s-label">Users</p>
@@ -258,11 +258,11 @@
         </div>
         <div class="snap-item">
           <p class="s-label">Evidence</p>
-          <p class="s-value">150+ tickets, 50+ recordings<small>workshop, role play, 11-merchant usability test</small></p>
+          <p class="s-value">150+ support tickets, 50+ session recordings, teardown workshop, competitive analysis, role play, 11-merchant usability test</p>
         </div>
         <div class="snap-item">
           <p class="s-label">Outcome</p>
-          <p class="s-value">51% conversion lift<small>43% fewer tickets, 14 to 5 minutes</small></p>
+          <p class="s-value">51% conversion lift; 14 to 5 minutes; 43% fewer tickets; internal MVP award</p>
         </div>
       </div>
     </div>
@@ -271,15 +271,14 @@
   <!-- ============ BACKGROUND ============ -->
   <section class="strip">
     <div class="container">
-      <p class="kicker fx">Background</p>
-      <h2 class="fx">A compliance form standing between a shop and its <em>money</em></h2>
+      <p class="kicker fx">Context</p>
+      <h2 class="fx">Context</h2>
       <div class="prose">
-        <p class="fx">To accept payments through Razorpay, a merchant first had to complete onboarding: business details, regulatory KYC, bank information, spread across a tabbed, dense form that took around 14 minutes when everything went well. For the small and medium merchants signing up, a kirana store owner, a home baker, a small exporter, things often didn't go well. The form spoke in the language of compliance, and they ran businesses, not paperwork.</p>
-        <p class="fx">The cost was visible in two places: merchants who abandoned onboarding and never took their first payment, and a steady stream of support tickets from those who pushed through and got stuck.</p>
+        <p class="fx">Onboarding asked merchants for business details, regulatory KYC, and bank information, spread across a tabbed, dense form that took about 14 minutes when everything went well. For the small merchants signing up, a kirana store owner, a home baker, a small exporter, things often didn't go well. The form spoke the language of compliance, and they ran businesses, not paperwork. The cost showed up in two places: merchants who abandoned onboarding before taking their first payment, and a steady stream of support tickets from those who pushed through and got stuck.</p>
       </div>
 
       <figure class="shot fx">
-        <img src="../assets/img/onboarding/old-onboarding.png" alt="The old onboarding flow on mobile: an Enable Payments form with tabs for Contact Details, Business Overview, and Business Details, each screen dense with fields like billing label, website details, and PAN information.">
+        <img src="../assets/img/onboarding/old-onboarding.png" alt="The old onboarding flow: an 'Enable Payments' form with tabs for Contact Details, Business Overview, and Business Details, each screen dense with fields and compliance vocabulary.">
         <figcaption>The old flow: tabbed screens, many fields at once, compliance vocabulary throughout.</figcaption>
       </figure>
     </div>
@@ -288,10 +287,10 @@
   <!-- ============ EVIDENCE ============ -->
   <section class="strip" style="padding-top: 0;">
     <div class="container">
-      <p class="kicker fx">The evidence</p>
-      <h2 class="fx">Listening to the form <em>fail</em></h2>
+      <p class="kicker fx">Building the evidence base</p>
+      <h2 class="fx">Building the evidence base</h2>
       <div class="prose">
-        <p class="fx">There was no research team attached to this project. So before redesigning anything, I built the evidence base myself, from sources that were already there for the reading.</p>
+        <p class="fx">There was no research team attached to this project, and no budget to commission a study, so the first decision was to mine the evidence the company already had. Two sources were sitting unread, and they were complementary in a useful way: support tickets are written by the people who didn't give up, and session recordings show the people who did.</p>
       </div>
 
       <div class="moves">
@@ -299,10 +298,10 @@
           <span class="m-num">1</span>
           <div>
             <h3>150+ support tickets, coded</h3>
-            <p>I read and categorized over 150 onboarding support tickets. They mapped exactly where the form broke people: business-type jargon that didn't match how merchants describe themselves, buttons that stayed disabled with no explanation, and silence after submission.</p>
+            <p><strong>I read and coded over 150 onboarding support tickets.</strong> They mapped exactly where the form broke people: business-type jargon that didn't match how merchants describe themselves, buttons that stayed disabled with no explanation, and silence after submission.</p>
             <figure class="shot" style="margin: 24px 0 0;">
-              <img src="../assets/img/onboarding/ticket-analysis.png" alt="Three real support ticket excerpts: a merchant unable to find an option for unregistered businesses, a merchant whose Submit Form button stayed disabled after uploading KYC documents, and a merchant asking why their settlement hadn't arrived.">
-              <figcaption>Tickets in merchants' own words: the jargon problem, the dead-end problem, and the silence problem.</figcaption>
+              <img src="../assets/img/onboarding/ticket-analysis.png" alt="Three support ticket excerpts in merchants' own words: one cannot find an option for unregistered businesses, one's Submit Form button stays disabled after uploading KYC documents, and one asks why their settlement has not arrived.">
+              <figcaption>Three tickets, three failure types: vocabulary that doesn't match the merchant ("unregistered business"), dead ends with no explanation (the disabled submit button), and silence after submission (the missing settlement).</figcaption>
             </figure>
           </div>
         </div>
@@ -310,29 +309,28 @@
           <span class="m-num">2</span>
           <div>
             <h3>50+ session recordings</h3>
-            <p>Hotjar recordings of real merchants moving through the form showed what tickets couldn't: the long pauses on the business-type question, the back-and-forth between tabs looking for something familiar, the rage clicks on a disabled button, the exits.</p>
-            <p class="m-why"><b>Why both sources</b> Tickets are written by people who didn't give up. The recordings showed the ones who did, and where.</p>
+            <p><strong>I watched 50+ Hotjar recordings</strong> of merchants moving through the form. The recordings showed what tickets couldn't: long pauses on the business-type question, back-and-forth between tabs looking for something familiar, repeated clicks on a disabled button, and the exits.</p>
           </div>
         </div>
         <div class="move fx">
           <span class="m-num">3</span>
           <div>
             <h3>A teardown workshop</h3>
-            <p>I ran an empathy workshop with designers and PMs, walking the current flow screen by screen against the ticket and recording evidence. The team annotated every screen with what a low-tech-literacy merchant would be thinking at that moment, which turned an abstract drop-off number into specific, fixable moments.</p>
+            <p><strong>I ran a teardown workshop</strong> with designers and PMs, walking the current flow screen by screen against the ticket and recording evidence. The team annotated every screen with what a low-tech-literacy merchant would be thinking at that moment. The workshop turned an abstract drop-off number into specific, fixable moments, and it meant the people who would later approve the redesign had touched the evidence themselves.</p>
             <figure class="shot" style="margin: 24px 0 0;">
               <img src="../assets/img/onboarding/empathy-workshop.png" alt="A FigJam board titled 'Current onboarding teardown', covered in clustered sticky notes annotating each screen of the existing flow.">
-              <figcaption>The teardown board: every screen of the old flow, annotated by the team against real evidence.</figcaption>
+              <figcaption>The teardown board: every screen of the old flow annotated by the team against the ticket and recording evidence.</figcaption>
             </figure>
           </div>
         </div>
         <div class="move fx">
           <span class="m-num">4</span>
           <div>
-            <h3>Competitive analysis, 8 players</h3>
-            <p>I compared onboarding across Razorpay's competitors, from global players to Indian ones, on what they asked, when they asked it, and in what tone. The pattern: the friendliest flows asked for less up front, asked conversationally, and explained why each piece of information was needed.</p>
+            <h3>Competitive analysis</h3>
+            <p><strong>I compared onboarding across eight competitors,</strong> global and Indian, on what they asked, when they asked it, and in what tone. The friendliest flows shared a pattern: they asked for less up front, asked conversationally, and explained why each piece of information was needed.</p>
             <figure class="shot" style="margin: 24px 0 0;">
-              <img src="../assets/img/onboarding/competitive-analysis.png" alt="A comparison table of onboarding practices across Razorpay, PayPal, Cashfree, PayU, Instamojo, Stripe, Paytm and BharatPe, covering questions asked at signup, KYC timing, conversational tone, and explanation of why details are needed.">
-              <figcaption>Eight onboarding flows compared on what they ask, when, and how.</figcaption>
+              <img src="../assets/img/onboarding/competitive-analysis.png" alt="A comparison table of onboarding across Razorpay, PayPal, Cashfree, PayU, Instamojo, Stripe, Paytm, and BharatPe: what each asks at signup, when KYC happens, whether the tone is conversational, and whether the flow explains why details are needed.">
+              <figcaption>Eight onboarding flows compared on what they ask, when they ask it, and how.</figcaption>
             </figure>
           </div>
         </div>
@@ -343,16 +341,16 @@
   <!-- ============ THE ROLE PLAY ============ -->
   <section class="strip fold-dark">
     <div class="container">
-      <p class="kicker fx" style="color: #6EE7B7;">The turn</p>
-      <h2 class="fx">How would a <em>bank clerk</em> do this?</h2>
+      <p class="kicker fx" style="color: #6EE7B7;">The reframe</p>
+      <h2 class="fx">The reframe</h2>
       <div class="prose">
-        <p class="fx">The reframe came from an exercise, not a screen. These merchants had all opened bank accounts before. That process also involves KYC, PAN numbers, and proof documents, and yet they completed it, because a person walked them through it. So we role-played it: one person as the bank clerk, one as a merchant, acting out how an account gets opened across the counter.</p>
-        <p class="fx">The clerk never hands you a wall of fields. They ask one thing at a time, in plain words, tell you why they need each document, and react to your answers. <strong>The merchants' mental model for "giving my details to a financial institution" already existed.</strong> The form just didn't match it. The redesign's job was to behave like the clerk.</p>
+        <p class="fx">The evidence described the problem well but didn't yet suggest a shape for the solution. That came from an observation about the users themselves: these merchants had all opened bank accounts. A bank account application involves the same KYC, the same PAN numbers, the same proof documents, and they had completed it, because a person walked them through it. The task wasn't beyond them. The format was.</p>
+        <p class="fx">To take that seriously, we role-played it: one person as the bank clerk, one as a merchant, acting out how an account actually gets opened across a counter. The clerk never hands over a wall of fields. They ask one thing at a time, in plain words, explain why each document is needed, and respond to the answers. The merchants' mental model for "giving my details to a financial institution" already existed and already worked. The redesign's job was to match it.</p>
       </div>
 
       <figure class="shot fx">
-        <img src="../assets/img/onboarding/role-play.png" alt="An illustrated chat exchange from the bank-clerk role play: 'Hello! How may I help you today?' 'I'd like to open an account with you.' 'Great, let's start with your name and requirements.'">
-        <figcaption>The role play, reconstructed: an account opening as a conversation, one question at a time.</figcaption>
+        <img src="../assets/img/onboarding/role-play.png" alt="A chat-style reconstruction of the bank-clerk role play: 'Hello! How may I help you today?' 'I'd like to open an account with you.' 'Great, let's start with your name and requirements.'">
+        <figcaption>The role play, reconstructed as a conversation: how an account gets opened when a person is doing the asking.</figcaption>
       </figure>
     </div>
   </section>
@@ -360,38 +358,38 @@
   <!-- ============ PRINCIPLES ============ -->
   <section class="strip">
     <div class="container">
-      <p class="kicker fx">Design principles</p>
-      <h2 class="fx">Three rules from the <em>counter</em></h2>
+      <p class="kicker fx">Three principles</p>
+      <h2 class="fx">Three principles, applied to every screen</h2>
       <div class="prose">
-        <p class="fx">The evidence and the role play condensed into three principles that governed every screen of the new flow.</p>
+        <p class="fx">The evidence and the role play condensed into three rules that governed the new flow.</p>
       </div>
 
       <div class="princ-grid">
         <div class="princ fx">
           <p class="p-n">1</p>
-          <h3>One question per screen</h3>
-          <p>Each screen asks exactly one thing, the way a clerk would. Progress is always visible, so the merchant knows how much counter is left.</p>
+          <h3>One question per screen.</h3>
+          <p>Each screen asks exactly one thing, the way a clerk would, with progress always visible so the merchant knows how much is left.</p>
         </div>
         <div class="princ fx">
           <p class="p-n">2</p>
-          <h3>Say why you're asking</h3>
-          <p>Every sensitive request carries a plain-language reason. "We require this to verify your identity. This information will not be stored by us." Trust is built line by line, not in a privacy policy.</p>
+          <h3>Say why you're asking.</h3>
+          <p>Every sensitive request carries a plain-language reason, at the moment of asking rather than in a privacy policy.</p>
         </div>
         <div class="princ fx">
           <p class="p-n">3</p>
-          <h3>Speak merchant, not compliance</h3>
-          <p>Questions use the words merchants use for their own businesses. The regulatory mapping happens behind the screen, where it belongs.</p>
+          <h3>Speak merchant, not compliance.</h3>
+          <p>Questions use the words merchants use for their own businesses; the regulatory mapping happens behind the screen, where it belongs.</p>
         </div>
       </div>
 
       <div class="shot-pair fx">
         <figure class="shot">
-          <img src="../assets/img/onboarding/one-question-screen.png" alt="A redesigned onboarding screen on mobile: a progress bar at top, the single question 'What's your mobile number?', one input field, and a Send OTP button.">
-          <figcaption>Principle one on screen: a single question, a visible progress bar, nothing else.</figcaption>
+          <img src="../assets/img/onboarding/one-question-screen.png" alt="A redesigned onboarding screen on mobile: a progress bar at the top, the single question 'What's your mobile number?', one input field, and a Send OTP button.">
+          <figcaption>The first principle on screen: one question, one field, a visible progress bar, nothing else.</figcaption>
         </figure>
         <figure class="shot">
-          <img src="../assets/img/onboarding/trust-note.png" alt="A redesigned onboarding screen asking 'What's your PAN number?', with the explanation 'We require this to verify your identity. This information will not be stored by us' directly under the question.">
-          <figcaption>Principle two on screen: the reason for asking sits right under the question.</figcaption>
+          <img src="../assets/img/onboarding/trust-note.png" alt="A redesigned onboarding screen asking 'What's your PAN number?', with the explanation 'We require this to verify your identity. This information will not be stored by us' directly beneath the question.">
+          <figcaption>The second principle on screen: the reason for asking sits directly under the question that needs it.</figcaption>
         </figure>
       </div>
     </div>
@@ -457,8 +455,8 @@
       </div>
 
       <figure class="shot fx">
-        <img src="../assets/img/onboarding/new-onboarding.gif" alt="Animated walkthrough of the redesigned onboarding flow, moving through single-question screens with a progress bar.">
-        <figcaption>The shipped flow, in motion.</figcaption>
+        <img src="../assets/img/onboarding/new-onboarding.gif" alt="An animated walkthrough of the redesigned onboarding flow, moving through single-question screens with a progress bar at the top.">
+        <figcaption>The shipped flow in motion: single questions, visible progress, plain language.</figcaption>
       </figure>
     </div>
   </section>
@@ -467,9 +465,9 @@
   <section class="strip fold-dark">
     <div class="container">
       <p class="kicker fx" style="color: #6EE7B7;">Validation and impact</p>
-      <h2 class="fx">Tested with eleven merchants, then <em>shipped</em></h2>
+      <h2 class="fx">Validation and impact</h2>
       <div class="prose">
-        <p class="fx">Before launch, I ran a usability test of the new flow with 11 merchants against the old one. 73% preferred the redesigned flow, and the sessions caught wording that still read as jargon, which we fixed before shipping. The flow went through multiple iterations against this feedback rather than launching the first version that tested well.</p>
+        <p class="fx">Before launch, I ran a usability test of the new flow against the old one with 11 merchants. 73% preferred the redesign, and, just as usefully, the sessions caught wording that still read as jargon. The flow went through further iterations against that feedback rather than shipping the first version that tested well.</p>
       </div>
 
       <figure class="shot fx">
@@ -493,12 +491,19 @@
       </div>
 
       <div class="prose" style="margin-top: 48px;">
-        <p class="fx">The project won the internal MVP award for the quarter. The number I'm most attached to is the ticket reduction: conversion measures whether people got through, but fewer tickets means fewer shop owners stuck at a counter with no clerk in sight.</p>
+        <p class="fx">After launch:</p>
+        <ul class="deliver-list" style="margin-top: 0; max-width: 680px;">
+          <li class="fx" style="border-bottom-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.75);"><span class="d-n">1</span><span>Form-filling conversion rose 51%.</span></li>
+          <li class="fx" style="border-bottom-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.75);"><span class="d-n">2</span><span>Median completion time fell from 14 minutes to 5.</span></li>
+          <li class="fx" style="border-bottom-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.75);"><span class="d-n">3</span><span>Onboarding support tickets fell 43%.</span></li>
+          <li class="fx" style="border-bottom: none; color: rgba(255,255,255,0.75);"><span class="d-n">4</span><span>The project won the company's internal MVP award for the quarter.</span></li>
+        </ul>
+        <p class="fx">The number I'm most attached to is the ticket reduction. Conversion measures whether people got through; fewer tickets means fewer shop owners stuck at a counter with no clerk in sight.</p>
       </div>
 
       <div class="role-note fx">
         <span class="h-label">An honest note on the role</span>
-        <p>This was my first role at Razorpay, as a product designer. The research here, tickets, recordings, workshops, the role play, the usability test, was research I did because the design needed it, not because anyone had scoped a study. It's also the project that convinced me to move into research full time: the redesign worked exactly to the degree that the evidence under it was right.</p>
+        <p>An honest note on the role: I was a product designer on this project, not a researcher. Nobody scoped a study; I did the research because the design needed evidence under it. This is also the project that convinced me to move into research full time.</p>
       </div>
     </div>
   </section>
@@ -507,15 +512,15 @@
   <section class="closing">
     <div class="container" style="position: relative;">
       <p class="kicker fx" style="color: #6EE7B7;">What I learned</p>
-      <h2 class="fx" style="color: #fff;">Users already have a mental model. Find it before you <em>invent one</em></h2>
+      <h2 class="fx" style="color: #fff;">Reflection</h2>
       <div class="prose">
-        <p class="fx">The breakthrough in this project came from noticing that merchants had already succeeded at this exact task, at a bank counter, and asking what that experience had that our form lacked. Since then, whenever a flow is failing, my first research question is where users have done this successfully before, and what carried them through it there.</p>
-        <p class="fx">The other lesson was about evidence you don't have to commission. Support tickets and session recordings were sitting there, unread, describing the problem in users' own words. A lot of research debt is really just reading debt.</p>
+        <p class="fx">The breakthrough came from noticing that merchants had already succeeded at this exact task elsewhere, and asking what that experience had that our form lacked. Since then, whenever a flow is failing, my first research question is where these users have done this successfully before, and what carried them through it there. Users usually have a working mental model already; the expensive mistake is inventing a new one for them.</p>
+        <p class="fx">The other lesson is about evidence nobody has to commission. The tickets and recordings were sitting there, describing the problem in users' own words, unread. A lot of research debt is really reading debt.</p>
       </div>
 
       <div class="next-project fx" style="margin-top: 96px;">
         <p class="label">Next project</p>
-        <a href="meesho-vernacular.html">What gets lost when research is in English?
+        <a href="meesho-vernacular.html">Language and bias in research for India's next billion users
           <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </a>
       </div>

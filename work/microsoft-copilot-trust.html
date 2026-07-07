@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A point of view for Copilot in Outlook | Priyal Shrivastava</title>
-  <meta name="description" content="Synthesizing a year of fragmented Copilot research at Microsoft into a white paper on what users need before they trust an AI assistant with their email.">
+  <meta name="description" content="A trust-and-safety framework for an AI assistant: synthesizing a year of Microsoft Copilot research into a position on when an automated system is safe to act on a user's behalf, how its decisions stay transparent and contestable, and a pre-ship checklist teams could run before shipping.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
@@ -110,17 +110,6 @@
       border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.8);
     }
     .chip.accent { border-color: rgba(124,113,255,0.5); color: var(--glow); }
-    .scroll-hint {
-      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
-      font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
-      color: rgba(255,255,255,0.4); display: flex; flex-direction: column; align-items: center; gap: 10px;
-    }
-    .scroll-hint::after {
-      content: ""; width: 1px; height: 36px;
-      background: linear-gradient(to bottom, var(--glow), transparent);
-      animation: hint-drop 1.8s ease-in-out infinite;
-    }
-    @keyframes hint-drop { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
     /* ============ Snapshot meta band ============ */
     .snapshot { background: var(--ink); color: #fff; padding: 0 0 72px; }
@@ -154,13 +143,6 @@
 
     .fx { opacity: 0; transform: translateY(36px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
     .fx.in { opacity: 1; transform: none; }
-
-    .nda-pill {
-      display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600;
-      color: var(--muted); border: 1px dashed #D9D9D9; border-radius: 999px; padding: 10px 20px;
-      margin-bottom: 48px;
-    }
-    .nda-pill .dot-pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--glow); animation: pulse 2s infinite; }
 
     /* ============ The shelf: scattered studies vs one argument ============ */
     .shelf-wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; margin-top: 56px; }
@@ -370,7 +352,7 @@
 
     /* ============ Fragmentation orbit ============ */
     .orbit-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 64px; }
-    .orbit-panel { border-radius: 16px; border: 1px solid var(--border); background: var(--surface); padding: 40px 24px; text-align: center; min-height: 380px; display: flex; flex-direction: column; }
+    .orbit-panel { border-radius: 16px; border: 1px solid var(--border); background: var(--surface); padding: 40px 24px; text-align: center; min-height: 380px; display: flex; flex-direction: column; overflow: hidden; }
     .orbit-panel .op-label { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
     .orbit-panel .op-sub { font-size: 13.5px; color: var(--muted); margin-bottom: 24px; }
     .scatter { position: relative; flex: 1; }
@@ -455,8 +437,130 @@
     .closing .next-project a:hover { color: var(--glow); }
     .closing .footer-links a:hover { color: var(--glow); }
 
+    /* ============ Why-it-mattered stat row ============ */
+    .why-stats {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 32px 40px;
+      margin-top: 56px; border-top: 1px solid var(--border); padding-top: 40px;
+    }
+    .why-stat .ws-num {
+      font-family: var(--serif); font-style: italic; font-size: clamp(38px, 5vw, 54px);
+      line-height: 1; color: var(--glow); letter-spacing: -0.02em;
+    }
+    .why-stat .ws-label { font-size: 14px; line-height: 1.55; color: var(--muted); margin-top: 12px; max-width: 24ch; }
+    .why-stat .ws-label b { color: var(--text); font-weight: 700; }
+
+    /* ============ Synthesis flow (inputs to output, with numbers) ============ */
+    .flow { display: flex; align-items: stretch; margin-top: 12px; }
+    .flow-node {
+      flex: 1; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px 20px;
+    }
+    .flow-node.accent { background: var(--ink); border-color: transparent; color: #fff; }
+    .flow-k { font-size: 10.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .flow-node.accent .flow-k { color: #9D91FF; }
+    .flow-num { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.4vw, 32px); line-height: 1.05; color: var(--glow); letter-spacing: -0.02em; }
+    .flow-node.accent .flow-num { color: #fff; }
+    .flow-desc { font-size: 12.5px; line-height: 1.55; color: var(--muted); margin-top: 8px; }
+    .flow-node.accent .flow-desc { color: rgba(255,255,255,0.62); }
+    .flow-arrow { flex: 0 0 32px; display: flex; align-items: center; justify-content: center; color: var(--glow); }
+    @media (max-width: 860px) {
+      .flow { flex-direction: column; }
+      .flow-arrow { flex-basis: 30px; transform: rotate(90deg); }
+    }
+
+    /* ============ The reframe: features to Chief of Staff ============ */
+    .reframe { display: grid; grid-template-columns: 1fr 40px 1fr; align-items: stretch; margin-top: 56px; }
+    .reframe-col { border-radius: 16px; padding: 34px 30px; border: 1px solid var(--border); background: var(--surface); }
+    .reframe-col.to { background: var(--ink); border-color: transparent; color: #fff; position: relative; overflow: hidden; }
+    .reframe-col.to::after { content: ""; position: absolute; width: 26vw; height: 26vw; border-radius: 50%; background: radial-gradient(circle, rgba(124,113,255,0.22), transparent 60%); bottom: -13vw; right: -7vw; pointer-events: none; }
+    .rf-label { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+    .reframe-col.to .rf-label { color: #9D91FF; }
+    .rf-feats { display: flex; flex-wrap: wrap; gap: 10px; }
+    .rf-feat { font-size: 13.5px; font-weight: 600; padding: 9px 15px; border-radius: 8px; background: #fff; border: 1px solid var(--border); color: var(--muted); }
+    .rf-cos { font-family: var(--serif); font-style: italic; font-size: clamp(21px, 2.5vw, 28px); line-height: 1.32; margin-bottom: 20px; position: relative; z-index: 1; }
+    .rf-roles { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 1; }
+    .rf-role { font-size: 12.5px; font-weight: 600; padding: 7px 13px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.22); color: rgba(255,255,255,0.85); }
+    .rf-arrow { display: flex; align-items: center; justify-content: center; color: var(--glow); }
+    @media (max-width: 820px) { .reframe { grid-template-columns: 1fr; gap: 8px; } .rf-arrow { transform: rotate(90deg); padding: 6px 0; } }
+
+    /* ============ Framework stack (structure of the outcome) ============ */
+    .fw { margin-top: 40px; display: grid; grid-template-columns: 1fr 200px; gap: 16px; align-items: stretch; }
+    .fw-layers { display: flex; flex-direction: column; gap: 12px; }
+    .fw-vision { border-radius: 14px; background: var(--ink); color: #fff; padding: 22px 26px; position: relative; overflow: hidden; }
+    .fw-vision::after { content: ""; position: absolute; width: 22vw; height: 22vw; border-radius: 50%; background: radial-gradient(circle, rgba(124,113,255,0.25), transparent 60%); top: -11vw; right: -5vw; pointer-events: none; }
+    .fw-vk { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #9D91FF; margin-bottom: 8px; }
+    .fw-vt { font-family: var(--serif); font-style: italic; font-size: clamp(19px, 2.1vw, 25px); line-height: 1.3; position: relative; z-index: 1; }
+    .fw-layer { border-radius: 14px; border: 1px solid var(--border); background: var(--surface); padding: 20px 24px; display: grid; grid-template-columns: 150px 1fr; gap: 20px; align-items: center; }
+    .fl-name { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; }
+    .fl-name small { display: block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--glow); margin-bottom: 5px; }
+    .fl-desc { font-size: 14px; line-height: 1.6; color: var(--muted); }
+    .fw-autonomy { border-radius: 14px; border: 1px dashed rgba(79,70,229,0.4); background: rgba(79,70,229,0.04); padding: 24px 20px; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+    .fa-k { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--glow); margin-bottom: 4px; }
+    .fa-sub { font-size: 12px; line-height: 1.5; color: var(--muted); margin-bottom: 18px; }
+    .fw-step2 { font-size: 14.5px; font-weight: 700; color: var(--text); padding: 9px 0; }
+    .fw-updot { color: var(--glow); font-size: 15px; line-height: 1; }
+    @media (max-width: 860px) {
+      .fw { grid-template-columns: 1fr; }
+      .fw-layer { grid-template-columns: 1fr; gap: 8px; }
+    }
+
+    /* ============ Public-web reactions (paraphrased) ============ */
+    .reacts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+    .react { border-radius: 12px; border: 1px solid var(--border); background: #fff; padding: 20px 20px 16px; box-shadow: 0 12px 24px -20px rgba(0,0,0,0.22); }
+    .rc-src { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 800; letter-spacing: 0.02em; color: var(--muted); margin-bottom: 12px; }
+    .rc-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+    .react.pos .rc-dot { background: #2E9E5B; }
+    .react.neg .rc-dot { background: #C4553D; }
+    .rc-quote { font-size: 14.5px; line-height: 1.55; color: var(--text); }
+    .reacts-note { font-size: 12.5px; color: var(--muted); margin-top: 16px; font-style: italic; }
+
+    /* Reflection prose sits on the dark closing surface: force legible light text */
+    .closing .prose p { color: rgba(255,255,255,0.78); }
+    .closing .prose strong { color: #fff; }
+
+    /* ============ Trust & safety checklist (paper appendix) ============ */
+    .gate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 44px; }
+    .gate-card { border-radius: 16px; border: 1px solid var(--border); background: var(--surface); padding: 26px 26px 22px; }
+    .gate-card.flag { border-color: rgba(196,85,61,0.4); background: #FCF3F0; }
+    .gate-cat { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 16px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 18px; }
+    .gc-tag { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--glow); border: 1px solid rgba(79,70,229,0.3); border-radius: 999px; padding: 3px 9px; }
+    .gate-card.flag .gc-tag { color: #B4472F; border-color: rgba(196,85,61,0.45); }
+    .gate-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .gate-list li { display: grid; grid-template-columns: 20px 1fr; gap: 12px; font-size: 14px; line-height: 1.5; color: #3A3A3A; }
+    .gate-check { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid var(--glow); position: relative; margin-top: 1px; }
+    .gate-check::after { content: ""; position: absolute; left: 5px; top: 1px; width: 5px; height: 10px; border: solid var(--glow); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+    .gate-card.flag .gate-check { border-color: #B4472F; }
+    .gate-card.flag .gate-check::after { border-color: #B4472F; }
+    .gate-note { font-size: 13.5px; color: var(--muted); margin-top: 24px; font-style: italic; max-width: 74ch; line-height: 1.6; }
+
+    /* ============ Mobile hardening ============ */
+    @media (max-width: 768px) {
+      .strip { padding: 76px 0; }
+      .hero-dark { padding: 104px 0 64px; min-height: 0; background: radial-gradient(65vw 55vw at 88% 10%, rgba(124,113,255,0.20), transparent 62%), var(--ink); }
+      .hero-orb { display: none; }
+      .snapshot { padding-bottom: 56px; }
+      .statement { padding: 96px 0; }
+      .annot { display: none !important; }
+      .why-stats { gap: 28px 32px; margin-top: 44px; }
+      .flow, .fw, .reframe { margin-top: 36px; }
+    }
+    @media (max-width: 600px) {
+      .move { grid-template-columns: 42px 1fr; gap: 16px; padding: 28px 0; }
+      .move .m-num { font-size: 34px; }
+      .tcl-card { padding: 32px 24px; }
+      .tcl-card .tcl-letter { font-size: 72px; margin-bottom: 16px; }
+      .reframe-col { padding: 26px 22px; }
+      .demo-head h3 { font-size: 19px; }
+      .snap-item .s-value { font-size: 14.5px; }
+      .gate-card { padding: 22px 20px; }
+      .fw-layer { padding: 18px 20px; }
+      .deliver-list li { grid-template-columns: 26px 1fr; gap: 14px; font-size: 15.5px; }
+      .ws-num { font-size: 40px; }
+      .closing .footer-cta a.big-link { font-size: clamp(24px, 7vw, 40px); overflow-wrap: anywhere; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .hero-orb, .scroll-hint::after, .orbit-ring, .orbit-ring .sat, .app-chip { animation: none !important; }
+      .hero-orb, .orbit-ring, .orbit-ring .sat, .app-chip { animation: none !important; }
       .hero-dark h1 .line span { transform: none; animation: none; }
       .hero-standfirst, .hero-chips { opacity: 1 !important; animation: none; }
       .fx { opacity: 1; transform: none; transition: none; }
@@ -499,13 +603,12 @@
       </h1>
       <p class="hero-standfirst">Microsoft was integrating Copilot into Outlook one capability at a time, and each capability had its own research behind it. What the organization lacked was a single position on what all that evidence meant. I synthesized a year of studies into a white paper on what users need before they trust an AI assistant inside their inbox, and what that implies about what to build first.</p>
       <div class="hero-chips">
-        <span class="chip">UX Researcher, contract via Kadence</span>
-        <span class="chip">Sept 2024 &ndash; Feb 2025</span>
+        <span class="chip">UX Researcher</span>
+        <span class="chip">Dec 2024 &ndash; Feb 2025</span>
         <span class="chip">Point-of-view white paper</span>
-        <span class="chip accent">Under NDA &middot; method and framework shown</span>
+        <span class="chip accent">Under NDA</span>
       </div>
     </div>
-    <div class="scroll-hint">Scroll</div>
   </section>
 
   <!-- ============ SNAPSHOT ============ -->
@@ -518,15 +621,11 @@
         </div>
         <div class="snap-item">
           <p class="s-label">Timeline</p>
-          <p class="s-value">Sept 2024 &ndash; Feb 2025<small>paper delivered Feb 2025</small></p>
-        </div>
-        <div class="snap-item">
-          <p class="s-label">Working with</p>
-          <p class="s-value">Khyati Seth<small>lead researcher, Outlook UXR</small></p>
+          <p class="s-value">Dec 2024 &ndash; Feb 2025<small>paper delivered Feb 2025</small></p>
         </div>
         <div class="snap-item">
           <p class="s-label">Inputs</p>
-          <p class="s-value">A year of internal studies<small>plus public social listening</small></p>
+          <p class="s-value">A year of internal studies<small>plus public social listening and academic literature</small></p>
         </div>
         <div class="snap-item">
           <p class="s-label">Deliverable</p>
@@ -537,14 +636,21 @@
   </section>
 
   <!-- ============ BACKGROUND ============ -->
-  <section class="strip" style="position: relative;">
+  <section class="strip" style="position: relative; padding-bottom: 40px;">
     <div class="container">
-      <div class="nda-pill fx"><span class="dot-pulse"></span> This work is under NDA. I describe my method, the structure of the argument, and the reasoning behind it. Internal findings, feature names, and roadmap details are not shown, and this page has no internal artifacts on it for that reason.</div>
-      <p class="kicker fx">Context</p>
-      <h2 class="fx">Context</h2>
+      <p class="kicker fx">Why it mattered</p>
+      <h2 class="fx">One inbox, many teams, no shared answer</h2>
       <div class="prose">
-        <p class="fx">Copilot's capabilities in Outlook, drafting, summarizing, scheduling, prioritizing, were each being developed by a different feature team, and each team had commissioned its own research: deep dives, focus groups, concept tests, accumulating for over a year. Every study was competent on its own terms. But each one was scoped to the feature that paid for it, so the body of work as a whole disagreed with itself in places, repeated itself in others, and never answered the question underneath all of them: taken together, what were users saying about living with an AI assistant?</p>
-        <p class="fx">The organization asked for a point-of-view paper: one document that turned the accumulated evidence into a position the whole team could build against, or argue with. I authored that paper, working closely with the lead researcher. The work was a mix of research and editorial judgment: deciding which findings were load-bearing, which were artifacts of how one study happened to be framed, and what the evidence supported when read as a whole.</p>
+        <p class="fx">Two things were happening at Microsoft at once, and they pulled against each other. Copilot was being pushed into more of M365 every quarter, and the ownership of it was scattering at the same speed. A Copilot in Mail, another in Chat, another in Docs, each built by a different team, on its own roadmap, with its own read on what people wanted. Outlook sat right in the middle of that. What the org did not have was a single, research-led answer to where Copilot should go inside the inbox, instead of a handful of teams each optimizing their own slice and hoping it all added up.</p>
+        <p class="fx">The research was just as split. Drafting, summarizing, scheduling, prioritizing, each had its own study behind it, commissioned by the team that owned the feature, piling up for over a year. Every study was competent on its own terms. But each was scoped to the feature that paid for it, so the body of work disagreed with itself in places, repeated itself in others, and never answered the question sitting underneath all of them: taken together, what were people actually saying about living with an AI assistant in their inbox?</p>
+        <p class="fx">So the org asked for a point-of-view paper. One document that turned a year of scattered evidence into a position the whole team could build against, or argue with. I wrote it, working closely with the lead researcher. The job was half research and half editorial judgment: deciding which findings were load-bearing, which were artifacts of how a single study happened to be framed, and what the evidence supported once you read it as one body instead of six.</p>
+      </div>
+
+      <div class="why-stats fx">
+        <div class="why-stat"><p class="ws-num">8+</p><p class="ws-label">communication <b>platforms</b> an average worker was juggling at once</p></div>
+        <div class="why-stat"><p class="ws-num">1 yr+</p><p class="ws-label">of <b>studies piling up</b>, team by team, that had never been read together</p></div>
+        <div class="why-stat"><p class="ws-num">5</p><p class="ws-label">core studies I <b>synthesized</b> into a single position</p></div>
+        <div class="why-stat"><p class="ws-num">1</p><p class="ws-label">shared <b>point of view</b>, where there had been none</p></div>
       </div>
 
       <div class="annot" style="top: 110px; right: 4%;"><b>Why the question leads</b> The research question is the first thing on this page because it was the first thing on the paper. Everything else exists to answer it.</div>
@@ -554,13 +660,7 @@
   <!-- ============ THE INPUT vs THE OUTPUT ============ -->
   <section class="strip" style="padding-top: 0; position: relative;">
     <div class="container">
-      <p class="kicker fx">The starting condition</p>
-      <h2 class="fx">Five studies, five vocabularies, one assistant</h2>
-      <div class="prose">
-        <p class="fx">This is the shape of the problem I was handed. Every card below stands for a real internal study; the labels are generalized to respect the NDA. Every study was competent on its own terms. None of them was written to be read next to the others.</p>
-      </div>
-
-      <div class="shelf-wrap">
+      <div class="shelf-wrap" style="margin-top: 24px;">
         <div class="shelf fx" aria-label="Illustration: separate research studies, each scoped to one feature">
           <p class="sh-label">What existed</p>
           <div class="study-card" style="top: 18%; left: 6%; transform: rotate(-3deg);"><b>Drafting study</b>Where AI writing help works, where it gets the tone wrong</div>
@@ -586,8 +686,44 @@
       <p class="kicker fx">Method</p>
       <h2 class="fx">How I approached the synthesis</h2>
       <div class="prose">
-        <p class="fx">Synthesis across studies has failure modes of its own, and the method was designed around them. The biggest risk in combining a year of reports is laundering: a weak finding from one small study gets averaged into the pile and comes out the other side looking like consensus. So I treated the source reports the way I would treat participants, each one read closely, questioned, and coded before it was allowed to influence the argument. The working board ended up holding roughly 85 coded notes across the source studies.</p>
-        <p class="fx">Concretely, the process ran in five steps:</p>
+        <p class="fx">Synthesis across studies has failure modes of its own, and the method was designed around them. The biggest risk in combining a year of reports is laundering: a weak finding from one small study gets averaged into the pile and comes out the other side looking like consensus. So I treated the source reports the way I would treat participants, each one read closely, questioned, and coded before it was allowed to influence the argument.</p>
+      </div>
+
+      <p class="kicker fx" style="margin-top: 64px;">The synthesis at a glance</p>
+      <div class="flow fx">
+        <div class="flow-node">
+          <p class="flow-k">Inputs</p>
+          <p class="flow-num">5 studies</p>
+          <p class="flow-desc">a year of internal research, plus public social listening and academic literature</p>
+        </div>
+        <div class="flow-arrow"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h8M9 5l3 3-3 3"/></svg></div>
+        <div class="flow-node">
+          <p class="flow-k">Coded</p>
+          <p class="flow-num">~85 notes</p>
+          <p class="flow-desc">every finding pulled out with its source still attached to it</p>
+        </div>
+        <div class="flow-arrow"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h8M9 5l3 3-3 3"/></svg></div>
+        <div class="flow-node">
+          <p class="flow-k">Converged</p>
+          <p class="flow-num">The repeats</p>
+          <p class="flow-desc">patterns that surfaced across studies with nothing else in common</p>
+        </div>
+        <div class="flow-arrow"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h8M9 5l3 3-3 3"/></svg></div>
+        <div class="flow-node accent">
+          <p class="flow-k">Position</p>
+          <p class="flow-num">1 point of view</p>
+          <p class="flow-desc">a trust framework the whole org could build against</p>
+        </div>
+        <div class="flow-arrow"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h8M9 5l3 3-3 3"/></svg></div>
+        <div class="flow-node">
+          <p class="flow-k">Shipped</p>
+          <p class="flow-num">Guides + checklist</p>
+          <p class="flow-desc">design guidelines and a pre-ship checklist teams could run on their own</p>
+        </div>
+      </div>
+
+      <div class="prose" style="margin-top: 48px;">
+        <p class="fx">The board itself was less tidy than that row makes it look. Concretely, the work ran in five steps:</p>
       </div>
 
       <div class="moves">
@@ -623,6 +759,25 @@
           <div>
             <h3>Pressure-test the themes externally.</h3>
             <p>Internal studies share internal blind spots, so I checked the emerging themes against public social listening: what people were saying about AI assistants on forums and in the press. Where the outside conversation echoed the internal data, I trusted the theme more; where it didn't, I went back to the sources. Social listening is noisy and self-selected, so I used it only to test themes, never to generate them.</p>
+            <div class="reacts" aria-label="Paraphrased public web reactions the synthesis was tested against">
+              <div class="react pos">
+                <p class="rc-src"><span class="rc-dot"></span>X &middot; Microsoft 365</p>
+                <p class="rc-quote">The Teams call summary is a genuine win. This is the kind of thing people actually asked for.</p>
+              </div>
+              <div class="react neg">
+                <p class="rc-src"><span class="rc-dot"></span>ZDNet</p>
+                <p class="rc-quote">To a lot of users, the 365 Copilot launch read like a mess.</p>
+              </div>
+              <div class="react neg">
+                <p class="rc-src"><span class="rc-dot"></span>Reddit &middot; r/sysadmin</p>
+                <p class="rc-quote">Half the threads were people asking how to switch it off, not how to use it.</p>
+              </div>
+              <div class="react neg">
+                <p class="rc-src"><span class="rc-dot"></span>Threads &middot; LinkedIn</p>
+                <p class="rc-quote">Forced opt-in was the fastest way to make people resent a feature that might have helped them.</p>
+              </div>
+            </div>
+            <p class="reacts-note">Paraphrased from public posts the synthesis checked against. The friction here matched what people told us in private, which is a large part of why the paper leads with trust rather than features.</p>
           </div>
         </div>
         <div class="move fx">
@@ -635,6 +790,47 @@
       </div>
 
       <div class="annot" style="top: 80px; right: 3%;"><b>Why show the mess</b> Hiring managers read a hundred polished frameworks a week. The questions a researcher asks mid-analysis are harder to fake.</div>
+    </div>
+  </section>
+
+  <!-- ============ THE REFRAME: Copilot as Chief of Staff ============ -->
+  <section class="strip" style="padding-top: 40px; position: relative;">
+    <div class="container">
+      <p class="kicker fx">The reframe</p>
+      <h2 class="fx">Copilot as a <em>Chief of Staff</em></h2>
+      <div class="prose">
+        <p class="fx">Read across all five studies at once, the capabilities stopped looking like a feature list and started looking like a job. People did not want six AI tools bolted onto their inbox. They wanted one that behaved like a good chief of staff: it knew their context, handled the routine on their behalf, and kept them in the loop on the rest. That reframe became the paper's spine. It moves the question from "what features should Copilot ship" to "what would a chief of staff have to earn before you let it act for you."</p>
+      </div>
+
+      <div class="reframe">
+        <div class="reframe-col fx">
+          <p class="rf-label">How it was being built</p>
+          <div class="rf-feats">
+            <span class="rf-feat">Prioritize inbox</span>
+            <span class="rf-feat">Summarize threads</span>
+            <span class="rf-feat">Draft replies</span>
+            <span class="rf-feat">Suggest meeting times</span>
+            <span class="rf-feat">Track to-dos</span>
+            <span class="rf-feat">Search across apps</span>
+          </div>
+          <p style="font-size: 14px; line-height: 1.6; color: var(--muted); margin-top: 22px;">Each one shipped and measured on its own, by the team that owned it.</p>
+        </div>
+        <div class="rf-arrow"><svg width="26" height="26" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h8M9 5l3 3-3 3"/></svg></div>
+        <div class="reframe-col to fx">
+          <p class="rf-label">What the paper argued for</p>
+          <p class="rf-cos">One assistant that behaves like a chief of staff, working in your flow and on your behalf.</p>
+          <div class="rf-roles">
+            <span class="rf-role">Triages the inbox</span>
+            <span class="rf-role">Catches you up</span>
+            <span class="rf-role">Drafts in your voice</span>
+            <span class="rf-role">Guards your calendar</span>
+            <span class="rf-role">Tracks loose ends</span>
+            <span class="rf-role">Resurfaces what matters</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="annot" style="bottom: -10px; right: 4%;"><b>Same capabilities, different unit</b> Nothing here is a new feature. The move is treating them as one role, which is what let the paper reason about trust across all of them at once.</div>
     </div>
   </section>
 
@@ -686,10 +882,44 @@
   <!-- ============ PILLARS ============ -->
   <section class="strip" style="padding-top: 0; position: relative;">
     <div class="container">
-      <p class="kicker fx">The prerequisites</p>
-      <h2 class="fx">Three prerequisites</h2>
+      <p class="kicker fx">The framework</p>
+      <h2 class="fx">What a chief of staff has to <em>earn</em></h2>
       <div class="prose">
-        <p class="fx">Underneath the staged model sit three prerequisites, drawn from where trust consistently broke down across the studies. Wherever a feature was failing users, at least one of these was missing:</p>
+        <p class="fx">The reframe is only useful if a team can build against it, so the paper turned it into a structure. A chief of staff you would actually trust stands on three layers, and it earns the right to act on its own one task at a time, never by default. That is the whole framework on one screen:</p>
+      </div>
+
+      <div class="fw">
+        <div class="fw-layers">
+          <div class="fw-vision fx">
+            <p class="fw-vk">The vision it all sits under</p>
+            <p class="fw-vt">Copilot as a chief of staff</p>
+          </div>
+          <div class="fw-layer fx">
+            <div class="fl-name"><small>Interface</small>Transparency &amp; control</div>
+            <p class="fl-desc">Show what it looked at and why it acted, and let people correct it and set its limits in the moment of use, not three menus deep in a settings page.</p>
+          </div>
+          <div class="fw-layer fx">
+            <div class="fl-name"><small>Intelligence</small>Learning</div>
+            <p class="fl-desc">Improve toward this specific person over time and carry that memory across sessions, so the assistant stops feeling like it resets every time the user opens it.</p>
+          </div>
+          <div class="fw-layer fx">
+            <div class="fl-name"><small>Foundation</small>Reliability</div>
+            <p class="fl-desc">Get the basics right first: names, dates, context. Prefer an under-confident correct answer over a confident wrong one. Nothing above this layer counts if this one is shaky.</p>
+          </div>
+        </div>
+        <div class="fw-autonomy fx">
+          <p class="fa-k">Staged autonomy</p>
+          <p class="fa-sub">earned per task, never on by default</p>
+          <p class="fw-step2">On-demand</p>
+          <p class="fw-updot">&uarr;</p>
+          <p class="fw-step2">Proactive</p>
+          <p class="fw-updot">&uarr;</p>
+          <p class="fw-step2">Automatic</p>
+        </div>
+      </div>
+
+      <div class="prose" style="margin-top: 52px;">
+        <p class="fx">The two layers above the foundation are where trust actually broke down in the studies. Wherever a feature was failing people, at least one of these was missing. Up close, they looked like this:</p>
       </div>
       <div class="tcl-grid">
         <div class="tcl-card fx" data-tilt>
@@ -822,7 +1052,7 @@
       <ul class="deliver-list">
         <li class="fx"><span class="d-n">a</span><span>A stated position on which user needs are load-bearing, which stage of assistance each opportunity area belongs to, and what each feature must demonstrate before moving to a deeper stage.</span></li>
         <li class="fx"><span class="d-n">b</span><span>Design guidelines that translate transparency, control, and learnability from principles into implementation guidance a feature team could apply to its own surface.</span></li>
-        <li class="fx"><span class="d-n">c</span><span>A pre-ship checklist covering transparency, accuracy, learning behavior, user control, discoverability, and risk, written so any team could run it without research support.</span></li>
+        <li class="fx"><span class="d-n">c</span><span>A pre-ship checklist covering transparency, accuracy, learning behavior, user control, discoverability, and risk, written so any team could run it without research support. It reads like a trust and safety review, and it is shown in full below.</span></li>
         <li class="fx"><span class="d-n">d</span><span>Named gaps. Where the evidence was thin, the paper says so and recommends the studies to run next. A synthesis that hides its own limits invites teams to overtrust it, which would eventually be discovered, and the paper's authority would go with it.</span></li>
       </ul>
 
@@ -833,6 +1063,84 @@
     </div>
   </section>
 
+  <!-- ============ TRUST & SAFETY CHECKLIST (paper appendix) ============ -->
+  <section class="strip" style="position: relative;">
+    <div class="container">
+      <p class="kicker fx">The trust &amp; safety gate</p>
+      <h2 class="fx">The checklist a team runs <em>before</em> shipping</h2>
+      <div class="prose">
+        <p class="fx">Strip the framework down and it answers one question a trust and safety team lives with: when is an automated system safe to act on someone's behalf, and how do its decisions stay visible and contestable when it does? The paper turned that into an appendix any feature team could run on its own, before anything shipped, no researcher in the room. Seven gates, paraphrased here so nothing under NDA is exposed. The point was to make trust checkable, not aspirational.</p>
+      </div>
+
+      <div class="gate-grid">
+        <div class="gate-card fx">
+          <p class="gate-cat"><span class="gc-tag">Gate</span>Transparency</p>
+          <ul class="gate-list">
+            <li><span class="gate-check"></span>Can someone tell what the feature actually does?</li>
+            <li><span class="gate-check"></span>Are the data sources it draws on shown?</li>
+            <li><span class="gate-check"></span>Is the reason behind each decision explained?</li>
+            <li><span class="gate-check"></span>Can users see the actions it has already taken?</li>
+          </ul>
+        </div>
+        <div class="gate-card fx">
+          <p class="gate-cat"><span class="gc-tag">Gate</span>Accuracy &amp; trust</p>
+          <ul class="gate-list">
+            <li><span class="gate-check"></span>Are the results reliable and consistent?</li>
+            <li><span class="gate-check"></span>Is AI-generated content clearly marked as such?</li>
+            <li><span class="gate-check"></span>Does it say so when it is uncertain?</li>
+            <li><span class="gate-check"></span>Does it avoid presenting invented information as fact?</li>
+          </ul>
+        </div>
+        <div class="gate-card fx">
+          <p class="gate-cat"><span class="gc-tag">Gate</span>Learning</p>
+          <ul class="gate-list">
+            <li><span class="gate-check"></span>Does it learn from the way people correct it?</li>
+            <li><span class="gate-check"></span>Does that learning survive across sessions?</li>
+            <li><span class="gate-check"></span>Can users see and edit what it has learned about them?</li>
+            <li><span class="gate-check"></span>Does it visibly improve over time?</li>
+          </ul>
+        </div>
+        <div class="gate-card fx">
+          <p class="gate-cat"><span class="gc-tag">Gate</span>User control</p>
+          <ul class="gate-list">
+            <li><span class="gate-check"></span>Can users set limits on what it does automatically?</li>
+            <li><span class="gate-check"></span>Is there an easy way to correct its mistakes?</li>
+            <li><span class="gate-check"></span>Is the control granular, not all-or-nothing?</li>
+            <li><span class="gate-check"></span>Can users switch it off or scope it down?</li>
+          </ul>
+        </div>
+        <div class="gate-card fx">
+          <p class="gate-cat"><span class="gc-tag">Gate</span>Discoverability</p>
+          <ul class="gate-list">
+            <li><span class="gate-check"></span>Is the feature easy to find and start using?</li>
+            <li><span class="gate-check"></span>Are its capabilities communicated clearly?</li>
+            <li><span class="gate-check"></span>Does it prove its value on first use?</li>
+          </ul>
+        </div>
+        <div class="gate-card flag fx">
+          <p class="gate-cat"><span class="gc-tag">Risk</span>Risk management</p>
+          <ul class="gate-list">
+            <li><span class="gate-check"></span>Are there safeguards against critical errors?</li>
+            <li><span class="gate-check"></span>Is there a rollback path when it gets something wrong?</li>
+            <li><span class="gate-check"></span>Are high-risk actions flagged and confirmed first?</li>
+            <li><span class="gate-check"></span>Does it fail gracefully and handle sensitive data with care?</li>
+          </ul>
+        </div>
+        <div class="gate-card fx">
+          <p class="gate-cat"><span class="gc-tag">Gate</span>Integration</p>
+          <ul class="gate-list">
+            <li><span class="gate-check"></span>Is it consistent with the other Copilot surfaces?</li>
+            <li><span class="gate-check"></span>Are a user's preferences respected across features?</li>
+            <li><span class="gate-check"></span>Does context move with the user instead of resetting per app?</li>
+            <li><span class="gate-check"></span>Does it present as one assistant, not many?</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="gate-note fx">Risk management is flagged because it is the gate a trust and safety reviewer reaches for first. Rollback, confirmation before high-stakes actions, graceful failure, and careful handling of sensitive data are what keep an AI feature from doing quiet harm once it is running at scale.</p>
+    </div>
+  </section>
+
   <!-- ============ REFLECTION + CLOSE ============ -->
   <section class="closing">
     <div class="container" style="position: relative;">
@@ -840,10 +1148,10 @@
       <h2 class="fx" style="color: #fff;">Reflection</h2>
       <div class="prose">
         <p class="fx">This was the first project where my primary contribution was synthesis rather than fieldwork, and it changed how I rate that skill. The hardest moments were recognizing when several studies were independently describing the same underlying problem from different angles, and then naming that problem precisely enough that the name could travel between teams without losing its meaning.</p>
-        <p class="fx">It also gave me the frame I now carry into AI governance work: trust in automated systems builds in stages, with transparency and control as the floor, and autonomy as something granted task by task once the earlier stages hold. That connection between everyday product research and questions of AI oversight is the territory I want to keep working in.</p>
+        <p class="fx">It also gave me the frame I now carry into trust and safety work for AI systems. An automated system earns the right to act, it is not handed that right by default, and until it earns it, every decision has to stay legible to a person and easy to question or undo. Transparency and control are the floor; autonomy is granted one task at a time, once the floor holds. Whether the system is sorting an inbox or making calls about content at scale, the problem is the same one, and it is the one I want to keep working on.</p>
       </div>
 
-      <div class="annot" style="top: 0; right: 4%;"><b>Why end here</b> A case study's last paragraph is a positioning statement. This one points at AI governance on purpose.</div>
+      <div class="annot" style="top: 0; right: 4%;"><b>Why end here</b> A case study's last paragraph is a positioning statement. This one points at trust and safety on purpose.</div>
 
       <div class="next-project fx" style="margin-top: 96px;">
         <p class="label">Next project</p>

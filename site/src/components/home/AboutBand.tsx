@@ -19,15 +19,16 @@ export function AboutBand() {
               <p>
                 I&apos;ve spent <strong className="text-white">4+ years leading research</strong> at
                 Razorpay, Microsoft, and Meesho: strategic studies that shaped roadmaps, evaluative
-                work that shipped, and end-to-end redesigns. Much of it has been helping everyday
-                users and people with low tech literacy make sense of complex systems, and helping
-                teams act on what they said.
+                work that shipped, and redesigns I ran end to end. A lot of it has meant sitting with
+                people whom research usually skips — everyday users, people with low tech literacy —
+                and getting teams to actually act on what they said.
               </p>
               <p>
                 At <strong className="text-white">Carnegie Mellon (MHCI, Class of 2026)</strong>{" "}
-                I&apos;m extending that foundation toward AI: coursework in Augmenting Intelligence,
-                Responsible AI, and Ethics &amp; Policy in Computing, exploring how responsible
-                design and research can guide the next generation of intelligent systems.
+                I&apos;m pointing that experience at AI: coursework in Augmenting Intelligence,
+                Responsible AI, and Ethics &amp; Policy in Computing, and a growing conviction that
+                whether AI earns people&apos;s trust is a research question before it&apos;s an
+                engineering one.
               </p>
               <div className="flex flex-wrap gap-2 pt-1">
                 {aboutChips.map((chip) => (

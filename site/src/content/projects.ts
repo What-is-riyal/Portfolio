@@ -32,6 +32,15 @@ export type ProjectSection =
       images: Array<{ src: string; alt: string; caption?: string }>;
       pair?: boolean;
     }
+  | {
+      type: "diagram";
+      variant: "synthesis-process" | "trust-ladder" | "trust-stack";
+      kicker?: string;
+      title?: string;
+      intro?: string;
+      caption?: string;
+      dark?: boolean;
+    }
   | { type: "reflection"; title: string; paragraphs: string[]; dark?: boolean };
 
 export type Project = {
@@ -75,7 +84,7 @@ export const projects: Project[] = [
     eyebrow: "Microsoft · 2024–25",
     headline: "A point of view for Copilot in Outlook",
     standfirst:
-      "Microsoft was integrating Copilot into Outlook one capability at a time, and each capability had its own research behind it. What the organization lacked was a single position on what all that evidence meant. I synthesized a year of studies into a white paper on what users need before they trust an AI assistant inside their inbox, and what that implies about what to build first.",
+      "Microsoft was pushing Copilot into Outlook one capability at a time, each with its own research behind it, right as the org was consolidating everything under One Outlook. The evidence had piled up; a shared position on what it meant hadn't. I synthesised six studies and a year of public sentiment into a white paper on what people need before they trust an AI assistant in their inbox — and what that says about what to build first.",
     chips: [
       "UX Researcher, contract via Kadence",
       "Sept 2024 – Feb 2025",
@@ -86,63 +95,94 @@ export const projects: Project[] = [
       { label: "My role", value: "UX Researcher", detail: "contract, via Kadence" },
       { label: "Timeline", value: "Sept 2024 – Feb 2025", detail: "paper delivered Feb 2025" },
       { label: "Working with", value: "Khyati Seth", detail: "lead researcher, Outlook UXR" },
-      { label: "Inputs", value: "A year of internal studies", detail: "plus public social listening" },
+      { label: "Inputs", value: "Six internal studies", detail: "plus a year of public social listening" },
       {
         label: "Deliverable",
         value: "A point-of-view white paper",
-        detail: "with design guidelines and a feature checklist",
+        detail: "trust framework, design guidelines, and a feature checklist",
       },
     ],
     sections: [
       {
         type: "nda",
-        text: "This work is under NDA. I describe my method, the structure of the argument, and the reasoning behind it. Internal findings, feature names, and roadmap details are not shown.",
+        text: "This work is under NDA. What you see below is my method and the shape of the frameworks I built — redrawn from scratch. Internal findings, feature names, and roadmap details stay out.",
       },
       {
         type: "prose",
-        kicker: "Context",
-        title: "Context",
+        kicker: "Why this mattered",
+        title: "The team had a dozen answers and no shared question",
         paragraphs: [
-          "Copilot's capabilities in Outlook were each being developed by a different feature team, and each team had commissioned its own research, accumulating for over a year. Every study was competent on its own terms. But each one was scoped to the feature that paid for it, so the body of work as a whole disagreed with itself in places, repeated itself in others, and never answered the question underneath all of them: taken together, what were users saying about living with an AI assistant?",
-          "The organization asked for a point-of-view paper: one document that turned the accumulated evidence into a position the whole team could build against, or argue with. I authored that paper, working closely with the lead researcher.",
+          "Microsoft was moving to One Outlook — a single experience across every device and endpoint — at the same moment Copilot was being pushed into Outlook one capability at a time. The AI work sat across many feature teams, and each had commissioned its own research to justify its own bet. A year in, the organisation held a dozen credible, confident, and quietly conflicting points of view about what an AI assistant in email should be.",
+          "That fragmentation was the real problem. As M365 spread Copilot across Word, Teams, and Outlook, no one owned the question underneath all of it: taken together, what are users actually telling us about letting an assistant into their inbox — and what does that mean for what we build first? The team needed one unified way forward, argued from the evidence rather than from whichever study was loudest. That is what I was brought in to write.",
         ],
       },
       {
         type: "prose",
         kicker: "The starting condition",
-        title: "Five studies, five vocabularies, one assistant",
+        title: "Six studies, six vocabularies, one assistant",
         paragraphs: [
-          "Every card in the legacy page stands for a real internal study; the labels are generalized to respect the NDA. Drafting studies, prioritization deep dives, concept focus groups, time-away research, workflow studies — each competent alone, none written to be read next to the others.",
-          "What was needed was not a summary of summaries but a position: here is what users consistently need, here is where trust breaks, here is what to build first and what each feature must prove before it earns a bigger role.",
+          "The inputs were six internal studies — a task-management deep dive, a prioritisation study, a concept focus group, time-away research, a drafting-and-tone study, and a study on focus and mental load — each competent on its own terms, none written to be read beside the others. Where internal evidence ran thin, a year of public social listening filled the gap: what people were saying, unprompted, about living with Copilot.",
+          "The job was not a summary of summaries. It was a position: here is what users consistently need, here is exactly where trust breaks, and here is what any feature has to prove before it earns a bigger role in someone's inbox.",
         ],
       },
       {
+        type: "diagram",
+        variant: "synthesis-process",
+        kicker: "The process",
+        title: "How six studies became one point of view",
+        intro:
+          "I treated the accumulated research like a qualitative corpus — coding across studies for recurring needs, contradictions, and gaps, then pressure-testing those codes against public sentiment. The output wasn't a report. It was a framework the whole org could build against, or argue with.",
+        caption:
+          "Six internal studies and a year of social listening, coded as one corpus, resolved into a single paper: a progressive trust model, three design prerequisites, and a go/no-go checklist.",
+      },
+      {
         type: "prose",
-        kicker: "Method",
-        title: "How I approached the synthesis",
+        kicker: "The reframe",
+        title: "Adoption isn't a capability problem. It's a trust problem.",
         paragraphs: [
-          "I treated the accumulated studies like a qualitative corpus: coding findings across studies for recurring needs, contradictions, and gaps, then testing those codes against public social listening where internal data was thin.",
-          "The output was structured as prerequisites (what must be true before users will accept a capability), a progressive trust model (what each capability must demonstrate to earn a deeper role), and a checklist teams could use to evaluate proposals.",
+          "The loudest internal framing was that adoption would follow capability — ship a smarter feature, earn more use. Reading the studies together said something different and more uncomfortable: people were declining automation they technically wanted, because they couldn't see what it did, couldn't correct it, and couldn't predict it. The barriers repeated across every study — inaccuracy on basic facts, opaque automatic actions, an assistant that never seemed to learn.",
+          "So the spine of the paper became a single claim: automation is not a starting position a feature is given. It is a role a feature earns, one level of trust at a time.",
         ],
+      },
+      {
+        type: "diagram",
+        variant: "trust-ladder",
+        dark: true,
+        kicker: "The framework",
+        title: "Earning trust before automating",
+        intro:
+          "The model maps assistance onto four levels, from doing nothing until asked to acting independently on the user's behalf. A feature does not get to skip rungs. Each level has to demonstrate accuracy and control at its depth before it earns the next — which turns \"should we automate this?\" into \"has this earned the right to?\"",
+        caption:
+          "The progressive trust ladder: on-demand → proactive → delegated → automatic. Transparency and control are the price of admission at every rung, not a feature added once adoption stalls.",
       },
       {
         type: "prose",
         kicker: "The prerequisites",
-        title: "Three prerequisites",
-        dark: true,
+        title: "Three things that have to be true first",
         paragraphs: [
-          "Transparency: users need to see what the assistant did and why before they will let it act again.",
-          "Control: the ability to undo, edit, or refuse must be present at every depth of automation — not bolted on after adoption stalls.",
-          "Predictability: assistance that surprises users in their inbox erodes trust faster than assistance that is merely imperfect.",
+          "Underneath the ladder sit three prerequisites — the conditions that have to hold before users will let an assistant move up a level at all.",
+          "Transparency: people need to see what the assistant did and why before they will let it act again. An opaque correct action still erodes trust.",
+          "Control: undo, edit, and refuse have to exist at every depth of automation — designed in from the start, not bolted on after adoption stalls.",
+          "Predictability: assistance that surprises people in their own inbox costs more trust than assistance that is merely imperfect. Consistency is a feature.",
         ],
       },
       {
+        type: "diagram",
+        variant: "trust-stack",
+        kicker: "The outcome, structured",
+        title: "What every feature is now held to",
+        intro:
+          "The prerequisites became an operating standard: a layered set of trust-and-effectiveness guidelines and a development checklist teams run a proposal through before building. It reads bottom-up — a feature can't claim the transparency layer until the accuracy layer beneath it is solid.",
+        caption:
+          "The layered guideline model that closed the paper, paired with a checklist covering transparency, accuracy, learning, control, discoverability, risk, and cross-app consistency.",
+      },
+      {
         type: "reflection",
-        title: "Reflection",
+        title: "What I took from it",
         dark: true,
         paragraphs: [
-          "Synthesis work is editorial judgment under a researcher's name. The hardest calls were not which findings to include but which contradictions were real disagreements in the evidence versus artifacts of how individual studies were scoped.",
-          "The paper's value was giving teams a shared vocabulary for trust — so feature debates became about whether a proposal met the prerequisites, not about whose study was bigger.",
+          "Synthesis is editorial judgment carrying a researcher's name. The hardest calls weren't which findings to include — they were telling a genuine disagreement in the evidence apart from an artifact of how a single study happened to be scoped. Getting that wrong would have baked one team's blind spot into the org's point of view.",
+          "The paper's value was quieter than a finding: it gave feature teams a shared language for trust. Debates stopped being about whose study was bigger and started being about whether a proposal cleared the prerequisites. That's the kind of outcome strategic research is for.",
         ],
       },
     ],

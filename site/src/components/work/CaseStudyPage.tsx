@@ -4,6 +4,7 @@ import type { Project, ProjectSection } from "@/content/projects";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
 import { SiteShell } from "@/components/layout/SiteShell";
+import { CaseDiagram } from "@/components/work/CaseDiagram";
 
 function ProjectImage({
   src,
@@ -51,6 +52,20 @@ function SectionBlock({
           {section.text}
         </div>
       </Reveal>
+    );
+  }
+
+  if (section.type === "diagram") {
+    return (
+      <CaseDiagram
+        variant={section.variant}
+        kicker={section.kicker}
+        title={section.title}
+        intro={section.intro}
+        caption={section.caption}
+        accent={accent}
+        dark={section.dark}
+      />
     );
   }
 

@@ -476,6 +476,7 @@
     .synth-h { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
     .si-row { display: grid; grid-template-columns: 1fr 26px; align-items: center; gap: 8px; }
     .synth-item { border-radius: 12px; border: 1px solid var(--border); background: var(--surface); padding: 14px 16px; }
+    .si-icon { display: inline-flex; color: var(--glow); margin-bottom: 10px; }
     .si-tag { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--glow); margin-bottom: 4px; }
     .si-v { font-size: 14.5px; font-weight: 700; color: var(--text); line-height: 1.35; }
     .si-d { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
@@ -632,7 +633,7 @@
         <span class="line"><span>for Copilot in</span></span>
         <span class="line"><span>Outlook</span></span>
       </h1>
-      <p class="hero-standfirst">Microsoft was integrating Copilot into Outlook one capability at a time, and each capability had its own research behind it. The organization lacked a single position on what all that evidence meant. I synthesized a year of studies into a white paper on what users need before they trust an AI assistant inside their inbox, and what that implies about what to build first.</p>
+      <p class="hero-standfirst">Microsoft had conducted many disconnected studies about copilot and AI usage in the Outlook ecosystem but lacked a unified view of the philosophy to follow from users’ POV. I synthesized a year of studies, social listening, and academic literature into a white paper on what users need before they trust an AI assistant inside their inbox, and what that implies about what to build first.</p>
       <div class="hero-chips">
         <span class="chip">UX Researcher</span>
         <span class="chip">Dec 2024 &ndash; Feb 2025</span>
@@ -674,18 +675,11 @@
   <section class="strip" style="position: relative; padding-bottom: 40px;">
     <div class="container">
       <p class="kicker fx">Why it mattered</p>
-      <h2 class="fx">Copilot lacked a single owner, perspective and research</h2>
+      <h2 class="fx">Copilot lacked a unified perspective towards AI integration in Outlook </h2>
       <div class="prose">
-        <p class="fx">Two things were happening at Microsoft at once, and they pulled against each other. Copilot was being pushed into more of M365 every quarter, and the ownership of it was scattering at the same speed. A Copilot in Mail, another in Chat, another in Docs, each built by a different team, on its own roadmap, with its own read on what people wanted. Outlook sat right in the middle of that.</p>
-        <p class="fx">The research was just as split. Drafting, summarizing, scheduling, prioritizing, each had its own study behind it, commissioned by the team that owned the feature, piling up for over a year. Every study was competent on its own terms.</p>
-        <p class="fx">So the org asked for a point-of-view paper. One document that turned a year of scattered evidence across a dozen studies into a position the whole team could build against, or argue with. I wrote it, working closely with the lead researcher. The job was half research and half editorial judgment: deciding which findings were load-bearing, which were artifacts of how a single study happened to be framed, and what the evidence supported once you read it as one body instead of six.</p>
-      </div>
-
-      <div class="why-stats fx">
-        <div class="why-stat"><p class="ws-num">8+</p><p class="ws-label">communication <b>platforms</b> an average worker was juggling at once</p></div>
-        <div class="why-stat"><p class="ws-num">1 yr+</p><p class="ws-label">of <b>studies piling up</b>, team by team, that had never been read together</p></div>
-        <div class="why-stat"><p class="ws-num">12+</p><p class="ws-label">studies <b>reviewed</b>, synthesized into a single position</p></div>
-        <div class="why-stat"><p class="ws-num">1</p><p class="ws-label">shared <b>point of view</b>, where there had been none</p></div>
+        <p class="fx">Two things were happening at Microsoft at once. As Copilot was decentralizing to different products, there were scatted implementation of the assistant throughout the ecosystem. A Copilot in Mail, another in Chat, another in Docs, each built by a different team, on its own roadmap, with its own read on what people wanted. Outlook sat right in the middle of that.</p>
+        <p class="fx">The research was equally split as drafting, summarizing, scheduling, prioritizing, each had its own study behind it, commissioned by the team that owned the feature, piling up for over a year.</p>
+        <p class="fx">So the org asked for a point-of-view paper that turns a year of scattered evidence across a dozen studies into a position the whole team could build against, or argue with.</p>
       </div>
 
       <div class="annot" style="top: 110px; right: 4%;"><b>Why the question leads</b> The research question is the first thing on this page because it was the first thing on the paper. Everything else exists to answer it.</div>
@@ -699,7 +693,6 @@
         <div class="paper-card fx">
           <p class="p-label">What was needed</p>
           <p class="p-title">One evidence-backed answer to "what should this assistant become, and in what order?"</p>
-          <p>Not a summary of summaries. A position: here is what users consistently need, here is where trust breaks, here is what to build first and what each feature must prove before it earns a bigger role.</p>
         </div>
       </div>
 
@@ -718,6 +711,7 @@
           <p class="synth-h">Inputs</p>
           <div class="si-row">
             <div class="synth-item si-primary">
+              <span class="si-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 2L2 5l6 3 6-3-6-3z"/><path d="M2 8l6 3 6-3"/><path d="M2 11l6 3 6-3"/></svg></span>
               <p class="si-tag">Primary</p>
               <p class="si-v">12+ internal studies</p>
               <p class="si-d">drafting, prioritization, time-away, concept focus groups, workflow, out-of-office</p>
@@ -726,6 +720,7 @@
           </div>
           <div class="si-row">
             <div class="synth-item si-validation">
+              <span class="si-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 3h12v7H6l-3 3v-3H2z"/></svg></span>
               <p class="si-tag">Validation</p>
               <p class="si-v">Public social listening</p>
               <p class="si-d">used only to test themes, never to generate them</p>
@@ -734,6 +729,7 @@
           </div>
           <div class="si-row">
             <div class="synth-item si-grounding">
+              <span class="si-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 3.5c1.5-1 3.5-1 5 0v9c-1.5-1-3.5-1-5 0v-9z"/><path d="M14 3.5c-1.5-1-3.5-1-5 0v9c1.5-1 3.5-1 5 0v-9z"/></svg></span>
               <p class="si-tag">Grounding</p>
               <p class="si-v">Prior literature &amp; internal frameworks</p>
             </div>
@@ -743,7 +739,7 @@
 
         <div class="synth-transform">
           <p class="synth-h">The transform</p>
-          <p class="st-text">Coded, provenance-checked, converged.</p>
+          <p class="st-text">100+ stickies and multiple models later</p>
         </div>
 
         <div class="synth-mid-arrow"><svg width="28" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h8M9 5l3 3-3 3"/></svg></div>
@@ -751,22 +747,21 @@
         <div class="synth-outputs">
           <p class="synth-h">Outputs</p>
           <div class="synth-item so-out">
+            <span class="si-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 1.5l5 2v4c0 3.5-2.2 5.8-5 7-2.8-1.2-5-3.5-5-7v-4l5-2z"/></svg></span>
             <p class="si-v">A trust framework</p>
             <p class="si-d">transparency, control, learnability, staged autonomy</p>
           </div>
           <div class="synth-item so-out">
+            <span class="si-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="1.5" width="11" height="13" rx="1.2"/><path d="M5 5.5l1.2 1.2L8.5 4.5M5 9.5h6M5 11.5h6"/></svg></span>
             <p class="si-v">A pre-ship checklist</p>
             <p class="si-d">seven checklist categories a team runs before anything ships</p>
           </div>
           <div class="synth-item so-out">
+            <span class="si-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="6.5"/><path d="M10.5 5.5l-1.7 3.8-3.8 1.7 1.7-3.8 3.8-1.7z"/></svg></span>
             <p class="si-v">Per-feature adoption guidance</p>
             <p class="si-d">which stage each capability belongs in, and what it has to prove before it earns the next one</p>
           </div>
         </div>
-      </div>
-
-      <div class="prose" style="margin-top: 48px;">
-        <p class="fx">The board itself was less tidy than that diagram makes it look. Concretely, the work centered on three moves:</p>
       </div>
 
       <div class="moves">

@@ -364,30 +364,6 @@
     .honest .h-label { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--glow); display: block; margin-bottom: 8px; }
     .honest.on-light p { color: #3A3A3A; }
 
-    /* ============ Easter egg: transparency mode ============ */
-    .annot {
-      position: absolute; max-width: 240px; background: #FFF8E1; color: #5D4E1A;
-      font-size: 13px; line-height: 1.55; padding: 14px 16px; border-radius: 4px 16px 16px 16px;
-      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.3); transform: rotate(-2deg) scale(0);
-      transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); z-index: 50;
-      font-weight: 600; pointer-events: none;
-    }
-    .annot b { display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; color: #B07D1A; }
-    body.transparency-mode .annot { transform: rotate(-2deg) scale(1); }
-    .egg-hint {
-      position: fixed; bottom: 24px; left: 24px; z-index: 900;
-      font-size: 12.5px; font-weight: 700; color: var(--muted);
-      background: rgba(255,255,255,0.92); border: 1px solid var(--border); border-radius: 999px;
-      padding: 10px 18px; opacity: 0; transform: translateY(16px);
-      transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none;
-      backdrop-filter: blur(8px);
-    }
-    .egg-hint.show { opacity: 1; transform: none; }
-    .egg-hint kbd {
-      font-family: inherit; background: var(--text); color: #fff; border-radius: 5px;
-      padding: 2px 8px; margin: 0 2px;
-    }
-
     /* Footer over dark end */
     .closing { background: var(--ink); color: #fff; padding: 120px 0 0; }
     .closing .footer { border-top-color: rgba(255,255,255,0.12); margin-top: 80px; }
@@ -515,8 +491,7 @@
     /* ============ Trust & safety checklist (paper appendix) ============ */
     .gate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 44px; }
     .gate-card { border-radius: 16px; border: 1px solid var(--border); background: var(--surface); padding: 26px 26px 22px; }
-    .gate-cat { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 16px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 18px; }
-    .gc-tag { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--glow); border: 1px solid rgba(79,70,229,0.3); border-radius: 999px; padding: 3px 9px; }
+    .gate-cat { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 18px; }
     .gate-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .gate-list li { display: grid; grid-template-columns: 20px 1fr; gap: 12px; font-size: 14px; line-height: 1.5; color: #3A3A3A; }
     .gate-check { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid var(--glow); position: relative; margin-top: 1px; }
@@ -529,7 +504,6 @@
       .hero-orb { display: none; }
       .snapshot { padding-bottom: 56px; }
       .statement { padding: 96px 0; }
-      .annot { display: none !important; }
       .why-stats { gap: 28px 32px; margin-top: 44px; }
       .flow, .fw, .reframe { margin-top: 36px; }
     }
@@ -629,29 +603,21 @@
   </section>
 
   <!-- ============ BACKGROUND ============ -->
-  <section class="strip" style="position: relative; padding-bottom: 40px;">
+  <section class="strip" style="position: relative;">
     <div class="container">
       <p class="kicker fx">Why it mattered</p>
       <h2 class="fx">Copilot lacked a unified perspective towards AI integration in Outlook </h2>
-      <div class="prose">
-        <p class="fx">Copilot was expanding across Microsoft 365 quickly, but the research was still organized around individual features. Drafting, inbox prioritization, scheduling, summaries, and automations were each being studied separately, often by the teams responsible for building them. That made each study useful on its own, but harder to use as a strategic whole. The same questions kept resurfacing in different places: When do users trust Copilot's judgment? When do they want control? When does proactive help feel useful, and when does it feel intrusive? My role was to connect those studies into a single research-led point of view: not a summary of every finding, but an argument about what Copilot in Outlook should become, what users consistently needed, and what product teams should build before moving toward more autonomous assistance.</p>
-      </div>
 
-      <div class="annot" style="top: 110px; right: 4%;"><b>Why the question leads</b> The research question is the first thing on this page because it was the first thing on the paper. Everything else exists to answer it.</div>
-    </div>
-  </section>
-
-  <!-- ============ THE INPUT vs THE OUTPUT ============ -->
-  <section class="strip" style="padding-top: 0; position: relative;">
-    <div class="container">
-      <div class="shelf-wrap" style="grid-template-columns: 1fr; max-width: 640px; margin-top: 24px;">
+      <div class="shelf-wrap" style="margin-top: 40px;">
+        <div class="prose">
+          <p class="fx">Copilot was expanding across Microsoft 365 quickly, but the research was still organized around individual features. Drafting, inbox prioritization, scheduling, summaries, and automations were each being studied separately, often by the teams responsible for building them. That made each study useful on its own, but harder to use as a strategic whole. The same questions kept resurfacing in different places: When do users trust Copilot's judgment? When do they want control? When does proactive help feel useful, and when does it feel intrusive? My role was to connect those studies into a single research-led point of view: not a summary of every finding, but an argument about what Copilot in Outlook should become, what users consistently needed, and what product teams should build before moving toward more autonomous assistance.</p>
+        </div>
         <div class="paper-card fx">
           <p class="p-label">What was needed</p>
-          <p class="p-title">One evidence-backed answer to "what should this assistant become, and in what order?"</p>
+          <p class="p-title">How should AI enter the email ecosystem without breaking trust?</p>
+          <p>A point of view on what to build first, what users need to understand and control, and what Copilot must prove before it earns more autonomy</p>
         </div>
       </div>
-
-      <div class="annot" style="bottom: -30px; left: 8%;"><b>Why cards, not quotes</b> The real study names and findings are under NDA. The shape of the problem is the part I can show, so that's what this section draws.</div>
     </div>
   </section>
 
@@ -781,7 +747,6 @@
         </div>
       </div>
 
-      <div class="annot" style="top: 80px; right: 3%;"><b>Why show the mess</b> Hiring managers read a hundred polished frameworks a week. The questions a researcher asks mid-analysis are harder to fake.</div>
     </div>
   </section>
 
@@ -825,8 +790,6 @@
       <div class="prose" style="margin-top: 40px;">
         <p class="fx">One recurring example made the need for a unified assistant clear: if Mail, Calendar, Chat, and Docs each build their own Copilot memory, the user has to keep re-teaching each surface who they are, what they work on, and how they prefer to operate. The paper used this as evidence for a cross-Outlook point of view: context should follow the user, not remain trapped inside individual features.</p>
       </div>
-
-      <div class="annot" style="bottom: -10px; right: 4%;"><b>Same capabilities, different unit</b> Nothing here is a new feature. The move is treating them as one role, which is what let the paper reason about trust across all of them at once.</div>
     </div>
   </section>
 
@@ -880,9 +843,6 @@
     <div class="container">
       <p class="kicker fx">The framework</p>
       <h2 class="fx">What a chief of staff has to <em>earn</em></h2>
-      <div class="prose">
-        <p class="fx">The reframe is only useful if a team can build against it, so the paper turned it into a structure. A chief of staff you would actually trust stands on three layers, and it earns the right to act on its own one task at a time, never by default. That is the whole framework on one screen:</p>
-      </div>
 
       <div class="fw">
         <div class="fw-layers">
@@ -935,8 +895,6 @@
           <p>Users did not expect Copilot to be perfect. They expected it to learn. Repeated mistakes were especially damaging because they made correction feel pointless.</p>
         </div>
       </div>
-
-      <div class="annot" style="top: 60px; right: 3%;"><b>Why cards tilt</b> Micro-interactions reward attention without gating content. The framework reads fine if you never hover.</div>
     </div>
   </section>
 
@@ -1023,7 +981,7 @@
 
       <div class="gate-grid">
         <div class="gate-card fx">
-          <p class="gate-cat"><span class="gc-tag">Category</span>Transparency</p>
+          <p class="gate-cat">Transparency</p>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Can someone tell what the feature actually does?</li>
             <li><span class="gate-check"></span>Are the data sources it draws on shown?</li>
@@ -1032,7 +990,7 @@
           </ul>
         </div>
         <div class="gate-card fx">
-          <p class="gate-cat"><span class="gc-tag">Category</span>Accuracy &amp; trust</p>
+          <p class="gate-cat">Accuracy &amp; trust</p>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Are the results reliable and consistent?</li>
             <li><span class="gate-check"></span>Is AI-generated content clearly marked as such?</li>
@@ -1041,7 +999,7 @@
           </ul>
         </div>
         <div class="gate-card fx">
-          <p class="gate-cat"><span class="gc-tag">Category</span>Learning</p>
+          <p class="gate-cat">Learning</p>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Does it learn from the way people correct it?</li>
             <li><span class="gate-check"></span>Does that learning survive across sessions?</li>
@@ -1050,7 +1008,7 @@
           </ul>
         </div>
         <div class="gate-card fx">
-          <p class="gate-cat"><span class="gc-tag">Category</span>User control</p>
+          <p class="gate-cat">User control</p>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Can users set limits on what it does automatically?</li>
             <li><span class="gate-check"></span>Is there an easy way to correct its mistakes?</li>
@@ -1059,7 +1017,7 @@
           </ul>
         </div>
         <div class="gate-card fx">
-          <p class="gate-cat"><span class="gc-tag">Category</span>Discoverability</p>
+          <p class="gate-cat">Discoverability</p>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Is the feature easy to find and start using?</li>
             <li><span class="gate-check"></span>Are its capabilities communicated clearly?</li>
@@ -1067,7 +1025,7 @@
           </ul>
         </div>
         <div class="gate-card fx">
-          <p class="gate-cat"><span class="gc-tag">Category</span>Risk management</p>
+          <p class="gate-cat">Risk management</p>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Are there safeguards against critical errors?</li>
             <li><span class="gate-check"></span>Is there a rollback path when it gets something wrong?</li>
@@ -1076,7 +1034,7 @@
           </ul>
         </div>
         <div class="gate-card fx">
-          <p class="gate-cat"><span class="gc-tag">Category</span>Integration</p>
+          <p class="gate-cat">Integration</p>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Is it consistent with the other Copilot surfaces?</li>
             <li><span class="gate-check"></span>Are a user's preferences respected across features?</li>
@@ -1099,7 +1057,7 @@
       <p class="kicker fx">Impact</p>
       <h2 class="fx" style="color: #fff;">An honest note on impact</h2>
       <div class="prose">
-        <p class="fx">The paper shipped in the final weeks of my contract, so I did not get to watch its recommendations move through roadmaps, and the NDA covers what happened afterward. I would rather state that plainly than imply an outcome I can't substantiate. What I can stand behind is the part this page documents: how the synthesis was built, and whether the reasoning holds. It was reviewed by the lead researcher and shared with the feature teams it was written for. The checklist circulated as a review template within the org. For more details, feel free to reach out.</p>
+        <p class="fx">The paper was reviewed by the lead researcher and shared with the feature teams it was written for. The checklist circulated as a review template and was very well received. As it was shipped in the final weeks of my contract, I did not get to watch its recommendations move through roadmaps, and the NDA covers what happened afterward. For more details, feel free to reach out!</p>
       </div>
 
       <div class="next-project fx" style="margin-top: 96px;">
@@ -1126,8 +1084,6 @@
       </div>
     </footer>
   </section>
-
-  <div class="egg-hint" id="eggHint">This page practices what it preaches. Press <kbd>T</kbd> for transparency.</div>
 
   <script>
   (function () {
@@ -1194,15 +1150,7 @@
         });
       }
 
-      /* Easter egg hint appears mid-page, once */
-      if (!hintShown && doc.scrollTop > doc.scrollHeight * 0.35) {
-        hintShown = true;
-        var hint = document.getElementById("eggHint");
-        hint.classList.add("show");
-        setTimeout(function () { hint.classList.remove("show"); }, 7000);
-      }
     }
-    var hintShown = false;
     var ticking = false;
     window.addEventListener("scroll", function () {
       if (!ticking) {
@@ -1267,14 +1215,6 @@
       }, 250);
     });
 
-    /* Easter egg: transparency mode */
-    document.addEventListener("keydown", function (e) {
-      if ((e.key === "t" || e.key === "T") && !e.metaKey && !e.ctrlKey && !e.altKey) {
-        document.body.classList.toggle("transparency-mode");
-      }
-    });
-    console.log("%cps. transparency mode", "color:#4F46E5;font-weight:bold;font-size:14px",
-      "\nYou found the console. Press T on the page to see why it's designed the way it is.\nIt felt wrong to write a paper about AI transparency and then ship an opaque page.");
   })();
   </script>
 </body>

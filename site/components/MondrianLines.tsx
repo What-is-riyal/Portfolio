@@ -274,7 +274,11 @@ export default function MondrianLines({ marks = [] }: { marks?: MarkSpec[] }) {
         return line;
       };
 
-      const railYTop = 0;
+      // Rails start just below the fixed nav so a rule never crosses nav text.
+      const navEl = host!.querySelector('nav');
+      const railYTop = navEl
+        ? Math.round(navEl.getBoundingClientRect().height) + 12
+        : 64;
       railDefs.forEach((rd) => {
         if (rd) addLine('v', rd.x, railYTop, railsEnd, rd.dotted, rd.capPos, rd.capNeg);
       });

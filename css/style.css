@@ -292,6 +292,18 @@ img {
   color: var(--muted);
 }
 
+.hero-sub {
+  font-size: clamp(17px, 1.9vw, 20px);
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.hero-sub strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
 /* Code cards: the legend for the coded intro */
 .code-cards {
   display: grid;
@@ -430,6 +442,13 @@ img {
   color: var(--gold);
   font-variant-numeric: tabular-nums;
   text-align: right;
+}
+
+/* Non-numeric marker for the current-work line, so it reads as its own note
+   among the metrics rather than a fabricated number. */
+.skim-num-word {
+  font-style: italic;
+  font-size: clamp(22px, 2.6vw, 30px);
 }
 
 .skim-text {
@@ -818,6 +837,82 @@ body.curious .work-turn {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+}
+
+.about-grid.about-solo {
+  grid-template-columns: 1fr;
+  max-width: 72ch;
+}
+
+/* --------------------------------------------------------------------------
+   AI, trust & governance: the research thread, given real weight
+   -------------------------------------------------------------------------- */
+
+.gov-lede {
+  font-size: clamp(19px, 2.2vw, 24px);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  max-width: 62ch;
+  margin-bottom: 44px;
+}
+
+.gov-list {
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+
+.gov-item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  align-items: baseline;
+  padding: 26px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.gov-cat {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.gov-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.gov-title em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.gov-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.gov-desc a {
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 2px solid var(--gold);
+  white-space: nowrap;
+}
+
+.gov-desc a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .gov-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 }
 

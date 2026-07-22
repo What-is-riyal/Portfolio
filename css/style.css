@@ -304,6 +304,93 @@ img {
   font-weight: 700;
 }
 
+/* --------------------------------------------------------------------------
+   Signals marquee: how she works, with a few earned outcomes as texture.
+   Not a trophy list. Motion makes the numbers incidental, not boasty.
+   -------------------------------------------------------------------------- */
+
+.marquee-band {
+  background: var(--ink);
+  color: #fff;
+  padding: 34px 0;
+  overflow: hidden;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.marquee-inner {
+  display: flex;
+  flex-shrink: 0;
+  animation: marquee 48s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee-inner {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.mq {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(18px, 2vw, 26px);
+  color: var(--ink-soft);
+  padding: 0 18px;
+}
+
+.mq-num {
+  font-family: var(--font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(15px, 1.6vw, 20px);
+  letter-spacing: -0.01em;
+  color: var(--gold);
+}
+
+.mq-sep {
+  color: var(--gold);
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .marquee-inner {
+    animation: none;
+    width: 100%;
+  }
+  .marquee-group[aria-hidden] {
+    display: none;
+  }
+  .marquee-group {
+    flex-wrap: wrap;
+    white-space: normal;
+    width: 100%;
+    padding: 0 24px;
+    row-gap: 4px;
+  }
+}
+
 /* Code cards: the legend for the coded intro */
 .code-cards {
   display: grid;

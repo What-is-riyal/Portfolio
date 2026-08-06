@@ -4,7 +4,7 @@
 **Trigger:** `/loop 30m` — sentinel `AGENT_LOOP_TICK_copilot_revamp`  
 **Tick budget:** one phase slice per 30m wake (max ~15–20 min work; leave headroom)  
 **Last updated:** 2026-08-07  
-**Iteration:** 2  
+**Iteration:** 3  
 **Lock:** `.loop/copilot-revamp.lock` (PID + started ISO; stale after 25m)
 
 ---
@@ -71,12 +71,12 @@ Microsoft pages: chrome/token restore only; no content edits.
 - [x] Browser check desktop + narrow
 - [x] Commit + push
 
-### Phase C — About / Play / Resume ← next
-- [ ] Restyle `about.html`, `play.html`, `resume.html` to same system
-- [ ] Keep wavy lines where they already exist or add sparingly
-- [ ] Commit + push
+### Phase C — About / Play / Resume ← DONE iter 3
+- [x] Restyle `about.html`, `play.html`, `resume.html` to same system
+- [x] Keep wavy lines where they already exist or add sparingly
+- [x] Commit + push
 
-### Phase D — Non-MS case studies (content locked)
+### Phase D — Non-MS case studies (content locked) ← next
 Do **one or two pages per tick** max. Restyle chrome/CSS only; Webflow body copy stays.
 
 - [ ] Shared `css/case-study.css` → Copilot tokens (headers, labels, prose color, borders)
@@ -127,6 +127,7 @@ Do **one or two pages per tick** max. Restyle chrome/CSS only; Webflow body copy
 | 0 | 2026-08-06 | plan + arm loop | armed |
 | 1 | 2026-08-06 | Phase A foundation | tokens/shell/fonts Copilot; wavy lines kept; Copilot indigo restored |
 | 2 | 2026-08-06 | Phase B homepage | dark Copilot hero + grain/orb; wavy lines via difference blend; paper work ledger |
+| 3 | 2026-08-06 | Phase C about/play/resume | Copilot kickers, grain, wavy rails on about/play; resume glow/Archivo |
 
 ---
 

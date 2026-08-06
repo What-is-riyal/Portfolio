@@ -38,26 +38,28 @@
     }
 
     .res-hero .r-sub {
-      font-family: var(--font-grotesk);
+      font-family: var(--font-archivo);
       font-size: var(--text-nav);
       color: var(--grey);
       margin-top: 12px;
     }
 
-    .res-hero a { color: var(--blue); }
+    .res-hero a { color: var(--glow); }
 
     .dl-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-family: var(--font-grotesk);
+      font-family: var(--font-archivo);
       font-size: var(--text-nav);
-      font-weight: 500;
+      font-weight: 600;
       color: var(--white);
-      background: var(--blue);
-      border-radius: 999px;
-      padding: 14px 26px;
+      background: var(--glow);
+      border-radius: 0;
+      padding: 14px 22px;
       text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       transition: opacity 0.2s ease;
     }
 
@@ -76,12 +78,12 @@
     }
 
     .res-label {
-      font-family: var(--font-grotesk);
+      font-family: var(--font-archivo);
       font-size: var(--text-label);
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: var(--track-label);
       text-transform: uppercase;
-      color: var(--blue);
+      color: var(--glow);
       padding-top: 6px;
     }
 
@@ -97,9 +99,9 @@
     }
 
     .job-head h3 {
-      font-family: var(--font-grotesk);
+      font-family: var(--font-archivo);
       font-size: var(--text-row);
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: -0.01em;
     }
 
@@ -107,7 +109,7 @@
     .job .j-org,
     .edu-row .j-dates,
     .edu-row p {
-      font-family: var(--font-grotesk);
+      font-family: var(--font-archivo);
       font-size: var(--text-nav);
       color: var(--grey);
     }
@@ -135,10 +137,10 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: rgba(26, 63, 158, 0.35);
+      background: rgba(79, 70, 229, 0.45);
     }
 
-    .job li a { color: var(--blue); }
+    .job li a { color: var(--glow); }
 
     .edu-row {
       display: flex;
@@ -151,21 +153,22 @@
     .edu-row:last-child { padding-bottom: 0; }
 
     .edu-row h3 {
-      font-family: var(--font-grotesk);
+      font-family: var(--font-archivo);
       font-size: var(--text-row);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .skill-block { margin-bottom: 18px; }
     .skill-block:last-child { margin-bottom: 0; }
 
     .skill-block h4 {
-      font-family: var(--font-grotesk);
+      font-family: var(--font-archivo);
       font-size: var(--text-label);
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: var(--track-label);
       text-transform: uppercase;
       margin-bottom: 8px;
+      color: var(--glow);
     }
 
     .skill-block p {
@@ -187,11 +190,11 @@
       line-height: 1.55;
     }
 
-    .res-close a { color: var(--blue); }
+    .res-close a { color: var(--glow); }
 
     .res-credit {
       margin-top: 2rem;
-      font-family: var(--font-grotesk);
+      font-family: var(--font-archivo);
       font-size: var(--text-meta);
       letter-spacing: var(--track-meta);
       color: var(--grey);
@@ -202,7 +205,8 @@
     }
   </style>
 </head>
-<body data-shell-base="" data-shell-page="resume">
+<body class="page-resume" data-shell-base="" data-shell-page="resume">
+  <div class="grain" aria-hidden="true"></div>
 
   <div class="page" style="position:relative;width:100%">
     <div id="site-nav"></div>
@@ -210,6 +214,7 @@
     <main id="main" class="site-content page-resume">
       <section class="res-hero">
         <div>
+          <p class="page-kicker">CV</p>
           <h1>Resume</h1>
           <p class="r-sub">Priyal Shrivastava &middot; <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
         </div>

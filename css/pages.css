@@ -252,6 +252,46 @@
 }
 
 /* ------------------------------------------------------------------ */
+/* Shared page chrome (About / Play / Resume)                         */
+/* ------------------------------------------------------------------ */
+
+.page-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-archivo);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--glow);
+  margin-bottom: 20px;
+}
+
+.page-kicker::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--glow);
+}
+
+body.page-about .grain,
+body.page-play .grain,
+body.page-resume .grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+body.page-about .site-lines,
+body.page-play .site-lines {
+  opacity: 0.7;
+}
+
+/* ------------------------------------------------------------------ */
 /* About                                                              */
 /* ------------------------------------------------------------------ */
 
@@ -269,6 +309,8 @@
   max-width: 320px;
   height: auto;
   display: block;
+  border-radius: var(--radius-card);
+  box-shadow: 0 24px 48px -28px rgba(79, 70, 229, 0.35);
 }
 
 .about-body {
@@ -280,12 +322,13 @@
 .about-body blockquote {
   font-family: var(--font-fraunces);
   font-size: var(--text-prose);
-  font-weight: 340;
+  font-weight: 400;
   line-height: 1.45;
   font-style: italic;
   max-width: 52ch;
   padding-left: 1.2em;
-  border-left: 1px solid var(--line-color);
+  border-left: 2px solid var(--glow);
+  color: var(--ink);
 }
 
 .about-talents {
@@ -340,22 +383,26 @@
   display: block;
   min-height: 240px;
   padding: clamp(24px, 4vw, 36px);
-  border: 1px solid var(--line-color);
-  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background-color: var(--paper);
   background-repeat: no-repeat;
   background-position: right 16px bottom 16px;
   background-size: 96px auto;
-  transition: background-color 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: background-color 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.3s ease, box-shadow 0.4s ease;
 }
 
 .play-card:hover,
 .play-card:focus-visible {
-  background-color: rgba(79, 70, 229, 0.06);
+  background-color: rgba(79, 70, 229, 0.05);
+  border-color: rgba(79, 70, 229, 0.35);
+  box-shadow: 0 16px 32px -24px rgba(79, 70, 229, 0.45);
 }
 
 .play-card h2 {
-  font-family: var(--font-grotesk);
+  font-family: var(--font-archivo);
   font-size: var(--text-row);
+  font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 10px;
 }
@@ -376,13 +423,14 @@
 }
 
 .play-keywords span {
-  font-family: var(--font-grotesk);
-  font-size: var(--text-label);
+  font-family: var(--font-archivo);
+  font-size: 11px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: var(--track-label);
-  color: var(--grey);
-  padding: 4px 8px;
-  border: 1px solid var(--line-color);
+  letter-spacing: 0.06em;
+  color: rgba(11, 11, 12, 0.72);
+  padding: 5px 8px;
+  border: 1px solid var(--border);
 }
 
 .play-card--boldband { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f6f6ce17fe015d164e733bd_boldband%20square.png"); }

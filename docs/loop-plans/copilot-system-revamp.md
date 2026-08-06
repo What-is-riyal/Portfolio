@@ -4,7 +4,7 @@
 **Trigger:** `/loop 30m` — sentinel `AGENT_LOOP_TICK_copilot_revamp`  
 **Tick budget:** one phase slice per 30m wake (max ~15–20 min work; leave headroom)  
 **Last updated:** 2026-08-07  
-**Iteration:** 3  
+**Iteration:** 4  
 **Lock:** `.loop/copilot-revamp.lock` (PID + started ISO; stale after 25m)
 
 ---
@@ -76,18 +76,18 @@ Microsoft pages: chrome/token restore only; no content edits.
 - [x] Keep wavy lines where they already exist or add sparingly
 - [x] Commit + push
 
-### Phase D — Non-MS case studies (content locked) ← next
+### Phase D — Non-MS case studies (content locked) ← DONE iter 4
 Do **one or two pages per tick** max. Restyle chrome/CSS only; Webflow body copy stays.
 
-- [ ] Shared `css/case-study.css` → Copilot tokens (headers, labels, prose color, borders)
-- [ ] `work/razorpay-d2c.html`
-- [ ] `work/razorpay-website-evaluation.html`
-- [ ] `work/razorpay-onboarding.html`
-- [ ] `work/meesho-vernacular.html`
-- [ ] `work/madahead.html`
-- [ ] Commit + push after each page or after a tight pair
+- [x] Shared `css/case-study.css` → Copilot tokens (headers, labels, prose color, borders)
+- [x] `work/razorpay-d2c.html`
+- [x] `work/razorpay-website-evaluation.html`
+- [x] `work/razorpay-onboarding.html`
+- [x] `work/meesho-vernacular.html`
+- [x] `work/madahead.html`
+- [x] Commit + push after each page or after a tight pair
 
-### Phase E — Retention chrome + site polish
+### Phase E — Retention chrome + site polish ← next
 - [ ] Align Retention **shell/nav/tokens** lightly with Copilot family without breaking its light showpiece content
 - [ ] Cross-page nav active states, footer, focus rings
 - [ ] Kill leftover Mondrian blue / Space Grotesk references in live pages
@@ -128,6 +128,7 @@ Do **one or two pages per tick** max. Restyle chrome/CSS only; Webflow body copy
 | 1 | 2026-08-06 | Phase A foundation | tokens/shell/fonts Copilot; wavy lines kept; Copilot indigo restored |
 | 2 | 2026-08-06 | Phase B homepage | dark Copilot hero + grain/orb; wavy lines via difference blend; paper work ledger |
 | 3 | 2026-08-06 | Phase C about/play/resume | Copilot kickers, grain, wavy rails on about/play; resume glow/Archivo |
+| 4 | 2026-08-06 | Phase D case studies | Copilot case-study.css + grain/rails/kickers on all non-MS projects |
 
 ---
 

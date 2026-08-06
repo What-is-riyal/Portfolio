@@ -11,14 +11,22 @@
   <link rel="stylesheet" href="../css/shell.css">
   <link rel="stylesheet" href="../css/case-study.css">
 </head>
-<body data-shell-base="../" data-shell-page="work">
+<body class="page-case-study" data-shell-base="../" data-shell-page="work">
+  <div class="grain" aria-hidden="true"></div>
   <div class="page" style="position:relative;width:100%">
+    <div class="site-lines" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block"></svg>
+    </div>
     <div id="site-nav"></div>
 
     <main id="main" class="site-content page-case">
       <header class="frame cs-hero">
+        <div class="m-c1 rail-markers" aria-hidden="true"></div>
+        <div class="m-g1 rail-markers" aria-hidden="true"></div>
+        <div class="m-g2 rail-markers" aria-hidden="true"></div>
+        <div class="m-c3 rail-markers" aria-hidden="true"></div>
         <div class="cell-a">
-          <p class="sg-label cs-hero__org">Razorpay</p>
+          <p class="page-kicker cs-hero__org">Razorpay</p>
           <h1 class="voice-opener cs-hero__title">What makes merchants pay and consumers play?</h1>
           <p class="voice-sub cs-hero__sub">A deep dive into validating a B2C rewards platform for a B2B fintech</p>
         </div>
@@ -179,9 +187,14 @@
       </section>
 
       <div id="site-footer"></div>
+      <span data-rails-end aria-hidden="true"></span>
     </main>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="../js/motion.js" defer></script>
+  <script src="../js/mondrian-lines.js" defer></script>
   <script src="../js/shell.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

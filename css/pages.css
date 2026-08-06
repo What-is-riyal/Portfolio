@@ -153,3 +153,94 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Homepage — verbatim Webflow transplant */
+
+.page-home {
+  padding-top: 12vh;
+  padding-bottom: 8vh;
+}
+
+.page-home img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-home .section-12.new {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+  margin-bottom: clamp(48px, 10vh, 120px);
+}
+
+.page-home .text-block-91,
+.page-home .text-block-92 {
+  font-family: var(--font-fraunces);
+  font-size: var(--text-prose);
+  font-weight: 340;
+  line-height: 1.55;
+  max-width: 62ch;
+}
+
+.page-home .section-13.hp .div-block-33 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.page-home .project-2 {
+  display: block;
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid var(--line-color);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.page-home .project-2:hover,
+.page-home .project-2:focus-visible {
+  background-color: rgba(26, 63, 158, 0.06);
+}
+
+.page-home .text-block-47 {
+  font-family: var(--font-grotesk);
+  font-size: var(--text-row);
+  letter-spacing: -0.01em;
+  margin: 12px 0 8px;
+}
+
+.page-home .text-block-48,
+.page-home .thumbnail {
+  font-family: var(--font-fraunces);
+  font-size: var(--text-prose);
+  font-weight: 340;
+  line-height: 1.45;
+}
+
+.page-home .keyword-container {
+  font-family: var(--font-grotesk);
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--grey);
+}
+
+.page-home .footer2,
+.page-home .closing {
+  margin-top: clamp(48px, 10vh, 96px);
+  padding-top: clamp(24px, 4vh, 48px);
+  border-top: 1px solid var(--line-color);
+  font-family: var(--font-fraunces);
+  font-size: var(--text-prose);
+  font-weight: 340;
+  line-height: 1.55;
+}
+
+@media (max-width: 767px) {
+  .page-home .section-12.new,
+  .page-home .section-13.hp .div-block-33 {
+    grid-template-columns: 1fr;
+  }
+}

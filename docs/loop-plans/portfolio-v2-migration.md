@@ -4,7 +4,7 @@
 **Trigger:** Every **5 minutes** (local `/loop 5m` or Cursor Automation).  
 **Tick budget:** One iteration must finish within **5 minutes** (hard stop at **7 minutes**).  
 **Last updated:** 2026-08-06  
-**Iteration:** 12  
+**Iteration:** 13  
 **Lock status:** idle *(do not edit by hand while a run is active)*
 
 ---
@@ -110,7 +110,7 @@ Update checkboxes each iteration. **One page (or one clear sub-task) per loop pa
 - [x] B5. `work/razorpay-onboarding.html` *(strip password-gate markup from export)*
 - [x] B6. `work/meesho-vernacular.html`
 - [x] B7. `work/madahead.html`
-- [ ] B8. `index.html` *(homepage — Webflow content in new shell)*
+- [x] B8. `index.html` *(homepage — Webflow content in new shell)*
 
 ### Phase C — Non-Webflow pages
 - [ ] C1. `work/microsoft-copilot-trust.html` — keep rewrite; apply new UI shell only
@@ -299,8 +299,9 @@ Report to Priyal:
 
 ## Notes for next run
 
-- **Iteration 12 done:** B7 — `work/madahead.html` transplanted from Webflow export (v2 shell + case-study CSS).
-- **Next task:** B8 — `index.html` (homepage, Webflow content in new shell).
+- **Iteration 13 done:** B8 — `index.html` homepage transplanted from Webflow export (hero + project ledger + footer in v2 shell).
+- **Next task:** C1 — `work/microsoft-copilot-trust.html` (exception page, UI shell only).
+- Ticks 5–12 (3m) and 31–36 (5m) were no-ops — no agent response. Consider killing duplicate 5m loop (`610489`).
 - Loop interval now **3 minutes** (shell PID 58602).
 
 ---

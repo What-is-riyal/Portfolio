@@ -4,7 +4,7 @@
 **Trigger:** Every **5 minutes** (local `/loop 5m` or Cursor Automation).  
 **Tick budget:** One iteration must finish within **5 minutes** (hard stop at **7 minutes**).  
 **Last updated:** 2026-08-06  
-**Iteration:** 4  
+**Iteration:** 5  
 **Lock status:** idle *(do not edit by hand while a run is active)*
 
 ---
@@ -99,8 +99,8 @@ Update checkboxes each iteration. **One page (or one clear sub-task) per loop pa
 - [x] A1. Add `css/tokens.css` + `css/grid.css` ported from reference tokens/globals (HTML, not React)
 - [x] A2. Add `js/mondrian-lines.js` — port bend logic from `cca3c36:site/components/MondrianLines.tsx` + `site/lib/motion.ts`
 - [x] A3. Add `js/diagram.js` — port hero diagram from `cca3c36:site/components/Diagram.tsx`
-- [ ] A4. Build shared HTML partials or consistent nav/footer pattern across pages
-- [ ] A5. Deduplicate assets: script or manifest mapping `assets/` ← `Resources/webflow/` (one copy per hash)
+- [x] A4. Build shared HTML partials or consistent nav/footer pattern across pages
+- [x] A5. Deduplicate assets: script or manifest mapping `assets/` ← `Resources/webflow/` (one copy per hash)
 
 ### Phase B — Webflow pages (content verbatim)
 - [ ] B1. `about.html`
@@ -299,9 +299,10 @@ Report to Priyal:
 
 ## Notes for next run
 
-- **Iteration 3 done:** A3 — `js/diagram.js` + diagram motion constants in `js/motion.js`.
-- **Next task:** A4 — shared nav/footer HTML pattern across v2 pages.
-- Phase A foundation nearly complete (A5 assets dedupe remains).
+- **Iteration 5 done:** A5 — `scripts/build-asset-manifest.py`, `assets/manifest.json`, 150 unique images copied to `assets/webflow/` (~33MB dedupe savings).
+- **Phase A complete.** Next: B1 — rebuild `about.html` (Webflow body verbatim + v2 shell).
+- **Loop gap:** Ticks 5–25 were no-ops (no agent session). Work resumes when chat is active.
+- Google Scholar URL in shell is placeholder — confirm with Priyal when wiring pages.
 - Homepage copy: default **Webflow verbatim** until Priyal says otherwise.
 
 ---

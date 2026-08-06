@@ -1,0 +1,2250 @@
+{
+  "generated_from": "Resources/webflow/",
+  "total_unique": 150,
+  "total_references": 238,
+  "duplicate_savings_bytes": 34471975,
+  "assets": [
+    {
+      "hash": "00aadd718f1f59b39d5f79854e062af80ae291703176b6b796c9a2ff9522c9eb",
+      "size": 342216,
+      "dest": "assets/webflow/00aadd71/5f60e5dace45bcbafef77928_IMG_0157.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5dace45bcbafef77928_IMG_0157.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5dace45bcbafef77928_IMG_0157.PNG"
+      ]
+    },
+    {
+      "hash": "00f45354c11a12591485977633a0e03952cdf1ff2de403e10ec846db8cc508a9",
+      "size": 421,
+      "dest": "assets/webflow/00f45354/webflow-badge-icon-d2.89e12c322e.svg",
+      "sources": [
+        "Resources/webflow/About me_files/webflow-badge-icon-d2.89e12c322e.svg",
+        "Resources/webflow/D2C_files/webflow-badge-icon-d2.89e12c322e.svg",
+        "Resources/webflow/MadAhead_files/webflow-badge-icon-d2.89e12c322e.svg",
+        "Resources/webflow/Play_files/webflow-badge-icon-d2.89e12c322e.svg",
+        "Resources/webflow/Razorpay Onboarding Redesign_files/webflow-badge-icon-d2.89e12c322e.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/webflow-badge-icon-d2.89e12c322e.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/webflow-badge-icon-d2.89e12c322e.svg",
+        "Resources/webflow/homepage_files/webflow-badge-icon-d2.89e12c322e.svg"
+      ]
+    },
+    {
+      "hash": "04f0b1e92e2fa0adf96136f79d4156df52e4374b0984c29e4df1869fd60c3e00",
+      "size": 1259683,
+      "dest": "assets/webflow/04f0b1e9/5f61b6a6a287948186215a30_poster(1).png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f61b6a6a287948186215a30_poster(1).png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f61b6a6a287948186215a30_poster(1).png"
+      ]
+    },
+    {
+      "hash": "0521d7f7f751151c11dfbf4305d7005816d23dddb80fbf6d009c06bbcecd5b38",
+      "size": 52004,
+      "dest": "assets/webflow/0521d7f7/5f36f2773eba5de88c30b5ac_image 6.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f36f2773eba5de88c30b5ac_image 6.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f36f2773eba5de88c30b5ac_image 6.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f36f2773eba5de88c30b5ac_image 6.svg"
+      ]
+    },
+    {
+      "hash": "06deed2f507f8681106d05f7b21cd7f3e42477ef78cf394d21dd4eeb9d43f387",
+      "size": 606502,
+      "dest": "assets/webflow/06deed2f/5f7cb29aa22705bc6cba4180_activity.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f7cb29aa22705bc6cba4180_activity.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f7cb29aa22705bc6cba4180_activity.png"
+      ]
+    },
+    {
+      "hash": "083016580c1defb576f3a6b5e53e7332c598f655f80e26b669b77842ac5bf1e0",
+      "size": 1366298,
+      "dest": "assets/webflow/08301658/5f7cb2accc6ee389744cf872_home page.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f7cb2accc6ee389744cf872_home page.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f7cb2accc6ee389744cf872_home page.png"
+      ]
+    },
+    {
+      "hash": "0aed6bef677c8916192913a25471e0d90ebd7d40c59358e6ae0c0ffdf730ec49",
+      "size": 1425889,
+      "dest": "assets/webflow/0aed6bef/5f833b1f71a3e41555008f38_photo 1.png",
+      "sources": [
+        "Resources/webflow/About me_files/5f833b1f71a3e41555008f38_photo 1.png"
+      ]
+    },
+    {
+      "hash": "0c705a1ce314280927984801bb6ffa8ed768af0b4d5f924abe450e64f8b9c7a6",
+      "size": 1491,
+      "dest": "assets/webflow/0c705a1c/5f818b2dfacc3a78b154afd2_fb.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f818b2dfacc3a78b154afd2_fb.png"
+      ]
+    },
+    {
+      "hash": "0f5ae265644b01b09f41ec876c2561a5c509628a968da031bba195c7bc2217a0",
+      "size": 355325,
+      "dest": "assets/webflow/0f5ae265/694721c7ab488d10ad169c17_Screenshot 2025-12-20 at 2.22.23\u202fPM.png",
+      "sources": [
+        "Resources/webflow/D2C_files/694721c7ab488d10ad169c17_Screenshot 2025-12-20 at 2.22.23\u202fPM.png"
+      ]
+    },
+    {
+      "hash": "10039a43782da9c288f007e2c3210806e0348a66272a447ca76571cd00821861",
+      "size": 260868,
+      "dest": "assets/webflow/10039a43/5f36f13f91dd00d5fb974b92_Frame 6.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f36f13f91dd00d5fb974b92_Frame 6.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f36f13f91dd00d5fb974b92_Frame 6.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f36f13f91dd00d5fb974b92_Frame 6.svg"
+      ]
+    },
+    {
+      "hash": "100dac34bd92ca7dbc258032344b1a6309952eddaee1818d295f8c6c3f0cf2d7",
+      "size": 384852,
+      "dest": "assets/webflow/100dac34/5f9d280ad5fd03d6e0ee1ff2_IA Madahead.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d280ad5fd03d6e0ee1ff2_IA Madahead.png"
+      ]
+    },
+    {
+      "hash": "108075a9cce56812333ad52edef2ac3d8f81d3f5c0fff2fee087c22d01aeb2a7",
+      "size": 667635,
+      "dest": "assets/webflow/108075a9/65a325971bf69dac463953b2_Screenshot 2024-01-14 at 5.36.37 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Website Evaluation_files/65a325971bf69dac463953b2_Screenshot 2024-01-14 at 5.36.37 AM.png"
+      ]
+    },
+    {
+      "hash": "132606d327a0915dabced0d716a513070a21e6329b566b07dc3bab38a0616d44",
+      "size": 149691,
+      "dest": "assets/webflow/132606d3/5f7cab54280c7f6b973c0aa0_watch 1.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f7cab54280c7f6b973c0aa0_watch 1.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f7cab54280c7f6b973c0aa0_watch 1.png"
+      ]
+    },
+    {
+      "hash": "148a7d36f118e462a9727c19f6ee3202e863d493567c0458f9c81c52184ab55e",
+      "size": 324167,
+      "dest": "assets/webflow/148a7d36/5f60e5d70160acf828658293_IMG_0168.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5d70160acf828658293_IMG_0168.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5d70160acf828658293_IMG_0168.PNG"
+      ]
+    },
+    {
+      "hash": "17593299a48decd033d727d44f719f47b6c513849e14b74d915b1886ce118923",
+      "size": 4242,
+      "dest": "assets/webflow/17593299/5f49113a8a5c30d6b8023519_noun_interview_3243906 1.svg",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5f49113a8a5c30d6b8023519_noun_interview_3243906 1.svg"
+      ]
+    },
+    {
+      "hash": "1ecdb370f0e4d65f916117284f2f4ab1e3eb4af0a0d83050ab2c5cd81eefc64f",
+      "size": 300025,
+      "dest": "assets/webflow/1ecdb370/5f8d7c55d16f53651af8eef4_Samsung Clay-3.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f8d7c55d16f53651af8eef4_Samsung Clay-3.png"
+      ]
+    },
+    {
+      "hash": "1fb2ef281973c6ece5216e0c0fb7a31ad86d92c0e7276ed11783fd9def90a194",
+      "size": 2807177,
+      "dest": "assets/webflow/1fb2ef28/5f82179d5dc58c37e76b865b_ezgif.com-crop(3).gif",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f82179d5dc58c37e76b865b_ezgif.com-crop(3).gif",
+        "Resources/webflow/Razorpay Onboarding Redesign_files/5f82179d5dc58c37e76b865b_ezgif.com-crop(3).gif"
+      ]
+    },
+    {
+      "hash": "2405d108c7a3c7c91cd2538a71fbe0815cf600c04a1487394b8d46de6db33f3c",
+      "size": 534513,
+      "dest": "assets/webflow/2405d108/65a31d2a3f4905c00020c373_Screenshot 2024-01-14 at 5.00.34 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Website Evaluation_files/65a31d2a3f4905c00020c373_Screenshot 2024-01-14 at 5.00.34 AM.png"
+      ]
+    },
+    {
+      "hash": "242e2c5082a164150fdb43933a3b60653fc5a5d0337a8c441a388ebcf41ea51c",
+      "size": 215455,
+      "dest": "assets/webflow/242e2c50/5f7e3df854a4a86fc3b4f03c_competition.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7e3df854a4a86fc3b4f03c_competition.png"
+      ]
+    },
+    {
+      "hash": "24ceacf389bbd8338009d40389ae33dd7784e6a713d61423383337e7a74b1224",
+      "size": 589870,
+      "dest": "assets/webflow/24ceacf3/5f7cb2948e3c7d8b5160a8e3_settings.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f7cb2948e3c7d8b5160a8e3_settings.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f7cb2948e3c7d8b5160a8e3_settings.png"
+      ]
+    },
+    {
+      "hash": "273d358b53ccb0578f294eaa10521bc33d0111397c438c7967ea9baf7f09c207",
+      "size": 14309,
+      "dest": "assets/webflow/273d358b/5f818b31455359311fb1dc37_Inshorts_logo.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f818b31455359311fb1dc37_Inshorts_logo.png"
+      ]
+    },
+    {
+      "hash": "2ac2d80de52b932ea43b24528fac8635686d704b4d1f86620f3fb02dcbae4fd3",
+      "size": 65633,
+      "dest": "assets/webflow/2ac2d80d/5f7eda12430aae1893b017ce_characters-02.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7eda12430aae1893b017ce_characters-02.png"
+      ]
+    },
+    {
+      "hash": "2b40e7c61064cc0f4f55a7a2b5172efbf7194a3085e32e032cf15789d8f49588",
+      "size": 89719,
+      "dest": "assets/webflow/2b40e7c6/5f588090dc51eb0a08b819a2_Frame 25.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f588090dc51eb0a08b819a2_Frame 25.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f588090dc51eb0a08b819a2_Frame 25.png"
+      ]
+    },
+    {
+      "hash": "2c3199eb6da8c06987729a8491698ca96c4cfabeab20a5db1bc869ca8ccfddd6",
+      "size": 904616,
+      "dest": "assets/webflow/2c3199eb/65a31f5f1bf69dac46364e03_Screenshot 2024-01-14 at 5.10.06 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Website Evaluation_files/65a31f5f1bf69dac46364e03_Screenshot 2024-01-14 at 5.10.06 AM.png"
+      ]
+    },
+    {
+      "hash": "2d0591c949a5600771a16c2d220264165bc9dd84944821e88db32bee375d4226",
+      "size": 810593,
+      "dest": "assets/webflow/2d0591c9/5f816e7c71a3e4f949fccebe_imansyah-muhamad-putera-n4KewLKFOZw-unsplash(1).jpg",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f816e7c71a3e4f949fccebe_imansyah-muhamad-putera-n4KewLKFOZw-unsplash(1).jpg"
+      ]
+    },
+    {
+      "hash": "2df4d594b6c10d3b61e633894115330513944c8049ed0407d902578761cb0bb6",
+      "size": 320204,
+      "dest": "assets/webflow/2df4d594/5f82feace068d5fed923c244_Instagram Story - 14.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f82feace068d5fed923c244_Instagram Story - 14.png"
+      ]
+    },
+    {
+      "hash": "2e1b71882729da7c87a05773dbb714e4d62024918455a60a69e9aa51b0d47e6f",
+      "size": 1262227,
+      "dest": "assets/webflow/2e1b7188/65b00db3e63ab58149afd4bc_Screenshot 2024-01-24 at 12.34.00 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/65b00db3e63ab58149afd4bc_Screenshot 2024-01-24 at 12.34.00 AM.png"
+      ]
+    },
+    {
+      "hash": "2ecf955198e25e12d36a1621f15f659c18b76694f8c7a10b4f25acc90adb69a5",
+      "size": 610874,
+      "dest": "assets/webflow/2ecf9551/65a327ad736b28beba22d0b8_Screenshot 2024-01-14 at 5.45.23 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Website Evaluation_files/65a327ad736b28beba22d0b8_Screenshot 2024-01-14 at 5.45.23 AM.png"
+      ]
+    },
+    {
+      "hash": "302f848d05e8da51761baa0839da5e1eba83d284a5cfd4bd96db3ac47c48d6f4",
+      "size": 567738,
+      "dest": "assets/webflow/302f848d/65a2fa5fb52f089cc1915569_Prototype.png",
+      "sources": [
+        "Resources/webflow/Razorpay Website Evaluation_files/65a2fa5fb52f089cc1915569_Prototype.png"
+      ]
+    },
+    {
+      "hash": "3202cb640fada345ab99415bd087f28e6fea1c3009dba51d183cc37bce036cd7",
+      "size": 9912,
+      "dest": "assets/webflow/3202cb64/webflow-badge-text-d2.c82cec3b78.svg",
+      "sources": [
+        "Resources/webflow/About me_files/webflow-badge-text-d2.c82cec3b78.svg",
+        "Resources/webflow/D2C_files/webflow-badge-text-d2.c82cec3b78.svg",
+        "Resources/webflow/MadAhead_files/webflow-badge-text-d2.c82cec3b78.svg",
+        "Resources/webflow/Play_files/webflow-badge-text-d2.c82cec3b78.svg",
+        "Resources/webflow/Razorpay Onboarding Redesign_files/webflow-badge-text-d2.c82cec3b78.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/webflow-badge-text-d2.c82cec3b78.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/webflow-badge-text-d2.c82cec3b78.svg",
+        "Resources/webflow/homepage_files/webflow-badge-text-d2.c82cec3b78.svg"
+      ]
+    },
+    {
+      "hash": "3257e03bc97e9d900abec2d99f023a85f6bf2fe8ee5a94bcfe8086e7533dbf16",
+      "size": 119889,
+      "dest": "assets/webflow/3257e03b/5f7e557b0c0e45d8fc3c1a4c_Instagram Story - 12.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7e557b0c0e45d8fc3c1a4c_Instagram Story - 12.png"
+      ]
+    },
+    {
+      "hash": "33aa2ea6fc4a78dd9996df6c67a806a4d95af1d145c882f4dc9bff773ce2d0f9",
+      "size": 284876,
+      "dest": "assets/webflow/33aa2ea6/5f7e4309965a1e4797e9c40d_Screenshot 2020-10-08 at 4.06.39 AM.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7e4309965a1e4797e9c40d_Screenshot 2020-10-08 at 4.06.39 AM.png"
+      ]
+    },
+    {
+      "hash": "3528532605f5d10baa01562f2f50086bd8bb39a4601007aa8099fd78673297df",
+      "size": 68454,
+      "dest": "assets/webflow/35285326/5f5880927669f58f98550fd5_Frame 27.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f5880927669f58f98550fd5_Frame 27.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f5880927669f58f98550fd5_Frame 27.png"
+      ]
+    },
+    {
+      "hash": "35b57c64873509adbaeec882b7974c2df66febfcf1259e6d06cb34206fcfc935",
+      "size": 304069,
+      "dest": "assets/webflow/35b57c64/5f8d7c3c86eb1638634ac69f_Samsung Clay-2.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f8d7c3c86eb1638634ac69f_Samsung Clay-2.png"
+      ]
+    },
+    {
+      "hash": "3c8d1a9d31d0af28bb7d8dc88c38fbceec4653063f81f47258605064dabb61c4",
+      "size": 134843,
+      "dest": "assets/webflow/3c8d1a9d/65b1744b87aa85a2e5dcf3ae_Screenshot 2024-01-25 at 2.03.32 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/65b1744b87aa85a2e5dcf3ae_Screenshot 2024-01-25 at 2.03.32 AM.png"
+      ]
+    },
+    {
+      "hash": "4013227f6320d1714845413636873bc5b0e3f9112a97472dfd717b83e5d53829",
+      "size": 197071,
+      "dest": "assets/webflow/4013227f/5f36f140eb00db77937a52a1_Frame 7.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f36f140eb00db77937a52a1_Frame 7.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f36f140eb00db77937a52a1_Frame 7.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f36f140eb00db77937a52a1_Frame 7.svg"
+      ]
+    },
+    {
+      "hash": "4102d38dba960f0eb66a4b107f52d6efc96522470ccfd1aa38584ce399374da7",
+      "size": 7799,
+      "dest": "assets/webflow/4102d38d/5f82ded696c8703011565176_google-play.svg",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f82ded696c8703011565176_google-play.svg"
+      ]
+    },
+    {
+      "hash": "415c5ac57303c5a98ef490dc9bb4ab8e66fd2d7693c37e16b4a3df7bdf11f182",
+      "size": 506801,
+      "dest": "assets/webflow/415c5ac5/65b42ac1d58847f52740cc6c_Screenshot 2024-01-27 at 3.27.16 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/65b42ac1d58847f52740cc6c_Screenshot 2024-01-27 at 3.27.16 AM.png"
+      ]
+    },
+    {
+      "hash": "44b24fd01b1226c836c359459a584f5a217cf81e2d4317cede3c3a92030fbb4f",
+      "size": 287894,
+      "dest": "assets/webflow/44b24fd0/5f9d2a25e946216fbd4d839d_Samsung Clay-13.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d2a25e946216fbd4d839d_Samsung Clay-13.png"
+      ]
+    },
+    {
+      "hash": "48ee7abdbb14f425d06c544496e0e2f9e1c270ef21fff09a04af93885a3853f5",
+      "size": 956040,
+      "dest": "assets/webflow/48ee7abd/694721c7b88c2622cd8c0855_Screenshot 2025-12-20 at 2.21.50\u202fPM.png",
+      "sources": [
+        "Resources/webflow/D2C_files/694721c7b88c2622cd8c0855_Screenshot 2025-12-20 at 2.21.50\u202fPM.png"
+      ]
+    },
+    {
+      "hash": "49c59e33c5e1d5e1826daf12f595e6ad391e9677993f49fa5ad4f812456dc8d8",
+      "size": 926250,
+      "dest": "assets/webflow/49c59e33/5f36f14367e2cf4af55215ad_Frame 5.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f36f14367e2cf4af55215ad_Frame 5.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f36f14367e2cf4af55215ad_Frame 5.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f36f14367e2cf4af55215ad_Frame 5.svg"
+      ]
+    },
+    {
+      "hash": "49d9aa391ea76c1c396b0713b357bb0316ff650b72612b3fb06e94ef7a30d9ff",
+      "size": 462,
+      "dest": "assets/webflow/49d9aa39/5f491baf2655f60c85c95fb0_menu.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f491baf2655f60c85c95fb0_menu.svg",
+        "Resources/webflow/MadAhead_files/5f491baf2655f60c85c95fb0_menu.svg",
+        "Resources/webflow/Razorpay Onboarding Redesign_files/5f491baf2655f60c85c95fb0_menu.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f491baf2655f60c85c95fb0_menu.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f491baf2655f60c85c95fb0_menu.svg"
+      ]
+    },
+    {
+      "hash": "4cc8cfbd67f3c093c2792b24a7d1c655e2fe1594fef2ad1998e790c99f7f336d",
+      "size": 263160,
+      "dest": "assets/webflow/4cc8cfbd/5f9d2a22477401c2ed491c90_Samsung Clay-16.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d2a22477401c2ed491c90_Samsung Clay-16.png"
+      ]
+    },
+    {
+      "hash": "4e7be212782144e99184220a84829594719b818d10bd39b7f0377b0acc90b778",
+      "size": 22976,
+      "dest": "assets/webflow/4e7be212/5f818ace71a3e445c3fcfd59_scribble.io.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f818ace71a3e445c3fcfd59_scribble.io.png"
+      ]
+    },
+    {
+      "hash": "4f67cb52e31f7013b0f3aef5612bf0a659f94ac8522cc417d55936e86cb92888",
+      "size": 6376,
+      "dest": "assets/webflow/4f67cb52/5f36f13be5ef2bdce80078e8_Frame 1.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f36f13be5ef2bdce80078e8_Frame 1.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f36f13be5ef2bdce80078e8_Frame 1.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f36f13be5ef2bdce80078e8_Frame 1.svg"
+      ]
+    },
+    {
+      "hash": "555efb21c3553433183075788a6fa27b154c10dbe6ba4dd920243c37d2c731fa",
+      "size": 1208632,
+      "dest": "assets/webflow/555efb21/65a2f2a812b731ca699677c8_Screenshot 2024-01-14 at 1.58.59 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Website Evaluation_files/65a2f2a812b731ca699677c8_Screenshot 2024-01-14 at 1.58.59 AM.png"
+      ]
+    },
+    {
+      "hash": "55afa97c11920c1b7860c578ed5a1d0666a3c54568b1640cc722725425c2569f",
+      "size": 130639,
+      "dest": "assets/webflow/55afa97c/5f588df7dd1d8fc2ea8dadf2_Frame 29.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f588df7dd1d8fc2ea8dadf2_Frame 29.png",
+        "Resources/webflow/Razorpay Onboarding Redesign_files/5f588df7dd1d8fc2ea8dadf2_Frame 29.png"
+      ]
+    },
+    {
+      "hash": "55d659e9becc969bb70f8685206330a3f2255fa9f25985399a0a3f48161f97e6",
+      "size": 4945,
+      "dest": "assets/webflow/55d659e9/5f818b3386ea49822793788c_scc-logo.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f818b3386ea49822793788c_scc-logo.png"
+      ]
+    },
+    {
+      "hash": "5655d2b7a139671083fd1804bf4512ce0ef9f5b40c8f49ac8839d39d1e8d7f1c",
+      "size": 181420,
+      "dest": "assets/webflow/5655d2b7/65b01db796011d85d62fa0cf_Screenshot 2024-01-24 at 1.42.31 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/65b01db796011d85d62fa0cf_Screenshot 2024-01-24 at 1.42.31 AM.png"
+      ]
+    },
+    {
+      "hash": "58ec795e9af72b8a9642d408e98c90e07215a4e3904955c1b7af5a044ed590e6",
+      "size": 366947,
+      "dest": "assets/webflow/58ec795e/5f60e5e0410ff4972b27a648_IMG_0156.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5e0410ff4972b27a648_IMG_0156.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5e0410ff4972b27a648_IMG_0156.PNG"
+      ]
+    },
+    {
+      "hash": "5937fbc2899f47c034c9b6fa1f5809571d395c9d9816b347fcd6accad3e85b39",
+      "size": 2258721,
+      "dest": "assets/webflow/5937fbc2/5f613b4e9bfa140427798f3f_add friend3.gif",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f613b4e9bfa140427798f3f_add friend3.gif",
+        "Resources/webflow/Razorpay Onboarding Redesign_files/5f613b4e9bfa140427798f3f_add friend3.gif"
+      ]
+    },
+    {
+      "hash": "5a4160dc281262aa96ba0bc0407bc21fa6f7821b62075d83b20388a75b128764",
+      "size": 333597,
+      "dest": "assets/webflow/5a4160dc/5f60e5d98efd149c1c9b69e5_IMG_0167.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5d98efd149c1c9b69e5_IMG_0167.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5d98efd149c1c9b69e5_IMG_0167.PNG"
+      ]
+    },
+    {
+      "hash": "5a4cc2f2b7b2431bfcd373b063c2fb14c3cd8c130c2d0ee63b5cd7904b4cb917",
+      "size": 568272,
+      "dest": "assets/webflow/5a4cc2f2/65b43befe371d57c217aa084_Screenshot 2024-01-27 at 4.20.19 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/65b43befe371d57c217aa084_Screenshot 2024-01-27 at 4.20.19 AM.png"
+      ]
+    },
+    {
+      "hash": "5b4dcc6ea0d6d4a8cd641053dc311d27664eb344fd1bee1bfe2ff901a093a51c",
+      "size": 26924,
+      "dest": "assets/webflow/5b4dcc6e/5f36f13cd491600021c4df7e_Frame 9.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f36f13cd491600021c4df7e_Frame 9.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f36f13cd491600021c4df7e_Frame 9.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f36f13cd491600021c4df7e_Frame 9.svg"
+      ]
+    },
+    {
+      "hash": "5d4d069adfd34b7255b6c4c74312843c991f0ef522abcd837aa6a24aced25233",
+      "size": 362055,
+      "dest": "assets/webflow/5d4d069a/5f60e5de1cce179e95f20ca7_IMG_0160.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5de1cce179e95f20ca7_IMG_0160.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5de1cce179e95f20ca7_IMG_0160.PNG"
+      ]
+    },
+    {
+      "hash": "5e8c36ad6770fbac2702d881ae174577fabb165018debcbb810aadf336278ff0",
+      "size": 2891567,
+      "dest": "assets/webflow/5e8c36ad/6874eac7c035d8ad8ca9afcb_6769d65db2d93489c43b3f96_Screenshot 2024-12-24 at 2.59.49\u202fAM.png",
+      "sources": [
+        "Resources/webflow/homepage_files/6874eac7c035d8ad8ca9afcb_6769d65db2d93489c43b3f96_Screenshot 2024-12-24 at 2.59.49\u202fAM.png"
+      ]
+    },
+    {
+      "hash": "5ffb396646b62fd6a01f400f0f6f50e9a5ab5f66b858774f9318ce9d662f395b",
+      "size": 250467,
+      "dest": "assets/webflow/5ffb3966/5f5b2446da3c782e0e2f57ea_Screenshot_2020-09-08_at_12.55.08_PM 2.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f5b2446da3c782e0e2f57ea_Screenshot_2020-09-08_at_12.55.08_PM 2.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f5b2446da3c782e0e2f57ea_Screenshot_2020-09-08_at_12.55.08_PM 2.png"
+      ]
+    },
+    {
+      "hash": "6097354b76a3b9030a85f9d40ff09ced476a86b47a8daab7be6a3612521601ca",
+      "size": 257016,
+      "dest": "assets/webflow/6097354b/5f9d2a2445546d502eeb0657_Samsung Clay-14.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d2a2445546d502eeb0657_Samsung Clay-14.png"
+      ]
+    },
+    {
+      "hash": "631577cdd10eb5e98ef2c9bf127eb1d063854c1d48e4017de330fc0e25be9024",
+      "size": 340822,
+      "dest": "assets/webflow/631577cd/5f8d7c7431dcca9b2bc13653_Samsung Clay-11.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f8d7c7431dcca9b2bc13653_Samsung Clay-11.png"
+      ]
+    },
+    {
+      "hash": "64f1a1eaa8fa1425d8eb848b0ce10863fcb5d2a7d2d879e2a69d6f5bec2e5941",
+      "size": 3293,
+      "dest": "assets/webflow/64f1a1ea/5f91e4fca03e893b26be1133_noun_report_413983 1.svg",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5f91e4fca03e893b26be1133_noun_report_413983 1.svg"
+      ]
+    },
+    {
+      "hash": "6c1ee61c7f6da987125b5fb8ebdc92f275a0d735bd425b367a32b3591f37134b",
+      "size": 1104498,
+      "dest": "assets/webflow/6c1ee61c/65a2ee966aa2aff4e910e4de_Screenshot 2024-01-14 at 1.39.27 AM.png",
+      "sources": [
+        "Resources/webflow/D2C_files/65a2ee966aa2aff4e910e4de_Screenshot 2024-01-14 at 1.39.27 AM.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/65a2ee966aa2aff4e910e4de_Screenshot 2024-01-14 at 1.39.27 AM.png"
+      ]
+    },
+    {
+      "hash": "6d42ebac8313fe5c8ff3dfc3c543d627402200575ead64cba0aed93caf598884",
+      "size": 368883,
+      "dest": "assets/webflow/6d42ebac/5f60e5dcdcdf7f1f7e394ccf_IMG_0169.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5dcdcdf7f1f7e394ccf_IMG_0169.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5dcdcdf7f1f7e394ccf_IMG_0169.PNG"
+      ]
+    },
+    {
+      "hash": "6fba0e440619a4a5b31b59190d12e9e78502a96445ae9daa4bb1099766c0cc32",
+      "size": 3697,
+      "dest": "assets/webflow/6fba0e44/5f7e35cafb10bd0d3e696aaa_haikujam.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7e35cafb10bd0d3e696aaa_haikujam.png"
+      ]
+    },
+    {
+      "hash": "72bb49773c38aff2d14d39226d88890cfd6c763cfb8e9c89aa6f4c0a59693223",
+      "size": 612,
+      "dest": "assets/webflow/72bb4977/5ee5d3ef1506baf02f2390a1_Arrow.svg",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5ee5d3ef1506baf02f2390a1_Arrow.svg"
+      ]
+    },
+    {
+      "hash": "73a4fd4674404d7f1a2b79b423c18063553ccc0b1d7e34d2466b151021710c43",
+      "size": 132530,
+      "dest": "assets/webflow/73a4fd46/5f6187ba1dec7383eac5e0b0_Instagram Story - 7.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f6187ba1dec7383eac5e0b0_Instagram Story - 7.png"
+      ]
+    },
+    {
+      "hash": "73ec4f36a62b4f3cd06af9da8d1ec7572d8a5a81b7f4b73a22293d9cb4b1c15d",
+      "size": 1187825,
+      "dest": "assets/webflow/73ec4f36/65b14205d2d821639563eea3_Screen Recording 2024-01-24 at 10.26.36 PM.gif",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/65b14205d2d821639563eea3_Screen Recording 2024-01-24 at 10.26.36 PM.gif"
+      ]
+    },
+    {
+      "hash": "75bcb36702e6d8cea56e6ec40bea0ff4cee38d3d82778c917186e64efa2d3094",
+      "size": 8622,
+      "dest": "assets/webflow/75bcb367/647795a8a42f6be079200a9a_rzp logo.png",
+      "sources": [
+        "Resources/webflow/D2C_files/647795a8a42f6be079200a9a_rzp logo.png",
+        "Resources/webflow/Razorpay Onboarding Redesign_files/647795a8a42f6be079200a9a_rzp logo.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/647795a8a42f6be079200a9a_rzp logo.png",
+        "Resources/webflow/homepage_files/647795a8a42f6be079200a9a_rzp logo.png"
+      ]
+    },
+    {
+      "hash": "76591bc65c286f1a3cd37bc89bc05f017d45fb2e2420cade6b2586c149e3a31b",
+      "size": 3842509,
+      "dest": "assets/webflow/76591bc6/5f5b482f13922429d3d2af96_Instagram Story - 2.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f5b482f13922429d3d2af96_Instagram Story - 2.png"
+      ]
+    },
+    {
+      "hash": "7a04f14cd11be77d56f96521130b918d79dd91f586f78abf1d2c31918bc270d3",
+      "size": 384428,
+      "dest": "assets/webflow/7a04f14c/65b102a3c025e3d164e25610_Screen Recording 2024-01-24 at 5.55.53 PM.gif",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/65b102a3c025e3d164e25610_Screen Recording 2024-01-24 at 5.55.53 PM.gif"
+      ]
+    },
+    {
+      "hash": "7ab6fd97a3d6f7fb4287398c0b57e652225d2cb3d66761641c7791694f1a8a68",
+      "size": 3866,
+      "dest": "assets/webflow/7ab6fd97/66a22ad3386f9d2038b76ac6_trueode_logo.jpeg",
+      "sources": [
+        "Resources/webflow/homepage_files/66a22ad3386f9d2038b76ac6_trueode_logo.jpeg"
+      ]
+    },
+    {
+      "hash": "7c42315422d507692c189781923e821ab7280df2a4b10fc17f2e295333d0ec74",
+      "size": 262940,
+      "dest": "assets/webflow/7c423154/5f9d2a1406d75ef85614b8b4_Samsung Clay-7.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d2a1406d75ef85614b8b4_Samsung Clay-7.png"
+      ]
+    },
+    {
+      "hash": "7d108b528aa871b68faa486a5e63ee43a31daa125975c4578b56df7d7b409ac1",
+      "size": 208914,
+      "dest": "assets/webflow/7d108b52/5f60e5ce69a2253e14a6ea80_IMG_0163.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5ce69a2253e14a6ea80_IMG_0163.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5ce69a2253e14a6ea80_IMG_0163.PNG"
+      ]
+    },
+    {
+      "hash": "7d97fad1d8376f2209c459f71f6cb85a0a50e92e3544ea3394a7c424586b54b7",
+      "size": 876414,
+      "dest": "assets/webflow/7d97fad1/65a314dd123b3d7f48053199_Screenshot 2024-01-14 at 4.25.16 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Website Evaluation_files/65a314dd123b3d7f48053199_Screenshot 2024-01-14 at 4.25.16 AM.png"
+      ]
+    },
+    {
+      "hash": "815853f03b59bf6c826ff867e37bf1a2040ec1a8fb5131c5ed4491318b35a073",
+      "size": 232167,
+      "dest": "assets/webflow/815853f0/5f459fef667691339870e60e_Screenshot 2020-08-26 at 5.02.04 AM.png",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5f459fef667691339870e60e_Screenshot 2020-08-26 at 5.02.04 AM.png"
+      ]
+    },
+    {
+      "hash": "832d9419151c582f9b05501fd0382bcf9fe1fa22cbfecd1b429466371f165270",
+      "size": 136680,
+      "dest": "assets/webflow/832d9419/5ee5d3ef1506ba6d4423908a_Project 1.jpg",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5ee5d3ef1506ba6d4423908a_Project 1.jpg"
+      ]
+    },
+    {
+      "hash": "872da1f0fb5302b2773e0ae7eda245ff90307753de0dddd52add6611623c391d",
+      "size": 291393,
+      "dest": "assets/webflow/872da1f0/5f9d2a21dbdc637c0828b5cf_Samsung Clay-12.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d2a21dbdc637c0828b5cf_Samsung Clay-12.png"
+      ]
+    },
+    {
+      "hash": "87e0b7cd19d90512e20acbff137532d672706782a565e6e97bcbd8c7875c6160",
+      "size": 247611,
+      "dest": "assets/webflow/87e0b7cd/5f9d342b9cb409c5860ab34b_Samsung Clay(1).png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d342b9cb409c5860ab34b_Samsung Clay(1).png"
+      ]
+    },
+    {
+      "hash": "8a86aee2a0979c1349cb89c79cd3cd3fd0bce0ae135d6f7c8f5bb4069a890e49",
+      "size": 413748,
+      "dest": "assets/webflow/8a86aee2/5f60e5e3f056343955e45db9_IMG_0158.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5e3f056343955e45db9_IMG_0158.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5e3f056343955e45db9_IMG_0158.PNG"
+      ]
+    },
+    {
+      "hash": "8b854b2ffecfd68f15a94fe5e7d44f167c2262ce33359de8ae730d701b46e071",
+      "size": 112426,
+      "dest": "assets/webflow/8b854b2f/5f36f13e3eba5d382130b53b_Frame 8.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f36f13e3eba5d382130b53b_Frame 8.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f36f13e3eba5d382130b53b_Frame 8.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f36f13e3eba5d382130b53b_Frame 8.svg"
+      ]
+    },
+    {
+      "hash": "8b9943f9c78684284751343db89990e8bb8b7bca1fcf7e001b8fcdef3f9290d6",
+      "size": 268572,
+      "dest": "assets/webflow/8b9943f9/5f9d2a1499175c952f731bba_Samsung Clay-9.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d2a1499175c952f731bba_Samsung Clay-9.png"
+      ]
+    },
+    {
+      "hash": "8d90ab411fc3382de3f4fa8b0e45e982115c3c272e8a22de93f9ae3ddf9278e6",
+      "size": 146835,
+      "dest": "assets/webflow/8d90ab41/5f7cab529f514724d029c186_watch 2.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f7cab529f514724d029c186_watch 2.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f7cab529f514724d029c186_watch 2.png"
+      ]
+    },
+    {
+      "hash": "8da5966a28c54a49c9024de2e2ce45b136ff94c0e6370b40cfe47056b34c3773",
+      "size": 428595,
+      "dest": "assets/webflow/8da5966a/5f60e5e60d1998122fe7889f_IMG_0159.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5e60d1998122fe7889f_IMG_0159.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5e60d1998122fe7889f_IMG_0159.PNG"
+      ]
+    },
+    {
+      "hash": "8de3e7f4a3ef7d0888c118a8fcc0f63f21c5cc799bc4e1fad86b935654fbf516",
+      "size": 3368350,
+      "dest": "assets/webflow/8de3e7f4/5f9d280cca29d827bf193c10_read story.gif",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d280cca29d827bf193c10_read story.gif",
+        "Resources/webflow/Razorpay Onboarding Redesign_files/5f9d280cca29d827bf193c10_read story.gif"
+      ]
+    },
+    {
+      "hash": "8e8592b9a5eca4396a983f4efa9a8d865678f882d9d632463df24eea228a0b5e",
+      "size": 248658,
+      "dest": "assets/webflow/8e8592b9/5f60e5d0f61fbcadc319189a_IMG_0155.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5d0f61fbcadc319189a_IMG_0155.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5d0f61fbcadc319189a_IMG_0155.PNG"
+      ]
+    },
+    {
+      "hash": "8f136da99864be7014f4c321823a731def2c22e7cf5b12b78a098a7f072de10b",
+      "size": 221837,
+      "dest": "assets/webflow/8f136da9/5f6187bc4f8f940e04edba83_Instagram Story - 9.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f6187bc4f8f940e04edba83_Instagram Story - 9.png"
+      ]
+    },
+    {
+      "hash": "8f1f00514acd36c798d18a2575fed2140b5accba5098a782d50377a462b903fc",
+      "size": 28755,
+      "dest": "assets/webflow/8f1f0051/5f58808f66014f7baa52ab4c_Frame 24.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f58808f66014f7baa52ab4c_Frame 24.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f58808f66014f7baa52ab4c_Frame 24.png"
+      ]
+    },
+    {
+      "hash": "8fac3c8cffb993f48b28f4350d6ccbe3bc987aba7803aa7e2fd7bd6d124c5262",
+      "size": 186807,
+      "dest": "assets/webflow/8fac3c8c/65b010f8b5d01c413857c7fc_Frame 372059.png",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/65b010f8b5d01c413857c7fc_Frame 372059.png"
+      ]
+    },
+    {
+      "hash": "90bbb5289d5ec27215a24f36949f0333ed95b24f21f0208580601902c1221464",
+      "size": 1005740,
+      "dest": "assets/webflow/90bbb528/694721c7f7e16375f93afecb_17751b8821ddf341e9a2938c1c88752d_Screenshot 2025-12-20 at 2.22.05\u202fPM.png",
+      "sources": [
+        "Resources/webflow/D2C_files/694721c7f7e16375f93afecb_17751b8821ddf341e9a2938c1c88752d_Screenshot 2025-12-20 at 2.22.05\u202fPM.png"
+      ]
+    },
+    {
+      "hash": "90d4548ed34db82ef0a48d32fca364d15d6a9b91f5ff9716c640baf6fb0681ac",
+      "size": 407895,
+      "dest": "assets/webflow/90d4548e/5f7e55843fd546bac3a0a912_Instagram Story - 11.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7e55843fd546bac3a0a912_Instagram Story - 11.png"
+      ]
+    },
+    {
+      "hash": "925ebe5dd8001e06f68db6843a264163858acf4637dc94265ce470ee89fdfaad",
+      "size": 3290064,
+      "dest": "assets/webflow/925ebe5d/5f9d280e5619ec0a6a40c560_leaderboard.gif",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d280e5619ec0a6a40c560_leaderboard.gif",
+        "Resources/webflow/Razorpay Onboarding Redesign_files/5f9d280e5619ec0a6a40c560_leaderboard.gif"
+      ]
+    },
+    {
+      "hash": "950641d3d53beb63a33184fe8fb145a8f876d769fca69cf29c7443acfdcae056",
+      "size": 233475,
+      "dest": "assets/webflow/950641d3/5f9d3aea428c5897b5591e98_Samsung Clay(2).png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d3aea428c5897b5591e98_Samsung Clay(2).png"
+      ]
+    },
+    {
+      "hash": "97bf2a088ba93686f53227cf155fa577cd1e578da65e0bb412ed42692913d91e",
+      "size": 414770,
+      "dest": "assets/webflow/97bf2a08/5f60e5e3f056342c41e45db8_IMG_0165.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5e3f056342c41e45db8_IMG_0165.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5e3f056342c41e45db8_IMG_0165.PNG"
+      ]
+    },
+    {
+      "hash": "97dbeec2a0ecebb7ccf70f09b66a8bb435ce035e115071ed65d385109d9078c6",
+      "size": 98739,
+      "dest": "assets/webflow/97dbeec2/5f5880917473d1078bcb3fb0_Frame 26.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f5880917473d1078bcb3fb0_Frame 26.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f5880917473d1078bcb3fb0_Frame 26.png"
+      ]
+    },
+    {
+      "hash": "98e9754f29d76bbcdcf7a5979226084fdbd6c660736f2a96b77c2413de12cd23",
+      "size": 140,
+      "dest": "assets/webflow/98e9754f/69422f3d7a6709312da8f1df_Line 90.png",
+      "sources": [
+        "Resources/webflow/About me_files/69422f3d7a6709312da8f1df_Line 90.png",
+        "Resources/webflow/Play_files/69422f3d7a6709312da8f1df_Line 90.png",
+        "Resources/webflow/homepage_files/69422f3d7a6709312da8f1df_Line 90.png"
+      ]
+    },
+    {
+      "hash": "9affc30921f108fd7427655ea4dfc5c16e5fd53403a9e03cdc828ca85cf669c9",
+      "size": 46785,
+      "dest": "assets/webflow/9affc309/5f7eda0f60cefcfe491384e2_characters-03.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7eda0f60cefcfe491384e2_characters-03.png"
+      ]
+    },
+    {
+      "hash": "9b12dd585775f180e73bb9a89869aa96172b5112ddea0c097ed64c7f14bb4e19",
+      "size": 294287,
+      "dest": "assets/webflow/9b12dd58/5f9d2a235619ec3a7540c7bb_Samsung Clay-15.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d2a235619ec3a7540c7bb_Samsung Clay-15.png"
+      ]
+    },
+    {
+      "hash": "9e079bc6e8c973dca4e60a8cef9c5d2bfcfaab5e3cb028f6c523ffdf79ef317c",
+      "size": 858,
+      "dest": "assets/webflow/9e079bc6/5f371b62ecda61aff745459b_Arrow 3.svg",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5f371b62ecda61aff745459b_Arrow 3.svg"
+      ]
+    },
+    {
+      "hash": "9eb6ffcfa297dc25aebd90fd7930e9d4ad724d8cd496d4621df28ddc29631d77",
+      "size": 5823,
+      "dest": "assets/webflow/9eb6ffcf/5f818acd86c4513ae65296a5_linkedin.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f818acd86c4513ae65296a5_linkedin.png"
+      ]
+    },
+    {
+      "hash": "9ff14ccfce9b98ff6ffc9897e9cab0cda6507abf2ec425ea11367760102b2fd1",
+      "size": 267326,
+      "dest": "assets/webflow/9ff14ccf/5f619a325ba2cca26cd547d8_Instagram Story - 8.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f619a325ba2cca26cd547d8_Instagram Story - 8.png"
+      ]
+    },
+    {
+      "hash": "a14457230914da6ac727166599fa3a9ce8fa16e8f4812bc2019f9396fbc77fc9",
+      "size": 260922,
+      "dest": "assets/webflow/a1445723/5f9d2a0a06d75e0a8d14b8ae_Samsung Clay-8.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d2a0a06d75e0a8d14b8ae_Samsung Clay-8.png"
+      ]
+    },
+    {
+      "hash": "a4147358e094873cd4610806c1eef83b477e06ce28f3015c484f2f3a58af185e",
+      "size": 295219,
+      "dest": "assets/webflow/a4147358/5f60e5d135817739209c2222_IMG_0164.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5d135817739209c2222_IMG_0164.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5d135817739209c2222_IMG_0164.PNG"
+      ]
+    },
+    {
+      "hash": "a4bc0344e8ca7b0ed575727cdb6eb9ad6e26af1c211fff76057d7ff89cd89af1",
+      "size": 48322,
+      "dest": "assets/webflow/a4bc0344/5f36f13dac18fffb1fe9d3bf_Frame 4.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f36f13dac18fffb1fe9d3bf_Frame 4.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f36f13dac18fffb1fe9d3bf_Frame 4.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f36f13dac18fffb1fe9d3bf_Frame 4.svg"
+      ]
+    },
+    {
+      "hash": "a5b495929b97b7b260b96984b163f84f57ca6cd26215f0897b447587d88c57a1",
+      "size": 812,
+      "dest": "assets/webflow/a5b49592/5f371b61d491604ccbc53844_Arrow 2.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f371b61d491604ccbc53844_Arrow 2.svg",
+        "Resources/webflow/MadAhead_files/5f371b61d491604ccbc53844_Arrow 2.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f371b61d491604ccbc53844_Arrow 2.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f371b61d491604ccbc53844_Arrow 2.svg"
+      ]
+    },
+    {
+      "hash": "a6e7008d9bbb6e40ed5c4c788c87e8284da4005c181e128f4acc45324de7cb32",
+      "size": 8244,
+      "dest": "assets/webflow/a6e7008d/5f818b29d77e0879c908ae3c_pubg_PNG55.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f818b29d77e0879c908ae3c_pubg_PNG55.png"
+      ]
+    },
+    {
+      "hash": "aa79aede241a0f66d6cc86e792f68e58c84a06c196a4110dd0a8f8d72863e0f5",
+      "size": 12728,
+      "dest": "assets/webflow/aa79aede/5f7e35099375c4e76e0299dc_ai dungeon.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7e35099375c4e76e0299dc_ai dungeon.png"
+      ]
+    },
+    {
+      "hash": "ab8b7daa3561695070b559b56a3a9d96c9274e33a106b351e4918ffcd53ca63d",
+      "size": 52027,
+      "dest": "assets/webflow/ab8b7daa/65b0158d9eb057976d8572f3_Screenshot 2024-01-24 at 12.10 1.png",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/65b0158d9eb057976d8572f3_Screenshot 2024-01-24 at 12.10 1.png"
+      ]
+    },
+    {
+      "hash": "b1863f9c118fa54b015f136ad5de80fc109a28df36edfc7778033ea172d3b1e1",
+      "size": 171119,
+      "dest": "assets/webflow/b1863f9c/5f459feb4b39126e44305489_Screenshot 2020-08-26 at 5.02.12 AM.png",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5f459feb4b39126e44305489_Screenshot 2020-08-26 at 5.02.12 AM.png"
+      ]
+    },
+    {
+      "hash": "b30ff427180723700964851afd706253f5e723295f65c1c1be00c60ffeabca19",
+      "size": 191895,
+      "dest": "assets/webflow/b30ff427/65b43a0ab2df64109d93f312_Frame 372064.png",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/65b43a0ab2df64109d93f312_Frame 372064.png"
+      ]
+    },
+    {
+      "hash": "bb556cfd6d302aa20249c37199e5617380551dbba468ebe19d7f2b835d8f37cc",
+      "size": 2190,
+      "dest": "assets/webflow/bb556cfd/5f91e6746c0b971234f3a179_interview-40.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f91e6746c0b971234f3a179_interview-40.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f91e6746c0b971234f3a179_interview-40.svg"
+      ]
+    },
+    {
+      "hash": "bbfa950f282b2748a7b3f4d6a37f4e93477c9ffad618c389a5e4cbd8eec9d428",
+      "size": 72183,
+      "dest": "assets/webflow/bbfa950f/5f36f13da6a775cb38a827fa_Frame 3.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f36f13da6a775cb38a827fa_Frame 3.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f36f13da6a775cb38a827fa_Frame 3.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f36f13da6a775cb38a827fa_Frame 3.svg"
+      ]
+    },
+    {
+      "hash": "bda46f503ff55b2f74085cfbbbc4e8cb6a6baeba97984ecff85eabb30cb831bc",
+      "size": 163272,
+      "dest": "assets/webflow/bda46f50/5f91e62f72937d4f8bd15d29_lit-37.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f91e62f72937d4f8bd15d29_lit-37.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f91e62f72937d4f8bd15d29_lit-37.png"
+      ]
+    },
+    {
+      "hash": "bdd9a1c8b1befd965766de197e7e5b262996a0d0628c50d7acd9dc2aae21fb41",
+      "size": 1850409,
+      "dest": "assets/webflow/bdd9a1c8/5f7cb2bfdc7ca34e980f418d_videos.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f7cb2bfdc7ca34e980f418d_videos.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f7cb2bfdc7ca34e980f418d_videos.png"
+      ]
+    },
+    {
+      "hash": "bfaab9a3d9c64ae12eff98efe1475b188d374b00773b446bd0f4c4c68fca6b94",
+      "size": 8120,
+      "dest": "assets/webflow/bfaab9a3/5f7e35ecdad617be77d2c60c_Screenshot 2020-10-08 at 3.09.57 AM.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7e35ecdad617be77d2c60c_Screenshot 2020-10-08 at 3.09.57 AM.png"
+      ]
+    },
+    {
+      "hash": "c224617e74af0ea2746a35636608f7f764e6d284fe91a8ed7ed1e6d201c4a0f2",
+      "size": 1640548,
+      "dest": "assets/webflow/c224617e/5f816e7d99580b0c430e191a_jyotirmoy-gupta-1TaFxceyyVo-unsplash.jpg",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f816e7d99580b0c430e191a_jyotirmoy-gupta-1TaFxceyyVo-unsplash.jpg"
+      ]
+    },
+    {
+      "hash": "c67cb817c5b06723b86be8811c44fc3a5d0a4d4a8cb4f8653d30d15a7e079d7a",
+      "size": 10725,
+      "dest": "assets/webflow/c67cb817/5f491185082c082e559f407b_noun_market research_2724355 1.png",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5f491185082c082e559f407b_noun_market research_2724355 1.png"
+      ]
+    },
+    {
+      "hash": "ca078200682b86862daca1af335c35f92301c6f51c5eb563a0d39021e19897cf",
+      "size": 8164,
+      "dest": "assets/webflow/ca078200/5f7e3536453b8c5f472aab36_Screenshot 2020-10-08 at 3.06.50 AM.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7e3536453b8c5f472aab36_Screenshot 2020-10-08 at 3.06.50 AM.png"
+      ]
+    },
+    {
+      "hash": "cae8047964551e11af7b40add9e435f673302cba4274ba4b4583ceaa7c43b0d4",
+      "size": 249145,
+      "dest": "assets/webflow/cae80479/5f9d2a1a06d75e2cd214b8b5_Samsung Clay-5.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d2a1a06d75e2cd214b8b5_Samsung Clay-5.png"
+      ]
+    },
+    {
+      "hash": "cbf381a64b833ed679d38581f551f382c295ceb43022184aba4312b1f4d00007",
+      "size": 248809,
+      "dest": "assets/webflow/cbf381a6/5f9d2a2099175c1f5c731bbe_Samsung Clay-6.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d2a2099175c1f5c731bbe_Samsung Clay-6.png"
+      ]
+    },
+    {
+      "hash": "cc2d0af4076d308f44aa62082168708fac003a250e3340f51ec92a8c3d2fb90b",
+      "size": 301881,
+      "dest": "assets/webflow/cc2d0af4/5f7e5581c57e4f65b804d25c_Instagram Story - 13.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7e5581c57e4f65b804d25c_Instagram Story - 13.png"
+      ]
+    },
+    {
+      "hash": "cc8913c94e12e47ca10caf8881d5c17949fb1efc739db3c3c6a99e1b673e3ca4",
+      "size": 23563,
+      "dest": "assets/webflow/cc8913c9/5f818b36b153902ecc52f55d_facebook-messenger-logo.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f818b36b153902ecc52f55d_facebook-messenger-logo.png"
+      ]
+    },
+    {
+      "hash": "ccad8a2bb3d06122e172267c963983a77aebab808337bbedf76d96459af07394",
+      "size": 19391,
+      "dest": "assets/webflow/ccad8a2b/5f36f13cad9cd86b58a851ce_Frame 2.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f36f13cad9cd86b58a851ce_Frame 2.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f36f13cad9cd86b58a851ce_Frame 2.svg",
+        "Resources/webflow/Vernacular languages in digital products_files/5f36f13cad9cd86b58a851ce_Frame 2.svg"
+      ]
+    },
+    {
+      "hash": "cd54e5d1209561f1f28bbc64880bffb7c7ec978b432fca8816db93b9e23fdc1b",
+      "size": 3921004,
+      "dest": "assets/webflow/cd54e5d1/5f9d2812dbdc630a3f28b25b_add friend.gif",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f9d2812dbdc630a3f28b25b_add friend.gif",
+        "Resources/webflow/Razorpay Onboarding Redesign_files/5f9d2812dbdc630a3f28b25b_add friend.gif"
+      ]
+    },
+    {
+      "hash": "cd7784f4e5b21339423ea0c9e585cb8352bcf900f72bb89f8ad997a4c5125b2f",
+      "size": 620037,
+      "dest": "assets/webflow/cd7784f4/5f7cb294ccd0e2055c7ae52c_vitals.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f7cb294ccd0e2055c7ae52c_vitals.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f7cb294ccd0e2055c7ae52c_vitals.png"
+      ]
+    },
+    {
+      "hash": "ce1703d54c7ea31658de728c15b5f19cfc6787a4ea70f6573915c84a18d67333",
+      "size": 1335,
+      "dest": "assets/webflow/ce1703d5/5f91e675a03e892879be1b82_interview-38.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f91e675a03e892879be1b82_interview-38.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f91e675a03e892879be1b82_interview-38.svg"
+      ]
+    },
+    {
+      "hash": "ceecc6dcde60fcf1d78b14bde03376a0be8a5bd441c91678f6b9b2fda0e327d0",
+      "size": 3172323,
+      "dest": "assets/webflow/ceecc6dc/5f7e30b4accd358bc68aa902_paper wireframes.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7e30b4accd358bc68aa902_paper wireframes.png"
+      ]
+    },
+    {
+      "hash": "d1325853ead2a021f42d776dac0c06c180a8485b7ec1938e629619ca4d8d5dff",
+      "size": 177392,
+      "dest": "assets/webflow/d1325853/694721c751129a28092390b1_Screenshot 2025-12-20 at 2.22.14\u202fPM.png",
+      "sources": [
+        "Resources/webflow/D2C_files/694721c751129a28092390b1_Screenshot 2025-12-20 at 2.22.14\u202fPM.png"
+      ]
+    },
+    {
+      "hash": "d265a2c290ff7c8e2b29dd1ba0dc6c2241a2859032f348fb1f91fa9c7a264460",
+      "size": 187101,
+      "dest": "assets/webflow/d265a2c2/5f6187bc4de6326e9290bf4e_Instagram Story - 10.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f6187bc4de6326e9290bf4e_Instagram Story - 10.png"
+      ]
+    },
+    {
+      "hash": "d615cc99ca983226f2e72a1e081951bf19a044d2e63d37057398e482c7f75190",
+      "size": 2766,
+      "dest": "assets/webflow/d615cc99/5f4911431a055bcbb3848837_noun_report_413983 1.svg",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5f4911431a055bcbb3848837_noun_report_413983 1.svg"
+      ]
+    },
+    {
+      "hash": "d8694db749c575bcc8ab5354a9068559d22b8566b6fe23c9d122325a16e28e86",
+      "size": 111006,
+      "dest": "assets/webflow/d8694db7/5f7eda0f739c0d2c69233494_characters-04.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7eda0f739c0d2c69233494_characters-04.png"
+      ]
+    },
+    {
+      "hash": "dcde97a511164641580fb6ee3bfce0d00f66a35ae8a0ebae04a658f3ef9d0472",
+      "size": 110616,
+      "dest": "assets/webflow/dcde97a5/65b13f5de48768b0c39d8e37_Screenshot 2024-01-24 at 10.16.37 PM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/65b13f5de48768b0c39d8e37_Screenshot 2024-01-24 at 10.16.37 PM.png"
+      ]
+    },
+    {
+      "hash": "e355c34911c2889384d82d398b638402b95c2cd13f47e4f488765a60d8f5f5f1",
+      "size": 984603,
+      "dest": "assets/webflow/e355c349/65a2ee967a94950c7e972c06_Screenshot 2023-10-27 at 12.43.09 AM.png",
+      "sources": [
+        "Resources/webflow/D2C_files/65a2ee967a94950c7e972c06_Screenshot 2023-10-27 at 12.43.09 AM.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/65a2ee967a94950c7e972c06_Screenshot 2023-10-27 at 12.43.09 AM.png"
+      ]
+    },
+    {
+      "hash": "e5803f440743d3b02f1c6951a6fe9d04b3bb97f7d41f037a074f10cb8b13014e",
+      "size": 166695,
+      "dest": "assets/webflow/e5803f44/6958a27d973bf863dbf3b1f7_ac809b2a6c4642fede4278fae3e44e9d_priyal circle.png",
+      "sources": [
+        "Resources/webflow/homepage_files/6958a27d973bf863dbf3b1f7_ac809b2a6c4642fede4278fae3e44e9d_priyal circle.png"
+      ]
+    },
+    {
+      "hash": "e8038bd0cf3a5f9d906b172f2aa124fe653b86fd72b3a5cfdb694717c806d057",
+      "size": 359415,
+      "dest": "assets/webflow/e8038bd0/664529df6af0f0487243fa18_Screenshot 2024-05-16 at 3.01.24 AM.png",
+      "sources": [
+        "Resources/webflow/Razorpay Onboarding Redesign_files/664529df6af0f0487243fa18_Screenshot 2024-05-16 at 3.01.24 AM.png"
+      ]
+    },
+    {
+      "hash": "ec9e3d72743855f41a45625b1db9e56116bace52f7a0a6116eadc6e0e75ce088",
+      "size": 185333,
+      "dest": "assets/webflow/ec9e3d72/5f818b25d77e082c8f08ae3a_dribbl.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f818b25d77e082c8f08ae3a_dribbl.png"
+      ]
+    },
+    {
+      "hash": "ed820bbdf9169ec14c452f5ff6ce40e8cc07bfb3c11b57a63f70847d4f9fcfc2",
+      "size": 3132540,
+      "dest": "assets/webflow/ed820bbd/5f816e809015d8413fc4a437_mateus-campos-felipe-WnPJft0DJpk-unsplash.jpg",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f816e809015d8413fc4a437_mateus-campos-felipe-WnPJft0DJpk-unsplash.jpg"
+      ]
+    },
+    {
+      "hash": "ee076f3acde4eebf2dd5c8a398e631dafdca690128a3a13d8705f9545ddfe7be",
+      "size": 545246,
+      "dest": "assets/webflow/ee076f3a/694721c7d1a011b13239261b_Screenshot 2025-12-20 at 2.21.27\u202fPM.png",
+      "sources": [
+        "Resources/webflow/D2C_files/694721c7d1a011b13239261b_Screenshot 2025-12-20 at 2.21.27\u202fPM.png"
+      ]
+    },
+    {
+      "hash": "eefb92a6dc8e533ddcffd08bc27c164c6c54bd9dad0402a3651b1001f5b50e77",
+      "size": 323136,
+      "dest": "assets/webflow/eefb92a6/5f60e5cff61fbceced191898_IMG_0162.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5cff61fbceced191898_IMG_0162.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5cff61fbceced191898_IMG_0162.PNG"
+      ]
+    },
+    {
+      "hash": "ef34baa64d0f28e95fe5ef44c90b4abb82e08b9b90187e4793b90ec8fdc0a898",
+      "size": 87941,
+      "dest": "assets/webflow/ef34baa6/5f494722662afb32ad1b5693_Frame 22(1).png",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5f494722662afb32ad1b5693_Frame 22(1).png"
+      ]
+    },
+    {
+      "hash": "efa5189a1c058ee5b70b0cad149c3c8e5babf5dbf8e881b56574567715cdd7ce",
+      "size": 4128,
+      "dest": "assets/webflow/efa5189a/5f49113ecdfd6b1382058a24_noun_questionnaire_2122586 1.svg",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5f49113ecdfd6b1382058a24_noun_questionnaire_2122586 1.svg"
+      ]
+    },
+    {
+      "hash": "efdbb3e1c0badb32086aaf129047d63fc4347d4e8f25a968199497a2d6cbcff9",
+      "size": 13684,
+      "dest": "assets/webflow/efdbb3e1/5f370496fb8e3ef21fcf19b8_meesho-logo.png",
+      "sources": [
+        "Resources/webflow/Vernacular languages in digital products_files/5f370496fb8e3ef21fcf19b8_meesho-logo.png",
+        "Resources/webflow/homepage_files/5f370496fb8e3ef21fcf19b8_meesho-logo.png"
+      ]
+    },
+    {
+      "hash": "f2f715eac895468ab20dba344387f8a2d6636419700f87368e10edf6faa3fc40",
+      "size": 2289,
+      "dest": "assets/webflow/f2f715ea/5f7106d3a15f6607ba5e37cf_Frame 15(1).png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7106d3a15f6607ba5e37cf_Frame 15(1).png"
+      ]
+    },
+    {
+      "hash": "f66028ffd5d940a8ea9363999e60062461809e100730b962f5cee210b8576d51",
+      "size": 496757,
+      "dest": "assets/webflow/f66028ff/5f818b2ba3dd5f46ca57170a_insta.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f818b2ba3dd5f46ca57170a_insta.png"
+      ]
+    },
+    {
+      "hash": "f6721320261236ec5df8f93378a997e282cba441fecc0c251ca8e466db370b20",
+      "size": 395434,
+      "dest": "assets/webflow/f6721320/5f7ceecf8aa5f41636594b5a_Instagram Story - 6.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f7ceecf8aa5f41636594b5a_Instagram Story - 6.png"
+      ]
+    },
+    {
+      "hash": "f6c95151a548ef1d9e5a7bc83eeb43e39d6f0a5968a80e1f35b51d95515f1e46",
+      "size": 298881,
+      "dest": "assets/webflow/f6c95151/5f8d7c57d40161152fe6f1d6_Samsung Clay-4.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f8d7c57d40161152fe6f1d6_Samsung Clay-4.png"
+      ]
+    },
+    {
+      "hash": "fa3469cf2897866a78e610567ee234546c1c013e1440a4edd268dc9c20d3cb6c",
+      "size": 145826,
+      "dest": "assets/webflow/fa3469cf/5f5876c0cdafc9049479a9d0_WhatsApp Image 2020-09-09 at 12.13.00 AM (1).jpeg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f5876c0cdafc9049479a9d0_WhatsApp Image 2020-09-09 at 12.13.00 AM (1).jpeg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f5876c0cdafc9049479a9d0_WhatsApp Image 2020-09-09 at 12.13.00 AM (1).jpeg"
+      ]
+    },
+    {
+      "hash": "faf5e205078d290ddb00bbf55771d6bf55c9e5b6e1a95f2696cdd6fae2e2bdc1",
+      "size": 9145,
+      "dest": "assets/webflow/faf5e205/647795a8391a9bb3348067a3_X.png",
+      "sources": [
+        "Resources/webflow/homepage_files/647795a8391a9bb3348067a3_X.png"
+      ]
+    },
+    {
+      "hash": "fb21583c0c113ee9ce34845db91c7c2fd8d8f6bae0698d7c350f5269ecb4ac21",
+      "size": 289471,
+      "dest": "assets/webflow/fb21583c/5f8d7c73ae9a6ed0e1d37edc_Samsung Clay-10.png",
+      "sources": [
+        "Resources/webflow/MadAhead_files/5f8d7c73ae9a6ed0e1d37edc_Samsung Clay-10.png"
+      ]
+    },
+    {
+      "hash": "fb4797d85103010ec1034e4971c6a9a1d79247e2b93f1358f5f5f457791a9d3b",
+      "size": 607561,
+      "dest": "assets/webflow/fb4797d8/5f60e5e6de7fa6530d9b00a4_IMG_0166.PNG",
+      "sources": [
+        "Resources/webflow/D2C_files/5f60e5e6de7fa6530d9b00a4_IMG_0166.PNG",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f60e5e6de7fa6530d9b00a4_IMG_0166.PNG"
+      ]
+    },
+    {
+      "hash": "fc44ed874b36bcc2baa042c9564e24a815aa980111c42bf757220a9a04f317d3",
+      "size": 568206,
+      "dest": "assets/webflow/fc44ed87/5f7cced6aa7d49b6bd498ff8_boldband flow.png",
+      "sources": [
+        "Resources/webflow/D2C_files/5f7cced6aa7d49b6bd498ff8_boldband flow.png",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f7cced6aa7d49b6bd498ff8_boldband flow.png"
+      ]
+    },
+    {
+      "hash": "fecccf814dfc645e636a64ad9a7c479e8e55bf3747efcf5cd9d7959d87d1b9b2",
+      "size": 2090,
+      "dest": "assets/webflow/fecccf81/5f91e67446f97edca85f7aef_interview-39.svg",
+      "sources": [
+        "Resources/webflow/D2C_files/5f91e67446f97edca85f7aef_interview-39.svg",
+        "Resources/webflow/Razorpay Website Evaluation_files/5f91e67446f97edca85f7aef_interview-39.svg"
+      ]
+    }
+  ],
+  "lookup": {
+    "Resources/webflow/About me_files/5f833b1f71a3e41555008f38_photo 1.png": {
+      "hash": "0aed6bef677c8916192913a25471e0d90ebd7d40c59358e6ae0c0ffdf730ec49",
+      "dest": "assets/webflow/0aed6bef/5f833b1f71a3e41555008f38_photo 1.png"
+    },
+    "Resources/webflow/About me_files/69422f3d7a6709312da8f1df_Line 90.png": {
+      "hash": "98e9754f29d76bbcdcf7a5979226084fdbd6c660736f2a96b77c2413de12cd23",
+      "dest": "assets/webflow/98e9754f/69422f3d7a6709312da8f1df_Line 90.png"
+    },
+    "Resources/webflow/About me_files/webflow-badge-icon-d2.89e12c322e.svg": {
+      "hash": "00f45354c11a12591485977633a0e03952cdf1ff2de403e10ec846db8cc508a9",
+      "dest": "assets/webflow/00f45354/webflow-badge-icon-d2.89e12c322e.svg"
+    },
+    "Resources/webflow/About me_files/webflow-badge-text-d2.c82cec3b78.svg": {
+      "hash": "3202cb640fada345ab99415bd087f28e6fea1c3009dba51d183cc37bce036cd7",
+      "dest": "assets/webflow/3202cb64/webflow-badge-text-d2.c82cec3b78.svg"
+    },
+    "Resources/webflow/D2C_files/5f36f13be5ef2bdce80078e8_Frame 1.svg": {
+      "hash": "4f67cb52e31f7013b0f3aef5612bf0a659f94ac8522cc417d55936e86cb92888",
+      "dest": "assets/webflow/4f67cb52/5f36f13be5ef2bdce80078e8_Frame 1.svg"
+    },
+    "Resources/webflow/D2C_files/5f36f13cad9cd86b58a851ce_Frame 2.svg": {
+      "hash": "ccad8a2bb3d06122e172267c963983a77aebab808337bbedf76d96459af07394",
+      "dest": "assets/webflow/ccad8a2b/5f36f13cad9cd86b58a851ce_Frame 2.svg"
+    },
+    "Resources/webflow/D2C_files/5f36f13cd491600021c4df7e_Frame 9.svg": {
+      "hash": "5b4dcc6ea0d6d4a8cd641053dc311d27664eb344fd1bee1bfe2ff901a093a51c",
+      "dest": "assets/webflow/5b4dcc6e/5f36f13cd491600021c4df7e_Frame 9.svg"
+    },
+    "Resources/webflow/D2C_files/5f36f13da6a775cb38a827fa_Frame 3.svg": {
+      "hash": "bbfa950f282b2748a7b3f4d6a37f4e93477c9ffad618c389a5e4cbd8eec9d428",
+      "dest": "assets/webflow/bbfa950f/5f36f13da6a775cb38a827fa_Frame 3.svg"
+    },
+    "Resources/webflow/D2C_files/5f36f13dac18fffb1fe9d3bf_Frame 4.svg": {
+      "hash": "a4bc0344e8ca7b0ed575727cdb6eb9ad6e26af1c211fff76057d7ff89cd89af1",
+      "dest": "assets/webflow/a4bc0344/5f36f13dac18fffb1fe9d3bf_Frame 4.svg"
+    },
+    "Resources/webflow/D2C_files/5f36f13e3eba5d382130b53b_Frame 8.svg": {
+      "hash": "8b854b2ffecfd68f15a94fe5e7d44f167c2262ce33359de8ae730d701b46e071",
+      "dest": "assets/webflow/8b854b2f/5f36f13e3eba5d382130b53b_Frame 8.svg"
+    },
+    "Resources/webflow/D2C_files/5f36f13f91dd00d5fb974b92_Frame 6.svg": {
+      "hash": "10039a43782da9c288f007e2c3210806e0348a66272a447ca76571cd00821861",
+      "dest": "assets/webflow/10039a43/5f36f13f91dd00d5fb974b92_Frame 6.svg"
+    },
+    "Resources/webflow/D2C_files/5f36f140eb00db77937a52a1_Frame 7.svg": {
+      "hash": "4013227f6320d1714845413636873bc5b0e3f9112a97472dfd717b83e5d53829",
+      "dest": "assets/webflow/4013227f/5f36f140eb00db77937a52a1_Frame 7.svg"
+    },
+    "Resources/webflow/D2C_files/5f36f14367e2cf4af55215ad_Frame 5.svg": {
+      "hash": "49c59e33c5e1d5e1826daf12f595e6ad391e9677993f49fa5ad4f812456dc8d8",
+      "dest": "assets/webflow/49c59e33/5f36f14367e2cf4af55215ad_Frame 5.svg"
+    },
+    "Resources/webflow/D2C_files/5f36f2773eba5de88c30b5ac_image 6.svg": {
+      "hash": "0521d7f7f751151c11dfbf4305d7005816d23dddb80fbf6d009c06bbcecd5b38",
+      "dest": "assets/webflow/0521d7f7/5f36f2773eba5de88c30b5ac_image 6.svg"
+    },
+    "Resources/webflow/D2C_files/5f371b61d491604ccbc53844_Arrow 2.svg": {
+      "hash": "a5b495929b97b7b260b96984b163f84f57ca6cd26215f0897b447587d88c57a1",
+      "dest": "assets/webflow/a5b49592/5f371b61d491604ccbc53844_Arrow 2.svg"
+    },
+    "Resources/webflow/D2C_files/5f491baf2655f60c85c95fb0_menu.svg": {
+      "hash": "49d9aa391ea76c1c396b0713b357bb0316ff650b72612b3fb06e94ef7a30d9ff",
+      "dest": "assets/webflow/49d9aa39/5f491baf2655f60c85c95fb0_menu.svg"
+    },
+    "Resources/webflow/D2C_files/5f5876c0cdafc9049479a9d0_WhatsApp Image 2020-09-09 at 12.13.00 AM (1).jpeg": {
+      "hash": "fa3469cf2897866a78e610567ee234546c1c013e1440a4edd268dc9c20d3cb6c",
+      "dest": "assets/webflow/fa3469cf/5f5876c0cdafc9049479a9d0_WhatsApp Image 2020-09-09 at 12.13.00 AM (1).jpeg"
+    },
+    "Resources/webflow/D2C_files/5f58808f66014f7baa52ab4c_Frame 24.png": {
+      "hash": "8f1f00514acd36c798d18a2575fed2140b5accba5098a782d50377a462b903fc",
+      "dest": "assets/webflow/8f1f0051/5f58808f66014f7baa52ab4c_Frame 24.png"
+    },
+    "Resources/webflow/D2C_files/5f588090dc51eb0a08b819a2_Frame 25.png": {
+      "hash": "2b40e7c61064cc0f4f55a7a2b5172efbf7194a3085e32e032cf15789d8f49588",
+      "dest": "assets/webflow/2b40e7c6/5f588090dc51eb0a08b819a2_Frame 25.png"
+    },
+    "Resources/webflow/D2C_files/5f5880917473d1078bcb3fb0_Frame 26.png": {
+      "hash": "97dbeec2a0ecebb7ccf70f09b66a8bb435ce035e115071ed65d385109d9078c6",
+      "dest": "assets/webflow/97dbeec2/5f5880917473d1078bcb3fb0_Frame 26.png"
+    },
+    "Resources/webflow/D2C_files/5f5880927669f58f98550fd5_Frame 27.png": {
+      "hash": "3528532605f5d10baa01562f2f50086bd8bb39a4601007aa8099fd78673297df",
+      "dest": "assets/webflow/35285326/5f5880927669f58f98550fd5_Frame 27.png"
+    },
+    "Resources/webflow/D2C_files/5f5b2446da3c782e0e2f57ea_Screenshot_2020-09-08_at_12.55.08_PM 2.png": {
+      "hash": "5ffb396646b62fd6a01f400f0f6f50e9a5ab5f66b858774f9318ce9d662f395b",
+      "dest": "assets/webflow/5ffb3966/5f5b2446da3c782e0e2f57ea_Screenshot_2020-09-08_at_12.55.08_PM 2.png"
+    },
+    "Resources/webflow/D2C_files/5f60e5ce69a2253e14a6ea80_IMG_0163.PNG": {
+      "hash": "7d108b528aa871b68faa486a5e63ee43a31daa125975c4578b56df7d7b409ac1",
+      "dest": "assets/webflow/7d108b52/5f60e5ce69a2253e14a6ea80_IMG_0163.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5cff61fbceced191898_IMG_0162.PNG": {
+      "hash": "eefb92a6dc8e533ddcffd08bc27c164c6c54bd9dad0402a3651b1001f5b50e77",
+      "dest": "assets/webflow/eefb92a6/5f60e5cff61fbceced191898_IMG_0162.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5d0f61fbcadc319189a_IMG_0155.PNG": {
+      "hash": "8e8592b9a5eca4396a983f4efa9a8d865678f882d9d632463df24eea228a0b5e",
+      "dest": "assets/webflow/8e8592b9/5f60e5d0f61fbcadc319189a_IMG_0155.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5d135817739209c2222_IMG_0164.PNG": {
+      "hash": "a4147358e094873cd4610806c1eef83b477e06ce28f3015c484f2f3a58af185e",
+      "dest": "assets/webflow/a4147358/5f60e5d135817739209c2222_IMG_0164.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5d70160acf828658293_IMG_0168.PNG": {
+      "hash": "148a7d36f118e462a9727c19f6ee3202e863d493567c0458f9c81c52184ab55e",
+      "dest": "assets/webflow/148a7d36/5f60e5d70160acf828658293_IMG_0168.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5d98efd149c1c9b69e5_IMG_0167.PNG": {
+      "hash": "5a4160dc281262aa96ba0bc0407bc21fa6f7821b62075d83b20388a75b128764",
+      "dest": "assets/webflow/5a4160dc/5f60e5d98efd149c1c9b69e5_IMG_0167.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5dace45bcbafef77928_IMG_0157.PNG": {
+      "hash": "00aadd718f1f59b39d5f79854e062af80ae291703176b6b796c9a2ff9522c9eb",
+      "dest": "assets/webflow/00aadd71/5f60e5dace45bcbafef77928_IMG_0157.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5dcdcdf7f1f7e394ccf_IMG_0169.PNG": {
+      "hash": "6d42ebac8313fe5c8ff3dfc3c543d627402200575ead64cba0aed93caf598884",
+      "dest": "assets/webflow/6d42ebac/5f60e5dcdcdf7f1f7e394ccf_IMG_0169.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5de1cce179e95f20ca7_IMG_0160.PNG": {
+      "hash": "5d4d069adfd34b7255b6c4c74312843c991f0ef522abcd837aa6a24aced25233",
+      "dest": "assets/webflow/5d4d069a/5f60e5de1cce179e95f20ca7_IMG_0160.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5e0410ff4972b27a648_IMG_0156.PNG": {
+      "hash": "58ec795e9af72b8a9642d408e98c90e07215a4e3904955c1b7af5a044ed590e6",
+      "dest": "assets/webflow/58ec795e/5f60e5e0410ff4972b27a648_IMG_0156.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5e3f056342c41e45db8_IMG_0165.PNG": {
+      "hash": "97bf2a088ba93686f53227cf155fa577cd1e578da65e0bb412ed42692913d91e",
+      "dest": "assets/webflow/97bf2a08/5f60e5e3f056342c41e45db8_IMG_0165.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5e3f056343955e45db9_IMG_0158.PNG": {
+      "hash": "8a86aee2a0979c1349cb89c79cd3cd3fd0bce0ae135d6f7c8f5bb4069a890e49",
+      "dest": "assets/webflow/8a86aee2/5f60e5e3f056343955e45db9_IMG_0158.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5e60d1998122fe7889f_IMG_0159.PNG": {
+      "hash": "8da5966a28c54a49c9024de2e2ce45b136ff94c0e6370b40cfe47056b34c3773",
+      "dest": "assets/webflow/8da5966a/5f60e5e60d1998122fe7889f_IMG_0159.PNG"
+    },
+    "Resources/webflow/D2C_files/5f60e5e6de7fa6530d9b00a4_IMG_0166.PNG": {
+      "hash": "fb4797d85103010ec1034e4971c6a9a1d79247e2b93f1358f5f5f457791a9d3b",
+      "dest": "assets/webflow/fb4797d8/5f60e5e6de7fa6530d9b00a4_IMG_0166.PNG"
+    },
+    "Resources/webflow/D2C_files/5f61b6a6a287948186215a30_poster(1).png": {
+      "hash": "04f0b1e92e2fa0adf96136f79d4156df52e4374b0984c29e4df1869fd60c3e00",
+      "dest": "assets/webflow/04f0b1e9/5f61b6a6a287948186215a30_poster(1).png"
+    },
+    "Resources/webflow/D2C_files/5f7cab529f514724d029c186_watch 2.png": {
+      "hash": "8d90ab411fc3382de3f4fa8b0e45e982115c3c272e8a22de93f9ae3ddf9278e6",
+      "dest": "assets/webflow/8d90ab41/5f7cab529f514724d029c186_watch 2.png"
+    },
+    "Resources/webflow/D2C_files/5f7cab54280c7f6b973c0aa0_watch 1.png": {
+      "hash": "132606d327a0915dabced0d716a513070a21e6329b566b07dc3bab38a0616d44",
+      "dest": "assets/webflow/132606d3/5f7cab54280c7f6b973c0aa0_watch 1.png"
+    },
+    "Resources/webflow/D2C_files/5f7cb2948e3c7d8b5160a8e3_settings.png": {
+      "hash": "24ceacf389bbd8338009d40389ae33dd7784e6a713d61423383337e7a74b1224",
+      "dest": "assets/webflow/24ceacf3/5f7cb2948e3c7d8b5160a8e3_settings.png"
+    },
+    "Resources/webflow/D2C_files/5f7cb294ccd0e2055c7ae52c_vitals.png": {
+      "hash": "cd7784f4e5b21339423ea0c9e585cb8352bcf900f72bb89f8ad997a4c5125b2f",
+      "dest": "assets/webflow/cd7784f4/5f7cb294ccd0e2055c7ae52c_vitals.png"
+    },
+    "Resources/webflow/D2C_files/5f7cb29aa22705bc6cba4180_activity.png": {
+      "hash": "06deed2f507f8681106d05f7b21cd7f3e42477ef78cf394d21dd4eeb9d43f387",
+      "dest": "assets/webflow/06deed2f/5f7cb29aa22705bc6cba4180_activity.png"
+    },
+    "Resources/webflow/D2C_files/5f7cb2accc6ee389744cf872_home page.png": {
+      "hash": "083016580c1defb576f3a6b5e53e7332c598f655f80e26b669b77842ac5bf1e0",
+      "dest": "assets/webflow/08301658/5f7cb2accc6ee389744cf872_home page.png"
+    },
+    "Resources/webflow/D2C_files/5f7cb2bfdc7ca34e980f418d_videos.png": {
+      "hash": "bdd9a1c8b1befd965766de197e7e5b262996a0d0628c50d7acd9dc2aae21fb41",
+      "dest": "assets/webflow/bdd9a1c8/5f7cb2bfdc7ca34e980f418d_videos.png"
+    },
+    "Resources/webflow/D2C_files/5f7cced6aa7d49b6bd498ff8_boldband flow.png": {
+      "hash": "fc44ed874b36bcc2baa042c9564e24a815aa980111c42bf757220a9a04f317d3",
+      "dest": "assets/webflow/fc44ed87/5f7cced6aa7d49b6bd498ff8_boldband flow.png"
+    },
+    "Resources/webflow/D2C_files/5f91e62f72937d4f8bd15d29_lit-37.png": {
+      "hash": "bda46f503ff55b2f74085cfbbbc4e8cb6a6baeba97984ecff85eabb30cb831bc",
+      "dest": "assets/webflow/bda46f50/5f91e62f72937d4f8bd15d29_lit-37.png"
+    },
+    "Resources/webflow/D2C_files/5f91e67446f97edca85f7aef_interview-39.svg": {
+      "hash": "fecccf814dfc645e636a64ad9a7c479e8e55bf3747efcf5cd9d7959d87d1b9b2",
+      "dest": "assets/webflow/fecccf81/5f91e67446f97edca85f7aef_interview-39.svg"
+    },
+    "Resources/webflow/D2C_files/5f91e6746c0b971234f3a179_interview-40.svg": {
+      "hash": "bb556cfd6d302aa20249c37199e5617380551dbba468ebe19d7f2b835d8f37cc",
+      "dest": "assets/webflow/bb556cfd/5f91e6746c0b971234f3a179_interview-40.svg"
+    },
+    "Resources/webflow/D2C_files/5f91e675a03e892879be1b82_interview-38.svg": {
+      "hash": "ce1703d54c7ea31658de728c15b5f19cfc6787a4ea70f6573915c84a18d67333",
+      "dest": "assets/webflow/ce1703d5/5f91e675a03e892879be1b82_interview-38.svg"
+    },
+    "Resources/webflow/D2C_files/647795a8a42f6be079200a9a_rzp logo.png": {
+      "hash": "75bcb36702e6d8cea56e6ec40bea0ff4cee38d3d82778c917186e64efa2d3094",
+      "dest": "assets/webflow/75bcb367/647795a8a42f6be079200a9a_rzp logo.png"
+    },
+    "Resources/webflow/D2C_files/65a2ee966aa2aff4e910e4de_Screenshot 2024-01-14 at 1.39.27 AM.png": {
+      "hash": "6c1ee61c7f6da987125b5fb8ebdc92f275a0d735bd425b367a32b3591f37134b",
+      "dest": "assets/webflow/6c1ee61c/65a2ee966aa2aff4e910e4de_Screenshot 2024-01-14 at 1.39.27 AM.png"
+    },
+    "Resources/webflow/D2C_files/65a2ee967a94950c7e972c06_Screenshot 2023-10-27 at 12.43.09 AM.png": {
+      "hash": "e355c34911c2889384d82d398b638402b95c2cd13f47e4f488765a60d8f5f5f1",
+      "dest": "assets/webflow/e355c349/65a2ee967a94950c7e972c06_Screenshot 2023-10-27 at 12.43.09 AM.png"
+    },
+    "Resources/webflow/D2C_files/694721c751129a28092390b1_Screenshot 2025-12-20 at 2.22.14\u202fPM.png": {
+      "hash": "d1325853ead2a021f42d776dac0c06c180a8485b7ec1938e629619ca4d8d5dff",
+      "dest": "assets/webflow/d1325853/694721c751129a28092390b1_Screenshot 2025-12-20 at 2.22.14\u202fPM.png"
+    },
+    "Resources/webflow/D2C_files/694721c7ab488d10ad169c17_Screenshot 2025-12-20 at 2.22.23\u202fPM.png": {
+      "hash": "0f5ae265644b01b09f41ec876c2561a5c509628a968da031bba195c7bc2217a0",
+      "dest": "assets/webflow/0f5ae265/694721c7ab488d10ad169c17_Screenshot 2025-12-20 at 2.22.23\u202fPM.png"
+    },
+    "Resources/webflow/D2C_files/694721c7b88c2622cd8c0855_Screenshot 2025-12-20 at 2.21.50\u202fPM.png": {
+      "hash": "48ee7abdbb14f425d06c544496e0e2f9e1c270ef21fff09a04af93885a3853f5",
+      "dest": "assets/webflow/48ee7abd/694721c7b88c2622cd8c0855_Screenshot 2025-12-20 at 2.21.50\u202fPM.png"
+    },
+    "Resources/webflow/D2C_files/694721c7d1a011b13239261b_Screenshot 2025-12-20 at 2.21.27\u202fPM.png": {
+      "hash": "ee076f3acde4eebf2dd5c8a398e631dafdca690128a3a13d8705f9545ddfe7be",
+      "dest": "assets/webflow/ee076f3a/694721c7d1a011b13239261b_Screenshot 2025-12-20 at 2.21.27\u202fPM.png"
+    },
+    "Resources/webflow/D2C_files/694721c7f7e16375f93afecb_17751b8821ddf341e9a2938c1c88752d_Screenshot 2025-12-20 at 2.22.05\u202fPM.png": {
+      "hash": "90bbb5289d5ec27215a24f36949f0333ed95b24f21f0208580601902c1221464",
+      "dest": "assets/webflow/90bbb528/694721c7f7e16375f93afecb_17751b8821ddf341e9a2938c1c88752d_Screenshot 2025-12-20 at 2.22.05\u202fPM.png"
+    },
+    "Resources/webflow/D2C_files/webflow-badge-icon-d2.89e12c322e.svg": {
+      "hash": "00f45354c11a12591485977633a0e03952cdf1ff2de403e10ec846db8cc508a9",
+      "dest": "assets/webflow/00f45354/webflow-badge-icon-d2.89e12c322e.svg"
+    },
+    "Resources/webflow/D2C_files/webflow-badge-text-d2.c82cec3b78.svg": {
+      "hash": "3202cb640fada345ab99415bd087f28e6fea1c3009dba51d183cc37bce036cd7",
+      "dest": "assets/webflow/3202cb64/webflow-badge-text-d2.c82cec3b78.svg"
+    },
+    "Resources/webflow/MadAhead_files/5f371b61d491604ccbc53844_Arrow 2.svg": {
+      "hash": "a5b495929b97b7b260b96984b163f84f57ca6cd26215f0897b447587d88c57a1",
+      "dest": "assets/webflow/a5b49592/5f371b61d491604ccbc53844_Arrow 2.svg"
+    },
+    "Resources/webflow/MadAhead_files/5f491baf2655f60c85c95fb0_menu.svg": {
+      "hash": "49d9aa391ea76c1c396b0713b357bb0316ff650b72612b3fb06e94ef7a30d9ff",
+      "dest": "assets/webflow/49d9aa39/5f491baf2655f60c85c95fb0_menu.svg"
+    },
+    "Resources/webflow/MadAhead_files/5f588df7dd1d8fc2ea8dadf2_Frame 29.png": {
+      "hash": "55afa97c11920c1b7860c578ed5a1d0666a3c54568b1640cc722725425c2569f",
+      "dest": "assets/webflow/55afa97c/5f588df7dd1d8fc2ea8dadf2_Frame 29.png"
+    },
+    "Resources/webflow/MadAhead_files/5f5b482f13922429d3d2af96_Instagram Story - 2.png": {
+      "hash": "76591bc65c286f1a3cd37bc89bc05f017d45fb2e2420cade6b2586c149e3a31b",
+      "dest": "assets/webflow/76591bc6/5f5b482f13922429d3d2af96_Instagram Story - 2.png"
+    },
+    "Resources/webflow/MadAhead_files/5f613b4e9bfa140427798f3f_add friend3.gif": {
+      "hash": "5937fbc2899f47c034c9b6fa1f5809571d395c9d9816b347fcd6accad3e85b39",
+      "dest": "assets/webflow/5937fbc2/5f613b4e9bfa140427798f3f_add friend3.gif"
+    },
+    "Resources/webflow/MadAhead_files/5f6187ba1dec7383eac5e0b0_Instagram Story - 7.png": {
+      "hash": "73a4fd4674404d7f1a2b79b423c18063553ccc0b1d7e34d2466b151021710c43",
+      "dest": "assets/webflow/73a4fd46/5f6187ba1dec7383eac5e0b0_Instagram Story - 7.png"
+    },
+    "Resources/webflow/MadAhead_files/5f6187bc4de6326e9290bf4e_Instagram Story - 10.png": {
+      "hash": "d265a2c290ff7c8e2b29dd1ba0dc6c2241a2859032f348fb1f91fa9c7a264460",
+      "dest": "assets/webflow/d265a2c2/5f6187bc4de6326e9290bf4e_Instagram Story - 10.png"
+    },
+    "Resources/webflow/MadAhead_files/5f6187bc4f8f940e04edba83_Instagram Story - 9.png": {
+      "hash": "8f136da99864be7014f4c321823a731def2c22e7cf5b12b78a098a7f072de10b",
+      "dest": "assets/webflow/8f136da9/5f6187bc4f8f940e04edba83_Instagram Story - 9.png"
+    },
+    "Resources/webflow/MadAhead_files/5f619a325ba2cca26cd547d8_Instagram Story - 8.png": {
+      "hash": "9ff14ccfce9b98ff6ffc9897e9cab0cda6507abf2ec425ea11367760102b2fd1",
+      "dest": "assets/webflow/9ff14ccf/5f619a325ba2cca26cd547d8_Instagram Story - 8.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7106d3a15f6607ba5e37cf_Frame 15(1).png": {
+      "hash": "f2f715eac895468ab20dba344387f8a2d6636419700f87368e10edf6faa3fc40",
+      "dest": "assets/webflow/f2f715ea/5f7106d3a15f6607ba5e37cf_Frame 15(1).png"
+    },
+    "Resources/webflow/MadAhead_files/5f7ceecf8aa5f41636594b5a_Instagram Story - 6.png": {
+      "hash": "f6721320261236ec5df8f93378a997e282cba441fecc0c251ca8e466db370b20",
+      "dest": "assets/webflow/f6721320/5f7ceecf8aa5f41636594b5a_Instagram Story - 6.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7e30b4accd358bc68aa902_paper wireframes.png": {
+      "hash": "ceecc6dcde60fcf1d78b14bde03376a0be8a5bd441c91678f6b9b2fda0e327d0",
+      "dest": "assets/webflow/ceecc6dc/5f7e30b4accd358bc68aa902_paper wireframes.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7e35099375c4e76e0299dc_ai dungeon.png": {
+      "hash": "aa79aede241a0f66d6cc86e792f68e58c84a06c196a4110dd0a8f8d72863e0f5",
+      "dest": "assets/webflow/aa79aede/5f7e35099375c4e76e0299dc_ai dungeon.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7e3536453b8c5f472aab36_Screenshot 2020-10-08 at 3.06.50 AM.png": {
+      "hash": "ca078200682b86862daca1af335c35f92301c6f51c5eb563a0d39021e19897cf",
+      "dest": "assets/webflow/ca078200/5f7e3536453b8c5f472aab36_Screenshot 2020-10-08 at 3.06.50 AM.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7e35cafb10bd0d3e696aaa_haikujam.png": {
+      "hash": "6fba0e440619a4a5b31b59190d12e9e78502a96445ae9daa4bb1099766c0cc32",
+      "dest": "assets/webflow/6fba0e44/5f7e35cafb10bd0d3e696aaa_haikujam.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7e35ecdad617be77d2c60c_Screenshot 2020-10-08 at 3.09.57 AM.png": {
+      "hash": "bfaab9a3d9c64ae12eff98efe1475b188d374b00773b446bd0f4c4c68fca6b94",
+      "dest": "assets/webflow/bfaab9a3/5f7e35ecdad617be77d2c60c_Screenshot 2020-10-08 at 3.09.57 AM.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7e3df854a4a86fc3b4f03c_competition.png": {
+      "hash": "242e2c5082a164150fdb43933a3b60653fc5a5d0337a8c441a388ebcf41ea51c",
+      "dest": "assets/webflow/242e2c50/5f7e3df854a4a86fc3b4f03c_competition.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7e4309965a1e4797e9c40d_Screenshot 2020-10-08 at 4.06.39 AM.png": {
+      "hash": "33aa2ea6fc4a78dd9996df6c67a806a4d95af1d145c882f4dc9bff773ce2d0f9",
+      "dest": "assets/webflow/33aa2ea6/5f7e4309965a1e4797e9c40d_Screenshot 2020-10-08 at 4.06.39 AM.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7e557b0c0e45d8fc3c1a4c_Instagram Story - 12.png": {
+      "hash": "3257e03bc97e9d900abec2d99f023a85f6bf2fe8ee5a94bcfe8086e7533dbf16",
+      "dest": "assets/webflow/3257e03b/5f7e557b0c0e45d8fc3c1a4c_Instagram Story - 12.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7e5581c57e4f65b804d25c_Instagram Story - 13.png": {
+      "hash": "cc2d0af4076d308f44aa62082168708fac003a250e3340f51ec92a8c3d2fb90b",
+      "dest": "assets/webflow/cc2d0af4/5f7e5581c57e4f65b804d25c_Instagram Story - 13.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7e55843fd546bac3a0a912_Instagram Story - 11.png": {
+      "hash": "90d4548ed34db82ef0a48d32fca364d15d6a9b91f5ff9716c640baf6fb0681ac",
+      "dest": "assets/webflow/90d4548e/5f7e55843fd546bac3a0a912_Instagram Story - 11.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7eda0f60cefcfe491384e2_characters-03.png": {
+      "hash": "9affc30921f108fd7427655ea4dfc5c16e5fd53403a9e03cdc828ca85cf669c9",
+      "dest": "assets/webflow/9affc309/5f7eda0f60cefcfe491384e2_characters-03.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7eda0f739c0d2c69233494_characters-04.png": {
+      "hash": "d8694db749c575bcc8ab5354a9068559d22b8566b6fe23c9d122325a16e28e86",
+      "dest": "assets/webflow/d8694db7/5f7eda0f739c0d2c69233494_characters-04.png"
+    },
+    "Resources/webflow/MadAhead_files/5f7eda12430aae1893b017ce_characters-02.png": {
+      "hash": "2ac2d80de52b932ea43b24528fac8635686d704b4d1f86620f3fb02dcbae4fd3",
+      "dest": "assets/webflow/2ac2d80d/5f7eda12430aae1893b017ce_characters-02.png"
+    },
+    "Resources/webflow/MadAhead_files/5f816e7c71a3e4f949fccebe_imansyah-muhamad-putera-n4KewLKFOZw-unsplash(1).jpg": {
+      "hash": "2d0591c949a5600771a16c2d220264165bc9dd84944821e88db32bee375d4226",
+      "dest": "assets/webflow/2d0591c9/5f816e7c71a3e4f949fccebe_imansyah-muhamad-putera-n4KewLKFOZw-unsplash(1).jpg"
+    },
+    "Resources/webflow/MadAhead_files/5f816e7d99580b0c430e191a_jyotirmoy-gupta-1TaFxceyyVo-unsplash.jpg": {
+      "hash": "c224617e74af0ea2746a35636608f7f764e6d284fe91a8ed7ed1e6d201c4a0f2",
+      "dest": "assets/webflow/c224617e/5f816e7d99580b0c430e191a_jyotirmoy-gupta-1TaFxceyyVo-unsplash.jpg"
+    },
+    "Resources/webflow/MadAhead_files/5f816e809015d8413fc4a437_mateus-campos-felipe-WnPJft0DJpk-unsplash.jpg": {
+      "hash": "ed820bbdf9169ec14c452f5ff6ce40e8cc07bfb3c11b57a63f70847d4f9fcfc2",
+      "dest": "assets/webflow/ed820bbd/5f816e809015d8413fc4a437_mateus-campos-felipe-WnPJft0DJpk-unsplash.jpg"
+    },
+    "Resources/webflow/MadAhead_files/5f818acd86c4513ae65296a5_linkedin.png": {
+      "hash": "9eb6ffcfa297dc25aebd90fd7930e9d4ad724d8cd496d4621df28ddc29631d77",
+      "dest": "assets/webflow/9eb6ffcf/5f818acd86c4513ae65296a5_linkedin.png"
+    },
+    "Resources/webflow/MadAhead_files/5f818ace71a3e445c3fcfd59_scribble.io.png": {
+      "hash": "4e7be212782144e99184220a84829594719b818d10bd39b7f0377b0acc90b778",
+      "dest": "assets/webflow/4e7be212/5f818ace71a3e445c3fcfd59_scribble.io.png"
+    },
+    "Resources/webflow/MadAhead_files/5f818b25d77e082c8f08ae3a_dribbl.png": {
+      "hash": "ec9e3d72743855f41a45625b1db9e56116bace52f7a0a6116eadc6e0e75ce088",
+      "dest": "assets/webflow/ec9e3d72/5f818b25d77e082c8f08ae3a_dribbl.png"
+    },
+    "Resources/webflow/MadAhead_files/5f818b29d77e0879c908ae3c_pubg_PNG55.png": {
+      "hash": "a6e7008d9bbb6e40ed5c4c788c87e8284da4005c181e128f4acc45324de7cb32",
+      "dest": "assets/webflow/a6e7008d/5f818b29d77e0879c908ae3c_pubg_PNG55.png"
+    },
+    "Resources/webflow/MadAhead_files/5f818b2ba3dd5f46ca57170a_insta.png": {
+      "hash": "f66028ffd5d940a8ea9363999e60062461809e100730b962f5cee210b8576d51",
+      "dest": "assets/webflow/f66028ff/5f818b2ba3dd5f46ca57170a_insta.png"
+    },
+    "Resources/webflow/MadAhead_files/5f818b2dfacc3a78b154afd2_fb.png": {
+      "hash": "0c705a1ce314280927984801bb6ffa8ed768af0b4d5f924abe450e64f8b9c7a6",
+      "dest": "assets/webflow/0c705a1c/5f818b2dfacc3a78b154afd2_fb.png"
+    },
+    "Resources/webflow/MadAhead_files/5f818b31455359311fb1dc37_Inshorts_logo.png": {
+      "hash": "273d358b53ccb0578f294eaa10521bc33d0111397c438c7967ea9baf7f09c207",
+      "dest": "assets/webflow/273d358b/5f818b31455359311fb1dc37_Inshorts_logo.png"
+    },
+    "Resources/webflow/MadAhead_files/5f818b3386ea49822793788c_scc-logo.png": {
+      "hash": "55d659e9becc969bb70f8685206330a3f2255fa9f25985399a0a3f48161f97e6",
+      "dest": "assets/webflow/55d659e9/5f818b3386ea49822793788c_scc-logo.png"
+    },
+    "Resources/webflow/MadAhead_files/5f818b36b153902ecc52f55d_facebook-messenger-logo.png": {
+      "hash": "cc8913c94e12e47ca10caf8881d5c17949fb1efc739db3c3c6a99e1b673e3ca4",
+      "dest": "assets/webflow/cc8913c9/5f818b36b153902ecc52f55d_facebook-messenger-logo.png"
+    },
+    "Resources/webflow/MadAhead_files/5f82179d5dc58c37e76b865b_ezgif.com-crop(3).gif": {
+      "hash": "1fb2ef281973c6ece5216e0c0fb7a31ad86d92c0e7276ed11783fd9def90a194",
+      "dest": "assets/webflow/1fb2ef28/5f82179d5dc58c37e76b865b_ezgif.com-crop(3).gif"
+    },
+    "Resources/webflow/MadAhead_files/5f82ded696c8703011565176_google-play.svg": {
+      "hash": "4102d38dba960f0eb66a4b107f52d6efc96522470ccfd1aa38584ce399374da7",
+      "dest": "assets/webflow/4102d38d/5f82ded696c8703011565176_google-play.svg"
+    },
+    "Resources/webflow/MadAhead_files/5f82feace068d5fed923c244_Instagram Story - 14.png": {
+      "hash": "2df4d594b6c10d3b61e633894115330513944c8049ed0407d902578761cb0bb6",
+      "dest": "assets/webflow/2df4d594/5f82feace068d5fed923c244_Instagram Story - 14.png"
+    },
+    "Resources/webflow/MadAhead_files/5f8d7c3c86eb1638634ac69f_Samsung Clay-2.png": {
+      "hash": "35b57c64873509adbaeec882b7974c2df66febfcf1259e6d06cb34206fcfc935",
+      "dest": "assets/webflow/35b57c64/5f8d7c3c86eb1638634ac69f_Samsung Clay-2.png"
+    },
+    "Resources/webflow/MadAhead_files/5f8d7c55d16f53651af8eef4_Samsung Clay-3.png": {
+      "hash": "1ecdb370f0e4d65f916117284f2f4ab1e3eb4af0a0d83050ab2c5cd81eefc64f",
+      "dest": "assets/webflow/1ecdb370/5f8d7c55d16f53651af8eef4_Samsung Clay-3.png"
+    },
+    "Resources/webflow/MadAhead_files/5f8d7c57d40161152fe6f1d6_Samsung Clay-4.png": {
+      "hash": "f6c95151a548ef1d9e5a7bc83eeb43e39d6f0a5968a80e1f35b51d95515f1e46",
+      "dest": "assets/webflow/f6c95151/5f8d7c57d40161152fe6f1d6_Samsung Clay-4.png"
+    },
+    "Resources/webflow/MadAhead_files/5f8d7c73ae9a6ed0e1d37edc_Samsung Clay-10.png": {
+      "hash": "fb21583c0c113ee9ce34845db91c7c2fd8d8f6bae0698d7c350f5269ecb4ac21",
+      "dest": "assets/webflow/fb21583c/5f8d7c73ae9a6ed0e1d37edc_Samsung Clay-10.png"
+    },
+    "Resources/webflow/MadAhead_files/5f8d7c7431dcca9b2bc13653_Samsung Clay-11.png": {
+      "hash": "631577cdd10eb5e98ef2c9bf127eb1d063854c1d48e4017de330fc0e25be9024",
+      "dest": "assets/webflow/631577cd/5f8d7c7431dcca9b2bc13653_Samsung Clay-11.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d280ad5fd03d6e0ee1ff2_IA Madahead.png": {
+      "hash": "100dac34bd92ca7dbc258032344b1a6309952eddaee1818d295f8c6c3f0cf2d7",
+      "dest": "assets/webflow/100dac34/5f9d280ad5fd03d6e0ee1ff2_IA Madahead.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d280cca29d827bf193c10_read story.gif": {
+      "hash": "8de3e7f4a3ef7d0888c118a8fcc0f63f21c5cc799bc4e1fad86b935654fbf516",
+      "dest": "assets/webflow/8de3e7f4/5f9d280cca29d827bf193c10_read story.gif"
+    },
+    "Resources/webflow/MadAhead_files/5f9d280e5619ec0a6a40c560_leaderboard.gif": {
+      "hash": "925ebe5dd8001e06f68db6843a264163858acf4637dc94265ce470ee89fdfaad",
+      "dest": "assets/webflow/925ebe5d/5f9d280e5619ec0a6a40c560_leaderboard.gif"
+    },
+    "Resources/webflow/MadAhead_files/5f9d2812dbdc630a3f28b25b_add friend.gif": {
+      "hash": "cd54e5d1209561f1f28bbc64880bffb7c7ec978b432fca8816db93b9e23fdc1b",
+      "dest": "assets/webflow/cd54e5d1/5f9d2812dbdc630a3f28b25b_add friend.gif"
+    },
+    "Resources/webflow/MadAhead_files/5f9d2a0a06d75e0a8d14b8ae_Samsung Clay-8.png": {
+      "hash": "a14457230914da6ac727166599fa3a9ce8fa16e8f4812bc2019f9396fbc77fc9",
+      "dest": "assets/webflow/a1445723/5f9d2a0a06d75e0a8d14b8ae_Samsung Clay-8.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d2a1406d75ef85614b8b4_Samsung Clay-7.png": {
+      "hash": "7c42315422d507692c189781923e821ab7280df2a4b10fc17f2e295333d0ec74",
+      "dest": "assets/webflow/7c423154/5f9d2a1406d75ef85614b8b4_Samsung Clay-7.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d2a1499175c952f731bba_Samsung Clay-9.png": {
+      "hash": "8b9943f9c78684284751343db89990e8bb8b7bca1fcf7e001b8fcdef3f9290d6",
+      "dest": "assets/webflow/8b9943f9/5f9d2a1499175c952f731bba_Samsung Clay-9.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d2a1a06d75e2cd214b8b5_Samsung Clay-5.png": {
+      "hash": "cae8047964551e11af7b40add9e435f673302cba4274ba4b4583ceaa7c43b0d4",
+      "dest": "assets/webflow/cae80479/5f9d2a1a06d75e2cd214b8b5_Samsung Clay-5.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d2a2099175c1f5c731bbe_Samsung Clay-6.png": {
+      "hash": "cbf381a64b833ed679d38581f551f382c295ceb43022184aba4312b1f4d00007",
+      "dest": "assets/webflow/cbf381a6/5f9d2a2099175c1f5c731bbe_Samsung Clay-6.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d2a21dbdc637c0828b5cf_Samsung Clay-12.png": {
+      "hash": "872da1f0fb5302b2773e0ae7eda245ff90307753de0dddd52add6611623c391d",
+      "dest": "assets/webflow/872da1f0/5f9d2a21dbdc637c0828b5cf_Samsung Clay-12.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d2a22477401c2ed491c90_Samsung Clay-16.png": {
+      "hash": "4cc8cfbd67f3c093c2792b24a7d1c655e2fe1594fef2ad1998e790c99f7f336d",
+      "dest": "assets/webflow/4cc8cfbd/5f9d2a22477401c2ed491c90_Samsung Clay-16.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d2a235619ec3a7540c7bb_Samsung Clay-15.png": {
+      "hash": "9b12dd585775f180e73bb9a89869aa96172b5112ddea0c097ed64c7f14bb4e19",
+      "dest": "assets/webflow/9b12dd58/5f9d2a235619ec3a7540c7bb_Samsung Clay-15.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d2a2445546d502eeb0657_Samsung Clay-14.png": {
+      "hash": "6097354b76a3b9030a85f9d40ff09ced476a86b47a8daab7be6a3612521601ca",
+      "dest": "assets/webflow/6097354b/5f9d2a2445546d502eeb0657_Samsung Clay-14.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d2a25e946216fbd4d839d_Samsung Clay-13.png": {
+      "hash": "44b24fd01b1226c836c359459a584f5a217cf81e2d4317cede3c3a92030fbb4f",
+      "dest": "assets/webflow/44b24fd0/5f9d2a25e946216fbd4d839d_Samsung Clay-13.png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d342b9cb409c5860ab34b_Samsung Clay(1).png": {
+      "hash": "87e0b7cd19d90512e20acbff137532d672706782a565e6e97bcbd8c7875c6160",
+      "dest": "assets/webflow/87e0b7cd/5f9d342b9cb409c5860ab34b_Samsung Clay(1).png"
+    },
+    "Resources/webflow/MadAhead_files/5f9d3aea428c5897b5591e98_Samsung Clay(2).png": {
+      "hash": "950641d3d53beb63a33184fe8fb145a8f876d769fca69cf29c7443acfdcae056",
+      "dest": "assets/webflow/950641d3/5f9d3aea428c5897b5591e98_Samsung Clay(2).png"
+    },
+    "Resources/webflow/MadAhead_files/webflow-badge-icon-d2.89e12c322e.svg": {
+      "hash": "00f45354c11a12591485977633a0e03952cdf1ff2de403e10ec846db8cc508a9",
+      "dest": "assets/webflow/00f45354/webflow-badge-icon-d2.89e12c322e.svg"
+    },
+    "Resources/webflow/MadAhead_files/webflow-badge-text-d2.c82cec3b78.svg": {
+      "hash": "3202cb640fada345ab99415bd087f28e6fea1c3009dba51d183cc37bce036cd7",
+      "dest": "assets/webflow/3202cb64/webflow-badge-text-d2.c82cec3b78.svg"
+    },
+    "Resources/webflow/Play_files/69422f3d7a6709312da8f1df_Line 90.png": {
+      "hash": "98e9754f29d76bbcdcf7a5979226084fdbd6c660736f2a96b77c2413de12cd23",
+      "dest": "assets/webflow/98e9754f/69422f3d7a6709312da8f1df_Line 90.png"
+    },
+    "Resources/webflow/Play_files/webflow-badge-icon-d2.89e12c322e.svg": {
+      "hash": "00f45354c11a12591485977633a0e03952cdf1ff2de403e10ec846db8cc508a9",
+      "dest": "assets/webflow/00f45354/webflow-badge-icon-d2.89e12c322e.svg"
+    },
+    "Resources/webflow/Play_files/webflow-badge-text-d2.c82cec3b78.svg": {
+      "hash": "3202cb640fada345ab99415bd087f28e6fea1c3009dba51d183cc37bce036cd7",
+      "dest": "assets/webflow/3202cb64/webflow-badge-text-d2.c82cec3b78.svg"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/5f491baf2655f60c85c95fb0_menu.svg": {
+      "hash": "49d9aa391ea76c1c396b0713b357bb0316ff650b72612b3fb06e94ef7a30d9ff",
+      "dest": "assets/webflow/49d9aa39/5f491baf2655f60c85c95fb0_menu.svg"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/5f588df7dd1d8fc2ea8dadf2_Frame 29.png": {
+      "hash": "55afa97c11920c1b7860c578ed5a1d0666a3c54568b1640cc722725425c2569f",
+      "dest": "assets/webflow/55afa97c/5f588df7dd1d8fc2ea8dadf2_Frame 29.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/5f613b4e9bfa140427798f3f_add friend3.gif": {
+      "hash": "5937fbc2899f47c034c9b6fa1f5809571d395c9d9816b347fcd6accad3e85b39",
+      "dest": "assets/webflow/5937fbc2/5f613b4e9bfa140427798f3f_add friend3.gif"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/5f82179d5dc58c37e76b865b_ezgif.com-crop(3).gif": {
+      "hash": "1fb2ef281973c6ece5216e0c0fb7a31ad86d92c0e7276ed11783fd9def90a194",
+      "dest": "assets/webflow/1fb2ef28/5f82179d5dc58c37e76b865b_ezgif.com-crop(3).gif"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/5f9d280cca29d827bf193c10_read story.gif": {
+      "hash": "8de3e7f4a3ef7d0888c118a8fcc0f63f21c5cc799bc4e1fad86b935654fbf516",
+      "dest": "assets/webflow/8de3e7f4/5f9d280cca29d827bf193c10_read story.gif"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/5f9d280e5619ec0a6a40c560_leaderboard.gif": {
+      "hash": "925ebe5dd8001e06f68db6843a264163858acf4637dc94265ce470ee89fdfaad",
+      "dest": "assets/webflow/925ebe5d/5f9d280e5619ec0a6a40c560_leaderboard.gif"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/5f9d2812dbdc630a3f28b25b_add friend.gif": {
+      "hash": "cd54e5d1209561f1f28bbc64880bffb7c7ec978b432fca8816db93b9e23fdc1b",
+      "dest": "assets/webflow/cd54e5d1/5f9d2812dbdc630a3f28b25b_add friend.gif"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/647795a8a42f6be079200a9a_rzp logo.png": {
+      "hash": "75bcb36702e6d8cea56e6ec40bea0ff4cee38d3d82778c917186e64efa2d3094",
+      "dest": "assets/webflow/75bcb367/647795a8a42f6be079200a9a_rzp logo.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/65b00db3e63ab58149afd4bc_Screenshot 2024-01-24 at 12.34.00 AM.png": {
+      "hash": "2e1b71882729da7c87a05773dbb714e4d62024918455a60a69e9aa51b0d47e6f",
+      "dest": "assets/webflow/2e1b7188/65b00db3e63ab58149afd4bc_Screenshot 2024-01-24 at 12.34.00 AM.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/65b010f8b5d01c413857c7fc_Frame 372059.png": {
+      "hash": "8fac3c8cffb993f48b28f4350d6ccbe3bc987aba7803aa7e2fd7bd6d124c5262",
+      "dest": "assets/webflow/8fac3c8c/65b010f8b5d01c413857c7fc_Frame 372059.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/65b0158d9eb057976d8572f3_Screenshot 2024-01-24 at 12.10 1.png": {
+      "hash": "ab8b7daa3561695070b559b56a3a9d96c9274e33a106b351e4918ffcd53ca63d",
+      "dest": "assets/webflow/ab8b7daa/65b0158d9eb057976d8572f3_Screenshot 2024-01-24 at 12.10 1.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/65b01db796011d85d62fa0cf_Screenshot 2024-01-24 at 1.42.31 AM.png": {
+      "hash": "5655d2b7a139671083fd1804bf4512ce0ef9f5b40c8f49ac8839d39d1e8d7f1c",
+      "dest": "assets/webflow/5655d2b7/65b01db796011d85d62fa0cf_Screenshot 2024-01-24 at 1.42.31 AM.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/65b102a3c025e3d164e25610_Screen Recording 2024-01-24 at 5.55.53 PM.gif": {
+      "hash": "7a04f14cd11be77d56f96521130b918d79dd91f586f78abf1d2c31918bc270d3",
+      "dest": "assets/webflow/7a04f14c/65b102a3c025e3d164e25610_Screen Recording 2024-01-24 at 5.55.53 PM.gif"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/65b13f5de48768b0c39d8e37_Screenshot 2024-01-24 at 10.16.37 PM.png": {
+      "hash": "dcde97a511164641580fb6ee3bfce0d00f66a35ae8a0ebae04a658f3ef9d0472",
+      "dest": "assets/webflow/dcde97a5/65b13f5de48768b0c39d8e37_Screenshot 2024-01-24 at 10.16.37 PM.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/65b14205d2d821639563eea3_Screen Recording 2024-01-24 at 10.26.36 PM.gif": {
+      "hash": "73ec4f36a62b4f3cd06af9da8d1ec7572d8a5a81b7f4b73a22293d9cb4b1c15d",
+      "dest": "assets/webflow/73ec4f36/65b14205d2d821639563eea3_Screen Recording 2024-01-24 at 10.26.36 PM.gif"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/65b1744b87aa85a2e5dcf3ae_Screenshot 2024-01-25 at 2.03.32 AM.png": {
+      "hash": "3c8d1a9d31d0af28bb7d8dc88c38fbceec4653063f81f47258605064dabb61c4",
+      "dest": "assets/webflow/3c8d1a9d/65b1744b87aa85a2e5dcf3ae_Screenshot 2024-01-25 at 2.03.32 AM.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/65b42ac1d58847f52740cc6c_Screenshot 2024-01-27 at 3.27.16 AM.png": {
+      "hash": "415c5ac57303c5a98ef490dc9bb4ab8e66fd2d7693c37e16b4a3df7bdf11f182",
+      "dest": "assets/webflow/415c5ac5/65b42ac1d58847f52740cc6c_Screenshot 2024-01-27 at 3.27.16 AM.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/65b43a0ab2df64109d93f312_Frame 372064.png": {
+      "hash": "b30ff427180723700964851afd706253f5e723295f65c1c1be00c60ffeabca19",
+      "dest": "assets/webflow/b30ff427/65b43a0ab2df64109d93f312_Frame 372064.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/65b43befe371d57c217aa084_Screenshot 2024-01-27 at 4.20.19 AM.png": {
+      "hash": "5a4cc2f2b7b2431bfcd373b063c2fb14c3cd8c130c2d0ee63b5cd7904b4cb917",
+      "dest": "assets/webflow/5a4cc2f2/65b43befe371d57c217aa084_Screenshot 2024-01-27 at 4.20.19 AM.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/664529df6af0f0487243fa18_Screenshot 2024-05-16 at 3.01.24 AM.png": {
+      "hash": "e8038bd0cf3a5f9d906b172f2aa124fe653b86fd72b3a5cfdb694717c806d057",
+      "dest": "assets/webflow/e8038bd0/664529df6af0f0487243fa18_Screenshot 2024-05-16 at 3.01.24 AM.png"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/webflow-badge-icon-d2.89e12c322e.svg": {
+      "hash": "00f45354c11a12591485977633a0e03952cdf1ff2de403e10ec846db8cc508a9",
+      "dest": "assets/webflow/00f45354/webflow-badge-icon-d2.89e12c322e.svg"
+    },
+    "Resources/webflow/Razorpay Onboarding Redesign_files/webflow-badge-text-d2.c82cec3b78.svg": {
+      "hash": "3202cb640fada345ab99415bd087f28e6fea1c3009dba51d183cc37bce036cd7",
+      "dest": "assets/webflow/3202cb64/webflow-badge-text-d2.c82cec3b78.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f36f13be5ef2bdce80078e8_Frame 1.svg": {
+      "hash": "4f67cb52e31f7013b0f3aef5612bf0a659f94ac8522cc417d55936e86cb92888",
+      "dest": "assets/webflow/4f67cb52/5f36f13be5ef2bdce80078e8_Frame 1.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f36f13cad9cd86b58a851ce_Frame 2.svg": {
+      "hash": "ccad8a2bb3d06122e172267c963983a77aebab808337bbedf76d96459af07394",
+      "dest": "assets/webflow/ccad8a2b/5f36f13cad9cd86b58a851ce_Frame 2.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f36f13cd491600021c4df7e_Frame 9.svg": {
+      "hash": "5b4dcc6ea0d6d4a8cd641053dc311d27664eb344fd1bee1bfe2ff901a093a51c",
+      "dest": "assets/webflow/5b4dcc6e/5f36f13cd491600021c4df7e_Frame 9.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f36f13da6a775cb38a827fa_Frame 3.svg": {
+      "hash": "bbfa950f282b2748a7b3f4d6a37f4e93477c9ffad618c389a5e4cbd8eec9d428",
+      "dest": "assets/webflow/bbfa950f/5f36f13da6a775cb38a827fa_Frame 3.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f36f13dac18fffb1fe9d3bf_Frame 4.svg": {
+      "hash": "a4bc0344e8ca7b0ed575727cdb6eb9ad6e26af1c211fff76057d7ff89cd89af1",
+      "dest": "assets/webflow/a4bc0344/5f36f13dac18fffb1fe9d3bf_Frame 4.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f36f13e3eba5d382130b53b_Frame 8.svg": {
+      "hash": "8b854b2ffecfd68f15a94fe5e7d44f167c2262ce33359de8ae730d701b46e071",
+      "dest": "assets/webflow/8b854b2f/5f36f13e3eba5d382130b53b_Frame 8.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f36f13f91dd00d5fb974b92_Frame 6.svg": {
+      "hash": "10039a43782da9c288f007e2c3210806e0348a66272a447ca76571cd00821861",
+      "dest": "assets/webflow/10039a43/5f36f13f91dd00d5fb974b92_Frame 6.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f36f140eb00db77937a52a1_Frame 7.svg": {
+      "hash": "4013227f6320d1714845413636873bc5b0e3f9112a97472dfd717b83e5d53829",
+      "dest": "assets/webflow/4013227f/5f36f140eb00db77937a52a1_Frame 7.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f36f14367e2cf4af55215ad_Frame 5.svg": {
+      "hash": "49c59e33c5e1d5e1826daf12f595e6ad391e9677993f49fa5ad4f812456dc8d8",
+      "dest": "assets/webflow/49c59e33/5f36f14367e2cf4af55215ad_Frame 5.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f36f2773eba5de88c30b5ac_image 6.svg": {
+      "hash": "0521d7f7f751151c11dfbf4305d7005816d23dddb80fbf6d009c06bbcecd5b38",
+      "dest": "assets/webflow/0521d7f7/5f36f2773eba5de88c30b5ac_image 6.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f371b61d491604ccbc53844_Arrow 2.svg": {
+      "hash": "a5b495929b97b7b260b96984b163f84f57ca6cd26215f0897b447587d88c57a1",
+      "dest": "assets/webflow/a5b49592/5f371b61d491604ccbc53844_Arrow 2.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f491baf2655f60c85c95fb0_menu.svg": {
+      "hash": "49d9aa391ea76c1c396b0713b357bb0316ff650b72612b3fb06e94ef7a30d9ff",
+      "dest": "assets/webflow/49d9aa39/5f491baf2655f60c85c95fb0_menu.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f5876c0cdafc9049479a9d0_WhatsApp Image 2020-09-09 at 12.13.00 AM (1).jpeg": {
+      "hash": "fa3469cf2897866a78e610567ee234546c1c013e1440a4edd268dc9c20d3cb6c",
+      "dest": "assets/webflow/fa3469cf/5f5876c0cdafc9049479a9d0_WhatsApp Image 2020-09-09 at 12.13.00 AM (1).jpeg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f58808f66014f7baa52ab4c_Frame 24.png": {
+      "hash": "8f1f00514acd36c798d18a2575fed2140b5accba5098a782d50377a462b903fc",
+      "dest": "assets/webflow/8f1f0051/5f58808f66014f7baa52ab4c_Frame 24.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f588090dc51eb0a08b819a2_Frame 25.png": {
+      "hash": "2b40e7c61064cc0f4f55a7a2b5172efbf7194a3085e32e032cf15789d8f49588",
+      "dest": "assets/webflow/2b40e7c6/5f588090dc51eb0a08b819a2_Frame 25.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f5880917473d1078bcb3fb0_Frame 26.png": {
+      "hash": "97dbeec2a0ecebb7ccf70f09b66a8bb435ce035e115071ed65d385109d9078c6",
+      "dest": "assets/webflow/97dbeec2/5f5880917473d1078bcb3fb0_Frame 26.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f5880927669f58f98550fd5_Frame 27.png": {
+      "hash": "3528532605f5d10baa01562f2f50086bd8bb39a4601007aa8099fd78673297df",
+      "dest": "assets/webflow/35285326/5f5880927669f58f98550fd5_Frame 27.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f5b2446da3c782e0e2f57ea_Screenshot_2020-09-08_at_12.55.08_PM 2.png": {
+      "hash": "5ffb396646b62fd6a01f400f0f6f50e9a5ab5f66b858774f9318ce9d662f395b",
+      "dest": "assets/webflow/5ffb3966/5f5b2446da3c782e0e2f57ea_Screenshot_2020-09-08_at_12.55.08_PM 2.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5ce69a2253e14a6ea80_IMG_0163.PNG": {
+      "hash": "7d108b528aa871b68faa486a5e63ee43a31daa125975c4578b56df7d7b409ac1",
+      "dest": "assets/webflow/7d108b52/5f60e5ce69a2253e14a6ea80_IMG_0163.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5cff61fbceced191898_IMG_0162.PNG": {
+      "hash": "eefb92a6dc8e533ddcffd08bc27c164c6c54bd9dad0402a3651b1001f5b50e77",
+      "dest": "assets/webflow/eefb92a6/5f60e5cff61fbceced191898_IMG_0162.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5d0f61fbcadc319189a_IMG_0155.PNG": {
+      "hash": "8e8592b9a5eca4396a983f4efa9a8d865678f882d9d632463df24eea228a0b5e",
+      "dest": "assets/webflow/8e8592b9/5f60e5d0f61fbcadc319189a_IMG_0155.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5d135817739209c2222_IMG_0164.PNG": {
+      "hash": "a4147358e094873cd4610806c1eef83b477e06ce28f3015c484f2f3a58af185e",
+      "dest": "assets/webflow/a4147358/5f60e5d135817739209c2222_IMG_0164.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5d70160acf828658293_IMG_0168.PNG": {
+      "hash": "148a7d36f118e462a9727c19f6ee3202e863d493567c0458f9c81c52184ab55e",
+      "dest": "assets/webflow/148a7d36/5f60e5d70160acf828658293_IMG_0168.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5d98efd149c1c9b69e5_IMG_0167.PNG": {
+      "hash": "5a4160dc281262aa96ba0bc0407bc21fa6f7821b62075d83b20388a75b128764",
+      "dest": "assets/webflow/5a4160dc/5f60e5d98efd149c1c9b69e5_IMG_0167.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5dace45bcbafef77928_IMG_0157.PNG": {
+      "hash": "00aadd718f1f59b39d5f79854e062af80ae291703176b6b796c9a2ff9522c9eb",
+      "dest": "assets/webflow/00aadd71/5f60e5dace45bcbafef77928_IMG_0157.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5dcdcdf7f1f7e394ccf_IMG_0169.PNG": {
+      "hash": "6d42ebac8313fe5c8ff3dfc3c543d627402200575ead64cba0aed93caf598884",
+      "dest": "assets/webflow/6d42ebac/5f60e5dcdcdf7f1f7e394ccf_IMG_0169.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5de1cce179e95f20ca7_IMG_0160.PNG": {
+      "hash": "5d4d069adfd34b7255b6c4c74312843c991f0ef522abcd837aa6a24aced25233",
+      "dest": "assets/webflow/5d4d069a/5f60e5de1cce179e95f20ca7_IMG_0160.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5e0410ff4972b27a648_IMG_0156.PNG": {
+      "hash": "58ec795e9af72b8a9642d408e98c90e07215a4e3904955c1b7af5a044ed590e6",
+      "dest": "assets/webflow/58ec795e/5f60e5e0410ff4972b27a648_IMG_0156.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5e3f056342c41e45db8_IMG_0165.PNG": {
+      "hash": "97bf2a088ba93686f53227cf155fa577cd1e578da65e0bb412ed42692913d91e",
+      "dest": "assets/webflow/97bf2a08/5f60e5e3f056342c41e45db8_IMG_0165.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5e3f056343955e45db9_IMG_0158.PNG": {
+      "hash": "8a86aee2a0979c1349cb89c79cd3cd3fd0bce0ae135d6f7c8f5bb4069a890e49",
+      "dest": "assets/webflow/8a86aee2/5f60e5e3f056343955e45db9_IMG_0158.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5e60d1998122fe7889f_IMG_0159.PNG": {
+      "hash": "8da5966a28c54a49c9024de2e2ce45b136ff94c0e6370b40cfe47056b34c3773",
+      "dest": "assets/webflow/8da5966a/5f60e5e60d1998122fe7889f_IMG_0159.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f60e5e6de7fa6530d9b00a4_IMG_0166.PNG": {
+      "hash": "fb4797d85103010ec1034e4971c6a9a1d79247e2b93f1358f5f5f457791a9d3b",
+      "dest": "assets/webflow/fb4797d8/5f60e5e6de7fa6530d9b00a4_IMG_0166.PNG"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f61b6a6a287948186215a30_poster(1).png": {
+      "hash": "04f0b1e92e2fa0adf96136f79d4156df52e4374b0984c29e4df1869fd60c3e00",
+      "dest": "assets/webflow/04f0b1e9/5f61b6a6a287948186215a30_poster(1).png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f7cab529f514724d029c186_watch 2.png": {
+      "hash": "8d90ab411fc3382de3f4fa8b0e45e982115c3c272e8a22de93f9ae3ddf9278e6",
+      "dest": "assets/webflow/8d90ab41/5f7cab529f514724d029c186_watch 2.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f7cab54280c7f6b973c0aa0_watch 1.png": {
+      "hash": "132606d327a0915dabced0d716a513070a21e6329b566b07dc3bab38a0616d44",
+      "dest": "assets/webflow/132606d3/5f7cab54280c7f6b973c0aa0_watch 1.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f7cb2948e3c7d8b5160a8e3_settings.png": {
+      "hash": "24ceacf389bbd8338009d40389ae33dd7784e6a713d61423383337e7a74b1224",
+      "dest": "assets/webflow/24ceacf3/5f7cb2948e3c7d8b5160a8e3_settings.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f7cb294ccd0e2055c7ae52c_vitals.png": {
+      "hash": "cd7784f4e5b21339423ea0c9e585cb8352bcf900f72bb89f8ad997a4c5125b2f",
+      "dest": "assets/webflow/cd7784f4/5f7cb294ccd0e2055c7ae52c_vitals.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f7cb29aa22705bc6cba4180_activity.png": {
+      "hash": "06deed2f507f8681106d05f7b21cd7f3e42477ef78cf394d21dd4eeb9d43f387",
+      "dest": "assets/webflow/06deed2f/5f7cb29aa22705bc6cba4180_activity.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f7cb2accc6ee389744cf872_home page.png": {
+      "hash": "083016580c1defb576f3a6b5e53e7332c598f655f80e26b669b77842ac5bf1e0",
+      "dest": "assets/webflow/08301658/5f7cb2accc6ee389744cf872_home page.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f7cb2bfdc7ca34e980f418d_videos.png": {
+      "hash": "bdd9a1c8b1befd965766de197e7e5b262996a0d0628c50d7acd9dc2aae21fb41",
+      "dest": "assets/webflow/bdd9a1c8/5f7cb2bfdc7ca34e980f418d_videos.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f7cced6aa7d49b6bd498ff8_boldband flow.png": {
+      "hash": "fc44ed874b36bcc2baa042c9564e24a815aa980111c42bf757220a9a04f317d3",
+      "dest": "assets/webflow/fc44ed87/5f7cced6aa7d49b6bd498ff8_boldband flow.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f91e62f72937d4f8bd15d29_lit-37.png": {
+      "hash": "bda46f503ff55b2f74085cfbbbc4e8cb6a6baeba97984ecff85eabb30cb831bc",
+      "dest": "assets/webflow/bda46f50/5f91e62f72937d4f8bd15d29_lit-37.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f91e67446f97edca85f7aef_interview-39.svg": {
+      "hash": "fecccf814dfc645e636a64ad9a7c479e8e55bf3747efcf5cd9d7959d87d1b9b2",
+      "dest": "assets/webflow/fecccf81/5f91e67446f97edca85f7aef_interview-39.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f91e6746c0b971234f3a179_interview-40.svg": {
+      "hash": "bb556cfd6d302aa20249c37199e5617380551dbba468ebe19d7f2b835d8f37cc",
+      "dest": "assets/webflow/bb556cfd/5f91e6746c0b971234f3a179_interview-40.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/5f91e675a03e892879be1b82_interview-38.svg": {
+      "hash": "ce1703d54c7ea31658de728c15b5f19cfc6787a4ea70f6573915c84a18d67333",
+      "dest": "assets/webflow/ce1703d5/5f91e675a03e892879be1b82_interview-38.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/647795a8a42f6be079200a9a_rzp logo.png": {
+      "hash": "75bcb36702e6d8cea56e6ec40bea0ff4cee38d3d82778c917186e64efa2d3094",
+      "dest": "assets/webflow/75bcb367/647795a8a42f6be079200a9a_rzp logo.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/65a2ee966aa2aff4e910e4de_Screenshot 2024-01-14 at 1.39.27 AM.png": {
+      "hash": "6c1ee61c7f6da987125b5fb8ebdc92f275a0d735bd425b367a32b3591f37134b",
+      "dest": "assets/webflow/6c1ee61c/65a2ee966aa2aff4e910e4de_Screenshot 2024-01-14 at 1.39.27 AM.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/65a2ee967a94950c7e972c06_Screenshot 2023-10-27 at 12.43.09 AM.png": {
+      "hash": "e355c34911c2889384d82d398b638402b95c2cd13f47e4f488765a60d8f5f5f1",
+      "dest": "assets/webflow/e355c349/65a2ee967a94950c7e972c06_Screenshot 2023-10-27 at 12.43.09 AM.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/65a2f2a812b731ca699677c8_Screenshot 2024-01-14 at 1.58.59 AM.png": {
+      "hash": "555efb21c3553433183075788a6fa27b154c10dbe6ba4dd920243c37d2c731fa",
+      "dest": "assets/webflow/555efb21/65a2f2a812b731ca699677c8_Screenshot 2024-01-14 at 1.58.59 AM.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/65a2fa5fb52f089cc1915569_Prototype.png": {
+      "hash": "302f848d05e8da51761baa0839da5e1eba83d284a5cfd4bd96db3ac47c48d6f4",
+      "dest": "assets/webflow/302f848d/65a2fa5fb52f089cc1915569_Prototype.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/65a314dd123b3d7f48053199_Screenshot 2024-01-14 at 4.25.16 AM.png": {
+      "hash": "7d97fad1d8376f2209c459f71f6cb85a0a50e92e3544ea3394a7c424586b54b7",
+      "dest": "assets/webflow/7d97fad1/65a314dd123b3d7f48053199_Screenshot 2024-01-14 at 4.25.16 AM.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/65a31d2a3f4905c00020c373_Screenshot 2024-01-14 at 5.00.34 AM.png": {
+      "hash": "2405d108c7a3c7c91cd2538a71fbe0815cf600c04a1487394b8d46de6db33f3c",
+      "dest": "assets/webflow/2405d108/65a31d2a3f4905c00020c373_Screenshot 2024-01-14 at 5.00.34 AM.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/65a31f5f1bf69dac46364e03_Screenshot 2024-01-14 at 5.10.06 AM.png": {
+      "hash": "2c3199eb6da8c06987729a8491698ca96c4cfabeab20a5db1bc869ca8ccfddd6",
+      "dest": "assets/webflow/2c3199eb/65a31f5f1bf69dac46364e03_Screenshot 2024-01-14 at 5.10.06 AM.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/65a325971bf69dac463953b2_Screenshot 2024-01-14 at 5.36.37 AM.png": {
+      "hash": "108075a9cce56812333ad52edef2ac3d8f81d3f5c0fff2fee087c22d01aeb2a7",
+      "dest": "assets/webflow/108075a9/65a325971bf69dac463953b2_Screenshot 2024-01-14 at 5.36.37 AM.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/65a327ad736b28beba22d0b8_Screenshot 2024-01-14 at 5.45.23 AM.png": {
+      "hash": "2ecf955198e25e12d36a1621f15f659c18b76694f8c7a10b4f25acc90adb69a5",
+      "dest": "assets/webflow/2ecf9551/65a327ad736b28beba22d0b8_Screenshot 2024-01-14 at 5.45.23 AM.png"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/webflow-badge-icon-d2.89e12c322e.svg": {
+      "hash": "00f45354c11a12591485977633a0e03952cdf1ff2de403e10ec846db8cc508a9",
+      "dest": "assets/webflow/00f45354/webflow-badge-icon-d2.89e12c322e.svg"
+    },
+    "Resources/webflow/Razorpay Website Evaluation_files/webflow-badge-text-d2.c82cec3b78.svg": {
+      "hash": "3202cb640fada345ab99415bd087f28e6fea1c3009dba51d183cc37bce036cd7",
+      "dest": "assets/webflow/3202cb64/webflow-badge-text-d2.c82cec3b78.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5ee5d3ef1506ba6d4423908a_Project 1.jpg": {
+      "hash": "832d9419151c582f9b05501fd0382bcf9fe1fa22cbfecd1b429466371f165270",
+      "dest": "assets/webflow/832d9419/5ee5d3ef1506ba6d4423908a_Project 1.jpg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5ee5d3ef1506baf02f2390a1_Arrow.svg": {
+      "hash": "72bb49773c38aff2d14d39226d88890cfd6c763cfb8e9c89aa6f4c0a59693223",
+      "dest": "assets/webflow/72bb4977/5ee5d3ef1506baf02f2390a1_Arrow.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f36f13be5ef2bdce80078e8_Frame 1.svg": {
+      "hash": "4f67cb52e31f7013b0f3aef5612bf0a659f94ac8522cc417d55936e86cb92888",
+      "dest": "assets/webflow/4f67cb52/5f36f13be5ef2bdce80078e8_Frame 1.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f36f13cad9cd86b58a851ce_Frame 2.svg": {
+      "hash": "ccad8a2bb3d06122e172267c963983a77aebab808337bbedf76d96459af07394",
+      "dest": "assets/webflow/ccad8a2b/5f36f13cad9cd86b58a851ce_Frame 2.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f36f13cd491600021c4df7e_Frame 9.svg": {
+      "hash": "5b4dcc6ea0d6d4a8cd641053dc311d27664eb344fd1bee1bfe2ff901a093a51c",
+      "dest": "assets/webflow/5b4dcc6e/5f36f13cd491600021c4df7e_Frame 9.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f36f13da6a775cb38a827fa_Frame 3.svg": {
+      "hash": "bbfa950f282b2748a7b3f4d6a37f4e93477c9ffad618c389a5e4cbd8eec9d428",
+      "dest": "assets/webflow/bbfa950f/5f36f13da6a775cb38a827fa_Frame 3.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f36f13dac18fffb1fe9d3bf_Frame 4.svg": {
+      "hash": "a4bc0344e8ca7b0ed575727cdb6eb9ad6e26af1c211fff76057d7ff89cd89af1",
+      "dest": "assets/webflow/a4bc0344/5f36f13dac18fffb1fe9d3bf_Frame 4.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f36f13e3eba5d382130b53b_Frame 8.svg": {
+      "hash": "8b854b2ffecfd68f15a94fe5e7d44f167c2262ce33359de8ae730d701b46e071",
+      "dest": "assets/webflow/8b854b2f/5f36f13e3eba5d382130b53b_Frame 8.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f36f13f91dd00d5fb974b92_Frame 6.svg": {
+      "hash": "10039a43782da9c288f007e2c3210806e0348a66272a447ca76571cd00821861",
+      "dest": "assets/webflow/10039a43/5f36f13f91dd00d5fb974b92_Frame 6.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f36f140eb00db77937a52a1_Frame 7.svg": {
+      "hash": "4013227f6320d1714845413636873bc5b0e3f9112a97472dfd717b83e5d53829",
+      "dest": "assets/webflow/4013227f/5f36f140eb00db77937a52a1_Frame 7.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f36f14367e2cf4af55215ad_Frame 5.svg": {
+      "hash": "49c59e33c5e1d5e1826daf12f595e6ad391e9677993f49fa5ad4f812456dc8d8",
+      "dest": "assets/webflow/49c59e33/5f36f14367e2cf4af55215ad_Frame 5.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f36f2773eba5de88c30b5ac_image 6.svg": {
+      "hash": "0521d7f7f751151c11dfbf4305d7005816d23dddb80fbf6d009c06bbcecd5b38",
+      "dest": "assets/webflow/0521d7f7/5f36f2773eba5de88c30b5ac_image 6.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f370496fb8e3ef21fcf19b8_meesho-logo.png": {
+      "hash": "efdbb3e1c0badb32086aaf129047d63fc4347d4e8f25a968199497a2d6cbcff9",
+      "dest": "assets/webflow/efdbb3e1/5f370496fb8e3ef21fcf19b8_meesho-logo.png"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f371b61d491604ccbc53844_Arrow 2.svg": {
+      "hash": "a5b495929b97b7b260b96984b163f84f57ca6cd26215f0897b447587d88c57a1",
+      "dest": "assets/webflow/a5b49592/5f371b61d491604ccbc53844_Arrow 2.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f371b62ecda61aff745459b_Arrow 3.svg": {
+      "hash": "9e079bc6e8c973dca4e60a8cef9c5d2bfcfaab5e3cb028f6c523ffdf79ef317c",
+      "dest": "assets/webflow/9e079bc6/5f371b62ecda61aff745459b_Arrow 3.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f459feb4b39126e44305489_Screenshot 2020-08-26 at 5.02.12 AM.png": {
+      "hash": "b1863f9c118fa54b015f136ad5de80fc109a28df36edfc7778033ea172d3b1e1",
+      "dest": "assets/webflow/b1863f9c/5f459feb4b39126e44305489_Screenshot 2020-08-26 at 5.02.12 AM.png"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f459fef667691339870e60e_Screenshot 2020-08-26 at 5.02.04 AM.png": {
+      "hash": "815853f03b59bf6c826ff867e37bf1a2040ec1a8fb5131c5ed4491318b35a073",
+      "dest": "assets/webflow/815853f0/5f459fef667691339870e60e_Screenshot 2020-08-26 at 5.02.04 AM.png"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f49113a8a5c30d6b8023519_noun_interview_3243906 1.svg": {
+      "hash": "17593299a48decd033d727d44f719f47b6c513849e14b74d915b1886ce118923",
+      "dest": "assets/webflow/17593299/5f49113a8a5c30d6b8023519_noun_interview_3243906 1.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f49113ecdfd6b1382058a24_noun_questionnaire_2122586 1.svg": {
+      "hash": "efa5189a1c058ee5b70b0cad149c3c8e5babf5dbf8e881b56574567715cdd7ce",
+      "dest": "assets/webflow/efa5189a/5f49113ecdfd6b1382058a24_noun_questionnaire_2122586 1.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f4911431a055bcbb3848837_noun_report_413983 1.svg": {
+      "hash": "d615cc99ca983226f2e72a1e081951bf19a044d2e63d37057398e482c7f75190",
+      "dest": "assets/webflow/d615cc99/5f4911431a055bcbb3848837_noun_report_413983 1.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f491185082c082e559f407b_noun_market research_2724355 1.png": {
+      "hash": "c67cb817c5b06723b86be8811c44fc3a5d0a4d4a8cb4f8653d30d15a7e079d7a",
+      "dest": "assets/webflow/c67cb817/5f491185082c082e559f407b_noun_market research_2724355 1.png"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f491baf2655f60c85c95fb0_menu.svg": {
+      "hash": "49d9aa391ea76c1c396b0713b357bb0316ff650b72612b3fb06e94ef7a30d9ff",
+      "dest": "assets/webflow/49d9aa39/5f491baf2655f60c85c95fb0_menu.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f494722662afb32ad1b5693_Frame 22(1).png": {
+      "hash": "ef34baa64d0f28e95fe5ef44c90b4abb82e08b9b90187e4793b90ec8fdc0a898",
+      "dest": "assets/webflow/ef34baa6/5f494722662afb32ad1b5693_Frame 22(1).png"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/5f91e4fca03e893b26be1133_noun_report_413983 1.svg": {
+      "hash": "64f1a1eaa8fa1425d8eb848b0ce10863fcb5d2a7d2d879e2a69d6f5bec2e5941",
+      "dest": "assets/webflow/64f1a1ea/5f91e4fca03e893b26be1133_noun_report_413983 1.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/webflow-badge-icon-d2.89e12c322e.svg": {
+      "hash": "00f45354c11a12591485977633a0e03952cdf1ff2de403e10ec846db8cc508a9",
+      "dest": "assets/webflow/00f45354/webflow-badge-icon-d2.89e12c322e.svg"
+    },
+    "Resources/webflow/Vernacular languages in digital products_files/webflow-badge-text-d2.c82cec3b78.svg": {
+      "hash": "3202cb640fada345ab99415bd087f28e6fea1c3009dba51d183cc37bce036cd7",
+      "dest": "assets/webflow/3202cb64/webflow-badge-text-d2.c82cec3b78.svg"
+    },
+    "Resources/webflow/homepage_files/5f370496fb8e3ef21fcf19b8_meesho-logo.png": {
+      "hash": "efdbb3e1c0badb32086aaf129047d63fc4347d4e8f25a968199497a2d6cbcff9",
+      "dest": "assets/webflow/efdbb3e1/5f370496fb8e3ef21fcf19b8_meesho-logo.png"
+    },
+    "Resources/webflow/homepage_files/647795a8391a9bb3348067a3_X.png": {
+      "hash": "faf5e205078d290ddb00bbf55771d6bf55c9e5b6e1a95f2696cdd6fae2e2bdc1",
+      "dest": "assets/webflow/faf5e205/647795a8391a9bb3348067a3_X.png"
+    },
+    "Resources/webflow/homepage_files/647795a8a42f6be079200a9a_rzp logo.png": {
+      "hash": "75bcb36702e6d8cea56e6ec40bea0ff4cee38d3d82778c917186e64efa2d3094",
+      "dest": "assets/webflow/75bcb367/647795a8a42f6be079200a9a_rzp logo.png"
+    },
+    "Resources/webflow/homepage_files/66a22ad3386f9d2038b76ac6_trueode_logo.jpeg": {
+      "hash": "7ab6fd97a3d6f7fb4287398c0b57e652225d2cb3d66761641c7791694f1a8a68",
+      "dest": "assets/webflow/7ab6fd97/66a22ad3386f9d2038b76ac6_trueode_logo.jpeg"
+    },
+    "Resources/webflow/homepage_files/6874eac7c035d8ad8ca9afcb_6769d65db2d93489c43b3f96_Screenshot 2024-12-24 at 2.59.49\u202fAM.png": {
+      "hash": "5e8c36ad6770fbac2702d881ae174577fabb165018debcbb810aadf336278ff0",
+      "dest": "assets/webflow/5e8c36ad/6874eac7c035d8ad8ca9afcb_6769d65db2d93489c43b3f96_Screenshot 2024-12-24 at 2.59.49\u202fAM.png"
+    },
+    "Resources/webflow/homepage_files/69422f3d7a6709312da8f1df_Line 90.png": {
+      "hash": "98e9754f29d76bbcdcf7a5979226084fdbd6c660736f2a96b77c2413de12cd23",
+      "dest": "assets/webflow/98e9754f/69422f3d7a6709312da8f1df_Line 90.png"
+    },
+    "Resources/webflow/homepage_files/6958a27d973bf863dbf3b1f7_ac809b2a6c4642fede4278fae3e44e9d_priyal circle.png": {
+      "hash": "e5803f440743d3b02f1c6951a6fe9d04b3bb97f7d41f037a074f10cb8b13014e",
+      "dest": "assets/webflow/e5803f44/6958a27d973bf863dbf3b1f7_ac809b2a6c4642fede4278fae3e44e9d_priyal circle.png"
+    },
+    "Resources/webflow/homepage_files/webflow-badge-icon-d2.89e12c322e.svg": {
+      "hash": "00f45354c11a12591485977633a0e03952cdf1ff2de403e10ec846db8cc508a9",
+      "dest": "assets/webflow/00f45354/webflow-badge-icon-d2.89e12c322e.svg"
+    },
+    "Resources/webflow/homepage_files/webflow-badge-text-d2.c82cec3b78.svg": {
+      "hash": "3202cb640fada345ab99415bd087f28e6fea1c3009dba51d183cc37bce036cd7",
+      "dest": "assets/webflow/3202cb64/webflow-badge-text-d2.c82cec3b78.svg"
+    }
+  }
+}

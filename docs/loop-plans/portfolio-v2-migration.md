@@ -4,7 +4,7 @@
 **Trigger:** Every **5 minutes** (local `/loop 5m` or Cursor Automation).  
 **Tick budget:** One iteration must finish within **5 minutes** (hard stop at **7 minutes**).  
 **Last updated:** 2026-08-06  
-**Iteration:** 9  
+**Iteration:** 10  
 **Lock status:** idle *(do not edit by hand while a run is active)*
 
 ---
@@ -107,7 +107,7 @@ Update checkboxes each iteration. **One page (or one clear sub-task) per loop pa
 - [x] B2. `play.html`
 - [x] B3. `work/razorpay-d2c.html`
 - [x] B4. `work/razorpay-website-evaluation.html`
-- [ ] B5. `work/razorpay-onboarding.html` *(strip password-gate markup from export)*
+- [x] B5. `work/razorpay-onboarding.html` *(strip password-gate markup from export)*
 - [ ] B6. `work/meesho-vernacular.html`
 - [ ] B7. `work/madahead.html`
 - [ ] B8. `index.html` *(homepage — Webflow content in new shell)*
@@ -299,8 +299,8 @@ Report to Priyal:
 
 ## Notes for next run
 
-- **Iteration 9 done:** B4 — `work/razorpay-website-evaluation.html` transplanted from Webflow export (v2 shell + case-study CSS).
-- **Next task:** B5 — `work/razorpay-onboarding.html` (strip password-gate markup).
+- **Iteration 10 done:** B5 — `work/razorpay-onboarding.html` transplanted from Webflow export; password gate and hidden sidebar nav stripped.
+- **Next task:** B6 — `work/meesho-vernacular.html`.
 - Loop interval now **3 minutes** (shell PID 58602).
 
 ---

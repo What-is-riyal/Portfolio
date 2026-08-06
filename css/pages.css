@@ -1,4 +1,151 @@
-/* Page-level layouts for v2 Webflow transplants */
+/* Page layouts — Mondrian shell + Webflow content (no Webflow class soup) */
+
+/* ------------------------------------------------------------------ */
+/* Homepage                                                           */
+/* ------------------------------------------------------------------ */
+
+.home-hero {
+  min-height: 88vh;
+  align-items: center;
+  padding-top: 14vh;
+}
+
+.home-hero__label {
+  margin-bottom: clamp(20px, 3vh, 32px);
+}
+
+.home-hero__photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: clamp(20px, 3vh, 28px);
+}
+
+.home-hero__lead {
+  margin-bottom: clamp(20px, 3vh, 28px);
+  max-width: 22ch;
+}
+
+.home-hero__bio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+  margin-bottom: clamp(24px, 4vh, 40px);
+}
+
+.home-hero__diagram {
+  align-self: center;
+}
+
+.home-keywords {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  max-width: 42ch;
+}
+
+.home-keywords li {
+  font-family: var(--font-grotesk);
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--grey);
+  padding: 5px 9px;
+  border: 1px solid var(--line-color);
+}
+
+.home-work__label,
+.home-book__label {
+  margin-bottom: clamp(28px, 5vh, 56px);
+}
+
+.home-work__list-wrap {
+  grid-column: c1 / page-r;
+  padding-top: 0;
+}
+
+.home-work__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vh, 64px);
+}
+
+.home-work__row {
+  grid-column: c1 / page-r;
+}
+
+.home-work__link {
+  display: block;
+  grid-column: c1 / g1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-work__claim {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-fraunces);
+  font-size: var(--text-sub);
+  font-weight: 340;
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--grey);
+  max-width: 36ch;
+}
+
+.home-work__meta {
+  grid-column: c3 / page-r;
+  align-self: end;
+}
+
+.home-work__meta .sg-tech {
+  line-height: 1.6;
+}
+
+.home-work__meta .sg-label {
+  margin-top: 8px;
+}
+
+.home-book__blurb {
+  margin-top: 1em;
+  margin-bottom: 1.25em;
+}
+
+.home-book__cover img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  display: block;
+  border: 1px solid var(--line-color);
+}
+
+@media (max-width: 767px) {
+  .home-hero {
+    min-height: auto;
+    padding-top: 12vh;
+  }
+
+  .home-hero__lead {
+    max-width: none;
+  }
+
+  .home-work__link,
+  .home-work__meta {
+    grid-column: c1 / page-r;
+  }
+
+  .home-work__meta {
+    margin-top: 12px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* About                                                              */
+/* ------------------------------------------------------------------ */
 
 .page-about {
   padding-top: 14vh;
@@ -6,15 +153,12 @@
 }
 
 .about-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: clamp(32px, 5vw, 64px);
   align-items: start;
 }
 
 .about-photo img {
   width: 100%;
-  max-width: 407px;
+  max-width: 320px;
   height: auto;
   display: block;
 }
@@ -47,7 +191,6 @@
 .about-close {
   margin-top: clamp(48px, 10vh, 120px);
   padding-top: clamp(32px, 6vh, 64px);
-  border-top: 1px solid var(--line-color);
 }
 
 .about-close p {
@@ -66,13 +209,9 @@
   color: var(--grey);
 }
 
-@media (max-width: 767px) {
-  .about-intro {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Play page */
+/* ------------------------------------------------------------------ */
+/* Play                                                               */
+/* ------------------------------------------------------------------ */
 
 .page-play {
   padding-top: 14vh;
@@ -91,13 +230,13 @@
 
 .play-card {
   display: block;
-  min-height: 280px;
+  min-height: 240px;
   padding: clamp(24px, 4vw, 36px);
   border: 1px solid var(--line-color);
   background-color: var(--white);
   background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: contain;
+  background-position: right 16px bottom 16px;
+  background-size: 96px auto;
   transition: background-color 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -152,95 +291,17 @@
   .play-grid {
     grid-template-columns: 1fr;
   }
-}
 
-/* Homepage — verbatim Webflow transplant */
-
-.page-home {
-  padding-top: 12vh;
-  padding-bottom: 8vh;
-}
-
-.page-home img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.page-home .section-12.new {
-  display: grid;
-  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
-  gap: clamp(24px, 4vw, 48px);
-  align-items: start;
-  margin-bottom: clamp(48px, 10vh, 120px);
-}
-
-.page-home .text-block-91,
-.page-home .text-block-92 {
-  font-family: var(--font-fraunces);
-  font-size: var(--text-prose);
-  font-weight: 340;
-  line-height: 1.55;
-  max-width: 62ch;
-}
-
-.page-home .section-13.hp .div-block-33 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(20px, 3vw, 32px);
-}
-
-.page-home .project-2 {
-  display: block;
-  padding: clamp(20px, 3vw, 28px);
-  border: 1px solid var(--line-color);
-  text-decoration: none;
-  color: inherit;
-  transition: background-color 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.page-home .project-2:hover,
-.page-home .project-2:focus-visible {
-  background-color: rgba(26, 63, 158, 0.06);
-}
-
-.page-home .text-block-47 {
-  font-family: var(--font-grotesk);
-  font-size: var(--text-row);
-  letter-spacing: -0.01em;
-  margin: 12px 0 8px;
-}
-
-.page-home .text-block-48,
-.page-home .thumbnail {
-  font-family: var(--font-fraunces);
-  font-size: var(--text-prose);
-  font-weight: 340;
-  line-height: 1.45;
-}
-
-.page-home .keyword-container {
-  font-family: var(--font-grotesk);
-  font-size: var(--text-label);
-  text-transform: uppercase;
-  letter-spacing: var(--track-label);
-  color: var(--grey);
-}
-
-.page-home .footer2,
-.page-home .closing {
-  margin-top: clamp(48px, 10vh, 96px);
-  padding-top: clamp(24px, 4vh, 48px);
-  border-top: 1px solid var(--line-color);
-  font-family: var(--font-fraunces);
-  font-size: var(--text-prose);
-  font-weight: 340;
-  line-height: 1.55;
-}
-
-@media (max-width: 767px) {
-  .page-home .section-12.new,
-  .page-home .section-13.hp .div-block-33 {
-    grid-template-columns: 1fr;
+  .about-photo img {
+    max-width: 220px;
   }
+}
+
+/* ------------------------------------------------------------------ */
+/* Resume                                                             */
+/* ------------------------------------------------------------------ */
+
+.page-resume {
+  padding-top: 14vh;
+  padding-bottom: 8vh;
 }

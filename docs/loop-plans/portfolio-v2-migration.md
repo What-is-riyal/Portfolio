@@ -1,11 +1,11 @@
 # Loop plan: Portfolio v2 (HTML migration)
 
 **Branch:** `portfolio-v2-2026-08-06`  
-**Trigger:** Every **3 minutes** (local loop, PID restarted after 5m loop killed).  
-**Tick budget:** One iteration must finish within **5 minutes** (hard stop at **7 minutes**).  
+**Trigger:** **STOPPED** (2026-08-06). Do not re-arm the auto loop.  
+**Tick budget:** n/a — design rebuild is human-driven from here.  
 **Last updated:** 2026-08-06  
-**Iteration:** 16  
-**Lock status:** idle *(do not edit by hand while a run is active)*
+**Iteration:** 16 (last auto tick)  
+**Lock status:** idle — loop killed; design rebuild in progress
 
 ---
 
@@ -299,10 +299,11 @@ Report to Priyal:
 
 ## Notes for next run
 
-- **Iteration 16 done:** C3 — `resume.html` rebuilt in v2 shell; PDF served from `assets/priyal_resume_UXR.pdf`.
-- **Next task:** D1 — mobile + iPad pass on every page.
-- **Phase C complete.** Phase D (ship) remains: responsive, reduced-motion, Pages deploy, final audit.
-- **3m loop** — PID 48683, monitored terminal `654861.txt`.
+- **LOOP KILLED.** Auto ticks were shipping Webflow class-soup HTML without Mondrian UI. Visual quality failed; content fidelity mostly OK.
+- **Do not run D1–D4 via loop** until homepage + case studies pass a recruiter 5-second look test.
+- **In progress (manual):** rebuild `index.html` as Mondrian shell + Webflow copy (lines, diagram, work ledger). Then restyle case studies (not dump).
+- **Keep:** verbatim Webflow text, `assets/`, tokens/grid/shell JS.
+- **Discard as page model:** pasted `div-block-*` / `w-inline-block` bodies as the design.
 
 ---
 

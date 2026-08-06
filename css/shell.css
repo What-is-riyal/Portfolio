@@ -17,6 +17,9 @@
 .site-nav__brand {
   pointer-events: auto;
   letter-spacing: 0.04em;
+  font-family: var(--font-grotesk);
+  font-size: var(--text-nav);
+  font-weight: 500;
 }
 
 .site-nav__links {

@@ -7,25 +7,34 @@
   <meta name="description" content="Synthesizing a year of fragmented Copilot research at Microsoft into a white paper on what users need before they trust an AI assistant with their email.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,360&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/grid.css">
   <link rel="stylesheet" href="../css/shell.css">
   <style>
-    /* ============ Showpiece page styles ============ */
+    /* Copilot showpiece — Mondrian tokens (keep narrative interactives) */
     :root {
-      --ink: #0B0B0C;
+      --ink: #1A1A18;
       --paper: #FFFFFF;
-      --glow: #4F46E5; /* 6.3:1 on white */
+      --glow: #1A3F9E;
       --serif: "Fraunces", Georgia, serif;
+      --font: "Space Grotesk", "Helvetica Neue", sans-serif;
+      --muted: #6B6E68;
+      --border: rgba(26, 26, 24, 0.3);
     }
 
-    /* On dark surfaces the accent lightens for contrast (8+:1 on ink) */
     .hero-dark, .strip-dark, .ladder-track, .closing, .demo-shell {
-      --glow: #9D91FF;
+      --glow: #8FA8E8;
     }
 
-    body { background: var(--paper); overflow-x: hidden; }
+    body {
+      background: var(--paper);
+      overflow-x: hidden;
+      font-family: var(--serif);
+      color: var(--ink);
+      font-weight: 340;
+    }
+
+    .page-copilot { padding-top: 4vh; }
 
     .progress {
       position: fixed; top: 0; left: 0; height: 3px; width: 0;
@@ -64,7 +73,7 @@
     }
     .page-copilot .site-nav a { color: rgba(255,255,255,0.72); }
     .page-copilot .site-nav a.is-active,
-    .page-copilot .site-nav a:hover { color: #9D91FF; }
+    .page-copilot .site-nav a:hover { color: var(--glow); }
 
     /* ============ Hero ============ */
     .hero-dark {
@@ -74,7 +83,7 @@
     }
     .hero-orb {
       position: absolute; width: 60vw; height: 60vw; border-radius: 50%;
-      background: radial-gradient(circle, rgba(124,113,255,0.3), transparent 65%);
+      background: radial-gradient(circle, rgba(26,63,158,0.28), transparent 65%);
       top: 10%; right: -18vw; filter: blur(20px);
       animation: orb-drift 14s ease-in-out infinite alternate;
     }
@@ -94,8 +103,9 @@
       color: var(--glow); margin-bottom: 18px;
     }
     .hero-dark h1 {
-      font-size: clamp(36px, 6.2vw, 80px); line-height: 1.06; font-weight: 800;
-      letter-spacing: -0.035em; max-width: 18ch; margin-bottom: 36px;
+      font-size: clamp(2.5rem, 5.5vw, 5rem); line-height: 1.05; font-weight: 340;
+      letter-spacing: -0.02em; max-width: 18ch; margin-bottom: 36px;
+      font-variation-settings: 'opsz' 60;
     }
     .hero-dark h1 .line { display: block; overflow: hidden; }
     .hero-dark h1 .line span {
@@ -110,17 +120,16 @@
       letter-spacing: -0.01em;
     }
     .hero-dark .hero-standfirst {
-      font-size: clamp(17px, 2vw, 21px); color: rgba(255,255,255,0.72);
+      font-size: clamp(17px, 2vw, 21px); color: rgba(255,255,255,0.78);
       max-width: 56ch; line-height: 1.7; margin-bottom: 48px;
-      opacity: 0; animation: fade-in 1s ease 0.5s forwards;
     }
-    @keyframes fade-in { to { opacity: 1; } }
-    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; opacity: 0; animation: fade-in 1s ease 0.7s forwards; }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; }
     .chip {
-      font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
+      font-family: var(--font); font-size: 12px; font-weight: 500; padding: 6px 10px; border-radius: 0;
+      letter-spacing: 0.06em; text-transform: uppercase;
       border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.8);
     }
-    .chip.accent { border-color: rgba(124,113,255,0.5); color: var(--glow); }
+    .chip.accent { border-color: rgba(143,168,232,0.55); color: var(--glow); }
     .scroll-hint {
       position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
       font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;

@@ -1,166 +1,194 @@
-/* Case study pages — readable Mondrian-adjacent layout over Webflow body */
+/* Case studies — Mondrian shell. Content is hers; layout is ours. */
 
 .page-case {
-  padding-top: 12vh;
-  padding-bottom: 10vh;
-  max-width: 920px;
-  margin: 0 auto;
-  padding-left: clamp(20px, 4vw, 40px);
-  padding-right: clamp(20px, 4vw, 40px);
+  padding-bottom: 8vh;
 }
 
-.page-case .hide,
-.page-case .w-condition-invisible {
-  display: none !important;
+.cs-hero {
+  padding-top: 14vh;
+  align-items: end;
 }
 
-.page-case img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1.25rem 0;
-  border: 1px solid var(--line-color);
+.cs-hero__org {
+  margin-bottom: clamp(16px, 3vh, 28px);
 }
 
-.page-case img[width="70"],
-.page-case .image-121 {
-  width: 56px;
-  height: auto;
-  border: 0;
-  margin: 0 0 1rem;
+.cs-hero__title {
+  max-width: 18ch;
+  margin-bottom: 16px;
 }
 
-.page-case h1,
-.page-case .heading-4,
-.page-case ._24dmbold,
-.page-case ._20-europa-heading {
-  font-family: var(--font-fraunces);
-  font-weight: 340;
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-  margin: 1.6em 0 0.55em;
-}
-
-.page-case .heading-4 {
-  font-size: var(--text-opener);
-  max-width: 28ch;
-}
-
-.page-case ._24dmbold {
-  font-size: var(--text-opener);
-}
-
-.page-case ._20-europa-heading {
-  font-size: var(--text-row);
-}
-
-.page-case .text-block-29,
-.page-case .description,
-.page-case ._18_inter-2,
-.page-case ._18_inter,
-.page-case ._20-inter,
-.page-case .quote,
-.page-case .quote.d2c,
-.page-case .sideblock18,
-.page-case .sideblock18 div,
-.page-case .div-block-127,
-.page-case .text-block-93 {
-  font-family: var(--font-fraunces);
-  font-size: var(--text-prose);
-  font-weight: 340;
-  line-height: 1.55;
-  max-width: 65ch;
-}
-
-.page-case .quote,
-.page-case .quote.d2c {
-  font-size: var(--text-sub);
+.cs-hero__sub {
+  color: var(--grey);
   font-style: italic;
-  color: var(--ink);
-  max-width: 42ch;
-  margin: 1.5rem 0;
-  padding-left: 1rem;
-  border-left: 2px solid var(--blue);
+  max-width: 36ch;
 }
 
-.page-case .sg-label,
-.page-case .meesho-skills-2,
-.page-case ._16-europa,
-.page-case .caption {
+.cs-meta {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: var(--cell-pad);
+  grid-column: c3 / page-r;
+  align-self: end;
+}
+
+.cs-meta dt {
   font-family: var(--font-grotesk);
   font-size: var(--text-label);
   text-transform: uppercase;
   letter-spacing: var(--track-label);
   color: var(--grey);
+  margin-bottom: 4px;
 }
 
-.page-case .caption {
-  margin-top: 2rem;
+.cs-meta dd {
+  font-family: var(--font-fraunces);
+  font-size: var(--text-prose);
+  font-weight: 340;
+  line-height: 1.45;
 }
 
-.page-case .card.objectives {
+.cs-quote-band {
+  padding-top: clamp(32px, 6vh, 64px);
+  padding-bottom: clamp(32px, 6vh, 64px);
+}
+
+.cs-quote {
+  font-family: var(--font-fraunces);
+  font-size: var(--text-sub);
+  font-weight: 340;
+  font-style: italic;
+  line-height: 1.3;
+  max-width: 28ch;
+  padding-left: 1rem;
+  border-left: 2px solid var(--blue);
+}
+
+.cs-lede {
+  font-family: var(--font-fraunces);
+  font-size: var(--text-prose);
+  font-weight: 340;
+  line-height: 1.5;
+  max-width: 48ch;
+  margin-top: 1.5rem;
+}
+
+.cs-section {
+  scroll-margin-top: 80px;
+}
+
+.cs-section__label {
+  margin-bottom: clamp(20px, 3vh, 36px);
+}
+
+.cs-section .voice-prose,
+.cs-section .voice-prose p {
+  margin-bottom: 1.15em;
+}
+
+.cs-section .voice-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.cs-figure {
+  margin: clamp(24px, 4vh, 48px) 0;
+}
+
+.cs-figure img {
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+  display: block;
   border: 1px solid var(--line-color);
-  padding: 1rem 1.1rem;
-  margin-bottom: 0.75rem;
-  background: var(--white);
 }
 
-.page-case .columns._2-column,
-.page-case .w-row {
+.cs-figure--pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+  max-width: 860px;
 }
 
-.page-case .w-col {
-  width: auto !important;
+.cs-figure--pair img {
+  max-width: none;
 }
 
-.page-case .section-18.rzp {
-  margin-top: 4rem;
-  padding: 2rem 0;
-  border-top: 1px solid var(--line-color);
-}
-
-.page-case .text-block-60 {
-  margin-top: 2rem;
-  font-family: var(--font-fraunces);
-  font-size: var(--text-prose);
-}
-
-.page-case .footer2,
-.page-case .closing {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line-color);
-  font-family: var(--font-fraunces);
-  font-size: var(--text-prose);
-}
-
-.page-case .sidebox-container-2,
-.page-case .side-bar-box {
-  margin-bottom: 2.5rem;
-}
-
-.page-case .details-tray {
-  margin-bottom: 1rem;
-}
-
-.page-case .div-block-185 {
+.cs-cards {
+  list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 12px;
+  margin: 1rem 0 1.5rem;
+  max-width: 720px;
 }
 
-.page-case .div-block-60 {
-  margin-bottom: 2rem;
+.cs-cards li {
+  border: 1px solid var(--line-color);
+  padding: 1rem 1.1rem;
+  font-family: var(--font-fraunces);
+  font-size: var(--text-prose);
+  font-weight: 340;
+  line-height: 1.45;
+}
+
+.cs-cards__group {
+  margin-bottom: 1.75rem;
+}
+
+.cs-cards__group h3 {
+  font-family: var(--font-grotesk);
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--grey);
+  margin-bottom: 10px;
+}
+
+.cs-list {
+  margin: 0.75em 0 1.25em 1.1em;
+  font-family: var(--font-fraunces);
+  font-size: var(--text-prose);
+  font-weight: 340;
+  line-height: 1.5;
+  max-width: 60ch;
+}
+
+.cs-list li {
+  margin-bottom: 0.35em;
+}
+
+.cs-close {
+  padding-top: clamp(40px, 8vh, 80px);
+  border-top: 1px solid var(--line-color);
+  margin-top: clamp(40px, 8vh, 80px);
+}
+
+.cs-close .voice-prose {
+  max-width: 60ch;
+}
+
+.cs-back {
+  display: inline-block;
+  margin-top: 2rem;
+  font-family: var(--font-grotesk);
+  font-size: var(--text-nav);
 }
 
 @media (max-width: 767px) {
-  .page-case .div-block-185,
-  .page-case .columns._2-column,
-  .page-case .w-row {
+  .cs-meta {
+    grid-column: c1 / page-r;
+    padding-top: 0;
+  }
+
+  .cs-cards,
+  .cs-figure--pair {
     grid-template-columns: 1fr;
+  }
+
+  .cs-hero__title {
+    max-width: none;
   }
 }
 

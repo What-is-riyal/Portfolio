@@ -299,11 +299,12 @@ Report to Priyal:
 
 ## Notes for next run
 
-- **LOOP KILLED.** Auto ticks were shipping Webflow class-soup HTML without Mondrian UI. Visual quality failed; content fidelity mostly OK.
-- **Do not run D1–D4 via loop** until homepage + case studies pass a recruiter 5-second look test.
-- **In progress (manual):** rebuild `index.html` as Mondrian shell + Webflow copy (lines, diagram, work ledger). Then restyle case studies (not dump).
-- **Keep:** verbatim Webflow text, `assets/`, tokens/grid/shell JS.
-- **Discard as page model:** pasted `div-block-*` / `w-inline-block` bodies as the design.
+- **LOOP KILLED.** Design rebuild is human-driven.
+- **Homepage:** Mondrian shell live (rails, diagram, ledger) + Webflow copy.
+- **Case studies (Webflow):** rebuilt into `cs-*` Mondrian template — D2C, website evaluation, onboarding, Meesho, MadAhead.
+- **Microsoft pages:** token/type remapped toward Mondrian (blue/Fraunces/Grotesk); interactive structure kept.
+- **About / play:** shell + footer aligned.
+- **Still open:** resume polish, mobile pass, Pages deploy, final content audit, optional deeper MS structural unify.
 
 ---
 

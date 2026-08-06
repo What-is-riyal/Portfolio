@@ -15,6 +15,10 @@
     MARK_RADIUS: 120,
     MARK_ROTATE: 4,
     MARK_NUDGE: 2,
+    DRIFT_A: 10,
+    DRIFT_B: 11,
+    BREATHE: 14,
+    HOVER_SETTLE: 0.7,
     reducedMotion() {
       return (
         typeof window !== 'undefined' &&

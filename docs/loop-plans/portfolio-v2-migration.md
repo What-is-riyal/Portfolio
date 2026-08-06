@@ -114,7 +114,7 @@ Update checkboxes each iteration. **One page (or one clear sub-task) per loop pa
 
 ### Phase C — Non-Webflow pages
 - [x] C1. `work/microsoft-copilot-trust.html` — keep rewrite; apply new UI shell only
-- [ ] C2. `work/microsoft-retention.html` — Priyal POV; apply new UI shell only
+- [x] C2. `work/microsoft-retention.html` — Priyal POV; apply new UI shell only
 - [ ] C3. `resume.html` — link/serve `Resources/priyal_resume_UXR.pdf`
 
 ### Phase D — Ship
@@ -299,8 +299,8 @@ Report to Priyal:
 
 ## Notes for next run
 
-- **Iteration 14 done:** C1 — `work/microsoft-copilot-trust.html` wrapped in v2 shell (nav via shell.js; page content unchanged).
-- **Next task:** C2 — `work/microsoft-retention.html`.
+- **Iteration 15 done:** C2 — `work/microsoft-retention.html` wrapped in v2 shell (nav via shell.js; page content unchanged).
+- **Next task:** C3 — `resume.html`.
 - **3m loop** — PID 48683, monitored terminal `654861.txt`.
 
 ---

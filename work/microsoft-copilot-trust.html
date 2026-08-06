@@ -8,7 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,360&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/grid.css">
+  <link rel="stylesheet" href="../css/shell.css">
   <style>
     /* ============ Showpiece page styles ============ */
     :root {
@@ -49,11 +51,20 @@
     .cursor-ring.is-hover { width: 64px; height: 64px; border-color: var(--glow); }
     @media (pointer: coarse) { .cursor-dot, .cursor-ring { display: none; } }
 
-    /* Nav overlay for dark hero */
-    .nav { position: absolute; width: 100%; background: transparent; backdrop-filter: none; border: none; }
-    .nav .logo, .nav .nav-links a { color: #fff; }
-    .nav .nav-links a { color: rgba(255,255,255,0.65); }
-    .nav .nav-links a:hover, .nav .nav-links a.active { color: #fff; }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 40px);
+    }
+
+    /* v2 shell on dark hero */
+    .page-copilot .site-nav {
+      mix-blend-mode: normal;
+      color: #fff;
+    }
+    .page-copilot .site-nav a { color: rgba(255,255,255,0.72); }
+    .page-copilot .site-nav a.is-active,
+    .page-copilot .site-nav a:hover { color: #9D91FF; }
 
     /* ============ Hero ============ */
     .hero-dark {
@@ -465,7 +476,10 @@
     }
   </style>
 </head>
-<body>
+<body data-shell-base="../" data-shell-page="work">
+
+  <div class="page page-copilot" style="position:relative;width:100%">
+    <div id="site-nav"></div>
 
   <div class="progress" id="progress"></div>
   <div class="grain"></div>
@@ -474,20 +488,6 @@
 
   <!-- ============ HERO: the question first ============ -->
   <section class="hero-dark">
-    <header class="nav">
-      <div class="container nav-inner">
-        <a href="../index.html" class="logo">ps<span class="dot">.</span></a>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="../index.html#work" class="active">Work</a></li>
-            <li><a href="../play.html">Play</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../resume.html">Resume</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
     <div class="hero-orb"></div>
     <div class="container">
       <p class="eyebrow">Microsoft &middot; 2024&ndash;25</p>
@@ -872,6 +872,8 @@
 
   <div class="egg-hint" id="eggHint">This page practices what it preaches. Press <kbd>T</kbd> for transparency.</div>
 
+  </div>
+
   <script>
   (function () {
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1020,5 +1022,6 @@
       "\nYou found the console. Press T on the page to see why it's designed the way it is.\nIt felt wrong to write a paper about AI transparency and then ship an opaque page.");
   })();
   </script>
+  <script src="../js/shell.js" defer></script>
 </body>
 </html>

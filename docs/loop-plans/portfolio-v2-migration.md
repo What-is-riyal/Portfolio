@@ -4,7 +4,7 @@
 **Trigger:** Every **3 minutes** (local loop, PID restarted after 5m loop killed).  
 **Tick budget:** One iteration must finish within **5 minutes** (hard stop at **7 minutes**).  
 **Last updated:** 2026-08-06  
-**Iteration:** 14  
+**Iteration:** 15  
 **Lock status:** idle *(do not edit by hand while a run is active)*
 
 ---

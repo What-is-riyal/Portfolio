@@ -4,7 +4,7 @@
 **Trigger:** Every **5 minutes** (local `/loop 5m` or Cursor Automation).  
 **Tick budget:** One iteration must finish within **5 minutes** (hard stop at **7 minutes**).  
 **Last updated:** 2026-08-06  
-**Iteration:** 1  
+**Iteration:** 2  
 **Lock status:** idle *(do not edit by hand while a run is active)*
 
 ---
@@ -96,8 +96,8 @@ portfolio-v2/
 Update checkboxes each iteration. **One page (or one clear sub-task) per loop pass.** Do not batch entire site in one commit unless explicitly instructed.
 
 ### Phase A — Foundation
-- [ ] A1. Add `css/tokens.css` + `css/grid.css` ported from reference tokens/globals (HTML, not React)
-- [ ] A2. Add `js/mondrian-lines.js` — port bend logic from `cca3c36:site/components/MondrianLines.tsx` + `site/lib/motion.ts`
+- [x] A1. Add `css/tokens.css` + `css/grid.css` ported from reference tokens/globals (HTML, not React)
+- [x] A2. Add `js/mondrian-lines.js` — port bend logic from `cca3c36:site/components/MondrianLines.tsx` + `site/lib/motion.ts`
 - [ ] A3. Add `js/diagram.js` — port hero diagram from `cca3c36:site/components/Diagram.tsx`
 - [ ] A4. Build shared HTML partials or consistent nav/footer pattern across pages
 - [ ] A5. Deduplicate assets: script or manifest mapping `assets/` ← `Resources/webflow/` (one copy per hash)
@@ -299,11 +299,10 @@ Report to Priyal:
 
 ## Notes for next run
 
-- Loop plan created. No migration work started yet.
-- Tick interval: **5m**. Concurrency lock at `.loop/portfolio-v2.lock` (10m stale).
-- Design reference: `claude/new-branch-oys0jm` @ `cca3c36` — port UI to HTML only.
-- First task when automation starts: **A1** (CSS tokens + grid foundation).
-- Homepage copy decision pending: Webflow verbatim vs Mondrian shell copy — default to **Webflow verbatim** until Priyal says otherwise.
+- **Iteration 2 done:** A2 — `js/motion.js` + `js/mondrian-lines.js` (GSAP line bend, port of MondrianLines.tsx).
+- **Next task:** A3 — `js/diagram.js` (hero overlapping circles).
+- Wire scripts on pages when shell HTML is built (A4+); requires GSAP CDN + motion.js + mondrian-lines.js.
+- Homepage copy: default **Webflow verbatim** until Priyal says otherwise.
 
 ---
 

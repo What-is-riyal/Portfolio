@@ -4,7 +4,7 @@
 **Trigger:** Every **5 minutes** (local `/loop 5m` or Cursor Automation).  
 **Tick budget:** One iteration must finish within **5 minutes** (hard stop at **7 minutes**).  
 **Last updated:** 2026-08-06  
-**Iteration:** 6  
+**Iteration:** 7  
 **Lock status:** idle *(do not edit by hand while a run is active)*
 
 ---
@@ -104,7 +104,7 @@ Update checkboxes each iteration. **One page (or one clear sub-task) per loop pa
 
 ### Phase B — Webflow pages (content verbatim)
 - [x] B1. `about.html`
-- [ ] B2. `play.html`
+- [x] B2. `play.html`
 - [ ] B3. `work/razorpay-d2c.html`
 - [ ] B4. `work/razorpay-website-evaluation.html`
 - [ ] B5. `work/razorpay-onboarding.html` *(strip password-gate markup from export)*
@@ -299,10 +299,8 @@ Report to Priyal:
 
 ## Notes for next run
 
-- **Iteration 5 done:** A5 — `scripts/build-asset-manifest.py`, `assets/manifest.json`, 150 unique images copied to `assets/webflow/` (~33MB dedupe savings).
-- **Phase A complete.** Next: B1 — rebuild `about.html` (Webflow body verbatim + v2 shell).
-- **Loop gap:** Ticks 5–25 were no-ops (no agent session). Work resumes when chat is active.
-- Google Scholar URL in shell is placeholder — confirm with Priyal when wiring pages.
+- **Iteration 7 done:** B2 — `play.html` rebuilt (9 project cards, Webflow copy + links verbatim, CDN thumbs).
+- **Next task:** B3 — `work/razorpay-d2c.html`.
 - Homepage copy: default **Webflow verbatim** until Priyal says otherwise.
 
 ---

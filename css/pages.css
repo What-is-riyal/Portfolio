@@ -71,3 +71,85 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Play page */
+
+.page-play {
+  padding-top: 14vh;
+  padding-bottom: 8vh;
+}
+
+.play-intro {
+  margin-bottom: clamp(40px, 8vh, 96px);
+}
+
+.play-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.play-card {
+  display: block;
+  min-height: 280px;
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid var(--line-color);
+  background-color: var(--white);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+  transition: background-color 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.play-card:hover,
+.play-card:focus-visible {
+  background-color: rgba(26, 63, 158, 0.06);
+}
+
+.play-card h2 {
+  font-family: var(--font-grotesk);
+  font-size: var(--text-row);
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.play-card .play-thumb {
+  font-family: var(--font-fraunces);
+  font-size: var(--text-prose);
+  font-weight: 340;
+  line-height: 1.45;
+  max-width: 34ch;
+  margin-bottom: 16px;
+}
+
+.play-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.play-keywords span {
+  font-family: var(--font-grotesk);
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--grey);
+  padding: 4px 8px;
+  border: 1px solid var(--line-color);
+}
+
+.play-card--boldband { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f6f6ce17fe015d164e733bd_boldband%20square.png"); }
+.play-card--btp { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/65b450b232059a97872aa807_BTP.png"); }
+.play-card--stp { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f9921b619c42e25759540c4_stp(2).png"); }
+.play-card--3d { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f988424fd5d349500ec0b70_chair.png"); }
+.play-card--singer { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f99863096247310ea2ad95d_singer%20square(3).png"); }
+.play-card--minim { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f9878ba52db65191ee323e3_minim%202.png"); }
+.play-card--haitrie { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f9884249ff75672bc2a2a64_boldband%20square.png"); }
+.play-card--bbi { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f988423a9472e241ce546ae_bbi.png"); }
+.play-card--toothbrush { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f98842666be5a2279ac9292_toothbrush.png"); }
+
+@media (max-width: 767px) {
+  .play-grid {
+    grid-template-columns: 1fr;
+  }
+}

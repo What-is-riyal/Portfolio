@@ -4,7 +4,7 @@
 **Trigger:** Every **5 minutes** (local `/loop 5m` or Cursor Automation).  
 **Tick budget:** One iteration must finish within **5 minutes** (hard stop at **7 minutes**).  
 **Last updated:** 2026-08-06  
-**Iteration:** 5  
+**Iteration:** 6  
 **Lock status:** idle *(do not edit by hand while a run is active)*
 
 ---
@@ -103,7 +103,7 @@ Update checkboxes each iteration. **One page (or one clear sub-task) per loop pa
 - [x] A5. Deduplicate assets: script or manifest mapping `assets/` ← `Resources/webflow/` (one copy per hash)
 
 ### Phase B — Webflow pages (content verbatim)
-- [ ] B1. `about.html`
+- [x] B1. `about.html`
 - [ ] B2. `play.html`
 - [ ] B3. `work/razorpay-d2c.html`
 - [ ] B4. `work/razorpay-website-evaluation.html`

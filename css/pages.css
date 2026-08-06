@@ -1,17 +1,92 @@
-/* Page layouts — Mondrian shell + Webflow content (no Webflow class soup) */
+/* Page layouts — Copilot atmosphere + Webflow content (no Webflow class soup) */
 
 /* ------------------------------------------------------------------ */
 /* Homepage                                                           */
 /* ------------------------------------------------------------------ */
 
+.page-home {
+  background: var(--paper);
+}
+
+.page-home .grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+/* Wavy rails read on both dark hero and paper body */
+.page-home .site-lines {
+  mix-blend-mode: difference;
+  opacity: 0.55;
+}
+
+.page-home .site-nav {
+  color: #fff;
+}
+.page-home .site-nav__brand { color: #fff; }
+.page-home .site-nav__links a { color: rgba(255, 255, 255, 0.72); }
+.page-home .site-nav__links a:hover,
+.page-home .site-nav__links a.is-active { color: var(--glow-soft); }
+
+.page-home.is-scrolled-past-hero .site-nav { color: var(--ink); }
+.page-home.is-scrolled-past-hero .site-nav__brand { color: var(--ink); }
+.page-home.is-scrolled-past-hero .site-nav__links a { color: rgba(11, 11, 12, 0.72); }
+.page-home.is-scrolled-past-hero .site-nav__links a:hover,
+.page-home.is-scrolled-past-hero .site-nav__links a.is-active { color: var(--glow); }
+
 .home-hero {
-  min-height: 88vh;
+  position: relative;
+  min-height: 100vh;
   align-items: center;
   padding-top: 14vh;
+  padding-bottom: 10vh;
+  background: var(--ink);
+  color: #fff;
+  overflow: hidden;
+}
+
+.home-hero__orb {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 113, 255, 0.32), transparent 65%);
+  top: 8%;
+  right: -18vw;
+  filter: blur(20px);
+  pointer-events: none;
+  animation: home-orb-drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes home-orb-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-6vw, 6vh) scale(1.12); }
 }
 
 .home-hero__label {
   margin-bottom: clamp(20px, 3vh, 32px);
+}
+
+.home-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-archivo);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.home-hero__eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--glow-soft);
 }
 
 .home-hero__photo {
@@ -21,11 +96,14 @@
   border-radius: 50%;
   display: block;
   margin-bottom: clamp(20px, 3vh, 28px);
+  box-shadow: 0 0 0 1px rgba(157, 145, 255, 0.35);
 }
 
 .home-hero__lead {
   margin-bottom: clamp(20px, 3vh, 28px);
   max-width: 22ch;
+  color: #fff;
+  font-weight: 400;
 }
 
 .home-hero__bio {
@@ -33,10 +111,23 @@
   flex-direction: column;
   gap: 1.25em;
   margin-bottom: clamp(24px, 4vh, 40px);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.home-hero__bio strong {
+  color: #fff;
+  font-weight: 600;
 }
 
 .home-hero__diagram {
   align-self: center;
+  position: relative;
+  z-index: 1;
+}
+
+.home-hero .hero-diagram {
+  filter: invert(1) hue-rotate(180deg);
+  opacity: 0.92;
 }
 
 .home-keywords {
@@ -49,18 +140,29 @@
 
 .home-keywords li {
   font-family: var(--font-archivo);
-  font-size: var(--text-label);
+  font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: var(--track-label);
-  color: rgba(11, 11, 12, 0.72);
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.8);
   padding: 6px 10px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .home-keywords li:first-child {
-  border-color: rgba(79, 70, 229, 0.45);
-  color: var(--glow);
+  border-color: rgba(157, 145, 255, 0.55);
+  color: var(--glow-soft);
+}
+
+.home-work,
+.home-book {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.home-work__row + .home-work__row {
+  border-top: 1px solid var(--border);
+  padding-top: clamp(28px, 4vh, 48px);
 }
 
 .home-work__label,
@@ -248,7 +350,7 @@
 
 .play-card:hover,
 .play-card:focus-visible {
-  background-color: rgba(26, 63, 158, 0.06);
+  background-color: rgba(79, 70, 229, 0.06);
 }
 
 .play-card h2 {

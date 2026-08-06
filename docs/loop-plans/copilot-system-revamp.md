@@ -4,7 +4,7 @@
 **Trigger:** `/loop 30m` — sentinel `AGENT_LOOP_TICK_copilot_revamp`  
 **Tick budget:** one phase slice per 30m wake (max ~15–20 min work; leave headroom)  
 **Last updated:** 2026-08-07  
-**Iteration:** 1  
+**Iteration:** 2  
 **Lock:** `.loop/copilot-revamp.lock` (PID + started ISO; stale after 25m)
 
 ---
@@ -65,13 +65,13 @@ Microsoft pages: chrome/token restore only; no content edits.
 - [x] Smoke: homepage + Copilot load without broken CSS
 - [x] Commit + push
 
-### Phase B — Homepage ← next
-- [ ] Restyle `index.html` + `css/pages.css` home sections to Copilot atmosphere (dark hero optional OR light paper with glow accents — prefer Copilot-like dark intro band + paper body, or full paper with indigo accents; keep wavy lines)
-- [ ] Work ledger, about blurb, wall/contact use Archivo/Fraunces + glow
-- [ ] Browser check desktop + narrow
-- [ ] Commit + push
+### Phase B — Homepage ← DONE iter 2
+- [x] Restyle `index.html` + `css/pages.css` home sections to Copilot atmosphere (dark hero optional OR light paper with glow accents — prefer Copilot-like dark intro band + paper body, or full paper with indigo accents; keep wavy lines)
+- [x] Work ledger, about blurb, wall/contact use Archivo/Fraunces + glow
+- [x] Browser check desktop + narrow
+- [x] Commit + push
 
-### Phase C — About / Play / Resume
+### Phase C — About / Play / Resume ← next
 - [ ] Restyle `about.html`, `play.html`, `resume.html` to same system
 - [ ] Keep wavy lines where they already exist or add sparingly
 - [ ] Commit + push
@@ -126,6 +126,7 @@ Do **one or two pages per tick** max. Restyle chrome/CSS only; Webflow body copy
 |------|-----|-------|--------|
 | 0 | 2026-08-06 | plan + arm loop | armed |
 | 1 | 2026-08-06 | Phase A foundation | tokens/shell/fonts Copilot; wavy lines kept; Copilot indigo restored |
+| 2 | 2026-08-06 | Phase B homepage | dark Copilot hero + grain/orb; wavy lines via difference blend; paper work ledger |
 
 ---
 

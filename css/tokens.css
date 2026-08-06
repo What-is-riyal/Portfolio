@@ -1,27 +1,39 @@
-/* Design tokens — v2 Mondrian system. Ported from cca3c36:site/styles/tokens.css */
+/* Design tokens — Copilot showpiece system (sitewide).
+   Source of truth: work/microsoft-copilot-trust.html (original indigo / Archivo / Fraunces).
+   Mondrian wavy rails stay; palette + type follow Copilot. */
 
 :root {
-  /* Fonts (plain HTML — load Fraunces + Space Grotesk via link in HTML) */
+  /* Type: Archivo = structure UI. Fraunces = voice / italic emphasis. */
+  --font-archivo: 'Archivo', 'Helvetica Neue', sans-serif;
   --font-fraunces: 'Fraunces', Georgia, serif;
-  --font-grotesk: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+  /* Compat aliases used across existing CSS */
+  --font-grotesk: var(--font-archivo);
+  --font-sans: var(--font-archivo);
+  --font-serif: var(--font-fraunces);
 
-  /* The locked palette. Do not add colors. */
   --white: #ffffff;
-  --ink: #1a1a18;
+  --paper: #ffffff;
+  --ink: #0b0b0c;
   --grey: #6b6e68;
-  --red: #d42a20;     /* punctuation only */
-  --yellow: #efc020;  /* punctuation only */
-  --blue: #1a3f9e;    /* the working accent: nav, links, emphasis, diagram primary */
+  --muted: #6b6e68;
 
-  /* Grid lines: 1px solid or 1.5px dotted, ink at low opacity. */
-  --line-alpha: 0.3;
-  --line-color: rgba(26, 26, 24, var(--line-alpha));
+  /* Working accent (Copilot glow) */
+  --glow: #4f46e5;
+  --glow-soft: #9d91ff;
+  --blue: var(--glow); /* compat: former Mondrian accent */
 
-  /* Type scale. Fraunces = her voice. Space Grotesk = structure. Nothing in between. */
+  /* Sparse punctuation (retired as primary; kept for mark code paths) */
+  --red: #4f46e5;
+  --yellow: #9d91ff;
+
+  --line-alpha: 0.22;
+  --line-color: rgba(11, 11, 12, var(--line-alpha));
+  --border: rgba(11, 11, 12, 0.18);
+
   --text-hero: clamp(2.5rem, 5.5vw, 5rem);
   --text-sub: clamp(1.25rem, 2vw, 1.6rem);
   --text-opener: clamp(1.75rem, 3vw, 2.5rem);
-  --text-prose: clamp(1.2rem, 1.5vw, 1.4rem);
+  --text-prose: clamp(1.125rem, 1.4vw, 1.25rem);
   --text-row: clamp(1.35rem, 1.9vw, 1.75rem);
   --text-nav: 0.875rem;
   --text-tech: 0.8125rem;
@@ -31,13 +43,14 @@
   --track-label: 0.14em;
   --track-meta: 0.12em;
 
-  /* Frame geometry */
   --gutter-col: clamp(56px, 6vw, 104px);
   --gutter-row: clamp(72px, 8vh, 140px);
   --page-margin: minmax(32px, 1fr);
   --cell-pad: clamp(20px, 2.5vw, 40px);
 
-  /* Primary mark sizes */
   --mark-red: 11px;
   --mark-yellow: 24px;
+
+  --radius-card: 12px;
+  --radius-soft: 16px;
 }

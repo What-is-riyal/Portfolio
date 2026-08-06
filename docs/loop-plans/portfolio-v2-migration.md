@@ -1,11 +1,11 @@
 # Loop plan: Portfolio v2 (HTML migration)
 
 **Branch:** `portfolio-v2-2026-08-06`  
-**Trigger:** **STOPPED** (2026-08-06). Do not re-arm the auto loop.  
-**Tick budget:** n/a — design rebuild is human-driven from here.  
-**Last updated:** 2026-08-06  
-**Iteration:** 16 (last auto tick)  
-**Lock status:** idle — loop killed; design rebuild in progress
+**Trigger:** **SUPERSEDED** (2026-08-07) — see `docs/loop-plans/copilot-system-revamp.md`  
+**Tick budget:** n/a  
+**Last updated:** 2026-08-07  
+**Iteration:** 16 (last auto tick of prior Mondrian migration)  
+**Lock status:** idle — design target moved to Copilot language sitewide
 
 ---
 

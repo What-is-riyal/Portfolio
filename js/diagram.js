@@ -15,7 +15,7 @@
   const ORIGIN = `${CX} ${CY}`;
 
   const labelStyle =
-    'font-family: var(--font-grotesk), sans-serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase';
+    'font-family: var(--font-archivo), sans-serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase';
 
   function svgMarkup() {
     return `
@@ -40,12 +40,12 @@
   </g>
   <g data-hover="research">
     <g data-drift="research">
-      <circle cx="${CX}" cy="${CY}" r="7" fill="var(--blue)"/>
+      <circle cx="${CX}" cy="${CY}" r="7" fill="var(--glow)"/>
     </g>
   </g>
   <text x="104" y="${CY + 4}" text-anchor="middle" fill="var(--ink)" style="${labelStyle}">people</text>
   <text x="316" y="${CY + 4}" text-anchor="middle" fill="var(--ink)" style="${labelStyle}">technology</text>
-  <text x="${CX}" y="${CY + 30}" text-anchor="middle" fill="var(--blue)" style="${labelStyle}">research</text>
+  <text x="${CX}" y="${CY + 30}" text-anchor="middle" fill="var(--glow)" style="${labelStyle}">research</text>
   <text x="${CX}" y="34" text-anchor="middle" fill="var(--grey)" style="${labelStyle}">policy</text>
 </svg>`;
   }

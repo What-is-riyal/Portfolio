@@ -4,7 +4,7 @@
 **Trigger:** Every **5 minutes** (local `/loop 5m` or Cursor Automation).  
 **Tick budget:** One iteration must finish within **5 minutes** (hard stop at **7 minutes**).  
 **Last updated:** 2026-08-06  
-**Iteration:** 3  
+**Iteration:** 4  
 **Lock status:** idle *(do not edit by hand while a run is active)*
 
 ---

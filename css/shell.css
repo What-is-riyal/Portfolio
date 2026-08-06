@@ -1,0 +1,61 @@
+/* Site shell — fixed nav + contact footer. Ported from cca3c36:site/app/page.tsx nav/contact */
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px clamp(20px, 4vw, 56px);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.site-nav__brand {
+  pointer-events: auto;
+  letter-spacing: 0.04em;
+}
+
+.site-nav__links {
+  display: flex;
+  gap: clamp(16px, 2vw, 32px);
+  list-style: none;
+  pointer-events: auto;
+}
+
+.site-nav__links a.is-active {
+  color: var(--blue);
+}
+
+.site-footer {
+  padding-bottom: 12vh;
+}
+
+.site-footer__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.site-footer__meta {
+  align-self: end;
+}
+
+@media (max-width: 767px) {
+  .site-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .site-nav__links {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+}

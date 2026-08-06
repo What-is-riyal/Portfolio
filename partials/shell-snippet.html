@@ -1,0 +1,26 @@
+<!--
+  v2 Mondrian shell — copy/paste reference for Phase B page builds.
+  Paths: use base="" at repo root, base="../" under work/.
+  Wire shell.js for runtime nav/footer, or paste the static blocks below.
+-->
+
+<!-- HEAD (inside <head>, replace {base}) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,360&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{base}css/grid.css">
+<link rel="stylesheet" href="{base}css/shell.css">
+
+<!-- BODY open -->
+<body data-shell-base="{base}" data-shell-page="{page}">
+  <div class="page" style="position:relative;width:100%">
+    <div id="site-nav"></div>
+    <main id="main" class="site-content">
+      <!-- page body (Webflow copy verbatim) -->
+    </main>
+    <div id="site-footer"></div>
+  </div>
+  <script src="{base}js/shell.js" defer></script>
+</body>
+
+<!-- page ids for data-shell-page: work | play | about | resume | (omit on case-study pages) -->

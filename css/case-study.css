@@ -1,0 +1,96 @@
+/* Case study pages — minimal layout for verbatim Webflow body transplants */
+
+.page-case {
+  padding-top: 12vh;
+  padding-bottom: 8vh;
+}
+
+.page-case img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+.page-case h1,
+.page-case .heading-4,
+.page-case ._24dmbold,
+.page-case ._20-europa-heading {
+  font-family: var(--font-fraunces);
+  font-weight: 340;
+  line-height: 1.15;
+  margin: 1.2em 0 0.6em;
+}
+
+.page-case .heading-4 {
+  font-size: var(--text-opener);
+}
+
+.page-case .text-block-29,
+.page-case .description,
+.page-case ._18_inter-2,
+.page-case ._18_inter,
+.page-case ._20-inter,
+.page-case .quote,
+.page-case .quote.d2c,
+.page-case .sideblock18 div,
+.page-case .div-block-127 {
+  font-family: var(--font-fraunces);
+  font-size: var(--text-prose);
+  font-weight: 340;
+  line-height: 1.55;
+  max-width: 65ch;
+}
+
+.page-case .sg-label,
+.page-case .meesho-skills-2,
+.page-case ._16-europa,
+.page-case .caption {
+  font-family: var(--font-grotesk);
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--grey);
+}
+
+.page-case .card.objectives {
+  border: 1px solid var(--line-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.page-case .section-18.rzp {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--line-color);
+}
+
+.page-case .text-block-60 {
+  margin-top: 2rem;
+  font-family: var(--font-fraunces);
+  font-size: var(--text-prose);
+}
+
+.page-case .footer2,
+.page-case .closing {
+  margin-top: 3rem;
+  font-family: var(--font-fraunces);
+  font-size: var(--text-prose);
+}
+
+.page-case .sidebox-container-2,
+.page-case .side-bar-box {
+  margin-bottom: 2.5rem;
+}
+
+.page-case .div-block-185 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .page-case .div-block-185 {
+    grid-template-columns: 1fr;
+  }
+}

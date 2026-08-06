@@ -6,7 +6,7 @@
 
 .cs-hero {
   padding-top: 14vh;
-  align-items: end;
+  align-items: start;
 }
 
 .cs-hero__org {
@@ -30,8 +30,9 @@
   flex-direction: column;
   gap: 18px;
   padding: var(--cell-pad);
+  padding-top: calc(var(--cell-pad) + var(--text-label) + clamp(16px, 3vh, 28px) + 0.35em);
   grid-column: c3 / page-r;
-  align-self: end;
+  align-self: start;
 }
 
 .cs-meta dt {
@@ -92,27 +93,173 @@
   margin-bottom: 0;
 }
 
+/* Figures */
+
 .cs-figure {
   margin: clamp(24px, 4vh, 48px) 0;
 }
 
 .cs-figure img {
   width: 100%;
-  max-width: 860px;
+  max-width: min(860px, 100%);
   height: auto;
   display: block;
   border: 1px solid var(--line-color);
+  background: var(--white);
 }
 
 .cs-figure--pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  max-width: 860px;
+  max-width: min(860px, 100%);
 }
 
 .cs-figure--pair img {
+  width: 100%;
   max-width: none;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Phone / story frames — never full bleed */
+.cs-figure--phone {
+  max-width: 280px;
+}
+
+.cs-figure--phone img {
+  max-width: 280px;
+  width: 100%;
+}
+
+.cs-figure--phone.cs-figure--pair,
+.cs-figure--devices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 220px));
+  gap: 16px;
+  max-width: 720px;
+  align-items: start;
+}
+
+.cs-figure--phone.cs-figure--pair img,
+.cs-figure--devices img {
+  max-width: 220px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cs-figure--device img {
+  max-width: 320px;
+  width: 100%;
+}
+
+.cs-figure--wide {
+  max-width: min(1080px, 100%);
+}
+
+.cs-figure--wide img {
+  max-width: 100%;
+}
+
+.cell-full .cs-figure:not(.cs-figure--phone):not(.cs-figure--devices) {
+  max-width: min(1080px, 100%);
+}
+
+.cell-full .cs-figure:not(.cs-figure--phone):not(.cs-figure--devices) img {
+  max-width: 100%;
+}
+
+.cs-figure--logo img {
+  max-width: 160px;
+  width: auto;
+  max-height: 72px;
+  object-fit: contain;
+  border: 0;
+}
+
+/* App icon rows (personas, etc.) */
+.cs-app-icons {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin: 0.5rem 0 1.25rem;
+  padding: 0;
+}
+
+.cs-app-icons li {
+  margin: 0;
+}
+
+.cs-app-icons img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+  border: 1px solid var(--line-color);
+  background: var(--white);
+  padding: 4px;
+}
+
+/* Persona cards */
+.cs-persona {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 36px);
+  align-items: start;
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid var(--line-color);
+  margin-bottom: clamp(20px, 3vh, 32px);
+  max-width: 920px;
+}
+
+.cs-persona__photo {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--line-color);
+}
+
+.cs-persona__name {
+  font-family: var(--font-fraunces);
+  font-size: var(--text-row);
+  font-weight: 360;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.cs-persona__meta {
+  font-family: var(--font-grotesk);
+  font-size: var(--text-tech);
+  color: var(--grey);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.cs-persona .voice-prose {
+  max-width: 52ch;
+}
+
+.cs-benefit {
+  display: grid;
+  grid-template-columns: minmax(100px, 140px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  padding: clamp(16px, 2vw, 24px);
+  border: 1px solid var(--line-color);
+  margin-bottom: 16px;
+  max-width: 860px;
+}
+
+.cs-benefit img {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  display: block;
+  border: 0;
 }
 
 .cs-cards {
@@ -183,8 +330,17 @@
   }
 
   .cs-cards,
-  .cs-figure--pair {
+  .cs-figure--pair:not(.cs-figure--phone) {
     grid-template-columns: 1fr;
+  }
+
+  .cs-persona,
+  .cs-benefit {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-persona__photo {
+    max-width: 160px;
   }
 
   .cs-hero__title {

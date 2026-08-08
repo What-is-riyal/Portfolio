@@ -10,7 +10,7 @@
  */
 (function () {
   const DARK_SEL =
-    '.cs-section--dark, .cs-close, .strip-dark, .fold-dark, .ladder-track, .closing, .life-track';
+    '.cs-section--dark, .cs-close, .strip-dark, .fold-dark, .ladder-track, .closing, .life-track, .cs-quote-band, .hero-dark, .snapshot';
 
   function shorten(text, max) {
     const t = String(text || '').replace(/\s+/g, ' ').trim();
@@ -262,6 +262,97 @@
       syncProgress();
     }
 
+    function parseRgb(color) {
+      if (!color || color === 'transparent') return null;
+      const m = String(color).match(/rgba?\(([^)]+)\)/i);
+      if (!m) return null;
+      const p = m[1].split(',').map((s) => parseFloat(s.trim()));
+      if (p.length < 3 || Number.isNaN(p[0])) return null;
+      const a = p.length > 3 && !Number.isNaN(p[3]) ? p[3] : 1;
+      if (a < 0.12) return null;
+      return { r: p[0], g: p[1], b: p[2] };
+    }
+
+    function isDarkRgb(rgb) {
+      // Relative luminance — ink surfaces in this system sit near #0B0B0C
+      const lum = (0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b) / 255;
+      return lum < 0.42;
+    }
+
+    function yOverFooter(y) {
+      if (!footEl) return false;
+      const fr = footEl.getBoundingClientRect();
+      return y >= fr.top && y <= fr.bottom;
+    }
+
+    function sampleOverDark(x, y) {
+      if (yOverFooter(y)) return false;
+      if (x < 0 || y < 0 || x >= window.innerWidth || y >= window.innerHeight) {
+        return false;
+      }
+
+      const stack = document.elementsFromPoint(x, y);
+      for (let i = 0; i < stack.length; i++) {
+        const el = stack[i];
+        if (
+          el.closest(
+            '#section-rail, #section-rail-mobile, .site-nav, #site-nav, .cs-progress, .nav-shell'
+          )
+        ) {
+          continue;
+        }
+        if (el.closest('.site-footer, #site-footer, footer')) return false;
+
+        // Known ink bands win even when nested wrappers are transparent
+        if (el.closest(DARK_SEL)) return true;
+
+        const bg = parseRgb(getComputedStyle(el).backgroundColor);
+        if (bg) return isDarkRgb(bg);
+      }
+
+      const bodyBg = parseRgb(getComputedStyle(document.body).backgroundColor);
+      return !!(bodyBg && isDarkRgb(bodyBg));
+    }
+
+    function syncContrast() {
+      const navBox = nav.getBoundingClientRect();
+      // Sample content just to the right of the rail, not the labels themselves
+      const sampleX = Math.min(
+        Math.max(navBox.right + 28, 200),
+        Math.floor(window.innerWidth * 0.42)
+      );
+      const links = nav.querySelectorAll('a[data-target]');
+      let darkCount = 0;
+      links.forEach((a) => {
+        const r = a.getBoundingClientRect();
+        const yTop = r.top + Math.min(6, r.height * 0.25);
+        const yMid = r.top + r.height / 2;
+        const yBot = r.bottom - Math.min(6, r.height * 0.25);
+        const darkTop = sampleOverDark(sampleX, yTop);
+        const darkMid = sampleOverDark(sampleX, yMid);
+        const darkBot = sampleOverDark(sampleX, yBot);
+        const darkVotes = (darkTop ? 1 : 0) + (darkMid ? 1 : 0) + (darkBot ? 1 : 0);
+        const overSeam = darkVotes > 0 && darkVotes < 3;
+        const overDark = darkVotes >= 2 || overSeam;
+        a.classList.toggle('is-over-seam', overSeam);
+        a.classList.toggle('is-over-dark', overDark);
+        if (overDark) darkCount += 1;
+      });
+      // Only flip spine when the rail is clearly on ink (avoid mixed seams)
+      const darkRatio = links.length ? darkCount / links.length : 0;
+      nav.classList.toggle('is-mostly-dark', darkRatio >= 0.85);
+
+      // Mobile bar: sample at its own vertical center
+      if (mobile) {
+        const mr = mobile.getBoundingClientRect();
+        const overDark = sampleOverDark(
+          Math.floor(window.innerWidth * 0.5),
+          mr.top + mr.height / 2
+        );
+        mobile.classList.toggle('is-on-dark', overDark);
+      }
+    }
+
     function syncChrome() {
       let visible = true;
       if (gate) {
@@ -274,12 +365,7 @@
       }
       nav.classList.toggle('is-visible', visible);
       mobile.classList.toggle('is-visible', visible);
-
-      const chapter = tree.find((c) => c.id === activeChapterId);
-      const el = chapter ? chapter.el : null;
-      const onDark = !!(el && (el.matches(DARK_SEL) || el.closest(DARK_SEL)));
-      nav.classList.toggle('is-on-dark', onDark);
-      mobile.classList.toggle('is-on-dark', onDark);
+      if (visible) syncContrast();
     }
 
     function onScroll() {

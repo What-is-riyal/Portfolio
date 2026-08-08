@@ -1,6 +1,5 @@
 /**
- * Homepage boot — hero diagram + nav contrast on scroll.
- * Mondrian rails removed; Copilot full-width layout.
+ * Homepage boot — hero diagram backdrop + nav contrast on scroll.
  */
 (function () {
   function bootNavContrast() {
@@ -27,9 +26,14 @@
   }
 
   function boot() {
-    const diagramHost = document.querySelector('[data-diagram]');
-    if (diagramHost && globalThis.Diagram) {
-      Diagram.mountAndInit(diagramHost);
+    const hero = document.querySelector('.home-hero');
+    if (hero && globalThis.Diagram && typeof Diagram.mountBackdrop === 'function') {
+      Diagram.mountBackdrop(hero);
+    } else {
+      const diagramHost = document.querySelector('[data-diagram]');
+      if (diagramHost && globalThis.Diagram) {
+        Diagram.mountAndInit(diagramHost);
+      }
     }
     bootNavContrast();
     bootHeroEntrance();

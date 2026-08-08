@@ -11,10 +11,12 @@
   <link rel="stylesheet" href="../css/grid.css?v=20260808a">
   <link rel="stylesheet" href="../css/shell.css?v=20260808a">
   <link rel="stylesheet" href="../css/case-study.css?v=20260808a">
+  <link rel="stylesheet" href="../css/section-rail.css?v=20260808d">
 </head>
 <body class="page-case-study" data-shell-base="../" data-shell-page="work">
   <div class="grain" aria-hidden="true"></div>
   <div class="cs-progress" id="cs-progress" aria-hidden="true"></div>
+  <nav id="section-rail" class="section-rail" aria-label="On this page"></nav>
   <div class="page" style="position:relative;width:100%">
     <div id="site-nav"></div>
 
@@ -57,7 +59,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="background">
+      <section class="cs-section" id="background" data-rail="Overview">
         <div class="cell-a">
           <p class="cs-kicker">Project Background</p>
           <h2 class="cs-section__title">Project Background</h2>
@@ -72,7 +74,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="problem">
+      <section class="cs-section" id="problem" data-rail-sub="Problem" data-rail-parent="background">
         <div class="cell-a">
           <p class="cs-kicker">Understanding the problem</p>
           <h2 class="cs-section__title">Understanding the problem</h2>
@@ -89,7 +91,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="learnings-early">
+      <section class="cs-section" id="learnings-early" data-rail="Learnings">
         <div class="cell-a">
           <p class="cs-kicker">Learnings</p>
           <h2 class="cs-section__title">Learnings</h2>
@@ -106,7 +108,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="methodology">
+      <section class="cs-section" id="methodology" data-rail="Methodology">
         <div class="cell-a">
           <p class="cs-kicker">Methodology</p>
           <h2 class="cs-section__title">Methodology</h2>
@@ -114,7 +116,7 @@
             <p>1. Analysed support tickets to create buckets of problems and metrics to dientify drop off points<br>2. Conducted teardown workshop for granular friction points<br>3. Conducted role play to learn from offline interaction<br>4. Established fundamental design principles to follow brainstorming</p>
           </div>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">1. Analysing support tickets</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="onb-tickets" data-rail-sub="Support tickets">1. Analysing support tickets</h3>
           <div class="voice-prose">
             <p>Analysed 150+ support tickets to <strong>identify main problem buckets</strong> and the why people get stuck.<br>The current onboarding forms were long, complex, and jargon-filled. Merchants felt overwhelmed by the experience and were seeking human assistance.</p>
           </div>
@@ -125,12 +127,12 @@
             <img src="../assets/webflow/5655d2b7/65b01db796011d85d62fa0cf_Screenshot 2024-01-24 at 1.42.31 AM.png" alt="" loading="lazy">
           </figure>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">2. Workshop</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="onb-workshop" data-rail-sub="Workshop">2. Workshop</h3>
           <div class="voice-prose">
             <p>To identify a granular level of hurdles, I conducted an empathy workshop with product, design and writing teams where everyone wore the hat of a merchant and identified friction points. We arrived at a priority list of problems through dot voting and support ticket analysis.</p>
           </div>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">3. Competitor Analysis</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="onb-competitors" data-rail-sub="Competitors">3. Competitor Analysis</h3>
           <div class="voice-prose">
             <p>To understand the state of art of the KYC onboarding forms, we conducted a competitor analysis and studied the features, fields they require and how they are phrased.</p>
           </div>
@@ -143,14 +145,14 @@
             <li>Unsure of their progress through the onboarding process.</li>
           </ul>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">3. Role playing</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="onb-roleplay" data-rail-sub="Role playing">3. Role playing</h3>
           <div class="voice-prose">
             <p>To replicate how people fill forms offline with human assistance, we conducted a role play exercise of opening a bank account and analysed crucial points like the tone, the approach and manner of handholding.</p>
           </div>
         </div>
       </section>
 
-      <section class="cs-section cs-section--dark" id="principles">
+      <section class="cs-section cs-section--dark" id="principles" data-rail="Final Designs">
         <div class="cell-a">
           <p class="cs-kicker">Final Principles</p>
           <h2 class="cs-section__title">Final Principles</h2>
@@ -158,7 +160,7 @@
             <p>As we started brainstorming, we realised that to build trust and comfort while filling lengthy forms, we needed to design an experience that out user cohort was familiar with.<br>We conducted a <strong>role play activity</strong> among us to document how a Bank account is opened with a relationship manager. This formed the basis of our design principles.</p>
           </div>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">Mobile first</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="onb-mobile" data-rail-sub="Mobile first">Mobile first</h3>
           <div class="voice-prose">
             <p>Since mobile is the primary device for this cohort, optimise the entire form for this breakpoint. Previously our platform was optimised primarily for desktop.</p>
           </div>
@@ -166,7 +168,7 @@
             <img src="../assets/webflow/7a04f14c/65b102a3c025e3d164e25610_Screen Recording 2024-01-24 at 5.55.53 PM.gif" alt="" loading="lazy">
           </figure>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">Replicate human interaction</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="onb-human" data-rail-sub="Human interaction">Replicate human interaction</h3>
           <div class="voice-prose">
             <p>Display each field on a separate screen and framed as a question</p>
           </div>
@@ -174,7 +176,7 @@
             <img src="../assets/webflow/dcde97a5/65b13f5de48768b0c39d8e37_Screenshot 2024-01-24 at 10.16.37 PM.png" alt="" loading="lazy">
           </figure>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">Progressive Disclosure</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="onb-progressive" data-rail-sub="Progressive disclosure">Progressive Disclosure</h3>
           <div class="voice-prose">
             <p>Follow progressive disclosure for each question to reduce the cognitive load</p>
           </div>
@@ -182,7 +184,7 @@
             <img src="../assets/webflow/73ec4f36/65b14205d2d821639563eea3_Screen Recording 2024-01-24 at 10.26.36 PM.gif" alt="" loading="lazy">
           </figure>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">Build Trust</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="onb-trust" data-rail-sub="Build trust">Build Trust</h3>
           <div class="voice-prose">
             <p>Add cautionary notes for sensitive questions to explain why the information was needed and how it would be used.</p>
           </div>
@@ -192,7 +194,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="usability">
+      <section class="cs-section" id="usability" data-rail="Usability test">
         <div class="cell-a">
           <p class="cs-kicker">Usability test</p>
           <h2 class="cs-section__title">Usability test</h2>
@@ -206,7 +208,7 @@
         </div>
       </section>
 
-      <section class="cs-section cs-section--dark" id="impact">
+      <section class="cs-section cs-section--dark" id="impact" data-rail="Impact">
         <div class="cell-a">
           <p class="cs-kicker">Impact</p>
           <h2 class="cs-section__title">Impact</h2>
@@ -222,7 +224,7 @@
         </div>
       </section>
 
-      <section class="cs-close" id="conclusion">
+      <section class="cs-close" id="conclusion" data-rail-skip>
         <div class="cell-a">
           <p class="cs-kicker">Learnings</p>
           <h2 class="cs-section__title">Learnings</h2>
@@ -239,5 +241,6 @@
   </div>
 
   <script src="../js/shell.js" defer></script>
+  <script src="../js/section-rail.js?v=20260808d" defer></script>
 </body>
 </html>

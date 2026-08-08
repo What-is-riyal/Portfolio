@@ -11,10 +11,12 @@
   <link rel="stylesheet" href="../css/grid.css?v=20260808a">
   <link rel="stylesheet" href="../css/shell.css?v=20260808a">
   <link rel="stylesheet" href="../css/case-study.css?v=20260808a">
+  <link rel="stylesheet" href="../css/section-rail.css?v=20260808d">
 </head>
 <body class="page-case-study" data-shell-base="../" data-shell-page="work">
   <div class="grain" aria-hidden="true"></div>
   <div class="cs-progress" id="cs-progress" aria-hidden="true"></div>
+  <nav id="section-rail" class="section-rail" aria-label="On this page"></nav>
   <div class="page" style="position:relative;width:100%">
     <div id="site-nav"></div>
 
@@ -57,7 +59,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="brief">
+      <section class="cs-section" id="brief" data-rail="Overview">
         <div class="cell-a">
           <p class="cs-kicker">Project Brief</p>
           <h2 class="cs-section__title">Project Brief</h2>
@@ -67,7 +69,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="objectives">
+      <section class="cs-section" id="objectives" data-rail="Objective">
         <div class="cell-a">
           <p class="cs-kicker">Objectives</p>
           <h2 class="cs-section__title">Objectives</h2>
@@ -79,7 +81,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="methodology">
+      <section class="cs-section" id="methodology" data-rail="Methodology">
         <div class="cell-a">
           <p class="cs-kicker">Methodology</p>
           <h2 class="cs-section__title">Methodology</h2>
@@ -91,7 +93,7 @@
             <img src="../assets/webflow/ef34baa6/5f494722662afb32ad1b5693_Frame 22(1).png" alt="stats" loading="lazy">
           </figure>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">Questionnaire</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="meesho-questionnaire" data-rail-sub="Questionnaire">Questionnaire</h3>
           <div class="voice-prose">
             <p>3 seperate questionnaires were made for the three different roles</p>
           </div>
@@ -128,7 +130,7 @@
             <p>Hureo<br>Lollipop</p>
           </div>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">Interviews</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="meesho-interviews" data-rail-sub="Interviews">Interviews</h3>
           <div class="voice-prose">
             <p><strong>10 Interviews</strong> were conducted over Google meet and phone call. The average duration was <strong>70 minutes</strong>. Each interview was transcribed for further analysis.</p>
           </div>
@@ -136,7 +138,7 @@
             <img src="../assets/webflow/815853f0/5f459fef667691339870e60e_Screenshot 2020-08-26 at 5.02.04 AM.png" alt="transcript format" loading="lazy">
           </figure>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">Report</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="meesho-report" data-rail-sub="Report">Report</h3>
           <div class="voice-prose">
             <p>Based on the insights and findings, a report was created which sheds light on</p>
             <p><strong>1.</strong> The <strong>difference in approach</strong> for vernacular based startups and companies which use vernacular languages as a feature.<br>
@@ -180,7 +182,7 @@
         </div>
       </section>
 
-      <section class="cs-section cs-section--dark" id="findings">
+      <section class="cs-section cs-section--dark" id="findings" data-rail="Insights">
         <div class="cell-a">
           <p class="cs-kicker">Top Findings</p>
           <h2 class="cs-section__title">Top Findings</h2>
@@ -203,7 +205,7 @@
         </div>
       </section>
 
-      <section class="cs-section cs-section--dark" id="impact">
+      <section class="cs-section cs-section--dark" id="impact" data-rail="Impact">
         <div class="cell-a">
           <p class="cs-kicker">Impact</p>
           <h2 class="cs-section__title">Impact</h2>
@@ -217,7 +219,7 @@
         </div>
       </section>
 
-      <section class="cs-close" id="internship">
+      <section class="cs-close" id="internship" data-rail-skip>
         <div class="cell-a">
           <p class="cs-kicker">Internship</p>
           <h2 class="cs-section__title">Internship</h2>
@@ -233,5 +235,6 @@
   </div>
 
   <script src="../js/shell.js" defer></script>
+  <script src="../js/section-rail.js?v=20260808d" defer></script>
 </body>
 </html>

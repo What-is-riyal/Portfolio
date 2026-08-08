@@ -10,10 +10,12 @@
   <link rel="stylesheet" href="../css/grid.css?v=20260808a">
   <link rel="stylesheet" href="../css/shell.css?v=20260808a">
   <link rel="stylesheet" href="../css/case-study.css?v=20260808a">
+  <link rel="stylesheet" href="../css/section-rail.css?v=20260808d">
 </head>
 <body class="page-case-study" data-shell-base="../" data-shell-page="work">
   <div class="grain" aria-hidden="true"></div>
   <div class="cs-progress" id="cs-progress" aria-hidden="true"></div>
+  <nav id="section-rail" class="section-rail" aria-label="On this page"></nav>
   <div class="page" style="position:relative;width:100%">
     <div id="site-nav"></div>
 
@@ -64,7 +66,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="background">
+      <section class="cs-section" id="background" data-rail="Overview">
         <div class="cell-a">
           <p class="cs-kicker">Project Background</p>
           <h2 class="cs-section__title">Project Background</h2>
@@ -79,7 +81,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="objectives">
+      <section class="cs-section" id="objectives" data-rail="Objectives">
         <div class="cell-a">
           <p class="cs-kicker">Objectives</p>
           <h2 class="cs-section__title">Objectives</h2>
@@ -100,7 +102,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="methodology">
+      <section class="cs-section" id="methodology" data-rail="Methodology">
         <div class="cell-a">
           <p class="cs-kicker">Methodology</p>
           <h2 class="cs-section__title">Methodology</h2>
@@ -112,7 +114,7 @@
             <img src="../assets/webflow/ee076f3a/694721c7d1a011b13239261b_Screenshot 2025-12-20 at 2.21.27 PM.png" alt="" loading="lazy">
           </figure>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">1. Merchant</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="d2c-merchant" data-rail-sub="Merchant">1. Merchant</h3>
           <div class="voice-prose">
             <p><strong>Study Design:</strong><br>Conducted 40+ in-depth interviews with merchant decision-makers across a stratified sample varying in Company Size, Purchase frequency, and industry categories</p>
             <p><strong>Interview Protocol</strong><br>• 50-minute semi-structured interview<br>1. Pain points<br>2. Piggy bank exercise to break down problem priority based on money allocated<br>2. Participatory design activity for ideal solution<br>3. Introduced our proposal<br>4. Willingness to pay</p>
@@ -122,7 +124,7 @@
             <img src="../assets/webflow/48ee7abd/694721c7b88c2622cd8c0855_Screenshot 2025-12-20 at 2.21.50 PM.png" alt="" loading="lazy">
           </figure>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">2. Consumer — Focus Group Discussions</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="d2c-fgd" data-rail-sub="Consumer FGDs">2. Consumer — Focus Group Discussions</h3>
           <div class="voice-prose">
             <p>FGDs were conducted to get a general user understanding and broad archetypes to create a more efficient survey.<br>Sessions employed journey mapping exercises, pain point exploration through storytelling, and progressive concept testing. The group dynamic enabled participants to build on and challenge each other's perspectives, revealing more nuanced opinions about the D2C shopping experience.</p>
           </div>
@@ -131,7 +133,7 @@
             <img src="../assets/webflow/d1325853/694721c751129a28092390b1_Screenshot 2025-12-20 at 2.22.14 PM.png" alt="" loading="lazy">
           </figure>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">2. Consumer — Survey</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="d2c-survey" data-rail-sub="Consumer survey">2. Consumer — Survey</h3>
           <div class="voice-prose">
             <p>Partnered with a market researcher to field a survey to 1,000+ respondents. The survey resulted in:</p>
           </div>
@@ -147,7 +149,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="outcome">
+      <section class="cs-section" id="outcome" data-rail="Outcome">
         <div class="cell-a">
           <p class="cs-kicker">Outcome</p>
           <h2 class="cs-section__title">Outcome</h2>
@@ -161,7 +163,7 @@
         </div>
       </section>
 
-      <section class="cs-section cs-section--dark" id="impact">
+      <section class="cs-section cs-section--dark" id="impact" data-rail="Impact">
         <div class="cell-a">
           <p class="cs-kicker">Impact</p>
           <h2 class="cs-section__title">Impact</h2>
@@ -176,7 +178,7 @@
         </div>
       </section>
 
-      <section class="cs-close" id="conclusion">
+      <section class="cs-close" id="conclusion" data-rail-skip>
         <div class="cell-a">
           <p class="cs-kicker">Conclusion &amp; learnings</p>
           <h2 class="cs-section__title">Conclusion &amp; learnings</h2>
@@ -192,5 +194,6 @@
   </div>
 
   <script src="../js/shell.js" defer></script>
+  <script src="../js/section-rail.js?v=20260808d" defer></script>
 </body>
 </html>

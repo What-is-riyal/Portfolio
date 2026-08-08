@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/grid.css?v=20260808a">
   <link rel="stylesheet" href="../css/shell.css?v=20260808a">
+  <link rel="stylesheet" href="../css/section-rail.css?v=20260808d">
   <style>
     /* Retention showpiece — Copilot family accents (content/interactives untouched) */
     :root {
@@ -319,6 +320,7 @@
     <div id="site-nav"></div>
 
   <div class="progress" id="progress"></div>
+  <nav id="section-rail" class="section-rail" aria-label="On this page"></nav>
 
   <!-- ============ HERO ============ -->
   <section class="hero-light">
@@ -367,7 +369,7 @@
   </section>
 
   <!-- ============ SETUP: from hypotheses to questions ============ -->
-  <section class="strip">
+  <section class="strip" id="context" data-rail="Context">
     <div class="container">
       <p class="kicker fx">Context</p>
       <h2 class="fx">Context</h2>
@@ -404,7 +406,7 @@
   </section>
 
   <!-- ============ METHOD ============ -->
-  <section class="strip" style="padding-top: 0;">
+  <section class="strip" id="method" style="padding-top: 0;" data-rail="Method">
     <div class="container">
       <p class="kicker fx">Starting from what was already known</p>
       <h2 class="fx">Starting from what was already known</h2>
@@ -420,12 +422,12 @@
       <div class="ph-grid">
         <div class="ph fx">
           <p class="ph-num">01</p>
-          <h3>36 moderated interviews</h3>
+          <h3 id="ret-interviews" data-rail-sub="Interviews">36 moderated interviews</h3>
           <p>One-on-one sessions with 4 to 6 participants from each of the six segments, recruited against actual usage patterns rather than self-description. Leaders and PMs were invited to listen in live, which meant the findings started doing their work weeks before any report existed.</p>
         </div>
         <div class="ph fx">
           <p class="ph-num">02</p>
-          <h3>A validation survey, 300+ responses</h3>
+          <h3 id="ret-survey" data-rail-sub="Survey">A validation survey, 300+ responses</h3>
           <p>The interview findings were mapped into a survey instrument and fielded across the cohorts. The purpose was discipline: the qualitative story was compelling, and compelling stories are exactly the ones worth checking against larger numbers before a team plans a semester around them.</p>
         </div>
       </div>
@@ -433,27 +435,27 @@
   </section>
 
   <!-- ============ LIFECYCLE SCROLLY ============ -->
-  <section class="life-track fold-dark" id="lifeTrack">
+  <section class="life-track fold-dark" id="lifeTrack" data-rail="Life cycle">
     <div class="life-sticky">
       <p class="life-intro-label">The analysis lens &middot; accounts have life cycles</p>
       <div class="container life-grid">
         <div class="life-copy">
-          <div class="life-step" id="ls1">
+          <div class="life-step" id="ls1" data-rail-sub="Primary">
             <p class="stage-tag">Stage 1 of 4</p>
             <h3>Primary</h3>
             <p>The main account. Checked daily, guarded carefully, attached to everything that matters. Product teams tend to design for the primary account; much of real usage involves the others.</p>
           </div>
-          <div class="life-step" id="ls2">
+          <div class="life-step" id="ls2" data-rail-sub="Secondary">
             <p class="stage-tag">Stage 2 of 4</p>
             <h3>Secondary</h3>
             <p>Signups and backups. Checked on purpose, but less often, and usually from whichever endpoint is closest at hand rather than a favorite app.</p>
           </div>
-          <div class="life-step" id="ls3">
+          <div class="life-step" id="ls3" data-rail-sub="Tertiary">
             <p class="stage-tag">Stage 3 of 4</p>
             <h3>Tertiary</h3>
             <p>A junk drawer of newsletters and one-time codes. Often a former primary that was shared too widely for too many years.</p>
           </div>
-          <div class="life-step" id="ls4">
+          <div class="life-step" id="ls4" data-rail-sub="Abandoned">
             <p class="stage-tag">Stage 4 of 4</p>
             <h3>Abandoned</h3>
             <p>Dormant, but never deleted. Opened once a year for a password reset. An account's position in this cycle predicts how, and how often, any product will be used to reach it.</p>
@@ -483,7 +485,7 @@
   </section>
 
   <!-- ============ THE BUFFER INSIGHT ============ -->
-  <section class="strip">
+  <section class="strip" id="routing" data-rail="Routing">
     <div class="container">
       <p class="kicker fx">The analysis lens</p>
       <h2 class="fx">Routing</h2>
@@ -511,7 +513,7 @@
   </section>
 
   <!-- ============ IMPACT ============ -->
-  <section class="strip" style="padding-top: 0;">
+  <section class="strip" id="changed" style="padding-top: 0;" data-rail="Impact">
     <div class="container">
       <p class="kicker fx">What the study changed</p>
       <h2 class="fx">What the study changed</h2>
@@ -530,7 +532,7 @@
   </section>
 
   <!-- ============ REFLECTION + CLOSE ============ -->
-  <section class="strip fold-dark" style="padding-bottom: 0;">
+  <section class="strip fold-dark" id="reflection" style="padding-bottom: 0;" data-rail="Reflection">
     <div class="container" style="position: relative;">
       <p class="kicker fx">What I learned</p>
       <h2 class="fx" style="color: #fff;">Reflection</h2>
@@ -691,5 +693,6 @@
   })();
   </script>
   <script src="../js/shell.js" defer></script>
+  <script src="../js/section-rail.js?v=20260808d" defer></script>
 </body>
 </html>

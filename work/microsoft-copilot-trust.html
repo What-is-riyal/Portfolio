@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/section-rail.css?v=20260808d">
   <style>
     /* ============ Showpiece page styles ============ */
     :root {
@@ -536,6 +537,7 @@
 
   <div class="progress" id="progress"></div>
   <div class="grain"></div>
+  <nav id="section-rail" class="section-rail" aria-label="On this page"></nav>
   <div class="cursor-dot" id="cdot"></div>
   <div class="cursor-ring" id="cring"></div>
 
@@ -603,7 +605,7 @@
   </section>
 
   <!-- ============ BACKGROUND ============ -->
-  <section class="strip" style="position: relative;">
+  <section class="strip" id="why" style="position: relative;" data-rail="Why">
     <div class="container">
       <p class="kicker fx">Why it mattered</p>
       <h2 class="fx">Copilot lacked a unified perspective towards AI integration in Outlook </h2>
@@ -622,7 +624,7 @@
   </section>
 
   <!-- ============ METHOD: the synthesis, move by move ============ -->
-  <section class="strip" style="padding-top: 40px; position: relative;">
+  <section class="strip" id="method" style="padding-top: 40px; position: relative;" data-rail="Method">
     <div class="container">
       <p class="kicker fx">Method</p>
       <h2 class="fx">How I approached the synthesis</h2>
@@ -689,14 +691,14 @@
         <div class="move fx">
           <span class="m-num">1</span>
           <div>
-            <h3>Extract, study by study.</h3>
+            <h3 id="cop-extract" data-rail-sub="Extract">Extract, study by study.</h3>
             <p>I pulled findings, open questions, user complaints, and recommendations from each report into a shared evidence base. I kept the source attached to every note so no claim became detached from where it came from.</p>
           </div>
         </div>
         <div class="move fx">
           <span class="m-num">2</span>
           <div>
-            <h3>Check provenance.</h3>
+            <h3 id="cop-provenance" data-rail-sub="Provenance">Check provenance.</h3>
             <p>Before a finding shaped the argument, I checked what study it came from, who participated, what was actually tested, and how strong the evidence was. Small or speculative findings were kept visible, but they were not allowed to carry the argument alone.</p>
             <div class="wq-row" aria-label="Paraphrased working notes from the synthesis board">
               <span class="wq">where is this finding coming from? which study, what sample?</span>
@@ -708,14 +710,14 @@
         <div class="move fx">
           <span class="m-num">3</span>
           <div>
-            <h3>Look for repetition across unrelated studies.</h3>
+            <h3 id="cop-repetition" data-rail-sub="Repetition">Look for repetition across unrelated studies.</h3>
             <p>The strongest signals were the ones that appeared in studies that had different goals. Inbox prioritization, drafting, out-of-office catch-up, project workflows, and automation research all pointed to similar needs: users wanted help reducing overload, but they also wanted to understand, correct, and bound what Copilot was doing.</p>
           </div>
         </div>
         <div class="move fx">
           <span class="m-num">4</span>
           <div>
-            <h3>Pressure-test the themes externally.</h3>
+            <h3 id="cop-pressure" data-rail-sub="Pressure-test">Pressure-test the themes externally.</h3>
             <p>I compared the internal themes against public conversations about AI assistants and Microsoft 365 Copilot. I used this only as a check, not as primary evidence. Where public concerns echoed the internal research, it made the theme stronger. Where they did not, I went back to the source material.</p>
             <div class="reacts" aria-label="Paraphrased public web reactions the synthesis was tested against">
               <div class="react pos">
@@ -741,7 +743,7 @@
         <div class="move fx">
           <span class="m-num">5</span>
           <div>
-            <h3>Re-sort the evidence under the argument.</h3>
+            <h3 id="cop-resort" data-rail-sub="Re-sort">Re-sort the evidence under the argument.</h3>
             <p>Once the point of view emerged, I reorganized the evidence around it. Findings that supported the argument stayed. Findings that did not fit either became caveats, gaps, or future research questions. This kept the paper from becoming a "summary of summaries."</p>
           </div>
         </div>
@@ -751,7 +753,7 @@
   </section>
 
   <!-- ============ THE REFRAME: Copilot as Chief of Staff ============ -->
-  <section class="strip" style="padding-top: 40px; position: relative;">
+  <section class="strip" id="reframe" style="padding-top: 40px; position: relative;" data-rail="Reframe">
     <div class="container">
       <p class="kicker fx">The reframe</p>
       <h2 class="fx">Copilot as a <em>Chief of Staff</em></h2>
@@ -794,7 +796,7 @@
   </section>
 
   <!-- ============ LADDER SCROLLYTELLING ============ -->
-  <section class="ladder-track" id="ladderTrack">
+  <section class="ladder-track" id="ladderTrack" data-rail="Stages">
     <div class="ladder-sticky">
       <p class="ladder-intro-label">What the paper argued &middot; assistance deepens in stages</p>
       <div class="container ladder-grid">
@@ -839,7 +841,7 @@
   </section>
 
   <!-- ============ PILLARS ============ -->
-  <section class="strip" style="padding-top: 0; position: relative;">
+  <section class="strip" id="framework" style="padding-top: 0; position: relative;" data-rail="Framework">
     <div class="container">
       <p class="kicker fx">The framework</p>
       <h2 class="fx">What a chief of staff has to <em>earn</em></h2>
@@ -876,21 +878,21 @@
         <div class="tcl-card fx" data-tilt>
           <div class="shine"></div>
           <span class="tcl-letter">T</span>
-          <h3>Transparency</h3>
+          <h3 id="cop-transparency" data-rail-sub="Transparency">Transparency</h3>
           <p class="tcl-q">"What did it look at, and why did it suggest that?"</p>
           <p>Users were more willing to evaluate Copilot's output when they could see the sources and reasoning behind it. Without that visibility, even useful suggestions could feel arbitrary.</p>
         </div>
         <div class="tcl-card fx" data-tilt>
           <div class="shine"></div>
           <span class="tcl-letter">C</span>
-          <h3>Control</h3>
+          <h3 id="cop-control" data-rail-sub="Control">Control</h3>
           <p class="tcl-q">"Can I correct it, limit it, or undo it here?"</p>
           <p>Control had to exist at the moment of use. A setting buried elsewhere did not help when Copilot made a questionable judgment in the inbox.</p>
         </div>
         <div class="tcl-card fx" data-tilt>
           <div class="shine"></div>
           <span class="tcl-letter">L</span>
-          <h3>Learnability</h3>
+          <h3 id="cop-learnability" data-rail-sub="Learnability">Learnability</h3>
           <p class="tcl-q">"Does it get better after I correct it?"</p>
           <p>Users did not expect Copilot to be perfect. They expected it to learn. Repeated mistakes were especially damaging because they made correction feel pointless.</p>
         </div>
@@ -899,7 +901,7 @@
   </section>
 
   <!-- ============ INTERACTIVE DEMO ============ -->
-  <section class="strip" style="padding-top: 40px; position: relative;">
+  <section class="strip" id="demo" style="padding-top: 40px; position: relative;" data-rail="Demo">
     <div class="container">
       <p class="kicker fx">Feel it yourself</p>
       <h2 class="fx">Here's what the framework applied to inbox prioritization could look like</h2>
@@ -953,7 +955,7 @@
   </section>
 
   <!-- ============ OUTCOME + IMPACT ============ -->
-  <section class="strip strip-dark" style="position: relative;">
+  <section class="strip strip-dark" id="deliverable" style="position: relative;" data-rail="Deliverable">
     <div class="container">
       <p class="kicker fx">The deliverable</p>
       <h2 class="fx" style="color: #fff;">The deliverable</h2>
@@ -971,7 +973,7 @@
   </section>
 
   <!-- ============ TRUST & SAFETY CHECKLIST (paper appendix) ============ -->
-  <section class="strip" style="position: relative;">
+  <section class="strip" id="checklist" style="position: relative;" data-rail="Checklist">
     <div class="container">
       <p class="kicker fx">The trust &amp; safety checklist</p>
       <h2 class="fx">The checklist a team runs <em>before</em> shipping</h2>
@@ -1052,7 +1054,7 @@
   </section>
 
   <!-- ============ REFLECTION + CLOSE ============ -->
-  <section class="closing">
+  <section class="closing" id="impact" data-rail="Impact">
     <div class="container" style="position: relative;">
       <p class="kicker fx">Impact</p>
       <h2 class="fx" style="color: #fff;">Impact</h2>
@@ -1217,5 +1219,6 @@
 
   })();
   </script>
+  <script src="../js/section-rail.js?v=20260808d" defer></script>
 </body>
 </html>

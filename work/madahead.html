@@ -11,10 +11,12 @@
   <link rel="stylesheet" href="../css/grid.css?v=20260808a">
   <link rel="stylesheet" href="../css/shell.css?v=20260808a">
   <link rel="stylesheet" href="../css/case-study.css?v=20260808a">
+  <link rel="stylesheet" href="../css/section-rail.css?v=20260808d">
 </head>
 <body class="page-case-study" data-shell-base="../" data-shell-page="work">
   <div class="grain" aria-hidden="true"></div>
   <div class="cs-progress" id="cs-progress" aria-hidden="true"></div>
+  <nav id="section-rail" class="section-rail" aria-label="On this page"></nav>
   <div class="page" style="position:relative;width:100%">
     <div id="site-nav"></div>
 
@@ -57,7 +59,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="brief">
+      <section class="cs-section" id="brief" data-rail="Overview">
         <div class="cell-a">
           <p class="cs-kicker">The Brief</p>
           <h2 class="cs-section__title">The Brief</h2>
@@ -100,7 +102,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="market-positioning">
+      <section class="cs-section" id="market-positioning" data-rail="Market Positioning">
         <div class="cell-full">
           <p class="cs-kicker">Market Positioning</p>
           <h2 class="cs-section__title">Market Positioning</h2>
@@ -144,7 +146,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="concept-testing">
+      <section class="cs-section" id="concept-testing" data-rail="Concept Testing">
         <div class="cell-full">
           <p class="cs-kicker">Concept testing</p>
           <h2 class="cs-section__title">Concept testing</h2>
@@ -169,7 +171,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="conceptualisation">
+      <section class="cs-section" id="conceptualisation" data-rail="Conceptualisation">
         <div class="cell-full">
           <p class="cs-kicker">Conceptualisation</p>
           <h2 class="cs-section__title">Conceptualisation</h2>
@@ -177,7 +179,7 @@
             <p>Based on the<strong> concept testing feedback</strong> and<strong> 5 unstructured interviews</strong> conducted, I&nbsp;created personas, mapped them to the benefits we can provide and tried to anticipate their behaviour on the app.</p>
           </div>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">Personas</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="mad-personas" data-rail-sub="Personas">Personas</h3>
 
           <article class="cs-persona">
             <img class="cs-persona__photo" src="../assets/webflow/2d0591c9/5f816e7c71a3e4f949fccebe_imansyah-muhamad-putera-n4KewLKFOZw-unsplash(1).jpg" alt="" loading="lazy">
@@ -239,7 +241,7 @@
             </div>
           </article>
 
-          <article class="cs-benefit">
+          <article class="cs-benefit" id="mad-benefits" data-rail-sub="Scenario — Benefit">
             <img src="../assets/webflow/d8694db7/5f7eda0f739c0d2c69233494_characters-04.png" alt="" loading="lazy">
             <div class="voice-prose">
               <h4 class="cs-persona__name">Catching up with friends</h4>
@@ -272,7 +274,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="moscow">
+      <section class="cs-section" id="moscow" data-rail-sub="MoSCoW" data-rail-parent="conceptualisation">
         <div class="cell-a">
           <p class="cs-kicker">MoSCoW</p>
           <h2 class="cs-section__title">MoSCoW</h2>
@@ -316,7 +318,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="interface-design">
+      <section class="cs-section" id="interface-design" data-rail="Interface Design">
         <div class="cell-full">
           <p class="cs-kicker">Interface Design</p>
           <h2 class="cs-section__title">Interface Design</h2>
@@ -324,12 +326,12 @@
             <p>After the features and the TG were decided, I started by penning down the IA, the initial wireframes followed by visual explorations.</p>
           </div>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">Information Architecture</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="mad-ia" data-rail-sub="IA">Information Architecture</h3>
           <figure class="cs-figure cs-figure--wide">
             <img src="../assets/webflow/100dac34/5f9d280ad5fd03d6e0ee1ff2_IA Madahead.png" alt="" loading="lazy">
           </figure>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">Wireframes</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="mad-wireframes" data-rail-sub="Wireframes">Wireframes</h3>
           <figure class="cs-figure cs-figure--wide">
             <img src="../assets/webflow/ceecc6dc/5f7e30b4accd358bc68aa902_paper wireframes.png" alt="wireframes" loading="lazy">
           </figure>
@@ -337,7 +339,7 @@
             <img src="../assets/webflow/33aa2ea6/5f7e4309965a1e4797e9c40d_Screenshot 2020-10-08 at 4.06.39 AM.png" alt="" loading="lazy">
           </figure>
 
-          <h3 class="voice-row" style="margin: 2rem 0 1rem">Design elements</h3>
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="mad-elements" data-rail-sub="Design elements">Design elements</h3>
           <figure class="cs-figure cs-figure--phone">
             <img src="../assets/webflow/f6721320/5f7ceecf8aa5f41636594b5a_Instagram Story - 6.png" alt="" loading="lazy">
           </figure>
@@ -436,7 +438,7 @@
         </div>
       </section>
 
-      <section class="cs-section" id="usability">
+      <section class="cs-section" id="usability" data-rail="Usability Testing">
         <div class="cell-full">
           <p class="cs-kicker">Usability testing</p>
           <h2 class="cs-section__title">Usability testing</h2>
@@ -458,7 +460,7 @@
         </div>
       </section>
 
-      <section class="cs-section cs-section--dark" id="prototype">
+      <section class="cs-section cs-section--dark" id="prototype" data-rail="Prototype">
         <div class="cell-a">
           <p class="cs-kicker">Final Prototype</p>
           <h2 class="cs-section__title">Final Prototype</h2>
@@ -468,7 +470,7 @@
         </div>
       </section>
 
-      <section class="cs-close" id="conclusion">
+      <section class="cs-close" id="conclusion" data-rail-skip>
         <div class="cell-a">
           <p class="cs-kicker">Future of the product &amp; my learnings</p>
           <h2 class="cs-section__title">Future of the product &amp; my learnings</h2>
@@ -486,5 +488,6 @@
   </div>
 
   <script src="../js/shell.js" defer></script>
+  <script src="../js/section-rail.js?v=20260808d" defer></script>
 </body>
 </html>

@@ -66,14 +66,12 @@
     }).join('\n          ');
 
     return `
-    <footer class="site-footer frame" aria-label="Contact">
-      <div class="cell-a">
+    <footer class="site-footer" aria-label="Contact">
+      <div class="site-footer__inner">
         <ul class="site-footer__links sg-nav">
           ${items}
         </ul>
-      </div>
-      <div class="cell-c site-footer__meta">
-        <p class="sg-meta">made by a human</p>
+        <p class="sg-meta site-footer__meta">made by a human</p>
       </div>
     </footer>`;
   }
@@ -83,7 +81,7 @@
     return `
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,360&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${b}css/grid.css">
   <link rel="stylesheet" href="${b}css/shell.css">`;
   }
@@ -108,10 +106,66 @@
     };
   }
 
+  function bootNavContrastFor(selector, bodyClass) {
+    const body = document.body;
+    if (!body.classList.contains(bodyClass)) return;
+    const hero = document.querySelector(selector);
+    if (!hero) return;
+
+    const sync = () => {
+      const past = window.scrollY > hero.offsetHeight - 72;
+      body.classList.toggle('is-scrolled-past-hero', past);
+    };
+    sync();
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+  }
+
+  function bootCaseStudyNavContrast() {
+    const body = document.body;
+    if (!body.classList.contains('page-case-study')) return;
+    const hero = document.querySelector('.cs-hero');
+    if (!hero) return;
+    const quote = document.querySelector('.cs-quote-band');
+
+    const sync = () => {
+      const darkEnd = quote
+        ? quote.offsetTop + quote.offsetHeight
+        : hero.offsetHeight;
+      const past = window.scrollY > darkEnd - 72;
+      body.classList.toggle('is-scrolled-past-hero', past);
+    };
+    sync();
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+  }
+
+  function bootCaseStudyProgress() {
+    const body = document.body;
+    if (!body.classList.contains('page-case-study')) return;
+    const bar = document.getElementById('cs-progress');
+    if (!bar) return;
+
+    const sync = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      bar.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
+    };
+    sync();
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+  }
+
   function autoInit() {
     const opts = readShellOpts();
     mountNav(document.getElementById('site-nav'), opts);
     mountFooter(document.getElementById('site-footer'), opts);
+    bootCaseStudyNavContrast();
+    bootCaseStudyProgress();
+    bootNavContrastFor('.about-intro', 'page-about');
+    bootNavContrastFor('.play-intro', 'page-play');
+    bootNavContrastFor('.res-hero-band', 'page-resume');
   }
 
   if (document.readyState === 'loading') {

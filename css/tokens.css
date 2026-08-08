@@ -1,6 +1,6 @@
 /* Design tokens — Copilot showpiece system (sitewide).
-   Source of truth: work/microsoft-copilot-trust.html (original indigo / Archivo / Fraunces).
-   Mondrian wavy rails stay; palette + type follow Copilot. */
+   Source of truth: work/microsoft-copilot-trust.html
+   Full-width container layout; Mondrian columns retired. */
 
 :root {
   /* Type: Archivo = structure UI. Fraunces = voice / italic emphasis. */

@@ -1,5 +1,6 @@
 /**
- * Homepage boot — wavy rails + hero diagram + Copilot nav contrast.
+ * Homepage boot — hero diagram + nav contrast on scroll.
+ * Mondrian rails removed; Copilot full-width layout.
  */
 (function () {
   function bootNavContrast() {
@@ -17,37 +18,26 @@
     window.addEventListener('resize', sync);
   }
 
-  function boot() {
-    const page = document.querySelector('.page');
-    if (page && globalThis.MondrianLines) {
-      MondrianLines.init(page, {
-        marks: [
-          { rail: 2, rule: 0, kind: 'red' },
-          { rail: 0, rule: 2, kind: 'yellow' },
-          { rail: 3, rule: 3, kind: 'red' },
-        ],
-      });
-    }
+  function bootHeroEntrance() {
+    const hero = document.querySelector('.home-hero');
+    if (!hero) return;
+    requestAnimationFrame(() => {
+      hero.classList.add('is-ready');
+    });
+  }
 
+  function boot() {
     const diagramHost = document.querySelector('[data-diagram]');
     if (diagramHost && globalThis.Diagram) {
       Diagram.mountAndInit(diagramHost);
     }
-
     bootNavContrast();
-  }
-
-  function whenReady() {
-    if (typeof gsap === 'undefined' || !globalThis.Motion) {
-      requestAnimationFrame(whenReady);
-      return;
-    }
-    boot();
+    bootHeroEntrance();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', whenReady);
+    document.addEventListener('DOMContentLoaded', boot);
   } else {
-    whenReady();
+    boot();
   }
 })();

@@ -8,64 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/grid.css">
-  <link rel="stylesheet" href="css/shell.css">
-  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/grid.css?v=20260807b">
+  <link rel="stylesheet" href="css/shell.css?v=20260807b">
+  <link rel="stylesheet" href="css/pages.css?v=20260807b">
   <style>
-    .page-resume {
-      padding-top: 14vh;
-      padding-bottom: 8vh;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding-left: clamp(20px, 4vw, 40px);
-      padding-right: clamp(20px, 4vw, 40px);
-    }
-
-    .res-hero {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 32px;
-      flex-wrap: wrap;
-      margin-bottom: clamp(32px, 6vh, 64px);
-    }
-
-    .res-hero h1 {
-      font-family: var(--font-fraunces);
-      font-size: var(--text-opener);
-      font-weight: 340;
-      line-height: 1.1;
-    }
-
-    .res-hero .r-sub {
-      font-family: var(--font-archivo);
-      font-size: var(--text-nav);
-      color: var(--grey);
-      margin-top: 12px;
-    }
-
-    .res-hero a { color: var(--glow); }
-
-    .dl-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-archivo);
-      font-size: var(--text-nav);
-      font-weight: 600;
-      color: var(--white);
-      background: var(--glow);
-      border-radius: 0;
-      padding: 14px 22px;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: opacity 0.2s ease;
-    }
-
-    .dl-btn:hover { opacity: 0.88; }
-    .dl-btn svg { width: 16px; height: 16px; }
-
+    /* Resume body details — chrome/hero live in pages.css */
     .res-section {
       padding: 36px 0;
       border-top: 1px solid var(--line-color);
@@ -211,19 +158,22 @@
   <div class="page" style="position:relative;width:100%">
     <div id="site-nav"></div>
 
-    <main id="main" class="site-content page-resume">
-      <section class="res-hero">
-        <div>
-          <p class="page-kicker">CV</p>
-          <h1>Resume</h1>
-          <p class="r-sub">Priyal Shrivastava &middot; <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <main id="main" class="site-content page-resume-wrap">
+      <section class="res-hero-band">
+        <div class="res-hero-band__inner">
+          <div>
+            <p class="page-kicker">CV</p>
+            <h1>Resume</h1>
+            <p class="r-sub">Priyal Shrivastava &middot; <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          </div>
+          <a class="dl-btn" href="assets/priyal_resume_UXR.pdf" download="Priyal-Shrivastava-Resume.pdf">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v8M4 7l4 4 4-4M2 13h12"/></svg>
+            Download PDF
+          </a>
         </div>
-        <a class="dl-btn" href="assets/priyal_resume_UXR.pdf" download="Priyal-Shrivastava-Resume.pdf">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v8M4 7l4 4 4-4M2 13h12"/></svg>
-          Download PDF
-        </a>
       </section>
 
+      <div class="res-body">
       <section class="res-section">
         <div class="res-grid">
           <p class="res-label">Experience</p>
@@ -345,6 +295,9 @@
         <p><a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
         <p class="res-credit">&copy; 2020 &ndash; Made with &#10084;&#xFE0E; by Priyal Shrivastava</p>
       </footer>
+      </div>
+
+      <div id="site-footer"></div>
     </main>
   </div>
 

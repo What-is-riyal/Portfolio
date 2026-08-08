@@ -3,458 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Language and bias in research for India's next billion users | Priyal Shrivastava</title>
-  <meta name="description" content="A foundational study at Meesho on how language and socio-cultural context shape products and the research behind them, built on 10 expert interviews.">
+  <title>Vernacular language in digital products | Priyal Shrivastava</title>
+  <meta name="description" content="A research project on the approach to vernacularisation of digital platforms for the Next Billion Users">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    /* ============ Showpiece page styles: vernacular ============ */
-    :root {
-      --ink: #190D14;
-      --rose: #BE185D;     /* 6.5:1 on white */
-      --serif: "Fraunces", Georgia, serif;
-    }
-    .fold-dark { --rose: #F9A8D4; } /* 10+:1 on ink */
-
-    body { background: #FFFFFF; overflow-x: hidden; }
-    .progress { background: var(--rose); }
-
-    .kicker {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--rose); margin-bottom: 20px;
-    }
-    .strip { padding: 110px 0; position: relative; }
-    .strip h2 {
-      font-size: clamp(30px, 4.5vw, 50px); font-weight: 800; letter-spacing: -0.03em;
-      line-height: 1.12; max-width: 24ch; margin-bottom: 28px;
-    }
-    .strip h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--rose); }
-    .prose { max-width: 680px; }
-    .prose p { font-size: 17px; line-height: 1.75; color: #3C3C44; margin-bottom: 20px; }
-    .prose strong { font-weight: 700; color: var(--text); }
-    .fold-dark { background: var(--ink); color: #fff; }
-    .fold-dark .prose p { color: rgba(255,255,255,0.75); }
-    .fold-dark .prose strong { color: #fff; }
-    .fold-dark h2 { color: #fff; }
-
-    .fx { opacity: 0; transform: translateY(36px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
-    .fx.in { opacity: 1; transform: none; }
-
-    /* ============ Hero ============ */
-    .hero-light {
-      min-height: 88vh; display: flex; flex-direction: column; justify-content: center;
-      position: relative; overflow: hidden; padding: 80px 0;
-      background:
-        radial-gradient(620px circle at 12% 20%, rgba(190, 24, 93, 0.06), transparent 60%),
-        #FFFFFF;
-    }
-    .hero-light .eyebrow {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 30px; display: flex; align-items: center; gap: 10px;
-    }
-    .hero-light .eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--rose); }
-    .hero-light .q-label {
-      font-family: var(--serif); font-style: italic; font-size: clamp(17px, 2vw, 22px);
-      color: var(--rose); margin-bottom: 16px;
-    }
-    .hero-light h1 {
-      font-size: clamp(40px, 6.6vw, 82px); line-height: 1.05; font-weight: 800;
-      letter-spacing: -0.04em; max-width: 17ch; margin-bottom: 32px;
-    }
-    .hero-light h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--rose); }
-    .hero-standfirst {
-      font-size: clamp(17px, 2vw, 21px); color: var(--muted); max-width: 56ch;
-      line-height: 1.7; margin-bottom: 44px;
-    }
-    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; }
-    .pchip {
-      font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
-      border: 1px solid var(--border); color: var(--muted); background: #fff;
-    }
-    .pchip.accent { border-color: rgba(190, 24, 93, 0.4); color: var(--rose); }
-
-    /* Floating script words in hero */
-    .float-word {
-      position: absolute; font-family: var(--serif); font-style: italic;
-      color: rgba(190, 24, 93, 0.18); font-size: clamp(28px, 4vw, 56px); font-weight: 600;
-      animation: drift 8s ease-in-out infinite; user-select: none;
-    }
-    @keyframes drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-    @media (max-width: 1000px) { .float-word { display: none; } }
-
-    /* ============ Snapshot ============ */
-    .snapshot-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 28px;
-      border-top: 1px solid var(--border); padding-top: 36px; margin-top: 64px;
-    }
-    .snap-item .s-label {
-      font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 8px;
-    }
-    .snap-item .s-value { font-size: 15px; font-weight: 600; line-height: 1.5; color: var(--text); }
-    .snap-item .s-value small { display: block; font-weight: 500; font-size: 13px; color: var(--muted); margin-top: 2px; }
-
-    /* ============ Images ============ */
-    .shot { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); margin: 56px 0; }
-    .shot img { display: block; width: 100%; height: auto; }
-    .shot figcaption {
-      font-size: 13.5px; color: var(--muted); padding: 14px 18px; border-top: 1px solid var(--border);
-      background: var(--surface); line-height: 1.6;
-    }
-    .fold-dark .shot { border-color: rgba(255,255,255,0.12); }
-    .fold-dark .shot figcaption { background: rgba(255,255,255,0.04); border-top-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.6); }
-    .shot-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 56px 0; align-items: start; }
-    .shot-pair .shot { margin: 0; }
-    @media (max-width: 860px) { .shot-pair { grid-template-columns: 1fr; } }
-
-    /* ============ Panel: who I interviewed ============ */
-    .panel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
-    .panel-card {
-      border-radius: 14px; border: 1px solid var(--border); background: var(--surface); padding: 32px 28px;
-    }
-    .panel-card .pc-num { font-family: var(--serif); font-style: italic; font-size: 44px; color: var(--rose); line-height: 1; margin-bottom: 14px; }
-    .panel-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 8px; }
-    .panel-card p { font-size: 14px; line-height: 1.65; color: var(--muted); margin: 0; }
-    @media (max-width: 860px) { .panel-grid { grid-template-columns: 1fr; } }
-
-    /* ============ Language demo ============ */
-    .lang-shell {
-      margin-top: 56px; border-radius: 16px; background: var(--ink); padding: 44px; color: #fff;
-    }
-    .lang-shell h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
-    .lang-shell .lang-sub { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.65; max-width: 58ch; margin-bottom: 28px; }
-    .lang-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
-    .lang-tab {
-      font-size: 13.5px; font-weight: 700; padding: 10px 18px; border-radius: 999px; cursor: pointer;
-      border: 1px solid rgba(255,255,255,0.2); background: none; color: rgba(255,255,255,0.7);
-      transition: all 0.25s ease;
-    }
-    .lang-tab.active { background: var(--rose); border-color: var(--rose); color: #190D14; }
-    .lang-stage {
-      border-radius: 12px; background: #fff; color: var(--text); padding: 28px;
-      display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: center;
-    }
-    .lang-phone {
-      border: 1.5px solid var(--border); border-radius: 18px; padding: 18px 14px; background: #FBFBFA;
-    }
-    .lang-phone .lp-header { font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-    .lang-phone .lp-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 12px; margin-bottom: 10px; }
-    .lang-phone .lp-thumb { height: 52px; border-radius: 7px; background: linear-gradient(135deg, #FCE7F3, #FDF2F8); margin-bottom: 8px; }
-    .lang-phone .lp-title { font-size: 12px; font-weight: 700; margin-bottom: 8px; }
-    .lang-phone .lp-btn {
-      display: block; text-align: center; font-size: 12px; font-weight: 800; color: #fff;
-      background: var(--rose); border-radius: 7px; padding: 8px; transition: all 0.2s ease;
-    }
-    .lang-note h4 { font-size: 16px; font-weight: 800; margin-bottom: 8px; color: var(--rose); }
-    .lang-note p { font-size: 15px; line-height: 1.7; color: #3C3C44; margin: 0; }
-    .lang-disclaimer { font-size: 12.5px; color: rgba(255,255,255,0.45); margin-top: 18px; line-height: 1.6; max-width: 64ch; }
-    @media (max-width: 768px) {
-      .lang-shell { padding: 28px 18px; }
-      .lang-stage { grid-template-columns: 1fr; }
-      .lang-phone { max-width: 240px; margin: 0 auto; }
-    }
-
-    /* ============ Findings list ============ */
-    .deliver-list { list-style: none; margin-top: 48px; max-width: 740px; }
-    .deliver-list li {
-      display: grid; grid-template-columns: 34px 1fr; gap: 18px; align-items: baseline;
-      padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.12);
-      font-size: 16.5px; line-height: 1.65; color: rgba(255,255,255,0.75);
-    }
-    .deliver-list li:last-child { border-bottom: none; }
-    .deliver-list .d-n { font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--rose); }
-    .deliver-list strong { font-weight: 700; color: #fff; }
-
-    /* Role note */
-    .role-note {
-      margin-top: 56px; border-left: 3px solid var(--rose); padding: 4px 0 4px 22px; max-width: 680px;
-    }
-    .role-note p { font-size: 16px; line-height: 1.72; color: rgba(255,255,255,0.75); margin: 0; }
-    .role-note .h-label { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); display: block; margin-bottom: 8px; }
-
-    /* Footer over dark end */
-    .closing { background: var(--ink); color: #fff; padding: 120px 0 0; }
-    .closing .footer { border-top-color: rgba(255,255,255,0.12); margin-top: 80px; }
-    .closing .footer-bottom, .closing .footer-cta .label { color: rgba(255,255,255,0.5); }
-    .closing .big-link { color: #fff; }
-    .closing .next-project { border-top: none; margin-top: 0; }
-    .closing .next-project .label { color: rgba(255,255,255,0.5); }
-    .closing .next-project a { color: #fff; }
-    .closing .next-project a:hover { color: var(--rose); }
-    .closing .footer-links a:hover { color: var(--rose); }
-
-    @media (prefers-reduced-motion: reduce) {
-      .float-word { animation: none; }
-      .fx { opacity: 1; transform: none; transition: none; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/grid.css?v=20260808a">
+  <link rel="stylesheet" href="../css/shell.css?v=20260808a">
+  <link rel="stylesheet" href="../css/case-study.css?v=20260808a">
+  <link rel="stylesheet" href="../css/section-rail.css?v=20260808h">
 </head>
-<body>
+<body class="page-case-study" data-shell-base="../" data-shell-page="work">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cs-progress" id="cs-progress" aria-hidden="true"></div>
+  <nav id="section-rail" class="section-rail" aria-label="On this page"></nav>
+  <div class="page" style="position:relative;width:100%">
+    <div id="site-nav"></div>
 
-  <div class="progress" id="progress"></div>
+    <main id="main" class="site-content page-case">
+      <header class="cs-hero">
+        <div class="cs-hero__orb" aria-hidden="true"></div>
+        <div class="cs-hero__inner">
+          <div class="cs-hero__copy">
+            <p class="page-kicker cs-hero__org">Meesho</p>
+            <h1 class="voice-opener cs-hero__title">Vernacular language in digital products</h1>
+            <p class="voice-sub cs-hero__sub">A research project on the approach to vernacularisation of digital platforms for the Next Billion Users</p>
+            <ul class="cs-chips" aria-label="Project tags">
+              <li class="cs-chip cs-chip--accent">User Research Intern</li>
+              <li class="cs-chip">1 month</li>
+              <li class="cs-chip">Vernacularisation</li>
+            </ul>
+          </div>
+          <dl class="cs-meta">
+            <div>
+              <dt>Duration</dt>
+              <dd>1 month, June 2020</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>User Research Intern, Meesho</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>Individual Project</dd>
+            </div>
+          </dl>
+        </div>
+        <p class="cs-hero__scroll" aria-hidden="true">Scroll</p>
+      </header>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero-light">
-    <header class="nav">
-      <div class="container nav-inner">
-        <a href="../index.html" class="logo">ps<span class="dot">.</span></a>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="../index.html#work" class="active">Work</a></li>
-            <li><a href="../play.html">Play</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../resume.html">Resume</a></li>
+      <section class="cs-quote-band" aria-label="Project stakes">
+        <div class="cell-a">
+          <blockquote class="cs-quote">Understanding the relevance and impact of vernacular language in user engagement in digital products</blockquote>
+          <p class="cs-lede">Meesho is India's Largest Reseller Platform. Their network is <strong>8M+</strong> strong, spread across 700+ towns with their <strong>Target Audience in semi-urban and rural geographies of India</strong></p>
+        </div>
+      </section>
+
+      <section class="cs-section" id="brief" data-rail="Overview">
+        <div class="cell-a">
+          <p class="cs-kicker">Project Brief</p>
+          <h2 class="cs-section__title">Project Brief</h2>
+          <div class="voice-prose">
+            <p>This directional research (DR) focuses on the importance of vernacular languages in digital products. The aim of this research is to study company practices around making products vernacular and the research practices surrounding it and to understand the importance of language and socio-cultural context during user research for the next billion users. This research gives a direction and perspective to how and why vernacularisation of the product should be approached.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section" id="objectives" data-rail="Objective">
+        <div class="cell-a">
+          <p class="cs-kicker">Objectives</p>
+          <h2 class="cs-section__title">Objectives</h2>
+          <ul class="cs-cards">
+            <li><strong>1.</strong> Understand the relevance and impact of vernacular language in user engagement</li>
+            <li><strong>2.</strong> Understand the impact of vernacular language in digital products</li>
+            <li><strong>3.</strong> To look at research practices surrounding the next Billion Users</li>
           </ul>
-        </nav>
-      </div>
-    </header>
-
-    <span class="float-word" style="top: 16%; right: 10%;" aria-hidden="true">भाषा</span>
-    <span class="float-word" style="bottom: 22%; right: 22%; animation-delay: 1.4s;" aria-hidden="true">bhaasha</span>
-    <span class="float-word" style="bottom: 8%; right: 6%; animation-delay: 2.6s; font-size: clamp(20px, 2.4vw, 34px);" aria-hidden="true">language</span>
-
-    <div class="container">
-      <p class="eyebrow">Meesho &middot; 2020</p>
-      <p class="q-label fx in">The question</p>
-      <h1 class="fx in">Language and bias in research for India's next billion users</h1>
-      <p class="hero-standfirst fx in">Meesho's users are largely women from semi-urban and rural India, running reselling businesses on an app designed, and mostly researched, in English. As a research intern, I led a ten-week study on what that gap costs: what translation flattens, what transliteration misses, and which biases creep in when teams build for users they rarely meet. The report gave the design and product teams a working vocabulary for language decisions, and one finding became its own workshop.</p>
-      <div class="hero-chips fx in">
-        <span class="pchip">User Research Intern</span>
-        <span class="pchip">May &ndash; July 2020</span>
-        <span class="pchip">10 expert interviews</span>
-        <span class="pchip accent">Report + stakeholder workshop</span>
-      </div>
-
-      <div class="snapshot-grid fx in">
-        <div class="snap-item">
-          <p class="s-label">My role</p>
-          <p class="s-value">User Research Intern; led the study end to end</p>
         </div>
-        <div class="snap-item">
-          <p class="s-label">Timeline</p>
-          <p class="s-value">May &ndash; July 2020<small>remote, mid-lockdown</small></p>
+      </section>
+
+      <section class="cs-section" id="methodology" data-rail="Methodology">
+        <div class="cell-a">
+          <p class="cs-kicker">Methodology</p>
+          <h2 class="cs-section__title">Methodology</h2>
+          <div class="voice-prose">
+            <p><strong>1. Secondary research:</strong><br>• Research papers on user research in local languages<br>• Market research on vernacular platforms and its future scope</p>
+            <p><strong>2. Structured interviews</strong> (10) with researchers, designers and product managers</p>
+          </div>
+          <figure class="cs-figure">
+            <img src="../assets/webflow/ef34baa6/5f494722662afb32ad1b5693_Frame 22(1).png" alt="stats" loading="lazy">
+          </figure>
+
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="meesho-questionnaire" data-rail-sub="Questionnaire">Questionnaire</h3>
+          <div class="voice-prose">
+            <p>3 seperate questionnaires were made for the three different roles</p>
+          </div>
+          <div class="cs-cards__group">
+            <h3>Researchers</h3>
+            <ul class="cs-list">
+              <li>User angle</li>
+              <li>Research preperation</li>
+              <li>Study of context</li>
+              <li>Validating the need</li>
+              <li>Methodologies &amp; Documentation</li>
+              <li>Ethics</li>
+            </ul>
+          </div>
+          <div class="cs-cards__group">
+            <h3>Designers</h3>
+            <ul class="cs-list">
+              <li>Design angle</li>
+              <li>UI implications</li>
+              <li>Design approach</li>
+              <li>Product related aspects</li>
+            </ul>
+          </div>
+          <div class="cs-cards__group">
+            <h3>Product Managers</h3>
+            <ul class="cs-list">
+              <li>Business angle</li>
+              <li>Product related aspects</li>
+              <li>Need and context</li>
+            </ul>
+          </div>
+          <div class="voice-prose">
+            <p>Researchers: 5<br>Designers: 4<br>Product Managers: 1</p>
+            <p>Hureo<br>Lollipop</p>
+          </div>
+
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="meesho-interviews" data-rail-sub="Interviews">Interviews</h3>
+          <div class="voice-prose">
+            <p><strong>10 Interviews</strong> were conducted over Google meet and phone call. The average duration was <strong>70 minutes</strong>. Each interview was transcribed for further analysis.</p>
+          </div>
+          <figure class="cs-figure">
+            <img src="../assets/webflow/815853f0/5f459fef667691339870e60e_Screenshot 2020-08-26 at 5.02.04 AM.png" alt="transcript format" loading="lazy">
+          </figure>
+
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="meesho-report" data-rail-sub="Report">Report</h3>
+          <div class="voice-prose">
+            <p>Based on the insights and findings, a report was created which sheds light on</p>
+            <p><strong>1.</strong> The <strong>difference in approach</strong> for vernacular based startups and companies which use vernacular languages as a feature.<br>
+            <strong>2.</strong> <strong>Why</strong> products are made available in vernacular language and at <strong>what stage</strong> this feature is required<br>
+            <strong>3.</strong> <strong>How to validate</strong> the need for vernacular languages<br>
+            <strong>4.</strong> Suggestions and <strong>factors to consider</strong> when making a platform vernacular</p>
+            <p><strong>Approach to vernacular languages</strong><br>Product | Design | User<br>Impact on business</p>
+            <p><strong>Making existing platforms vernacular</strong><br>Validating the need<br>Approach<br>Impact on business</p>
+            <p><strong>User Research</strong></p>
+            <p><strong>Next Billion Users</strong><br>Philosophy<br>Patterns<br>Classification</p>
+            <p><strong>Summary</strong></p>
+          </div>
+          <figure class="cs-figure">
+            <img src="../assets/webflow/b1863f9c/5f459feb4b39126e44305489_Screenshot 2020-08-26 at 5.02.12 AM.png" alt="report" loading="lazy">
+          </figure>
+
+          <div class="cs-cards__group">
+            <h3>Vernacular based startups</h3>
+            <div class="voice-prose">
+              <p>Startups which provide an existing service in vernacular languages this making it their USP are vernacular based startups.</p>
+            </div>
+            <ul class="cs-list">
+              <li>Pratilipi</li>
+              <li>Sharechat</li>
+              <li>Vokal</li>
+              <li>Aasanjobs</li>
+            </ul>
+          </div>
+          <div class="cs-cards__group">
+            <h3>Vernacular as feature</h3>
+            <div class="voice-prose">
+              <p>Companies which expand their existing services to offer them in vernacular languages use vernacular as a feature</p>
+            </div>
+            <ul class="cs-list">
+              <li>Flipkart</li>
+              <li>Search &amp; assistant</li>
+              <li>Bolo - EduTech</li>
+              <li>Swiggy</li>
+            </ul>
+          </div>
         </div>
-        <div class="snap-item">
-          <p class="s-label">Participants</p>
-          <p class="s-value">10 practitioners<small>5 researchers, 4 designers, 1 PM</small></p>
-        </div>
-        <div class="snap-item">
-          <p class="s-label">Sessions</p>
-          <p class="s-value">About 70 minutes each, against 3 role-specific questionnaires</p>
-        </div>
-        <div class="snap-item">
-          <p class="s-label">Output</p>
-          <p class="s-value">Research report, plus a stakeholder workshop on practitioner bias</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ============ BACKGROUND ============ -->
-  <section class="strip">
-    <div class="container">
-      <p class="kicker fx">Context</p>
-      <h2 class="fx">Context</h2>
-      <div class="prose">
-        <p class="fx">At the time of the study, vernacular-language users were projected to make up nearly three quarters of India's internet by 2021, and rural users were already averaging more minutes online per week than urban ones. Meesho sat directly on top of this shift: a social commerce platform with more than ten million downloads, whose resellers were mostly more comfortable in Hindi and regional languages than in English. The product, and most of the research behind it, still ran on English defaults. The open question was what that was costing, in comprehension, in trust, and in how far research findings could be believed when the sessions themselves ran across a language gap.</p>
-      </div>
-
-      <figure class="shot fx">
-        <img src="../assets/img/vernacular/interviewee-breakdown.png" alt="Charts from the secondary research, data as of November 2019 curated by DataLabs: vernacular content funding growing at 33% CAGR against 29% for overall media and entertainment; vernacular users projected at 72.93% of Indian internet users by 2021 against 27.02% English users; and rural users averaging 530 minutes online per week against 487 for urban users.">
-        <figcaption>The secondary research backdrop: vernacular users projected at roughly 73% of India's internet by 2021, with rural engagement already ahead of urban. Data as of November 2019, curated by DataLabs.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ============ METHOD ============ -->
-  <section class="strip" style="padding-top: 0;">
-    <div class="container">
-      <p class="kicker fx">Why expert interviews</p>
-      <h2 class="fx">Why expert interviews</h2>
-      <div class="prose">
-        <p class="fx">The obvious design, sessions with end users, was the wrong one for the constraints. It was mid-2020, everything was remote, I had ten weeks, and the users in question were precisely the people hardest to reach well over a video call in a second language. A thin version of that fieldwork would have produced thin findings with confident formatting.</p>
-        <p class="fx">Instead, I interviewed the people who had already spent years doing that fieldwork: ten practitioners from across the industry who research and design for vernacular users. Expert interviews trade firsthand contact for accumulated experience, and the trade is honest as long as the report says clearly that this is what it did. Mine does.</p>
-        <p class="fx">Each interview ran about 70 minutes, against one of three questionnaires built for how each role meets the language problem:</p>
-      </div>
-
-      <div class="panel-grid">
-        <div class="panel-card fx">
-          <p class="pc-num">5</p>
-          <h3>UX researchers</h3>
-          <p>On running sessions across languages: moderation, translation loss, building rapport, and how findings shift with the language of the interview itself.</p>
-        </div>
-        <div class="panel-card fx">
-          <p class="pc-num">4</p>
-          <h3>Designers</h3>
-          <p>On designing vernacular interfaces: script and layout, icon comprehension, and where translated UI text breaks the design.</p>
-        </div>
-        <div class="panel-card fx">
-          <p class="pc-num">1</p>
-          <h3>Product manager</h3>
-          <p>On the business case: when vernacular investment pays off, and how teams decide which languages to support first.</p>
-        </div>
-      </div>
-
-      <div class="shot-pair fx">
-        <figure class="shot">
-          <img src="../assets/img/vernacular/transcript.png" alt="An anonymized interview transcript in a document editor, organized under the headings Background, Company, Methods and Processes, and Socio-cultural and Language factors. The text is blurred.">
-          <figcaption>A transcript from the series, coded under the themes the questionnaires were built around. Content blurred for anonymity.</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="../assets/img/vernacular/report.png" alt="The contents page of the final report: report summary, project brief, approach to vernacular languages, making existing platforms vernacular, user research considerations, and a next-billion-users section covering philosophy, patterns, and classification.">
-          <figcaption>The report's structure: from the product approach to vernacular languages, through research considerations, to a classification of next-billion-user patterns.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ THE FINDING: language demo ============ -->
-  <section class="strip" style="padding-top: 0;">
-    <div class="container">
-      <p class="kicker fx">The central finding</p>
-      <h2 class="fx">The central finding</h2>
-      <div class="prose">
-        <p class="fx">The experts kept converging on the same distinction: translation is not the same as speaking someone's language. Translating an interface into textbook Hindi often makes it harder to use, because nobody shops in textbook Hindi. Transliterating English words into Devanagari script keeps familiar vocabulary but can read as noise. What users actually speak is a colloquial mix, familiar borrowed English words kept as they are, with the language around them in the user's own register.</p>
-        <p class="fx">The report's position followed from that: go hybrid rather than pure. Neither full translation nor full transliteration serves these users; a colloquial mixed-language approach does. Try the same product card three ways below.</p>
-      </div>
-
-      <div class="lang-shell fx">
-        <h3>One button, three languages</h3>
-        <p class="lang-sub">The card is the same. Switch the language strategy and watch the buy button, then read what each version does to a first-time user.</p>
-
-        <div class="lang-tabs" role="tablist">
-          <button class="lang-tab active" data-lang="english" role="tab" aria-selected="true">English</button>
-          <button class="lang-tab" data-lang="translation" role="tab" aria-selected="false">Formal translation</button>
-          <button class="lang-tab" data-lang="colloquial" role="tab" aria-selected="false">Colloquial mix</button>
-        </div>
-
-        <div class="lang-stage">
-          <div class="lang-phone" aria-hidden="true">
-            <p class="lp-header" id="lpHeader">Today's deals</p>
-            <div class="lp-card">
-              <div class="lp-thumb"></div>
-              <p class="lp-title" id="lpTitle">Cotton saree, free delivery</p>
-              <span class="lp-btn" id="lpBtn">Buy now</span>
+      <section class="cs-section cs-section--dark" id="findings" data-rail="Insights">
+        <div class="cell-a">
+          <p class="cs-kicker">Top Findings</p>
+          <h2 class="cs-section__title">Top Findings</h2>
+          <div class="cs-cards__group">
+            <h3>Approaches to vernacularising a platform:</h3>
+            <div class="voice-prose">
+              <p><strong>Translation vs Transliteration:</strong><br>Users have different proficiencies in reading the script of a language vs. understanding the language itself. In some case, regional language maybe written in an english script “isko share kare” or english words may need to written in the regional script “शेयर”</p>
+              <p><strong>Colloquial language:</strong><br>During translation, it is important to consider the colloquial language of a region as opposed to a strict translation which may not be understood by the people because of its “pureness”. Eg, Share in Hindi is "Shaja", a word people don't use in daily language and hence is not understood by the masses</p>
+              <p><strong>Context of use:</strong><br>Interaction/ communication vs reading/writing: Users have different preferences for language when interacting with other users on the platform vs.<br>the the content which is a part of the interface.</p>
             </div>
           </div>
-          <div class="lang-note">
-            <h4 id="lnTitle">The default</h4>
-            <p id="lnBody">Fine for English-comfortable users, and a wall for everyone else. Every unfamiliar word adds hesitation right where the purchase decision happens.</p>
+          <div class="cs-cards__group">
+            <h3>Benefits of vernacular language in digital products</h3>
+            <div class="voice-prose">
+              <p><strong>Acquisition:</strong><br>To acquire users by marketing it as a vernacular product</p>
+              <p><strong>Adoption:</strong><br>To increase user adoption of the platform by making it inclusive especially for audience with low digital literacy</p>
+              <p><strong>Retention:</strong><br>To increase the retention on the platform by leveraging vernacular language as an extra/ added feature for convenience. Targeted at digitally literate users who can complete tasks in English but prefer their regional language</p>
+            </div>
           </div>
         </div>
-        <p class="lang-disclaimer">The card and copy are illustrative, written for this page. The translation-versus-colloquial pattern they demonstrate is the study's finding, echoed by nearly every expert interviewed.</p>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ============ FINDINGS + IMPACT ============ -->
-  <section class="strip fold-dark">
-    <div class="container">
-      <p class="kicker fx" style="color: #F9A8D4;">What else the report argued</p>
-      <h2 class="fx">What else the report argued</h2>
-      <ul class="deliver-list">
-        <li class="fx"><span class="d-n">a</span><span><strong>Language is a research variable, not logistics.</strong> The language a session runs in changes what participants say and how confident they feel saying it. Discussion guides and analysis need to account for it explicitly.</span></li>
-        <li class="fx"><span class="d-n">b</span><span><strong>Socio-cultural context outweighs vocabulary.</strong> Trust signals, family dynamics around purchases, and who in the household owns the phone shaped behavior more than any single string of UI text.</span></li>
-        <li class="fx"><span class="d-n">c</span><span><strong>Practitioner bias is the quiet failure mode.</strong> Teams defaulted to imagining low-tech-literacy users as less capable rather than differently experienced. This finding felt too important to leave in a document, so it became a dedicated workshop with design and product stakeholders, naming the biases out loud.</span></li>
-      </ul>
-
-    </div>
-  </section>
-
-  <!-- ============ REFLECTION + CLOSE ============ -->
-  <section class="closing">
-    <div class="container" style="position: relative;">
-      <p class="kicker fx" style="color: #F9A8D4;">What I learned</p>
-      <h2 class="fx" style="color: #fff;">Reflection</h2>
-      <div class="prose">
-        <p class="fx">I was an intern, and this was a ten-week study built on expert interviews and secondary research rather than fieldwork with end users; its impact was a vocabulary and a set of considerations the teams could use, not a shipped feature. I'd rather describe it at that scale than inflate it. It still set the direction of my career: the question of who research quietly excludes has followed me into every role since.</p>
-        <p class="fx">What it taught me about method has lasted too. The conditions of research, the language of the session, who feels entitled to speak, what the participant assumes the researcher wants to hear, are method decisions, not logistics. A discussion guide that is flawless in English can be a different instrument entirely in Hindi, and pretending otherwise produces confident findings about the wrong thing.</p>
-      </div>
-
-      <div class="next-project fx" style="margin-top: 96px;">
-        <p class="label">Next project</p>
-        <a href="microsoft-copilot-trust.html">A point of view for Copilot in Outlook
-          <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-cta">
-          <p class="label">Get in touch</p>
-          <a class="big-link" href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
-        </div>
-        <div class="footer-bottom">
-          <span>&copy; 2026 Priyal Shrivastava</span>
-          <div class="footer-links">
-            <a href="mailto:priyalshri1@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener">LinkedIn</a>
+      <section class="cs-section cs-section--dark" id="impact" data-rail="Impact">
+        <div class="cell-a">
+          <p class="cs-kicker">Impact</p>
+          <h2 class="cs-section__title">Impact</h2>
+          <div class="voice-prose">
+            <p>• This study provided clarity on benchmarking vernacular approach</p>
+            <p>• Based on these insights, a hybrid approach of translation and transliteration of the core user journey was executed</p>
+            <p>• The research outputs also contributed to product prioritisation and decision-making on vernacular execution for the following quarter's planning</p>
+            <p><strong>Find the full report </strong><a class="u-draw accent" href="https://drive.google.com/file/d/1yMPyFSmSpuJP5yPk8EybjaO56nDWO-2t/view?usp=sharing" target="_blank" rel="noopener">here</a></p>
+            <p>Acquisition | Adoption | Retention | Translation &amp; Transliteration | Colloquial Language | Hierarchy within languages | NBU preferences &amp; behaviour | Product adaptation | Impact | Research &amp; documentation | Research ethics</p>
           </div>
         </div>
-      </div>
-    </footer>
-  </section>
+      </section>
 
-  <script>
-  (function () {
-    var progress = document.getElementById("progress");
-    function onScroll() {
-      var doc = document.documentElement;
-      progress.style.width = (doc.scrollTop / (doc.scrollHeight - window.innerHeight) * 100) + "%";
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+      <section class="cs-close" id="internship" data-rail-skip>
+        <div class="cell-a">
+          <p class="cs-kicker">Internship</p>
+          <h2 class="cs-section__title">Internship</h2>
+          <div class="voice-prose">
+            <p>Over the span of 3 months I worked on multiple projects. Apart from this project I worked on cognitive biases in our resellers and within the organisation and assisted in core user research along with the team. Through my experience as a part of the UR team of Meesho, I learnt the following:<br><strong>• Qualitative user research<br>• Remote Usability testing<br>• Converting data into actionable insights</strong></p>
+          </div>
+          <a class="cs-back u-draw" href="../index.html#work">← Back to work</a>
+        </div>
+      </section>
 
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
-    document.querySelectorAll(".fx").forEach(function (el) { io.observe(el); });
+      <div id="site-footer"></div>
+          </main>
+  </div>
 
-    /* Language strategy demo */
-    var content = {
-      english: {
-        header: "Today's deals",
-        title: "Cotton saree, free delivery",
-        btn: "Buy now",
-        noteTitle: "The default",
-        noteBody: "Fine for English-comfortable users, and a wall for everyone else. Every unfamiliar word adds hesitation right where the purchase decision happens."
-      },
-      translation: {
-        header: "आज के विशेष प्रस्ताव",
-        title: "सूती साड़ी, निःशुल्क वितरण",
-        btn: "अभी क्रय करें",
-        noteTitle: "Technically Hindi, practically foreign",
-        noteBody: "वितरण for delivery, क्रय for buy: dictionary-correct words almost nobody uses while shopping. Experts called this the most common failure: translation that swaps one unfamiliar language for another."
-      },
-      colloquial: {
-        header: "आज की डील्स",
-        title: "कॉटन साड़ी, फ्री डिलीवरी",
-        btn: "अभी खरीदें",
-        noteTitle: "How people actually talk",
-        noteBody: "Deals, cotton, and free delivery stay as the borrowed words everyone already uses, written in Devanagari, with Hindi carrying the sentence. This colloquial mix is what the report recommended: the language of the bazaar, not the textbook."
-      }
-    };
-    var tabs = document.querySelectorAll(".lang-tab");
-    tabs.forEach(function (tab) {
-      tab.addEventListener("click", function () {
-        tabs.forEach(function (t) {
-          t.classList.toggle("active", t === tab);
-          t.setAttribute("aria-selected", String(t === tab));
-        });
-        var c = content[tab.dataset.lang];
-        document.getElementById("lpHeader").textContent = c.header;
-        document.getElementById("lpTitle").textContent = c.title;
-        document.getElementById("lpBtn").textContent = c.btn;
-        document.getElementById("lnTitle").textContent = c.noteTitle;
-        document.getElementById("lnBody").textContent = c.noteBody;
-      });
-    });
-  })();
-  </script>
+  <script src="../js/shell.js" defer></script>
+  <script src="../js/section-rail.js?v=20260808h" defer></script>
 </body>
 </html>

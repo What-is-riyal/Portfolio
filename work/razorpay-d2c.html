@@ -3,643 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testing a consumer product bet before the company made it | Priyal Shrivastava</title>
-  <meta name="description" content="A two-sided validation study at Razorpay: 25+ merchant interviews, 3 consumer focus groups, and a 1000+ respondent survey that reshaped a strategic bet.">
+  <title>What makes merchants pay and consumers play? | Priyal Shrivastava</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    /* ============ Showpiece page styles: D2C ============ */
-    :root {
-      --ink: #15101F;
-      --violet: #7C3AED;     /* 5.1:1 on white */
-      --serif: "Fraunces", Georgia, serif;
-    }
-    .fold-dark { --violet: #C4B5FD; } /* 9.6:1 on ink */
-
-    body { background: #FFFFFF; overflow-x: hidden; }
-    .progress { background: var(--violet); }
-
-    .kicker {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--violet); margin-bottom: 20px;
-    }
-    .strip { padding: 110px 0; position: relative; }
-    .strip h2 {
-      font-size: clamp(30px, 4.5vw, 50px); font-weight: 800; letter-spacing: -0.03em;
-      line-height: 1.12; max-width: 24ch; margin-bottom: 28px;
-    }
-    .strip h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--violet); }
-    .prose { max-width: 680px; }
-    .prose p { font-size: 17px; line-height: 1.75; color: #3C3C44; margin-bottom: 20px; }
-    .prose strong { font-weight: 700; color: var(--text); }
-    .fold-dark { background: var(--ink); color: #fff; }
-    .fold-dark .prose p { color: rgba(255,255,255,0.75); }
-    .fold-dark .prose strong { color: #fff; }
-    .fold-dark h2 { color: #fff; }
-
-    .fx { opacity: 0; transform: translateY(36px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
-    .fx.in { opacity: 1; transform: none; }
-
-    /* ============ Hero ============ */
-    .hero-light {
-      min-height: 88vh; display: flex; flex-direction: column; justify-content: center;
-      position: relative; overflow: hidden; padding: 80px 0;
-      background:
-        radial-gradient(620px circle at 88% 18%, rgba(124, 58, 237, 0.08), transparent 60%),
-        #FFFFFF;
-    }
-    .hero-light .eyebrow {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 30px; display: flex; align-items: center; gap: 10px;
-    }
-    .hero-light .eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--violet); }
-    .hero-light .q-label {
-      font-family: var(--serif); font-style: italic; font-size: clamp(17px, 2vw, 22px);
-      color: var(--violet); margin-bottom: 16px;
-    }
-    .hero-light h1 {
-      font-size: clamp(40px, 7vw, 86px); line-height: 1.05; font-weight: 800;
-      letter-spacing: -0.04em; max-width: 16ch; margin-bottom: 32px;
-    }
-    .hero-light h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--violet); }
-    .hero-standfirst {
-      font-size: clamp(17px, 2vw, 21px); color: var(--muted); max-width: 56ch;
-      line-height: 1.7; margin-bottom: 44px;
-    }
-    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; }
-    .pchip {
-      font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
-      border: 1px solid var(--border); color: var(--muted); background: #fff;
-    }
-    .pchip.accent { border-color: rgba(124, 58, 237, 0.4); color: var(--violet); }
-
-    /* Drifting side-cards in hero: merchant vs consumer */
-    .float-card {
-      position: absolute; padding: 12px 16px; border-radius: 12px; background: #fff;
-      border: 1px solid var(--border); box-shadow: 0 16px 32px -20px rgba(21, 16, 31, 0.25);
-      font-size: 12.5px; font-weight: 600; color: var(--muted);
-      animation: bob 6s ease-in-out infinite;
-    }
-    .float-card b { display: block; font-size: 13.5px; color: var(--text); font-weight: 800; margin-bottom: 1px; }
-    @keyframes bob { 0%, 100% { transform: translateY(0) rotate(var(--tilt, 0deg)); } 50% { transform: translateY(-10px) rotate(var(--tilt, 0deg)); } }
-    @media (max-width: 1000px) { .float-card { display: none; } }
-
-    /* ============ Snapshot ============ */
-    .snapshot-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 28px;
-      border-top: 1px solid var(--border); padding-top: 36px; margin-top: 64px;
-    }
-    .snap-item .s-label {
-      font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 8px;
-    }
-    .snap-item .s-value { font-size: 15px; font-weight: 600; line-height: 1.5; color: var(--text); }
-    .snap-item .s-value small { display: block; font-weight: 500; font-size: 13px; color: var(--muted); margin-top: 2px; }
-
-    /* ============ Showpiece image ============ */
-    .shot { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); margin: 56px 0; }
-    .shot img { display: block; width: 100%; height: auto; }
-    .shot figcaption {
-      font-size: 13.5px; color: var(--muted); padding: 14px 18px; border-top: 1px solid var(--border);
-      background: var(--surface); line-height: 1.6;
-    }
-    .fold-dark .shot { border-color: rgba(255,255,255,0.12); }
-    .fold-dark .shot figcaption { background: rgba(255,255,255,0.04); border-top-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.6); }
-
-    /* ============ Two-stream cards ============ */
-    .stream-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
-    .stream {
-      border-radius: 14px; border: 1px solid var(--border); background: var(--surface);
-      padding: 32px 28px;
-    }
-    .stream .st-label {
-      font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
-      margin-bottom: 14px; color: var(--violet);
-    }
-    .stream h3 { font-size: 21px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 12px; }
-    .stream p { font-size: 15px; line-height: 1.7; color: var(--muted); margin-bottom: 0; }
-    .stream ul { list-style: none; margin-top: 14px; }
-    .stream li {
-      font-size: 14px; line-height: 1.6; color: #3C3C44; padding: 8px 0 8px 22px; position: relative;
-    }
-    .stream li::before { content: "\2192"; position: absolute; left: 0; color: var(--violet); font-weight: 700; }
-    @media (max-width: 860px) { .stream-grid { grid-template-columns: 1fr; } }
-
-    /* ============ Process moves ============ */
-    .moves { counter-reset: move; margin-top: 64px; max-width: 760px; }
-    .move {
-      display: grid; grid-template-columns: 72px 1fr; gap: 26px; padding: 36px 0;
-      border-bottom: 1px solid var(--border); position: relative;
-    }
-    .move:last-child { border-bottom: none; }
-    .fold-dark .move { border-bottom-color: rgba(255,255,255,0.12); }
-    .move .m-num {
-      font-family: var(--serif); font-style: italic; font-size: 44px; line-height: 1;
-      color: var(--violet); counter-increment: move;
-    }
-    .move h3 { font-size: 21px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 10px; }
-    .move p { font-size: 16px; line-height: 1.72; color: #3C3C44; margin-bottom: 10px; }
-    .fold-dark .move p { color: rgba(255,255,255,0.72); }
-    .move p:last-child { margin-bottom: 0; }
-    .move .m-why {
-      font-size: 14.5px; line-height: 1.65; color: var(--muted);
-      border-left: 3px solid var(--violet); padding-left: 14px; margin-top: 12px;
-    }
-    .move .m-why b { color: var(--violet); font-weight: 700; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
-
-    /* ============ Piggy bank interactive ============ */
-    .piggy-shell {
-      margin-top: 28px; border-radius: 16px; border: 1px solid var(--border); background: #fff;
-      padding: 32px; position: relative;
-    }
-    .piggy-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 22px; }
-    .piggy-head h4 { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; }
-    .piggy-total { font-size: 13px; font-weight: 700; color: var(--violet); font-family: var(--serif); font-style: italic; font-size: 18px; }
-    .piggy-row { display: grid; grid-template-columns: 160px 1fr 56px 60px; align-items: center; gap: 14px; margin-bottom: 14px; }
-    .piggy-row .pr-label { font-size: 14px; font-weight: 700; color: var(--text); }
-    .piggy-track { height: 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); overflow: hidden; }
-    .piggy-fill { height: 100%; background: var(--violet); width: 0%; transition: width 0.35s cubic-bezier(0.22,1,0.36,1); border-radius: 999px; }
-    .piggy-controls { display: flex; gap: 6px; justify-content: flex-end; }
-    .piggy-btn {
-      width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--border); background: #fff;
-      font-size: 15px; font-weight: 800; color: var(--violet); cursor: pointer; line-height: 1;
-      display: flex; align-items: center; justify-content: center; transition: background 0.2s ease, border-color 0.2s ease;
-    }
-    .piggy-btn:hover { background: rgba(124, 58, 237, 0.08); border-color: rgba(124, 58, 237, 0.4); }
-    .piggy-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-    .pr-val { font-size: 14px; font-weight: 700; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
-    .piggy-toggle {
-      margin-top: 24px; display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 700;
-      color: var(--violet); background: none; border: 1px dashed rgba(124, 58, 237, 0.4); border-radius: 999px;
-      padding: 10px 18px; cursor: pointer; transition: background 0.2s ease;
-    }
-    .piggy-toggle:hover { background: rgba(124, 58, 237, 0.06); }
-    .piggy-real {
-      margin-top: 20px; max-height: 0; overflow: hidden; opacity: 0;
-      transition: max-height 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease;
-    }
-    .piggy-real.show { max-height: 360px; opacity: 1; }
-    .piggy-real-inner { border-top: 1px solid var(--border); padding-top: 20px; }
-    .piggy-real p { font-size: 14.5px; line-height: 1.7; color: var(--muted); margin-bottom: 12px; }
-    .piggy-real .pr-quote {
-      font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--text);
-      border-left: 3px solid var(--violet); padding-left: 14px; margin: 0;
-    }
-    @media (max-width: 640px) {
-      .piggy-row { grid-template-columns: 1fr; gap: 8px; }
-      .piggy-controls { justify-content: flex-start; }
-      .pr-val { text-align: left; }
-    }
-
-    /* ============ The turn: split panel ============ */
-    .turn-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 64px; border-radius: 16px; overflow: hidden; }
-    .turn-panel { padding: 44px 36px; min-height: 280px; display: flex; flex-direction: column; justify-content: center; }
-    .turn-panel.was { background: var(--surface); border: 1px solid var(--border); }
-    .turn-panel.now { background: var(--ink); color: #fff; }
-    .turn-panel .tp-label {
-      font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;
-    }
-    .turn-panel.was .tp-label { color: var(--muted); }
-    .turn-panel.now .tp-label { color: #C4B5FD; }
-    .turn-panel .tp-title {
-      font-family: var(--serif); font-style: italic; font-size: clamp(20px, 2.4vw, 27px); line-height: 1.35; margin-bottom: 14px;
-    }
-    .turn-panel.now .tp-title { color: #fff; }
-    .turn-panel p:not(.tp-label):not(.tp-title) { font-size: 14.5px; line-height: 1.7; }
-    .turn-panel.was p:not(.tp-label):not(.tp-title) { color: var(--muted); }
-    .turn-panel.now p:not(.tp-label):not(.tp-title) { color: rgba(255,255,255,0.65); }
-    .turn-arrow {
-      display: flex; align-items: center; justify-content: center; background: var(--violet); color: #fff;
-      width: 44px; flex: 0 0 44px;
-    }
-    @media (max-width: 860px) {
-      .turn-wrap { grid-template-columns: 1fr; }
-      .turn-arrow { display: none; }
-    }
-
-    /* ============ Outcome list ============ */
-    .deliver-list { list-style: none; margin-top: 48px; max-width: 740px; }
-    .deliver-list li {
-      display: grid; grid-template-columns: 34px 1fr; gap: 18px; align-items: baseline;
-      padding: 22px 0; border-bottom: 1px solid var(--border);
-      font-size: 16.5px; line-height: 1.65; color: #3C3C44;
-    }
-    .deliver-list li:last-child { border-bottom: none; }
-    .deliver-list .d-n { font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--violet); }
-    .deliver-list strong { font-weight: 700; color: var(--text); }
-
-    /* ============ Stats band ============ */
-    .stats-band { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
-    .stat-card { border-radius: 14px; border: 1px solid rgba(255,255,255,0.12); padding: 28px 24px; }
-    .stat-card .sc-num { font-family: var(--serif); font-style: italic; font-size: clamp(34px, 4vw, 48px); color: #C4B5FD; line-height: 1; margin-bottom: 8px; }
-    .stat-card .sc-label { font-size: 13.5px; color: rgba(255,255,255,0.65); line-height: 1.5; }
-    @media (max-width: 768px) { .stats-band { grid-template-columns: 1fr; } }
-
-    /* ============ NDA pill ============ */
-    .nda-pill {
-      display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600;
-      color: var(--muted); border: 1px dashed var(--border); border-radius: 999px; padding: 10px 20px;
-      margin-bottom: 32px;
-    }
-    .nda-pill .dot-pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--violet); animation: pulse 2s infinite; }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
-
-    /* Footer over dark end */
-    .closing { background: var(--ink); color: #fff; padding: 120px 0 0; }
-    .closing .footer { border-top-color: rgba(255,255,255,0.12); margin-top: 80px; }
-    .closing .footer-bottom, .closing .footer-cta .label { color: rgba(255,255,255,0.5); }
-    .closing .big-link { color: #fff; }
-    .closing .next-project { border-top: none; margin-top: 0; }
-    .closing .next-project .label { color: rgba(255,255,255,0.5); }
-    .closing .next-project a { color: #fff; }
-    .closing .next-project a:hover { color: var(--violet); }
-    .closing .footer-links a:hover { color: var(--violet); }
-
-    @media (prefers-reduced-motion: reduce) {
-      .float-card { animation: none !important; }
-      .fx { opacity: 1; transform: none; transition: none; }
-      .piggy-fill { transition: none; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/grid.css?v=20260808a">
+  <link rel="stylesheet" href="../css/shell.css?v=20260808a">
+  <link rel="stylesheet" href="../css/case-study.css?v=20260808a">
+  <link rel="stylesheet" href="../css/section-rail.css?v=20260808h">
 </head>
-<body>
+<body class="page-case-study" data-shell-base="../" data-shell-page="work">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cs-progress" id="cs-progress" aria-hidden="true"></div>
+  <nav id="section-rail" class="section-rail" aria-label="On this page"></nav>
+  <div class="page" style="position:relative;width:100%">
+    <div id="site-nav"></div>
 
-  <div class="progress" id="progress"></div>
+    <main id="main" class="site-content page-case">
+      <header class="cs-hero">
+        <div class="cs-hero__orb" aria-hidden="true"></div>
+        <div class="cs-hero__inner">
+          <div class="cs-hero__copy">
+            <p class="page-kicker cs-hero__org">Razorpay</p>
+            <h1 class="voice-opener cs-hero__title">What makes merchants pay and consumers play?</h1>
+            <p class="voice-sub cs-hero__sub">A deep dive into validating a B2C rewards platform for a B2B fintech</p>
+            <ul class="cs-chips" aria-label="Project tags">
+              <li class="cs-chip cs-chip--accent">Lead UX Researcher</li>
+              <li class="cs-chip">10 weeks</li>
+              <li class="cs-chip">B2C validation</li>
+            </ul>
+          </div>
+          <dl class="cs-meta">
+            <div>
+              <dt>Deliverable</dt>
+              <dd>Research report with action items</dd>
+            </div>
+            <div>
+              <dt>Duration</dt>
+              <dd>10 weeks, May 2024</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>Lead UX Researcher</dd>
+            </div>
+            <div>
+              <dt>Collaborators</dt>
+              <dd>• Product strategist<br>• Product Designer<br>• Market researcher <span class="sg-tech">(for consumer survey)</span></dd>
+            </div>
+            <div>
+              <dt>Stakeholders</dt>
+              <dd>Director of Product strategy, Head of strategy &amp; corp dev, CEO &amp; MD, Product strategy Consultants</dd>
+            </div>
+          </dl>
+        </div>
+        <p class="cs-hero__scroll" aria-hidden="true">Scroll</p>
+      </header>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero-light">
-    <header class="nav">
-      <div class="container nav-inner">
-        <a href="../index.html" class="logo">ps<span class="dot">.</span></a>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="../index.html#work" class="active">Work</a></li>
-            <li><a href="../play.html">Play</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../resume.html">Resume</a></li>
+      <section class="cs-quote-band" aria-label="Project stakes">
+        <div class="cell-a">
+          <blockquote class="cs-quote">De-risking a strategic proposal for a two-sided marketplace and unlocking multi-million dollar investment</blockquote>
+          <p class="cs-lede">Razorpay is a 7.5 Billion dollars B2B Indian start up solving for 8M+ businesses' end to end money movements</p>
+        </div>
+      </section>
+
+      <section class="cs-section" id="background" data-rail="Overview">
+        <div class="cell-a">
+          <p class="cs-kicker">Project Background</p>
+          <h2 class="cs-section__title">Project Background</h2>
+          <div class="voice-prose">
+            <p><strong>Business Context</strong><br>Razorpay, a leading fintech company processing payments for 50,000+ merchants identified a strategic threat: competitors with B2C consumer networks were beginning to win B2B market due to brand recognition. The company needed to evaluate whether expanding into B2C through a rewards platform could defend against this disruption.</p>
+            <p><strong>Research Challenge</strong><br>The strategy team proposed a two-sided marketplace concept. Merchants would fund rewards that consumers could earn across brands. Before committing, leadership required validation. I partnered with the a Product Strategist to design and execute a comprehensive validation study addressing whether merchants would pay, whether consumers would adopt, and where these interests converged.</p>
+          </div>
+          <figure class="cs-figure cs-figure--pair">
+            <img src="../assets/webflow/e355c349/65a2ee967a94950c7e972c06_Screenshot 2023-10-27 at 12.43.09 AM.png" alt="" loading="lazy">
+            <img src="../assets/webflow/6c1ee61c/65a2ee966aa2aff4e910e4de_Screenshot 2024-01-14 at 1.39.27 AM.png" alt="" loading="lazy">
+          </figure>
+        </div>
+      </section>
+
+      <section class="cs-section" id="objectives" data-rail="Objectives">
+        <div class="cell-a">
+          <p class="cs-kicker">Objectives</p>
+          <h2 class="cs-section__title">Objectives</h2>
+          <div class="cs-cards__group">
+            <h3>Merchant</h3>
+            <ul class="cs-cards">
+              <li><strong>1.</strong> Identify what would make the proposition valuable for merchants</li>
+              <li><strong>2.</strong> Understand barriers to adoption and readiness to integrate</li>
+            </ul>
+          </div>
+          <div class="cs-cards__group">
+            <h3>Consumer</h3>
+            <ul class="cs-cards">
+              <li><strong>1.</strong> Measure willingness to try and data-sharing comfort levels</li>
+              <li><strong>2.</strong> Identify trust drivers and post-purchase pain points influencing adoption.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section" id="methodology" data-rail="Methodology">
+        <div class="cell-a">
+          <p class="cs-kicker">Methodology</p>
+          <h2 class="cs-section__title">Methodology</h2>
+          <div class="voice-prose">
+            <p>I developed a mixed-methods approach with parallel research streams to validate both sides of the marketplace simultaneously.</p>
+            <p><strong>Marketplace</strong>: In depth participatory interviews<br><strong>Consumers</strong>: FGD for exploration and hypothesis, large survey for quantitative validation</p>
+          </div>
+          <figure class="cs-figure">
+            <img src="../assets/webflow/ee076f3a/694721c7d1a011b13239261b_Screenshot 2025-12-20 at 2.21.27 PM.png" alt="" loading="lazy">
+          </figure>
+
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="d2c-merchant" data-rail-sub="Merchant">1. Merchant</h3>
+          <div class="voice-prose">
+            <p><strong>Study Design:</strong><br>Conducted 40+ in-depth interviews with merchant decision-makers across a stratified sample varying in Company Size, Purchase frequency, and industry categories</p>
+            <p><strong>Interview Protocol</strong><br>• 50-minute semi-structured interview<br>1. Pain points<br>2. Piggy bank exercise to break down problem priority based on money allocated<br>2. Participatory design activity for ideal solution<br>3. Introduced our proposal<br>4. Willingness to pay</p>
+            <p>Through the interviews we found that our proposed value proposition had very little interest. However, the participatory design activity helped us pivot and find a new model that worked for both merchants, and our company.</p>
+          </div>
+          <figure class="cs-figure">
+            <img src="../assets/webflow/48ee7abd/694721c7b88c2622cd8c0855_Screenshot 2025-12-20 at 2.21.50 PM.png" alt="" loading="lazy">
+          </figure>
+
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="d2c-fgd" data-rail-sub="Consumer FGDs">2. Consumer — Focus Group Discussions</h3>
+          <div class="voice-prose">
+            <p>FGDs were conducted to get a general user understanding and broad archetypes to create a more efficient survey.<br>Sessions employed journey mapping exercises, pain point exploration through storytelling, and progressive concept testing. The group dynamic enabled participants to build on and challenge each other's perspectives, revealing more nuanced opinions about the D2C shopping experience.</p>
+          </div>
+          <figure class="cs-figure cs-figure--pair">
+            <img src="../assets/webflow/90bbb528/694721c7f7e16375f93afecb_17751b8821ddf341e9a2938c1c88752d_Screenshot 2025-12-20 at 2.22.05 PM.png" alt="" loading="lazy">
+            <img src="../assets/webflow/d1325853/694721c751129a28092390b1_Screenshot 2025-12-20 at 2.22.14 PM.png" alt="" loading="lazy">
+          </figure>
+
+          <h3 class="voice-row" style="margin: 2rem 0 1rem" id="d2c-survey" data-rail-sub="Consumer survey">2. Consumer — Survey</h3>
+          <div class="voice-prose">
+            <p>Partnered with a market researcher to field a survey to 1,000+ respondents. The survey resulted in:</p>
+          </div>
+          <ul class="cs-list">
+            <li>Feature prioritisation</li>
+            <li>Willingness to try scores</li>
+            <li>Behavioral assessment for archetype creation</li>
+            <li>Potential Unique Value</li>
           </ul>
-        </nav>
-      </div>
-    </header>
-
-    <div class="float-card" style="top: 22%; left: 6%; --tilt: -3deg;" aria-hidden="true"><b>Merchants</b>Will they pay?</div>
-    <div class="float-card" style="top: 16%; right: 7%; --tilt: 2deg; animation-delay: 1s;" aria-hidden="true"><b>Consumers</b>Will they download?</div>
-    <div class="float-card" style="bottom: 14%; right: 12%; --tilt: -1.5deg; animation-delay: 2s;" aria-hidden="true"><b>Both sides</b>Same underlying need?</div>
-
-    <div class="container">
-      <p class="eyebrow">Razorpay &middot; 2024</p>
-      <p class="q-label fx in">The question</p>
-      <h1 class="fx in">Testing a consumer product bet before the company made it</h1>
-      <p class="hero-standfirst fx in">Razorpay, a B2B payments company, was weighing a strategic move into consumer territory: a rewards marketplace that merchants would fund and consumers would use. Before leadership committed real investment, I designed and ran a study to find out whether demand existed on either side of that marketplace. The research ended up doing more than validating the pitch; it changed what the pitch was.</p>
-      <div class="hero-chips fx in">
-        <span class="pchip">UX Researcher</span>
-        <span class="pchip">10 weeks, 2024</span>
-        <span class="pchip">Two-sided validation study</span>
-        <span class="pchip accent">Under NDA &middot; method shown</span>
-      </div>
-
-      <div class="snapshot-grid fx in">
-        <div class="snap-item">
-          <p class="s-label">My role</p>
-          <p class="s-value">UX Researcher; designed and ran the study</p>
+          <figure class="cs-figure">
+            <img src="../assets/webflow/0f5ae265/694721c7ab488d10ad169c17_Screenshot 2025-12-20 at 2.22.23 PM.png" alt="" loading="lazy">
+          </figure>
         </div>
-        <div class="snap-item">
-          <p class="s-label">Timeline</p>
-          <p class="s-value">10 weeks<small>2024</small></p>
+      </section>
+
+      <section class="cs-section" id="outcome" data-rail="Outcome">
+        <div class="cell-a">
+          <p class="cs-kicker">Outcome</p>
+          <h2 class="cs-section__title">Outcome</h2>
+          <ul class="cs-list">
+            <li><strong>Defined key consumer personas</strong> to clarify who the proposition serves best and where adoption is most likely.</li>
+            <li><strong>Identified customer hooks that drive adoption</strong>, clarifying which trust and post-purchase pain points must be addressed first.</li>
+            <li><strong>Prioritized features into must-haves and good-to-haves</strong>, providing clear guidance for MVP scope and sequencing.</li>
+            <li><strong>Reframed the merchant value proposition</strong> by identifying what makes participation worthwhile and where the original assumptions did not hold.</li>
+            <li><strong>Narrowed the merchant segments</strong> for which the proposition is most viable, enabling a more focused go-to-market strategy.</li>
+          </ul>
         </div>
-        <div class="snap-item">
-          <p class="s-label">Working with</p>
-          <p class="s-value">A product strategist, who co-designed the study</p>
-        </div>
-        <div class="snap-item">
-          <p class="s-label">Methods</p>
-          <p class="s-value">25+ merchant interviews, 3 consumer focus groups, 1000+ respondent survey</p>
-        </div>
-        <div class="snap-item">
-          <p class="s-label">Outcome</p>
-          <p class="s-value">Informed the investment decision; reframed the value proposition</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ============ BACKGROUND ============ -->
-  <section class="strip">
-    <div class="container">
-      <p class="kicker fx">Context</p>
-      <h2 class="fx">Context</h2>
-      <div class="prose">
-        <p class="fx">Razorpay's business is payments infrastructure for other businesses; ordinary consumers never touch it directly. Some competitors, however, run consumer-facing products alongside their B2B lines, and that consumer footprint was starting to win them B2B deals on name recognition. Leadership's proposed answer was a two-sided rewards marketplace: merchants fund rewards, consumers earn and redeem them across participating brands. On paper it gave Razorpay a consumer touchpoint and gave merchants an acquisition channel.</p>
-        <p class="fx">The decision in front of leadership was whether to invest in building it. My job was to make that decision better informed than a pitch deck could, and in particular to distinguish polite interest from actual demand, on both sides at once. A marketplace fails if either side fails to show up, so validating only the merchant side or only the consumer side would have answered half the question and left the riskier half as an assumption.</p>
-      </div>
-
-      <div class="nda-pill fx"><span class="dot-pulse"></span> Specific findings, segment definitions, and the eventual product direction are under NDA. The research questions, the study design, and the decisions behind it are shown, along with sanitized artifacts.</div>
-
-      <figure class="shot fx">
-        <img src="../assets/img/d2c/methodology.png" alt="The study framework: a merchant track asking 'Will they pay?', mapped against level of interest, key attractors, detractors, and opportunities; and a consumer track asking 'Will they download?', mapped against attitudes around rewards, ideal customer persona, pain points, and key attractors.">
-        <figcaption>The framework the study was scoped around: one question per side of the marketplace. For merchants, will they pay, and what attracts or repels them. For consumers, will they download, and what shapes their attitude to rewards.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ============ TWO STREAMS ============ -->
-  <section class="strip" style="padding-top: 0;">
-    <div class="container">
-      <p class="kicker fx">How the study was designed</p>
-      <h2 class="fx">How the study was designed</h2>
-      <div class="prose">
-        <p class="fx">The study ran as two parallel streams feeding one decision.</p>
-        <p class="fx"><strong>The merchant stream</strong> was 25+ in-depth interviews, around 50 minutes each, with merchant decision-makers stratified by company size, purchase frequency, and industry. The structure of each session mattered more than the count. Each one moved through four stages in a fixed order: current pain points first, then a budget-allocation exercise, then a participatory activity in which the merchant sketched their own ideal solution, and only then the direct pitch of the rewards marketplace.</p>
-        <p class="fx">That ordering was the most important design decision in the study. Asked directly whether they would pay for a rewards platform, merchants tend to say something agreeable, and an agreeable answer to a hypothetical is exactly the kind of evidence that sinks products later. So before the pitch ever appeared, each merchant allocated a fixed hypothetical budget, 100 rupees, across the problem areas in their business. Where people put constrained money reveals priorities that direct questions don't. The participatory sketching then showed us what merchants wanted built, in their own vocabulary, before our concept could anchor them.</p>
-      </div>
-
-      <figure class="shot fx">
-        <img src="../assets/img/d2c/merchant-interviews.png" alt="Three artifacts from the merchant interviews: a pie chart from the 100-rupee budget allocation exercise; a board of sticky notes from the idealization exercise asking what an ideal platform should offer, labeled with a participant's name; and prototype screens used for the pitch, evaluated on appeal, comprehension, relevance, uniqueness, credibility, and willingness to trial.">
-        <figcaption>Three of the four interview instruments, left to right: the budget-allocation exercise ("If you had Rs. 100, how would you spend it on the following goals?"), one participant's idealization board ("What are the key things an ideal platform should offer?"), and the concept pitch, scored on appeal, comprehension, relevance, uniqueness, credibility, and willingness to trial.</figcaption>
-      </figure>
-
-      <div class="prose">
-        <p class="fx"><strong>The consumer stream</strong> began with three focus group discussions, used for what groups are genuinely good at: building shared archetypes and letting participants challenge each other's claims, which surfaces more honest reactions to a new concept than polite one-on-one agreement. The groups moved from warm-up through a comparison of D2C and marketplace shopping, a deep dive on how participants actually use rewards, an idealization exercise, and a prioritization at the end.</p>
-      </div>
-
-      <figure class="shot fx">
-        <img src="../assets/img/d2c/fgd-2.png" alt="The focus group discussion guide: a table of sections with objectives. Warmup and intro (10 minutes), D2C vs marketplace (30), rewards deep dive (25), idealization exercise (20), and prioritisation (5), each with its stated objective.">
-        <figcaption>The discussion guide for the consumer focus groups: each section's time budget and the objective it had to earn.</figcaption>
-      </figure>
-
-      <div class="prose">
-        <p class="fx">What the groups surfaced then shaped a survey fielded to over 1,000 respondents with a market research partner. The survey's job was to quantify the qualitative story rather than to explore: willingness to try, feature priorities, markers of trust, privacy concerns, and brand credibility, mapped against people's existing shopping behavior.</p>
-      </div>
-
-      <figure class="shot fx">
-        <img src="../assets/img/d2c/survey.png" alt="The survey construct map: three behavioral pillars (payment behaviour, rewards behaviour, order tracking) feeding a central 'willingness to try' construct, which connects to priority features, markers of trust, privacy concerns, brand credibility, and shopping behaviour across D2C and marketplaces.">
-        <figcaption>The survey's construct map, drawn before a single question was written: every question had to serve one of these constructs, with willingness to try at the center.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ============ WHAT THE PROCESS SURFACED ============ -->
-  <section class="strip">
-    <div class="container">
-      <p class="kicker fx">What the process surfaced</p>
-      <h2 class="fx">What the process surfaced</h2>
-      <div class="prose">
-        <p class="fx">The budget exercise produced the study's most consequential pattern. Across the interviews, the rewards platform consistently ranked last. Merchants put their constrained rupees toward problems they were already losing money on: failing payments, fraud they had to absorb, support tickets that sat unanswered. A rewards program for their customers' customers read as a nice-to-have. One merchant put the underlying logic plainly: he didn't think about his customer's customer, he thought about whether the transaction goes through and who he calls when it doesn't.</p>
-      </div>
-
-  <!-- ============ THE PIGGY BANK ============ -->
-      <div class="prose" style="margin-top: 28px;">
-        <p class="fx">Try the budget exercise yourself below, then see where merchants actually put their money.</p>
-      </div>
-
-      <div class="piggy-shell fx" id="piggyShell">
-        <div class="piggy-head">
-          <h4>Allocate ₹100 across these problem areas</h4>
-          <p class="piggy-total"><span id="piggyTotal">0</span> / 100 allocated</p>
-        </div>
-        <div id="piggyRows">
-          <div class="piggy-row" data-cat="rewards">
-            <span class="pr-label">A rewards / loyalty platform for customers</span>
-            <div class="piggy-track"><div class="piggy-fill" style="width:0%"></div></div>
-            <div class="piggy-controls">
-              <button class="piggy-btn" data-action="minus" aria-label="Decrease">&minus;</button>
-              <button class="piggy-btn" data-action="plus" aria-label="Increase">+</button>
-            </div>
-            <span class="pr-val">₹0</span>
-          </div>
-          <div class="piggy-row" data-cat="fraud">
-            <span class="pr-label">Fraud and chargeback protection</span>
-            <div class="piggy-track"><div class="piggy-fill" style="width:0%"></div></div>
-            <div class="piggy-controls">
-              <button class="piggy-btn" data-action="minus" aria-label="Decrease">&minus;</button>
-              <button class="piggy-btn" data-action="plus" aria-label="Increase">+</button>
-            </div>
-            <span class="pr-val">₹0</span>
-          </div>
-          <div class="piggy-row" data-cat="reliability">
-            <span class="pr-label">Payment reliability and uptime</span>
-            <div class="piggy-track"><div class="piggy-fill" style="width:0%"></div></div>
-            <div class="piggy-controls">
-              <button class="piggy-btn" data-action="minus" aria-label="Decrease">&minus;</button>
-              <button class="piggy-btn" data-action="plus" aria-label="Increase">+</button>
-            </div>
-            <span class="pr-val">₹0</span>
-          </div>
-          <div class="piggy-row" data-cat="support">
-            <span class="pr-label">Faster support and dispute resolution</span>
-            <div class="piggy-track"><div class="piggy-fill" style="width:0%"></div></div>
-            <div class="piggy-controls">
-              <button class="piggy-btn" data-action="minus" aria-label="Decrease">&minus;</button>
-              <button class="piggy-btn" data-action="plus" aria-label="Increase">+</button>
-            </div>
-            <span class="pr-val">₹0</span>
-          </div>
-          <div class="piggy-row" data-cat="acquisition">
-            <span class="pr-label">New customer acquisition channels</span>
-            <div class="piggy-track"><div class="piggy-fill" style="width:0%"></div></div>
-            <div class="piggy-controls">
-              <button class="piggy-btn" data-action="minus" aria-label="Decrease">&minus;</button>
-              <button class="piggy-btn" data-action="plus" aria-label="Increase">+</button>
-            </div>
-            <span class="pr-val">₹0</span>
+      <section class="cs-section cs-section--dark" id="impact" data-rail="Impact">
+        <div class="cell-a">
+          <p class="cs-kicker">Impact</p>
+          <h2 class="cs-section__title">Impact</h2>
+          <div class="voice-prose">
+            <p>The research directly informed the executive decision to proceed with investment</p>
+            <p>• Rather than a binary go/no-go outcome, the findings enabled leadership to make nuanced decisions about investment structure, phasing, and success metrics.</p>
+            <p>• The research reframed the product strategy. Instead of a simple rewards platform, the concept evolved into a trust and reliability solution for end consumers to build trust in D2C market.</p>
+            <p>• The merchant segmentation and consumer adoption patterns identified through research directly influenced go-to-market strategy. Instead of a broad market launch, the findings supported a targeted approach focusing on specific merchant segments with highest likelihood of success.</p>
+            <p>• The collaborative research process created shared understanding across product, strategy, and executive teams. By involving stakeholders throughout data collection and synthesis, the research built consensus around market realities that lasted beyond the project itself. This alignment accelerated decision-making and reduced the typical friction between strategic vision and market reality.</p>
+            <p><strong>Since this project is under NDA, to know more <a class="u-draw accent" href="mailto:Priyalshri1@gmail.com">reach out to me!</a></strong></p>
           </div>
         </div>
+      </section>
 
-        <button class="piggy-toggle" id="piggyToggle" aria-expanded="false">Show what merchants actually said</button>
-        <div class="piggy-real" id="piggyReal">
-          <div class="piggy-real-inner">
-            <p>Across the interviews, the rewards platform consistently ranked last. Merchants put their constrained rupees toward problems they were already losing money on: failing payments, fraud they had to absorb, support tickets that sat unanswered. A rewards program for their customers' customers read as a nice-to-have.</p>
-            <p class="pr-quote">One merchant put the underlying logic plainly: he didn't think about his customer's customer, he thought about whether the transaction goes through and who he calls when it doesn't.</p>
+      <section class="cs-close" id="conclusion" data-rail-skip>
+        <div class="cell-a">
+          <p class="cs-kicker">Conclusion &amp; learnings</p>
+          <h2 class="cs-section__title">Conclusion &amp; learnings</h2>
+          <div class="voice-prose">
+            <p>This project reinforced that the core value of user research lies in framing the right questions and defining what evidence is sufficient to make decisions. Rather than optimizing for exhaustive coverage, I learned the importance of designing research that is proportional to the risk being tested and deliberately avoids premature validation. Working across consumers and merchants highlighted how easily research can skew toward one-sided desirability if incentives are not explicitly examined.</p>
           </div>
+          <a class="cs-back u-draw" href="../index.html#work">← Back to work</a>
         </div>
-      </div>
+      </section>
 
-      <div class="prose" style="margin-top: 28px;">
-        <p class="fx">The participatory sketches pointed somewhere more useful than a simple no. Asked to design their own solution, with no constraints, merchants kept describing variations of the same thing: a mechanism that made transactions and disputes with their own customers more predictable and more visible. What they were sketching was a layer of trust sitting underneath the transaction itself, which is a different product from the acquisition channel in the original pitch.</p>
-        <p class="fx">That reframing changed the consumer stream while the study was still in the field. The survey and concept work shifted weight away from "would you join a rewards program" and toward what makes someone trust a D2C purchase enough to complete it, which mapped directly onto what merchants had sketched. The two sides of the marketplace, asked independently, were describing the same underlying need, and it wasn't the one in the original pitch.</p>
-      </div>
-    </div>
-  </section>
+      <div id="site-footer"></div>
+          </main>
+  </div>
 
-  <!-- ============ THE TURN ============ -->
-  <section class="strip fold-dark">
-    <div class="container">
-      <p class="kicker fx" style="color: #C4B5FD;">The reframing</p>
-      <h2 class="fx">From rewards marketplace to trust layer</h2>
-      <div class="prose">
-        <p class="fx">The original pitch was a rewards marketplace merchants fund and consumers redeem across brands. What the research surfaced was a trust and reliability layer that makes D2C transactions feel safe to complete, built from what merchants sketched unprompted and what made consumers hesitate before buying.</p>
-      </div>
-
-      <div class="turn-wrap fx">
-        <div class="turn-panel was">
-          <p class="tp-label">The original pitch</p>
-          <p class="tp-title">"A rewards marketplace merchants fund and consumers redeem across brands."</p>
-          <p>A new acquisition channel for merchants, a new reason for consumers to download an app. Validated on its own terms, it tested as polite indifference on both sides.</p>
-        </div>
-        <div class="turn-arrow" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </div>
-        <div class="turn-panel now">
-          <p class="tp-label">What the research surfaced</p>
-          <p class="tp-title">"A trust and reliability layer that makes D2C transactions feel safe to complete."</p>
-          <p>Built from what merchants sketched unprompted and what made consumers hesitate before buying. The same underlying need, described independently by both sides of the marketplace.</p>
-        </div>
-      </div>
-
-      <figure class="shot fx">
-        <img src="../assets/img/d2c/merchant-interviews.png" alt="Three artifacts from the merchant interviews: a pie chart from the 100-rupee budget allocation exercise; a board of sticky notes from the idealization exercise asking what an ideal platform should offer, labeled with a participant's name; and prototype screens used for the pitch, evaluated on appeal, comprehension, relevance, uniqueness, credibility, and willingness to trial.">
-        <figcaption>Three of the four interview instruments, left to right: the budget-allocation exercise, one participant's idealization board, and the concept pitch.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ============ METHODOLOGY ARTIFACT + WORKSHOP ============ -->
-  <section class="strip">
-    <div class="container">
-      <figure class="shot fx">
-        <img src="../assets/img/d2c/fgd.png" alt="Photo from a consumer focus group discussion: participants seated around a table with discussion materials laid out.">
-        <figcaption>One of the three consumer focus groups, mid-discussion.</figcaption>
-      </figure>
-      <figure class="shot fx">
-        <img src="../assets/img/d2c/research-collage.png" alt="Three panels from the consumer survey and prototype testing: a pie chart for a hypothetical-budget allocation question, a card-sort style comparison of rewards loyalty programs, and a mobile prototype used to gather feedback on appeal, comprehension, relevance, uniqueness, credibility and willingness to trial.">
-        <figcaption>Survey instruments: budget allocation, feature comparison, and prototype reactions.</figcaption>
-      </figure>
-      <figure class="shot fx">
-        <img src="../assets/img/d2c/workshop.png" alt="Photo from the synthesis workshop: the research team gathered around a table reviewing findings on a whiteboard.">
-        <figcaption>The synthesis workshop, with product and strategy stakeholders reviewing findings from both tracks together.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ============ OUTCOME + IMPACT ============ -->
-  <section class="strip fold-dark">
-    <div class="container">
-      <p class="kicker fx" style="color: #C4B5FD;">What it led to</p>
-      <h2 class="fx">What it led to</h2>
-      <ul class="deliver-list">
-        <li class="fx"><span class="d-n">a</span><span><strong>An informed investment decision.</strong> Leadership could decide on investment, phasing, and success metrics against evidence from both sides of the marketplace, rather than a single up-front bet on the original concept.</span></li>
-        <li class="fx"><span class="d-n">b</span><span><strong>A reframed value proposition.</strong> The concept moved from a rewards marketplace toward a trust and reliability layer for D2C transactions, grounded in what merchants and consumers had each described without prompting.</span></li>
-        <li class="fx"><span class="d-n">c</span><span><strong>A narrower go-to-market.</strong> The merchant segmentation showed where the proposition was viable and where it wasn't, supporting a focused entry rather than a broad rollout.</span></li>
-        <li class="fx"><span class="d-n">d</span><span><strong>A shared read across teams.</strong> Synthesis ran as a joint workshop with product, strategy, and the merchant-facing team in the room, so the overlaps and gaps between the two tracks were visible to the people making the call, while it was still being made.</span></li>
-      </ul>
-
-      <div class="stats-band fx">
-        <div class="stat-card">
-          <p class="sc-num">25+</p>
-          <p class="sc-label">Merchant interviews, stratified by size, frequency, and industry</p>
-        </div>
-        <div class="stat-card">
-          <p class="sc-num">3</p>
-          <p class="sc-label">Consumer focus group discussions, building shared archetypes</p>
-        </div>
-        <div class="stat-card">
-          <p class="sc-num">1000+</p>
-          <p class="sc-label">Consumer survey responses validating the reframed concept</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ REFLECTION + CLOSE ============ -->
-  <section class="closing">
-    <div class="container" style="position: relative;">
-      <p class="kicker fx" style="color: #C4B5FD;">What I learned</p>
-      <h2 class="fx" style="color: #fff;">Reflection</h2>
-      <div class="prose">
-        <p class="fx">This project shaped how I scope research to the size of the decision it serves. A large strategic bet doesn't need exhaustive coverage; it needs evidence aimed at the specific assumptions the decision depends on, which here meant designing instruments that could tell genuine demand from politeness before any money moved.</p>
-        <p class="fx">It also made me permanently suspicious of validation that begins with the pitch. If we had opened the interviews by presenting the concept, we would likely have collected enough mild enthusiasm to greenlight the wrong product. The most valuable findings came from the exercises that ran before the concept entered the room, and I have built that sequencing into every concept study I've run since.</p>
-      </div>
-
-      <div class="next-project fx" style="margin-top: 96px;">
-        <p class="label">Next project</p>
-        <a href="razorpay-website-evaluation.html">Evaluating a homepage redesign before a million people saw it
-          <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-cta">
-          <p class="label">Get in touch</p>
-          <a class="big-link" href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
-        </div>
-        <div class="footer-bottom">
-          <span>&copy; 2026 Priyal Shrivastava</span>
-          <div class="footer-links">
-            <a href="mailto:priyalshri1@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </section>
-
-  <script>
-  (function () {
-    var progress = document.getElementById("progress");
-    function onScroll() {
-      var doc = document.documentElement;
-      progress.style.width = (doc.scrollTop / (doc.scrollHeight - window.innerHeight) * 100) + "%";
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
-    document.querySelectorAll(".fx").forEach(function (el) { io.observe(el); });
-
-    /* Piggy bank allocator */
-    var totalEl = document.getElementById("piggyTotal");
-    var rows = Array.prototype.slice.call(document.querySelectorAll("#piggyRows .piggy-row"));
-    var values = {};
-    rows.forEach(function (r) { values[r.dataset.cat] = 0; });
-    var STEP = 5, MAX = 100;
-
-    function render() {
-      var total = 0;
-      rows.forEach(function (r) {
-        var cat = r.dataset.cat, v = values[cat];
-        total += v;
-        r.querySelector(".piggy-fill").style.width = v + "%";
-        r.querySelector(".pr-val").textContent = "₹" + v;
-      });
-      totalEl.textContent = total;
-      var remaining = MAX - total;
-      rows.forEach(function (r) {
-        var plus = r.querySelector('[data-action="plus"]');
-        var minus = r.querySelector('[data-action="minus"]');
-        plus.disabled = remaining < STEP;
-        minus.disabled = values[r.dataset.cat] <= 0;
-      });
-    }
-
-    rows.forEach(function (r) {
-      r.querySelectorAll(".piggy-btn").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var cat = r.dataset.cat;
-          var total = Object.keys(values).reduce(function (s, k) { return s + values[k]; }, 0);
-          if (btn.dataset.action === "plus" && total + STEP <= MAX) values[cat] += STEP;
-          if (btn.dataset.action === "minus" && values[cat] - STEP >= 0) values[cat] -= STEP;
-          render();
-        });
-      });
-    });
-    render();
-
-    var toggle = document.getElementById("piggyToggle");
-    var real = document.getElementById("piggyReal");
-    toggle.addEventListener("click", function () {
-      var open = real.classList.toggle("show");
-      toggle.setAttribute("aria-expanded", String(open));
-      toggle.textContent = open ? "Hide what merchants actually said" : "Show what merchants actually said";
-    });
-  })();
-  </script>
+  <script src="../js/shell.js" defer></script>
+  <script src="../js/section-rail.js?v=20260808h" defer></script>
 </body>
 </html>

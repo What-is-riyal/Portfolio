@@ -3,170 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Play | Priyal Shrivastava</title>
-  <meta name="description" content="The things Priyal Shrivastava makes when nobody is measuring: a story-writing game, and other side quests.">
+  <title>Play</title>
+  <meta name="description" content="Hello! I'm a designer exploring the intersection of design, technology and the society">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    :root { --gold: #A16207; --serif: "Fraunces", Georgia, serif; }
-    body { background: #fff; }
-    .progress { background: var(--gold); }
-
-    .play-hero { padding: 160px 0 70px; }
-    .play-hero .eyebrow {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 28px; display: flex; align-items: center; gap: 10px;
-    }
-    .play-hero .eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--gold); }
-    .play-hero h1 {
-      font-size: clamp(36px, 5.6vw, 68px); font-weight: 800; letter-spacing: -0.035em;
-      line-height: 1.08; max-width: 20ch; margin-bottom: 24px;
-    }
-    .play-hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--gold); }
-    .play-hero p { font-size: 17.5px; line-height: 1.75; color: var(--muted); max-width: 56ch; }
-
-    .play-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding-bottom: 90px; }
-    .play-card {
-      border-radius: 16px; border: 1px solid var(--border); overflow: hidden; background: #fff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-    .play-card:hover { transform: translateY(-5px); border-color: rgba(161, 98, 7, 0.45); box-shadow: 0 26px 52px -32px rgba(161, 98, 7, 0.45); }
-    .play-card .p-media { aspect-ratio: 16 / 10; background: var(--surface); position: relative; overflow: hidden; }
-    .play-card .p-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .play-card .p-body { padding: 26px 26px 30px; }
-    .play-card .p-kicker { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-    .play-card h2 { font-size: 21px; font-weight: 800; letter-spacing: -0.015em; margin-bottom: 10px; }
-    .play-card p { font-size: 15px; line-height: 1.7; color: var(--muted); margin: 0; }
-    @media (max-width: 760px) { .play-grid { grid-template-columns: 1fr; } }
-
-    /* MadAhead card illustration (cards fanning) */
-    .madahead-art { position: absolute; inset: 0; background: #F8F0DC; display: flex; align-items: center; justify-content: center; }
-    .madahead-art svg { width: 60%; height: auto; }
-
-    /* Placeholder slots */
-    .play-card.slot { border-style: dashed; }
-    .play-card.slot:hover { transform: none; box-shadow: none; border-color: var(--border); }
-    .slot .p-media {
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-      background: repeating-linear-gradient(45deg, #FBFBFA, #FBFBFA 12px, #F4F3F0 12px, #F4F3F0 24px);
-      color: var(--muted);
-    }
-    .slot .p-media .slot-icon {
-      width: 44px; height: 44px; border-radius: 50%; border: 1.5px dashed var(--muted);
-      display: flex; align-items: center; justify-content: center; font-size: 20px;
-    }
-    .slot .p-media span:last-child { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-
-    .play-footer { background: #0B0B0C; color: #fff; padding: 90px 0; }
-    .play-footer .kicker { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #E5C45C; margin-bottom: 20px; }
-    .play-footer h2 { font-size: clamp(26px, 3.6vw, 40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 22px; max-width: 26ch; }
-    .play-footer h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: #E5C45C; }
-    .play-footer p { font-size: 16.5px; line-height: 1.75; color: rgba(255,255,255,0.7); max-width: 58ch; }
-
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
-    .reveal.visible { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .play-card:hover { transform: none; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/grid.css?v=20260808a">
+  <link rel="stylesheet" href="css/shell.css?v=20260808a">
+  <link rel="stylesheet" href="css/pages.css?v=20260808a">
 </head>
-<body>
+<body class="page-play" data-shell-base="" data-shell-page="play">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="page" style="position:relative;width:100%">
+    <div id="site-nav"></div>
 
-  <div class="progress" id="progress"></div>
-
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="logo">ps<span class="dot">.</span></a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html#work">Work</a></li>
-          <li><a href="play.html" class="active">Play</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="resume.html">Resume</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="play-hero container">
-      <p class="eyebrow">Play</p>
-      <h1>Things I make when nobody is <em>measuring.</em></h1>
-      <p>Research is the day job. This page is everything that happens off the clock: side quests, experiments, and the occasional thing that escaped onto an app store.</p>
-    </section>
-
-    <section class="container play-grid">
-      <div class="play-card reveal">
-        <div class="p-media">
-          <div class="madahead-art" aria-hidden="true">
-            <svg viewBox="0 0 170 124" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="30" width="56" height="74" rx="6" fill="#FFFFFF" stroke="#A16207" stroke-width="2" transform="rotate(-8 58 67)"/>
-              <rect x="58" y="26" width="56" height="74" rx="6" fill="#FFFFFF" stroke="#A16207" stroke-width="2" transform="rotate(4 86 63)"/>
-              <rect x="88" y="30" width="56" height="74" rx="6" fill="#FCE88A" stroke="#A16207" stroke-width="2" transform="rotate(12 116 67)"/>
-              <path d="M116 56 l4 9 10 1 -7 7 2 10 -9 -5 -9 5 2 -10 -7 -7 10 -1z" fill="#A16207" transform="rotate(12 116 67)"/>
-            </svg>
-          </div>
+    <main id="main" class="site-content">
+      <section class="play-intro">
+        <div class="play-intro__inner">
+          <p class="page-kicker">Play</p>
+          <h1 class="voice-sub">I'm currently working on disrupting banking for startups, here are few of my works in other domains</h1>
         </div>
-        <div class="p-body">
-          <p class="p-kicker">MadAhead &middot; co-founder &middot; 2019&ndash;20</p>
-          <h2>A pass-the-story game, live on the Play Store</h2>
-          <p>Co-founded a "pass the story" game where strangers write a story together, one absurd chunk at a time. I developed the strategy and experience, and led a team of 5 designers and UX writers through to launch on the Google Play Store.</p>
-        </div>
-      </div>
+      </section>
 
-      <div class="play-card slot reveal">
-        <div class="p-media" aria-hidden="true">
-          <span class="slot-icon">+</span>
-          <span>Photo coming soon</span>
-        </div>
-        <div class="p-body">
-          <p class="p-kicker">Side quest</p>
-          <h2>This slot is saved</h2>
-          <p>A project is on its way here, once its photos are dug out of the camera roll.</p>
-        </div>
-      </div>
+      <section class="play-grid-wrap">
+        <div class="play-grid-wrap__inner">
+        <div class="play-grid">
 
-      <div class="play-card slot reveal">
-        <div class="p-media" aria-hidden="true">
-          <span class="slot-icon">+</span>
-          <span>Photo coming soon</span>
-        </div>
-        <div class="p-body">
-          <p class="p-kicker">Side quest</p>
-          <h2>So is this one</h2>
-          <p>Some things take longer to photograph than to make.</p>
-        </div>
-      </div>
-    </section>
+          <a href="https://drive.google.com/file/d/1O-ZULFUGb3yZqasPqJokNZe2BksO98aw/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="play-card play-card--boldband">
+            <h2>Boldband</h2>
+            <p class="play-thumb">An aid for preventing and assisting during meltdowns associated with Autism</p>
+            <div class="play-keywords">
+              <span>Contextual enquiry</span>
+              <span>Concept design</span>
+              <span>Accessibility</span>
+            </div>
+          </a>
 
-    <section class="play-footer">
-      <div class="container">
-        <p class="kicker reveal">Soundtrack disclosure</p>
-        <h2 class="reveal">Everything above was made to indie music and old Hindi <em>songs</em></h2>
-        <p class="reveal">Usually in alternation, occasionally in the same hour, always at a volume my neighbors have opinions about. If you have recommendations for either playlist, that's a perfectly good reason to email me.</p>
-      </div>
-    </section>
-  </main>
+          <a href="https://drive.google.com/file/d/1ZXM-df_cISEa5MikU4t0QLYshouJ-9xj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="play-card play-card--btp">
+            <h2>Miscommunication in texting</h2>
+            <p class="play-thumb">A thesis paper on enhancing text-based CMC in high context societies</p>
+            <div class="play-keywords">
+              <span>Research</span>
+              <span>non verbal communication</span>
+              <span>Culture</span>
+            </div>
+          </a>
 
-  <footer class="footer footer-flush">
-    <div class="container">
-      <div class="footer-cta reveal">
-        <p class="label">Get in touch</p>
-        <a class="big-link" href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 &middot; Made with <span class="heart">&#10084;&#xFE0E;</span> by Priyal Shrivastava</span>
-        <div class="footer-links">
-          <a href="mailto:priyalshri1@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f9917435c0be93155645db1_STP.pdf" target="_blank" rel="noopener noreferrer" class="play-card play-card--stp">
+            <h2>Culture &amp; Interface</h2>
+            <p class="play-thumb">Study of UI layout preferences for e-commerce websites across India &amp; UK</p>
+            <div class="play-keywords">
+              <span>Research</span>
+              <span>Culture</span>
+            </div>
+          </a>
+
+          <a href="https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f98864181fef24b084f200e_3D%20works.pdf" target="_blank" rel="noopener noreferrer" class="play-card play-card--3d">
+            <h2>3D models</h2>
+            <p class="play-thumb">Paper rolled chair, material study, solid works &amp; Fusion 360 models</p>
+            <div class="play-keywords">
+              <span>3d modelling</span>
+              <span>Industrial design</span>
+            </div>
+          </a>
+
+          <a href="https://priyalshrivastava.webflow.io/projects/singers-notation" target="_blank" rel="noopener noreferrer" class="play-card play-card--singer">
+            <h2>Singer's Guide</h2>
+            <p class="play-thumb">A notation system which makes learning melodies easier for untrained singers</p>
+            <div class="play-keywords">
+              <span>Music theory</span>
+              <span>Information visualisation</span>
+            </div>
+          </a>
+
+          <a href="https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f9890426dd07c3274b10bb7_cutlery.pdf" target="_blank" rel="noopener noreferrer" class="play-card play-card--minim">
+            <h2>Minim</h2>
+            <p class="play-thumb">Handmade, minimal cutlery pieces </p>
+            <div class="play-keywords">
+              <span>Industrial design</span>
+              <span>Lifestyle</span>
+            </div>
+          </a>
+
+          <a href="https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f9870b1b5f224b79fc2ca44_ass%206_compressed.pdf" target="_blank" rel="noopener noreferrer" class="play-card play-card--haitrie">
+            <h2>Hairtie </h2>
+            <p class="play-thumb">A hair tie redesign using Kansai analysis</p>
+            <div class="play-keywords">
+              <span>Research</span>
+              <span>Kansei</span>
+              <span>Product concept</span>
+            </div>
+          </a>
+
+          <a href="https://www.figma.com/proto/s4dNhyqYcxOvCw8Qz8Pxlp/side-projects?node-id=13%3A10&amp;scaling=min-zoom" target="_blank" rel="noopener noreferrer" class="play-card play-card--bbi">
+            <h2>BBI</h2>
+            <p class="play-thumb">Secured 3rd place in Inter IIT rebranding competition</p>
+            <div class="play-keywords">
+              <span>Rebranding</span>
+              <span>Bank</span>
+            </div>
+          </a>
+
+          <a href="https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f98709fc2f00b2cedbfe376_ass%205-compressed.pdf" target="_blank" rel="noopener noreferrer" class="play-card play-card--toothbrush">
+            <h2>Toothbrush</h2>
+            <p class="play-thumb">A product lifestyle study of a toothbrush </p>
+            <div class="play-keywords">
+              <span>Research</span>
+              <span>Product concept</span>
+            </div>
+          </a>
+
         </div>
-      </div>
-    </div>
-  </footer>
+        </div>
+      </section>
 
-  <script src="js/main.js"></script>
+      <section class="about-close">
+        <div class="about-close__inner">
+          <p class="about-close-text">Found anything interesting?<br>Hit me up to discuss about how fascinating our species is or to go gaga over underground indie and old hindi music! :')</p>
+          <p class="about-credit">© 2020 - Made with ❤︎ by Priyal Shrivastava</p>
+        </div>
+      </section>
+
+      <div id="site-footer"></div>
+    </main>
+  </div>
+
+  <script src="js/shell.js" defer></script>
 </body>
 </html>

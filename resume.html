@@ -7,224 +7,300 @@
   <meta name="description" content="Resume of Priyal Shrivastava: user researcher, MHCI at Carnegie Mellon, previously Razorpay, Microsoft, and Meesho.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/grid.css?v=20260808a">
+  <link rel="stylesheet" href="css/shell.css?v=20260808a">
+  <link rel="stylesheet" href="css/pages.css?v=20260808a">
   <style>
-    :root { --blue: #1D4ED8; --serif: "Fraunces", Georgia, serif; }
-    body { background: #fff; }
-    .progress { background: var(--blue); }
-
-    .res-hero { padding: 150px 0 50px; display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-    .res-hero h1 { font-size: clamp(34px, 5vw, 56px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; }
-    .res-hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--blue); }
-    .res-hero .r-sub { font-size: 15px; color: var(--muted); margin-top: 12px; }
-    .dl-btn {
-      display: inline-flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 800;
-      color: #fff; background: var(--blue); border-radius: 999px; padding: 14px 26px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Resume body details — chrome/hero live in pages.css */
+    .res-section {
+      padding: 36px 0;
+      border-top: 1px solid var(--line-color);
     }
-    .dl-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -14px rgba(29, 78, 216, 0.6); }
-    .dl-btn svg { width: 16px; height: 16px; }
 
-    .res-section { padding: 36px 0; border-top: 1px solid var(--border); }
-    .res-section:last-of-type { padding-bottom: 80px; }
-    .res-grid { display: grid; grid-template-columns: 200px 1fr; gap: 40px; }
-    .res-label { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); padding-top: 6px; }
-    @media (max-width: 760px) { .res-grid { grid-template-columns: 1fr; gap: 16px; } }
+    .res-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+    }
+
+    .res-label {
+      font-family: var(--font-archivo);
+      font-size: var(--text-label);
+      font-weight: 700;
+      letter-spacing: var(--track-label);
+      text-transform: uppercase;
+      color: var(--glow);
+      padding-top: 6px;
+    }
 
     .job { padding-bottom: 32px; }
     .job:last-child { padding-bottom: 0; }
-    .job-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 4px; }
-    .job-head h3 { font-size: 17.5px; font-weight: 800; letter-spacing: -0.01em; }
-    .job-head .j-dates { font-size: 13.5px; color: var(--muted); font-weight: 600; white-space: nowrap; padding-top: 3px; }
-    .job .j-org { font-size: 14.5px; color: var(--muted); margin-bottom: 12px; }
-    .job ul { list-style: none; }
-    .job li {
-      font-size: 15px; line-height: 1.7; color: #3C3C44; padding: 4px 0 4px 20px; position: relative;
-    }
-    .job li::before { content: ""; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; border-radius: 50%; background: rgba(29, 78, 216, 0.35); }
-    .job li a { color: var(--blue); font-weight: 600; }
 
-    .edu-row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-bottom: 22px; }
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .job-head h3 {
+      font-family: var(--font-archivo);
+      font-size: var(--text-row);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .job-head .j-dates,
+    .job .j-org,
+    .edu-row .j-dates,
+    .edu-row p {
+      font-family: var(--font-archivo);
+      font-size: var(--text-nav);
+      color: var(--grey);
+    }
+
+    .job-head .j-dates { white-space: nowrap; padding-top: 3px; }
+    .job .j-org { margin-bottom: 12px; }
+
+    .job ul { list-style: none; }
+
+    .job li {
+      font-family: var(--font-fraunces);
+      font-size: var(--text-prose);
+      font-weight: 340;
+      line-height: 1.55;
+      padding: 4px 0 4px 20px;
+      position: relative;
+      max-width: 65ch;
+    }
+
+    .job li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(79, 70, 229, 0.45);
+    }
+
+    .job li a { color: var(--glow); }
+
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-bottom: 22px;
+    }
+
     .edu-row:last-child { padding-bottom: 0; }
-    .edu-row h3 { font-size: 16.5px; font-weight: 800; }
-    .edu-row p { font-size: 14px; color: var(--muted); margin-top: 3px; }
-    .edu-row .j-dates { font-size: 13.5px; color: var(--muted); font-weight: 600; }
+
+    .edu-row h3 {
+      font-family: var(--font-archivo);
+      font-size: var(--text-row);
+      font-weight: 600;
+    }
 
     .skill-block { margin-bottom: 18px; }
     .skill-block:last-child { margin-bottom: 0; }
-    .skill-block h4 { font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; color: var(--text); }
-    .skill-block p { font-size: 14.5px; line-height: 1.7; color: var(--muted); }
 
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
-    .reveal.visible { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+    .skill-block h4 {
+      font-family: var(--font-archivo);
+      font-size: var(--text-label);
+      font-weight: 700;
+      letter-spacing: var(--track-label);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: var(--glow);
+    }
+
+    .skill-block p {
+      font-family: var(--font-fraunces);
+      font-size: var(--text-prose);
+      font-weight: 340;
+      line-height: 1.55;
+      color: var(--grey);
+      max-width: 65ch;
+    }
+
+    .res-close {
+      margin-top: clamp(48px, 10vh, 96px);
+      padding-top: clamp(24px, 4vh, 48px);
+      border-top: 1px solid var(--line-color);
+      font-family: var(--font-fraunces);
+      font-size: var(--text-prose);
+      font-weight: 340;
+      line-height: 1.55;
+    }
+
+    .res-close a { color: var(--glow); }
+
+    .res-credit {
+      margin-top: 2rem;
+      font-family: var(--font-archivo);
+      font-size: var(--text-meta);
+      letter-spacing: var(--track-meta);
+      color: var(--grey);
+    }
+
+    @media (max-width: 760px) {
+      .res-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
   </style>
 </head>
-<body>
+<body class="page-resume" data-shell-base="" data-shell-page="resume">
+  <div class="grain" aria-hidden="true"></div>
 
-  <div class="progress" id="progress"></div>
+  <div class="page" style="position:relative;width:100%">
+    <div id="site-nav"></div>
 
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="logo">ps<span class="dot">.</span></a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html#work">Work</a></li>
-          <li><a href="play.html">Play</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="resume.html" class="active">Resume</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="res-hero">
-      <div>
-        <h1>Resume<em>.</em></h1>
-        <p class="r-sub">Priyal Shrivastava &middot; <a href="mailto:priyalshri1@gmail.com" style="color: var(--blue); font-weight: 600;">priyalshri1@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener" style="color: var(--blue); font-weight: 600;">LinkedIn</a></p>
-      </div>
-      <a class="dl-btn" href="assets/Priyal-Shrivastava-Resume.pdf" download>
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M4 7l4 4 4-4M2 13h12"/></svg>
-        Download PDF
-      </a>
-    </section>
-
-    <section class="res-section">
-      <div class="res-grid">
-        <p class="res-label">Experience</p>
-        <div>
-          <div class="job reveal">
-            <div class="job-head"><h3>Research Assistant, Viewpoints Lab</h3><span class="j-dates">Sept 2025 &ndash; ongoing</span></div>
-            <p class="j-org">Carnegie Mellon University, Pittsburgh</p>
-            <ul>
-              <li>Research assistant under Prof. Tom Costello, working on misinformation and AI persuasion.</li>
-            </ul>
+    <main id="main" class="site-content page-resume-wrap">
+      <section class="res-hero-band">
+        <div class="res-hero-band__inner">
+          <div>
+            <p class="page-kicker">CV</p>
+            <h1>Resume</h1>
+            <p class="r-sub">Priyal Shrivastava &middot; <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           </div>
-
-          <div class="job reveal">
-            <div class="job-head"><h3>UX Researcher (contract via Kadence)</h3><span class="j-dates">Sept 2024 &ndash; Feb 2025</span></div>
-            <p class="j-org">Microsoft, Bangalore</p>
-            <ul>
-              <li>Wrote a white paper with identified opportunity areas to guide the integration of Copilot in Outlook, focused on trust, transparency, learnability, and user control. <a href="work/microsoft-copilot-trust.html">Case study</a></li>
-              <li>Conducted a mixed-method study with a 300+ user survey and 30+ interviews across geographies to improve the Outlook experience on mobile browsers. <a href="work/microsoft-retention.html">Case study</a></li>
-            </ul>
-          </div>
-
-          <div class="job reveal">
-            <div class="job-head"><h3>Senior UX Researcher</h3><span class="j-dates">April 2024 &ndash; July 2024</span></div>
-            <p class="j-org">Razorpay, Bangalore</p>
-          </div>
-          <div class="job reveal">
-            <div class="job-head"><h3>UX Researcher</h3><span class="j-dates">Oct 2022 &ndash; March 2024</span></div>
-            <p class="j-org">Razorpay, Bangalore</p>
-            <ul>
-              <li>Refined the value proposition and strategy for a new B2C product vertical through 3 focus group discussions, 25+ interviews with participatory design activities, and a 1000+ respondent market survey, earning buy-in from CXOs and leadership. <a href="work/razorpay-d2c.html">Case study</a></li>
-              <li>Created value maps from in-depth interviews with 30+ users on how companies derive value from neobanks, shaping business strategy and the roadmap for the following financial year.</li>
-              <li>Proposed and conducted an in-depth UX audit and usability test of the company's website, visited by 1M+ people daily, and of the onboarding flow, to understand SMEs' mental models around filling forms. <a href="work/razorpay-website-evaluation.html">Case study</a></li>
-              <li>Evangelized research across the organization by setting up 2 customer empathy programs and running full-day workshops for 50+ product managers and designers.</li>
-            </ul>
-          </div>
-
-          <div class="job reveal">
-            <div class="job-head"><h3>Product Designer</h3><span class="j-dates">July 2021 &ndash; Oct 2022</span></div>
-            <p class="j-org">Razorpay, Bangalore</p>
-            <ul>
-              <li>Redesigned the onboarding flow for SME merchants with low tech literacy: form-filling conversion up 51%, completion time down from 14 to 5 minutes, support tickets down 43%. <a href="work/razorpay-onboarding.html">Case study</a></li>
-              <li>Designed multiple experiments to improve merchants' first-time user experience.</li>
-            </ul>
-          </div>
-
-          <div class="job reveal">
-            <div class="job-head"><h3>User Research Intern</h3><span class="j-dates">May 2020 &ndash; July 2020</span></div>
-            <p class="j-org">Meesho, Bangalore</p>
-            <ul>
-              <li>Studied community building for women from semi-urban and rural India through secondary research, surveys, and 40+ qualitative interviews, for a product with 10M+ downloads.</li>
-              <li>Led a research study on the effects of language and socio-cultural factors in research and design for the next billion users. <a href="work/meesho-vernacular.html">Case study</a></li>
-              <li>Ran a workshop with design and product stakeholders on biases around low-tech-literacy users.</li>
-            </ul>
-          </div>
-
-          <div class="job reveal">
-            <div class="job-head"><h3>Founding Member</h3><span class="j-dates">Aug 2020 &ndash; present</span></div>
-            <p class="j-org">User Research India, remote</p>
-            <ul>
-              <li>Building the User Research India initiative with industry leaders: sharing insight about the UXR ecosystem in India and engaging leadership to invest in research across sectors.</li>
-            </ul>
-          </div>
-
-          <div class="job reveal">
-            <div class="job-head"><h3>Co-founder</h3><span class="j-dates">Dec 2019 &ndash; Sept 2020</span></div>
-            <p class="j-org">MadAhead, remote</p>
-            <ul>
-              <li>Developed the strategy and experience for an online "pass the story" game, live on the Google Play Store.</li>
-              <li>Led a team of 5 designers and UX writers, collaborating with engineering on implementation.</li>
-            </ul>
-          </div>
+          <a class="dl-btn" href="assets/priyal_resume_UXR.pdf" download="Priyal-Shrivastava-Resume.pdf">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v8M4 7l4 4 4-4M2 13h12"/></svg>
+            Download PDF
+          </a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="res-section">
-      <div class="res-grid">
-        <p class="res-label">Education</p>
-        <div>
-          <div class="edu-row reveal">
-            <div>
-              <h3>Carnegie Mellon University</h3>
-              <p>Masters in Human-Computer Interaction</p>
+      <div class="res-body">
+      <section class="res-section">
+        <div class="res-grid">
+          <p class="res-label">Experience</p>
+          <div>
+            <div class="job">
+              <div class="job-head"><h3>Research Assistant, Viewpoints Lab</h3><span class="j-dates">Sept 2025 &ndash; ongoing</span></div>
+              <p class="j-org">Carnegie Mellon University, Pittsburgh</p>
+              <ul>
+                <li>Research assistant under Prof. Tom Costello, working on misinformation and AI persuasion.</li>
+              </ul>
             </div>
-            <span class="j-dates">2025 &ndash; 2026</span>
-          </div>
-          <div class="edu-row reveal">
-            <div>
-              <h3>Indian Institute of Technology (IIT) Guwahati</h3>
-              <p>Bachelor of Design &middot; GPA 9.13/10</p>
+
+            <div class="job">
+              <div class="job-head"><h3>UX Researcher (contract via Kadence)</h3><span class="j-dates">Sept 2024 &ndash; Feb 2025</span></div>
+              <p class="j-org">Microsoft, Bangalore</p>
+              <ul>
+                <li>Wrote a white paper with identified opportunity areas to guide the integration of Copilot in Outlook, focused on trust, transparency, learnability, and user control. <a href="work/microsoft-copilot-trust.html">Case study</a></li>
+                <li>Conducted a mixed-method study with a 300+ user survey and 30+ interviews across geographies to improve the Outlook experience on mobile browsers. <a href="work/microsoft-retention.html">Case study</a></li>
+              </ul>
             </div>
-            <span class="j-dates">2017 &ndash; 2021</span>
+
+            <div class="job">
+              <div class="job-head"><h3>Senior UX Researcher</h3><span class="j-dates">April 2024 &ndash; July 2024</span></div>
+              <p class="j-org">Razorpay, Bangalore</p>
+            </div>
+            <div class="job">
+              <div class="job-head"><h3>UX Researcher</h3><span class="j-dates">Oct 2022 &ndash; March 2024</span></div>
+              <p class="j-org">Razorpay, Bangalore</p>
+              <ul>
+                <li>Refined the value proposition and strategy for a new B2C product vertical through 3 focus group discussions, 25+ interviews with participatory design activities, and a 1000+ respondent market survey, earning buy-in from CXOs and leadership. <a href="work/razorpay-d2c.html">Case study</a></li>
+                <li>Created value maps from in-depth interviews with 30+ users on how companies derive value from neobanks, shaping business strategy and the roadmap for the following financial year.</li>
+                <li>Proposed and conducted an in-depth UX audit and usability test of the company's website, visited by 1M+ people daily, and of the onboarding flow, to understand SMEs' mental models around filling forms. <a href="work/razorpay-website-evaluation.html">Case study</a></li>
+                <li>Evangelized research across the organization by setting up 2 customer empathy programs and running full-day workshops for 50+ product managers and designers.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-head"><h3>Product Designer</h3><span class="j-dates">July 2021 &ndash; Oct 2022</span></div>
+              <p class="j-org">Razorpay, Bangalore</p>
+              <ul>
+                <li>Redesigned the onboarding flow for SME merchants with low tech literacy: form-filling conversion up 51%, completion time down from 14 to 5 minutes, support tickets down 43%. <a href="work/razorpay-onboarding.html">Case study</a></li>
+                <li>Designed multiple experiments to improve merchants' first-time user experience.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-head"><h3>User Research Intern</h3><span class="j-dates">May 2020 &ndash; July 2020</span></div>
+              <p class="j-org">Meesho, Bangalore</p>
+              <ul>
+                <li>Studied community building for women from semi-urban and rural India through secondary research, surveys, and 40+ qualitative interviews, for a product with 10M+ downloads.</li>
+                <li>Led a research study on the effects of language and socio-cultural factors in research and design for the next billion users. <a href="work/meesho-vernacular.html">Case study</a></li>
+                <li>Ran a workshop with design and product stakeholders on biases around low-tech-literacy users.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-head"><h3>Founding Member</h3><span class="j-dates">Aug 2020 &ndash; present</span></div>
+              <p class="j-org">User Research India, remote</p>
+              <ul>
+                <li>Building the User Research India initiative with industry leaders: sharing insight about the UXR ecosystem in India and engaging leadership to invest in research across sectors.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-head"><h3>Co-founder</h3><span class="j-dates">Dec 2019 &ndash; Sept 2020</span></div>
+              <p class="j-org">MadAhead, remote</p>
+              <ul>
+                <li>Developed the strategy and experience for an online "pass the story" game, live on the Google Play Store.</li>
+                <li>Led a team of 5 designers and UX writers, collaborating with engineering on implementation.</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="res-section">
-      <div class="res-grid">
-        <p class="res-label">Skills &amp; courses</p>
-        <div>
-          <div class="skill-block reveal">
-            <h4>Methodology</h4>
-            <p>Qualitative interviews, surveys, usability testing, contextual inquiry, participatory research, focus group discussions.</p>
-          </div>
-          <div class="skill-block reveal">
-            <h4>Software</h4>
-            <p>UI and prototyping: Figma, Webflow, Principle. Visual design: Illustrator, Photoshop, InDesign, Procreate. Repositories: Marvin, UserTesting. Data analytics: Looker, Clarity, R.</p>
-          </div>
-          <div class="skill-block reveal">
-            <h4>Courses</h4>
-            <p>Augmenting Intelligence, Statistics &amp; Modelling, Service Design, Ethics &amp; Policy Issues in Computing, User-Centered Research &amp; Evaluation, Persuasive Design, Design Strategy &amp; Management, Consumer Research, Design Analysis.</p>
+      <section class="res-section">
+        <div class="res-grid">
+          <p class="res-label">Education</p>
+          <div>
+            <div class="edu-row">
+              <div>
+                <h3>Carnegie Mellon University</h3>
+                <p>Masters in Human-Computer Interaction</p>
+              </div>
+              <span class="j-dates">2025 &ndash; 2026</span>
+            </div>
+            <div class="edu-row">
+              <div>
+                <h3>Indian Institute of Technology (IIT) Guwahati</h3>
+                <p>Bachelor of Design &middot; GPA 9.13/10</p>
+              </div>
+              <span class="j-dates">2017 &ndash; 2021</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-cta reveal">
-        <p class="label">Get in touch</p>
-        <a class="big-link" href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 &middot; Made with <span class="heart">&#10084;&#xFE0E;</span> by Priyal Shrivastava</span>
-        <div class="footer-links">
-          <a href="mailto:priyalshri1@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener">LinkedIn</a>
+      <section class="res-section">
+        <div class="res-grid">
+          <p class="res-label">Skills &amp; courses</p>
+          <div>
+            <div class="skill-block">
+              <h4>Methodology</h4>
+              <p>Qualitative interviews, surveys, usability testing, contextual inquiry, participatory research, focus group discussions.</p>
+            </div>
+            <div class="skill-block">
+              <h4>Software</h4>
+              <p>UI and prototyping: Figma, Webflow, Principle. Visual design: Illustrator, Photoshop, InDesign, Procreate. Repositories: Marvin, UserTesting. Data analytics: Looker, Clarity, R.</p>
+            </div>
+            <div class="skill-block">
+              <h4>Courses</h4>
+              <p>Augmenting Intelligence, Statistics &amp; Modelling, Service Design, Ethics &amp; Policy Issues in Computing, User-Centered Research &amp; Evaluation, Persuasive Design, Design Strategy &amp; Management, Consumer Research, Design Analysis.</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </footer>
+      </section>
 
-  <script src="js/main.js"></script>
+      <footer class="res-close">
+        <p><a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+        <p class="res-credit">&copy; 2020 &ndash; Made with &#10084;&#xFE0E; by Priyal Shrivastava</p>
+      </footer>
+      </div>
+
+      <div id="site-footer"></div>
+    </main>
+  </div>
+
+  <script src="js/shell.js" defer></script>
 </body>
 </html>

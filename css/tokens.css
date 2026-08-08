@@ -1,0 +1,57 @@
+/* Design tokens — Copilot showpiece system (sitewide).
+   Source of truth: work/microsoft-copilot-trust.html
+   Full-width container layout; Mondrian columns retired. */
+
+:root {
+  /* Type: Archivo = structure UI. Fraunces = voice / italic emphasis. */
+  --font-archivo: "Archivo", "Helvetica Neue", sans-serif;
+  --font-fraunces: "Fraunces", Georgia, serif;
+  /* Compat aliases used across existing CSS */
+  --font-grotesk: var(--font-archivo);
+  --font-sans: var(--font-archivo);
+  --font-serif: var(--font-fraunces);
+
+  --white: #FFFFFF;
+  --paper: #FFFFFF;
+  --ink: #0B0B0C;
+  --grey: #6B6E68;
+  --muted: #6B6E68;
+
+  /* Working accent (Copilot glow) — 6.3:1 on white */
+  --glow: #4F46E5;
+  /* Soft glow for dark surfaces — remap via --glow on dark strips */
+  --glow-soft: #9D91FF;
+  --blue: var(--glow); /* compat: former Mondrian accent */
+
+  /* Sparse punctuation (retired as primary; kept for mark code paths) */
+  --red: #4F46E5;
+  --yellow: #9D91FF;
+
+  --line-alpha: 0.22;
+  --line-color: rgba(11, 11, 12, var(--line-alpha));
+  --border: rgba(11, 11, 12, 0.18);
+
+  --text-hero: clamp(36px, 6.2vw, 80px);
+  --text-sub: clamp(17px, 2vw, 21px);
+  --text-opener: clamp(30px, 4.5vw, 52px);
+  --text-prose: 17px;
+  --text-row: clamp(1.35rem, 1.9vw, 1.75rem);
+  --text-nav: 0.875rem;
+  --text-tech: 0.8125rem;
+  --text-label: 0.75rem;
+  --text-meta: 0.75rem;
+
+  --track-label: 0.14em;
+  --track-meta: 0.12em;
+
+  --gutter-col: clamp(56px, 6vw, 104px);
+  --gutter-row: clamp(72px, 8vh, 140px);
+  --page-margin: minmax(32px, 1fr);
+  --cell-pad: clamp(20px, 2.5vw, 40px);
+
+  --mark-red: 11px;
+  --mark-yellow: 24px;
+
+  --radius-card: 12px;
+  --radius-soft: 16px;
+}

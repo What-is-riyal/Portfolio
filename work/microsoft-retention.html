@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/grid.css?v=20260807b">
-  <link rel="stylesheet" href="../css/shell.css?v=20260807b">
+  <link rel="stylesheet" href="../css/grid.css?v=20260808a">
+  <link rel="stylesheet" href="../css/shell.css?v=20260808a">
   <style>
     /* Retention showpiece — Copilot family accents (content/interactives untouched) */
     :root {
@@ -29,9 +29,9 @@
     body {
       background: #FFFFFF;
       overflow-x: hidden;
-      font-family: var(--serif);
+      font-family: var(--font);
       color: var(--ink);
-      font-weight: 340;
+      font-weight: 400;
     }
 
     .page-retention {
@@ -50,11 +50,11 @@
       font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--sky); margin-bottom: 20px;
     }
-    .strip { padding: 110px 0; position: relative; }
+    .strip { padding: 120px 0; position: relative; }
     .strip h2 {
-      font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 340; letter-spacing: -0.015em;
-      line-height: 1.15; max-width: 24ch; margin-bottom: 28px;
-      font-family: var(--serif);
+      font-size: clamp(30px, 4.5vw, 52px); font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.1; max-width: 24ch; margin-bottom: 28px;
+      font-family: var(--font);
     }
     .strip h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--sky); }
     .prose { max-width: 680px; }
@@ -95,9 +95,13 @@
     .snap-item .s-value { font-size: 15px; font-weight: 600; line-height: 1.5; color: var(--text); }
     .snap-item .s-value small { display: block; font-weight: 500; font-size: 13px; color: var(--muted); margin-top: 2px; }
     .hero-light h1 {
-      font-size: clamp(2.5rem, 5.5vw, 5rem); line-height: 1.05; font-weight: 340;
-      letter-spacing: -0.02em; max-width: 14ch; margin-bottom: 32px;
-      font-variation-settings: 'opsz' 60;
+      font-family: var(--font);
+      font-size: clamp(36px, 6.2vw, 80px);
+      line-height: 1.06;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      max-width: 18ch;
+      margin-bottom: 36px;
     }
     .hero-light h1 em {
       font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--sky);
@@ -108,11 +112,11 @@
     }
     .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; }
     .pchip {
-      font-family: var(--font); font-size: 12px; font-weight: 500; padding: 6px 10px;
-      border-radius: 0; letter-spacing: 0.06em; text-transform: uppercase;
-      border: 1px solid var(--border); color: var(--muted); background: #fff;
+      font-family: var(--font); font-size: 13px; font-weight: 600; padding: 8px 16px;
+      border-radius: 999px; letter-spacing: 0;
+      border: 1px solid rgba(11, 11, 12, 0.18); color: rgba(11, 11, 12, 0.72); background: #fff;
     }
-    .pchip.accent { border-color: rgba(26, 63, 158, 0.45); color: var(--sky); }
+    .pchip.accent { border-color: rgba(124, 113, 255, 0.5); color: var(--sky); }
 
     /* Drifting account cards in hero */
     .float-card {

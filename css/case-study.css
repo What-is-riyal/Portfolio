@@ -6,23 +6,23 @@
   padding-bottom: 8vh;
 }
 
-/* Nav: light over dark hero, ink after scroll */
+/* Nav: white over dark hero (Copilot baseline), ink + glow after scroll */
 .page-case-study .site-nav__brand {
   color: #fff;
 }
 .page-case-study .site-nav__links a {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.65);
 }
 .page-case-study .site-nav__links a:hover,
 .page-case-study .site-nav__links a.is-active {
-  color: var(--glow-soft);
+  color: #fff;
 }
 
 .page-case-study.is-scrolled-past-hero .site-nav__brand {
   color: var(--ink);
 }
 .page-case-study.is-scrolled-past-hero .site-nav__links a {
-  color: rgba(11, 11, 12, 0.72);
+  color: rgba(11, 11, 12, 0.65);
 }
 .page-case-study.is-scrolled-past-hero .site-nav__links a:hover,
 .page-case-study.is-scrolled-past-hero .site-nav__links a.is-active {
@@ -37,9 +37,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 120px 0 96px;
+  padding: 120px 0 80px;
   background: var(--ink);
   color: #fff;
+  --glow: var(--glow-soft);
   overflow: hidden;
   max-width: none !important;
   width: 100%;
@@ -53,8 +54,8 @@
   width: 60vw;
   height: 60vw;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 113, 255, 0.32), transparent 65%);
-  top: 8%;
+  background: radial-gradient(circle, rgba(124, 113, 255, 0.3), transparent 65%);
+  top: 10%;
   right: -18vw;
   filter: blur(20px);
   pointer-events: none;
@@ -63,7 +64,7 @@
 
 @keyframes cs-orb-drift {
   from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(-6vw, 6vh) scale(1.12); }
+  to { transform: translate(-6vw, 6vh) scale(1.15); }
 }
 
 .cs-hero__inner {
@@ -75,6 +76,7 @@
   padding: 0 clamp(20px, 4vw, 40px);
 }
 
+/* Hero eyebrow only — leading line (Copilot .eyebrow) */
 .cs-hero__org,
 .cs-hero__eyebrow,
 .cs-hero .page-kicker {
@@ -87,7 +89,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.55);
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .cs-hero__org::before,
@@ -96,31 +98,48 @@
   content: "";
   width: 32px;
   height: 1px;
-  background: var(--glow-soft);
+  background: var(--glow);
+}
+
+.cs-hero__q {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-size: clamp(17px, 2vw, 22px);
+  color: var(--glow);
+  margin: 0 0 18px;
 }
 
 .cs-hero__title,
 .cs-hero .voice-opener {
   max-width: 18ch;
-  margin-bottom: 28px;
+  margin: 0 0 36px;
   color: #fff;
+  font-family: var(--font-archivo);
+  font-size: clamp(36px, 6.2vw, 80px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+.cs-hero__title em,
+.cs-hero .voice-opener em {
   font-family: var(--font-fraunces);
-  font-size: clamp(2.25rem, 4.8vw, 4.25rem);
-  font-weight: 340;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  font-variation-settings: "opsz" 60;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--glow);
+  letter-spacing: -0.01em;
 }
 
 .cs-hero__sub,
 .cs-hero .voice-sub {
-  color: rgba(255, 255, 255, 0.78);
-  font-family: var(--font-fraunces);
-  font-style: italic;
-  max-width: 48ch;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-archivo);
+  font-style: normal;
+  font-weight: 400;
+  max-width: 56ch;
   font-size: clamp(17px, 2vw, 21px);
-  line-height: 1.65;
-  margin-bottom: 40px;
+  line-height: 1.7;
+  margin: 0 0 48px;
 }
 
 .cs-hero .voice-prose {
@@ -130,14 +149,39 @@
 }
 
 .cs-hero .voice-prose a {
-  color: var(--glow-soft);
+  color: var(--glow);
 }
 
-/* Snapshot meta on dark hero */
+/* Chips — Copilot .hero-chips / .chip */
+.cs-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 48px;
+  padding: 0;
+  list-style: none;
+}
+
+.cs-chip {
+  font-family: var(--font-archivo);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cs-chip--accent {
+  border-color: rgba(124, 113, 255, 0.5);
+  color: var(--glow);
+}
+
+/* Snapshot meta on dark hero — Copilot .snapshot-grid */
 .cs-meta {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 28px;
   padding: 36px 0 0;
   margin: 0;
@@ -156,19 +200,23 @@
 }
 
 .cs-meta dd {
-  font-family: var(--font-fraunces);
+  font-family: var(--font-archivo);
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
 }
 
 .cs-meta dd a {
-  color: var(--glow-soft);
+  color: var(--glow);
 }
 
 .cs-meta .sg-tech {
+  display: block;
+  font-weight: 500;
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.55);
+  margin-top: 2px;
 }
 
 .cs-hero__scroll {
@@ -229,10 +277,11 @@
 .cs-quote-band {
   position: relative;
   overflow: hidden;
-  padding-top: clamp(72px, 12vh, 120px);
-  padding-bottom: clamp(72px, 12vh, 120px);
+  padding-top: 120px;
+  padding-bottom: 120px;
   background: var(--ink);
   color: #fff;
+  --glow: var(--glow-soft);
 }
 
 .cs-quote-band::before {
@@ -299,12 +348,12 @@
   color: #3a3a3a;
 }
 
-/* Paper strips */
+/* Paper strips — Copilot .strip (120px, Archivo h2, no kicker line) */
 .cs-section {
   scroll-margin-top: 80px;
   position: relative;
-  padding-top: clamp(80px, 12vh, 120px);
-  padding-bottom: clamp(80px, 12vh, 120px);
+  padding-top: 120px;
+  padding-bottom: 120px;
   background: var(--paper);
 }
 
@@ -313,9 +362,7 @@
 }
 
 .cs-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  display: block;
   font-family: var(--font-archivo);
   font-size: 13px;
   font-weight: 700;
@@ -326,10 +373,7 @@
 }
 
 .cs-kicker::before {
-  content: "";
-  width: 32px;
-  height: 1px;
-  background: currentColor;
+  content: none;
 }
 
 .cs-section__title,
@@ -342,8 +386,16 @@
   line-height: 1.1;
   text-transform: none;
   color: var(--ink);
-  max-width: 18ch;
-  margin: 0 0 clamp(24px, 4vh, 36px);
+  max-width: 24ch;
+  margin: 0 0 28px;
+}
+
+.cs-section__title em,
+.page-case h2.cs-section__label em {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--glow);
 }
 
 .cs-section .voice-prose,

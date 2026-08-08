@@ -8,18 +8,21 @@
    ========================================================================== */
 
 :root {
+  /* Aligned to Copilot Trust showpiece (work/microsoft-copilot-trust.html) */
   --bg: #FFFFFF;
-  --ink: #101015;
-  --text: #16161A;
-  --muted: #5B5B66;
+  --ink: #0B0B0C;
+  --paper: #FFFFFF;
+  --text: #0B0B0C;
+  --muted: #6B6E68;
   --border: #E8E8EE;
   --surface: #F6F6F9;
-  --accent: #1D40C8;       /* ballpoint blue */
-  --accent-ink: #16329E;   /* deeper blue for hover states */
-  --pen: #1D40C8;
-  --gold: #FFD43B;         /* highlighter */
-  --highlight: rgba(255, 214, 59, 0.4);
-  --highlight-strong: rgba(255, 214, 59, 0.62);
+  --glow: #4F46E5;
+  --accent: #4F46E5;
+  --accent-ink: #4338CA;
+  --pen: #4F46E5;
+  --gold: #9D91FF;
+  --highlight: rgba(157, 145, 255, 0.28);
+  --highlight-strong: rgba(157, 145, 255, 0.45);
   --ink-soft: rgba(255, 255, 255, 0.75);
   --ink-mute: rgba(255, 255, 255, 0.55);
   --ink-line: rgba(255, 255, 255, 0.14);
@@ -51,8 +54,8 @@ body {
 }
 
 ::selection {
-  background: var(--gold);
-  color: var(--ink);
+  background: var(--glow);
+  color: #fff;
 }
 
 a {

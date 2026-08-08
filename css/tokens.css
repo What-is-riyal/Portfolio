@@ -4,36 +4,37 @@
 
 :root {
   /* Type: Archivo = structure UI. Fraunces = voice / italic emphasis. */
-  --font-archivo: 'Archivo', 'Helvetica Neue', sans-serif;
-  --font-fraunces: 'Fraunces', Georgia, serif;
+  --font-archivo: "Archivo", "Helvetica Neue", sans-serif;
+  --font-fraunces: "Fraunces", Georgia, serif;
   /* Compat aliases used across existing CSS */
   --font-grotesk: var(--font-archivo);
   --font-sans: var(--font-archivo);
   --font-serif: var(--font-fraunces);
 
-  --white: #ffffff;
-  --paper: #ffffff;
-  --ink: #0b0b0c;
-  --grey: #6b6e68;
-  --muted: #6b6e68;
+  --white: #FFFFFF;
+  --paper: #FFFFFF;
+  --ink: #0B0B0C;
+  --grey: #6B6E68;
+  --muted: #6B6E68;
 
-  /* Working accent (Copilot glow) */
-  --glow: #4f46e5;
-  --glow-soft: #9d91ff;
+  /* Working accent (Copilot glow) — 6.3:1 on white */
+  --glow: #4F46E5;
+  /* Soft glow for dark surfaces — remap via --glow on dark strips */
+  --glow-soft: #9D91FF;
   --blue: var(--glow); /* compat: former Mondrian accent */
 
   /* Sparse punctuation (retired as primary; kept for mark code paths) */
-  --red: #4f46e5;
-  --yellow: #9d91ff;
+  --red: #4F46E5;
+  --yellow: #9D91FF;
 
   --line-alpha: 0.22;
   --line-color: rgba(11, 11, 12, var(--line-alpha));
   --border: rgba(11, 11, 12, 0.18);
 
-  --text-hero: clamp(2.5rem, 5.5vw, 5rem);
-  --text-sub: clamp(1.25rem, 2vw, 1.6rem);
-  --text-opener: clamp(1.75rem, 3vw, 2.5rem);
-  --text-prose: clamp(1.125rem, 1.4vw, 1.25rem);
+  --text-hero: clamp(36px, 6.2vw, 80px);
+  --text-sub: clamp(17px, 2vw, 21px);
+  --text-opener: clamp(30px, 4.5vw, 52px);
+  --text-prose: 17px;
   --text-row: clamp(1.35rem, 1.9vw, 1.75rem);
   --text-nav: 0.875rem;
   --text-tech: 0.8125rem;

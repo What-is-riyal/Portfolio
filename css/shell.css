@@ -33,7 +33,7 @@
   font-size: var(--text-nav);
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: rgba(11, 11, 12, 0.72);
+  color: rgba(11, 11, 12, 0.65);
   transition: color 0.2s ease;
 }
 

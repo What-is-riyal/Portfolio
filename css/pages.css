@@ -435,12 +435,20 @@
 }
 
 .home-hero__hl-label {
+  display: inline-block;
+  width: fit-content;
   font-family: var(--font-archivo);
   font-size: 10.5px;
   font-weight: 800;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(157, 145, 255, 0.75);
+  color: var(--ink, #0B0B0C);
+  background: var(--glow-soft, #9D91FF);
+  border-radius: 2px;
+  padding: 3px 9px;
+  transform: rotate(-3.5deg);
+  transform-origin: left center;
+  box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.25);
 }
 
 .home-hero__hl-text {
@@ -450,6 +458,13 @@
   line-height: 1.42;
   color: rgba(255, 255, 255, 0.9);
   max-width: 36ch;
+}
+
+.home-hero__hl-text em {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 /* Entrance motion — start visible; animate on .is-ready */
@@ -566,6 +581,17 @@
     grid-template-columns: 1fr;
   }
 
+  .home-work__link {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .home-work__thumb {
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+  }
+
   .home-hero__lead {
     max-width: none;
   }
@@ -653,10 +679,10 @@
 
 .home-work__row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(180px, 280px);
+  grid-template-columns: minmax(0, 1fr) minmax(160px, 240px);
   gap: clamp(20px, 3vw, 40px);
-  align-items: end;
-  padding: clamp(32px, 5vh, 48px) 0;
+  align-items: center;
+  padding: clamp(28px, 4.5vh, 40px) 0;
   border-top: 1px solid var(--border);
   max-width: none;
   margin: 0;
@@ -671,15 +697,44 @@
   background: rgba(79, 70, 229, 0.03);
 }
 
+.home-work__row:hover .home-work__thumb {
+  transform: translateY(-3px) rotate(-1deg);
+}
+
 .home-work__link {
-  display: block;
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: clamp(16px, 2.2vw, 28px);
+  align-items: center;
   text-decoration: none;
   color: inherit;
 }
 
+.home-work__thumb {
+  display: block;
+  width: 96px;
+  height: 96px;
+  border-radius: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 10px 28px -18px rgba(11, 11, 12, 0.35);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-work__thumb svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.home-work__copy {
+  display: block;
+  min-width: 0;
+}
+
 .home-work__link .voice-row {
   font-family: var(--font-archivo);
-  font-size: clamp(22px, 2.8vw, 32px);
+  font-size: clamp(20px, 2.5vw, 30px);
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.15;
@@ -691,9 +746,9 @@
 
 .home-work__claim {
   display: block;
-  margin-top: 12px;
+  margin-top: 10px;
   font-family: var(--font-fraunces);
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
   font-style: italic;
   line-height: 1.45;
   color: var(--grey);
@@ -715,6 +770,83 @@
 .home-work__meta .sg-label {
   margin-top: 8px;
   color: var(--glow);
+}
+
+/* About me — bio + focus chips only (accolades live on the hero) */
+.home-about {
+  background: var(--ink);
+  color: #fff;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: clamp(80px, 12vh, 120px) 0;
+  --glow: var(--glow-soft);
+}
+
+.home-about__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+}
+
+.home-about__kicker {
+  display: block;
+  font-family: var(--font-archivo);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--glow);
+  margin-bottom: 16px;
+}
+
+.home-about__title {
+  font-family: var(--font-archivo);
+  font-size: clamp(30px, 4.5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 clamp(28px, 5vh, 44px);
+  max-width: 12ch;
+}
+
+.home-about__grid {
+  max-width: 64ch;
+}
+
+.home-about__copy p {
+  margin: 0 0 18px;
+  font-family: var(--font-archivo);
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.home-about__copy strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.home-about__chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 0;
+  padding: 0;
+}
+
+.home-about__chips li {
+  font-family: var(--font-archivo);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
+  padding: 8px 14px;
 }
 
 .home-book {

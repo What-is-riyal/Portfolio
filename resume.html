@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume | Priyal Shrivastava</title>
-  <meta name="description" content="Resume of Priyal Shrivastava: user researcher, MHCI at Carnegie Mellon, previously Razorpay, Microsoft, and Meesho.">
+  <title>Research CV | Priyal Shrivastava</title>
+  <meta name="description" content="Research CV of Priyal Shrivastava, an HCI researcher working across human-AI interaction, credibility, AI governance, and applied user research.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
@@ -63,6 +63,13 @@
 
     .job-head .j-dates { white-space: nowrap; padding-top: 3px; }
     .job .j-org { margin-bottom: 12px; }
+    .job .j-org a {
+      color: inherit;
+      text-decoration-color: rgba(79, 70, 229, 0.3);
+      text-underline-offset: 3px;
+    }
+
+    .job .j-org a:hover { color: var(--glow); }
 
     .job ul { list-style: none; }
 
@@ -88,6 +95,65 @@
     }
 
     .job li a { color: var(--glow); }
+
+    .research-summary {
+      font-family: var(--font-fraunces);
+      font-size: clamp(21px, 2.2vw, 28px);
+      font-weight: 340;
+      line-height: 1.45;
+      max-width: 48ch;
+    }
+
+    .research-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+      list-style: none;
+    }
+
+    .research-topics li {
+      border: 1px solid var(--line-color);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-family: var(--font-archivo);
+      font-size: var(--text-meta);
+      color: var(--grey);
+    }
+
+    .publication {
+      padding-bottom: 28px;
+    }
+
+    .publication:last-child { padding-bottom: 0; }
+
+    .publication h3 {
+      font-family: var(--font-fraunces);
+      font-size: clamp(19px, 2vw, 24px);
+      font-weight: 400;
+      line-height: 1.35;
+      max-width: 42ch;
+    }
+
+    .publication h3 a {
+      color: var(--ink);
+      text-decoration-color: rgba(79, 70, 229, 0.35);
+      text-underline-offset: 4px;
+    }
+
+    .publication h3 a:hover { color: var(--glow); }
+
+    .publication .pub-meta,
+    .publication .pub-note {
+      font-family: var(--font-archivo);
+      font-size: var(--text-nav);
+      line-height: 1.55;
+      color: var(--grey);
+      max-width: 70ch;
+    }
+
+    .publication .pub-meta { margin-top: 6px; }
+    .publication .pub-note { margin-top: 10px; }
 
     .edu-row {
       display: flex;
@@ -162,30 +228,129 @@
       <section class="res-hero-band">
         <div class="res-hero-band__inner">
           <div>
-            <p class="page-kicker">CV</p>
-            <h1>Resume</h1>
-            <p class="r-sub">Priyal Shrivastava &middot; <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            <p class="page-kicker">Academic &amp; applied research</p>
+            <h1>Research CV</h1>
+            <p class="r-sub">Priyal Shrivastava &middot; <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://hcii.cmu.edu/people/priyal-shrivastava" target="_blank" rel="noopener noreferrer">CMU profile</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           </div>
-          <a class="dl-btn" href="assets/priyal_resume_UXR.pdf" download="Priyal-Shrivastava-Resume.pdf">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v8M4 7l4 4 4-4M2 13h12"/></svg>
-            Download PDF
-          </a>
         </div>
       </section>
 
       <div class="res-body">
       <section class="res-section">
         <div class="res-grid">
-          <p class="res-label">Experience</p>
+          <p class="res-label">Research profile</p>
           <div>
+            <p class="research-summary">I study how people understand, trust, and make decisions with technology, with current work spanning human–AI interaction, credibility, and AI governance.</p>
+            <ul class="research-topics" aria-label="Research interests">
+              <li>Human–AI interaction</li>
+              <li>AI persuasion &amp; credibility</li>
+              <li>Human-centered AI governance</li>
+              <li>Cross-cultural HCI</li>
+              <li>Mixed-method research</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="res-section">
+        <div class="res-grid">
+          <p class="res-label">Research experience</p>
+          <div>
+            <div class="job">
+              <div class="job-head"><h3>Research Assistant, NSF AI Institute for Societal Decision Making</h3><span class="j-dates">June 2026 &ndash; present</span></div>
+              <p class="j-org"><a href="https://www.cmu.edu/ai-sdm/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University, Pittsburgh</a></p>
+              <ul>
+                <li>Developing a framework, grounded in expected-utility modeling, for how individuals should decide whether and how to use AI for a specific task. Advised by Prof. Aarti Singh and Samsara Foubert.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-head"><h3>Research Assistant, Prof. Maarten Sap&rsquo;s group</h3><span class="j-dates">June 2026 &ndash; present</span></div>
+              <p class="j-org">Carnegie Mellon University, Pittsburgh</p>
+              <ul>
+                <li>Collaborating with a PhD researcher in Prof. Maarten Sap&rsquo;s group.</li>
+              </ul>
+            </div>
+
             <div class="job">
               <div class="job-head"><h3>Research Assistant, Viewpoints Lab</h3><span class="j-dates">Sept 2025 &ndash; ongoing</span></div>
               <p class="j-org">Carnegie Mellon University, Pittsburgh</p>
               <ul>
-                <li>Research assistant under Prof. Tom Costello, working on misinformation and AI persuasion.</li>
+                <li>Research assistant to Prof. Tom Costello on misinformation, AI persuasion, and belief formation.</li>
               </ul>
             </div>
 
+            <div class="job">
+              <div class="job-head"><h3>CORDA Research Fellow</h3><span class="j-dates">April 2026 &ndash; July 2026</span></div>
+              <p class="j-org"><a href="https://cordademocracy.com" target="_blank" rel="noopener noreferrer">CORDA Democracy</a> &middot; Open Democracy</p>
+              <ul>
+                <li>Developed an encyclopedia comparing four reranking algorithms through LLM simulations and a standardized &ldquo;nutrition label&rdquo; based on the systemic risks identified in EU Digital Services Act Article 34(1)(a)&ndash;(d).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="res-section">
+        <div class="res-grid">
+          <p class="res-label">Publications &amp; writing</p>
+          <div>
+            <article class="publication">
+              <h3><a href="https://arxiv.org/abs/2603.15807" target="_blank" rel="noopener noreferrer">Lost in Transcription: Subtitle Errors in Automatic Speech Recognition Reduce Speaker and Content Evaluations</a></h3>
+              <p class="pub-meta">Kowe Kadoma, Priyal Shrivastava, and Mor Naaman &middot; Proceedings of CHI 2026 &middot; Second author</p>
+              <p class="pub-note">A preregistered online experiment with 207 U.S.-based participants examining how automatic-caption errors affect judgments of a speaker and their content.</p>
+            </article>
+
+            <article class="publication">
+              <h3><a href="https://www.cmu.edu/ai-sdm/research/human-ai-workshop/" target="_blank" rel="noopener noreferrer">A Prescriptive Framework for Task-level Human-AI Complementarity</a></h3>
+              <p class="pub-meta">Priyal Shrivastava, Anusha Reddy, Samsara Foubert, Paul Lehner, and Aarti Singh &middot; Human-AI Complementarity Workshop, 2026 &middot; Accepted poster</p>
+              <p class="pub-note">A decision framework for determining whether and how a person should use AI for a particular task.</p>
+            </article>
+
+            <article class="publication">
+              <h3><a href="https://drive.google.com/file/d/1OE4_fKTRbh5BZhSPK1xqvbna47DufFee/view" target="_blank" rel="noopener noreferrer">UXR in India: A Historical Perspective</a></h3>
+              <p class="pub-meta">Achyutha Sharma &middot; Book contribution</p>
+              <p class="pub-note">Contributed interviews and data collection documenting the development of user research practice in India.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="res-section">
+        <div class="res-grid">
+          <p class="res-label">Policy &amp; service</p>
+          <div>
+            <div class="job">
+              <div class="job-head"><h3>SEAL IT Act policy proposal</h3><span class="j-dates">2026</span></div>
+              <p class="j-org">First place, U.S. AI Policy Hackathon</p>
+              <ul>
+                <li>Co-authored a proposal with Simi Olusola-Ajayi addressing deepfakes and election integrity through algorithmic pausing. <a href="https://www.hcii.cmu.edu/news/designing-hci-policy" target="_blank" rel="noopener noreferrer">Read the CMU feature</a></li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-head"><h3>Executive Board / Non-Technical Staff</h3><span class="j-dates">Present</span></div>
+              <p class="j-org">Carnegie Mellon AI Safety Initiative (CASI)</p>
+              <ul>
+                <li>Co-lead an AI governance reading group and contribute to AI governance programming and community-building at Carnegie Mellon. <a href="https://cmuaisafety.com/team.html" target="_blank" rel="noopener noreferrer">CASI team</a></li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-head"><h3>Organizer, CMU AI Policy Hackathon</h3><span class="j-dates">2026</span></div>
+              <p class="j-org">Carnegie Mellon AI Safety Initiative</p>
+              <ul>
+                <li>Helped organize four policy tracks covering agentic-AI fraud, corporate power concentration, creator rights, and surveillance.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="res-section">
+        <div class="res-grid">
+          <p class="res-label">Industry experience</p>
+          <div>
             <div class="job">
               <div class="job-head"><h3>UX Researcher (contract via Kadence)</h3><span class="j-dates">Sept 2024 &ndash; Feb 2025</span></div>
               <p class="j-org">Microsoft, Bangalore</p>
@@ -196,11 +361,7 @@
             </div>
 
             <div class="job">
-              <div class="job-head"><h3>Senior UX Researcher</h3><span class="j-dates">April 2024 &ndash; July 2024</span></div>
-              <p class="j-org">Razorpay, Bangalore</p>
-            </div>
-            <div class="job">
-              <div class="job-head"><h3>UX Researcher</h3><span class="j-dates">Oct 2022 &ndash; March 2024</span></div>
+              <div class="job-head"><h3>Senior UX Researcher</h3><span class="j-dates">Oct 2022 &ndash; July 2024</span></div>
               <p class="j-org">Razorpay, Bangalore</p>
               <ul>
                 <li>Refined the value proposition and strategy for a new B2C product vertical through 3 focus group discussions, 25+ interviews with participatory design activities, and a 1000+ respondent market survey, earning buy-in from CXOs and leadership. <a href="work/razorpay-d2c.html">Case study</a></li>
@@ -251,19 +412,39 @@
 
       <section class="res-section">
         <div class="res-grid">
+          <p class="res-label">In the news</p>
+          <div>
+            <div class="publication">
+              <h3><a href="https://www.hcii.cmu.edu/news/designing-hci-policy" target="_blank" rel="noopener noreferrer">Designing HCI Policy: Students Take on Deepfakes and Election Integrity</a></h3>
+              <p class="pub-meta">Carnegie Mellon Human-Computer Interaction Institute &middot; 2026</p>
+            </div>
+            <div class="publication">
+              <h3><a href="https://hcii.cmu.edu/news/cmu-chi-2026" target="_blank" rel="noopener noreferrer">CMU Researchers Present New Work at CHI 2026</a></h3>
+              <p class="pub-meta">Carnegie Mellon Human-Computer Interaction Institute &middot; 2026</p>
+            </div>
+            <div class="publication">
+              <h3><a href="https://www.cmu.edu/ai-sdm/research/human-ai-workshop/" target="_blank" rel="noopener noreferrer">Human-AI Complementarity Workshop</a></h3>
+              <p class="pub-meta">NSF AI Institute for Societal Decision Making, Carnegie Mellon University &middot; 2026</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="res-section">
+        <div class="res-grid">
           <p class="res-label">Education</p>
           <div>
             <div class="edu-row">
               <div>
                 <h3>Carnegie Mellon University</h3>
-                <p>Masters in Human-Computer Interaction</p>
+                <p>Master of Human-Computer Interaction &middot; GPA 4.0/4.0</p>
               </div>
               <span class="j-dates">2025 &ndash; 2026</span>
             </div>
             <div class="edu-row">
               <div>
                 <h3>Indian Institute of Technology (IIT) Guwahati</h3>
-                <p>Bachelor of Design &middot; GPA 9.13/10</p>
+                <p>Bachelor of Design &middot; All India Rank 29, UCEED &middot; GPA 9.13/10</p>
               </div>
               <span class="j-dates">2017 &ndash; 2021</span>
             </div>
@@ -273,15 +454,42 @@
 
       <section class="res-section">
         <div class="res-grid">
-          <p class="res-label">Skills &amp; courses</p>
+          <p class="res-label">Honors &amp; fellowships</p>
+          <div>
+            <div class="edu-row">
+              <div>
+                <h3>JN Tata Endowment Scholarship</h3>
+              </div>
+            </div>
+            <div class="edu-row">
+              <div>
+                <h3>CORDA Research Fellowship</h3>
+                <p>Open Democracy</p>
+              </div>
+              <span class="j-dates">2026</span>
+            </div>
+            <div class="edu-row">
+              <div>
+                <h3>First Place, U.S. AI Policy Hackathon</h3>
+                <p>Proposal on regulating deepfakes in elections</p>
+              </div>
+              <span class="j-dates">2026</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="res-section">
+        <div class="res-grid">
+          <p class="res-label">Methods &amp; courses</p>
           <div>
             <div class="skill-block">
-              <h4>Methodology</h4>
-              <p>Qualitative interviews, surveys, usability testing, contextual inquiry, participatory research, focus group discussions.</p>
+              <h4>Research methods</h4>
+              <p>Semi-structured interviews, survey design, usability testing, contextual inquiry, participatory research, focus group discussions, literature reviews, and mixed-method study design.</p>
             </div>
             <div class="skill-block">
-              <h4>Software</h4>
-              <p>UI and prototyping: Figma, Webflow, Principle. Visual design: Illustrator, Photoshop, InDesign, Procreate. Repositories: Marvin, UserTesting. Data analytics: Looker, Clarity, R.</p>
+              <h4>Analysis &amp; research tools</h4>
+              <p>Qualitative synthesis, thematic analysis, value mapping, R, Looker, Clarity, Marvin, UserTesting, Figma, and Webflow.</p>
             </div>
             <div class="skill-block">
               <h4>Courses</h4>
@@ -293,7 +501,7 @@
 
       <footer class="res-close">
         <p><a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-        <p class="res-credit">&copy; 2020 &ndash; Made with &#10084;&#xFE0E; by Priyal Shrivastava</p>
+        <p class="res-credit">Made with &#10084;&#xFE0E; by Priyal Shrivastava</p>
       </footer>
       </div>
 

@@ -672,7 +672,7 @@
 
 .home-governance--transition {
   position: relative;
-  height: clamp(120px, 16vw, 220px);
+  height: clamp(48px, 6vw, 72px);
   padding: 0;
   overflow: hidden;
   background: var(--ink);
@@ -3854,12 +3854,15 @@ body.page-about {
 
 .home-work--list .home-work__arrow {
   position: absolute;
+  z-index: 2;
+  grid-area: auto;
   top: 12px;
   right: 14px;
   width: 24px;
   height: 24px;
   margin: 0;
   font-size: 12px;
+  background: #fff;
 }
 
 .home-work--list .home-work__casefile {

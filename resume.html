@@ -46,6 +46,9 @@
     }
 
     .job-head h3 {
+      flex: 1 1 420px;
+      min-width: 0;
+      max-width: calc(100% - 130px);
       font-family: var(--font-archivo);
       font-size: var(--text-row);
       font-weight: 600;
@@ -193,26 +196,6 @@
       max-width: 65ch;
     }
 
-    .res-close {
-      margin-top: clamp(48px, 10vh, 96px);
-      padding-top: clamp(24px, 4vh, 48px);
-      border-top: 1px solid var(--line-color);
-      font-family: var(--font-fraunces);
-      font-size: var(--text-prose);
-      font-weight: 340;
-      line-height: 1.55;
-    }
-
-    .res-close a { color: var(--glow); }
-
-    .res-credit {
-      margin-top: 2rem;
-      font-family: var(--font-archivo);
-      font-size: var(--text-meta);
-      letter-spacing: var(--track-meta);
-      color: var(--grey);
-    }
-
     @media (max-width: 760px) {
       .res-grid { grid-template-columns: 1fr; gap: 16px; }
     }
@@ -229,8 +212,8 @@
         <div class="res-hero-band__inner">
           <div>
             <p class="page-kicker">Academic &amp; applied research</p>
-            <h1>Research CV</h1>
-            <p class="r-sub">Priyal Shrivastava &middot; <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://hcii.cmu.edu/people/priyal-shrivastava" target="_blank" rel="noopener noreferrer">CMU profile</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            <h1>Resume</h1>
+            <p class="r-sub"><a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           </div>
         </div>
       </section>
@@ -266,17 +249,10 @@
 
             <div class="job">
               <div class="job-head"><h3>Research Assistant, Prof. Maarten Sap&rsquo;s group</h3><span class="j-dates">June 2026 &ndash; present</span></div>
-              <p class="j-org">Carnegie Mellon University, Pittsburgh</p>
+              <p class="j-org"><a href="https://www.cmu.edu" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a>, Pittsburgh</p>
               <ul>
                 <li>Collaborating with a PhD researcher in Prof. Maarten Sap&rsquo;s group.</li>
-              </ul>
-            </div>
-
-            <div class="job">
-              <div class="job-head"><h3>Research Assistant, Viewpoints Lab</h3><span class="j-dates">Sept 2025 &ndash; ongoing</span></div>
-              <p class="j-org">Carnegie Mellon University, Pittsburgh</p>
-              <ul>
-                <li>Research assistant to Prof. Tom Costello on misinformation, AI persuasion, and belief formation.</li>
+                <li>Studying how disclosing a chatbot&rsquo;s use of manipulation tactics affects user perception and behavior.</li>
               </ul>
             </div>
 
@@ -297,13 +273,13 @@
           <div>
             <article class="publication">
               <h3><a href="https://arxiv.org/abs/2603.15807" target="_blank" rel="noopener noreferrer">Lost in Transcription: Subtitle Errors in Automatic Speech Recognition Reduce Speaker and Content Evaluations</a></h3>
-              <p class="pub-meta">Kowe Kadoma, Priyal Shrivastava, and Mor Naaman &middot; Proceedings of CHI 2026 &middot; Second author</p>
+              <p class="pub-meta">Kowe Kadoma, <strong>Priyal Shrivastava</strong>, and Mor Naaman &middot; Proceedings of CHI 2026</p>
               <p class="pub-note">A preregistered online experiment with 207 U.S.-based participants examining how automatic-caption errors affect judgments of a speaker and their content.</p>
             </article>
 
             <article class="publication">
               <h3><a href="https://www.cmu.edu/ai-sdm/research/human-ai-workshop/" target="_blank" rel="noopener noreferrer">A Prescriptive Framework for Task-level Human-AI Complementarity</a></h3>
-              <p class="pub-meta">Priyal Shrivastava, Anusha Reddy, Samsara Foubert, Paul Lehner, and Aarti Singh &middot; Human-AI Complementarity Workshop, 2026 &middot; Accepted poster</p>
+              <p class="pub-meta"><strong>Priyal Shrivastava</strong>, Anisha Reddy, Samsara Foubert, Paul Lehner, and Aarti Singh &middot; Human-AI Complementarity Workshop, 2026 &middot; Accepted poster</p>
               <p class="pub-note">A decision framework for determining whether and how a person should use AI for a particular task.</p>
             </article>
 
@@ -330,7 +306,7 @@
 
             <div class="job">
               <div class="job-head"><h3>Executive Board / Non-Technical Staff</h3><span class="j-dates">Present</span></div>
-              <p class="j-org">Carnegie Mellon AI Safety Initiative (CASI)</p>
+              <p class="j-org"><a href="https://cmuaisafety.com" target="_blank" rel="noopener noreferrer">Carnegie Mellon AI Safety Initiative</a> (CASI)</p>
               <ul>
                 <li>Co-lead an AI governance reading group and contribute to AI governance programming and community-building at Carnegie Mellon. <a href="https://cmuaisafety.com/team.html" target="_blank" rel="noopener noreferrer">CASI team</a></li>
               </ul>
@@ -338,9 +314,9 @@
 
             <div class="job">
               <div class="job-head"><h3>Organizer, CMU AI Policy Hackathon</h3><span class="j-dates">2026</span></div>
-              <p class="j-org">Carnegie Mellon AI Safety Initiative</p>
+              <p class="j-org"><a href="https://cmuaisafety.com" target="_blank" rel="noopener noreferrer">Carnegie Mellon AI Safety Initiative</a></p>
               <ul>
-                <li>Helped organize four policy tracks covering agentic-AI fraud, corporate power concentration, creator rights, and surveillance.</li>
+                <li>Helped organize CMU&rsquo;s first AI Policy Hackathon, covering four policy tracks: agentic-AI fraud, corporate power concentration, creator rights, and surveillance. <a href="https://www.hcii.cmu.edu/news/designing-hci-policy" target="_blank" rel="noopener noreferrer">Read the CMU feature</a></li>
               </ul>
             </div>
           </div>
@@ -353,7 +329,7 @@
           <div>
             <div class="job">
               <div class="job-head"><h3>UX Researcher (contract via Kadence)</h3><span class="j-dates">Sept 2024 &ndash; Feb 2025</span></div>
-              <p class="j-org">Microsoft, Bangalore</p>
+              <p class="j-org"><a href="https://www.microsoft.com" target="_blank" rel="noopener noreferrer">Microsoft</a>, Bangalore</p>
               <ul>
                 <li>Wrote a white paper with identified opportunity areas to guide the integration of Copilot in Outlook, focused on trust, transparency, learnability, and user control. <a href="work/microsoft-copilot-trust.html">Case study</a></li>
                 <li>Conducted a mixed-method study with a 300+ user survey and 30+ interviews across geographies to improve the Outlook experience on mobile browsers. <a href="work/microsoft-retention.html">Case study</a></li>
@@ -362,7 +338,7 @@
 
             <div class="job">
               <div class="job-head"><h3>Senior UX Researcher</h3><span class="j-dates">Oct 2022 &ndash; July 2024</span></div>
-              <p class="j-org">Razorpay, Bangalore</p>
+              <p class="j-org"><a href="https://razorpay.com" target="_blank" rel="noopener noreferrer">Razorpay</a>, Bangalore</p>
               <ul>
                 <li>Refined the value proposition and strategy for a new B2C product vertical through 3 focus group discussions, 25+ interviews with participatory design activities, and a 1000+ respondent market survey, earning buy-in from CXOs and leadership. <a href="work/razorpay-d2c.html">Case study</a></li>
                 <li>Created value maps from in-depth interviews with 30+ users on how companies derive value from neobanks, shaping business strategy and the roadmap for the following financial year.</li>
@@ -373,7 +349,7 @@
 
             <div class="job">
               <div class="job-head"><h3>Product Designer</h3><span class="j-dates">July 2021 &ndash; Oct 2022</span></div>
-              <p class="j-org">Razorpay, Bangalore</p>
+              <p class="j-org"><a href="https://razorpay.com" target="_blank" rel="noopener noreferrer">Razorpay</a>, Bangalore</p>
               <ul>
                 <li>Redesigned the onboarding flow for SME merchants with low tech literacy: form-filling conversion up 51%, completion time down from 14 to 5 minutes, support tickets down 43%. <a href="work/razorpay-onboarding.html">Case study</a></li>
                 <li>Designed multiple experiments to improve merchants' first-time user experience.</li>
@@ -382,7 +358,7 @@
 
             <div class="job">
               <div class="job-head"><h3>User Research Intern</h3><span class="j-dates">May 2020 &ndash; July 2020</span></div>
-              <p class="j-org">Meesho, Bangalore</p>
+              <p class="j-org"><a href="https://www.meesho.com" target="_blank" rel="noopener noreferrer">Meesho</a>, Bangalore</p>
               <ul>
                 <li>Studied community building for women from semi-urban and rural India through secondary research, surveys, and 40+ qualitative interviews, for a product with 10M+ downloads.</li>
                 <li>Led a research study on the effects of language and socio-cultural factors in research and design for the next billion users. <a href="work/meesho-vernacular.html">Case study</a></li>
@@ -398,14 +374,6 @@
               </ul>
             </div>
 
-            <div class="job">
-              <div class="job-head"><h3>Co-founder</h3><span class="j-dates">Dec 2019 &ndash; Sept 2020</span></div>
-              <p class="j-org">MadAhead, remote</p>
-              <ul>
-                <li>Developed the strategy and experience for an online "pass the story" game, live on the Google Play Store.</li>
-                <li>Led a team of 5 designers and UX writers, collaborating with engineering on implementation.</li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
@@ -423,8 +391,8 @@
               <p class="pub-meta">Carnegie Mellon Human-Computer Interaction Institute &middot; 2026</p>
             </div>
             <div class="publication">
-              <h3><a href="https://www.cmu.edu/ai-sdm/research/human-ai-workshop/" target="_blank" rel="noopener noreferrer">Human-AI Complementarity Workshop</a></h3>
-              <p class="pub-meta">NSF AI Institute for Societal Decision Making, Carnegie Mellon University &middot; 2026</p>
+              <h3><a href="https://hcii.cmu.edu/news/looking-ahead-ai-needs-ui" target="_blank" rel="noopener noreferrer">Looking Ahead: AI Needs UI</a></h3>
+              <p class="pub-meta">Carnegie Mellon Human-Computer Interaction Institute &middot; 2026</p>
             </div>
           </div>
         </div>
@@ -458,20 +426,15 @@
           <div>
             <div class="edu-row">
               <div>
-                <h3>JN Tata Endowment Scholarship</h3>
+                <h3><a href="https://jntataendowment.org" target="_blank" rel="noopener noreferrer">JN Tata Endowment Scholarship</a></h3>
+                <p>Competitive loan scholarship for Indian students pursuing graduate study abroad, established in 1892.</p>
               </div>
-            </div>
-            <div class="edu-row">
-              <div>
-                <h3>CORDA Research Fellowship</h3>
-                <p>Open Democracy</p>
-              </div>
-              <span class="j-dates">2026</span>
+              <span class="j-dates">2025</span>
             </div>
             <div class="edu-row">
               <div>
                 <h3>First Place, U.S. AI Policy Hackathon</h3>
-                <p>Proposal on regulating deepfakes in elections</p>
+                <p>National competition hosted by the Berkeley AI Safety Initiative, with 70+ submissions. <a href="https://www.hcii.cmu.edu/news/designing-hci-policy" target="_blank" rel="noopener noreferrer">Read the CMU feature</a></p>
               </div>
               <span class="j-dates">2026</span>
             </div>
@@ -493,16 +456,12 @@
             </div>
             <div class="skill-block">
               <h4>Courses</h4>
-              <p>Augmenting Intelligence, Statistics &amp; Modelling, Service Design, Ethics &amp; Policy Issues in Computing, User-Centered Research &amp; Evaluation, Persuasive Design, Design Strategy &amp; Management, Consumer Research, Design Analysis.</p>
+              <p>Augmenting Intelligence, Statistics &amp; Modelling, Service Design, Ethics &amp; Policy Issues in Computing, User-Centered Research &amp; Evaluation, Persuasive Design, Design Strategy &amp; Management, Consumer Research, Design Analysis, Responsible AI &ndash; Principles, Policies, and Practices.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <footer class="res-close">
-        <p><a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-        <p class="res-credit">Made with &#10084;&#xFE0E; by Priyal Shrivastava</p>
-      </footer>
       </div>
 
       <div id="site-footer"></div>

@@ -71,7 +71,7 @@
         <ul class="site-footer__links sg-nav">
           ${items}
         </ul>
-        <p class="sg-meta site-footer__meta">made by a human</p>
+        <p class="sg-meta site-footer__meta">designed by a human</p>
       </div>
     </footer>`;
   }

@@ -1816,9 +1816,10 @@ body.page-about {
 }
 
 .home-hero--personal {
-  min-height: min(880px, 90svh);
+  height: 100svh;
+  min-height: 100svh;
   justify-content: center;
-  padding: clamp(118px, 14vh, 154px) 0 clamp(70px, 9vh, 96px);
+  padding: clamp(84px, 9vh, 112px) 0 clamp(32px, 4vh, 56px);
   overflow: hidden;
   background:
     radial-gradient(circle at 83% 26%, rgba(157, 145, 255, 0.16), transparent 30%),
@@ -1830,9 +1831,9 @@ body.page-about {
 .home-hero--personal .home-hero__inner {
   max-width: 1200px;
   padding: 0 clamp(24px, 4vw, 48px);
-  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.6fr);
+  grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.75fr);
   grid-template-areas: "masthead visual";
-  column-gap: clamp(36px, 5vw, 68px);
+  column-gap: clamp(24px, 3.4vw, 44px);
   row-gap: 0;
   align-items: center;
 }
@@ -1858,10 +1859,10 @@ body.page-about {
 .home-hero--personal .home-hero__lead {
   max-width: 48ch;
   color: var(--ink);
-  font-size: clamp(36px, 4.6vw, 54px);
+  font-size: clamp(43px, 5.35vw, 68px);
   font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.03em;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
   text-wrap: balance;
 }
 
@@ -1872,8 +1873,8 @@ body.page-about {
 
 .home-hero__lead-sub {
   max-width: 42ch;
-  margin: clamp(14px, 2.2vh, 20px) 0 0;
-  color: var(--ink);
+  margin: clamp(14px, 2vh, 18px) 0 0;
+  color: #35353d;
   font-family: var(--font-archivo);
   font-size: clamp(19px, 2.2vw, 26px);
   font-weight: 600;
@@ -1883,7 +1884,7 @@ body.page-about {
 
 .home-hero--personal .home-hero__stakes {
   max-width: 49ch;
-  margin: clamp(24px, 3.5vh, 32px) 0 0;
+  margin: clamp(20px, 2.8vh, 28px) 0 0;
   color: #56565f;
   font-size: clamp(16px, 1.4vw, 18px);
   font-weight: 400;
@@ -1891,7 +1892,7 @@ body.page-about {
 }
 
 .home-hero--personal .home-hero__actions {
-  margin-top: clamp(28px, 4vh, 38px);
+  margin-top: clamp(16px, 2.4vh, 24px);
 }
 
 .home-hero--personal .home-hero__action--primary {
@@ -1915,7 +1916,7 @@ body.page-about {
 }
 
 .home-hero__now {
-  margin: 24px 0 0;
+  margin: 12px 0 0;
   font-family: var(--font-fraunces);
   font-size: 13px;
   font-style: italic;
@@ -2271,6 +2272,7 @@ body.page-about {
 
 @media (max-width: 900px) {
   .home-hero--personal {
+    height: auto;
     min-height: auto;
     padding: 116px 0 70px;
   }
@@ -2389,7 +2391,7 @@ body.page-about {
   display: flex;
   align-items: center;
   gap: 18px;
-  margin-bottom: clamp(26px, 4vh, 36px);
+  margin-bottom: clamp(14px, 2vh, 20px);
 }
 
 .home-hero__identity .home-hero__portrait {
@@ -3928,13 +3930,12 @@ body.page-about {
 .home-work--list .home-work__list {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 36px;
   margin: 0;
   padding: 0;
   overflow: visible;
   cursor: default;
   scroll-snap-type: none;
-  border-top: 1px solid #dedee3;
 }
 
 .home-work--list .home-work__row {
@@ -3945,11 +3946,15 @@ body.page-about {
   gap: 18px;
   align-items: center;
   min-height: 0;
-  padding: 18px 16px 18px 13px;
-  border: 0;
-  border-bottom: 1px solid #dedee3;
+  padding: 24px 16px 24px 13px;
+  border: 1px solid #dedee3;
   border-radius: 0;
-  background: transparent;
+  background: #fff;
+  box-shadow: 0 12px 28px -26px rgba(11, 11, 12, 0.65);
+}
+
+.home-work--list .home-work__row:hover {
+  transform: none;
 }
 
 .home-work--list .home-work__row[hidden] {
@@ -3972,9 +3977,9 @@ body.page-about {
 .home-work--list .home-work__visual {
   grid-area: visual;
   width: calc(100% + 13px);
-  height: calc(100% + 36px);
+  height: calc(100% + 48px);
   min-height: 64px;
-  margin: -18px 0 -18px -13px;
+  margin: -24px 0 -24px -13px;
   border: 0;
   border-radius: 0;
   overflow: hidden;
@@ -3995,13 +4000,16 @@ body.page-about {
   position: absolute;
   z-index: 2;
   grid-area: auto;
-  top: 12px;
+  top: 14px;
   right: 14px;
-  width: 24px;
-  height: 24px;
+  width: auto;
+  height: auto;
   margin: 0;
-  font-size: 12px;
-  background: #fff;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #9a9aa2;
+  font-size: 14px;
 }
 
 .home-work--list .home-work__casefile {
@@ -4010,6 +4018,7 @@ body.page-about {
 
 .home-work--list .home-work__chips {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: 5px;
   margin: 0;
@@ -4017,7 +4026,8 @@ body.page-about {
 
 .home-work--list .home-work__chips li {
   padding: 5px 8px;
-  border-color: color-mix(in srgb, var(--card-accent) 28%, #dedee3);
+  border: 1px solid color-mix(in srgb, var(--card-accent) 28%, #dedee3);
+  border-radius: 999px;
   background: color-mix(in srgb, var(--card-accent) 7%, #fff);
   color: color-mix(in srgb, var(--card-accent) 78%, #323239);
   font-size: 9px;

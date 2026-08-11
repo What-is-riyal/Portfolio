@@ -40,7 +40,7 @@
   style="max-width: 460px; display: block; margin: 0 auto; overflow: visible">
   <g data-hover="ring">
     <g data-drift="ring">
-      <circle cx="${CX}" cy="${CY}" r="196" fill="none" stroke="${strokeSoft}" stroke-opacity="${ringOp}"
+      <circle cx="${CX}" cy="${CY}" r="205" fill="none" stroke="${strokeSoft}" stroke-opacity="${ringOp}"
         stroke-width="1.5" stroke-dasharray="1 8" stroke-linecap="round"/>
     </g>
   </g>

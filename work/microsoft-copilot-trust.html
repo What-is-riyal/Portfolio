@@ -9,7 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/grid.css?v=20260812a">
+  <link rel="stylesheet" href="../css/shell.css?v=20260812b">
   <link rel="stylesheet" href="../css/section-rail.css?v=20260808h">
+  <link rel="stylesheet" href="../css/case-system.css?v=20260812b">
   <style>
     /* ============ Showpiece page styles ============ */
     :root {
@@ -249,10 +252,6 @@
     .ladder-step .step-sub { font-size: 15px; font-weight: 700; color: var(--glow); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 18px; }
     .ladder-step p { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.72); max-width: 56ch; }
     .ladder-step p strong { color: #fff; font-weight: 700; }
-    .ladder-intro-label {
-      position: absolute; top: 40px; left: 0; right: 0; text-align: center;
-      font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.4);
-    }
     @media (max-width: 768px) {
       .ladder-track { height: auto; background: var(--ink); padding: 80px 0; }
       .ladder-sticky { position: static; height: auto; }
@@ -260,7 +259,6 @@
       .rail { display: none; }
       .ladder-stage { min-height: 0; }
       .ladder-step { position: static; opacity: 1; transform: none; pointer-events: auto; margin-bottom: 64px; }
-      .ladder-intro-label { display: none; }
     }
 
     /* ============ Kinetic statement ============ */
@@ -361,6 +359,7 @@
     .honest {
       margin-top: 56px; border-left: 3px solid var(--glow); padding: 4px 0 4px 22px; max-width: 680px;
     }
+    .honest--full { max-width: none; width: 100%; }
     .honest p { font-size: 16px; line-height: 1.72; color: rgba(255,255,255,0.75); margin: 0; }
     .honest .h-label { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--glow); display: block; margin-bottom: 8px; }
     .honest.on-light p { color: #3A3A3A; }
@@ -533,30 +532,17 @@
     }
   </style>
 </head>
-<body>
+<body class="case-study case-study--dark-hero" data-shell-base="../" data-shell-page="work">
 
   <div class="progress" id="progress"></div>
   <div class="grain"></div>
   <nav id="section-rail" class="section-rail" aria-label="On this page"></nav>
+  <div id="site-nav"></div>
   <div class="cursor-dot" id="cdot"></div>
   <div class="cursor-ring" id="cring"></div>
 
   <!-- ============ HERO: the question first ============ -->
-  <section class="hero-dark">
-    <header class="nav">
-      <div class="container nav-inner">
-        <a href="../index.html" class="logo">ps<span class="dot">.</span></a>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="../index.html#work" class="active">Work</a></li>
-            <li><a href="../play.html">Play</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../resume.html">Resume</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
+  <section class="hero-dark" id="main">
     <div class="hero-orb"></div>
     <div class="container">
       <p class="eyebrow">Microsoft &middot; 2024&ndash;25</p>
@@ -591,10 +577,6 @@
         <div class="snap-item">
           <p class="s-label">Inputs</p>
           <p class="s-value">A year of internal studies<small>plus public social listening and academic literature</small></p>
-        </div>
-        <div class="snap-item">
-          <p class="s-label">Position</p>
-          <p class="s-value">1 point of view<small>a trust framework the whole org could build against</small></p>
         </div>
         <div class="snap-item">
           <p class="s-label">Deliverable</p>
@@ -698,7 +680,7 @@
         <div class="move fx">
           <span class="m-num">2</span>
           <div>
-            <h3 id="cop-provenance" data-rail-sub="Provenance">Check provenance.</h3>
+            <h3 id="cop-provenance" data-rail-sub="Source check">Check the source.</h3>
             <p>Before a finding shaped the argument, I checked what study it came from, who participated, what was actually tested, and how strong the evidence was. Small or speculative findings were kept visible, but they were not allowed to carry the argument alone.</p>
             <div class="wq-row" aria-label="Paraphrased working notes from the synthesis board">
               <span class="wq">where is this finding coming from? which study, what sample?</span>
@@ -738,13 +720,6 @@
               </div>
             </div>
             <p class="reacts-note">Paraphrased from public posts the synthesis checked against. The friction here matched what people told us in private.</p>
-          </div>
-        </div>
-        <div class="move fx">
-          <span class="m-num">5</span>
-          <div>
-            <h3 id="cop-resort" data-rail-sub="Re-sort">Re-sort the evidence under the argument.</h3>
-            <p>Once the point of view emerged, I reorganized the evidence around it. Findings that supported the argument stayed. Findings that did not fit either became caveats, gaps, or future research questions. This kept the paper from becoming a "summary of summaries."</p>
           </div>
         </div>
       </div>
@@ -798,7 +773,6 @@
   <!-- ============ LADDER SCROLLYTELLING ============ -->
   <section class="ladder-track" id="ladderTrack" data-rail="Stages">
     <div class="ladder-sticky">
-      <p class="ladder-intro-label">What the paper argued &middot; assistance deepens in stages</p>
       <div class="container ladder-grid">
         <div class="rail">
           <div class="rail-fill" id="railFill"></div>
@@ -1046,9 +1020,9 @@
         </div>
       </div>
 
-      <div class="honest on-light fx" style="margin-top: 44px;">
+      <div class="honest honest--full on-light fx" style="margin-top: 44px;">
         <span class="h-label">Where the framework stops</span>
-        <p>The framework assumes a good-faith user and an honest environment. It does not cover adversarial use: an assistant that sends and replies on someone's behalf is also a new surface for impersonation and phishing, and a system that learns from corrections can be deliberately mistrained. Those questions were outside this paper's scope, and they are the ones I want to work on next.</p>
+        <p>The framework assumes a good-faith user and an honest environment. It does not cover adversarial use: an assistant that sends and replies on someone's behalf is also a new surface for impersonation and phishing, and a system that learns from corrections can be deliberately mistrained. Those questions were outside this paper's scope.</p>
       </div>
     </div>
   </section>
@@ -1062,29 +1036,12 @@
         <p class="fx">The paper was reviewed by the lead researcher and shared with the feature teams it was written for. The checklist circulated as a review template and was very well received. As it was shipped in the final weeks of my contract, I did not get to watch its recommendations move through roadmaps, and the NDA covers what happened afterward. For more details, feel free to reach out!</p>
       </div>
 
-      <div class="next-project fx" style="margin-top: 96px;">
+      <div class="case-next fx">
         <p class="label">Next project</p>
-        <a href="microsoft-retention.html">Why people were leaving Outlook on the mobile web
-          <svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
+        <a href="microsoft-retention.html"><span><span class="case-next__eyebrow">Microsoft &middot; Mixed-method research</span><span class="case-next__title">Understanding declining usage of Outlook mobile web</span></span><svg width="34" height="34" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-cta">
-          <p class="label">Get in touch</p>
-          <a class="big-link" href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a>
-        </div>
-        <div class="footer-bottom">
-          <span>&copy; 2026 Priyal Shrivastava</span>
-          <div class="footer-links">
-            <a href="mailto:priyalshri1@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/priyalshri/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div id="site-footer"></div>
   </section>
 
   <script>
@@ -1219,6 +1176,8 @@
 
   })();
   </script>
+  <script src="../js/shell.js?v=20260812b" defer></script>
+  <script src="../js/case-system.js?v=20260812b" defer></script>
   <script src="../js/section-rail.js?v=20260808h" defer></script>
 </body>
 </html>

@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/grid.css?v=20260808a">
-  <link rel="stylesheet" href="css/shell.css?v=20260808a">
-  <link rel="stylesheet" href="css/pages.css?v=20260808a">
+  <link rel="stylesheet" href="css/grid.css?v=20260811a">
+  <link rel="stylesheet" href="css/shell.css?v=20260811live1">
+  <link rel="stylesheet" href="css/pages.css?v=20260811live1">
   <style>
     /* Resume body details — chrome/hero live in pages.css */
     .res-section {
@@ -77,7 +77,7 @@
     .job ul { list-style: none; }
 
     .job li {
-      font-family: var(--font-fraunces);
+      font-family: var(--font-archivo);
       font-size: var(--text-prose);
       font-weight: 340;
       line-height: 1.55;
@@ -131,7 +131,7 @@
     .publication:last-child { padding-bottom: 0; }
 
     .publication h3 {
-      font-family: var(--font-fraunces);
+      font-family: var(--font-archivo);
       font-size: clamp(19px, 2vw, 24px);
       font-weight: 400;
       line-height: 1.35;
@@ -145,6 +145,33 @@
     }
 
     .publication h3 a:hover { color: var(--glow); }
+
+    .publication-link::after,
+    .news-card__link::after {
+      content: " ↗";
+      font-family: var(--font-archivo);
+      font-size: 0.72em;
+      font-weight: 700;
+      color: var(--glow);
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 180px;
+      padding: 20px;
+      border: 1px solid var(--line-color);
+      background: rgba(79, 70, 229, 0.03);
+    }
+
+    .news-card h3 { margin: 0 0 18px; font-size: clamp(18px, 1.8vw, 23px); }
+    .news-card .pub-meta { margin-top: auto; }
 
     .publication .pub-meta,
     .publication .pub-note {
@@ -188,7 +215,7 @@
     }
 
     .skill-block p {
-      font-family: var(--font-fraunces);
+      font-family: var(--font-archivo);
       font-size: var(--text-prose);
       font-weight: 340;
       line-height: 1.55;
@@ -198,6 +225,7 @@
 
     @media (max-width: 760px) {
       .res-grid { grid-template-columns: 1fr; gap: 16px; }
+      .news-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -279,19 +307,19 @@
           <p class="res-label">Publications &amp; writing</p>
           <div>
             <article class="publication">
-              <h3><a href="https://arxiv.org/abs/2603.15807" target="_blank" rel="noopener noreferrer">Lost in Transcription: Subtitle Errors in Automatic Speech Recognition Reduce Speaker and Content Evaluations</a></h3>
+              <h3><a class="publication-link" href="https://arxiv.org/abs/2603.15807" target="_blank" rel="noopener noreferrer">Lost in Transcription: Subtitle Errors in Automatic Speech Recognition Reduce Speaker and Content Evaluations</a></h3>
               <p class="pub-meta">Kowe Kadoma, <strong>Priyal Shrivastava</strong>, and Mor Naaman &middot; Proceedings of CHI 2026</p>
               <p class="pub-note">A preregistered online experiment with 207 U.S.-based participants examining how automatic-caption errors affect judgments of a speaker and their content.</p>
             </article>
 
             <article class="publication">
-              <h3><a href="https://www.cmu.edu/ai-sdm/research/human-ai-workshop/" target="_blank" rel="noopener noreferrer">A Prescriptive Framework for Task-level Human-AI Complementarity</a></h3>
-              <p class="pub-meta"><strong>Priyal Shrivastava</strong>, Anisha Reddy, Samsara Foubert, Paul Lehner, and Aarti Singh &middot; Human-AI Complementarity Workshop, 2026 &middot; Accepted poster</p>
+              <h3>A Prescriptive Framework for Task-level Human-AI Complementarity</h3>
+              <p class="pub-meta"><strong>Priyal Shrivastava</strong>, Anisha Reddy, Samsara Foubert, Paul Lehner, and Aarti Singh &middot; <a href="https://www.cmu.edu/ai-sdm/research/human-ai-workshop/" target="_blank" rel="noopener noreferrer">Human-AI Complementarity Workshop</a>, 2026 &middot; Accepted poster</p>
               <p class="pub-note">A decision framework for determining whether and how a person should use AI for a particular task.</p>
             </article>
 
             <article class="publication">
-              <h3><a href="https://drive.google.com/file/d/1OE4_fKTRbh5BZhSPK1xqvbna47DufFee/view" target="_blank" rel="noopener noreferrer">UXR in India: A Historical Perspective</a></h3>
+              <h3><a class="publication-link" href="https://drive.google.com/file/d/1OE4_fKTRbh5BZhSPK1xqvbna47DufFee/view" target="_blank" rel="noopener noreferrer">UXR in India: A Historical Perspective</a></h3>
               <p class="pub-meta">Achyutha Sharma &middot; Book contribution</p>
               <p class="pub-note">Contributed interviews and data collection documenting the development of user research practice in India.</p>
             </article>
@@ -312,7 +340,7 @@
             </div>
 
             <div class="job">
-              <div class="job-head"><h3>Executive Board / Non-Technical Staff</h3><span class="j-dates">Present</span></div>
+              <div class="job-head"><h3>Executive Board / Non-Technical Staff</h3><span class="j-dates">2026 &ndash; present</span></div>
               <p class="j-org"><a href="https://cmuaisafety.com" target="_blank" rel="noopener noreferrer">Carnegie Mellon AI Safety Initiative</a> (CASI)</p>
               <ul>
                 <li>Co-lead an AI governance reading group and contribute to AI governance programming and community-building at Carnegie Mellon. <a href="https://cmuaisafety.com/team.html" target="_blank" rel="noopener noreferrer">CASI team</a></li>
@@ -387,26 +415,6 @@
 
       <section class="res-section">
         <div class="res-grid">
-          <p class="res-label">In the news</p>
-          <div>
-            <div class="publication">
-              <h3><a href="https://www.hcii.cmu.edu/news/designing-hci-policy" target="_blank" rel="noopener noreferrer">Designing HCI Policy: Students Take on Deepfakes and Election Integrity</a></h3>
-              <p class="pub-meta">Carnegie Mellon Human-Computer Interaction Institute &middot; 2026</p>
-            </div>
-            <div class="publication">
-              <h3><a href="https://hcii.cmu.edu/news/cmu-chi-2026" target="_blank" rel="noopener noreferrer">CMU Researchers Present New Work at CHI 2026</a></h3>
-              <p class="pub-meta">Carnegie Mellon Human-Computer Interaction Institute &middot; 2026</p>
-            </div>
-            <div class="publication">
-              <h3><a href="https://hcii.cmu.edu/news/looking-ahead-ai-needs-ui" target="_blank" rel="noopener noreferrer">Looking Ahead: AI Needs UI</a></h3>
-              <p class="pub-meta">Carnegie Mellon Human-Computer Interaction Institute &middot; 2026</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="res-section">
-        <div class="res-grid">
           <p class="res-label">Education</p>
           <div>
             <div class="edu-row">
@@ -469,12 +477,32 @@
         </div>
       </section>
 
+      <section class="res-section">
+        <div class="res-grid">
+          <p class="res-label">In the news</p>
+          <div class="news-grid">
+            <article class="news-card">
+              <h3><a class="news-card__link" href="https://www.hcii.cmu.edu/news/designing-hci-policy" target="_blank" rel="noopener noreferrer">Designing HCI Policy: Students Take on Deepfakes and Election Integrity</a></h3>
+              <p class="pub-meta">Carnegie Mellon HCII &middot; 2026</p>
+            </article>
+            <article class="news-card">
+              <h3><a class="news-card__link" href="https://hcii.cmu.edu/news/cmu-chi-2026" target="_blank" rel="noopener noreferrer">CMU Researchers Present New Work at CHI 2026</a></h3>
+              <p class="pub-meta">Carnegie Mellon HCII &middot; 2026</p>
+            </article>
+            <article class="news-card">
+              <h3><a class="news-card__link" href="https://hcii.cmu.edu/news/looking-ahead-ai-needs-ui" target="_blank" rel="noopener noreferrer">Looking Ahead: AI Needs UI</a></h3>
+              <p class="pub-meta">Carnegie Mellon HCII &middot; 2026</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       </div>
 
       <div id="site-footer"></div>
     </main>
   </div>
 
-  <script src="js/shell.js" defer></script>
+  <script src="js/shell.js?v=20260811live1" defer></script>
 </body>
 </html>

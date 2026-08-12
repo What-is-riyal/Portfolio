@@ -1280,12 +1280,18 @@ body.page-about {
   display: grid;
   grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 64px);
-  align-items: start;
+  align-items: stretch;
   width: 100%;
+}
+
+.about-photo {
+  display: flex;
 }
 
 .about-photo img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: var(--radius-soft);
   border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 24px 48px -28px rgba(0, 0, 0, 0.55);
@@ -1393,6 +1399,7 @@ body.page-about {
   .about-intro__inner {
     grid-template-columns: 1fr;
   }
+  .about-photo img { height: auto; }
   .about-photo img { max-width: 280px; }
   .about-body .voice-opener { max-width: none; }
 }
@@ -1495,13 +1502,13 @@ body.page-about {
 .play-card {
   display: block;
   min-height: 260px;
-  padding: clamp(28px, 4vw, 40px);
+  padding: clamp(28px, 4vw, 40px) clamp(180px, 18vw, 240px) clamp(28px, 4vw, 40px) clamp(28px, 4vw, 40px);
   border: 1px solid var(--border);
   border-radius: var(--radius-soft);
   background-color: var(--paper);
   background-repeat: no-repeat;
   background-position: right 20px bottom 20px;
-  background-size: 104px auto;
+  background-size: 180px auto;
   text-decoration: none;
   color: inherit;
   transition: background-color 0.35s ease, border-color 0.3s ease, box-shadow 0.35s ease, transform 0.35s ease;
@@ -1560,6 +1567,7 @@ body.page-about {
 .play-card--haitrie { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f9884249ff75672bc2a2a64_boldband%20square.png"); }
 .play-card--bbi { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f988423a9472e241ce546ae_bbi.png"); }
 .play-card--toothbrush { background-image: url("https://cdn.prod.website-files.com/5ee5d3ef5819c49103e8d96e/5f98842666be5a2279ac9292_toothbrush.png"); }
+.play-card--madahead { background-image: url("../assets/webflow/100dac34/5f9d280ad5fd03d6e0ee1ff2_IA Madahead.png"); }
 
 .page-play .about-close {
   background: var(--ink);
@@ -1577,6 +1585,7 @@ body.page-about {
 
 @media (max-width: 767px) {
   .play-grid { grid-template-columns: 1fr; }
+  .play-card { padding-right: clamp(28px, 4vw, 40px); background-size: 130px auto; }
   .play-intro {
     min-height: auto;
     padding: 100px 0 64px !important;
@@ -4030,7 +4039,7 @@ body.page-about {
   border-radius: 999px;
   background: color-mix(in srgb, var(--card-accent) 7%, #fff);
   color: color-mix(in srgb, var(--card-accent) 78%, #323239);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.02em;
 }
 

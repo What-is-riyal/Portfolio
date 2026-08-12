@@ -47,7 +47,7 @@
     return `
     <a href="#main" class="skip-link sg-nav">Skip to content</a>
     <nav aria-label="Primary" class="site-nav sg-nav">
-      <a href="${brandHref}" class="site-nav__brand u-draw">Priyal Shrivastava</a>
+      <a href="${brandHref}" class="site-nav__brand u-draw" aria-label="Priyal Shrivastava home"><span class="site-nav__mark" aria-hidden="true">PS.</span></a>
       <ul class="site-nav__links">
           ${links}
       </ul>
@@ -123,10 +123,14 @@
 
   function bootCaseStudyNavContrast() {
     const body = document.body;
-    if (!body.classList.contains('page-case-study')) return;
-    const hero = document.querySelector('.cs-hero');
+    const usesLegacyCaseShell = body.classList.contains('page-case-study');
+    const usesSharedDarkHero = body.classList.contains('case-study--dark-hero');
+    if (!usesLegacyCaseShell && !usesSharedDarkHero) return;
+    const hero = document.querySelector('.cs-hero, .case-hero--dark, .hero-dark');
     if (!hero) return;
-    const quote = document.querySelector('.cs-quote-band');
+    const quote = usesLegacyCaseShell
+      ? document.querySelector('.cs-quote-band')
+      : document.querySelector('.case-hero--dark + .snapshot, .hero-dark + .snapshot');
 
     const sync = () => {
       const darkEnd = quote

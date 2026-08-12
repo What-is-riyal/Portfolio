@@ -45,7 +45,7 @@
 
   function bootMotionReveals() {
     const items = Array.from(document.querySelectorAll(
-      '.home-work__row, .home-about__title, .home-about__copy, .home-about__aside'
+      '.home-work__row, .home-editorial-card, .home-about__title, .home-about__copy, .home-about__aside'
     ));
     if (!items.length) return;
 

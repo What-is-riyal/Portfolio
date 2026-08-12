@@ -186,6 +186,12 @@
       display: block; margin-top: 14px; color: rgba(255,255,255,0.38); font-size: 10px;
       font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
     }
+    .account-system-map { margin-top: 48px; border-top: 1px solid rgba(255,255,255,.18); }
+    .account-system-row { display: grid; grid-template-columns: 70px minmax(150px,.7fr) minmax(0,1.3fr) minmax(130px,.6fr); gap: 24px; align-items: center; padding: 26px 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+    .account-system-row > span { color: var(--sky); font-family: var(--serif); font-size: 18px; font-style: italic; }
+    .account-system-row h3 { margin: 0; font-size: 21px; }
+    .account-system-row p { margin: 0; color: rgba(255,255,255,.62); font-size: 13px; line-height: 1.55; }
+    .account-system-row small { justify-self: end; color: rgba(255,255,255,.48); font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
     .buffer-role {
       display: grid; grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr); gap: 44px;
       align-items: start; margin-top: 64px; padding: clamp(28px, 4vw, 48px);
@@ -214,6 +220,13 @@
     }
     .opportunity-card h3 { margin: 0; font-size: 20px; letter-spacing: -0.015em; }
     .opportunity-card p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .opportunity-card .opportunity-basis { grid-column: 2; margin-top: 12px; color: var(--sky); font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .research-activation { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); margin-top: 36px; border-top: 1px solid var(--border); }
+    .research-activation article { padding: 24px 24px 0 0; border-right: 1px solid var(--border); }
+    .research-activation article:not(:first-child) { padding-left: 24px; }
+    .research-activation article:last-child { border-right: 0; }
+    .research-activation h3 { margin: 0 0 8px; font-size: 16px; }
+    .research-activation p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
 
     .method-sequence {
       position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -316,7 +329,10 @@
       height: clamp(250px, 28vw, 330px); object-fit: contain; background: #111;
     }
     @media (max-width: 760px) {
-      .account-atlas, .buffer-role, .method-block, .artifact-pair { grid-template-columns: 1fr; }
+      .account-atlas, .buffer-role, .method-block, .artifact-pair, .research-activation { grid-template-columns: 1fr; }
+      .account-system-row { grid-template-columns: 42px 1fr; gap: 10px 16px; }
+      .account-system-row p, .account-system-row small { grid-column: 2; justify-self: start; }
+      .research-activation article, .research-activation article:not(:first-child) { padding: 20px 0; border-right: 0; border-bottom: 1px solid var(--border); }
       .account-card { min-height: 0; }
       .account-card .account-n { margin-bottom: 22px; }
       .method-sequence { grid-template-columns: 1fr; gap: 24px; }
@@ -447,7 +463,7 @@
       <p class="kicker fx">Methodology</p>
       <h2 class="fx">A sequential mixed-method study across six usage cohorts</h2>
       <div class="prose">
-        <p class="fx">The study moved from existing evidence to interviews, then used a survey to check the qualitative findings with a larger sample. The final synthesis connected the evidence to opportunity areas and product planning.</p>
+        <p class="fx">The team reviewed previous research and product data, conducted interviews, and used a survey to assess the qualitative findings with a larger sample. The final synthesis informed product recommendations and planning.</p>
       </div>
 
       <div class="method-sequence fx" aria-label="Research sequence">
@@ -464,9 +480,9 @@
         </div>
         <div class="method-block__body">
           <dl class="method-logic">
-            <div><dt>Why</dt><dd>Stakeholders had several explanations for the decline, while existing research and product data already answered part of the problem.</dd></div>
-            <div><dt>What</dt><dd>A review of data-science reports, telemetry, UX audits, marketing reports, and previous research, followed by a hypothesis workshop.</dd></div>
-            <div><dt>How</dt><dd>The team identified the remaining knowledge gaps, set the research objectives, and defined six cohorts based on usage across Outlook mobile web and other email access points.</dd></div>
+            <div><dt>Purpose</dt><dd>Identify which questions about declining usage had already been answered and what required additional research.</dd></div>
+            <div><dt>Method</dt><dd>The team reviewed data-science reports, telemetry, UX audits, marketing reports, and previous research, then held a hypothesis workshop.</dd></div>
+            <div><dt>Output</dt><dd>The team defined the research objectives and six cohorts based on usage across Outlook mobile web and other email access points.</dd></div>
           </dl>
         </div>
       </div>
@@ -478,9 +494,9 @@
         </div>
         <div class="method-block__body">
           <dl class="method-logic">
-            <div><dt>Why</dt><dd>Understand what supported retention or contributed to churn, and the role mobile web played alongside apps, desktop, and third-party clients.</dd></div>
-            <div><dt>What</dt><dd>Remote 1:1 interviews with 36 participants across six behavior-based cohorts.</dd></div>
-            <div><dt>How</dt><dd>Cohort-specific guides covered account purpose, devices and access points, changes in use over time, current problems, and reactions to product directions already under consideration.</dd></div>
+            <div><dt>Purpose</dt><dd>Understand what supported retention or contributed to churn, and the role mobile web played alongside apps, desktop, and third-party clients.</dd></div>
+            <div><dt>Method</dt><dd>We conducted remote 1:1 interviews with 36 participants across six behavior-based cohorts. Cohort-specific guides covered account purpose, devices and access points, changes in use over time, current problems, and reactions to product directions under consideration.</dd></div>
+            <div><dt>Output</dt><dd>The interviews explained how account purpose, email habits, and access-point choice affected mobile web usage.</dd></div>
           </dl>
           <dl class="method-specs" aria-label="Interview sample and setup">
             <div><dt>36</dt><dd>participants</dd></div>
@@ -509,9 +525,9 @@
         </div>
         <div class="method-block__body">
           <dl class="method-logic">
-            <div><dt>Why</dt><dd>Check whether the patterns from the interviews also appeared in a larger sample across the same behavior-based cohorts.</dd></div>
-            <div><dt>What</dt><dd>A survey with more than 300 responses, built from the qualitative findings.</dd></div>
-            <div><dt>How</dt><dd>The survey map carried the main interview themes into five connected lines of inquiry.</dd></div>
+            <div><dt>Purpose</dt><dd>Assess whether the interview findings also appeared in a larger sample across the same behavior-based cohorts.</dd></div>
+            <div><dt>Method</dt><dd>The team developed a survey from the qualitative findings and collected more than 300 responses.</dd></div>
+            <div><dt>Output</dt><dd>The survey measured five areas identified during the interviews and showed how findings varied by cohort.</dd></div>
           </dl>
           <ul class="survey-map" aria-label="Survey map topics">
             <li><b>Profile and cohort</b>Current and previous use</li>
@@ -534,9 +550,9 @@
         </div>
         <div class="method-block__body">
           <dl class="method-logic">
-            <div><dt>Why</dt><dd>Bring the interview and survey evidence together before making recommendations.</dd></div>
-            <div><dt>What</dt><dd>Findings on account types, endpoint choice, retention barriers, and opportunity areas.</dd></div>
-            <div><dt>How</dt><dd>The findings were documented in a tracker that linked user challenges and opportunities to recommendations and product actions.</dd></div>
+            <div><dt>Purpose</dt><dd>Combine the interview and survey findings before developing recommendations.</dd></div>
+            <div><dt>Method</dt><dd>The team analyzed account types, access-point choice, and factors that contributed to retention or churn.</dd></div>
+            <div><dt>Output</dt><dd>An insight tracker linked user problems and product opportunities to recommendations and planned actions.</dd></div>
           </dl>
           <figure class="artifact-figure">
             <img src="../assets/img/retention/insight-tracker.webp" alt="A tracker connecting challenges, insights, opportunities, recommendations, and product actions" loading="lazy">
@@ -555,16 +571,12 @@
       <div class="prose">
         <p class="fx">Participants often managed several email accounts with different purposes. The study grouped these accounts into four broad types. Their importance and content affected how frequently they were checked and whether people used mobile web, an app, desktop, or a third-party client.</p>
       </div>
-      <div class="account-atlas fx" aria-label="Four account roles found in the study">
-        <article class="account-card"><span class="account-n">01</span><h3>Primary</h3><p>The account tied to daily life and important communication.</p><small>Checked frequently</small></article>
-        <article class="account-card"><span class="account-n">02</span><h3>Secondary</h3><p>An alternate address used for selected sign-ups, services, or backup.</p><small>Used for specific tasks</small></article>
-        <article class="account-card"><span class="account-n">03</span><h3>Tertiary</h3><p>An older account crowded with promotions, subscriptions, and junk.</p><small>Checked when needed</small></article>
-        <article class="account-card"><span class="account-n">04</span><h3>Abandoned</h3><p>A dormant account that still matters for an occasional recovery or reset.</p><small>Used rarely</small></article>
+      <div class="account-system-map fx" aria-label="Account purpose and checking frequency model">
+        <article class="account-system-row"><span>01</span><h3>Primary</h3><p>The account tied to daily life and important communication.</p><small>Checked frequently</small></article>
+        <article class="account-system-row"><span>02</span><h3>Secondary</h3><p>An alternate address used for selected sign-ups, services, or backup.</p><small>Used for specific tasks</small></article>
+        <article class="account-system-row"><span>03</span><h3>Tertiary</h3><p>An older account crowded with promotions, subscriptions, and junk.</p><small>Checked when needed</small></article>
+        <article class="account-system-row"><span>04</span><h3>Abandoned</h3><p>A dormant account that still matters for an occasional recovery or reset.</p><small>Used rarely</small></article>
       </div>
-      <figure class="artifact-figure fx">
-        <img src="../assets/img/retention/account-frequency.webp" alt="Study diagram showing account importance and frequency of access across primary, secondary, tertiary, and abandoned accounts" loading="lazy">
-        <figcaption>The account-frequency model developed from the study.</figcaption>
-      </figure>
       <div class="buffer-role fx">
         <p>Outlook mobile web served as a fallback within a broader email ecosystem.</p>
         <ul>
@@ -590,9 +602,9 @@
         <p class="fx">The opportunity areas focused on inbox organization, notification controls, multi-account use, and easier access across Outlook services and third-party clients.</p>
       </div>
       <div class="opportunity-grid">
-        <article class="opportunity-card fx"><span class="opportunity-n">a</span><h3>Inbox organization</h3><p>Help people clear accumulated junk, find critical messages, and make secondary and tertiary inboxes easier to use.</p></article>
-        <article class="opportunity-card fx"><span class="opportunity-n">b</span><h3>Notification controls</h3><p>Provide contextual and selective notifications, with prioritization and focus controls.</p></article>
-        <article class="opportunity-card fx"><span class="opportunity-n">c</span><h3>Access across endpoints</h3><p>Support multiple accounts, easier return paths, and shortcuts between mobile web, Outlook apps, and third-party clients.</p></article>
+        <article class="opportunity-card fx"><span class="opportunity-n">01</span><h3>Inbox organization</h3><p>Help people clear accumulated junk, find critical messages, and make secondary and tertiary inboxes easier to use.</p><span class="opportunity-basis">Based on accumulated secondary and tertiary inbox content</span></article>
+        <article class="opportunity-card fx"><span class="opportunity-n">02</span><h3>Notification controls</h3><p>Provide contextual and selective notifications, with prioritization and focus controls.</p><span class="opportunity-basis">Based on different account purposes and checking frequency</span></article>
+        <article class="opportunity-card fx"><span class="opportunity-n">03</span><h3>Access across endpoints</h3><p>Support multiple accounts, easier return paths, and shortcuts between mobile web, Outlook apps, and third-party clients.</p><span class="opportunity-basis">Based on mobile web's role as a fallback access point</span></article>
       </div>
     </div>
   </section>
@@ -602,12 +614,12 @@
     <div class="container">
       <p class="kicker fx">Communication and impact</p>
       <h2 class="fx">How the research was shared and used</h2>
-      <ul class="impact-list">
-        <li class="fx"><span class="imp-n">a</span><span>Leaders and PMs were invited to observe the interviews live.</span></li>
-        <li class="fx"><span class="imp-n">b</span><span>The research team held separate detailed readouts with design, product, and engineering.</span></li>
-        <li class="fx"><span class="imp-n">c</span><span>The top findings were presented to leadership in India and to the global Outlook teams.</span></li>
-        <li class="fx"><span class="imp-n">d</span><span>PMs carried the work into semester planning through a live tracker of insights, opportunities, recommendations, and actions. Most of the insights influenced the following semester’s plan.</span></li>
-      </ul>
+      <div class="impact-highlight fx"><span>Planning influence</span><p>PMs used a live tracker of findings, recommendations, and actions. Most findings influenced the following semester's plan.</p></div>
+      <div class="research-activation fx" aria-label="How the research was shared">
+        <article><h3>Live observation</h3><p>Leaders and PMs were invited to observe interviews.</p></article>
+        <article><h3>Team readouts</h3><p>Design, product, and engineering joined detailed working sessions.</p></article>
+        <article><h3>Leadership communication</h3><p>Findings were presented to leadership in India and global Outlook teams.</p></article>
+      </div>
     </div>
   </section>
 
@@ -615,9 +627,9 @@
   <section class="strip fold-dark" id="reflection" style="padding-bottom: 0;" data-rail="Reflection">
     <div class="container" style="position: relative;">
       <p class="kicker fx">What I learned</p>
-      <h2 class="fx" style="color: #fff;">I learned to study retention across the full email ecosystem.</h2>
+      <h2 class="fx" style="color: #fff;">What I learned about retention research</h2>
       <div class="prose">
-        <p class="fx">The study showed me that retention for this product could not be understood by looking only at the mobile website. Participants’ older accounts, devices, installed apps, and long-term email habits also affected how they used it.</p>
+        <p class="fx">Understanding retention required looking beyond the mobile website. Participants’ older accounts, devices, installed apps, and long-term email habits also affected how they used it.</p>
         <p class="fx">The sequence of methods worked well. Existing evidence and stakeholder hypotheses informed the research questions, interviews provided detailed explanations, and the survey was then used to validate the qualitative findings.</p>
       </div>
 

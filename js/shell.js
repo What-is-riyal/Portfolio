@@ -25,12 +25,6 @@
       external: true,
       suffix: ' ↗',
     },
-    {
-      label: 'Google Scholar',
-      href: 'https://scholar.google.com/citations?user=PLACEHOLDER',
-      external: true,
-      suffix: ' ↗',
-    },
     { label: 'CV', href: 'resume.html', external: false, suffix: ' ↗', resolveBase: true },
   ];
 

@@ -7,7 +7,7 @@
   <meta name="description" content="A trust-and-safety framework for an AI assistant: synthesizing a year of Microsoft Copilot research into a position on when an automated system is safe to act on a user's behalf, how its decisions stay transparent and contestable, and a pre-ship checklist teams could run before shipping.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/grid.css?v=20260812a">
   <link rel="stylesheet" href="../css/shell.css?v=20260812b">
@@ -491,6 +491,20 @@
     /* ============ Trust & safety checklist (paper appendix) ============ */
     .gate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 44px; }
     .gate-card { border-radius: 16px; border: 1px solid var(--border); background: var(--surface); padding: 26px 26px 22px; }
+    details.gate-card { padding: 0; overflow: hidden; }
+    details.gate-card summary { display: flex; justify-content: space-between; gap: 18px; align-items: center; padding: 22px 24px; cursor: pointer; list-style: none; }
+    details.gate-card summary::-webkit-details-marker { display: none; }
+    details.gate-card summary::after { content: "+"; color: var(--purple); font-family: var(--serif); font-size: 24px; font-style: italic; }
+    details.gate-card[open] summary::after { content: "−"; }
+    details.gate-card .gate-list { padding: 0 24px 22px; }
+    .gate-count { color: var(--muted); font-size: 11px; font-weight: 700; }
+    .framework-boundary { display: grid; grid-template-columns: 190px 1fr; gap: 34px; margin-top: 54px; padding: 34px; border: 1px solid var(--ink); background: var(--ink); color: #fff; }
+    .framework-boundary span { color: var(--glow); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .framework-boundary p { margin: 0; color: rgba(255,255,255,.72); font-size: 16px; line-height: 1.72; }
+    .impact-scope { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 42px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.16); }
+    .impact-scope article { padding: 28px; background: var(--ink); }
+    .impact-scope span { color: var(--glow); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .impact-scope p { margin: 16px 0 0; color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.65; }
     .gate-cat { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 18px; }
     .gate-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .gate-list li { display: grid; grid-template-columns: 20px 1fr; gap: 12px; font-size: 14px; line-height: 1.5; color: #3A3A3A; }
@@ -516,6 +530,8 @@
       .demo-head h3 { font-size: 19px; }
       .snap-item .s-value { font-size: 14.5px; }
       .gate-card { padding: 22px 20px; }
+      details.gate-card { padding: 0; }
+      .framework-boundary, .impact-scope { grid-template-columns: 1fr; }
       .fw-layer { padding: 18px 20px; }
       .deliver-list li { grid-template-columns: 26px 1fr; gap: 14px; font-size: 15.5px; }
       .ws-num { font-size: 40px; }
@@ -552,10 +568,9 @@
         <span class="line"><span>for Copilot in</span></span>
         <span class="line"><span>Outlook</span></span>
       </h1>
-      <p class="hero-standfirst">Microsoft had conducted many disconnected studies about copilot and AI usage in the Outlook ecosystem but lacked a unified view of the philosophy to follow from users’ POV. I synthesized a year of studies, social listening, and academic literature into a white paper on what users need before they trust an AI assistant inside their inbox, and what that implies about what to build first.</p>
+      <p class="hero-standfirst">Microsoft had conducted several studies about Copilot and AI use across Outlook, but the findings had not been synthesized into a shared product perspective. I reviewed a year of internal research, public conversations, and academic literature to develop a white paper on user trust and product priorities.</p>
       <div class="hero-chips">
-        <span class="chip">UX Researcher</span>
-        <span class="chip">Dec 2024 &ndash; Feb 2025</span>
+        <span class="chip">12+ internal studies</span>
         <span class="chip">Point-of-view white paper</span>
         <span class="chip accent">Under NDA</span>
       </div>
@@ -590,16 +605,16 @@
   <section class="strip" id="why" style="position: relative;" data-rail="Why">
     <div class="container">
       <p class="kicker fx">Why it mattered</p>
-      <h2 class="fx">Copilot lacked a unified perspective towards AI integration in Outlook </h2>
+      <h2 class="fx">Outlook teams needed a shared research perspective on AI integration.</h2>
 
       <div class="shelf-wrap" style="margin-top: 40px;">
         <div class="prose">
-          <p class="fx">Copilot was expanding across Microsoft 365 quickly, but the research was still organized around individual features. Drafting, inbox prioritization, scheduling, summaries, and automations were each being studied separately, often by the teams responsible for building them. That made each study useful on its own, but harder to use as a strategic whole. The same questions kept resurfacing in different places: When do users trust Copilot's judgment? When do they want control? When does proactive help feel useful, and when does it feel intrusive? My role was to connect those studies into a single research-led point of view: not a summary of every finding, but an argument about what Copilot in Outlook should become, what users consistently needed, and what product teams should build before moving toward more autonomous assistance.</p>
+          <p class="fx">Copilot was expanding across Microsoft 365, while research remained organized around individual features. Teams had separately studied drafting, inbox prioritization, scheduling, summaries, and automation. Across these studies, similar questions emerged about trust, user control, proactive assistance, and automation. I synthesized the findings into a shared point of view on user needs and product priorities for Copilot in Outlook.</p>
         </div>
         <div class="paper-card fx">
           <p class="p-label">What was needed</p>
           <p class="p-title">How should AI enter the email ecosystem without breaking trust?</p>
-          <p>A point of view on what to build first, what users need to understand and control, and what Copilot must prove before it earns more autonomy</p>
+          <p>A point of view on product priorities, the information and controls users need, and the requirements for more autonomous assistance.</p>
         </div>
       </div>
     </div>
@@ -628,7 +643,7 @@
               <span class="si-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 3h12v7H6l-3 3v-3H2z"/></svg></span>
               <p class="si-tag">Validation</p>
               <p class="si-v">Public social listening</p>
-              <p class="si-d">used only to test themes, never to generate them</p>
+              <p class="si-d">used to assess themes identified in internal research</p>
             </div>
             <span class="si-arrow thin"><svg width="24" height="16" viewBox="0 0 24 16" fill="none"><path d="M0 8h18M13 2l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/></svg></span>
           </div>
@@ -643,8 +658,8 @@
         </div>
 
         <div class="synth-transform">
-          <p class="synth-h">The transform</p>
-          <p class="st-text">100+ stickies and multiple models later</p>
+          <p class="synth-h">Analysis</p>
+          <p class="st-text">Thematic synthesis and framework development</p>
         </div>
 
         <div class="synth-mid-arrow"><svg width="28" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h8M9 5l3 3-3 3"/></svg></div>
@@ -664,7 +679,7 @@
           <div class="synth-item so-out">
             <span class="si-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="6.5"/><path d="M10.5 5.5l-1.7 3.8-3.8 1.7 1.7-3.8 3.8-1.7z"/></svg></span>
             <p class="si-v">Per-feature adoption guidance</p>
-            <p class="si-d">which stage each capability belongs in, and what it has to prove before it earns the next one</p>
+            <p class="si-d">criteria for assigning capabilities to each stage of autonomy</p>
           </div>
         </div>
       </div>
@@ -673,15 +688,15 @@
         <div class="move fx">
           <span class="m-num">1</span>
           <div>
-            <h3 id="cop-extract" data-rail-sub="Extract">Extract, study by study.</h3>
-            <p>I pulled findings, open questions, user complaints, and recommendations from each report into a shared evidence base. I kept the source attached to every note so no claim became detached from where it came from.</p>
+            <h3 id="cop-extract" data-rail-sub="Extract">Research review and extraction</h3>
+            <p>I extracted findings, open questions, participant concerns, and recommendations from each report into a shared repository. Each note retained its original source.</p>
           </div>
         </div>
         <div class="move fx">
           <span class="m-num">2</span>
           <div>
-            <h3 id="cop-provenance" data-rail-sub="Source check">Check the source.</h3>
-            <p>Before a finding shaped the argument, I checked what study it came from, who participated, what was actually tested, and how strong the evidence was. Small or speculative findings were kept visible, but they were not allowed to carry the argument alone.</p>
+            <h3 id="cop-provenance" data-rail-sub="Source check">Source and study review</h3>
+            <p>For each finding, I reviewed the original study, participant sample, research questions, and strength of support. Findings from small samples or exploratory studies were retained with those limitations documented.</p>
             <div class="wq-row" aria-label="Paraphrased working notes from the synthesis board">
               <span class="wq">where is this finding coming from? which study, what sample?</span>
               <span class="wq">what does success even look like here? define it before claiming it</span>
@@ -692,15 +707,15 @@
         <div class="move fx">
           <span class="m-num">3</span>
           <div>
-            <h3 id="cop-repetition" data-rail-sub="Repetition">Look for repetition across unrelated studies.</h3>
-            <p>The strongest signals were the ones that appeared in studies that had different goals. Inbox prioritization, drafting, out-of-office catch-up, project workflows, and automation research all pointed to similar needs: users wanted help reducing overload, but they also wanted to understand, correct, and bound what Copilot was doing.</p>
+            <h3 id="cop-repetition" data-rail-sub="Repetition">Cross-study thematic analysis</h3>
+            <p>I compared findings across studies with different research objectives. Research on inbox prioritization, drafting, out-of-office catch-up, project workflows, and automation identified recurring needs related to workload, transparency, correction, and control.</p>
           </div>
         </div>
         <div class="move fx">
           <span class="m-num">4</span>
           <div>
-            <h3 id="cop-pressure" data-rail-sub="Pressure-test">Pressure-test the themes externally.</h3>
-            <p>I compared the internal themes against public conversations about AI assistants and Microsoft 365 Copilot. I used this only as a check, not as primary evidence. Where public concerns echoed the internal research, it made the theme stronger. Where they did not, I went back to the source material.</p>
+            <h3 id="cop-pressure" data-rail-sub="Pressure-test">Public conversation review</h3>
+            <p>I compared themes from the internal research with public conversations about AI assistants and Microsoft 365 Copilot. Public posts were used as a secondary check on the synthesis and were not treated as participant research.</p>
             <div class="reacts" aria-label="Paraphrased public web reactions the synthesis was tested against">
               <div class="react pos">
                 <p class="rc-src"><span class="rc-dot"></span>X &middot; Microsoft 365</p>
@@ -719,7 +734,7 @@
                 <p class="rc-quote blur">Forced opt-in was the fastest way to make people resent a feature that might have helped them.</p>
               </div>
             </div>
-            <p class="reacts-note">Paraphrased from public posts the synthesis checked against. The friction here matched what people told us in private.</p>
+            <p class="reacts-note">Paraphrased public posts reviewed during the synthesis.</p>
           </div>
         </div>
       </div>
@@ -730,10 +745,10 @@
   <!-- ============ THE REFRAME: Copilot as Chief of Staff ============ -->
   <section class="strip" id="reframe" style="padding-top: 40px; position: relative;" data-rail="Reframe">
     <div class="container">
-      <p class="kicker fx">The reframe</p>
+      <p class="kicker fx">Synthesis</p>
       <h2 class="fx">Copilot as a <em>Chief of Staff</em></h2>
       <div class="prose">
-        <p class="fx">Read across all 12+ studies at once, the capabilities stopped looking like a feature list and started looking like a job. People did not want six AI tools bolted onto their inbox. They wanted one that behaved like a good chief of staff: it knew their context, handled the routine on their behalf, and kept them in the loop on the rest. That reframe became the paper's spine. It moves the question from "what features should Copilot ship" to "what would a chief of staff have to earn before you let it act for you."</p>
+        <p class="fx">Across the 12 studies, participants described related needs for contextual assistance, support with routine work, and visibility into AI decisions. I organized these findings around a chief-of-staff model, which gave teams a shared way to evaluate capabilities across Outlook.</p>
       </div>
 
       <div class="reframe">
@@ -765,7 +780,7 @@
       </div>
 
       <div class="prose" style="margin-top: 40px;">
-        <p class="fx">One recurring example made the need for a unified assistant clear: if Mail, Calendar, Chat, and Docs each build their own Copilot memory, the user has to keep re-teaching each surface who they are, what they work on, and how they prefer to operate. The paper used this as evidence for a cross-Outlook point of view: context should follow the user, not remain trapped inside individual features.</p>
+        <p class="fx">The research also showed a need for continuity across Mail, Calendar, Chat, and Docs. Separate memory in each product would require users to repeatedly provide the same context and preferences. The paper therefore recommended a consistent approach to context across Outlook experiences.</p>
       </div>
     </div>
   </section>
@@ -788,19 +803,19 @@
             <p class="step-num">01</p>
             <h3>On-demand</h3>
             <p class="step-sub">The user asks; the assistant answers; the user reviews the output before using it.</p>
-            <p>Summarize this thread, draft a reply, find that email. Across the studies, this is where most people's comfort actually sat, regardless of where the product vision hoped they were.</p>
+            <p>Examples included summarizing a thread, drafting a reply, and finding an email. Across the studies, participants were most comfortable with this level of assistance.</p>
           </div>
           <div class="ladder-step" id="step2">
             <p class="step-num">02</p>
             <h3>Proactive</h3>
             <p class="step-sub">The assistant surfaces summaries, suggestions, and priorities without being asked, but every action still belongs to the user.</p>
-            <p>This step is larger than it looks: the assistant now has to judge what is worth interrupting someone for, and to explain its reasoning, or it reads as noise and gets switched off.</p>
+            <p>At this stage, the assistant must decide what is worth surfacing and explain why. Irrelevant or unexplained suggestions could be perceived as noise.</p>
           </div>
           <div class="ladder-step" id="step3">
             <p class="step-num">03</p>
             <h3>Automatic</h3>
             <p class="step-sub">The assistant acts on its own, sending, archiving, rescheduling, within boundaries the user has set.</p>
-            <p>The paper argued that a task should only reach this stage after the assistant has proven itself on the two below, for that task specifically. <strong>Skipping stages is where trust collapses.</strong></p>
+            <p>The paper recommended moving a task to this stage only after users had experience with its on-demand and proactive versions.</p>
           </div>
         </div>
       </div>
@@ -810,7 +825,7 @@
   <!-- ============ KINETIC STATEMENT ============ -->
   <section class="statement" id="statement">
     <div class="container">
-      <p class="big" id="bigWords">The paper's central claim is that assistance deepens in stages, and that trust is built or destroyed depending on whether the product respects the order of those stages.</p>
+      <p class="big" id="bigWords">The paper proposed introducing assistance in stages so users could understand and evaluate a capability before it became more autonomous.</p>
     </div>
   </section>
 
@@ -818,7 +833,7 @@
   <section class="strip" id="framework" style="padding-top: 0; position: relative;" data-rail="Framework">
     <div class="container">
       <p class="kicker fx">The framework</p>
-      <h2 class="fx">What a chief of staff has to <em>earn</em></h2>
+      <h2 class="fx">A framework for increasing autonomy</h2>
 
       <div class="fw">
         <div class="fw-layers">
@@ -841,12 +856,12 @@
         </div>
         <div class="fw-autonomy fx">
           <p class="fa-k">Staged autonomy</p>
-          <p class="fa-sub">Move from on-demand to proactive to automatic one task at a time. Autonomy is not a product setting; it is something each workflow has to earn.</p>
+          <p class="fa-sub">Move from on-demand to proactive to automatic assistance one task at a time, based on how users evaluate each workflow.</p>
         </div>
       </div>
 
       <div class="prose" style="margin-top: 52px;">
-        <p class="fx">The two layers above the foundation are where trust actually broke down in the studies. Wherever a feature was failing people, at least one of these was missing. Up close, they looked like this:</p>
+        <p class="fx">Across the studies, problems with trust were often associated with limited transparency, control, or learnability.</p>
       </div>
       <div class="tcl-grid">
         <div class="tcl-card fx" data-tilt>
@@ -877,10 +892,10 @@
   <!-- ============ INTERACTIVE DEMO ============ -->
   <section class="strip" id="demo" style="padding-top: 40px; position: relative;" data-rail="Demo">
     <div class="container">
-      <p class="kicker fx">Feel it yourself</p>
-      <h2 class="fx">Here's what the framework applied to inbox prioritization could look like</h2>
+      <p class="kicker fx">Concept example</p>
+      <h2 class="fx">Applying the framework to inbox prioritization</h2>
       <div class="prose">
-        <p class="fx">Toggle the explanations and watch your read of the same three emails change.</p>
+        <p class="fx">The example shows how explanations can help users evaluate AI-generated priorities.</p>
       </div>
 
       <div class="demo-shell fx" id="demoShell">
@@ -920,9 +935,9 @@
         </div>
 
         <div class="trust-meter">
-          <p class="tm-label"><span>The reaction this produces, in spirit</span></p>
+          <p class="tm-label"><span>Expected user response</span></p>
           <p class="tm-caption" id="tmCaption">"It marked something high priority. I have no idea why, so I'll check everything myself anyway."</p>
-          <p class="tm-note">The recommendation they act out is real: put a "why" next to every judgment the AI makes.</p>
+          <p class="tm-note">Design recommendation: explain why the system assigned each priority.</p>
         </div>
       </div>
     </div>
@@ -932,16 +947,16 @@
   <section class="strip strip-dark" id="deliverable" style="position: relative;" data-rail="Deliverable">
     <div class="container">
       <p class="kicker fx">The deliverable</p>
-      <h2 class="fx" style="color: #fff;">The deliverable</h2>
+      <h2 class="fx" style="color: #fff;">What the paper gave product teams</h2>
       <div class="prose">
-        <p class="fx">The paper was structured so teams could act on it, or push back on it, without me in the room:</p>
+        <p class="fx">The paper documented the research sources, synthesis, framework, design guidelines, and feature checklist for product teams.</p>
       </div>
       <ul class="deliver-list">
-        <li class="fx"><span class="d-n">a</span><span><strong>A product position.</strong> A clear argument for what Copilot in Outlook should become, which user needs were most load-bearing, and how assistance should deepen over time.</span></li>
-        <li class="fx"><span class="d-n">b</span><span><strong>A staged autonomy model.</strong> A way to classify Copilot capabilities as on-demand, proactive, or automatic, and define what each stage required from the product.</span></li>
-        <li class="fx"><span class="d-n">c</span><span><strong>Design principles.</strong> Guidance for translating transparency, control, learnability, reliability, and risk management into product decisions.</span></li>
-        <li class="fx"><span class="d-n">d</span><span><strong>A pre-ship checklist.</strong> A review tool teams could use to evaluate whether a feature was ready to act on a user's behalf.</span></li>
-        <li class="fx"><span class="d-n">e</span><span><strong>Named evidence gaps.</strong> Places where the research was too thin to support a strong claim, with recommendations for what to study next.</span></li>
+        <li class="fx"><span class="d-n">01</span><span><strong>A product position.</strong> A clear argument for what Copilot in Outlook should become, which user needs were most load-bearing, and how assistance should deepen over time.</span></li>
+        <li class="fx"><span class="d-n">02</span><span><strong>A staged autonomy model.</strong> A way to classify Copilot capabilities as on-demand, proactive, or automatic, and define what each stage required from the product.</span></li>
+        <li class="fx"><span class="d-n">03</span><span><strong>Design principles.</strong> Guidance for translating transparency, control, learnability, reliability, and risk management into product decisions.</span></li>
+        <li class="fx"><span class="d-n">04</span><span><strong>A pre-ship checklist.</strong> A review tool teams could use to evaluate whether a feature was ready to act on a user's behalf.</span></li>
+        <li class="fx"><span class="d-n">05</span><span><strong>Named evidence gaps.</strong> Places where the research was too thin to support a strong claim, with recommendations for what to study next.</span></li>
       </ul>
     </div>
   </section>
@@ -950,78 +965,78 @@
   <section class="strip" id="checklist" style="position: relative;" data-rail="Checklist">
     <div class="container">
       <p class="kicker fx">The trust &amp; safety checklist</p>
-      <h2 class="fx">The checklist a team runs <em>before</em> shipping</h2>
+      <h2 class="fx">A pre-ship checklist for feature teams</h2>
       <div class="prose">
-        <p class="fx">The white paper ended with a practical review tool: a pre-ship checklist that any feature team could run before moving a Copilot capability into production. The checklist translated the argument into checklist categories. Before a feature could become more proactive or automatic, teams had to ask whether users could understand it, correct it, limit it, and recover from mistakes.</p>
+        <p class="fx">The white paper included a pre-ship checklist for Copilot feature teams. Before making a capability more proactive or automatic, teams could assess whether users understood it, could correct or limit it, and could recover from mistakes.</p>
       </div>
 
-      <div class="gate-grid">
-        <div class="gate-card fx">
-          <p class="gate-cat">Transparency</p>
+      <div class="gate-grid" aria-label="Seven checklist categories">
+        <details class="gate-card fx" open>
+          <summary><span class="gate-cat">Transparency</span><span class="gate-count">4 checks</span></summary>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Can someone tell what the feature actually does?</li>
             <li><span class="gate-check"></span>Are the data sources it draws on shown?</li>
             <li><span class="gate-check"></span>Is the reason behind each decision explained?</li>
             <li><span class="gate-check"></span>Can users see the actions it has already taken?</li>
           </ul>
-        </div>
-        <div class="gate-card fx">
-          <p class="gate-cat">Accuracy &amp; trust</p>
+        </details>
+        <details class="gate-card fx">
+          <summary><span class="gate-cat">Accuracy &amp; trust</span><span class="gate-count">4 checks</span></summary>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Are the results reliable and consistent?</li>
             <li><span class="gate-check"></span>Is AI-generated content clearly marked as such?</li>
             <li><span class="gate-check"></span>Does it say so when it is uncertain?</li>
             <li><span class="gate-check"></span>Does it avoid presenting invented information as fact?</li>
           </ul>
-        </div>
-        <div class="gate-card fx">
-          <p class="gate-cat">Learning</p>
+        </details>
+        <details class="gate-card fx">
+          <summary><span class="gate-cat">Learning</span><span class="gate-count">4 checks</span></summary>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Does it learn from the way people correct it?</li>
             <li><span class="gate-check"></span>Does that learning survive across sessions?</li>
             <li><span class="gate-check"></span>Can users see and edit what it has learned about them?</li>
             <li><span class="gate-check"></span>Does it visibly improve over time?</li>
           </ul>
-        </div>
-        <div class="gate-card fx">
-          <p class="gate-cat">User control</p>
+        </details>
+        <details class="gate-card fx">
+          <summary><span class="gate-cat">User control</span><span class="gate-count">4 checks</span></summary>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Can users set limits on what it does automatically?</li>
             <li><span class="gate-check"></span>Is there an easy way to correct its mistakes?</li>
             <li><span class="gate-check"></span>Is the control granular, not all-or-nothing?</li>
             <li><span class="gate-check"></span>Can users switch it off or scope it down?</li>
           </ul>
-        </div>
-        <div class="gate-card fx">
-          <p class="gate-cat">Discoverability</p>
+        </details>
+        <details class="gate-card fx">
+          <summary><span class="gate-cat">Discoverability</span><span class="gate-count">3 checks</span></summary>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Is the feature easy to find and start using?</li>
             <li><span class="gate-check"></span>Are its capabilities communicated clearly?</li>
             <li><span class="gate-check"></span>Does it prove its value on first use?</li>
           </ul>
-        </div>
-        <div class="gate-card fx">
-          <p class="gate-cat">Risk management</p>
+        </details>
+        <details class="gate-card fx">
+          <summary><span class="gate-cat">Risk management</span><span class="gate-count">4 checks</span></summary>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Are there safeguards against critical errors?</li>
             <li><span class="gate-check"></span>Is there a rollback path when it gets something wrong?</li>
             <li><span class="gate-check"></span>Are high-risk actions flagged and confirmed first?</li>
             <li><span class="gate-check"></span>Does it fail gracefully and handle sensitive data with care?</li>
           </ul>
-        </div>
-        <div class="gate-card fx">
-          <p class="gate-cat">Integration</p>
+        </details>
+        <details class="gate-card fx">
+          <summary><span class="gate-cat">Integration</span><span class="gate-count">4 checks</span></summary>
           <ul class="gate-list">
             <li><span class="gate-check"></span>Is it consistent with the other Copilot surfaces?</li>
             <li><span class="gate-check"></span>Are a user's preferences respected across features?</li>
             <li><span class="gate-check"></span>Does context move with the user instead of resetting per app?</li>
             <li><span class="gate-check"></span>Does it present as one assistant, not many?</li>
           </ul>
-        </div>
+        </details>
       </div>
 
-      <div class="honest honest--full on-light fx" style="margin-top: 44px;">
-        <span class="h-label">Where the framework stops</span>
+      <div class="framework-boundary fx">
+        <span>Where the framework stops</span>
         <p>The framework assumes a good-faith user and an honest environment. It does not cover adversarial use: an assistant that sends and replies on someone's behalf is also a new surface for impersonation and phishing, and a system that learns from corrections can be deliberately mistrained. Those questions were outside this paper's scope.</p>
       </div>
     </div>
@@ -1031,9 +1046,10 @@
   <section class="closing" id="impact" data-rail="Impact">
     <div class="container" style="position: relative;">
       <p class="kicker fx">Impact</p>
-      <h2 class="fx" style="color: #fff;">Impact</h2>
-      <div class="prose">
-        <p class="fx">The paper was reviewed by the lead researcher and shared with the feature teams it was written for. The checklist circulated as a review template and was very well received. As it was shipped in the final weeks of my contract, I did not get to watch its recommendations move through roadmaps, and the NDA covers what happened afterward. For more details, feel free to reach out!</p>
+      <h2 class="fx" style="color: #fff;">What I observed after delivery</h2>
+      <div class="impact-scope fx">
+        <article><span>Observed use</span><p>The lead researcher reviewed the paper before it was shared with relevant feature teams. The checklist was circulated as a review template.</p></article>
+        <article><span>Limit of observation</span><p>The paper was delivered during the final weeks of my contract, so I did not observe how its recommendations affected later roadmaps. Subsequent work is covered by NDA.</p></article>
       </div>
 
       <div class="case-next fx">
@@ -1155,6 +1171,16 @@
         card.addEventListener("mouseleave", function () { card.style.transform = ""; });
       });
     }
+
+    /* Keep one checklist category open at a time. */
+    document.querySelectorAll("#checklist details").forEach(function (detail) {
+      detail.addEventListener("toggle", function () {
+        if (!detail.open) return;
+        document.querySelectorAll("#checklist details[open]").forEach(function (other) {
+          if (other !== detail) other.open = false;
+        });
+      });
+    });
 
     /* Demo toggle */
     var demoSwitch = document.getElementById("demoSwitch");

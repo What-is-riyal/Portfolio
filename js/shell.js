@@ -156,6 +156,26 @@
   }
 
   function bootDotField() {
+    if (document.body.classList.contains('case-study')) {
+      const darkHosts = document.querySelectorAll('.case-hero--dark, .hero-dark, .case-chapter, .fold-dark, .strip-dark, .case-ending, .closing, .analysis-public');
+      darkHosts.forEach((host) => {
+        const hasField = Array.from(host.children).some((child) => child.matches('[data-human-field]'));
+        if (hasField) return;
+
+        const styles = window.getComputedStyle(document.body);
+        const accent = styles.getPropertyValue('--case-accent-dark-rgb').trim() || '169, 159, 255';
+        const canvas = document.createElement('canvas');
+        canvas.className = 'dark-section__network';
+        canvas.dataset.humanField = host.classList.contains('case-ending') || host.classList.contains('closing') ? '58' : '78';
+        canvas.dataset.dotColor = accent;
+        canvas.dataset.dotColorMuted = '255, 255, 255';
+        canvas.dataset.lineColor = accent;
+        canvas.setAttribute('aria-hidden', 'true');
+        host.dataset.fieldHost = '';
+        host.prepend(canvas);
+      });
+    }
+
     document.querySelectorAll('[data-human-field]').forEach((canvas) => {
       const host = canvas.closest('[data-field-host]');
       if (!host) return;

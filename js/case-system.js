@@ -5,6 +5,25 @@
   const progress = document.getElementById('progress') || document.getElementById('cs-progress');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  document.querySelectorAll('[data-outcome-story]').forEach((story) => {
+    const steps = Array.from(story.querySelectorAll('[data-outcome-step]'));
+    const visuals = Array.from(story.querySelectorAll('.outcome-story__visual figure'));
+    if (!steps.length || steps.length !== visuals.length || !('IntersectionObserver' in window)) return;
+
+    const activate = (step) => {
+      const index = steps.indexOf(step);
+      steps.forEach((item, itemIndex) => item.classList.toggle('is-active', itemIndex === index));
+      visuals.forEach((visual, visualIndex) => visual.classList.toggle('is-active', visualIndex === index));
+    };
+
+    const outcomeObserver = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) activate(visible.target);
+    }, { threshold: [0.25, 0.5, 0.75], rootMargin: '-18% 0px -34% 0px' });
+
+    steps.forEach((step) => outcomeObserver.observe(step));
+  });
+
   if (!reduceMotion && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

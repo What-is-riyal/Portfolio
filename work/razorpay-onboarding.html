@@ -10,10 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/grid.css?v=20260812a">
   <link rel="stylesheet" href="../css/shell.css?v=20260812b">
-  <link rel="stylesheet" href="../css/section-rail.css?v=20260808h">
-  <link rel="stylesheet" href="../css/case-system.css?v=20260812b">
+  <link rel="stylesheet" href="../css/section-rail.css?v=20260812theme2">
+  <link rel="stylesheet" href="../css/case-system.css?v=20260812cool2">
 </head>
-<body class="case-study case-study--dark-hero" data-shell-base="../" data-shell-page="work">
+<body class="case-study case-study--dark-hero case-theme--razorpay-onboarding" data-shell-base="../" data-shell-page="work">
   <div class="grain" aria-hidden="true"></div>
   <div class="progress" id="progress" aria-hidden="true"></div>
   <nav id="section-rail" class="section-rail" aria-label="On this page"></nav>
@@ -148,27 +148,37 @@
       </div>
     </section>
 
-    <section class="strip" id="principles" data-rail="Principles">
+    <section class="outcome-story" id="principles" data-rail="Principles" data-outcome-story>
       <div class="container">
-        <p class="kicker fx">Design recommendations</p>
-        <h2 class="fx">Four recommendations shaped the onboarding flow.</h2>
-        <div class="recommendation-story">
-          <article class="recommendation-step fx">
-            <div class="recommendation-step__copy"><span>01</span><p class="recommendation-link"><strong>Research finding</strong>The existing flow was designed primarily for desktop, while this merchant segment needed a usable mobile experience.</p><p class="recommendation-action-label">Design recommendation</p><h3>Use a mobile-first layout</h3><p>Optimize the complete onboarding flow for the primary device used by this merchant segment.</p></div>
-            <figure class="artifact-figure"><img src="../assets/webflow/7a04f14c/65b102a3c025e3d164e25610_Screen Recording 2024-01-24 at 5.55.53 PM.gif" alt="Mobile-first onboarding flow" loading="lazy"><figcaption>The redesigned flow was optimized for mobile.</figcaption></figure>
-          </article>
-          <article class="recommendation-step recommendation-step--reverse fx">
-            <div class="recommendation-step__copy"><span>02</span><p class="recommendation-link"><strong>Research finding</strong>The long form felt open-ended, and merchants could not estimate the effort required.</p><p class="recommendation-action-label">Design recommendation</p><h3>Present one question at a time</h3><p>Frame fields as clear questions with an explicit next step, following the pacing of an assisted account-opening conversation.</p></div>
-            <figure class="artifact-figure"><img src="../assets/webflow/dcde97a5/65b13f5de48768b0c39d8e37_Screenshot 2024-01-24 at 10.16.37 PM.png" alt="Onboarding screen presenting one question" loading="lazy"><figcaption>Each screen focused on one onboarding question.</figcaption></figure>
-          </article>
-          <article class="recommendation-step fx">
-            <div class="recommendation-step__copy"><span>03</span><p class="recommendation-link"><strong>Research finding</strong>Short field labels did not explain unfamiliar business and compliance terms.</p><p class="recommendation-action-label">Design recommendation</p><h3>Use progressive disclosure</h3><p>Provide definitions and supporting information when merchants need them without overloading the initial screen.</p></div>
-            <figure class="artifact-figure"><img src="../assets/webflow/73ec4f36/65b14205d2d821639563eea3_Screen Recording 2024-01-24 at 10.26.36 PM.gif" alt="Progressive disclosure in the onboarding flow" loading="lazy"><figcaption>Supporting information appeared when a merchant requested it.</figcaption></figure>
-          </article>
-          <article class="recommendation-step recommendation-step--reverse fx">
-            <div class="recommendation-step__copy"><span>04</span><p class="recommendation-link"><strong>Research finding</strong>Merchants wanted context before providing sensitive business information.</p><p class="recommendation-action-label">Design recommendation</p><h3>Explain sensitive information requests</h3><p>State why each piece of information is required and how it will be used.</p></div>
-            <figure class="artifact-figure"><img src="../assets/webflow/3c8d1a9d/65b1744b87aa85a2e5dcf3ae_Screenshot 2024-01-25 at 2.03.32 AM.png" alt="Explanation beside a sensitive onboarding question" loading="lazy"><figcaption>Explanatory copy appeared beside sensitive requests.</figcaption></figure>
-          </article>
+        <header class="outcome-story__intro">
+          <p class="kicker fx">The redesigned experience</p>
+          <h2 class="fx">The new onboarding flow was designed based on four principles.</h2>
+        </header>
+        <div class="outcome-story__layout">
+          <div class="outcome-story__steps">
+            <article class="is-active" data-outcome-step>
+              <span class="outcome-story__number">01</span><p class="outcome-story__finding">The desktop-first flow did not work well for merchants completing onboarding on mobile.</p><h3>Use a mobile-first layout</h3><p>Optimize the complete onboarding flow for the primary device used by this merchant segment.</p>
+              <figure class="outcome-story__mobile-artifact"><img src="../assets/webflow/7a04f14c/65b102a3c025e3d164e25610_Screen Recording 2024-01-24 at 5.55.53 PM.gif" alt="Mobile-first onboarding flow"></figure>
+            </article>
+            <article data-outcome-step>
+              <span class="outcome-story__number">02</span><p class="outcome-story__finding">The long form felt open-ended, and merchants could not estimate the effort required.</p><h3>Present one question at a time</h3><p>Frame fields as clear questions with an explicit next step, following the pacing of an assisted account-opening conversation.</p>
+              <figure class="outcome-story__mobile-artifact"><img src="../assets/webflow/dcde97a5/65b13f5de48768b0c39d8e37_Screenshot 2024-01-24 at 10.16.37 PM.png" alt="Onboarding screen presenting one question"></figure>
+            </article>
+            <article data-outcome-step>
+              <span class="outcome-story__number">03</span><p class="outcome-story__finding">Short field labels did not explain unfamiliar business and compliance terms.</p><h3>Use progressive disclosure</h3><p>Provide definitions and supporting information when merchants need them without overloading the initial screen.</p>
+              <figure class="outcome-story__mobile-artifact"><img src="../assets/webflow/73ec4f36/65b14205d2d821639563eea3_Screen Recording 2024-01-24 at 10.26.36 PM.gif" alt="Progressive disclosure in the onboarding flow"></figure>
+            </article>
+            <article data-outcome-step>
+              <span class="outcome-story__number">04</span><p class="outcome-story__finding">Merchants wanted context before providing sensitive business information.</p><h3>Explain sensitive information requests</h3><p>State why each piece of information is required and how it will be used.</p>
+              <figure class="outcome-story__mobile-artifact"><img src="../assets/webflow/3c8d1a9d/65b1744b87aa85a2e5dcf3ae_Screenshot 2024-01-25 at 2.03.32 AM.png" alt="Explanation beside a sensitive onboarding question"></figure>
+            </article>
+          </div>
+          <div class="outcome-story__visual" aria-hidden="true">
+            <figure class="is-active"><img src="../assets/webflow/7a04f14c/65b102a3c025e3d164e25610_Screen Recording 2024-01-24 at 5.55.53 PM.gif" alt=""></figure>
+            <figure><img src="../assets/webflow/dcde97a5/65b13f5de48768b0c39d8e37_Screenshot 2024-01-24 at 10.16.37 PM.png" alt=""></figure>
+            <figure><img src="../assets/webflow/73ec4f36/65b14205d2d821639563eea3_Screen Recording 2024-01-24 at 10.26.36 PM.gif" alt=""></figure>
+            <figure><img src="../assets/webflow/3c8d1a9d/65b1744b87aa85a2e5dcf3ae_Screenshot 2024-01-25 at 2.03.32 AM.png" alt=""></figure>
+          </div>
         </div>
       </div>
     </section>
@@ -216,8 +226,8 @@
     </section>
   </main>
 
-  <script src="../js/shell.js?v=20260812b" defer></script>
-  <script src="../js/case-system.js?v=20260812b" defer></script>
+  <script src="../js/shell.js?v=20260812outcome2" defer></script>
+  <script src="../js/case-system.js?v=20260812outcome2" defer></script>
   <script src="../js/section-rail.js?v=20260808h" defer></script>
 </body>
 </html>

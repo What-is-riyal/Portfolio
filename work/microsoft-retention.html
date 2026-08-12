@@ -10,23 +10,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/grid.css?v=20260808a">
   <link rel="stylesheet" href="../css/shell.css?v=20260812b">
-  <link rel="stylesheet" href="../css/section-rail.css?v=20260808h">
-  <link rel="stylesheet" href="../css/case-system.css?v=20260812b">
+  <link rel="stylesheet" href="../css/section-rail.css?v=20260812theme2">
+  <link rel="stylesheet" href="../css/case-system.css?v=20260812cool2">
   <style>
     /* Retention showpiece — Copilot family accents (content/interactives untouched) */
     :root {
-      --ink: #0B0B0C;
-      --text: #0B0B0C;
+      --ink: var(--case-ink);
+      --text: var(--case-ink);
       --muted: #6B6E68;
       --border: rgba(11, 11, 12, 0.18);
       --surface: #FFFFFF;
-      --sky: #4F46E5;
-      --sky-deep: #4338CA;
+      --sky: var(--case-accent);
+      --sky-deep: var(--case-accent);
       --serif: "Fraunces", Georgia, serif;
       --font: "Archivo", "Helvetica Neue", sans-serif;
     }
 
-    .fold-dark { --sky: #9D91FF; }
+    .fold-dark { --sky: var(--case-accent-dark); }
 
     body {
       background: #FFFFFF;
@@ -74,7 +74,7 @@
       min-height: 88vh; display: flex; flex-direction: column; justify-content: center;
       position: relative; overflow: hidden; padding: 80px 0;
       background:
-        radial-gradient(600px circle at 85% 20%, rgba(79, 70, 229, 0.08), transparent 60%),
+        radial-gradient(600px circle at 85% 20%, rgba(var(--case-accent-rgb), 0.09), transparent 60%),
         #FFFFFF;
     }
     .hero-light .eyebrow {
@@ -118,7 +118,7 @@
       border-radius: 999px; letter-spacing: 0;
       border: 1px solid rgba(11, 11, 12, 0.18); color: rgba(11, 11, 12, 0.72); background: #fff;
     }
-    .pchip.accent { border-color: rgba(124, 113, 255, 0.5); color: var(--sky); }
+    .pchip.accent { border-color: rgba(var(--case-accent-rgb), 0.5); color: var(--sky); }
 
     /* Drifting account cards in hero */
     .float-card {
@@ -177,7 +177,7 @@
     }
     .account-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.085); }
     .account-card .account-n {
-      display: block; margin-bottom: 34px; color: #9D91FF; font-family: var(--serif);
+      display: block; margin-bottom: 34px; color: var(--case-accent-dark); font-family: var(--serif);
       font-size: 24px; font-style: italic;
     }
     .account-card h3 { margin-bottom: 8px; font-size: 20px; }
@@ -234,7 +234,7 @@
     }
     .method-sequence::before {
       content: ""; position: absolute; top: 15px; left: 16px; right: 16px; height: 1px;
-      background: linear-gradient(90deg, var(--sky), rgba(79,70,229,0.18));
+      background: linear-gradient(90deg, var(--sky), rgba(var(--case-accent-rgb),0.18));
     }
     .method-sequence article { position: relative; padding-top: 46px; }
     .method-sequence article::before {
@@ -296,7 +296,7 @@
     }
     .survey-map::before {
       content: ""; position: absolute; top: 11px; left: 11px; right: 11px; height: 1px;
-      background: rgba(79,70,229,0.32);
+      background: rgba(var(--case-accent-rgb),0.32);
     }
     .survey-map li {
       position: relative; padding: 34px 10px 0 0; color: #4f4d56;
@@ -369,7 +369,7 @@
     }
   </style>
 </head>
-<body class="case-study" data-shell-base="../" data-shell-page="work">
+<body class="case-study case-theme--retention" data-shell-base="../" data-shell-page="work">
   <div class="grain" aria-hidden="true"></div>
 
   <div class="page page-retention" id="main" style="position:relative;width:100%">
@@ -380,7 +380,7 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero-light">
-    <span class="float-card" style="top: 14%; right: 12%; --tilt: 2deg;"><b>Primary</b><span class="fc-dot" style="background:#4F46E5;"></span>checked daily</span>
+    <span class="float-card" style="top: 14%; right: 12%; --tilt: 2deg;"><b>Primary</b><span class="fc-dot" style="background:var(--case-accent);"></span>checked daily</span>
     <span class="float-card" style="top: 27%; right: 4%; --tilt: -2deg; animation-delay: 1.2s;"><b>Secondary</b><span class="fc-dot" style="background:#6B6E68;"></span>signups &amp; backups</span>
     <span class="float-card" style="top: 40%; right: 16%; --tilt: 1.5deg; animation-delay: 0.6s;"><b>Tertiary</b><span class="fc-dot" style="background:#FFB36B;"></span>mostly junk</span>
     <span class="float-card" style="top: 53%; right: 7%; --tilt: -1deg; animation-delay: 1.8s;"><b>Abandoned</b><span class="fc-dot" style="background:#9CA3AF;"></span>password resets only</span>
@@ -671,7 +671,7 @@
     onScroll();
   })();
   </script>
-  <script src="../js/shell.js?v=20260812b" defer></script>
+  <script src="../js/shell.js?v=20260812outcome2" defer></script>
   <script src="../js/section-rail.js?v=20260808h" defer></script>
 </body>
 </html>

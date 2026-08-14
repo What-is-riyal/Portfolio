@@ -2273,11 +2273,11 @@ body.page-about {
   transform: translateY(-4px);
 }
 
-.home-work__row--blue { --card-accent: #0a84c6; }
-.home-work__row--green { --card-accent: #13865b; }
-.home-work__row--indigo { --card-accent: #3157c8; }
-.home-work__row--amber { --card-accent: #c97710; }
-.home-work__row--rose { --card-accent: #d83b72; }
+.home-work__row--blue { --card-accent: #0875ad; }
+.home-work__row--green { --card-accent: #4e50bd; }
+.home-work__row--indigo { --card-accent: #08788a; }
+.home-work__row--amber { --card-accent: #7139a6; }
+.home-work__row--rose { --card-accent: #187a58; }
 
 .home-work__link {
   flex: 1;
@@ -3915,11 +3915,11 @@ body.page-about {
   transform: rotate(-2deg) scale(1.06);
 }
 
-.home-work__row--coral { --card-accent: #e25d47; }
+.home-work__row--coral { --card-accent: #6658dd; }
 .home-work__row--cyan { --card-accent: #087f92; }
-.home-work__row--charcoal { --card-accent: #504564; }
-.home-work__row--paper { --card-accent: #95633c; }
-.home-work__row--lemon { --card-accent: #b27705; }
+.home-work__row--charcoal { --card-accent: #4e50bd; }
+.home-work__row--paper { --card-accent: #7139a6; }
+.home-work__row--lemon { --card-accent: #3157c8; }
 
 .home-work__wordmark {
   width: fit-content;
@@ -3958,7 +3958,7 @@ body.page-about {
 }
 
 .home-work__visual .visual-card--middle { color: color-mix(in srgb, var(--card-accent) 78%, #4f45bb); }
-.home-work__visual .visual-card--last { color: color-mix(in srgb, var(--card-accent) 62%, #ffc13b); }
+.home-work__visual .visual-card--last { color: color-mix(in srgb, var(--card-accent) 62%, #66c4d2); }
 .home-work__visual .visual-wave { stroke-width: 4; }
 .home-work__visual .visual-caption text { font-size: 10px; }
 .home-work__visual--play g circle,
@@ -4197,14 +4197,14 @@ body.page-about {
 }
 
 .home-editorial-card {
-  --editorial-accent: #087f92;
+  --editorial-accent: #4f46e5;
   min-width: 0;
   border: 1px solid #dedee3;
   background: #fff;
 }
 
-.home-editorial-card--charcoal { --editorial-accent: #504564; }
-.home-editorial-card--paper { --editorial-accent: #95633c; }
+.home-editorial-card--charcoal { --editorial-accent: #4f46e5; }
+.home-editorial-card--paper { --editorial-accent: #4f46e5; }
 
 .home-editorial-card a {
   position: relative;

@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <title>A point of view for Copilot in Outlook | Priyal Shrivastava</title>
   <meta name="description" content="A trust-and-safety framework for an AI assistant: synthesizing a year of Microsoft Copilot research into a position on when an automated system is safe to act on a user's behalf, how its decisions stay transparent and contestable, and a pre-ship checklist teams could run before shipping.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +14,7 @@
   <link rel="stylesheet" href="../css/grid.css?v=20260812a">
   <link rel="stylesheet" href="../css/shell.css?v=20260812b">
   <link rel="stylesheet" href="../css/section-rail.css?v=20260812theme2">
-  <link rel="stylesheet" href="../css/case-system.css?v=20260812cool2">
+  <link rel="stylesheet" href="../css/case-system.css?v=20260814a11y1">
   <style>
     /* ============ Showpiece page styles ============ */
     :root {
@@ -501,10 +503,7 @@
     .framework-boundary { display: grid; grid-template-columns: 190px 1fr; gap: 34px; margin-top: 54px; padding: 34px; border: 1px solid var(--ink); background: var(--ink); color: #fff; }
     .framework-boundary span { color: var(--glow); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     .framework-boundary p { margin: 0; color: rgba(255,255,255,.72); font-size: 16px; line-height: 1.72; }
-    .impact-scope { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 42px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.16); }
-    .impact-scope article { padding: 28px; background: var(--ink); }
-    .impact-scope span { color: var(--glow); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    .impact-scope p { margin: 16px 0 0; color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.65; }
+    .impact-summary { max-width: 680px; margin-top: 38px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,.16); }
     .gate-cat { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; margin: 0; }
     .gate-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .gate-list li { display: grid; grid-template-columns: 20px 1fr; gap: 12px; font-size: 14px; line-height: 1.5; color: #3A3A3A; }
@@ -531,7 +530,7 @@
       .snap-item .s-value { font-size: 14.5px; }
       .gate-card { padding: 0; }
       details.gate-card .gate-list { grid-template-columns: 1fr; gap: 12px; }
-      .framework-boundary, .impact-scope { grid-template-columns: 1fr; }
+      .framework-boundary { grid-template-columns: 1fr; }
       .fw-layer { padding: 18px 20px; }
       .deliver-list li { grid-template-columns: 26px 1fr; gap: 14px; font-size: 15.5px; }
       .ws-num { font-size: 40px; }
@@ -830,7 +829,7 @@
   </section>
 
   <!-- ============ PILLARS ============ -->
-  <section class="strip" id="framework" style="padding-top: 0; position: relative;" data-rail="Framework">
+  <section class="strip" id="framework" style="position: relative;" data-rail="Framework">
     <div class="container">
       <p class="kicker fx">The framework</p>
       <h2 class="fx">A framework for increasing autonomy</h2>
@@ -1046,11 +1045,8 @@
   <section class="closing" id="impact" data-rail="Impact">
     <div class="container" style="position: relative;">
       <p class="kicker fx">Impact</p>
-      <h2 class="fx" style="color: #fff;">What I observed after delivery</h2>
-      <div class="impact-scope fx">
-        <article><span>Observed use</span><p>The lead researcher reviewed the paper before it was shared with relevant feature teams. The checklist was circulated as a review template.</p></article>
-        <article><span>Limit of observation</span><p>The paper was delivered during the final weeks of my contract, so I did not observe how its recommendations affected later roadmaps. Subsequent work is covered by NDA.</p></article>
-      </div>
+      <h2 class="fx" style="color: #fff;">How the work was used</h2>
+      <div class="prose impact-summary"><p class="fx">The paper was shared with relevant product teams, and the checklist was adopted as a review template for Copilot features.</p></div>
 
       <div class="case-next fx">
         <p class="label">Next project</p>

@@ -233,6 +233,22 @@ Accent color communicates:
 - conceptual emphasis
 - progression
 - selected state
+
+### Project color families
+
+Project-owned accents use a coordinated cool spectrum. The project sequence alternates between deeper indigo or purple families and brighter blue or cyan families:
+
+- Copilot POV: deep violet
+- Outlook retention: bright blue
+- Razorpay onboarding: deep indigo
+- Razorpay website evaluation: bright cyan-blue
+- Razorpay D2C: deep purple
+- Meesho: deep plum
+- MadAhead and Play: brighter blue
+
+The same project family must be used on its case-study surfaces and on the homepage card artwork, border, sticker, chips, arrow, hover wash, and other project-specific highlights. Publications and non-project editorial cards should also stay within cyan, blue, indigo, violet, or purple families.
+
+Do not use green, yellow, orange, red, or pink as portfolio-owned project accents. Company logos may retain their official brand colors.
 - important label
 - relationship
 - interaction

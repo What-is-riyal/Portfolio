@@ -155,6 +155,46 @@
     window.addEventListener('resize', sync);
   }
 
+  function bootNavScrim() {
+    const body = document.body;
+    const nav = document.querySelector('.site-nav');
+    if (!nav) return;
+
+    const darkSelectors = [
+      '[data-nav-theme="dark"]',
+      '.case-hero--dark',
+      '.hero-dark',
+      '.case-hero--dark + .snapshot',
+      '.hero-dark + .snapshot',
+      '.case-chapter',
+      '.fold-dark',
+      '.strip-dark',
+      '.case-ending',
+      '.closing',
+      '.analysis-public',
+      '.about-intro',
+      '.play-intro',
+      '.res-hero-band'
+    ].join(',');
+
+    const darkSections = Array.from(document.querySelectorAll(darkSelectors));
+
+    const sync = () => {
+      const navProbe = Math.min(58, window.innerHeight - 1);
+      const isDark = darkSections.some((section) => {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= navProbe && rect.bottom >= navProbe;
+      });
+
+      body.classList.toggle('has-nav-scrim', window.scrollY > 24);
+      body.classList.toggle('is-nav-on-dark', isDark);
+    };
+
+    sync();
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+  }
+
   function bootDotField() {
     if (document.body.classList.contains('case-study')) {
       const darkHosts = document.querySelectorAll('.case-hero--dark, .hero-dark, .case-chapter, .fold-dark, .strip-dark, .case-ending, .closing, .analysis-public');
@@ -281,6 +321,7 @@
     mountFooter(document.getElementById('site-footer'), opts);
     bootCaseStudyNavContrast();
     bootCaseStudyProgress();
+    bootNavScrim();
     bootNavContrastFor('.about-intro', 'page-about');
     bootNavContrastFor('.play-intro', 'page-play');
     bootNavContrastFor('.res-hero-band', 'page-resume');

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" fill="none">
+  <defs>
+    <linearGradient id="voices" x1="120" y1="68" x2="255" y2="151" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5145CD" stop-opacity=".9"/>
+      <stop offset=".5" stop-color="#8577EB" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#B7AEFF" stop-opacity=".2"/>
+    </linearGradient>
+  </defs>
+  <path d="M18 183c7-31 24-47 52-54-14-9-22-25-22-44 0-29 20-52 47-52 26 0 46 23 46 52 0 19-8 35-22 44 27 7 44 23 52 54H18Z" fill="#5145CD" fill-opacity=".16"/>
+  <circle cx="94" cy="82" r="31" fill="#5145CD"/>
+  <circle cx="83" cy="76" r="4" fill="#FFF"/>
+  <circle cx="105" cy="76" r="4" fill="#FFF"/>
+  <path d="M80 94c8-9 20-9 28 0" stroke="#FFF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M342 183c-7-31-24-47-52-54 14-9 22-25 22-44 0-29-20-52-47-52-26 0-46 23-46 52 0 19 8 35 22 44-27 7-44 23-52 54h153Z" fill="#8577EB" fill-opacity=".13"/>
+  <circle cx="266" cy="82" r="31" fill="#8577EB"/>
+  <circle cx="255" cy="76" r="4" fill="#FFF"/>
+  <circle cx="277" cy="76" r="4" fill="#FFF"/>
+  <path d="M252 94c8 9 20 9 28 0" stroke="#FFF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M112 69h104c13 0 23 10 23 23v35c0 13-10 23-23 23h-56l-25 19 6-19h-29c-13 0-23-10-23-23V92c0-13 10-23 23-23Z" fill="#FFF" stroke="#5145CD" stroke-width="3"/>
+  <path d="M117 79h103c13 0 23 10 23 23v35c0 9-5 17-12 21" stroke="#8577EB" stroke-width="3" stroke-opacity=".55"/>
+  <path d="M124 90h104c13 0 23 10 23 23v35c0 7-3 14-8 18" stroke="#B7AEFF" stroke-width="3" stroke-opacity=".45"/>
+  <rect x="116" y="96" width="78" height="9" rx="4.5" fill="url(#voices)"/>
+  <rect x="116" y="116" width="54" height="8" rx="4" fill="#C6C1D2"/>
+  <circle cx="206" cy="100" r="5" fill="#5145CD"/>
+  <circle cx="220" cy="100" r="5" fill="#8577EB"/>
+  <circle cx="234" cy="100" r="5" fill="#B7AEFF"/>
+  <path d="M145 41c9-10 22-15 35-15s26 5 35 15" stroke="#9D91FF" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 7"/>
+  <circle cx="180" cy="27" r="4" fill="#9D91FF"/>
+</svg>

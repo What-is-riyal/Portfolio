@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" fill="none">
+  <defs>
+    <radialGradient id="orb" cx="0" cy="0" r="1" gradientTransform="translate(182 109) rotate(90) scale(82)">
+      <stop stop-color="#8577EB" stop-opacity=".92"/>
+      <stop offset=".52" stop-color="#5145CD" stop-opacity=".48"/>
+      <stop offset="1" stop-color="#5145CD" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pane" x1="83" y1="49" x2="275" y2="177" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#9D91FF" stop-opacity=".07"/>
+    </linearGradient>
+  </defs>
+  <circle cx="182" cy="109" r="82" fill="url(#orb)"/>
+  <ellipse cx="182" cy="109" rx="143" ry="69" stroke="#9D91FF" stroke-opacity=".26" stroke-width="1.5"/>
+  <ellipse cx="182" cy="109" rx="108" ry="95" transform="rotate(-28 182 109)" stroke="#9D91FF" stroke-opacity=".18" stroke-width="1.5"/>
+  <rect x="101" y="50" width="158" height="121" rx="21" fill="url(#pane)" stroke="#C3BCFF" stroke-opacity=".7" stroke-width="2"/>
+  <rect x="117" y="66" width="76" height="35" rx="11" fill="#FFF" fill-opacity=".86"/>
+  <rect x="202" y="66" width="41" height="35" rx="11" fill="#9D91FF" fill-opacity=".68"/>
+  <rect x="117" y="111" width="51" height="43" rx="12" fill="#9D91FF" fill-opacity=".5"/>
+  <rect x="177" y="111" width="66" height="43" rx="12" fill="#FFF" fill-opacity=".15" stroke="#FFF" stroke-opacity=".24"/>
+  <rect x="34" y="63" width="55" height="35" rx="12" fill="#FFF" fill-opacity=".13" stroke="#9D91FF" stroke-opacity=".5"/>
+  <rect x="269" y="41" width="54" height="54" rx="17" fill="#5145CD" fill-opacity=".56" stroke="#B7AEFF" stroke-opacity=".6"/>
+  <rect x="276" y="132" width="48" height="32" rx="11" fill="#FFF" fill-opacity=".12" stroke="#9D91FF" stroke-opacity=".45"/>
+  <rect x="43" y="137" width="43" height="43" rx="14" fill="#8577EB" fill-opacity=".42"/>
+  <path d="M89 81c16 1 26 6 35 17M260 84c-16 3-25 9-33 19M87 154c15-4 26-11 35-23M276 148c-15-1-25-6-34-16" stroke="#B7AEFF" stroke-opacity=".42" stroke-width="2" stroke-linecap="round"/>
+  <path d="m181 91 7 14 15 2-11 11 3 15-14-7-13 7 2-15-10-11 15-2 6-14Z" fill="#FFF"/>
+  <circle cx="49" cy="33" r="3" fill="#9D91FF"/>
+  <circle cx="318" cy="187" r="4" fill="#5145CD"/>
+  <circle cx="300" cy="22" r="2" fill="#FFF" fill-opacity=".55"/>
+</svg>

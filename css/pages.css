@@ -1724,7 +1724,9 @@ body.page-about {
   display: grid;
   place-items: center;
   width: 100%;
-  padding: 8px;
+  aspect-ratio: 3 / 2;
+  padding: 0;
+  overflow: hidden;
   border-bottom: 1px solid var(--border);
   background: #f2f2f7;
 }
@@ -1739,7 +1741,8 @@ body.page-about {
 .play-card__visual img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.45s cubic-bezier(.2,.7,.2,1);
 }
 
@@ -1838,7 +1841,7 @@ body.page-about {
 
 @media (max-width: 767px) {
   .play-grid { grid-template-columns: 1fr; }
-  .play-card__visual { padding: 12px; }
+  .play-card__visual { padding: 0; }
   .play-card__body { padding: 26px 24px 28px; }
   .play-intro {
     min-height: auto;
@@ -4343,7 +4346,7 @@ body.page-about {
 }
 
 .home-work--list .home-work__link {
-  grid-template-columns: minmax(140px, 42%) minmax(0, 1fr);
+  grid-template-columns: minmax(190px, 36%) minmax(0, 1fr);
   grid-template-areas:
     "visual brand"
     "visual copy";
@@ -4352,6 +4355,7 @@ body.page-about {
 }
 
 .home-work--list .home-work__visual {
+  position: relative;
   grid-area: visual;
   width: calc(100% + 13px);
   height: calc(100% + 48px);
@@ -4360,6 +4364,41 @@ body.page-about {
   border: 0;
   border-radius: 0;
   overflow: hidden;
+}
+
+.home-work--list .home-work__visual--generated {
+  background: #f2f0f7;
+  box-shadow: inset -1px 0 #dedee3;
+}
+
+.home-work--list .home-work__visual--generated::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--card-accent) 22%, #eeeaf7);
+  mix-blend-mode: color;
+  opacity: .1;
+  pointer-events: none;
+  transition: opacity 350ms ease;
+}
+
+.home-work--list .home-work__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.9) contrast(.98);
+  transform: scale(1.001);
+  transition: transform 650ms cubic-bezier(.22, 1, .36, 1), filter 350ms ease;
+}
+
+.home-work--list .home-work__row:hover .home-work__image {
+  filter: saturate(1.03) contrast(1.01);
+  transform: scale(1.035);
+}
+
+.home-work--list .home-work__row:hover .home-work__visual--generated::after {
+  opacity: 0;
 }
 
 .home-work--list .home-work__row--secondary .home-work__visual {

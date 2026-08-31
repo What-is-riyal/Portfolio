@@ -1,0 +1,580 @@
+/* ==========================================================================
+   About — "Depth"
+   Scroll drives a camera forward through the research argument, then out
+   into a field of five personal facets. Scroll itself is never hijacked —
+   window scroll position feeds the camera; wheel/touch are never intercepted.
+   ========================================================================== */
+
+.page-depth {
+  --void:       #06060B;
+  --void-lift:  #0E0D18;
+  --ink:        #F2F0FF;
+  --ink-dim:    rgba(242, 240, 255, 0.58);
+  --star:       #9D91FF;
+  --warm:       #FFD8A8;
+  --paper:      #F7F5EF;
+  --paper-ink:  #16141C;
+  --paper-muted:#5E5966;
+}
+
+/* match pages.css's `body.page-about` specificity (element+class) so this
+   actually wins regardless of load order — a bare `.page-depth` class
+   selector would lose to it even loading later. */
+.page-depth > .page,
+body.page-depth {
+  background: var(--void);
+  color: var(--ink);
+}
+
+/* legacy .about-intro rules in pages.css must not leak in */
+.page-depth .about-intro { all: unset; }
+
+/* --------------------------------------------------------------------------
+   The scroll runway + sticky stage
+   -------------------------------------------------------------------------- */
+
+.depth {
+  position: relative;
+  height: 760vh;
+}
+
+.depth__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 45%, #12111F 0%, #06060B 70%);
+  perspective: 900px;
+  perspective-origin: 50% 50%;
+}
+
+.depth__camera {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateZ(var(--cam, 0px));
+  will-change: transform;
+}
+
+.depth__vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: radial-gradient(115% 85% at 50% 50%, transparent 40%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.depth__cue {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(20px, 4vh, 40px);
+  transform: translateX(-50%);
+  z-index: 6;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-archivo);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(242, 240, 255, 0.4);
+  transition: opacity 0.6s ease;
+}
+
+.depth__cue span {
+  color: var(--star);
+  animation: cue-bob 1.8s ease-in-out infinite;
+}
+
+@keyframes cue-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.depth__stage.is-arrived .depth__cue { opacity: 0; }
+
+/* --------------------------------------------------------------------------
+   Plates and facets — shared placement
+   -------------------------------------------------------------------------- */
+
+@property --hover-y {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+.plate,
+.facet {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translate3d(var(--x, 0px), var(--y, 0px), var(--z, 0px));
+  backface-visibility: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Plates — the argument
+   -------------------------------------------------------------------------- */
+
+.plate {
+  width: min(660px, 78vw);
+  text-align: left;
+}
+
+.plate__kicker {
+  margin: 0 0 14px;
+  font-family: var(--font-archivo);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--star);
+}
+
+.plate__section {
+  margin: 0 0 14px;
+  font-family: var(--font-archivo);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--star);
+}
+
+.plate--opener h1 {
+  margin: 0 0 18px;
+  font-family: var(--font-archivo);
+  font-size: clamp(38px, 5.6vw, 72px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.plate__body {
+  margin: 0;
+  max-width: 30ch;
+  font-family: var(--font-archivo);
+  font-size: clamp(17px, 1.7vw, 22px);
+  line-height: 1.6;
+  color: var(--ink-dim);
+}
+
+.plate__quote {
+  margin: 20px 0 0;
+  padding: 20px 0 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  max-width: 28ch;
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.plate__transition {
+  margin: 22px 0 0;
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--warm);
+  opacity: 0.7;
+}
+
+/* --------------------------------------------------------------------------
+   Facets — the personal field
+   -------------------------------------------------------------------------- */
+
+.facet {
+  --hover-y: 0px;
+  width: 260px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: none; /* enabled only once arrived, see JS */
+  transition: --hover-y 0.4s ease;
+}
+
+.depth__stage.is-arrived .facet { pointer-events: auto; }
+
+.facet__frame {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgba(157, 145, 255, 0.25);
+  transition: box-shadow 0.4s ease;
+}
+
+.facet__frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85) brightness(0.82);
+  transition: filter 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.facet:hover .facet__frame,
+.facet:focus-visible .facet__frame { box-shadow: inset 0 0 0 1px rgba(157, 145, 255, 0.6); }
+
+.facet:hover .facet__frame img,
+.facet:focus-visible .facet__frame img {
+  filter: none;
+  transform: scale(1.03);
+}
+
+.facet__title {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-archivo);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.facet__sub {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+
+.facet:hover,
+.facet:focus-visible {
+  --hover-y: -10px;
+}
+
+/* transform chain appends --hover-y after the placement translate3d */
+.facet {
+  transform: translate(-50%, -50%) translate3d(var(--x, 0px), var(--y, 0px), var(--z, 0px)) translateY(var(--hover-y));
+}
+
+.facet:focus-visible {
+  outline: 2px solid var(--star);
+  outline-offset: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Dust — the volumetric version of the site's dot motif
+   -------------------------------------------------------------------------- */
+
+.dust {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.dust__mote {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) translate3d(var(--x, 0px), var(--y, 0px), var(--z, 0px));
+  backface-visibility: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Viewer
+   -------------------------------------------------------------------------- */
+
+.viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 4vw, 56px);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+}
+
+.viewer.is-open { visibility: visible; opacity: 1; transition-delay: 0s; }
+
+.viewer__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  cursor: zoom-out;
+  background: rgba(4, 4, 10, 0.82);
+  backdrop-filter: blur(10px) saturate(0.85);
+}
+
+.viewer__dialog {
+  position: relative;
+  width: min(1000px, 100%);
+  max-height: min(86vh, 820px);
+  overflow: hidden auto;
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--paper-ink);
+  box-shadow: 0 50px 110px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(157, 145, 255, 0.2);
+  transform-origin: var(--origin-x, 50%) var(--origin-y, 50%);
+  transform: scale(0.88) translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.28, 1), opacity 0.34s ease;
+  scrollbar-width: thin;
+}
+
+.viewer.is-open .viewer__dialog { transform: none; opacity: 1; }
+
+.viewer__close {
+  position: sticky;
+  top: 14px;
+  z-index: 5;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 14px -14px auto;
+  padding: 9px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  font-family: var(--font-archivo);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper-ink);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.viewer__close:hover { background: var(--paper-ink); color: var(--paper); transform: translateY(-1px); }
+.viewer__close i { font-style: normal; font-size: 16px; line-height: 1; }
+
+.viewer__panel { display: none; }
+.viewer__panel.is-active { display: block; animation: panel-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both 0.1s; }
+
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+.viewer__kicker {
+  margin: 0 0 14px;
+  font-family: var(--font-archivo);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6A4FD8;
+}
+
+.story {
+  display: grid;
+  gap: clamp(20px, 3vw, 34px);
+  padding: clamp(30px, 4.5vw, 64px);
+}
+
+.story__copy h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-archivo);
+  font-size: clamp(26px, 3.4vw, 42px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--paper-ink);
+  text-wrap: balance;
+}
+
+.story__copy p {
+  margin: 0 0 12px;
+  max-width: 56ch;
+  font-family: var(--font-archivo);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--paper-muted);
+}
+
+.story__copy ul {
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 2px;
+}
+
+.story__copy li {
+  position: relative;
+  padding: 9px 0 9px 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: var(--font-archivo);
+  font-size: 16px;
+  color: var(--paper-ink);
+}
+
+.story__copy li::before {
+  content: "✓";
+  position: absolute;
+  left: 4px;
+  color: #6A4FD8;
+}
+
+.story__plates,
+.contact-sheet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 1.6vw, 20px);
+}
+
+.story__plates--two { grid-template-columns: repeat(2, 1fr); }
+
+.story__plates figure,
+.contact-sheet figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #EBE7DC;
+  box-shadow: 0 16px 34px rgba(20, 18, 28, 0.18);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.story__plates figure:hover,
+.contact-sheet figure:hover { transform: translateY(-6px); }
+
+.story__plates img,
+.contact-sheet img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.story__plates figcaption,
+.contact-sheet figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px 12px 10px;
+  font-family: var(--font-archivo);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75));
+}
+
+.story--cats { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr); align-items: center; }
+.story__cat { margin: 0; }
+.story__cat img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; }
+.story__cat figcaption {
+  padding: 12px 4px 0;
+  color: var(--paper-muted);
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-size: 13px;
+}
+
+body.is-viewer-open { overflow: hidden; }
+
+/* --------------------------------------------------------------------------
+   Fallback: reduced motion, no-js, and phones all share this stacked layout
+   -------------------------------------------------------------------------- */
+
+.no-js .depth {
+  height: auto;
+}
+
+.no-js .depth__stage {
+  position: static;
+  height: auto;
+  overflow: visible;
+  perspective: none;
+  padding: clamp(64px, 10vh, 110px) 0 clamp(48px, 8vh, 90px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(56px, 9vh, 96px);
+}
+
+.no-js .depth__camera { transform: none; }
+
+.no-js .plate,
+.no-js .facet,
+.no-js .dust {
+  position: static;
+  transform: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  visibility: visible !important;
+}
+
+.no-js .dust { display: none; }
+
+.no-js .depth__vignette,
+.no-js .depth__cue { display: none; }
+
+.no-js .facet {
+  width: min(320px, 100%);
+  pointer-events: auto;
+}
+
+@media (max-width: 900px) {
+  .depth__stage:not(.no-js .depth__stage) {
+    position: static;
+    height: auto;
+    overflow: visible;
+    perspective: none;
+    padding: clamp(64px, 10vh, 110px) 0 clamp(48px, 8vh, 90px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(56px, 9vh, 96px);
+  }
+  .depth { height: auto; }
+  .depth__camera { transform: none !important; }
+  .plate, .facet, .dust { position: static !important; transform: none !important; opacity: 1 !important; filter: none !important; visibility: visible !important; }
+  .dust { display: none; }
+  .depth__vignette, .depth__cue { display: none; }
+  .facet { width: min(320px, 100%); pointer-events: auto; }
+  .plate { width: min(560px, 88vw); text-align: left; }
+}
+
+@media (max-width: 560px) {
+  .viewer { padding: 0; }
+  .viewer__dialog { max-height: 100vh; height: 100%; border-radius: 0; }
+  .story__plates, .contact-sheet, .story--cats { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .depth { height: auto; }
+  .depth__stage {
+    position: static; height: auto; overflow: visible; perspective: none;
+    padding: clamp(64px, 10vh, 110px) 0 clamp(48px, 8vh, 90px);
+    display: flex; flex-direction: column; align-items: center; gap: clamp(56px, 9vh, 96px);
+  }
+  .depth__camera { transform: none !important; }
+  .plate, .facet, .dust {
+    position: static !important; transform: none !important;
+    opacity: 1 !important; filter: none !important; visibility: visible !important;
+  }
+  .dust { display: none; }
+  .depth__vignette, .depth__cue { display: none; }
+  .facet { width: min(320px, 100%); pointer-events: auto; }
+  .plate { width: min(560px, 88vw); }
+
+  .viewer__dialog, .facet__frame img, .story__plates figure, .contact-sheet figure {
+    transition-duration: 0.01ms !important;
+  }
+  .viewer__panel.is-active { animation: none !important; }
+  .depth__cue span { animation: none !important; }
+}

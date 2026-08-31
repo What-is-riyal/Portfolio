@@ -14,71 +14,364 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <title>About Priyal Shrivastava</title>
-  <meta name="description" content="About Priyal Shrivastava: singer, former college-radio host, enthusiastic planner, and maker of small experiments.">
+  <meta name="description" content="About Priyal Shrivastava: researcher, singer, former college-radio host, enthusiastic planner, and maker of small experiments.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/grid.css?v=20260811a">
   <link rel="stylesheet" href="css/shell.css?v=20260814scrim2">
-  <link rel="stylesheet" href="css/pages.css?v=20260812about5">
+  <link rel="stylesheet" href="css/pages.css?v=20260817about14">
+  <link rel="stylesheet" href="css/about.css?v=20260831studio1">
 </head>
-<body class="page-about" data-shell-base="" data-shell-page="about">
+<body class="page-about page-studio" data-shell-base="" data-shell-page="about">
   <div class="grain" aria-hidden="true"></div>
   <div class="page">
     <div id="site-nav"></div>
 
     <main id="main" class="site-content">
-      <section class="about-intro" data-about-hero data-field-host>
-        <canvas
-          class="dot-field"
-          data-human-field="48"
-          data-dot-color="157, 145, 255"
-          data-dot-color-muted="255, 255, 255"
-          data-line-color="157, 145, 255"
-          aria-hidden="true"></canvas>
-        <div class="about-intro__inner">
-          <div class="about-collage" aria-label="Photos from Priyal's life outside work">
-            <figure class="about-snapshot about-snapshot--radio">
-              <img src="assets/img/about/radio-hosting.jpg" alt="Priyal hosting a college radio show" width="900" height="503" loading="eager">
-            </figure>
-            <figure class="about-snapshot about-snapshot--singing">
-              <img src="assets/img/about/singing-on-stage.jpg" alt="Priyal singing with a band on stage" width="1200" height="674" loading="eager">
-            </figure>
-            <figure class="about-snapshot about-snapshot--organizing">
-              <img src="assets/img/about/organizing-concerts.jpg" alt="Priyal greeting the audience backstage at a university concert" width="1200" height="691">
-            </figure>
-            <figure class="about-snapshot about-snapshot--pottery">
-              <img src="assets/img/about/pottery-with-friends.jpg" alt="Priyal and friends holding hand-painted pottery" width="900" height="1350">
-            </figure>
-            <figure class="about-snapshot about-snapshot--cats">
-              <img src="assets/img/about/cats.jpg" alt="Priyal sitting with two black-and-white cats" width="800" height="788">
-            </figure>
-            <figure class="about-snapshot about-snapshot--fence">
-              <img src="assets/img/about/painting-the-fence.jpg" alt="Priyal and friends after painting the Carnegie Mellon Fence" width="1200" height="900">
-            </figure>
-            <figure class="about-snapshot about-snapshot--puzzle">
-              <img src="assets/img/about/puzzle.jpg" alt="A colorful jigsaw puzzle in progress on a table" width="675" height="1200">
-            </figure>
-          </div>
-          <div class="about-body">
-            <p class="page-kicker">About</p>
-            <h1 class="voice-opener">Hello!</h1>
-            <p class="about-lede">If you&rsquo;re here, I&rsquo;m hoping I&rsquo;ve captured your interest 🎉</p>
-            <div class="about-stories">
-              <p>I am a classically trained Hindustani singer. At university, I had my own talk show on college radio and organized concerts, so I spent a lot of time both on stage and behind it.</p>
-              <p>I like making things with people. That has meant painting the Carnegie Mellon Fence, making small games and physical objects, and collecting more music recommendations than I can reasonably listen to.</p>
-              <p>I have also fostered six cats and would happily do it again. The two in the photo ran most household decisions while they were with me.</p>
-              <p>I am an obsessive planner who can also sleep anywhere, anytime, anyhow. I pick corn and carrots out of my food, fit into surprisingly small spaces, and look at every possible angle of a situation. Lawyer blood.</p>
-            </div>
-            <p class="about-signoff">Basically, a full hyperactive potato :)</p>
+      <section class="studio" data-studio>
+        <!-- ————— the room ————— -->
+        <div class="studio__wall" aria-hidden="true">
+          <div class="studio__wall-wash"></div>
+          <div class="studio__window">
+            <span></span><span></span><span></span><span></span>
           </div>
         </div>
+
+        <header class="studio__heading">
+          <p class="studio__kicker">About me</p>
+          <h1>It’s late. The <em>desk</em> is still on.</h1>
+          <p class="studio__lede">Everything I think about ended up on one table — policy briefs, a research notebook, a cassette, a half-fired bowl. Pick something up.</p>
+          <p class="studio__hint" data-hint>
+            <span aria-hidden="true">✳</span> Move your cursor — the lamp follows. Click to pick something up, or drag it around the desk.
+          </p>
+        </header>
+
+        <!-- ————— hanging on the wall ————— -->
+        <button class="thing thing--badge" type="button" data-open="research" data-thing="badge"
+                aria-label="Open research, conferences and policy work">
+          <span class="badge">
+            <svg class="badge__strap" viewBox="0 0 120 78" aria-hidden="true">
+              <path d="M60 0 L38 66" /><path d="M60 0 L82 66" />
+              <rect x="50" y="60" width="20" height="12" rx="3" />
+            </svg>
+            <span class="badge__card">
+              <span class="badge__top">
+                <i></i>
+                <span>CHI · 2026</span>
+              </span>
+              <img src="assets/img/about/chi-2026.jpg" alt="" width="3614" height="4820" draggable="false" loading="lazy">
+              <span class="badge__name">Priyal Shrivastava</span>
+              <span class="badge__role">Researcher</span>
+              <span class="badge__barcode" aria-hidden="true"></span>
+            </span>
+          </span>
+          <span class="thing__tag"><strong>Conference badge</strong><span>Research in motion</span></span>
+        </button>
+
+        <button class="thing thing--polaroid" type="button" data-open="quirks" data-thing="polaroid"
+                aria-label="Open the cat photograph and miscellaneous qualifications">
+          <span class="polaroid">
+            <span class="polaroid__pin" aria-hidden="true"></span>
+            <img src="assets/img/about/cats.jpg" alt="" width="800" height="788" draggable="false" loading="lazy">
+            <span class="polaroid__caption">management</span>
+          </span>
+          <span class="thing__tag"><strong>Pinned photo</strong><span>Cats, and other skills</span></span>
+        </button>
+
+        <!-- ————— the desk ————— -->
+        <div class="desk" data-desk>
+          <div class="desk__edge" aria-hidden="true"></div>
+          <div class="desk__grain" aria-hidden="true"></div>
+
+          <!-- the lamp itself -->
+          <div class="deskthing deskthing--lamp" aria-hidden="true">
+            <svg viewBox="0 0 190 240" class="lamp">
+              <ellipse class="lamp__base" cx="150" cy="222" rx="40" ry="10" />
+              <path class="lamp__arm" d="M150 220 C150 150 120 120 78 96" />
+              <path class="lamp__shade" d="M78 96 L26 60 L4 100 L58 132 Z" />
+              <ellipse class="lamp__bulb" cx="31" cy="116" rx="18" ry="8" />
+            </svg>
+          </div>
+
+          <!-- the zine / the argument -->
+          <button class="thing thing--zine" type="button" data-open="magazine" data-thing="zine" data-movable
+                  aria-label="Open the essay: How evidence travels">
+            <span class="zine">
+              <span class="zine__pages" aria-hidden="true"></span>
+              <span class="zine__cover">
+                <span class="zine__issue">Field notes · no. 01</span>
+                <span class="zine__title">How<br><em>evidence</em><br>travels</span>
+                <span class="zine__rule" aria-hidden="true"></span>
+                <span class="zine__deck">Industry, policy, academia,<br>and the space between</span>
+                <span class="zine__author">Priyal Shrivastava</span>
+              </span>
+              <span class="zine__flap" aria-hidden="true"></span>
+            </span>
+            <span class="thing__tag"><strong>The zine</strong><span>Start here</span></span>
+          </button>
+
+          <!-- sketchbook -->
+          <button class="thing thing--sketchbook" type="button" data-open="portraits" data-thing="sketchbook" data-movable
+                  aria-label="Open the digital portraits">
+            <span class="sketchbook">
+              <span class="sketchbook__spiral" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="sketchbook__sheet">
+                <img src="assets/img/about/digital-portrait-01.jpg" alt="" width="2048" height="1365" draggable="false" loading="lazy">
+              </span>
+              <span class="sketchbook__loose" aria-hidden="true">
+                <img src="assets/img/about/digital-portrait-02.jpg" alt="" width="2048" height="1365" draggable="false" loading="lazy">
+              </span>
+              <svg class="sketchbook__stylus" viewBox="0 0 160 20" aria-hidden="true">
+                <path d="M8 10 L128 4 L152 8 L128 16 Z" />
+                <path class="nib" d="M152 8 L160 10 L152 12 Z" />
+              </svg>
+            </span>
+            <span class="thing__tag"><strong>Sketchbook</strong><span>Painted slowly</span></span>
+          </button>
+
+          <!-- cassette -->
+          <button class="thing thing--cassette" type="button" data-open="music" data-thing="cassette" data-movable
+                  aria-label="Open radio, singing and concerts">
+            <span class="cassette">
+              <svg viewBox="0 0 220 140" aria-hidden="true">
+                <rect class="cassette__body" x="2" y="2" width="216" height="136" rx="10" />
+                <rect class="cassette__label" x="16" y="14" width="188" height="58" rx="5" />
+                <g class="cassette__lines">
+                  <path d="M28 30 H150" /><path d="M28 42 H120" /><path d="M28 54 H164" />
+                </g>
+                <rect class="cassette__window" x="46" y="80" width="128" height="40" rx="6" />
+                <g class="cassette__reel cassette__reel--a">
+                  <circle cx="78" cy="100" r="13" />
+                  <g class="spokes"><path d="M78 89 V111" /><path d="M67 100 H89" /><path d="M70 92 L86 108" /><path d="M86 92 L70 108" /></g>
+                </g>
+                <g class="cassette__reel cassette__reel--b">
+                  <circle cx="142" cy="100" r="13" />
+                  <g class="spokes"><path d="M142 89 V111" /><path d="M131 100 H153" /><path d="M134 92 L150 108" /><path d="M150 92 L134 108" /></g>
+                </g>
+                <path class="cassette__tape" d="M91 100 H129" />
+              </svg>
+              <span class="cassette__handwriting">side A — radio hour</span>
+              <span class="cassette__eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            </span>
+            <span class="thing__tag"><strong>Cassette</strong><span>Voice · radio · stage</span></span>
+          </button>
+
+          <!-- pottery / making -->
+          <button class="thing thing--bowl" type="button" data-open="making" data-thing="bowl" data-movable
+                  aria-label="Open things made with people: pottery and painting the Fence">
+            <span class="bowl">
+              <svg viewBox="0 0 180 140" aria-hidden="true">
+                <ellipse class="bowl__shadow" cx="88" cy="126" rx="58" ry="9" />
+                <path class="bowl__body" d="M32 62 C32 118 148 118 148 62 Z" />
+                <ellipse class="bowl__rim" cx="90" cy="62" rx="58" ry="16" />
+                <ellipse class="bowl__inner" cx="90" cy="63" rx="49" ry="12" />
+                <g class="bowl__rings">
+                  <path d="M40 78 C60 92 120 92 140 78" /><path d="M48 94 C64 104 116 104 132 94" />
+                </g>
+              </svg>
+              <svg class="bowl__brush" viewBox="0 0 150 26" aria-hidden="true">
+                <path class="handle" d="M2 12 L96 8 L96 18 L2 16 Z" />
+                <path class="ferrule" d="M96 7 L116 6 L116 20 L96 19 Z" />
+                <path class="bristles" d="M116 6 L146 11 L146 15 L116 20 Z" />
+              </svg>
+              <span class="bowl__splat" aria-hidden="true"></span>
+            </span>
+            <span class="thing__tag"><strong>Half-fired bowl</strong><span>Made with people</span></span>
+          </button>
+
+          <!-- mug, decorative but alive -->
+          <div class="deskthing deskthing--mug" aria-hidden="true">
+            <span class="mug__steam"><i></i><i></i><i></i></span>
+            <svg viewBox="0 0 120 110" class="mug">
+              <ellipse class="mug__shadow" cx="56" cy="100" rx="42" ry="7" />
+              <path class="mug__handle" d="M92 46 C118 40 118 82 92 78" />
+              <path class="mug__body" d="M20 34 H94 L88 96 C88 100 26 100 26 96 Z" />
+              <ellipse class="mug__lip" cx="57" cy="34" rx="37" ry="10" />
+              <ellipse class="mug__tea" cx="57" cy="35" rx="30" ry="7.5" />
+            </svg>
+          </div>
+
+          <!-- the drawer -->
+          <div class="drawer" data-drawer>
+            <button class="drawer__front" type="button" data-drawer-toggle aria-expanded="false" aria-controls="drawer-body">
+              <span class="drawer__handle" aria-hidden="true"></span>
+              <span class="drawer__label">Pull the drawer</span>
+            </button>
+            <div class="drawer__body" id="drawer-body">
+              <div class="drawer__felt">
+                <p class="studio__kicker">Loose in the drawer</p>
+                <ul class="drawer__list">
+                  <li><span>01</span>Classically trained Hindustani singer</li>
+                  <li><span>02</span>Former college-radio host, current concert organiser</li>
+                  <li><span>03</span>Fostered six cats; consulted them on most decisions</li>
+                  <li><span>04</span>Will remove every corn and carrot from a plate</li>
+                  <li><span>05</span>Can sleep absolutely anywhere</li>
+                  <li><span>06</span>Plans things nobody asked to have planned</li>
+                </ul>
+                <p class="drawer__sign">— basically a hyperactive potato with a calendar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="studio__lamplight" data-lamp aria-hidden="true"></div>
+        <div class="studio__vignette" aria-hidden="true"></div>
       </section>
+
+      <!-- ————— what you pick up ————— -->
+      <div class="viewer" data-viewer aria-hidden="true">
+          <button class="viewer__backdrop" type="button" data-close tabindex="-1" aria-label="Put it back down"></button>
+          <div class="viewer__dialog" role="dialog" aria-modal="true" aria-label="About Priyal">
+            <button class="viewer__close" type="button" data-close aria-label="Put it back">
+              <span>Put it back</span><i aria-hidden="true">×</i>
+            </button>
+
+            <!-- the zine -->
+            <article class="viewer__panel viewer__panel--zine" data-panel="magazine" aria-label="How evidence travels">
+              <div class="mag" data-mag>
+                <div class="mag__spread is-active" data-page="1">
+                  <div class="mag__page mag__page--feature">
+                    <p class="mag__folio">01</p>
+                    <p class="studio__kicker">The question</p>
+                    <h2>How does evidence travel?</h2>
+                    <p class="mag__standfirst">Moving between industry, policy, and academia made me increasingly interested in what happens between producing evidence and acting on it.</p>
+                    <div class="mag__orbit" aria-hidden="true">
+                      <span>industry</span><span>policy</span><span>academia</span><strong>research</strong>
+                    </div>
+                  </div>
+                  <div class="mag__page mag__page--essay">
+                    <p class="mag__folio">02</p>
+                    <p class="mag__section">Industry</p>
+                    <p>In industry, research sits alongside commercial incentives and the pressure to act quickly. That proximity to decisions gives it influence, while also shaping which questions receive attention.</p>
+                    <p class="mag__pullquote">Close enough to decisions to have influence. Close enough to incentives to feel their shape.</p>
+                    <p class="mag__margin">Research is never entering an empty room.</p>
+                  </div>
+                </div>
+
+                <div class="mag__spread" data-page="2">
+                  <div class="mag__page mag__page--policy">
+                    <p class="mag__folio">03</p>
+                    <p class="mag__section">Policy</p>
+                    <p>Policy operates at a different scale. Evidence becomes part of a longer process of negotiation between institutions, public priorities, political realities, and competing ideas of what progress should look like.</p>
+                    <div class="mag__words" aria-hidden="true">
+                      <span>institutions</span><span>public priorities</span><span>political realities</span><span>time</span>
+                    </div>
+                  </div>
+                  <div class="mag__page mag__page--academia">
+                    <p class="mag__folio">04</p>
+                    <p class="mag__section">Academia</p>
+                    <p>Research remains the foundation of how I approach both worlds. Academia offers the depth and independence needed to examine difficult questions properly, although its insights do not always travel easily into practice.</p>
+                    <blockquote>Depth matters. So does the distance between an insight and the place it needs to reach.</blockquote>
+                  </div>
+                </div>
+
+                <div class="mag__spread" data-page="3">
+                  <div class="mag__page mag__page--conclusion">
+                    <p class="mag__folio">05</p>
+                    <p class="mag__section">The space between</p>
+                    <p>I am less interested in choosing one of these worlds than in building stronger connections between them: producing careful research, understanding the conditions surrounding a decision, and helping evidence become useful without pretending it can, or should, make the decision by itself.</p>
+                    <span class="mag__scribble" aria-hidden="true">rigor ↔ consequence</span>
+                  </div>
+                  <div class="mag__page mag__page--endnote">
+                    <p class="mag__folio">06</p>
+                    <p class="mag__section">Where that leaves me</p>
+                    <p>Somewhere between the study and the room where it gets used — writing the thing carefully, then staying long enough to see whether it lands.</p>
+                    <p class="mag__margin">Turn the badge over for the fieldwork.</p>
+                  </div>
+                </div>
+
+                <nav class="mag__controls" aria-label="Zine pages">
+                  <button type="button" data-mag-prev aria-label="Previous spread">←</button>
+                  <span><strong data-mag-current>1</strong> / 3</span>
+                  <button type="button" data-mag-next aria-label="Next spread">→</button>
+                </nav>
+              </div>
+            </article>
+
+            <!-- research in motion -->
+            <article class="viewer__panel" data-panel="research" aria-label="Conferences, workshops and policy work">
+              <div class="story story--research">
+                <div class="story__copy">
+                  <p class="studio__kicker">Research in motion</p>
+                  <h2>The work, out of the document.</h2>
+                  <p>Conference rooms, whiteboards, and the arguments that happen after the slides are done. This is where research stops being a file and starts being a conversation.</p>
+                </div>
+                <div class="contact-sheet">
+                  <figure><img src="assets/img/about/chi-2026.jpg" alt="Priyal at CHI 2026 in Barcelona" width="3614" height="4820" loading="lazy"><figcaption>CHI 2026 · Barcelona</figcaption></figure>
+                  <figure><img src="assets/img/about/basis.jpg" alt="Priyal at the Berkeley AI Safety Initiative" width="5712" height="4284" loading="lazy"><figcaption>BASIS · Berkeley</figcaption></figure>
+                  <figure><img src="assets/img/about/policy-workshop-web.jpg" alt="Priyal discussing policy questions beside a whiteboard" width="1800" height="1350" loading="lazy"><figcaption>Thinking in public</figcaption></figure>
+                </div>
+              </div>
+            </article>
+
+            <!-- portraits -->
+            <article class="viewer__panel" data-panel="portraits" aria-label="Digital portraits">
+              <div class="story story--portraits">
+                <div class="story__copy">
+                  <p class="studio__kicker">The sketchbook</p>
+                  <h2>Sometimes I paint people.</h2>
+                  <p>Digital portraits take forever. I make them anyway — mostly because the slowness is the point.</p>
+                </div>
+                <figure class="story__plate story__plate--one"><img src="assets/img/about/digital-portrait-01.jpg" alt="A warm-toned digital portrait painted by Priyal" width="2048" height="1365" loading="lazy"><figcaption>Painted by me</figcaption></figure>
+                <figure class="story__plate story__plate--two"><img src="assets/img/about/digital-portrait-02.jpg" alt="A digital portrait of a woman in a green scarf painted by Priyal" width="2048" height="1365" loading="lazy"><figcaption>Also painted by me</figcaption></figure>
+              </div>
+            </article>
+
+            <!-- music -->
+            <article class="viewer__panel" data-panel="music" aria-label="Radio, singing and concerts">
+              <div class="story story--music">
+                <div class="story__copy">
+                  <p class="studio__kicker">Side A</p>
+                  <h2>A microphone, and the spreadsheet behind it.</h2>
+                  <p>I am a classically trained Hindustani singer. At university I hosted a radio show, sang with bands, and organised concerts. Apparently I enjoy both being on stage and making sure the stage exists.</p>
+                  <span class="story__wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                </div>
+                <figure class="story__plate story__plate--one"><img src="assets/img/about/radio-hosting.jpg" alt="Priyal hosting a college radio show" width="900" height="503" loading="lazy"><figcaption>College radio</figcaption></figure>
+                <figure class="story__plate story__plate--two"><img src="assets/img/about/singing-ensemble.jpg" alt="Priyal singing with a vocal ensemble on stage" width="1125" height="750" loading="lazy"><figcaption>Finding harmony</figcaption></figure>
+                <figure class="story__plate story__plate--three"><img src="assets/img/about/organizing-concerts.jpg" alt="Priyal greeting the audience backstage at a university concert" width="1200" height="691" loading="lazy"><figcaption>Concert chaos</figcaption></figure>
+              </div>
+            </article>
+
+            <!-- making -->
+            <article class="viewer__panel" data-panel="making" aria-label="Things made with people">
+              <div class="story story--making">
+                <div class="story__copy">
+                  <p class="studio__kicker">Made together</p>
+                  <h2>I like things with no deliverable.</h2>
+                  <p>Sometimes that means painting the Carnegie Mellon Fence at 2am. Sometimes it means pottery. The point is usually making something with people I like.</p>
+                </div>
+                <figure class="story__plate story__plate--one"><img src="assets/img/about/pottery-with-friends.jpg" alt="Priyal and friends holding hand-painted pottery" width="900" height="1350" loading="lazy"><figcaption>Pottery day</figcaption></figure>
+                <figure class="story__plate story__plate--two"><img src="assets/img/about/painting-the-fence.jpg" alt="Priyal and friends after painting the Carnegie Mellon Fence" width="1200" height="900" loading="lazy"><figcaption>The Fence</figcaption></figure>
+              </div>
+            </article>
+
+            <!-- quirks -->
+            <article class="viewer__panel" data-panel="quirks" aria-label="Cats and miscellaneous qualifications">
+              <div class="story story--quirks">
+                <figure class="story__plate story__plate--one"><img src="assets/img/about/cats.jpg" alt="Priyal sitting with two black-and-white cats" width="800" height="788" loading="lazy"><figcaption>Two of the six cats I have fostered. They handled most household decisions.</figcaption></figure>
+                <div class="story__copy">
+                  <p class="studio__kicker">Miscellaneous qualifications</p>
+                  <h2>Special skills, loosely defined.</h2>
+                  <ul class="story__list">
+                    <li>Planning everything</li>
+                    <li>Sleeping anywhere</li>
+                    <li>Removing every corn and carrot</li>
+                    <li>Fitting into improbably small spaces</li>
+                    <li>Examining every possible angle</li>
+                  </ul>
+                  <p>Basically, a hyperactive potato with a calendar.</p>
+                </div>
+              </div>
+            </article>
+        </div>
+      </div>
 
       <div id="site-footer"></div>
     </main>
   </div>
 
   <script src="js/shell.js?v=20260814scrim1" defer></script>
+  <script src="js/about.js?v=20260831studio1" defer></script>
 </body>
 </html>

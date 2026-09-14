@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png"><link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <title>Policy Diff Observatory | Priyal Shrivastava</title>
+  <meta name="description" content="An interactive record of verified changes to public AI-company policies, model specifications, and safety frameworks.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/grid.css?v=20260812a"><link rel="stylesheet" href="../css/shell.css?v=20260902footer1"><link rel="stylesheet" href="../css/section-rail.css?v=20260812theme2"><link rel="stylesheet" href="../css/case-system.css?v=20260814scrim1"><link rel="stylesheet" href="../css/ais-projects.css?v=20260907research1">
+</head>
+<body class="case-study case-study--dark-hero ais-case ais-theme--observatory seal-brief-page ais-research-page" data-shell-base="../" data-shell-page="work">
+  <div class="grain" aria-hidden="true"></div><div class="progress" id="progress" aria-hidden="true"></div><nav id="section-rail" class="section-rail" aria-label="On this page"></nav><div id="site-nav"></div>
+  <main id="main">
+    <section class="case-hero case-hero--dark"><div class="container">
+      <div class="ais-status">Prototype · recorded snapshots</div><p class="eyebrow">AI governance · accountability infrastructure</p><p class="q-label">Policy Diff Observatory</p>
+      <h1>Tracking changes to AI-company policies</h1>
+      <p class="hero-standfirst">A source-linked prototype for recording changes to public AI-company policies, model specifications, terms, and safety frameworks.</p>
+    </div></section>
+    <section class="snapshot"><div class="container"><div class="snapshot-grid">
+      <div class="snap-item"><p class="s-label">Role</p><p class="s-value">Independent researcher and builder</p></div><div class="snap-item"><p class="s-label">Coverage</p><p class="s-value">Seven companies<small>eleven documents</small></p></div><div class="snap-item"><p class="s-label">Latest recorded check</p><p class="s-value">15 August 2026<small>scheduled monitoring under development</small></p></div><div class="snap-item"><p class="s-label">Audit trail</p><p class="s-value">Archived sources and Git history</p></div>
+    </div></div></section>
+
+    <section class="strip" id="problem" data-rail="Problem"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">01 · Research problem</p><h2>Missing policy history</h2><p class="seal-brief-intro">AI companies publish rules that describe acceptable use, model behavior, and safety commitments. These pages are often updated in place. A reader can see the current version but may have difficulty finding what changed, when it changed, or how the earlier language differed.</p></div>
+      <div class="seal-two-column"><div><h3>Research need</h3><p class="seal-body-copy">Researchers and policymakers need a durable record to study how company commitments evolve. That record must preserve the original text, show the exact edit, and make every comparison independently checkable.</p></div><aside class="seal-question"><span>Research question</span><p>How can changes to public AI governance documents be recorded while reserving interpretation for researchers?</p></aside></div>
+    </div></section>
+
+    <section class="strip" id="method" data-rail="Method"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">02 · Method</p><h2>Version-tracking pipeline</h2><p class="seal-brief-intro">The prototype retrieves a fixed list of public documents and compares each successful retrieval with the last trusted copy. The intended operating schedule is one check each week.</p></div>
+      <ol class="seal-sequence">
+        <li><span>01</span><div><h3>Retrieve</h3><p>Fetch the public document from the company’s official page.</p></div></li>
+        <li><span>02</span><div><h3>Check</h3><p>Reject pages that are empty, unusually short, or much smaller than the stored version.</p></div></li>
+        <li><span>03</span><div><h3>Compare</h3><p>Align the old and new text and record additions and removals.</p></div></li>
+        <li><span>04</span><div><h3>Preserve</h3><p>Save the new snapshot, the exact difference, source links, and repository history.</p></div></li>
+      </ol>
+      <div class="seal-callout seal-callout--wide"><h3>Evidence rule</h3><p>A failed or doubtful retrieval creates a visible source-health warning and retains the last trusted version. Only a validated retrieval enters the research record.</p></div>
+    </div></section>
+
+    <section class="strip" id="record" data-rail="Record"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">03 · Research record</p><h2>Evidence attached to each change</h2></div>
+      <ul class="seal-bullet-list seal-reading-width"><li><strong>Changed text:</strong> the exact additions and removals</li><li><strong>Live source:</strong> the company’s current public document</li><li><strong>Archived source:</strong> an earlier Wayback Machine capture when a usable copy exists</li><li><strong>Comparison date:</strong> the version and date used as the baseline</li><li><strong>Repository history:</strong> the commit that preserves the update</li><li><strong>Source health:</strong> the latest successful or failed retrieval status</li></ul>
+    </div></section>
+
+    <section class="strip" id="tool" data-rail="Tool"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">04 · Research interface</p><h2>Policy Diff Observatory</h2><p class="seal-brief-intro">The interface filters the record by company, document, date, and document type. Each entry preserves the changed text, comparison date, source link, and collection status.</p></div>
+      <div class="ais-launch-card ais-launch-card--light"><div><h3>Prototype status</h3><p>The source-tracking pipeline and interface are implemented locally. Public launch depends on committing the scheduled monitor and verifying successful recurring runs.</p></div><span class="ais-status">Last checked · 15 August 2026</span></div>
+    </div></section>
+
+    <section class="strip" id="limits" data-rail="Limits"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">05 · Interpretation</p><h2>Coverage and limits</h2></div>
+      <ul class="seal-bullet-list seal-reading-width"><li>The Observatory covers public documents that can be retrieved as reliable text from a stable URL.</li><li>Browser-only, blocked, or incomplete pages enter a review queue for manual collection.</li><li>Each entry presents the textual change and its supporting evidence for researcher interpretation.</li><li>Historical coverage depends on the availability and quality of archived pages.</li><li>Researchers interpret each change in its legal, technical, and institutional context.</li></ul>
+    </div></section>
+
+    <section class="case-ending" id="design" data-rail="Principles"><div class="container">
+      <p class="kicker">Methodological choices</p><h2>Design principles</h2>
+      <div class="ais-next-list"><article><span>01</span><h3>Primary sources</h3><p>Begin with company-published governance documents.</p></article><article><span>02</span><h3>Historical baseline</h3><p>Use archived captures to recover earlier document history.</p></article><article><span>03</span><h3>Visible source health</h3><p>Show the latest check status for every monitored document.</p></article></div>
+      <div class="case-next"><p class="label">Next project</p><a href="model-self-report-lab.html"><span><span class="case-next__eyebrow">Model behavior · research prototype</span><span class="case-next__title">Testing model self-reports as measurements</span></span><span aria-hidden="true">→</span></a></div>
+    </div><div id="site-footer"></div></section>
+  </main>
+  <script src="../js/shell.js?v=20260902footer1" defer></script><script src="../js/case-system.js?v=20260812b" defer></script><script src="../js/section-rail.js?v=20260808h" defer></script>
+</body>
+</html>

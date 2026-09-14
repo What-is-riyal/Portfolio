@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png"><link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <title>CORDA: a common testbed for alternative feed rankers | Priyal Shrivastava</title>
+  <meta name="description" content="A catalog and common simulation framework for comparing alternative social-media ranking algorithms on shared policy-relevant measures.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/grid.css?v=20260812a"><link rel="stylesheet" href="../css/shell.css?v=20260902footer1"><link rel="stylesheet" href="../css/section-rail.css?v=20260812theme2"><link rel="stylesheet" href="../css/case-system.css?v=20260814scrim1"><link rel="stylesheet" href="../css/ais-projects.css?v=20260908research2">
+</head>
+<body class="case-study case-study--dark-hero ais-case ais-theme--corda seal-brief-page ais-research-page" data-shell-base="../" data-shell-page="work">
+  <div class="grain" aria-hidden="true"></div><div class="progress" id="progress" aria-hidden="true"></div><nav id="section-rail" class="section-rail" aria-label="On this page"></nav><div id="site-nav"></div>
+  <main id="main">
+    <section class="case-hero case-hero--dark"><div class="container">
+      <div class="ais-status">Ongoing research · demo paper</div><p class="eyebrow">AI governance · recommender systems</p><p class="q-label">CORDA</p>
+      <h1>A common testbed for alternative feed rankers</h1>
+      <p class="hero-standfirst">Academic researchers have proposed many alternatives to engagement-based ranking. CORDA brings these approaches into one catalog and evaluates them in the same simulated environment using shared measures.</p>
+    </div></section>
+    <section class="snapshot"><div class="container"><div class="snapshot-grid">
+      <div class="snap-item"><p class="s-label">Role</p><p class="s-value">Researcher and co-author</p></div><div class="snap-item"><p class="s-label">Research output</p><p class="s-value">Ranker library and common testbed</p></div><div class="snap-item"><p class="s-label">Initial comparison</p><p class="s-value">Six ranking rules</p></div><div class="snap-item"><p class="s-label">Current run</p><p class="s-value">1,123 ticks<small>demo-paper results</small></p></div>
+    </div></div></section>
+
+    <section class="strip" id="question" data-rail="Question"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">01 · Research problem</p><h2>Fragmented evidence on alternative rankers</h2><p class="seal-brief-intro">Academic work already contains chronological, bridging, diversity-oriented, toxicity-aware, and other ranking methods. These proposals are spread across papers and are often evaluated with different datasets and metrics. Policy teams must first find the alternatives, understand how each one works, and determine whether the reported results can be compared.</p></div>
+      <div class="seal-two-column"><div><h3>Policy need</h3><p class="seal-body-copy">A shared repository can make alternative rankers easier to discover. A common testbed can then compare their effects under the same conditions, giving policymakers a clearer view of benefits, risks, and tradeoffs.</p></div><aside class="seal-question"><span>Research question</span><p>How can alternative feed-ranking algorithms be documented and compared using one set of policy-relevant measures?</p></aside></div>
+    </div></section>
+
+    <section class="strip" id="method" data-rail="Method"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">02 · Research infrastructure</p><h2>Catalog and common testbed</h2><p class="seal-brief-intro">CORDA combines two forms of infrastructure: a structured record of alternative ranking methods and a simulation for comparing selected methods under consistent conditions.</p></div>
+      <ol class="seal-outline"><li><div class="seal-outline__number">1</div><div><h3>Ranker catalog</h3><p class="seal-body-copy">For each method, record its objective, required inputs, scoring rule, source paper, expected benefit, known tradeoffs, and evaluation evidence.</p></div></li><li><div class="seal-outline__number">2</div><div><h3>Common testbed</h3><p class="seal-body-copy">Implement selected methods in the same environment and compare them using shared populations, seed content, interaction rules, and outcome measures.</p></div></li></ol>
+
+      <div class="seal-section-divider"><p class="kicker">Initial experiment</p><h2>Controlled social-media simulation</h2><p class="seal-brief-intro">Six Mastodon servers receive the same agent population, interaction rules, and COVID-19 seed corpus. Each server uses a different ranking rule.</p></div>
+      <dl class="seal-parameters"><div><dt>Agents</dt><dd>3,000 personas based on European Social Survey and Eurostat data</dd></div><div><dt>Seed content</dt><dd>Approximately 1,300 public posts about COVID-19</dd></div><div><dt>Agent actions</dt><dd>Post, reply, favorite, boost, or quote</dd></div><div><dt>Feed</dt><dd>20 posts selected from the 250 most recent posts</dd></div></dl>
+      <div class="seal-callout seal-callout--wide"><h3>Experimental control</h3><p>The agent population, starting content, and interaction budget remain the same across conditions. Differences between the six simulations can therefore be compared with less interference from sampling or exposure.</p></div>
+
+      <article class="seal-persona">
+        <div><p class="seal-note-label">Illustrative simulation record</p><h3>Marta, 37 · Spain</h3><p>This constructed example shows the survey-derived information used to specify an agent persona.</p></div>
+        <dl><div><dt>Internet use</dt><dd>Daily</dd></div><div><dt>Education</dt><dd>Postsecondary</dd></div><div><dt>Political interest</dt><dd>Quite interested</dd></div><div><dt>Left–right placement</dt><dd>4 on a 0–10 scale</dd></div><div><dt>Trust in parliament</dt><dd>5 on a 0–10 scale</dd></div><div><dt>Available actions</dt><dd>Post, reply, favorite, boost, quote</dd></div></dl>
+      </article>
+    </div></section>
+
+    <section class="strip" id="rankings" data-rail="Ranking rules"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">03 · Initial catalog</p><h2>Six ranking rules</h2><p class="seal-brief-intro">The first comparison includes a neutral time-based baseline, a conventional engagement ranker, three proposed interventions, and an intentionally polarizing condition.</p></div>
+      <ol class="seal-outline seal-outline--compact">
+        <li><div class="seal-outline__number">1</div><div><h3>Chronological</h3><p class="seal-body-copy">Shows the newest posts first.</p></div></li>
+        <li><div class="seal-outline__number">2</div><div><h3>Engagement</h3><p class="seal-body-copy">Ranks replies, quotes, favorites, and boosts, with more weight on resharing.</p></div></li>
+        <li><div class="seal-outline__number">3</div><div><h3>Bridging</h3><p class="seal-body-copy">Raises posts that receive approval from users with different interaction histories.</p></div></li>
+        <li><div class="seal-outline__number">4</div><div><h3>Homophily</h3><p class="seal-body-copy">Raises posts favored by users similar to the viewer, creating an intentional echo-chamber condition.</p></div></li>
+        <li><div class="seal-outline__number">5</div><div><h3>Lower outrage</h3><p class="seal-body-copy">Reduces the rank of posts that combine moral language with anger or disgust.</p></div></li>
+        <li><div class="seal-outline__number">6</div><div><h3>Lower toxicity</h3><p class="seal-body-copy">Reduces the rank of posts with a higher toxicity score.</p></div></li>
+      </ol>
+    </div></section>
+
+    <section class="strip" id="measures" data-rail="Measures"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">04 · Evaluation framework</p><h2>Shared measures</h2><p class="seal-brief-intro">The measures cover both public-interest outcomes and implementation constraints. Using the same measures for each ranker makes tradeoffs visible.</p></div>
+      <dl class="seal-tactics seal-tactics--metrics">
+        <div><dt>Engagement</dt><dd><strong>Policy feasibility.</strong> Measures favorites, replies, views, boosts, and quotes. A ranker that improves public-interest measures but sharply reduces participation may face resistance from platforms, so engagement must be evaluated rather than assumed.</dd></div>
+        <div><dt>Conversation size</dt><dd><strong>Depth of interaction.</strong> Measures the number and structure of replies alongside lightweight reactions.</dd></div>
+        <div><dt>Cross-group approval</dt><dd><strong>Bridging.</strong> Tests whether a post receives positive engagement from users with different interaction histories.</dd></div>
+        <div><dt>Moral outrage</dt><dd><strong>Emotional amplification.</strong> Tracks moral language combined with anger or disgust because this combination is associated with online diffusion.</dd></div>
+        <div><dt>Toxicity and hate speech</dt><dd><strong>Discourse quality.</strong> Tests whether a ranking rule changes the circulation of hostile or abusive content.</dd></div>
+        <div><dt>Conspiracy content</dt><dd><strong>Information quality.</strong> Measures the spread of conspiracy narratives in the COVID-19 seed corpus.</dd></div>
+      </dl>
+      <div class="seal-callout seal-callout--wide"><h3>Engagement as an implementation constraint</h3><p>Engagement is both an outcome and an implementation constraint. Measuring it shows whether an alternative ranker can improve other outcomes while maintaining enough participation to be practical for platforms and acceptable to users.</p></div>
+    </div></section>
+
+    <section class="strip" id="results" data-rail="Results"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">05 · Preliminary results</p><h2>Feed-level comparison</h2><p class="seal-brief-intro">The current evidence comes from one 1,123-tick exploratory run. It demonstrates the comparison workflow and surfaces several results that the longer, repeated experiment must investigate.</p></div>
+      <div class="ais-visual-grid ais-research-figures"><figure class="seal-figure"><img src="../assets/img/ais/corda-engagement.webp" alt="Box plots of favorites, views, and replies under six ranking rules" loading="lazy"><figcaption>Engagement distributions overlap across the six conditions in the short run, with comparable participation across rankers.</figcaption></figure><figure class="seal-figure"><img src="../assets/img/ais/corda-conspiracy.webp" alt="Rolling mean conspiracy scores under six ranking rules" loading="lazy"><figcaption>Conspiracy scores vary sharply early in the run and then fall across conditions. The toxicity-downranking condition shows the largest early spike.</figcaption></figure><figure class="seal-figure"><img src="../assets/img/ais/corda-outrage.webp" alt="Box plots of mean moral-outrage scores under six ranking rules" loading="lazy"><figcaption>The outrage-downranking condition has a lower median than the chronological, engagement, and homophily conditions, although their distributions overlap.</figcaption></figure><figure class="seal-figure"><img src="../assets/img/ais/corda-bridging.webp" alt="Rolling mean cross-group approval under six ranking rules" loading="lazy"><figcaption>The chronological condition sustains the highest observed bridging score, ahead of the intended bridging ranker in the short run.</figcaption></figure></div>
+      <dl class="seal-tactics seal-tactics--metrics ais-result-summary">
+        <div><dt>Implementation result</dt><dd>Six ranking rules ran against the same population, seed corpus, candidate window, and interaction rules. The experiment can therefore expose directional differences under controlled conditions.</dd></div>
+        <div><dt>Unexpected result</dt><dd>The chronological condition produced the highest rolling bridging score. This result raises a calibration or construct-validity question for the bridging intervention.</dd></div>
+        <div><dt>Adoption constraint</dt><dd>The engagement distributions overlap across conditions in this run. Repeated runs are needed to estimate whether public-interest interventions preserve participation reliably.</dd></div>
+        <div><dt>Inference boundary</dt><dd>These plots describe one simulated run. The next analysis will report repeated-run uncertainty before drawing conclusions about ranker performance.</dd></div>
+      </dl>
+    </div></section>
+
+    <section class="strip" id="dashboard" data-rail="Dashboard"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">06 · Research tool</p><h2>Simulation dashboard</h2><p class="seal-brief-intro">The dashboard lets readers compare conditions, inspect simulated feeds, and change the measure or time window.</p></div>
+      <div class="ais-launch-card ais-launch-card--light"><div><h3>Open the dashboard</h3><p>Start with the engagement condition and compare it with the chronological, bridging, and downranking conditions.</p></div><a class="ais-button" href="https://corda.edcx.io/dashboard" target="_blank" rel="noopener noreferrer">Launch dashboard ↗</a></div>
+      <div class="ais-actions"><a class="ais-button" href="https://github.com/CORDA-p10/social-media-project" target="_blank" rel="noopener noreferrer">View the code and supplementary material ↗</a></div>
+    </div></section>
+
+    <section class="strip" id="dsa" data-rail="DSA"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">07 · Policy relevance</p><h2>Digital Services Act</h2><p class="seal-brief-intro">The European Union’s Digital Services Act creates a policy setting in which comparative evidence about recommendation systems can be useful.</p></div>
+      <ul class="seal-bullet-list seal-reading-width"><li><strong>Recommender transparency:</strong> Article 27 requires platforms to explain the main parameters used in their recommender systems and the options users have to influence them.</li><li><strong>Systemic-risk assessment:</strong> very large platforms must assess risks connected to the design and use of their services, including recommendation systems.</li><li><strong>Risk mitigation:</strong> platforms must adopt reasonable and proportionate measures for the risks they identify.</li><li><strong>Alternative option:</strong> Article 38 requires very large platforms using recommender systems to offer at least one option that is not based on profiling.</li><li><strong>Research access:</strong> Article 40 and the 2025 delegated act provide a route for vetted researchers to request platform data for research on systemic risks.</li></ul>
+      <div class="seal-callout seal-callout--wide"><h3>Potential use</h3><p>A catalog and common testbed could help researchers identify candidate mitigation measures, compare their tradeoffs, and prepare evidence for a platform risk assessment or vetted-researcher data request.</p></div>
+      <div class="seal-references"><h3>Research and policy sources</h3><ul><li><a href="https://arxiv.org/abs/2301.09976" target="_blank" rel="noopener noreferrer">Ovadya and Thorburn: Bridging Systems ↗</a></li><li><a href="https://arxiv.org/abs/2603.19626" target="_blank" rel="noopener noreferrer">Prosocial Ranking Challenge ↗</a></li><li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32022R2065" target="_blank" rel="noopener noreferrer">Digital Services Act: Articles 27, 34, 35, 38, and 40 ↗</a></li><li><a href="https://digital-strategy.ec.europa.eu/en/news/new-measures-unlock-access-data-largest-online-platforms-support-research" target="_blank" rel="noopener noreferrer">European Commission: DSA researcher data access ↗</a></li></ul></div>
+    </div></section>
+
+    <section class="strip" id="limits" data-rail="Limits"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">08 · Interpretation</p><h2>Study limits</h2></div>
+      <ul class="seal-bullet-list seal-reading-width"><li>LLM agents provide controlled behavioral proxies for this comparison.</li><li>The reported results cover 1,123 ticks; the planned experiment covers 5,000.</li><li>The measures are proxies for properties such as bridging, outrage, toxicity, and conspiracy content.</li><li>Personas use 2023 survey data while the simulated discussion is set in 2020.</li><li>A human-participant study will test which patterns carry into real use.</li></ul>
+    </div></section>
+
+    <section class="case-ending" id="next" data-rail="Next"><div class="container">
+      <p class="kicker">Next research phase</p><h2>Validation plan</h2>
+      <div class="ais-next-list"><article><span>01</span><h3>Longer runs</h3><p>Complete the planned 5,000-tick experiment.</p></article><article><span>02</span><h3>Effect estimates</h3><p>Report uncertainty across ranking conditions.</p></article><article><span>03</span><h3>Human study</h3><p>Compare simulation patterns with participant behavior.</p></article></div>
+      <div class="case-next"><p class="label">Next project</p><a href="election-deepfakes-policy.html"><span><span class="case-next__eyebrow">AI policy · first-place proposal</span><span class="case-next__title">Defending elections from synthetic media</span></span><span aria-hidden="true">→</span></a></div>
+    </div><div id="site-footer"></div></section>
+  </main>
+  <script src="../js/shell.js?v=20260902footer1" defer></script><script src="../js/case-system.js?v=20260812b" defer></script><script src="../js/section-rail.js?v=20260808h" defer></script>
+</body>
+</html>

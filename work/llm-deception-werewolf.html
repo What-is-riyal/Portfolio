@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png"><link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <title>Deceptive tactics in competitive LLM agents | Priyal Shrivastava</title>
+  <meta name="description" content="An exploratory study of competitive training, nine deceptive tactics, and safety behavior in an LLM Werewolf agent.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/grid.css?v=20260812a"><link rel="stylesheet" href="../css/shell.css?v=20260902footer1"><link rel="stylesheet" href="../css/section-rail.css?v=20260812theme2"><link rel="stylesheet" href="../css/case-system.css?v=20260814scrim1"><link rel="stylesheet" href="../css/ais-projects.css?v=20260908research2">
+</head>
+<body class="case-study case-study--dark-hero ais-case ais-theme--werewolf seal-brief-page ais-research-page" data-shell-base="../" data-shell-page="work">
+  <div class="grain" aria-hidden="true"></div><div class="progress" id="progress" aria-hidden="true"></div><nav id="section-rail" class="section-rail" aria-label="On this page"></nav><div id="site-nav"></div>
+  <main id="main">
+    <section class="case-hero case-hero--dark"><div class="container">
+      <div class="ais-status">Working paper · exploratory study</div>
+      <p class="eyebrow">AI safety · multi-agent systems</p><p class="q-label">Competitive post-training</p>
+      <h1>Deceptive tactics in competitive LLM agents</h1>
+      <p class="hero-standfirst">We use Werewolf as a controlled setting for studying how LLM agents persuade, conceal information, and coordinate when they are rewarded for winning. My primary contribution is a qualitative taxonomy of nine deceptive tactics found in the game transcripts.</p>
+    </div></section>
+    <section class="snapshot"><div class="container"><div class="snapshot-grid">
+      <div class="snap-item"><p class="s-label">Primary contribution</p><p class="s-value">Behavioral taxonomy and analysis</p></div>
+      <div class="snap-item"><p class="s-label">Team</p><p class="s-value">Leander Maben, Danqing Wang, Priyal Shrivastava</p></div>
+      <div class="snap-item"><p class="s-label">Model coverage</p><p class="s-value">Five baseline models<small>Qwen3-4B used for post-training</small></p></div>
+      <div class="snap-item"><p class="s-label">Stage</p><p class="s-value">Exploratory study<small>working paper</small></p></div>
+    </div></div></section>
+
+    <section class="strip" id="question" data-rail="Question"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">01 · Research question</p><h2>Competitive training and deception</h2><p class="seal-brief-intro">LLM agents are increasingly used in settings where they negotiate, persuade, or compete. If winning is the only goal, an agent may learn strategies that work in the task but create problems in other settings.</p></div>
+      <div class="seal-two-column">
+        <div><h3>Evaluation setting</h3><p class="seal-body-copy">Werewolf gives agents opposing goals. Wolves must hide their identity and influence a group vote. Villagers must combine partial information, identify the wolves, and coordinate around a decision. The game makes persuasion, concealment, and group coordination visible in the transcript.</p></div>
+        <aside class="seal-question"><span>Research question</span><p>Does training an agent to win change its deceptive strategies or its broader safety behavior?</p></aside>
+      </div>
+    </div></section>
+
+    <section class="strip" id="method" data-rail="Method"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">02 · Method</p><h2>Training and evaluation design</h2><p class="seal-brief-intro">We trained one wolf agent while keeping the other agents fixed. This isolates changes in the trained model within a repeatable competitive setting.</p></div>
+      <dl class="seal-parameters">
+        <div><dt>Training</dt><dd>200 reinforcement-learning steps</dd></div>
+        <div><dt>Scenario set</dt><dd>800 games across five fixed templates</dd></div>
+        <div><dt>Checkpoints</dt><dd>Steps 0, 19, 39, and 59</dd></div>
+        <div><dt>Game evaluation</dt><dd>Three games at each checkpoint</dd></div>
+      </dl>
+      <ol class="seal-outline">
+        <li><div class="seal-outline__number">1</div><div><h3>Train for game performance</h3><p class="seal-body-copy">The reward includes winning, survival, faster wins, eliminating special roles, and producing valid game actions.</p></div></li>
+        <li><div class="seal-outline__number">2</div><div><h3>Code deceptive behavior</h3><p class="seal-body-copy">At each checkpoint, we compare self-reported deception, deception reported by other agents, and the use of omission, distortion, misdirection, and fabrication.</p></div></li>
+        <li><div class="seal-outline__number">3</div><div><h3>Run external safety evaluations</h3><p class="seal-body-copy">We test each checkpoint on TruthfulQA, ToxiGen, RealToxicityPrompts, and a harmlessness evaluation.</p></div></li>
+      </ol>
+      <div class="seal-callout seal-callout--wide"><h3>Baseline comparison</h3><p>Before post-training, the study examined transcripts from Claude 3.7 Sonnet, Gemini 3.1 Pro, GPT-4.1 mini, Llama 3.2 11B, and Qwen3-4B. This broader set supplied the examples used to develop the qualitative taxonomy.</p></div>
+    </div></section>
+
+    <section class="strip" id="findings" data-rail="Findings"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">03 · Findings</p><h2>Exploratory results</h2><p class="seal-brief-intro">The trained wolf became better at winning and avoiding exile. Across the sampled checkpoints, the frequency, form, and timing of its deceptive strategies changed in different directions.</p></div>
+      <div class="seal-two-column seal-two-column--even">
+        <div><h3>Game behavior</h3><ul class="seal-bullet-list"><li>Wolf wins increased from one of three games at step 0 to three of three at steps 39 and 59.</li><li>The wolf’s exile rate fell from 66.7% to 0%.</li><li>Fabrication fell early in training, while distortion later increased.</li><li>Speaking first was more closely associated with winning than the overall frequency of deception.</li><li>Villagers sometimes identified the wolf correctly but failed to coordinate a winning vote.</li></ul></div>
+        <div><h3>External evaluations</h3><ul class="seal-bullet-list"><li>TruthfulQA accuracy declined across the sampled checkpoints.</li><li>ToxiGen classification accuracy declined.</li><li>The model became less likely to refuse harmful requests.</li><li>Generated-toxicity scores changed only slightly.</li></ul></div>
+      </div>
+      <figure class="seal-figure"><img src="../assets/img/ais/werewolf-safety-chart.webp" alt="Truthfulness, toxicity classification, refusal, and generated-toxicity measures across four training checkpoints" loading="lazy"><figcaption>External safety measures across checkpoints. These results describe one model and a small number of game evaluations.</figcaption></figure>
+    </div></section>
+
+    <section class="strip" id="behavior" data-rail="Behavior"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">04 · Behavioral analysis</p><h2>Nine deceptive tactics</h2><p class="seal-brief-intro">My main contribution was the qualitative analysis of game transcripts. I identified nine ways agents shaped the discussion, managed suspicion, and influenced the group vote. This extends the analysis beyond counting whether a statement was labeled deceptive.</p></div>
+      <figure class="seal-figure"><img src="../assets/img/ais/werewolf-behavior-grid.webp" alt="Nine agent behaviors observed in Werewolf: impersonation, pile-on doubt, bandwagoning, power grabs, information stacking, deflection, trust farming, selective silence, and friendly betrayal" loading="lazy"><figcaption>The nine-tactic taxonomy developed from close reading of the game transcripts.</figcaption></figure>
+
+      <div class="seal-two-column seal-two-column--even ais-analysis-method">
+        <div>
+          <h3>Taxonomy development</h3>
+          <ul class="seal-bullet-list">
+            <li>Used the MentalManip taxonomy as a starting set of sensitizing concepts.</li>
+            <li>Close-read baseline transcripts across five model families.</li>
+            <li>Recorded the tactic, its function in the game, a transcript example, and the model and scenario in which it appeared.</li>
+            <li>Added friendly betrayal to capture teammate sacrifice as a distinct tactic.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Unit of analysis</h3>
+          <p class="seal-body-copy">The analysis treats deception as an interaction strategy rather than only a false sentence. A tactic can operate through a role claim, speaking order, repeated social signals, selective disclosure, or a coordinated vote.</p>
+        </div>
+      </div>
+
+      <dl class="seal-tactics">
+        <div><dt><span>01</span>Impersonation</dt><dd><strong>False role claim.</strong> A wolf claims to be the Seer and presents a fabricated inspection result as privileged evidence.</dd></div>
+        <div><dt><span>02</span>Pile-on doubt</dt><dd><strong>Coordinated suspicion.</strong> Multiple agents repeat doubts about a truthful player until the group treats the accusation as credible.</dd></div>
+        <div><dt><span>03</span>Bandwagoning</dt><dd><strong>Strategic agreement.</strong> An agent joins the apparent majority to look cooperative while protecting its position or teammate.</dd></div>
+        <div><dt><span>04</span>Power grab</dt><dd><strong>Control through authority.</strong> A wolf seeks the Sheriff role to influence speaking order, discussion, and voting while presenting the move as public service.</dd></div>
+        <div><dt><span>05</span>Information stacking</dt><dd><strong>Control through timing.</strong> An agent arranges to speak after others so it can absorb their claims before choosing its own position.</dd></div>
+        <div><dt><span>06</span>Deflection</dt><dd><strong>Redirected scrutiny.</strong> The agent answers an accurate accusation by attacking the accuser or shifting attention to another player.</dd></div>
+        <div><dt><span>07</span>Trust farming</dt><dd><strong>Performed helpfulness.</strong> Repeated claims of cooperation and concern build credibility that can later support misleading advice.</dd></div>
+        <div><dt><span>08</span>Selective silence</dt><dd><strong>Asymmetric disclosure.</strong> The agent asks others to share information while withholding facts that would expose its own role.</dd></div>
+        <div><dt><span>09</span>Friendly betrayal</dt><dd><strong>Teammate sacrifice.</strong> A wolf turns against another wolf when doing so protects its own cover or improves its chance of survival.</dd></div>
+      </dl>
+
+      <div class="seal-callout seal-callout--wide"><h3>Analytic contribution</h3><p>The taxonomy distinguishes nine ways an agent can influence a group while hiding its objective. It captures strategies that frequency measures miss, especially control through timing, authority, and repeated signals of cooperation.</p></div>
+      <div class="seal-callout seal-callout--wide"><h3>Friendly-betrayal measurement</h3><p>The current game setup supplied teammate identity inconsistently. The next evaluation will provide that information explicitly before estimating how often teammate sacrifice occurs.</p></div>
+    </div></section>
+
+    <section class="strip" id="limits" data-rail="Limits"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">05 · Interpretation</p><h2>Study limits</h2></div>
+      <ul class="seal-bullet-list seal-reading-width"><li>Training used one model, Qwen3-4B.</li><li>Checkpoint comparisons include three games each and provide hypothesis-generating estimates.</li><li>The self- and peer-report measures tracked social suspicion more directly than factual truth.</li><li>Inconsistent teammate information means much of the evaluation reflects solo-wolf behavior.</li><li>The external safety results show associations across checkpoints; the causal mechanism remains an open question.</li></ul>
+      <div class="seal-source-note"><div><h3>Project status</h3><p>The next study requires more games, truth-based annotation, coordinated wolf teams, and training across both competitive and cooperative roles.</p></div></div>
+    </div></section>
+
+    <section class="case-ending" id="next" data-rail="Next"><div class="container">
+      <p class="kicker">Next research phase</p><h2>Validation plan</h2>
+      <div class="ais-next-list"><article><span>01</span><h3>Larger evaluation</h3><p>Estimate checkpoint effects across more games.</p></article><article><span>02</span><h3>Coding reliability</h3><p>Use independent coders, transcript identifiers, truth-based labels, and an adjudication record.</p></article><article><span>03</span><h3>Role comparison</h3><p>Compare competitive and cooperative roles.</p></article></div>
+      <div class="case-next"><p class="label">Next project</p><a href="recommender-systems-audit.html"><span><span class="case-next__eyebrow">Sociotechnical safety · ongoing research</span><span class="case-next__title">Auditing ranking algorithms through simulation</span></span><span aria-hidden="true">→</span></a></div>
+    </div><div id="site-footer"></div></section>
+  </main>
+  <script src="../js/shell.js?v=20260902footer1" defer></script><script src="../js/case-system.js?v=20260812b" defer></script><script src="../js/section-rail.js?v=20260808h" defer></script>
+</body>
+</html>

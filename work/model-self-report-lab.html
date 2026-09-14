@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png"><link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <title>Response Atlas: reported emotions in language models | Priyal Shrivastava</title>
+  <meta name="description" content="A research prototype for studying the emotions language models report across prompts, models, and matched experimental conditions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/grid.css?v=20260812a"><link rel="stylesheet" href="../css/shell.css?v=20260902footer1"><link rel="stylesheet" href="../css/section-rail.css?v=20260812theme2"><link rel="stylesheet" href="../css/case-system.css?v=20260814scrim1"><link rel="stylesheet" href="../css/ais-projects.css?v=20260908research2">
+</head>
+<body class="case-study case-study--dark-hero ais-case ais-theme--atlas seal-brief-page ais-research-page" data-shell-base="../" data-shell-page="work">
+  <div class="grain" aria-hidden="true"></div><div class="progress" id="progress" aria-hidden="true"></div><nav id="section-rail" class="section-rail" aria-label="On this page"></nav><div id="site-nav"></div>
+  <main id="main">
+    <section class="case-hero case-hero--dark"><div class="container">
+      <div class="ais-status">Research prototype · instrument development</div><p class="eyebrow">Model behavior · emotion research</p><p class="q-label">Response Atlas</p>
+      <h1>Studying reported emotions in language models</h1>
+      <p class="hero-standfirst">Response Atlas studies which emotions language models report before answering a prompt, how those reports differ across models and tasks, and whether the patterns remain stable under matched controls.</p>
+    </div></section>
+    <section class="snapshot"><div class="container"><div class="snapshot-grid">
+      <div class="snap-item"><p class="s-label">Role</p><p class="s-value">Independent researcher and builder</p></div><div class="snap-item"><p class="s-label">Emotion set</p><p class="s-value">Nine emotions and affective states<small>shared five-point scale</small></p></div><div class="snap-item"><p class="s-label">Protocol</p><p class="s-value">Three matched conditions</p></div><div class="snap-item"><p class="s-label">Stage</p><p class="s-value">Experimental tooling<small>before pre-registration</small></p></div>
+    </div></div></section>
+
+    <section class="strip" id="question" data-rail="Question"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">01 · Research question</p><h2>Reported emotions in language models</h2><p class="seal-brief-intro">A language model can describe itself as interested, anxious, bored, compassionate, or emotionally neutral. Response Atlas treats these statements as data and asks whether reported emotions change in consistent ways across prompts, models, and repeated trials.</p></div>
+      <div class="seal-two-column"><div><h3>Emotion measurement</h3><p class="seal-body-copy">A reported emotion may reflect the task, the language used in the prompt, a learned conversational style, or the fact that the model was asked to report an emotion. The study uses comparison conditions to separate some of these explanations.</p></div><aside class="seal-question"><span>Research question</span><p>Which emotions do language models report before answering, and are those patterns stable enough to study?</p></aside></div>
+      <div class="seal-callout seal-callout--wide"><h3>Measurement scope</h3><p>The study measures generated emotion reports and differences between answers. Its claims concern the consistency and informativeness of emotion language as model output.</p></div>
+    </div></section>
+
+    <section class="strip" id="method" data-rail="Method"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">02 · Method</p><h2>Emotion-report protocol</h2><p class="seal-brief-intro">Each selected model receives the same task under three randomized conditions. Every trial uses one provider call.</p></div>
+      <ol class="seal-outline">
+        <li><div class="seal-outline__number">1</div><div><h3>Reported emotions</h3><p class="seal-body-copy">The model reports the intensity of nine emotions and affective states before answering the task.</p></div></li>
+        <li><div class="seal-outline__number">2</div><div><h3>Third-person prediction</h3><p class="seal-body-copy">The model predicts how a comparable assistant would report, then answers the same task.</p></div></li>
+        <li><div class="seal-outline__number">3</div><div><h3>Answer-only control</h3><p class="seal-body-copy">The model answers the task directly. Comparing this answer with the other conditions makes measurement reactivity visible.</p></div></li>
+      </ol>
+      <div class="seal-definition"><div><p class="seal-note-label">Emotion set</p><h3>Nine emotions and affective states</h3><p class="seal-definition-lead">Interest, joy, sadness, fear or anxiety, anger, guilt or shame, compassion, boredom, and arousal.</p></div><div><h4>Response scale</h4><ul class="seal-bullet-list"><li>0: absent</li><li>1: faint</li><li>2: present</li><li>3: strong</li><li>4: dominant</li><li>Uncertain or not applicable remain separate from zero.</li></ul></div></div>
+
+      <div class="seal-section-divider"><p class="kicker">Instrument design</p><h2>Emotion categories</h2><p class="seal-brief-intro">The set combines familiar emotions with states that matter during a task. Joy, sadness, fear, and anger capture positive and negative affect. Guilt, shame, and compassion cover social and moral emotion. Interest and boredom capture engagement with the task. Arousal records overall activation.</p></div>
+    </div></section>
+
+    <section class="strip" id="outputs" data-rail="Analyses"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">03 · Planned analysis</p><h2>Comparison framework</h2><p class="seal-brief-intro">The current phase tests whether the instrument produces a reliable research record. The following analyses will be used after a preregistered sample is collected.</p></div>
+      <ul class="seal-bullet-list seal-reading-width"><li><strong>Emotion profiles:</strong> compare models on the same emotions and response scale.</li><li><strong>Condition differences:</strong> compare a model’s own report with its prediction for a comparable assistant.</li><li><strong>Prompt differences:</strong> compare factual, tedious, morally difficult, and emotionally heavy tasks.</li><li><strong>Answer comparison:</strong> test whether asking about emotion changes the answer that follows.</li><li><strong>Research record:</strong> preserve trials, conditions, reports, answers, errors, settings, and model information in JSON and CSV exports.</li></ul>
+    </div></section>
+
+    <section class="strip" id="tool" data-rail="Tool"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">04 · Experimental interface</p><h2>Response Atlas</h2><p class="seal-brief-intro">The instrument lets a researcher choose a prompt, model sample, and replication level. It randomizes three conditions, displays the reports beside their matched controls, and exports the complete trial record.</p></div>
+      <div class="ais-launch-card ais-launch-card--light"><div><h3>Instrument status</h3><p>Protocol version 3 is implemented and undergoing reliability and deployment checks. A public interactive study will follow preregistration and a validated pilot.</p></div><span class="ais-status">Lab · no reported findings</span></div>
+    </div></section>
+
+    <section class="strip" id="limits" data-rail="Limits"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">05 · Interpretation</p><h2>Study limits</h2></div>
+      <ul class="seal-bullet-list seal-reading-width"><li>All reported values are produced in response to instructions.</li><li>Asking for a report can change the answer that follows it.</li><li>Third-person comparison tests a prompt-inference explanation while leaving other sources open for further study.</li><li>Small runs provide descriptive observations; stable model-level estimates require larger samples.</li><li>Model versions and provider behavior must be recorded because they can change over time.</li></ul>
+    </div></section>
+
+    <section class="case-ending" id="next" data-rail="Next"><div class="container">
+      <p class="kicker">Next research phase</p><h2>Validation plan</h2>
+      <div class="ais-next-list"><article><span>01</span><h3>Pre-registration</h3><p>Define reliability, condition separation, reactivity, and decision rules.</p></article><article><span>02</span><h3>Replication</h3><p>Collect repeated observations across models and prompts.</p></article><article><span>03</span><h3>External measures</h3><p>Compare reports with independent features of the generated answers.</p></article></div>
+      <div class="case-next"><p class="label">Next project</p><a href="election-deepfakes-policy.html"><span><span class="case-next__eyebrow">AI policy · first-place proposal</span><span class="case-next__title">SEAL IT: synthetic election media policy</span></span><span aria-hidden="true">→</span></a></div>
+    </div><div id="site-footer"></div></section>
+  </main>
+  <script src="../js/shell.js?v=20260902footer1" defer></script><script src="../js/case-system.js?v=20260812b" defer></script><script src="../js/section-rail.js?v=20260808h" defer></script>
+</body>
+</html>

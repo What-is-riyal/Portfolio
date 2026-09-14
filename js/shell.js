@@ -13,7 +13,7 @@
   const NAV_ITEMS = [
     { id: 'work', label: 'Work', href: (b) => `${b}index.html#work` },
     { id: 'play', label: 'Play', href: (b) => `${b}play.html` },
-    { id: 'about', label: 'About', href: (b) => `${b}about.html` },
+    { id: 'about', label: 'About', href: (b) => `${b}about-paper.html` },
     { id: 'resume', label: 'Resume', href: (b) => `${b}resume.html` },
   ];
 
@@ -196,7 +196,10 @@
   }
 
   function bootDotField() {
-    if (document.body.classList.contains('case-study')) {
+    if (
+      document.body.classList.contains('case-study')
+      && !document.body.classList.contains('ais-case')
+    ) {
       const darkHosts = document.querySelectorAll('.case-hero--dark, .hero-dark, .case-chapter, .fold-dark, .strip-dark, .case-ending, .closing, .analysis-public');
       darkHosts.forEach((host) => {
         const hasField = Array.from(host.children).some((child) => child.matches('[data-human-field]'));

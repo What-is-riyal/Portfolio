@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png"><link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <title>A public-interest baseline for feed audits | Priyal Shrivastava</title>
+  <meta name="description" content="A visual walkthrough of an early governance concept for comparing a platform feed with a transparent public-interest baseline.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/grid.css?v=20260812a"><link rel="stylesheet" href="../css/shell.css?v=20260902footer1"><link rel="stylesheet" href="../css/section-rail.css?v=20260812theme2"><link rel="stylesheet" href="../css/case-system.css?v=20260814scrim1"><link rel="stylesheet" href="../css/ais-projects.css?v=20260907research1">
+</head>
+<body class="case-study case-study--dark-hero ais-case ais-theme--polarization seal-brief-page ais-research-page" data-shell-base="../" data-shell-page="work">
+  <div class="grain" aria-hidden="true"></div><div class="progress" id="progress" aria-hidden="true"></div><nav id="section-rail" class="section-rail" aria-label="On this page"></nav><div id="site-nav"></div>
+  <main id="main">
+    <section class="case-hero case-hero--dark"><div class="container">
+      <div class="ais-status">Early governance concept</div><p class="eyebrow">Algorithmic accountability · political polarization</p><p class="q-label">Feed-level auditing</p>
+      <h1>A public-interest baseline for recommendation audits</h1>
+      <p class="hero-standfirst">This concept compares a platform feed with a transparent baseline built from the same user history and candidate content. The difference between the two feeds becomes an object for audit.</p>
+    </div></section>
+    <section class="snapshot"><div class="container"><div class="snapshot-grid">
+      <div class="snap-item"><p class="s-label">Role</p><p class="s-value">Researcher on a four-person team</p></div><div class="snap-item"><p class="s-label">Team</p><p class="s-value">Simi Olusola-Ajayi, Doni Moon, Priyal Shrivastava, Bhargavee Chavarkar</p></div><div class="snap-item"><p class="s-label">Artifact</p><p class="s-value">Audit and governance model</p></div><div class="snap-item"><p class="s-label">Stage</p><p class="s-value">Concept development<small>requires validation</small></p></div>
+    </div></div></section>
+
+    <section class="strip" id="problem" data-rail="Problem"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">01 · Policy problem</p><h2>Auditing a hidden ranking objective</h2><p class="seal-brief-intro">Recommendation systems make repeated choices about what each person sees. A platform may describe the goals of its system, but an outside researcher cannot usually inspect the full model or reproduce the feed.</p></div>
+      <div class="seal-two-column"><div><h3>Audit challenge</h3><p class="seal-body-copy">A single post reveals little about a ranking system. The pattern across many recommendations may show whether the system consistently moves a feed toward engagement, similarity, or another objective. Auditors need a clear comparison point for interpreting that pattern.</p></div><aside class="seal-question"><span>Design question</span><p>Can a transparent reference feed help auditors measure how far a platform’s recommendations move from a stated public-interest baseline?</p></aside></div>
+    </div></section>
+
+    <section class="strip" id="proposal" data-rail="Proposal"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">02 · Proposed method</p><h2>Parallel feed comparison</h2><p class="seal-brief-intro">The same user history and set of candidate posts enter two recommendation systems. One produces the platform feed. The other produces a public reference feed using a published collaborative-filtering rule.</p></div>
+      <ol class="seal-outline"><li><div class="seal-outline__number">A</div><div><h3>Platform feed</h3><p class="seal-body-copy">The platform’s production system ranks the available posts using its own objective.</p></div></li><li><div class="seal-outline__number">B</div><div><h3>Reference feed</h3><p class="seal-body-copy">A transparent collaborative-filtering system ranks the same posts using the same user history.</p></div></li><li><div class="seal-outline__number">Δ</div><div><h3>Feed difference</h3><p class="seal-body-copy">The two ranked lists are projected into a political semantic space. Their distance becomes the proposed Political Bias Score.</p></div></li></ol>
+      <figure class="seal-figure"><img src="../assets/img/ais/polarization-comparator.webp" alt="Diagram comparing a platform recommendation pipeline with a collaborative-filtering reference pipeline" loading="lazy"><figcaption>Proposed comparison between the platform feed and the public reference feed.</figcaption></figure>
+    </div></section>
+
+    <section class="strip" id="interpretation" data-rail="Interpretation"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">03 · Reading the score</p><h2>Political Bias Score</h2><p class="seal-brief-intro">The score represents the distance between two ranked outputs. It is intended to make a pattern of feed choices measurable and comparable over time.</p></div>
+      <div class="seal-two-column seal-two-column--even"><div><h3>Possible audit uses</h3><ul class="seal-bullet-list"><li>Compare the platform feed with the same published baseline over time.</li><li>Examine whether divergence changes during elections or major political events.</li><li>Compare results across user histories, regions, and demographic groups.</li><li>Identify cases that require closer qualitative or legal review.</li></ul></div><div><h3>Required decisions</h3><ul class="seal-bullet-list"><li>How political position is represented and validated</li><li>Which candidate posts enter both pipelines</li><li>How ranked-list distance is calculated</li><li>What amount of divergence requires action</li><li>How uncertainty and measurement error are reported</li></ul></div></div>
+    </div></section>
+
+    <section class="strip" id="governance" data-rail="Governance"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">04 · Institutional design</p><h2>Independent oversight</h2><p class="seal-brief-intro">The concept assigns the reference model and audit process to an independent, multi-stakeholder body rather than to the platform being evaluated.</p></div>
+      <ul class="seal-bullet-list seal-reading-width"><li><strong>Method:</strong> publish the reference algorithm, score calculation, test data requirements, and reporting format.</li><li><strong>Access:</strong> define the user-history and candidate-set data that platforms must provide.</li><li><strong>Verification:</strong> check whether platforms run the comparison as specified.</li><li><strong>Reporting:</strong> publish results, uncertainty, and changes in method.</li><li><strong>Process:</strong> provide a route for correction, challenge, and appeal.</li></ul>
+      <figure class="seal-figure"><img src="../assets/img/ais/polarization-governance.webp" alt="Governance proposal for a multi-stakeholder oversight body" loading="lazy"><figcaption>Early governance model for administering the baseline and connecting results to oversight.</figcaption></figure>
+    </div></section>
+
+    <section class="strip" id="limits" data-rail="Limits"><div class="container">
+      <div class="seal-brief-heading"><p class="kicker">05 · Interpretation</p><h2>Concept limits</h2></div>
+      <ul class="seal-bullet-list seal-reading-width"><li>The Political Bias Score is a proposed construct and has not yet been validated against polarization outcomes.</li><li>Collaborative filtering is a design choice, not a neutral or universal definition of the public interest.</li><li>A difference between feeds does not by itself show harm or unlawful conduct.</li><li>The baseline could reproduce bias in the user history, candidate set, embeddings, or political labels.</li><li>The oversight body’s jurisdiction, appointment process, authority, and appeals route require legal design.</li></ul>
+    </div></section>
+
+    <section class="case-ending" id="next" data-rail="Next"><div class="container">
+      <p class="kicker">Next research phase</p><h2>Validation plan</h2>
+      <div class="ais-next-list"><article><span>01</span><h3>Construct validity</h3><p>Connect feed divergence with measurable polarization outcomes.</p></article><article><span>02</span><h3>Decision rules</h3><p>Define comparison windows, uncertainty, and action thresholds.</p></article><article><span>03</span><h3>Legal authority</h3><p>Specify jurisdiction, appointment, appeal, and enforcement.</p></article></div>
+      <div class="case-next"><p class="label">Return to research</p><a href="llm-deception-werewolf.html"><span><span class="case-next__eyebrow">Technical AI safety · working paper</span><span class="case-next__title">Training an LLM to win at Werewolf</span></span><span aria-hidden="true">→</span></a></div>
+    </div><div id="site-footer"></div></section>
+  </main>
+  <script src="../js/shell.js?v=20260902footer1" defer></script><script src="../js/case-system.js?v=20260812b" defer></script><script src="../js/section-rail.js?v=20260808h" defer></script>
+</body>
+</html>

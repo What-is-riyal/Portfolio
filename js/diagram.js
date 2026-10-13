@@ -31,12 +31,11 @@
       : `
   <text x="104" y="${CY + 4}" text-anchor="middle" fill="${label}" style="${labelStyle}">people</text>
   <text x="316" y="${CY + 4}" text-anchor="middle" fill="${label}" style="${labelStyle}">technology</text>
-  <text x="${CX}" y="${CY + 30}" text-anchor="middle" fill="${glow}" style="${labelStyle}">focus</text>
   <text x="${CX}" y="54" text-anchor="middle" fill="${muted}" style="${labelStyle}">policy</text>`;
 
     return `
 <svg class="hero-diagram" viewBox="0 0 420 420" width="100%" role="img"
-  aria-label="Two overlapping circles, people and technology, with my focus in the overlap. A wider dashed ring around both is labeled policy."
+  aria-label="Two overlapping circles, people and technology, with a dot marking where they overlap. A wider dashed ring around both is labeled policy."
   style="max-width: 460px; display: block; margin: 0 auto; overflow: visible">
   <g data-hover="ring">
     <g data-drift="ring">

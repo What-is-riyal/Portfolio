@@ -1,12 +1,12 @@
 /* Section rail — chapters + subsections (Webflow depth, Copilot chrome). */
 
 .section-rail {
-  --rail-ink: rgba(11, 11, 12, 0.55);
+  --rail-ink: rgba(11, 11, 12, 0.72);
   --rail-ink-hover: rgba(11, 11, 12, 0.88);
   --rail-active: var(--case-accent, var(--glow, #4F46E5));
   --rail-spine: rgba(11, 11, 12, 0.12);
   --rail-fill: var(--case-accent, var(--glow, #4F46E5));
-  --rail-sub: rgba(11, 11, 12, 0.5);
+  --rail-sub: rgba(11, 11, 12, 0.68);
 
   position: fixed;
   left: clamp(14px, 2.2vw, 36px);
@@ -173,7 +173,7 @@
 .section-rail-mobile {
   display: none;
   position: sticky;
-  top: 56px;
+  top: var(--site-nav-height, 90px);
   z-index: 25;
   width: 100%;
   background: rgba(255, 255, 255, 0.92);
@@ -212,13 +212,57 @@
 
 .section-rail-mobile__scroller::-webkit-scrollbar { display: none; }
 
+/* The measured header and rail heights also govern anchor placement. */
+[data-rail][id], [data-rail-sub][id] {
+  scroll-margin-top: calc(var(--site-nav-height, 90px) + var(--section-rail-height, 54px) + 16px);
+}
+
+.section-rail-mobile::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 56px;
+  background: linear-gradient(to right, transparent, #fff 65%);
+  opacity: 0;
+  pointer-events: none;
+}
+.section-rail-mobile.has-more-right::after { opacity: 1; }
+.section-rail-mobile.is-on-dark::after {
+  background: linear-gradient(to right, transparent, var(--case-surface, #0b0b0c) 65%);
+}
+.section-rail-mobile__next {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  z-index: 1;
+  display: none;
+  width: 32px;
+  height: 32px;
+  transform: translateY(-50%);
+  border: 1px solid rgba(11,11,12,.2);
+  border-radius: 50%;
+  background: #fff;
+  color: #25252b;
+  font: 600 20px/1 "Archivo", sans-serif;
+  cursor: pointer;
+}
+.section-rail-mobile.has-more-right .section-rail-mobile__next { display: block; }
+.section-rail-mobile.is-on-dark .section-rail-mobile__next {
+  background: var(--case-surface, #0b0b0c);
+  color: #fff;
+  border-color: rgba(255,255,255,.3);
+}
+.section-rail-mobile.has-overflow .section-rail-mobile__scroller { padding-right: 56px; }
+
 .section-rail-mobile a {
   flex: 0 0 auto;
   font-family: var(--font-archivo, "Archivo", "Helvetica Neue", sans-serif);
   font-size: 13px;
   font-weight: 600;
   line-height: 1;
-  color: rgba(11, 11, 12, 0.55);
+  color: rgba(11, 11, 12, 0.72);
   text-decoration: none;
   padding: 8px 14px;
   border: 1px solid rgba(11, 11, 12, 0.14);
@@ -240,7 +284,7 @@
 }
 
 .section-rail-mobile.is-on-dark a {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.78);
   border-color: rgba(255, 255, 255, 0.18);
 }
 

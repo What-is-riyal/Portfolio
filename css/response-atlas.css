@@ -1,0 +1,49 @@
+/* Response Atlas: experiment-first presentation within the portfolio shell. */
+.atlas-page .case-hero h1 { max-width: 20ch; }
+.atlas-page .case-hero--dark { padding-bottom: 64px; }
+.atlas-explore { display: inline-flex; gap: 24px; margin-top: 28px; padding: 12px 0; color: #fff; text-decoration: none; border-bottom: 1px solid #b6a6cf; }
+.atlas-explore:hover { color: #d7c9eb; }
+.atlas-page .strip { padding: clamp(56px,7vw,88px) 0; }
+.atlas-page .seal-brief-heading { margin-bottom: 28px; }
+.atlas-preview { background: #eee9df; }
+.atlas-preview-heading { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 28px; }
+.atlas-preview-heading h2 { font-size: clamp(28px,3.5vw,42px); margin: 0; }
+.atlas-preview-heading > p { max-width: 34ch; margin: 0; color: #536069; font-size: 15px; line-height: 1.6; }
+.atlas-instrument { background: #fffdf8; border: 1px solid #c6bfb2; border-radius: 6px; overflow: hidden; box-shadow: 0 16px 38px -26px #293d4466; }
+.atlas-instrument__bar { display: flex; justify-content: space-between; gap: 16px; padding: 17px 24px; background: #293d44; color: #fffdf8; }
+.atlas-instrument__bar > :first-child { font-family: var(--font-fraunces,Georgia,serif); font-size: 20px; }
+.atlas-instrument__bar > :last-child { align-self: center; font-size: 12px; color: #d9d9db; }
+.atlas-instrument__body { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); }
+.atlas-input { padding: 32px; border-right: 1px solid #d5cfc3; }
+.atlas-input label { display: block; margin-bottom: 15px; font-size: 14px; font-weight: 600; color: #293d44; }
+.atlas-input textarea { display: block; width: 100%; box-sizing: border-box; min-height: 150px; padding: 18px; border: 1px solid #c6bfb2; border-radius: 3px; background: #f8f5ed; font: inherit; font-size: 17px; line-height: 1.6; color: #293d44; resize: vertical; }
+.atlas-input > p { margin: 12px 0 24px; color: #536069; font-size: 13px; line-height: 1.6; }
+.atlas-modes { display: flex; flex-wrap: wrap; gap: 8px; }
+.atlas-modes button { padding: 10px 12px; border: 1px solid #c6bfb2; border-radius: 3px; background: transparent; color: #293d44; font: inherit; font-size: 13px; cursor: pointer; }
+.atlas-modes button[aria-pressed="true"] { background: #d7c9eb; border-color: #9481af; }
+.atlas-modes button:hover { border-color: #293d44; }
+.atlas-modes button:focus-visible, .atlas-input textarea:focus-visible, .atlas-explore:focus-visible { outline: 2px solid #765a9b; outline-offset: 4px; }
+.atlas-request { padding: 32px; color: #293d44; }
+.atlas-request__label { margin: 0 0 12px; font-size: 12px; color: #675576; }
+.atlas-request h3 { font-size: 21px; line-height: 1.4; margin: 0 0 12px; }
+.atlas-request > p:not(.atlas-request__label) { font-size: 14px; line-height: 1.6; margin: 0 0 18px; }
+.atlas-request blockquote { margin: 22px 0; padding: 0 0 0 18px; border-left: 3px solid #b6a6cf; font-size: 15px; line-height: 1.7; }
+.atlas-request__task { overflow-wrap: anywhere; white-space: pre-wrap; }
+.atlas-sequence { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; }
+.atlas-sequence > :first-child, .atlas-sequence > :last-child { background: #eee9df; border-radius: 3px; padding: 8px 12px; }
+.atlas-caption { max-width: 80ch; margin: 18px 0 0; font-size: 12px; line-height: 1.6; color: #536069; }
+.atlas-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 20px; padding: 28px 0; margin-bottom: 32px; border-top: 1px solid #c6bfb2; border-bottom: 1px solid #c6bfb2; }
+.atlas-flow div { display: grid; gap: 8px; }
+.atlas-flow div > span, .atlas-flow small { color: #536069; font-size: 12px; line-height: 1.5; }
+.atlas-flow strong { font-size: 16px; line-height: 1.5; font-weight: 600; }
+.atlas-flow__arrow { color: #765a9b; font-size: 24px; }
+@media (max-width: 700px) {
+  .atlas-preview-heading { display: block; }
+  .atlas-preview-heading > p { margin-top: 16px; max-width: none; }
+  .atlas-instrument__bar { padding: 16px 20px; flex-wrap: wrap; }
+  .atlas-instrument__body { grid-template-columns: minmax(0,1fr); }
+  .atlas-input { border-right: none; border-bottom: 1px solid #d5cfc3; }
+  .atlas-input, .atlas-request { padding: 24px 20px; }
+  .atlas-flow { grid-template-columns: minmax(0,1fr); gap: 14px; }
+  .atlas-flow__arrow { transform: rotate(90deg); justify-self: start; }
+}

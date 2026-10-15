@@ -205,6 +205,44 @@
     mobile.replaceChildren(scroller);
     mobile.classList.add('is-ready');
 
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const next = document.createElement('button');
+    next.className = 'section-rail-mobile__next';
+    next.type = 'button';
+    next.setAttribute('aria-label', 'Scroll section navigation to the right');
+    next.textContent = '›';
+    mobile.appendChild(next);
+    const syncOverflow = () => {
+      const styles = getComputedStyle(scroller);
+      const extraRightPadding = Math.max(0, parseFloat(styles.paddingRight || '0') - parseFloat(styles.paddingLeft || '0'));
+      const overflow = scroller.scrollWidth - extraRightPadding > scroller.clientWidth + 2;
+      mobile.classList.toggle('has-overflow', overflow);
+      mobile.classList.toggle('has-more-right', overflow && scroller.scrollLeft + scroller.clientWidth < scroller.scrollWidth - 2);
+    };
+    next.addEventListener('click', () => {
+      scroller.scrollBy({ left: scroller.clientWidth * 0.7, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+    scroller.addEventListener('scroll', syncOverflow, { passive: true });
+
+    const primaryNav = document.querySelector('.site-nav');
+    let headerHeight = primaryNav ? Math.ceil(primaryNav.getBoundingClientRect().height) : 0;
+    const syncChromeHeights = () => {
+      headerHeight = primaryNav ? Math.ceil(primaryNav.getBoundingClientRect().height) : 0;
+      const railHeight = getComputedStyle(mobile).display === 'none' ? 0 : Math.ceil(mobile.getBoundingClientRect().height);
+      document.documentElement.style.setProperty('--site-nav-height', headerHeight + 'px');
+      document.documentElement.style.setProperty('--section-rail-height', railHeight + 'px');
+      syncOverflow();
+    };
+    syncChromeHeights();
+    if ('ResizeObserver' in window) {
+      const chromeObserver = new ResizeObserver(syncChromeHeights);
+      if (primaryNav) chromeObserver.observe(primaryNav);
+      chromeObserver.observe(mobile);
+      chromeObserver.observe(scroller);
+    }
+    window.addEventListener('resize', syncChromeHeights);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncChromeHeights);
+
     const gate =
       document.querySelector('.cs-quote-band') ||
       document.querySelector('.snapshot') ||
@@ -217,6 +255,7 @@
     let activeChapterId = tree[0].id;
 
     function setActive(id, chapterId) {
+      const chapterChanged = activeChapterId !== (chapterId || id);
       activeId = id;
       activeChapterId = chapterId || id;
       Object.entries(linkMap).forEach(([lid, a]) => {
@@ -230,8 +269,13 @@
         a.classList.toggle('is-current', lid === activeChapterId);
       });
       const mobileActive = mobileMap[activeChapterId];
-      if (mobileActive && mobile.classList.contains('is-visible')) {
-        mobileActive.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      if (chapterChanged && mobileActive && mobile.classList.contains('is-visible')) {
+        const itemRect = mobileActive.getBoundingClientRect();
+        const scrollRect = scroller.getBoundingClientRect();
+        scroller.scrollTo({
+          left: scroller.scrollLeft + itemRect.left - scrollRect.left - (scroller.clientWidth - itemRect.width) / 2,
+          behavior: reduceMotion ? 'auto' : 'smooth'
+        });
       }
     }
 
@@ -356,7 +400,7 @@
     function syncChrome() {
       let visible = true;
       if (gate) {
-        const pastGate = gate.getBoundingClientRect().bottom < 88;
+        const pastGate = gate.getBoundingClientRect().bottom < headerHeight + 8;
         let beforeFooter = true;
         if (footEl) {
           beforeFooter = footEl.getBoundingClientRect().top > window.innerHeight * 0.55;
@@ -380,7 +424,8 @@
       if (!target) return;
       e.preventDefault();
       const chapterId = a.dataset.chapter || target.id;
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      syncChromeHeights();
+      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
       setActive(target.id, chapterId);
       syncChrome();
       syncProgress();

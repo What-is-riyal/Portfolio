@@ -196,6 +196,7 @@
   }
 
   function bootDotField() {
+    if (document.body.dataset.backgroundField === 'off') return;
     if (
       document.body.classList.contains('case-study')
       && !document.body.classList.contains('ais-case')

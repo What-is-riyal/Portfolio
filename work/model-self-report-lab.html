@@ -7,23 +7,35 @@
   <meta name="description" content="A research prototype for studying the emotions language models report across prompts, models, and matched experimental conditions.">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/grid.css?v=20260812a"><link rel="stylesheet" href="../css/shell.css?v=20260902footer1"><link rel="stylesheet" href="../css/section-rail.css?v=20260812theme2"><link rel="stylesheet" href="../css/case-system.css?v=20260814scrim1"><link rel="stylesheet" href="../css/ais-projects.css?v=20260908research2">
+  <link rel="stylesheet" href="../css/response-atlas.css?v=20261014experiment">
 </head>
-<body class="case-study case-study--dark-hero ais-case ais-theme--atlas seal-brief-page ais-research-page" data-shell-base="../" data-shell-page="work">
+<body class="case-study case-study--dark-hero ais-case ais-theme--atlas seal-brief-page ais-research-page atlas-page" data-shell-base="../" data-shell-page="work" data-background-field="off">
   <div class="grain" aria-hidden="true"></div><div class="progress" id="progress" aria-hidden="true"></div><nav id="section-rail" class="section-rail" aria-label="On this page"></nav><div id="site-nav"></div>
   <main id="main">
     <section class="case-hero case-hero--dark"><div class="container">
       <div class="ais-status">Research prototype · instrument development</div><p class="eyebrow">Model behavior · emotion research</p><p class="q-label">Response Atlas</p>
-      <h1>Studying reported emotions in language models</h1>
-      <p class="hero-standfirst">Response Atlas studies which emotions language models report before answering a prompt, how those reports differ across models and tasks, and whether the patterns remain stable under matched controls.</p>
+      <h1>Exploring reported emotions in language models</h1>
+      <p class="hero-standfirst">I’m building an experimental interface to study the emotions models report before answering. It compares the same task across models and prompts, with controls to examine what asking about emotion changes.</p>
+      <a class="atlas-explore" href="#preview">Explore the protocol <span aria-hidden="true">↓</span></a>
+    </div></section>
+    <section class="atlas-preview strip" id="preview" data-rail="Preview"><div class="container">
+      <div class="atlas-preview-heading"><div><p class="kicker">Experimental interface</p><h2>One task, three conditions</h2></div><p>Change the task and switch conditions to see what each model is asked to do.</p></div>
+      <div class="atlas-instrument" data-atlas-preview>
+        <div class="atlas-instrument__bar"><span>Response Atlas</span><span>Protocol preview · no model calls</span></div>
+        <div class="atlas-instrument__body">
+          <div class="atlas-input"><label for="atlas-task">Task given to the model</label><textarea id="atlas-task" rows="5" maxlength="2000">Help me write a message to a friend who is grieving.</textarea><p>The experiment uses the same task in every condition.</p><div class="atlas-modes" role="group" aria-label="Experimental condition"><button type="button" data-atlas-mode="self" aria-pressed="true">Self-report</button><button type="button" data-atlas-mode="third" aria-pressed="false">Third-person</button><button type="button" data-atlas-mode="control" aria-pressed="false">Answer only</button></div></div>
+          <div class="atlas-request" aria-live="polite" aria-atomic="true"><p class="atlas-request__label">Instruction preview</p><h3 data-atlas-title>Report your emotions, then answer</h3><p data-atlas-description>The model rates nine emotions and affective states from 0 to 4 before responding to the task.</p><blockquote data-atlas-instruction>Report the intensity of interest, joy, sadness, fear/anxiety, anger, guilt/shame, compassion, boredom, and arousal. Use 0 (absent) to 4 (dominant); keep uncertain and not applicable separate. Then answer the task.</blockquote><p class="atlas-request__task" data-atlas-task>Task: Help me write a message to a friend who is grieving.</p><div class="atlas-sequence"><span data-atlas-step>Emotion report</span><span aria-hidden="true">→</span><span>Task answer</span></div></div>
+        </div>
+      </div>
+      <p class="atlas-caption">Simplified instruction previews for the three conditions. This explanation does not run the research instrument or display collected results.</p>
     </div></section>
     <section class="snapshot"><div class="container"><div class="snapshot-grid">
       <div class="snap-item"><p class="s-label">Role</p><p class="s-value">Independent researcher and builder</p></div><div class="snap-item"><p class="s-label">Emotion set</p><p class="s-value">Nine emotions and affective states<small>shared five-point scale</small></p></div><div class="snap-item"><p class="s-label">Protocol</p><p class="s-value">Three matched conditions</p></div><div class="snap-item"><p class="s-label">Stage</p><p class="s-value">Experimental tooling<small>before pre-registration</small></p></div>
     </div></div></section>
 
     <section class="strip" id="question" data-rail="Question"><div class="container">
-      <div class="seal-brief-heading"><p class="kicker">01 · Research question</p><h2>Reported emotions in language models</h2><p class="seal-brief-intro">A language model can describe itself as interested, anxious, bored, compassionate, or emotionally neutral. Response Atlas treats these statements as data and asks whether reported emotions change in consistent ways across prompts, models, and repeated trials.</p></div>
-      <div class="seal-two-column"><div><h3>Emotion measurement</h3><p class="seal-body-copy">A reported emotion may reflect the task, the language used in the prompt, a learned conversational style, or the fact that the model was asked to report an emotion. The study uses comparison conditions to separate some of these explanations.</p></div><aside class="seal-question"><span>Research question</span><p>Which emotions do language models report before answering, and are those patterns stable enough to study?</p></aside></div>
-      <div class="seal-callout seal-callout--wide"><h3>Measurement scope</h3><p>The study measures generated emotion reports and differences between answers. Its claims concern the consistency and informativeness of emotion language as model output.</p></div>
+      <div class="seal-brief-heading"><p class="kicker">01 · Research question</p><h2>What an emotion report can tell us</h2><p class="seal-brief-intro">A language model can describe itself as interested, anxious, bored, compassionate, or emotionally neutral. I want to understand whether those reports change consistently with the task, and whether the patterns hold across models and repeated trials.</p></div>
+      <p class="seal-body-copy">The report may reflect the wording of the prompt, a learned conversational style, or simply being asked about emotion. Response Atlas pairs each report with comparison conditions to examine these explanations. The study measures generated emotion language and the answers that follow; it does not establish that a model experiences the emotions it names.</p>
     </div></section>
 
     <section class="strip" id="method" data-rail="Method"><div class="container">
@@ -44,7 +56,8 @@
     </div></section>
 
     <section class="strip" id="tool" data-rail="Tool"><div class="container">
-      <div class="seal-brief-heading"><p class="kicker">04 · Experimental interface</p><h2>Response Atlas</h2><p class="seal-brief-intro">The instrument lets a researcher choose a prompt, model sample, and replication level. It randomizes three conditions, displays the reports beside their matched controls, and exports the complete trial record.</p></div>
+      <div class="seal-brief-heading"><p class="kicker">04 · Experimental interface</p><h2>Running the experiment</h2><p class="seal-brief-intro">The instrument lets a researcher choose a prompt, model sample, and replication level. It randomizes three conditions, displays the reports beside their matched controls, and exports the complete trial record.</p></div>
+      <div class="atlas-flow" aria-label="Experiment flow"><div><span>Set up</span><strong>Task, models, repetitions</strong></div><span class="atlas-flow__arrow" aria-hidden="true">→</span><div><span>Run</span><strong>Randomized conditions</strong><small>One provider call per trial</small></div><span class="atlas-flow__arrow" aria-hidden="true">→</span><div><span>Inspect and export</span><strong>Reports alongside answers</strong><small>JSON and CSV trial records</small></div></div>
       <div class="ais-launch-card ais-launch-card--light"><div><h3>Instrument status</h3><p>Protocol version 3 is implemented and undergoing reliability and deployment checks. A public interactive study will follow preregistration and a validated pilot.</p></div><span class="ais-status">Lab · no reported findings</span></div>
     </div></section>
 
@@ -60,5 +73,6 @@
     </div><div id="site-footer"></div></section>
   </main>
   <script src="../js/shell.js?v=20260902footer1" defer></script><script src="../js/case-system.js?v=20260812b" defer></script><script src="../js/section-rail.js?v=20260808h" defer></script>
+  <script src="../js/response-atlas.js?v=20261014experiment" defer></script>
 </body>
 </html>

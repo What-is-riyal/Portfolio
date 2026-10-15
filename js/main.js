@@ -97,7 +97,13 @@
     if (!panels.length || !rows.length) return;
 
     const activate = (index) => {
-      panels.forEach((panel) => panel.classList.toggle('is-active', panel.dataset.previewIndex === index));
+      panels.forEach((panel) => {
+        const active = panel.dataset.previewIndex === index;
+        panel.classList.toggle('is-active', active);
+        panel.setAttribute('tabindex', active ? '0' : '-1');
+        panel.setAttribute('aria-hidden', String(!active));
+        panel.toggleAttribute('inert', !active);
+      });
       rows.forEach((row) => row.classList.toggle('is-preview-active', row.dataset.index === index));
     };
 

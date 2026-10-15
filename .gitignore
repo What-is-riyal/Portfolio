@@ -3,3 +3,13 @@
 node_modules/
 site/
 Resources/
+
+# Chat assistant: regenerated from the site by chat/build-context.mjs
+# (npm run deploy rebuilds them), so the derived copies stay out of git.
+chat/context.txt
+chat/worker/src/knowledge.ts
+
+# Local-only scratch and editor state
+tmp/
+.claude/settings.local.json
+write-research-paper-sections.zip

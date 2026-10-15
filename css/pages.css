@@ -2420,6 +2420,10 @@ body.page-about {
   object-fit: contain;
 }
 
+/* Use the official sun mark; keep the downloaded full logo intact. */
+.company-logo--nsr__sun { display: block; width: 42px; height: 22px; overflow: hidden; }
+.company-logo--nsr__sun img { display: block; width: 42px; max-width: none; height: auto; }
+
 .company-logo--meesho img {
   width: 48px;
   height: 19px;
@@ -3971,6 +3975,8 @@ body.page-about {
 .home-work__row--charcoal { --card-accent: #4e50bd; }
 .home-work__row--paper { --card-accent: #7139a6; }
 .home-work__row--lemon { --card-accent: #3157c8; }
+/* New Sun Rising: matches .case-theme--vibrant-grants, derived from their logo. */
+.home-work__row--ochre { --card-accent: #b4530f; }
 
 .home-work__wordmark {
   width: fit-content;
@@ -4223,6 +4229,29 @@ body.page-about {
   transform: none;
 }
 
+/* Keep the title, method chips, and padding inside one native link target.
+   The link's containing block is its row, never the shared preview column. */
+.home-work--list .home-work__row {
+  isolation: isolate;
+}
+
+.home-work--list .home-work__link {
+  position: static;
+}
+
+.home-work--list .home-work__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.home-work--list .home-work__row:focus-within {
+  outline: 2px solid var(--card-accent, #087f92);
+  outline-offset: 3px;
+}
+
 .home-work--list .home-work__row[hidden] {
   display: none;
 }
@@ -4261,13 +4290,20 @@ body.page-about {
   transform: translateY(8px);
   transition: opacity 280ms ease, transform 420ms cubic-bezier(.22, 1, .36, 1);
   pointer-events: none;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .home-work__preview-panel.is-active {
   z-index: 1;
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
 }
+
+.home-work__preview-panel:focus-visible { outline: 2px solid var(--glow,#087f92); outline-offset: -3px; }
+.home-work__preview-panel:hover .home-work__preview-copy strong { text-decoration: underline; text-underline-offset: 4px; }
 
 .home-work__preview-media {
   display: block;
@@ -4478,6 +4514,93 @@ body.page-about {
 
 .home-work__row:hover .home-play-poster__word i:nth-child(odd) { transform: translateY(-5px) rotate(-2deg); }
 .home-work__row:hover .home-play-poster__word i:nth-child(even) { transform: translateY(5px) rotate(2deg); }
+
+/* AI collection poster — a typographic sibling of Play, spanning several research topics. */
+.home-work--list .home-work__visual--ais-poster {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1.1fr);
+  align-items: center;
+  gap: 14px;
+  padding: clamp(12px,1.6vw,20px);
+  background: #17171b;
+  box-shadow: inset -1px 0 #34343c;
+}
+
+.home-ais-collection__links { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .55; }
+.home-ais-collection__links path { stroke: rgba(157,145,255,.3); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.home-ais-collection__links circle { fill: #8cbfc9; }
+.home-ais-collection__letters { position: relative; display: flex; justify-content: center; gap: 2px; min-width: 0; }
+.home-ais-collection__letters i { display: block; color: transparent; font-family: var(--font-archivo); font-size: clamp(54px,7vw,110px); font-weight: 900; font-style: normal; letter-spacing: -.08em; line-height: .9; background-color: #c0b2de; background-size: cover; background-position: center; background-blend-mode: multiply; background-clip: text; -webkit-background-clip: text; -webkit-text-stroke: 1px rgba(255,255,255,.3); }
+.home-ais-collection__letters i:first-child { background-image: url('../assets/img/ais/corda-results.webp'); }
+.home-ais-collection__letters i:last-child { background-image: url('../assets/img/ais/seal-implementation-matrix.webp'); }
+.home-ais-collection__studies { position: relative; display: grid; gap: 8px; padding: 6px 0; min-width: 0; }
+.home-ais-collection__study { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px; border: 1px solid #42434b; border-radius: 3px 10px 3px 3px; background: #24252b; transform: rotate(-3deg); transition: transform 350ms ease; }
+.home-ais-collection__study:nth-child(2) { transform: rotate(2deg); }
+.home-ais-collection__study:nth-child(3) { transform: rotate(-1deg); }
+.home-ais-collection__study svg { width: 50%; max-width: 90px; height: 30px; }
+.home-ais-collection__study path { stroke: #a9a1cc; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.home-ais-collection__study circle { stroke: #78c6d1; stroke-width: 1.8; fill: #24252b; }
+.home-ais-collection__study b { color: #eeeaf6; font-size: 11px; font-weight: 500; letter-spacing: .02em; }
+.home-work__row:hover .home-ais-collection__study { transform: rotate(0); }
+@media (prefers-reduced-motion: reduce) {
+  .home-ais-collection__study { transition: none; }
+}
+
+.home-ais-poster__flow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-ais-poster__links path {
+  stroke: rgba(255, 255, 255, .17);
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+  transition: stroke 350ms ease;
+}
+
+.home-ais-poster__links--lit path {
+  stroke: #4ec8d8;
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 5px rgba(78, 200, 216, .55));
+}
+
+.home-ais-poster__rank rect {
+  fill: rgba(255, 255, 255, .13);
+  transition: fill 350ms ease, transform 500ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.home-ais-poster__rank--in rect {
+  fill: rgba(255, 255, 255, .09);
+}
+
+.home-ais-poster__rank rect.is-lit {
+  fill: #4ec8d8;
+  filter: drop-shadow(0 0 6px rgba(78, 200, 216, .5));
+}
+
+.home-work__row:hover .home-ais-poster__links path {
+  stroke: rgba(255, 255, 255, .26);
+}
+
+.home-work__row:hover .home-ais-poster__links--lit path {
+  stroke: #7fdcea;
+}
+
+.home-work__row:hover .home-ais-poster__rank--out rect {
+  fill: rgba(255, 255, 255, .2);
+}
+
+.home-work__row:hover .home-ais-poster__rank--out rect.is-lit {
+  fill: #7fdcea;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-ais-poster__rank rect {
+    transition: none;
+  }
+}
 
 .home-work--list .home-work__row::after {
   display: none;
@@ -4875,6 +4998,61 @@ body.page-about {
 .play-archive__list span { font-size: clamp(18px,2vw,24px); font-weight: 700; }
 .play-archive__list small { color: var(--grey); font-size: 12px; }
 .play-archive__list a:hover span { color: var(--glow); }
+
+/* Industry cards are actual full-card anchors, not stretched overlays. */
+.home-work--list .home-work__row.home-work__row--project {
+  display: block;
+  padding: 0;
+}
+.home-work--list .home-work__row.home-work__row--project > .home-work__link[data-card-link] {
+  display: grid;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 120px;
+  padding: 14px 16px;
+  grid-template-columns: 28px minmax(0,1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas: "brand copy" ". chips";
+  gap: 9px 13px;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.home-work--list .home-work__link[data-card-link]::after { content: none; }
+.home-work--list .home-work__row.home-work__row--project .home-work__chips {
+  grid-area: chips;
+  margin: 0;
+  justify-content: flex-start;
+}
+.home-work--list .home-work__link[data-card-link]:focus-visible {
+  outline: 2px solid var(--card-accent, #087f92);
+  outline-offset: -3px;
+}
+@media (max-width: 1050px) and (min-width: 768px) {
+  .home-work--list .home-work__row.home-work__row--project > .home-work__link[data-card-link] {
+    padding: 0 16px 0 0;
+    grid-template-columns: 170px 48px minmax(0,1fr);
+    grid-template-areas: "visual brand copy" "visual chips chips";
+    gap: 10px 16px;
+  }
+  .home-work--list .home-work__row.home-work__row--project .home-work__visual {
+    margin: 0;
+    height: 100%;
+    min-height: 140px;
+    width: 170px;
+  }
+  .home-work--list .home-work__row.home-work__row--project .home-work__chips { padding-bottom: 14px; }
+}
+@media (max-width: 767px) {
+  .home-work--list .home-work__row.home-work__row--project > .home-work__link[data-card-link] {
+    min-height: 0;
+    padding: 12px;
+    grid-template-columns: 62px 28px minmax(0,1fr);
+    grid-template-areas: "visual brand copy" "chips chips chips";
+    gap: 12px 16px;
+  }
+}
 
 @media (max-width: 640px) {
   .play-archive__list a { grid-template-columns: 1fr; gap: 5px; }

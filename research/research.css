@@ -1,0 +1,491 @@
+/* research/research.css — the academic and policy page.
+   Deliberately NOT the portfolio's visual system: no pages.css, no collage,
+   no poster cards. Typography-led, narrow measure, restrained colour.
+   It borrows only the shared tokens from css/tokens.css (via grid.css) so the
+   typefaces and ink colour stay consistent across the two sites.
+
+   Delight is kept quiet and useful: entries expand in place via <details>,
+   and the masthead carries a low-opacity pointer-reactive dot field. */
+
+:root {
+  --rp-rule: rgba(11, 11, 12, 0.12);
+  --rp-rule-soft: rgba(11, 11, 12, 0.07);
+  --rp-dim: #5a5a63;
+  --rp-faint: #83838d;
+  --rp-accent: #4F46E5;
+  --rp-measure: 68ch;
+}
+
+body.page-research {
+  background: #fdfdfb;
+  color: var(--ink);
+  font-family: var(--font-archivo);
+  font-size: 16px;
+  font-weight: 340;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  z-index: 10;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+}
+
+.rp-wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 clamp(22px, 5vw, 56px);
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: rgba(79, 70, 229, 0.34);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+a:hover {
+  color: var(--rp-accent);
+  text-decoration-color: var(--rp-accent);
+}
+
+/* ------------------------------------------------------------------ */
+/* Masthead                                                           */
+/* ------------------------------------------------------------------ */
+
+.rp-masthead {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(40px, 7vh, 72px) 0 clamp(40px, 6vh, 60px);
+  border-bottom: 1px solid var(--rp-rule);
+}
+
+.rp-masthead__field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.rp-masthead__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.rp-return {
+  margin: 0 0 clamp(26px, 4vh, 40px);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--rp-faint);
+}
+
+.rp-return a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rp-rule);
+  padding-bottom: 2px;
+}
+
+.rp-return a::before {
+  content: "\2190\00a0";
+}
+
+.rp-return a:hover {
+  color: var(--rp-accent);
+  border-color: var(--rp-accent);
+}
+
+.rp-name {
+  margin: 0;
+  font-family: var(--font-fraunces);
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+.rp-affil {
+  max-width: 58ch;
+  margin: 14px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--rp-dim);
+}
+
+.rp-statement {
+  max-width: 62ch;
+  margin: clamp(22px, 3vh, 30px) 0 0;
+  font-family: var(--font-fraunces);
+  font-size: clamp(18px, 1.9vw, 22px);
+  font-weight: 340;
+  line-height: 1.5;
+}
+
+.rp-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin: clamp(22px, 3vh, 30px) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.rp-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  color: var(--rp-faint);
+}
+
+.rp-topics li + li::before {
+  content: "\00b7\00a0\00a0";
+  color: rgba(11, 11, 12, 0.22);
+}
+
+/* ------------------------------------------------------------------ */
+/* Sections — label left, content right                               */
+/* ------------------------------------------------------------------ */
+
+.rp-section {
+  padding: clamp(34px, 5.5vh, 54px) 0;
+  border-bottom: 1px solid var(--rp-rule-soft);
+}
+
+.rp-section:last-of-type {
+  border-bottom: 0;
+}
+
+.rp-grid {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 44px);
+  align-items: start;
+}
+
+.rp-label {
+  margin: 0;
+  padding-top: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--rp-accent);
+}
+
+@media (max-width: 720px) {
+  .rp-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .rp-label {
+    padding-top: 0;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Entries (positions, policy, education)                             */
+/* ------------------------------------------------------------------ */
+
+.rp-entry {
+  padding-bottom: 26px;
+}
+
+.rp-entry:last-child {
+  padding-bottom: 0;
+}
+
+.rp-entry--tight {
+  padding-bottom: 18px;
+}
+
+.rp-entry__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.rp-entry__head h3 {
+  flex: 1 1 24ch;
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+}
+
+.rp-date {
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--rp-faint);
+  white-space: nowrap;
+}
+
+.rp-org {
+  max-width: var(--rp-measure);
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--rp-dim);
+}
+
+.rp-note {
+  max-width: var(--rp-measure);
+  margin: 9px 0 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------------ */
+/* Publications and projects                                          */
+/* ------------------------------------------------------------------ */
+
+.rp-caveat {
+  max-width: var(--rp-measure);
+  margin: 0 0 22px;
+  padding-left: 13px;
+  border-left: 2px solid rgba(79, 70, 229, 0.3);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--rp-dim);
+}
+
+.rp-pub {
+  padding-bottom: 24px;
+}
+
+.rp-pub + .rp-pub {
+  padding-top: 24px;
+  border-top: 1px solid var(--rp-rule-soft);
+}
+
+.rp-pub:last-child {
+  padding-bottom: 0;
+}
+
+.rp-pub h3 {
+  max-width: 54ch;
+  margin: 0;
+  font-size: 17.5px;
+  font-weight: 500;
+  line-height: 1.38;
+  letter-spacing: -0.008em;
+}
+
+.rp-authors {
+  max-width: var(--rp-measure);
+  margin: 7px 0 0;
+  font-size: 13.5px;
+  color: var(--rp-dim);
+}
+
+.rp-authors b {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.rp-venue {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--rp-faint);
+}
+
+.rp-stage {
+  display: inline-block;
+  margin-left: 2px;
+  padding: 2px 7px;
+  border: 1px solid var(--rp-rule);
+  border-radius: 3px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--rp-dim);
+}
+
+.rp-stage--pub {
+  border-color: rgba(79, 70, 229, 0.45);
+  color: var(--rp-accent);
+}
+
+.rp-stage--poster {
+  border-color: rgba(79, 70, 229, 0.28);
+  color: var(--rp-accent);
+}
+
+/* --- the quiet delight: entries open in place ---------------------- */
+
+.rp-more {
+  margin-top: 11px;
+}
+
+.rp-more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  padding: 2px 0;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--rp-accent);
+  list-style: none;
+}
+
+.rp-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.rp-more summary::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 220ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.rp-more[open] summary::before {
+  transform: translateY(1px) rotate(225deg);
+}
+
+.rp-more summary:hover {
+  color: var(--ink);
+}
+
+.rp-more summary:focus-visible {
+  outline: 2px solid rgba(79, 70, 229, 0.5);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.rp-more__body {
+  max-width: var(--rp-measure);
+  margin-top: 10px;
+  padding-left: 14px;
+  border-left: 1px solid var(--rp-rule);
+}
+
+.rp-more[open] .rp-more__body {
+  animation: rp-reveal 320ms cubic-bezier(.22, 1, .36, 1);
+}
+
+@keyframes rp-reveal {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rp-more[open] .rp-more__body { animation: none; }
+  .rp-more summary::before { transition: none; }
+}
+
+.rp-more__body p {
+  margin: 0 0 10px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #2f2f37;
+}
+
+.rp-more__body p:last-child {
+  margin-bottom: 0;
+}
+
+.rp-more__links {
+  font-size: 13px !important;
+  color: var(--rp-dim) !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* News                                                               */
+/* ------------------------------------------------------------------ */
+
+.rp-news {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rp-news li {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rp-rule-soft);
+}
+
+.rp-news li:first-child {
+  padding-top: 0;
+}
+
+.rp-news__date {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--rp-faint);
+}
+
+.rp-news li > a {
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.rp-news__src {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rp-faint);
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .rp-news li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Footer                                                             */
+/* ------------------------------------------------------------------ */
+
+.rp-footer {
+  margin-top: clamp(30px, 5vh, 50px);
+  padding: clamp(30px, 4.5vh, 44px) 0 clamp(44px, 7vh, 72px);
+  border-top: 1px solid var(--rp-rule);
+}
+
+.rp-footer__inner p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.rp-footer__alt {
+  margin-top: 10px !important;
+  color: var(--rp-faint);
+}

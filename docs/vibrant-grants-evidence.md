@@ -168,3 +168,26 @@ Sources are local PDFs under Resources/vibrant-grants-case-study. Page numbers r
 - Removed the disconnected guidance/dashboard findings, trust quote, and methodological defenses from the main page. Updated the evaluation diagram to “Review” and added “Example of a failure” above the stopping case. The original 18 cases and additional stopping check remain distinct.
 - Preserved source images and original reports. Annotation statuses were not changed in the external annotation file; the changes are recorded here in the workspace.
 - Structural/asset/ARIA checks, measured navigation tests, and homepage/AI-card regressions passed. No browser-rendered review is claimed.
+
+## October 15 research story and data collection
+
+- Removed the research appendix disclosure. The research timeline image is now visible. The participant table is replaced by a five-step story (kickoff mapping, discovery, divergent prototypes and co-design, staff walkthroughs, iterative think-alouds), each giving why the study ran, what we learned, and what changed in the product. All counts, quotes, and changes come from the entries above; the standalone co-design section is folded into step 03.
+- The sample-overlap caveat is kept as one line under the story. The 51%/35% survey figures appear once, in the discovery step.
+- Restored the chatbot-as-data-collection framing from the Resources prototype: surveys could not probe answers, staff follow-up was costly, and the chatbot sits between survey and interview. Added a survey/chatbot/interview comparison, the four chatbot rules, and the `chatbot-flow.jpg` prototype screen. The invented attendance chat stays removed.
+- No rendered-browser check: no headless browser available in this pass.
+
+## October 15 annotation pass
+
+- Research story trimmed to kickoff, discovery, and divergent prototypes/co-design so it flows straight into the grant process. Staff-walkthrough step removed per comment; its substance remains in the data-collection section. Think-aloud step moved to a "Testing with clients" section after evaluation. Sample-overlap note removed per comment.
+- Reflection retitled "Learnings" and rewritten around evaluating a non-deterministic model: five runs per scenario, grading against defined behaviors, and the conversation-level stopping failure. The fix is described as the enough-information message plus the client move-ahead control, matching the confirmed account; no prompt retest is claimed.
+- Added the team photo (Resources/vibrant-grants-case-study/8CBD6973-A33F-4967-A4C6-0AE6AC034094_1_105_c.jpeg; an earlier pick of Resources/Photos/IMG_9927.jpeg was wrong and replaced) below delivery as assets/img/vibrant-grants/team.jpg, resized and with all EXIF, including GPS, removed.
+- The Oct 14 "ui is broken" grant-process comment predates the panel rebuild; it was left open for visual confirmation.
+
+## October 15 annotation pass 2
+
+- Research section: removed heading and intro line; timeline image now full container width; dropped "open at full size" from its caption.
+- Product & AI: heading is the user's question about AI cost and best use; intro paragraph removed. Ranking explains that a model call would make ranking less reliable (non-deterministic, untraceable). Data explanation says AI fits because explanations must be personal to the client's program and grant. Reporting stage is framed as the opportunity to explore a chatbot for data collection, highlighted, with a link down to the Data collection section.
+- Evaluation: retitled "Evaluating the chatbot", tinted background, and the user's FigJam eval board (Resources/vibrant-grants-case-study/Screenshot 2026-10-15 at 11.12.50 AM.png → assets/img/vibrant-grants/eval-board.jpg) added after the scenarios.
+- Stopping case rewritten from the user's account: the chatbot moved clients through sections on its own for a seamless flow, couldn't end the conversation once it had enough information, so it now says the information is sufficient and the client marks the section complete.
+- Client testing heading rephrased to "Showing clients where the information came from".
+- Oct 15 follow-up: the reporting panel keeps the same styling as the others. A smooth curved SVG arrow starts at the bottom edge of that panel and ends above the "Data collection" label in the next section. A small inline script positions it on load, font load, and resize; its colour switches from the light on-dark blue to the paper accent at the section boundary.

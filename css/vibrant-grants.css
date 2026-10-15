@@ -593,3 +593,11 @@
 .case-theme--vibrant-grants .strip-tint .refinement-case { background: #fff; }
 .eval-board { margin: 36px 0 32px; }
 .eval-board a { display: block; cursor: zoom-in; }
+.grant-process .grant-process__why { margin-top: 20px; padding: 16px 18px; border-left: 2px solid var(--case-accent-dark); border-radius: 0 8px 8px 0; background: var(--vg-line-soft); }
+.grant-process__why > span { display: block; margin-bottom: 6px; color: var(--case-accent-dark); font-size: 13px; font-weight: 700; }
+.grant-process .grant-process__why p { margin: 0; color: #fff; font-size: 15px; line-height: 1.65; }
+.grant-process .grant-process__reason { border-top: 0; padding-top: 0; }
+.case-theme--vibrant-grants .eval-model { margin: 4px 0 32px; color: var(--case-ink); font-family: var(--case-serif); font-size: clamp(20px,2.2vw,24px); line-height: 1.4; }
+.method-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.method-list li { padding-left: 14px; border-left: 2px solid var(--case-border); }
+.method-list b { color: var(--case-ink); font-weight: 600; }

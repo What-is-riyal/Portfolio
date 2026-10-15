@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="../css/shell.css?v=20260814scrim2">
   <link rel="stylesheet" href="../css/section-rail.css?v=20261013nav">
   <link rel="stylesheet" href="../css/case-system.css?v=20260814scrim1">
-  <link rel="stylesheet" href="../css/vibrant-grants.css?v=20261015arrow2">
+  <link rel="stylesheet" href="../css/vibrant-grants.css?v=20261015methods">
 </head>
 <body class="case-study case-study--dark-hero case-theme--vibrant-grants" data-shell-base="../" data-shell-page="work">
   <div class="grain" aria-hidden="true"></div>
@@ -95,9 +95,14 @@
             <a class="research-story__map" href="../assets/img/vibrant-grants/stakeholder-system-map.png" target="_blank" rel="noopener" aria-label="Open the kickoff system map at full size"><img loading="lazy" width="1080" height="1190" src="../assets/img/vibrant-grants/stakeholder-system-map.png" alt="Original kickoff system map linking NSR, community organizations, reports, public data, community voice, and funders."></a>
           </li>
           <li>
-            <div class="research-story__head"><span class="research-story__step">02</span><p class="finding-label">Discovery</p><h3>Understanding leaders' work inside and outside NSR</h3><ul class="study-pills"><li>8 interviews with non-NSR leaders</li><li>Fieldwork with 5 NSR clients</li><li>72 community survey responses</li></ul></div>
+            <div class="research-story__head"><span class="research-story__step">02</span><p class="finding-label">Discovery</p><h3>Understanding leaders' work inside and outside NSR</h3><ul class="study-pills"><li>8 interviews with non-NSR leaders</li><li>Fieldwork with 5 NSR clients</li><li>Survey</li></ul></div>
             <dl class="research-story__beats">
-              <div><dt>Why</dt><dd>NSR wanted to reach more leaders than its current clients, so we talked to both groups. The survey checked how widely the data problems we heard about applied.</dd></div>
+              <div><dt>What we wanted to find out</dt><dd>How nonprofit leaders worked, where they needed help, and how the people they serve understood local data.</dd></div>
+              <div><dt>What we did and why</dt><dd><ul class="method-list">
+                <li><b>Interviews with 8 leaders outside NSR.</b> NSR wanted to support more leaders than its current clients, so we asked leaders it didn't yet work with about their day-to-day work and the help they needed.</li>
+                <li><b>Fieldwork with 5 NSR clients.</b> NSR could introduce us to its own clients, so we could see in person how they worked and used NSR's services, beyond what they would describe in an interview.</li>
+                <li><b>A survey of 72 community members.</b> Community members are the people these organizations serve. A survey let us hear from many of them about how they understood and used community data, so the research covered every part of the ecosystem.</li>
+              </ul></dd></div>
               <div><dt>What we learned</dt><dd>Leaders searched for grants while running their programs, and struggled to use community statistics in applications. In the survey, 51% found community data hard to understand and 35% were unsure how to act on it.</dd></div>
               <div><dt>What we did with it</dt><dd>NSR chose making community data usable as the direction for the spring. Rebuilding its whole data portal was out of scope, so we looked at where the data was needed most: funding.</dd></div>
             </dl>
@@ -105,7 +110,11 @@
           <li>
             <div class="research-story__head"><span class="research-story__step">03</span><p class="finding-label">Divergent prototypes &amp; co-design</p><h3>Testing several directions before committing</h3><ul class="study-pills"><li>9 prototypes · 18 participants</li><li>20 concepts · 5 participants</li></ul></div>
             <dl class="research-story__beats">
-              <div><dt>Why</dt><dd>Grant support, collaboration, financial management, and community data were all plausible directions. We wanted participants to react to concrete concepts, and to tell us what kind of help they wanted.</dd></div>
+              <div><dt>What we wanted to find out</dt><dd>Grant support, collaboration, financial management, and community data were all plausible directions. We needed to know which one to commit to, and what kind of help people wanted within it.</dd></div>
+              <div><dt>What we did and why</dt><dd><ul class="method-list">
+                <li><b>9 divergent prototypes with 18 participants.</b> Quick prototypes gave people across stakeholder groups something concrete to react to, so we could compare directions side by side before investing in one.</li>
+                <li><b>Co-design with 5 participants.</b> Three NSR clients, a board member, and a collaborating stakeholder worked through 20 concepts covering four kinds of support and five ways of delivering it. This showed which problem mattered most to them and how they wanted to be helped.</li>
+              </ul></dd></div>
               <div><dt>What we learned</dt><dd>Grant support received the strongest endorsement: 12.5 of 25 points, against 4.5 for budgeting. Participants preferred trusted introductions to automated networking. Clients wanted to learn to write applications themselves.</dd></div>
               <div><dt>What we did with it</dt><dd>Grant applications became the center of the product, with finding grants before and reporting after. AI would coach clients and explain data, and clients would write and decide. We dropped automated networking and treated budgeting as supporting infrastructure.</dd></div>
             </dl>
@@ -129,16 +138,15 @@
 
     <section class="strip strip-dark" id="strategy" data-rail="Product &amp; AI">
       <div class="container">
-        <p class="kicker fx">Product &amp; AI decisions</p>
+        <p class="kicker fx">Where to use AI, and where not</p>
         <h2 class="fx">Powering everything with AI is expensive. So how do we decide the best use?</h2>
         <figure class="grant-process" aria-label="How the product supports grant recommendations, application preparation, and reporting">
           <ol class="grant-process__stages">
-            <li class="sketch-node"><h3>Find a suitable grant</h3><svg class="grant-process__arrow" viewBox="0 0 54 30" fill="none" aria-hidden="true"><path d="M3 17 Q24 10 49 15 M38 4 L50 15 L38 26"/></svg><span class="badge">Rule-based recommendations</span><p>The recommendation algorithm ranked grants against 13 criteria, including mission, location, deadlines, matching funds, and reimbursement requirements.</p><p class="grant-process__reason">The team could check and adjust the weights. A model call here would have made ranking less reliable: the same grant could rank differently from one run to the next, with no clear reason why.</p></li>
-            <li class="sketch-node"><h3>Make a case for funding</h3><svg class="grant-process__arrow" viewBox="0 0 54 30" fill="none" aria-hidden="true"><path d="M3 13 Q24 18 49 14 M38 3 L50 14 L38 25"/></svg><span class="badge">AI to explain community data</span><p>NSR's local census figures and neighborhood indicators could support an application. Clients needed to know which figures related to their program.</p><p class="grant-process__reason">AI is a good use here because the explanation has to be personal to be useful: it depends on the client's program and the grant they're applying for. AI suggested relevant figures and explained how to use them, with sources available to check.</p></li>
-            <li class="sketch-node"><h3>Report what was delivered</h3><span class="badge">AI for reporting follow-up</span><p>Grant reports needed details about activities, attendance, and outcomes. A client's answer could be incomplete or the requested information unavailable.</p><p class="grant-process__reason">An opportunity to explore a chatbot for data collection: it could ask follow-ups based on what the client had shared, and clients would review what it collected.</p></li>
+            <li class="sketch-node"><h3>Find a suitable grant</h3><svg class="grant-process__arrow" viewBox="0 0 54 30" fill="none" aria-hidden="true"><path d="M3 17 Q24 10 49 15 M38 4 L50 15 L38 26"/></svg><span class="badge">No AI · rule-based ranking</span><p>The recommendation algorithm ranked grants against 13 criteria, including mission, location, deadlines, matching funds, and reimbursement requirements.</p><div class="grant-process__why"><span>Why not AI</span><p>A model call here would have made ranking less reliable: the same grant could rank differently from one run to the next, with no clear reason why.</p></div><p class="grant-process__reason">Fixed weights also meant the team could check and adjust them.</p></li>
+            <li class="sketch-node"><h3>Make a case for funding</h3><svg class="grant-process__arrow" viewBox="0 0 54 30" fill="none" aria-hidden="true"><path d="M3 13 Q24 18 49 14 M38 3 L50 14 L38 25"/></svg><span class="badge">AI · explaining community data</span><p>NSR's local census figures and neighborhood indicators could support an application. Clients needed to know which figures related to their program.</p><div class="grant-process__why"><span>Why AI</span><p>The explanation has to be personal to be useful: it depends on the client's program and the grant they're applying for.</p></div><p class="grant-process__reason">AI suggested relevant figures and explained how to use them, with sources available to check.</p></li>
+            <li class="sketch-node"><h3>Report what was delivered</h3><span class="badge">AI · chatbot for follow-up</span><p>Grant reports needed details about activities, attendance, and outcomes. A client's answer could be incomplete or the requested information unavailable.</p><div class="grant-process__why"><span>Why AI</span><p>A survey can't follow up on an incomplete answer. A chatbot can ask follow-ups based on what the client has shared, which made this an opportunity to explore it for data collection.</p></div><p class="grant-process__reason">Clients would review what it collected.</p></li>
           </ol>
         </figure>
-        <ul class="study-pills study-pills--dark" aria-label="Review of grant-ranking criteria"><li>Criteria review: 5 NSR staff</li><li>5 MHCI peer reviewers</li></ul>
       </div>
     </section>
 
@@ -177,11 +185,7 @@
         <p class="kicker fx">AI evaluation</p>
         <h2 class="fx">Evaluating the chatbot</h2>
         <p class="vibrant-copy">We turned AI-dependent tasks from four prototypes into 18 test scenarios. I defined what the assistant needed to do in each case, ran each scenario five times, and graded the responses against those expectations.</p>
-        <figure class="evaluation-sketch evaluation-sketch--setup" aria-label="Test input formats">
-          <div><h3>Document tests</h3><p>Records and a task instruction, supplied in one turn.</p></div>
-          <div><h3>Conversation tests</h3><p>A shared base system prompt with varied client messages.</p></div>
-          <figcaption>Tested on Gemini 3.5 Flash · May–June 2026</figcaption>
-        </figure>
+        <p class="eval-model">Tested on Gemini 3.5 Flash · May–June 2026</p>
         <div class="eval-rubric-block" aria-labelledby="eval-rubric-title">
           <h3 id="eval-rubric-title">Scenarios covered</h3>
           <dl class="eval-rubric">
@@ -214,14 +218,14 @@
     <section class="strip" id="testing" data-rail="Client testing">
       <div class="container">
         <p class="kicker fx">Testing with clients</p>
-        <h2 class="fx">Showing clients where the information came from</h2>
+        <h2 class="fx">Evaluating with clients</h2>
         <ol class="research-story research-story--single">
           <li>
-            <div class="research-story__head"><p class="finding-label">Iterative think-alouds</p><ul class="study-pills"><li>5 NSR clients + 2 other nonprofit leaders</li></ul></div>
+            <div class="research-story__head"><p class="finding-label">Think-aloud sessions</p><ul class="study-pills"><li>5 NSR clients + 2 other nonprofit leaders</li></ul></div>
             <dl class="research-story__beats">
-              <div><dt>Why</dt><dd>Once the assistant pulled in records and figures for clients, we needed to see whether they could tell what it had found and what it had inferred.</dd></div>
-              <div><dt>What we learned</dt><dd>Looking at imported data, one client asked, “Are they pulling, or just suggesting?” The same client struggled with a regional peer average that had no source. Clients also differed on guidance: one wanted a simpler step-by-step flow, another preferred the denser dashboard.</dd></div>
-              <div><dt>What we did with it</dt><dd>Every imported item got a source label, details from the conversation waited for the client's approval, and a review step came before analysis. The split preference pointed us toward offering more than one level of guidance.</dd></div>
+              <div><dt>Why</dt><dd>The model evaluation showed how the assistant behaved on its own. We also needed to see how clients worked with it: whether they understood what it gave them, trusted it, and could check it.</dd></div>
+              <div><dt>What we did</dt><dd>Clients worked through the prototype's step-by-step and dashboard views and talked through what they were thinking as they went.</dd></div>
+              <div><dt>What we learned</dt><dd>Looking at imported data, one client asked, “Are they pulling, or just suggesting?” The same client struggled with a regional peer average that had no source. That is why every imported item got a source label, details from the conversation waited for the client's approval, and a review step came before analysis. Clients also differed on guidance: one wanted a simpler step-by-step flow, another preferred the denser dashboard, which pointed us toward offering more than one level of guidance.</dd></div>
             </dl>
           </li>
         </ol>

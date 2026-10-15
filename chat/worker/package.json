@@ -1,0 +1,20 @@
+{
+  "name": "priyal-chat-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "knowledge": "node ../build-context.mjs",
+    "dev": "wrangler dev",
+    "deploy": "npm run knowledge && wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "log": "wrangler d1 execute priyal-chat --remote --command=\"SELECT created_at, country, page, question, answer FROM turns ORDER BY id DESC LIMIT 30\""
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.70.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261006.1",
+    "typescript": "^5.7.0",
+    "wrangler": "^4.0.0"
+  }
+}

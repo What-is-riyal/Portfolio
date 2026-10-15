@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "priyal-chat",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-09",
+  "compatibility_flags": ["nodejs_compat"],
+
+  "vars": {
+    // Only these origins may call the worker. Add localhost while testing.
+    "ALLOWED_ORIGINS": "https://www.priyalshrivastava.com,https://priyalshrivastava.com,http://localhost:8777"
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "priyal-chat",
+      // PASTE the id printed by:  npx wrangler d1 create priyal-chat
+      "database_id": "PASTE_DATABASE_ID_HERE"
+    }
+  ],
+
+  "observability": { "enabled": true }
+}

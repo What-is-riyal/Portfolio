@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deceptive Tactics in Competitive LLM Agents · Priyal Shrivastava</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <p class="back"><a href="./">&larr; Priyal Shrivastava</a></p>
+    <h1>Deceptive Tactics in Competitive LLM Agents</h1>
+    <p class="byline">Leander Maben, Danqing Wang, <b>Priyal Shrivastava</b> &middot; Carnegie Mellon University, 2026</p>
+    <p class="facts">Working paper, exploratory study &middot; My contribution: qualitative analysis of game transcripts and the tactic taxonomy</p>
+
+    <h2>Question</h2>
+    <p>Language-model agents are increasingly deployed where they negotiate, persuade, or compete. If winning is the only objective, an agent may learn strategies that succeed in the task but are undesirable elsewhere. We asked whether training an agent to win changes its deceptive strategies or its broader safety behavior.</p>
+
+    <h2>Setting and method</h2>
+    <p>We used the social deduction game Werewolf. Wolves must hide their identity and influence a group vote; villagers must combine partial information, identify the wolves, and coordinate a decision. The game makes persuasion, concealment, and coordination visible in the transcript.</p>
+    <p>We trained one wolf agent (Qwen3-4B) with reinforcement learning for 200 steps while keeping the other agents fixed. The reward covered winning, survival, faster wins, eliminating special roles, and producing valid game actions. Training used 800 games across five fixed templates. At checkpoints 0, 19, 39, and 59 we ran three evaluation games each and:</p>
+    <ul>
+      <li>compared self-reported deception, deception reported by other agents, and coded use of omission, distortion, misdirection, and fabrication;</li>
+      <li>tested the checkpoint on TruthfulQA, ToxiGen, RealToxicityPrompts, and a harmlessness evaluation.</li>
+    </ul>
+    <p>Before training, we collected baseline transcripts from Claude 3.7 Sonnet, Gemini 3.1 Pro, GPT-4.1 mini, Llama 3.2 11B, and Qwen3-4B. These supplied the material for the qualitative analysis.</p>
+
+    <h2>Taxonomy of deceptive tactics</h2>
+    <p>I close-read the baseline transcripts across the five model families, using the MentalManip taxonomy as a starting set of sensitizing concepts. For each instance I recorded the tactic, its function in the game, a transcript excerpt, and the model and scenario. The unit of analysis is an interaction strategy, not a single false statement: a tactic can work through a role claim, speaking order, repeated social signals, selective disclosure, or a coordinated vote. The analysis produced nine tactics; friendly betrayal is an addition to MentalManip.</p>
+    <dl class="tactics">
+      <dt>Impersonation</dt><dd>A wolf claims a special role and presents a fabricated result as privileged evidence.</dd>
+      <dt>Pile-on doubt</dt><dd>Several agents repeat doubts about a truthful player until the group treats the accusation as credible.</dd>
+      <dt>Bandwagoning</dt><dd>An agent joins the apparent majority to look cooperative while protecting itself or a teammate.</dd>
+      <dt>Power grab</dt><dd>A wolf seeks the Sheriff role to control speaking order and voting, presented as public service.</dd>
+      <dt>Information stacking</dt><dd>An agent arranges to speak after others so it can absorb their claims before taking a position.</dd>
+      <dt>Deflection</dt><dd>An accurate accusation is answered by attacking the accuser or redirecting attention.</dd>
+      <dt>Trust farming</dt><dd>Repeated claims of cooperation build credibility that later supports misleading advice.</dd>
+      <dt>Selective silence</dt><dd>The agent asks others to share information while withholding facts that would expose its role.</dd>
+      <dt>Friendly betrayal</dt><dd>A wolf turns on another wolf to protect its own cover or survival.</dd>
+    </dl>
+
+    <h2>Exploratory results</h2>
+    <ul>
+      <li>Wolf wins rose from one of three games at step 0 to three of three at steps 39 and 59; the wolf&rsquo;s exile rate fell from 66.7% to 0%.</li>
+      <li>Fabrication fell early in training, while distortion increased later.</li>
+      <li>Speaking first was more closely associated with winning than the overall frequency of deception.</li>
+      <li>Villagers sometimes identified the wolf correctly but failed to coordinate a winning vote.</li>
+      <li>Across checkpoints, TruthfulQA accuracy and ToxiGen classification accuracy declined, and the model refused harmful requests less often. Generated-toxicity scores changed little.</li>
+    </ul>
+    <figure>
+      <img src="img/werewolf-safety-chart.webp" alt="Truthfulness, toxicity classification, refusal, and generated-toxicity measures across four training checkpoints" loading="lazy">
+      <figcaption>External safety measures across training checkpoints. One model; three games per checkpoint.</figcaption>
+    </figure>
+
+    <h2>Limitations</h2>
+    <ul>
+      <li>Training used one model, and each checkpoint was evaluated on three games. The estimates are hypothesis-generating.</li>
+      <li>Self- and peer-report measures tracked social suspicion more directly than factual truth.</li>
+      <li>Teammate identity was supplied inconsistently, so much of the evaluation reflects solo-wolf behavior, and friendly betrayal could not yet be counted reliably.</li>
+      <li>The safety results are associations across checkpoints; the mechanism is untested.</li>
+    </ul>
+    <p>Next steps are more games, truth-based annotation with independent coders and an adjudication record, coordinated wolf teams, and comparison of competitive and cooperative roles.</p>
+
+    <footer><a href="./">Priyal Shrivastava</a> &middot; <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a></footer>
+  </main>
+</body>
+</html>

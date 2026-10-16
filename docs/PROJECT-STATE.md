@@ -172,3 +172,12 @@ replies; it was deleted. The prompt has never been run against the real API.
   figure is **77 teams, 144 participants across three tracks**.
 - `work/madahead.html` is reachable only from the Meesho case study — it is not
   in `play.html`.
+
+## 7. Academic site (`academic/`), added 16 October 2026
+
+A plain, self-contained academic site for PhD applications: `academic/index.html`
+plus one summary page per project (CORDA, Werewolf, Response Atlas, Policy Diff
+Observatory, SEAL IT). It has its own `style.css`, figures in `academic/img/`, and a copy
+of the CV, so the folder can be hosted on its own. No portfolio chrome, no
+animation, no web fonts. Not deployed and not linked from the portfolio.
+It overlaps with `/research/`; one of the two should eventually be retired.

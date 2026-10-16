@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORDA: A Common Testbed for Alternative Feed Rankers · Priyal Shrivastava</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <p class="back"><a href="./">&larr; Priyal Shrivastava</a></p>
+    <h1>CORDA: A Common Testbed for Alternative Feed Rankers</h1>
+    <p class="byline">With the CORDA Democracy research team &middot; CORDA Democracy, Open Democracy, 2026</p>
+    <p class="facts">Working paper, exploratory results &middot; <a href="https://github.com/CORDA-p10/social-media-project">Code and supplementary material</a> &middot; <a href="https://corda.edcx.io/dashboard">Simulation dashboard</a></p>
+
+    <h2>Question</h2>
+    <p>Researchers have proposed many alternatives to engagement-based feed ranking, including chronological, bridging, diversity-oriented, and toxicity-aware methods. These proposals are spread across papers and evaluated with different datasets and metrics, so their reported effects are hard to compare. We asked how alternative ranking algorithms can be documented and compared under one set of policy-relevant measures.</p>
+
+    <h2>Approach</h2>
+    <p>CORDA has two parts. A catalog records, for each ranking method, its objective, required inputs, scoring rule, source paper, expected benefit, known trade-offs, and evaluation evidence. A common testbed implements selected methods in one simulated environment and compares them on shared measures.</p>
+    <p>In the first comparison, six Mastodon servers receive the same population of 3,000 LLM agents, the same interaction rules, and the same seed corpus of about 1,300 public posts about COVID-19. Agent personas are specified from European Social Survey and Eurostat data. Agents can post, reply, favorite, boost, or quote; each feed shows 20 posts selected from the 250 most recent. Each server uses a different ranking rule:</p>
+    <ol>
+      <li>Chronological: newest posts first.</li>
+      <li>Engagement: ranks by replies, quotes, favorites, and boosts, weighting resharing more heavily.</li>
+      <li>Bridging: raises posts approved by users with different interaction histories.</li>
+      <li>Homophily: raises posts favored by users similar to the viewer (an intentional echo-chamber condition).</li>
+      <li>Outrage downranking: lowers posts that combine moral language with anger or disgust.</li>
+      <li>Toxicity downranking: lowers posts with higher toxicity scores.</li>
+    </ol>
+    <p>Shared measures are engagement, conversation size, cross-group approval, moral outrage, toxicity and hate speech, and conspiracy content. Engagement is treated as both an outcome and an implementation constraint, since a ranker that sharply reduces participation is unlikely to be adopted.</p>
+
+    <h2>Preliminary results</h2>
+    <p>Current results come from a single exploratory run of 1,123 ticks; the planned experiment runs for 5,000 ticks with repeated runs.</p>
+    <ul>
+      <li>Engagement distributions overlapped across all six conditions.</li>
+      <li>The outrage-downranking condition had a lower median outrage score than the chronological, engagement, and homophily conditions, although the distributions overlapped.</li>
+      <li>Conspiracy scores varied sharply early in the run and then fell in all conditions; the toxicity-downranking condition showed the largest early spike.</li>
+      <li>The chronological condition sustained the highest cross-group approval score, ahead of the bridging ranker. This raises a calibration or construct-validity question about the bridging measure or the ranker.</li>
+    </ul>
+    <figure>
+      <img src="img/corda-bridging.webp" alt="Rolling mean cross-group approval under six ranking rules" loading="lazy">
+      <figcaption>Rolling mean cross-group approval under the six ranking rules, single 1,123-tick run.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/corda-engagement.webp" alt="Box plots of favorites, views, and replies under six ranking rules" loading="lazy">
+      <figcaption>Engagement (favorites, views, replies) under the six ranking rules.</figcaption>
+    </figure>
+
+    <h2>Policy relevance</h2>
+    <p>The EU Digital Services Act requires very large platforms to assess systemic risks arising from their recommender systems (Article 34) and to adopt mitigation measures (Article 35). It also requires them to offer at least one recommender option not based on profiling (Article 38) and gives vetted researchers a route to platform data (Article 40). A catalog and common testbed could help researchers identify candidate mitigations, compare their trade-offs, and prepare evidence for a risk assessment or a data-access request. As part of the fellowship, we drafted a standardized summary label for each ranker keyed to the risks listed in Article 34(1)(a)&ndash;(d).</p>
+
+    <h2>Limitations</h2>
+    <ul>
+      <li>LLM agents are behavioral proxies; a study with human participants is needed to test which patterns hold in real use.</li>
+      <li>Results describe one run without uncertainty estimates.</li>
+      <li>The measures are proxies for bridging, outrage, toxicity, and conspiracy content.</li>
+      <li>Personas use 2023 survey data, while the simulated discussion is set in 2020.</li>
+    </ul>
+
+    <footer><a href="./">Priyal Shrivastava</a> &middot; <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a></footer>
+  </main>
+</body>
+</html>

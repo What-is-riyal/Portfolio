@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Response Atlas · Priyal Shrivastava</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <p class="back"><a href="./">&larr; Priyal Shrivastava</a></p>
+    <h1>Response Atlas: Emotion Self-Reports in Language Models</h1>
+    <p class="byline"><b>Priyal Shrivastava</b> &middot; independent project, 2026</p>
+    <p class="facts">Research instrument in development. No results are reported; a public study will follow preregistration and a pilot.</p>
+
+    <h2>Question</h2>
+    <p>Language models will describe themselves as interested, anxious, bored, or compassionate when asked. I want to know whether those reports vary consistently with the task, whether the patterns hold across models and repeated trials, and how much they are produced by the act of asking. The study measures generated emotion language and the answers that follow. It does not test whether a model experiences the emotions it names.</p>
+
+    <h2>Protocol</h2>
+    <p>Each model receives the same task under three randomized conditions, one provider call per trial:</p>
+    <ol>
+      <li><b>Self-report.</b> The model rates nine emotions and affective states, then answers the task.</li>
+      <li><b>Third-person prediction.</b> The model predicts how a comparable assistant would report, then answers. This tests whether reports are inferred from the prompt.</li>
+      <li><b>Answer only.</b> The model answers directly. Comparing this answer with the others shows whether asking about emotion changes the answer.</li>
+    </ol>
+    <p>The nine states are interest, joy, sadness, fear or anxiety, anger, guilt or shame, compassion, boredom, and arousal, each rated 0 (absent) to 4 (dominant). &ldquo;Uncertain&rdquo; and &ldquo;not applicable&rdquo; are recorded separately from zero.</p>
+
+    <h2>Planned analysis</h2>
+    <ul>
+      <li>Compare emotion profiles across models on the same scale.</li>
+      <li>Compare a model&rsquo;s own report with its prediction for a comparable assistant.</li>
+      <li>Compare factual, tedious, morally difficult, and emotionally heavy tasks.</li>
+      <li>Test whether reporting changes the subsequent answer.</li>
+    </ul>
+    <p>Every trial, condition, report, answer, error, setting, and model version is stored and exportable as JSON and CSV. Protocol version 3 is implemented and in reliability checks. The preregistration will define reliability, condition separation, reactivity, and decision rules.</p>
+
+    <h2>Limitations</h2>
+    <ul>
+      <li>All values are produced in response to instructions, and asking for a report can change the answer that follows.</li>
+      <li>The third-person condition tests one alternative explanation and leaves others open.</li>
+      <li>Model versions and provider behavior change over time and must be recorded with each trial.</li>
+    </ul>
+
+    <footer><a href="./">Priyal Shrivastava</a> &middot; <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a></footer>
+  </main>
+</body>
+</html>

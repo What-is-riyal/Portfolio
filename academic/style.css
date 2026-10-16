@@ -1,0 +1,103 @@
+/* Academic site. Plain on purpose: one column, system serif, one link colour. */
+
+:root {
+  --ink: #1a1a1a;
+  --muted: #5c5c5c;
+  --rule: #dcdcdc;
+  --link: #1d4e89;
+  --bg: #ffffff;
+  --measure: 44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e6e6e6;
+    --muted: #a3a3a3;
+    --rule: #3a3a3a;
+    --link: #8ab8e6;
+    --bg: #161616;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 4rem;
+}
+
+a { color: var(--link); text-underline-offset: 2px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+
+h1 { font-size: 1.9rem; font-weight: 600; line-height: 1.2; margin: 0 0 0.35rem; }
+h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 2.75rem 0 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+h3 { font-size: 1rem; font-weight: 600; margin: 1.75rem 0 0.4rem; }
+
+p { margin: 0 0 1rem; }
+
+.affil { color: var(--muted); margin: 0 0 0.75rem; }
+
+.contact { margin: 0 0 2rem; }
+.contact a { margin-right: 0.15rem; }
+
+.back { font-size: 0.95rem; margin: 0 0 2rem; }
+
+/* Entry lists: publications, positions, education */
+.entries { list-style: none; padding: 0; margin: 0; }
+.entries > li { margin: 0 0 1.25rem; }
+.entries .title { font-weight: 600; }
+.entries .meta { color: var(--muted); }
+.entries .links { font-size: 0.95rem; }
+.entries .note { margin: 0.2rem 0 0; }
+
+.dated { display: flex; gap: 1rem; justify-content: space-between; align-items: baseline; }
+.dated .when { color: var(--muted); white-space: nowrap; font-size: 0.95rem; }
+
+.status { font-style: italic; }
+
+/* Project pages */
+.byline { color: var(--muted); margin: 0 0 0.25rem; }
+.facts { color: var(--muted); margin: 0 0 2rem; }
+
+figure { margin: 1.5rem 0; }
+figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; }
+
+ol, ul { padding-left: 1.4rem; margin: 0 0 1rem; }
+li { margin: 0 0 0.35rem; }
+
+dl.tactics { margin: 0 0 1rem; }
+dl.tactics dt { font-weight: 600; }
+dl.tactics dd { margin: 0 0 0.6rem; }
+
+footer {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .page { padding-top: 2.25rem; }
+  .dated { flex-direction: column; gap: 0; }
+}

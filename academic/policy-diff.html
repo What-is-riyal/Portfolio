@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policy Diff Observatory · Priyal Shrivastava</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <p class="back"><a href="./">&larr; Priyal Shrivastava</a></p>
+    <h1>Policy Diff Observatory</h1>
+    <p class="byline"><b>Priyal Shrivastava</b> &middot; independent project, 2026</p>
+    <p class="facts">Prototype &middot; seven companies, eleven documents &middot; most recent verified check 15 August 2026</p>
+
+    <h2>Problem</h2>
+    <p>AI companies publish usage policies, model specifications, terms, and safety frameworks, and they often revise these pages in place. A reader sees the current text but cannot easily tell what changed, when, or how the earlier wording differed. Researchers studying how company commitments evolve need a durable record that preserves the original text and lets anyone check each comparison.</p>
+
+    <h2>Method</h2>
+    <p>The prototype retrieves a fixed list of public documents and compares each retrieval with the last trusted copy. The intended schedule is weekly.</p>
+    <ol>
+      <li><b>Retrieve</b> the document from the company&rsquo;s official page.</li>
+      <li><b>Validate</b> it, rejecting pages that are empty, unusually short, or much smaller than the stored version.</li>
+      <li><b>Compare</b> the old and new text and record additions and removals.</li>
+      <li><b>Preserve</b> the snapshot, the exact difference, source links, and the commit in version control.</li>
+    </ol>
+    <p>A failed or doubtful retrieval produces a visible source-health warning and keeps the last trusted version; only validated retrievals enter the record. Each entry links to the live source and, where available, an earlier Wayback Machine capture.</p>
+
+    <h2>Status and limits</h2>
+    <p>The pipeline and interface run locally. Public release depends on committing the scheduled monitor and verifying recurring runs. Coverage is limited to documents that can be retrieved as reliable text from a stable URL; blocked or browser-only pages go to a manual queue. Historical coverage depends on the quality of archived captures. The Observatory records textual change only; interpreting a change in its legal and institutional context is left to the researcher.</p>
+
+    <footer><a href="./">Priyal Shrivastava</a> &middot; <a href="mailto:priyalshri1@gmail.com">priyalshri1@gmail.com</a></footer>
+  </main>
+</body>
+</html>
